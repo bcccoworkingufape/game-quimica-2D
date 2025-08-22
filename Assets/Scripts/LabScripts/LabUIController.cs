@@ -55,19 +55,11 @@ namespace LabScripts
             solutionAnimationPanel?.SetActive(true);
 
             HideConfirmationPanel();
-
-            // StartCoroutine(WaitAndCloseSolutionPanel());
         }
 
         public void HideSolutionAnimationPanel()
         {
             solutionAnimationPanel?.SetActive(false);
-        }
-
-        private IEnumerator WaitAndCloseSolutionPanel()
-        {
-            yield return Utils.Wait(7f);
-            HideSolutionAnimationPanel();
         }
 
         // Question Panel
