@@ -16,18 +16,17 @@ namespace MenuScripts
         public DifficultyLevelData mediumDifficulty;
         public DifficultyLevelData hardDifficulty;
 
-        // Panels
+        [Header("Painéis")]
         public GameObject homePanel;
         public GameObject shopPanel;
         public GameObject settingsPanel;
         public GameObject navbarPanel;
         public GameObject loadingPanel;
 
-        // Buttons & Icons
+        [Header("Botões e Ícones")]
         public Button homeButton;
         public Button shopButton;
         public Button settingsButton;
-
         public GameObject homeIcon0;
         public GameObject homeIcon1;
         public GameObject shopIcon0;
@@ -35,7 +34,7 @@ namespace MenuScripts
         public GameObject settingsIcon0;
         public GameObject settingsIcon1;
 
-        // Seleção de dificuldade (Images)
+        [Header("Imagens de Seleção Dificuldade")]
         public GameObject easy0Image;
         public GameObject easy1Image;
         public GameObject medium0Image;

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic; // Para o sistema de "Voltar"
+using System.Collections.Generic; // logica de "Voltar"
 using Data;
 
 
@@ -99,7 +99,7 @@ namespace Core
             else
             {
                 Debug.LogWarning("Não há cenas no histórico para voltar.");
-                // Opcional: Voltar para o menu principal como fallback
+                // TODO: voltar para o menu principal como fallback
                 // SceneManager.LoadScene("1_MenuScene"); 
             }
         }
