@@ -18,9 +18,15 @@ namespace LabScripts
         // Hide the confirmation panel at the start
         void Start()
         {
+            HideAllPanels();
+        }
+
+        public void HideAllPanels()
+        {
             solutionAnimationPanel?.SetActive(false);
             confirmationPanel?.SetActive(false);
             questionPanel?.SetActive(false);
+            historyPanel?.SetActive(false);
         }
 
         // Confirmation Panel
