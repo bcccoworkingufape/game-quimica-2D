@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using Data;
-using Core; 
+using Core;
 
 namespace LabScripts
 {
@@ -13,6 +13,7 @@ namespace LabScripts
         public GameObject questionPanel;
         public GameObject historyPanel;
         public GameObject treePanel;
+        public GameObject pauseMenuPanel;
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -31,6 +32,8 @@ namespace LabScripts
             confirmationPanel?.SetActive(false);
             questionPanel?.SetActive(false);
             historyPanel?.SetActive(false);
+            pauseMenuPanel?.SetActive(false);
+
         }
 
         // Confirmation Panel
@@ -111,5 +114,37 @@ namespace LabScripts
             treePanel?.SetActive(false);
         }
 
+
+        // --- MÉTODOS DO MENU DE PAUSA ---
+
+        /// <summary>
+        /// Este método é chamado pelo botão de pausa (||) na tela do laboratório.
+        /// </summary>
+        public void PauseGame()
+        {
+            pauseMenuPanel?.SetActive(true);
+            // Pausa o tempo do jogo
+            Time.timeScale = 0f;
+        }
+
+        /// <summary>
+        /// Este método é chamado pelo botão "Retomar" dentro do painel de pausa.
+        /// </summary>
+        public void ResumeGame()
+        {
+            pauseMenuPanel?.SetActive(false);
+            // Volta o tempo do jogo ao normal
+            Time.timeScale = 1f;
+        }
+
+        /// <summary>
+        /// Este método é chamado pelo botão "Voltar ao Menu Principal" no painel de pausa.
+        /// </summary>
+        public void ReturnToMainMenu()
+        {
+            // IMPORTANTE: Sempre restaure o Time.timeScale antes de mudar de cena
+            Time.timeScale = 1f;
+            GameManager.Instance.LoadScene("1_MenuScene");
+        }
     }
 }
