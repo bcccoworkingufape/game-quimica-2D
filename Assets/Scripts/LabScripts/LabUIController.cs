@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Data;
+using Core; 
 
 namespace LabScripts
 {
