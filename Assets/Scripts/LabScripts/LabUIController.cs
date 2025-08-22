@@ -8,6 +8,7 @@ namespace LabScripts
     {
         public GameObject solutionAnimationPanel;
         public GameObject confirmationPanel;
+        public GameObject questionPanel;
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -17,8 +18,9 @@ namespace LabScripts
         // Hide the confirmation panel at the start
         void Start()
         {
-            confirmationPanel?.SetActive(false);
             solutionAnimationPanel?.SetActive(false);
+            confirmationPanel?.SetActive(false);
+            questionPanel?.SetActive(false);
         }
 
         // Confirmation Panel
@@ -68,5 +70,21 @@ namespace LabScripts
             HideSolutionAnimationPanel();
         }
 
+        // Question Panel
+        public void ShowQuestionPanel()
+        {
+            questionPanel?.SetActive(true);
+        }
+
+        public void HideQuestionPanel()
+        {
+            questionPanel?.SetActive(false);
+        }
+
+        public void OnQuestionSelect(string answer)
+        {
+            Debug.Log("Resposta selecionada: " + answer);
+            HideQuestionPanel();
+        }
     }
 }
