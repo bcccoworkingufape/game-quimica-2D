@@ -10,6 +10,7 @@ namespace LabScripts
         public GameObject confirmationPanel;
         public GameObject questionPanel;
         public GameObject historyPanel;
+        public GameObject treePanel;
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -96,5 +97,17 @@ namespace LabScripts
         {
             historyPanel?.SetActive(false);
         }
+
+        // Tree Panel
+        public void ShowTreePanel()
+        {
+            treePanel?.SetActive(true);
+        }
+
+        public void HideTreePanel()
+        {
+            treePanel?.SetActive(false);
+        }
+
     }
 }
