@@ -9,6 +9,7 @@ namespace LabScripts
         public GameObject solutionAnimationPanel;
         public GameObject confirmationPanel;
         public GameObject questionPanel;
+        public GameObject historyPanel;
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -83,6 +84,17 @@ namespace LabScripts
         {
             Debug.Log("Resposta selecionada: " + answer);
             HideQuestionPanel();
+        }
+
+        // History Panel
+        public void ShowHistoryPanel()
+        {
+            historyPanel?.SetActive(true);
+        }
+
+        public void HideHistoryPanel()
+        {
+            historyPanel?.SetActive(false);
         }
     }
 }
