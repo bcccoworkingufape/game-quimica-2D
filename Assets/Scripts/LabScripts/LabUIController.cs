@@ -15,6 +15,7 @@ namespace LabScripts
         public GameObject treePanel;
         public GameObject pauseMenuPanel;
         public GameObject questionErrorPanel;
+        public GameObject questionVictoryPanel;
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -128,6 +129,16 @@ namespace LabScripts
             questionPanel?.SetActive(true);
         }
 
+        // Question Victory Panel
+        public void ShowQuestionVictoryPanel()
+        {
+            questionVictoryPanel?.SetActive(true);
+        }
+
+        public void HideQuestionVictoryPanel()
+        {
+            questionVictoryPanel?.SetActive(false);
+        }
 
         // --- MÉTODOS DO MENU DE PAUSA ---
 
