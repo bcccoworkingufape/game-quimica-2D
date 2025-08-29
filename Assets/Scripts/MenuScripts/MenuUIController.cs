@@ -47,7 +47,7 @@ namespace MenuScripts
 
         [Header("UI Texts")]
         public TextMeshProUGUI difficultyText;
-
+        public TextMeshProUGUI modeText;
 
         private void OnEnable()
         {
@@ -85,6 +85,9 @@ namespace MenuScripts
 
             // Exemplo: "Fácil * 3 vidas * x1.0 pontos"
             difficultyText.text = $"{data.difficultyName} * {data.startingLives} vidas * x{data.scoreMultiplier:0.#} pontos";
+
+            if (modeText != null)
+                modeText.text = data.ModeLabel;
         }
 
         // Painéis principais

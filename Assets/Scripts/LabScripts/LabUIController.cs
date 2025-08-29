@@ -25,7 +25,7 @@ namespace LabScripts
         [Header("HUD")]
         public TextMeshProUGUI difficultyText;
         public TextMeshProUGUI livesText;
-
+        public TextMeshProUGUI modeText;
         // Hide the confirmation panel at the start
         void OnEnable()
         {
@@ -49,21 +49,33 @@ namespace LabScripts
         {
             HideAllPanels();
 
-            var gm = GameManager.Instance;
+            var gm = Core.GameManager.Instance;
             if (gm != null && gm.CurrentDifficulty != null)
             {
                 UpdateDifficultyLabel(gm.CurrentDifficulty);
+                if (modeText != null) modeText.text = gm.CurrentDifficulty.ModeLabel;
                 UpdateLivesLabel(gm.PlayerLives);
             }
         }
 
-        private void HandleDifficultyChanged(DifficultyLevelData data) => UpdateDifficultyLabel(data);
+        private void HandleDifficultyChanged(Data.DifficultyLevelData data)
+        {
+            UpdateDifficultyLabel(data);
+            if (modeText != null && data != null)
+                modeText.text = data.ModeLabel;
+        }
         private void HandleLivesChanged(int lives) => UpdateLivesLabel(lives);
 
-        private void UpdateDifficultyLabel(DifficultyLevelData data)
+        private void UpdateDifficultyLabel(Data.DifficultyLevelData data)
         {
-            if (difficultyText == null || data == null) return;
-            difficultyText.text = $"{data.difficultyName}";
+            if (data == null) return;
+
+            if (difficultyText != null)
+                difficultyText.text = $"{data.difficultyName}";
+            // {data.startingLives} vidas • x{data.scoreMultiplier:0.#} pontos";
+
+            if (modeText != null)
+                modeText.text = data.ModeLabel;
         }
 
         private void UpdateLivesLabel(int lives)
