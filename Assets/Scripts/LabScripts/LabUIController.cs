@@ -14,6 +14,7 @@ namespace LabScripts
         public GameObject historyPanel;
         public GameObject treePanel;
         public GameObject pauseMenuPanel;
+        public GameObject questionErrorPanel;
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -112,6 +113,19 @@ namespace LabScripts
         public void HideTreePanel()
         {
             treePanel?.SetActive(false);
+        }
+
+
+        // Question Error Panel
+        public void ShowQuestionErrorPanel()
+        {
+            questionErrorPanel?.SetActive(true);
+        }
+
+        public void HideQuestionErrorPanel()
+        {
+            questionErrorPanel?.SetActive(false);
+            questionPanel?.SetActive(true);
         }
 
 
