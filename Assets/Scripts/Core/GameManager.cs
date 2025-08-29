@@ -36,6 +36,8 @@ namespace Core
             }
         }
 
+
+
         // --- Métodos de Gerenciamento de Estado ---
 
         public void SetDifficulty(DifficultyLevelData newDifficulty)
