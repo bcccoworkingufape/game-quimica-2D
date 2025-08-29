@@ -16,3 +16,4 @@ MonoBehaviour:
   startingLives: 3
   availableHints: 0
   scoreMultiplier: 2
+  mode: 2
