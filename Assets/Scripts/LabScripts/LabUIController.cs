@@ -22,10 +22,54 @@ namespace LabScripts
         [HideInInspector]
         public string currentItemName;
 
+        [Header("HUD")]
+        public TextMeshProUGUI difficultyText;
+        public TextMeshProUGUI livesText;
+
         // Hide the confirmation panel at the start
+        void OnEnable()
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnDifficultyChanged += HandleDifficultyChanged;
+                GameManager.Instance.OnLivesChanged += HandleLivesChanged;
+            }
+        }
+
+        void OnDisable()
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnDifficultyChanged -= HandleDifficultyChanged;
+                GameManager.Instance.OnLivesChanged -= HandleLivesChanged;
+            }
+        }
+
         void Start()
         {
             HideAllPanels();
+
+            var gm = GameManager.Instance;
+            if (gm != null && gm.CurrentDifficulty != null)
+            {
+                UpdateDifficultyLabel(gm.CurrentDifficulty);
+                UpdateLivesLabel(gm.PlayerLives);
+            }
+        }
+
+        private void HandleDifficultyChanged(DifficultyLevelData data) => UpdateDifficultyLabel(data);
+        private void HandleLivesChanged(int lives) => UpdateLivesLabel(lives);
+
+        private void UpdateDifficultyLabel(DifficultyLevelData data)
+        {
+            if (difficultyText == null || data == null) return;
+            difficultyText.text = $"{data.difficultyName}";
+        }
+
+        private void UpdateLivesLabel(int lives)
+        {
+            if (livesText == null) return;
+            livesText.text = $"Vidas: {lives}";
         }
 
         public void HideAllPanels()

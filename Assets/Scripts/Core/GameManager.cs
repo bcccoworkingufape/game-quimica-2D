@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic; // logica de "Voltar"
+using System.Collections.Generic;
+using System;
 using Data;
-
 
 namespace Core
 {
@@ -18,6 +18,9 @@ namespace Core
 
         // --- Histórico de Navegação (para o botão "Voltar") ---
         private Stack<string> sceneHistory = new Stack<string>();
+
+        public event Action<DifficultyLevelData> OnDifficultyChanged;
+        public event Action<int> OnLivesChanged;
 
         private void Awake()
         {
@@ -38,9 +41,13 @@ namespace Core
         public void SetDifficulty(DifficultyLevelData newDifficulty)
         {
             CurrentDifficulty = newDifficulty;
-            Debug.Log("Dificuldade selecionada: " + CurrentDifficulty.difficultyName);
-        }
 
+            // Loga a seleção e quantas vidas essa dificuldade terá
+            Debug.Log($"Dificuldade selecionada: {CurrentDifficulty.difficultyName} | Vidas iniciais: {CurrentDifficulty.startingLives}");
+
+            // Notifica UI (menu, HUD, etc.)
+            OnDifficultyChanged?.Invoke(CurrentDifficulty);
+        }
         public void StartGame()
         {
             if (CurrentDifficulty == null)
@@ -49,9 +56,12 @@ namespace Core
                 return;
             }
 
-            // Inicializa o estado do jogador com base na dificuldade
             PlayerLives = CurrentDifficulty.startingLives;
             PlayerScore = 0;
+
+            // Notifica UI que as vidas foram inicializadas
+            OnLivesChanged?.Invoke(PlayerLives);
+
             LoadScene("2_LabScene");
         }
 

@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 using Data;
 using Core;
 using System.Collections;
+using System;
+using TMPro;
+
 
 namespace MenuScripts
 {
@@ -42,13 +45,46 @@ namespace MenuScripts
         public GameObject hard0Image;
         public GameObject hard1Image;
 
+        [Header("UI Texts")]
+        public TextMeshProUGUI difficultyText;
+
+
+        private void OnEnable()
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnDifficultyChanged += HandleDifficultyChanged;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnDifficultyChanged -= HandleDifficultyChanged;
+            }
+        }
+
 
         private void Start()
         {
             GameManager.Instance.SetDifficulty(easyDifficulty);
-
             DeselectAllDifficulties();
             ShowLoadingPanel();
+            UpdateDifficultyLabel(GameManager.Instance.CurrentDifficulty);
+        }
+
+        private void HandleDifficultyChanged(DifficultyLevelData data)
+        {
+            UpdateDifficultyLabel(data);
+        }
+
+        private void UpdateDifficultyLabel(DifficultyLevelData data)
+        {
+            if (difficultyText == null || data == null) return;
+
+            // Exemplo: "Fácil * 3 vidas * x1.0 pontos"
+            difficultyText.text = $"{data.difficultyName} * {data.startingLives} vidas * x{data.scoreMultiplier:0.#} pontos";
         }
 
         // Painéis principais
