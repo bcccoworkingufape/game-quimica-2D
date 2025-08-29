@@ -1,24 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Data;
+using Core;
+using System.Collections;
 
 namespace MenuScripts
 {
     public class UI_MenuScene : MonoBehaviour
     {
 
-        // Panels
+        // --- Referências aos ScriptableObjects de Dificuldade ---
+        [Header("Dados de Dificuldade")]
+        public DifficultyLevelData easyDifficulty;
+        public DifficultyLevelData mediumDifficulty;
+        public DifficultyLevelData hardDifficulty;
+
+        [Header("Painéis")]
         public GameObject homePanel;
         public GameObject shopPanel;
         public GameObject settingsPanel;
         public GameObject navbarPanel;
         public GameObject loadingPanel;
 
-        // Buttons & Icons
+        [Header("Botões e Ícones")]
         public Button homeButton;
         public Button shopButton;
         public Button settingsButton;
-
         public GameObject homeIcon0;
         public GameObject homeIcon1;
         public GameObject shopIcon0;
@@ -26,7 +34,7 @@ namespace MenuScripts
         public GameObject settingsIcon0;
         public GameObject settingsIcon1;
 
-        // Seleção de dificuldade (Images)
+        [Header("Imagens de Seleção Dificuldade")]
         public GameObject easy0Image;
         public GameObject easy1Image;
         public GameObject medium0Image;
@@ -37,6 +45,8 @@ namespace MenuScripts
 
         private void Start()
         {
+            GameManager.Instance.SetDifficulty(easyDifficulty);
+
             DeselectAllDifficulties();
             ShowLoadingPanel();
         }
@@ -93,9 +103,10 @@ namespace MenuScripts
             loadingPanel?.SetActive(true);
         }
 
+        // Ação do botão "Jogar"
         public void LoadLabScene()
         {
-            SceneManager.LoadScene("2_LabScene");
+            GameManager.Instance.StartGame();
         }
 
         // Seleção de dificuldade
@@ -109,6 +120,9 @@ namespace MenuScripts
 
             hard0Image?.SetActive(true);
             hard1Image?.SetActive(false);
+
+            GameManager.Instance.SetDifficulty(easyDifficulty);
+            //UpdateDifficultySelectionVisuals(easy1Image);
         }
 
         public void SelectMedium()
@@ -121,6 +135,9 @@ namespace MenuScripts
 
             hard0Image?.SetActive(true);
             hard1Image?.SetActive(false);
+
+            GameManager.Instance.SetDifficulty(mediumDifficulty);
+            //UpdateDifficultySelectionVisuals(medium1Image);
         }
 
         public void SelectHard()
@@ -133,7 +150,19 @@ namespace MenuScripts
 
             hard0Image?.SetActive(false);
             hard1Image?.SetActive(true);
+
+            GameManager.Instance.SetDifficulty(hardDifficulty);
+            //UpdateDifficultySelectionVisuals(hard1Image);
         }
+
+        /*TODO: lógica refatorada para selecionar imagens ativadas/desativadas
+        private void UpdateDifficultySelectionVisuals(GameObject activeImage)
+        {
+            easy1Image?.SetActive(false);
+            medium1Image?.SetActive(false);
+            hard1Image?.SetActive(false);
+            activeImage?.SetActive(true);
+        }*/
 
         // Funções auxiliares
         private void OnHomeButtonClick()

@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Data;
+using Core;
 
 namespace LabScripts
 {
@@ -8,6 +10,12 @@ namespace LabScripts
     {
         public GameObject solutionAnimationPanel;
         public GameObject confirmationPanel;
+        public GameObject questionPanel;
+        public GameObject historyPanel;
+        public GameObject treePanel;
+        public GameObject pauseMenuPanel;
+        public GameObject questionErrorPanel;
+        public GameObject questionVictoryPanel;
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -17,8 +25,17 @@ namespace LabScripts
         // Hide the confirmation panel at the start
         void Start()
         {
-            confirmationPanel?.SetActive(false);
+            HideAllPanels();
+        }
+
+        public void HideAllPanels()
+        {
             solutionAnimationPanel?.SetActive(false);
+            confirmationPanel?.SetActive(false);
+            questionPanel?.SetActive(false);
+            historyPanel?.SetActive(false);
+            pauseMenuPanel?.SetActive(false);
+
         }
 
         // Confirmation Panel
@@ -53,8 +70,6 @@ namespace LabScripts
             solutionAnimationPanel?.SetActive(true);
 
             HideConfirmationPanel();
-
-            // StartCoroutine(WaitAndCloseSolutionPanel());
         }
 
         public void HideSolutionAnimationPanel()
@@ -62,11 +77,99 @@ namespace LabScripts
             solutionAnimationPanel?.SetActive(false);
         }
 
-        private IEnumerator WaitAndCloseSolutionPanel()
+        // Question Panel
+        public void ShowQuestionPanel()
         {
-            yield return Utils.Wait(7f);
-            HideSolutionAnimationPanel();
+            questionPanel?.SetActive(true);
         }
 
+        public void HideQuestionPanel()
+        {
+            questionPanel?.SetActive(false);
+        }
+
+        public void OnQuestionSelect(string answer)
+        {
+            Debug.Log("Resposta selecionada: " + answer);
+            HideQuestionPanel();
+        }
+
+        // History Panel
+        public void ShowHistoryPanel()
+        {
+            historyPanel?.SetActive(true);
+        }
+
+        public void HideHistoryPanel()
+        {
+            historyPanel?.SetActive(false);
+        }
+
+        // Tree Panel
+        public void ShowTreePanel()
+        {
+            treePanel?.SetActive(true);
+        }
+
+        public void HideTreePanel()
+        {
+            treePanel?.SetActive(false);
+        }
+
+
+        // Question Error Panel
+        public void ShowQuestionErrorPanel()
+        {
+            questionErrorPanel?.SetActive(true);
+        }
+
+        public void HideQuestionErrorPanel()
+        {
+            questionErrorPanel?.SetActive(false);
+            questionPanel?.SetActive(true);
+        }
+
+        // Question Victory Panel
+        public void ShowQuestionVictoryPanel()
+        {
+            questionVictoryPanel?.SetActive(true);
+        }
+
+        public void HideQuestionVictoryPanel()
+        {
+            questionVictoryPanel?.SetActive(false);
+        }
+
+        // --- MÉTODOS DO MENU DE PAUSA ---
+
+        /// <summary>
+        /// Este método é chamado pelo botão de pausa (||) na tela do laboratório.
+        /// </summary>
+        public void PauseGame()
+        {
+            pauseMenuPanel?.SetActive(true);
+            // Pausa o tempo do jogo
+            Time.timeScale = 0f;
+        }
+
+        /// <summary>
+        /// Este método é chamado pelo botão "Retomar" dentro do painel de pausa.
+        /// </summary>
+        public void ResumeGame()
+        {
+            pauseMenuPanel?.SetActive(false);
+            // Volta o tempo do jogo ao normal
+            Time.timeScale = 1f;
+        }
+
+        /// <summary>
+        /// Este método é chamado pelo botão "Voltar ao Menu Principal" no painel de pausa.
+        /// </summary>
+        public void ReturnToMainMenu()
+        {
+            // IMPORTANTE: Sempre restaure o Time.timeScale antes de mudar de cena
+            Time.timeScale = 1f;
+            GameManager.Instance.LoadScene("1_MenuScene");
+        }
     }
 }

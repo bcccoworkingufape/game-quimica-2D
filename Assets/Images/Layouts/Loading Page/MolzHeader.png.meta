@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: b32fb11699f559443bd292a144e73318
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5297003910772922556
+    second: Molz_Header_0
+  - first:
+      213: 637045105336102357
+    second: Molz_Header_1
+  - first:
+      213: 6421994031942561895
+    second: Molz_Header_2
+  - first:
+      213: -2077251528335411850
+    second: Molz_Header_3
+  - first:
+      213: -7317958228228458732
+    second: Molz_Header_4
+  - first:
+      213: -813448435731934056
+    second: Molz_Header_5
+  - first:
+      213: -4446500829392293648
+    second: Molz_Header_6
+  - first:
+      213: -7129193701704394547
+    second: Molz_Header_7
+  - first:
+      213: 6298234561734612915
+    second: Molz_Header_8
+  - first:
+      213: 4031998157778176712
+    second: Molz_Header_9
+  - first:
+      213: 6086714646273654732
+    second: Molz_Header_10
+  - first:
+      213: 7643034890268430078
+    second: Molz_Header_11
+  - first:
+      213: -3369687737847758537
+    second: Molz_Header_12
+  - first:
+      213: 7841778620728488836
+    second: Molz_Header_13
+  - first:
+      213: -7464609777925598605
+    second: Molz_Header_14
+  - first:
+      213: 3573695915370655189
+    second: Molz_Header_15
+  - first:
+      213: -6731042290889576476
+    second: Molz_Header_16
+  - first:
+      213: -8255780271366596913
+    second: Molz_Header_17
+  - first:
+      213: 5592015735066585564
+    second: Molz_Header_18
+  - first:
+      213: -4347757063176324546
+    second: Molz_Header_19
+  - first:
+      213: -2454681663012678580
+    second: Molz_Header_20
+  - first:
+      213: -2383124116250573158
+    second: Molz_Header_21
+  - first:
+      213: 3470771938450677574
+    second: Molz_Header_22
+  - first:
+      213: 1317079915715576829
+    second: Molz_Header_23
+  - first:
+      213: 5048944435694439317
+    second: Molz_Header_24
+  - first:
+      213: 2704318314261929904
+    second: Molz_Header_25
+  - first:
+      213: -9021516890852812423
+    second: Molz_Header_26
+  - first:
+      213: -562555546056258204
+    second: Molz_Header_27
+  - first:
+      213: -7366758905241432522
+    second: Molz_Header_28
+  - first:
+      213: -6736318495511722620
+    second: Molz_Header_29
+  - first:
+      213: 350047603868749670
+    second: Molz_Header_30
+  - first:
+      213: -3869529593185867799
+    second: Molz_Header_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Molz_Header_0
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 352
+        width: 105
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8997bfdfcb28940800000000000000
+      internalID: 5297003910772922556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_1
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 317
+        width: 92
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dda579e52d37d800800000000000000
+      internalID: 637045105336102357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_2
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 379
+        width: 65
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7607d9ffb818f1950800000000000000
+      internalID: 6421994031942561895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 315
+        width: 91
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6753e60adbe1c23e0800000000000000
+      internalID: -2077251528335411850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_4
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 351
+        width: 104
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417bb4d73c3617a90800000000000000
+      internalID: -7317958228228458732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_5
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 327
+        width: 69
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894d91125fc06b4f0800000000000000
+      internalID: -813448435731934056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 349
+        width: 57
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0b792ed0bda42c0800000000000000
+      internalID: -4446500829392293648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_7
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 326
+        width: 67
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc815f2b914001d90800000000000000
+      internalID: -7129193701704394547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_8
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 292
+        width: 54
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b79744e6f2d76750800000000000000
+      internalID: 6298234561734612915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 185
+        width: 101
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cac56946f884f730800000000000000
+      internalID: 4031998157778176712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 66
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccffe44d8ba587450800000000000000
+      internalID: 6086714646273654732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 296
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efecd58fcb3811a60800000000000000
+      internalID: 7643034890268430078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_12
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 73
+        width: 126
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73148951bd67c31d0800000000000000
+      internalID: -3369687737847758537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 75
+        width: 299
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48336c7ab1893dc60800000000000000
+      internalID: 7841778620728488836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_14
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 185
+        width: 101
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37256d7c4f0686890800000000000000
+      internalID: -7464609777925598605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_15
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 160
+        width: 66
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ddaee23081589130800000000000000
+      internalID: 3573695915370655189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_16
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 54
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef2563f2b88692a0800000000000000
+      internalID: -6731042290889576476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_17
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 56
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc6148d85939d6d80800000000000000
+      internalID: -8255780271366596913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_18
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 56
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9e90beea4da9d40800000000000000
+      internalID: 5592015735066585564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_19
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 5
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3afda78cf9a9a3c0800000000000000
+      internalID: -4347757063176324546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_20
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 18
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44d67f68083fedd0800000000000000
+      internalID: -2454681663012678580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_21
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 18
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96c73b1e317deed0800000000000000
+      internalID: -2383124116250573158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_22
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 18
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f1fb760b8aa2030800000000000000
+      internalID: 3470771938450677574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_23
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 18
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df347058435374210800000000000000
+      internalID: 1317079915715576829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_24
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 18
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b804cb634711640800000000000000
+      internalID: 5048944435694439317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_25
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 18
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf5a21cd2ba78520800000000000000
+      internalID: 2704318314261929904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 18
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97918819f222dc280800000000000000
+      internalID: -9021516890852812423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_27
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 18
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d04ee16b66138f0800000000000000
+      internalID: -562555546056258204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_28
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 5
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e83237ec304c990800000000000000
+      internalID: -7366758905241432522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_29
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 18
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4854125d40ac382a0800000000000000
+      internalID: -6736318495511722620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_30
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 5
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66fc21be07e9bd400800000000000000
+      internalID: 350047603868749670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Molz_Header_31
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 18
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e76b4e265bac4ac0800000000000000
+      internalID: -3869529593185867799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Molz_Header_0: 5297003910772922556
+      Molz_Header_1: 637045105336102357
+      Molz_Header_10: 6086714646273654732
+      Molz_Header_11: 7643034890268430078
+      Molz_Header_12: -3369687737847758537
+      Molz_Header_13: 7841778620728488836
+      Molz_Header_14: -7464609777925598605
+      Molz_Header_15: 3573695915370655189
+      Molz_Header_16: -6731042290889576476
+      Molz_Header_17: -8255780271366596913
+      Molz_Header_18: 5592015735066585564
+      Molz_Header_19: -4347757063176324546
+      Molz_Header_2: 6421994031942561895
+      Molz_Header_20: -2454681663012678580
+      Molz_Header_21: -2383124116250573158
+      Molz_Header_22: 3470771938450677574
+      Molz_Header_23: 1317079915715576829
+      Molz_Header_24: 5048944435694439317
+      Molz_Header_25: 2704318314261929904
+      Molz_Header_26: -9021516890852812423
+      Molz_Header_27: -562555546056258204
+      Molz_Header_28: -7366758905241432522
+      Molz_Header_29: -6736318495511722620
+      Molz_Header_3: -2077251528335411850
+      Molz_Header_30: 350047603868749670
+      Molz_Header_31: -3869529593185867799
+      Molz_Header_4: -7317958228228458732
+      Molz_Header_5: -813448435731934056
+      Molz_Header_6: -4446500829392293648
+      Molz_Header_7: -7129193701704394547
+      Molz_Header_8: 6298234561734612915
+      Molz_Header_9: 4031998157778176712
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

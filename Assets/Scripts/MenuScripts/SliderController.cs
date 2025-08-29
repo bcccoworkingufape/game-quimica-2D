@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Data;
+using Core; 
 
 namespace MenuScripts
 {

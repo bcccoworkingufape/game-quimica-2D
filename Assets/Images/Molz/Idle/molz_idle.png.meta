@@ -1,0 +1,3276 @@
+fileFormatVersion: 2
+guid: 0438c65329f5a16428725845088e51c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3988388232382127514
+    second: molz_idle_0
+  - first:
+      213: -5221528768981765181
+    second: molz_idle_1
+  - first:
+      213: -7813591788846826470
+    second: molz_idle_2
+  - first:
+      213: -66876220306289157
+    second: molz_idle_3
+  - first:
+      213: 3621422133246509002
+    second: molz_idle_4
+  - first:
+      213: -8839524586997254559
+    second: molz_idle_5
+  - first:
+      213: -7187697536018956572
+    second: molz_idle_6
+  - first:
+      213: 5951441972442773097
+    second: molz_idle_7
+  - first:
+      213: -8579933755103963353
+    second: molz_idle_8
+  - first:
+      213: 7864651743641413156
+    second: molz_idle_9
+  - first:
+      213: 997709375032890868
+    second: molz_idle_10
+  - first:
+      213: 4097965931266546825
+    second: molz_idle_11
+  - first:
+      213: -6102773683254027023
+    second: molz_idle_12
+  - first:
+      213: 1586984141281384197
+    second: molz_idle_13
+  - first:
+      213: 2419531448929414073
+    second: molz_idle_14
+  - first:
+      213: -5655452575016092414
+    second: molz_idle_15
+  - first:
+      213: -8884915283497621114
+    second: molz_idle_16
+  - first:
+      213: -5188928449357544271
+    second: molz_idle_17
+  - first:
+      213: 1493846093953989248
+    second: molz_idle_18
+  - first:
+      213: 4090873555453346249
+    second: molz_idle_19
+  - first:
+      213: 4646389947221257604
+    second: molz_idle_20
+  - first:
+      213: 6070544131514877312
+    second: molz_idle_21
+  - first:
+      213: -4196772809118460759
+    second: molz_idle_22
+  - first:
+      213: -2838046106082664776
+    second: molz_idle_23
+  - first:
+      213: -7446716915582553864
+    second: molz_idle_24
+  - first:
+      213: -6151024647151318650
+    second: molz_idle_25
+  - first:
+      213: 6132759582517555656
+    second: molz_idle_26
+  - first:
+      213: 6709868349557669574
+    second: molz_idle_27
+  - first:
+      213: 9161475444323974537
+    second: molz_idle_28
+  - first:
+      213: 3268181210932186287
+    second: molz_idle_29
+  - first:
+      213: -1945277236288497621
+    second: molz_idle_30
+  - first:
+      213: -9074349693699226343
+    second: molz_idle_31
+  - first:
+      213: 2772728940413757189
+    second: molz_idle_32
+  - first:
+      213: -2015313733184329459
+    second: molz_idle_33
+  - first:
+      213: -3942749560025693307
+    second: molz_idle_34
+  - first:
+      213: 4914172607159590590
+    second: molz_idle_35
+  - first:
+      213: 8153148253194828648
+    second: molz_idle_36
+  - first:
+      213: -6419266025773762687
+    second: molz_idle_37
+  - first:
+      213: 5226707094628374962
+    second: molz_idle_38
+  - first:
+      213: 3774188423699762525
+    second: molz_idle_39
+  - first:
+      213: 776647126930432304
+    second: molz_idle_40
+  - first:
+      213: -1737220765203397366
+    second: molz_idle_41
+  - first:
+      213: -8261936318294627968
+    second: molz_idle_42
+  - first:
+      213: 319414339788017963
+    second: molz_idle_43
+  - first:
+      213: 6928764772215996144
+    second: molz_idle_44
+  - first:
+      213: -2844814918544828820
+    second: molz_idle_45
+  - first:
+      213: -6869848144736456768
+    second: molz_idle_46
+  - first:
+      213: -4816162132175596860
+    second: molz_idle_47
+  - first:
+      213: 3165162168665395115
+    second: molz_idle_48
+  - first:
+      213: 7431542974583350573
+    second: molz_idle_49
+  - first:
+      213: 2983176820349976060
+    second: molz_idle_50
+  - first:
+      213: 4235795838884360619
+    second: molz_idle_51
+  - first:
+      213: 7671426947155658572
+    second: molz_idle_52
+  - first:
+      213: -5380207323285125473
+    second: molz_idle_53
+  - first:
+      213: 316369076771323972
+    second: molz_idle_54
+  - first:
+      213: -6927149663103944257
+    second: molz_idle_55
+  - first:
+      213: 8642304758996974625
+    second: molz_idle_56
+  - first:
+      213: 5805448869314495305
+    second: molz_idle_57
+  - first:
+      213: 6583610102774162180
+    second: molz_idle_58
+  - first:
+      213: 637871162696256021
+    second: molz_idle_59
+  - first:
+      213: -8745377304285229563
+    second: molz_idle_60
+  - first:
+      213: -8655985492121167389
+    second: molz_idle_61
+  - first:
+      213: -7525876825910442430
+    second: molz_idle_62
+  - first:
+      213: -4515471493468022982
+    second: molz_idle_63
+  - first:
+      213: 9098072913647023642
+    second: molz_idle_64
+  - first:
+      213: 5653613161103847421
+    second: molz_idle_65
+  - first:
+      213: -2617182510831988731
+    second: molz_idle_66
+  - first:
+      213: -7123151103660783735
+    second: molz_idle_67
+  - first:
+      213: -2902091131142466483
+    second: molz_idle_68
+  - first:
+      213: -2275071009270805204
+    second: molz_idle_69
+  - first:
+      213: 7208992014101606677
+    second: molz_idle_70
+  - first:
+      213: 7452453394330766792
+    second: molz_idle_71
+  - first:
+      213: -7825266705873004485
+    second: molz_idle_72
+  - first:
+      213: 8513513955317878767
+    second: molz_idle_73
+  - first:
+      213: 8098078164788625713
+    second: molz_idle_74
+  - first:
+      213: -330985819192030018
+    second: molz_idle_75
+  - first:
+      213: 1663282544615745524
+    second: molz_idle_76
+  - first:
+      213: 5635045526828183731
+    second: molz_idle_77
+  - first:
+      213: -7250875985767907009
+    second: molz_idle_78
+  - first:
+      213: 5174323696868423291
+    second: molz_idle_79
+  - first:
+      213: -5598880455328940078
+    second: molz_idle_80
+  - first:
+      213: -6826409237098531520
+    second: molz_idle_81
+  - first:
+      213: -8087777669757125297
+    second: molz_idle_82
+  - first:
+      213: 4670608570587403735
+    second: molz_idle_83
+  - first:
+      213: -6781549788685210992
+    second: molz_idle_84
+  - first:
+      213: 9014414510301892548
+    second: molz_idle_85
+  - first:
+      213: 6385837893978444739
+    second: molz_idle_86
+  - first:
+      213: 1510919923438754345
+    second: molz_idle_87
+  - first:
+      213: -8820894330702800385
+    second: molz_idle_88
+  - first:
+      213: 4519139223417581772
+    second: molz_idle_89
+  - first:
+      213: -5219432119899911103
+    second: molz_idle_90
+  - first:
+      213: -216525100920617090
+    second: molz_idle_91
+  - first:
+      213: 3555791420392121900
+    second: molz_idle_92
+  - first:
+      213: 1617401493666993758
+    second: molz_idle_93
+  - first:
+      213: 2851849354887494194
+    second: molz_idle_94
+  - first:
+      213: -1529717646390873178
+    second: molz_idle_95
+  - first:
+      213: -2430575887111660811
+    second: molz_idle_96
+  - first:
+      213: -6081772290578735997
+    second: molz_idle_97
+  - first:
+      213: -3438209420441179825
+    second: molz_idle_98
+  - first:
+      213: -6623968857255581624
+    second: molz_idle_99
+  - first:
+      213: 3142968926716101905
+    second: molz_idle_100
+  - first:
+      213: -1059566372989618437
+    second: molz_idle_101
+  - first:
+      213: 6821931131668585111
+    second: molz_idle_102
+  - first:
+      213: -1186853514333033175
+    second: molz_idle_103
+  - first:
+      213: 2967990898668379393
+    second: molz_idle_104
+  - first:
+      213: -3829369971907538043
+    second: molz_idle_105
+  - first:
+      213: -8822863031305726269
+    second: molz_idle_106
+  - first:
+      213: -8532577779809831296
+    second: molz_idle_107
+  - first:
+      213: 2258044087936703794
+    second: molz_idle_108
+  - first:
+      213: -4046682124042306449
+    second: molz_idle_109
+  - first:
+      213: 2432695346442500328
+    second: molz_idle_110
+  - first:
+      213: 7788006899554493162
+    second: molz_idle_111
+  - first:
+      213: 1101819705397125682
+    second: molz_idle_112
+  - first:
+      213: -6051616647328617757
+    second: molz_idle_113
+  - first:
+      213: 8679277677329451349
+    second: molz_idle_114
+  - first:
+      213: -9070643769310071582
+    second: molz_idle_115
+  - first:
+      213: -7370743353404156571
+    second: molz_idle_116
+  - first:
+      213: 629992203059895653
+    second: molz_idle_117
+  - first:
+      213: -4713578675922940950
+    second: molz_idle_118
+  - first:
+      213: -6442481734729118477
+    second: molz_idle_119
+  - first:
+      213: 383349210442355632
+    second: molz_idle_120
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: molz_idle_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9d1c7947f9995730800000000000000
+      internalID: 3988388232382127514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_1
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3fb5cdf376987b0800000000000000
+      internalID: -5221528768981765181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_2
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c30ed8aab809390800000000000000
+      internalID: -7813591788846826470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_3
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 6147
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd09b49e68621ff0800000000000000
+      internalID: -66876220306289157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_4
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf35e93e30e14230800000000000000
+      internalID: 3621422133246509002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_5
+      rect:
+        serializedVersion: 2
+        x: 2939
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16672b0d833b35580800000000000000
+      internalID: -8839524586997254559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_6
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eeb3ac4c2b204c90800000000000000
+      internalID: -7187697536018956572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_7
+      rect:
+        serializedVersion: 2
+        x: 4101
+        y: 6147
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9663dcc11f4c79250800000000000000
+      internalID: 5951441972442773097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_8
+      rect:
+        serializedVersion: 2
+        x: 4682
+        y: 6147
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72715aa45b3fde880800000000000000
+      internalID: -8579933755103963353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_9
+      rect:
+        serializedVersion: 2
+        x: 5264
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42627e5971bd42d60800000000000000
+      internalID: 7864651743641413156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_10
+      rect:
+        serializedVersion: 2
+        x: 5845
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f599e7f36398dd00800000000000000
+      internalID: 997709375032890868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_11
+      rect:
+        serializedVersion: 2
+        x: 6426
+        y: 6147
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98c9bc27d46eed830800000000000000
+      internalID: 4097965931266546825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 5533
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fc9a014ba79e4ba0800000000000000
+      internalID: -6102773683254027023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_13
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 5533
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50751451ba9160610800000000000000
+      internalID: 1586984141281384197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_14
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 5533
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbe2589807e39120800000000000000
+      internalID: 2419531448929414073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_15
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 5533
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20df81ec8dbc381b0800000000000000
+      internalID: -5655452575016092414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_16
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 5533
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6896fabbf9072b480800000000000000
+      internalID: -8884915283497621114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_17
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 5533
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4002341193df7b0800000000000000
+      internalID: -5188928449357544271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_18
+      rect:
+        serializedVersion: 2
+        x: 3531
+        y: 5533
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a7b339b153bb410800000000000000
+      internalID: 1493846093953989248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_19
+      rect:
+        serializedVersion: 2
+        x: 4111
+        y: 5533
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c106d503d3b5c830800000000000000
+      internalID: 4090873555453346249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_20
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 5532
+        width: 512
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48da1141a0b4b7040800000000000000
+      internalID: 4646389947221257604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_21
+      rect:
+        serializedVersion: 2
+        x: 5272
+        y: 5532
+        width: 512
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085c64879b7ee3450800000000000000
+      internalID: 6070544131514877312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_22
+      rect:
+        serializedVersion: 2
+        x: 5853
+        y: 5532
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4d9759d5112c5c0800000000000000
+      internalID: -4196772809118460759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_23
+      rect:
+        serializedVersion: 2
+        x: 6433
+        y: 5532
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be13c66a1c3d98d0800000000000000
+      internalID: -2838046106082664776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_24
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 4918
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f03fcf6b62f7a890800000000000000
+      internalID: -7446716915582553864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_25
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 4918
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6898fd54cab23aaa0800000000000000
+      internalID: -6151024647151318650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_26
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 4918
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1f4d8f850fb1550800000000000000
+      internalID: 6132759582517555656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_27
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 4918
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce7509a6bd3e1d50800000000000000
+      internalID: 6709868349557669574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_28
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 4918
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98df4658069142f70800000000000000
+      internalID: 9161475444323974537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_29
+      rect:
+        serializedVersion: 2
+        x: 2954
+        y: 4918
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac083bee79ea5d20800000000000000
+      internalID: 3268181210932186287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_30
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 4918
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28de5df8acf005e0800000000000000
+      internalID: -1945277236288497621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_31
+      rect:
+        serializedVersion: 2
+        x: 4114
+        y: 4918
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9150263180f611280800000000000000
+      internalID: -9074349693699226343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_32
+      rect:
+        serializedVersion: 2
+        x: 4694
+        y: 4918
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507aecfd746ba7620800000000000000
+      internalID: 2772728940413757189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_33
+      rect:
+        serializedVersion: 2
+        x: 5274
+        y: 4918
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09e49656da2804e0800000000000000
+      internalID: -2015313733184329459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_34
+      rect:
+        serializedVersion: 2
+        x: 5854
+        y: 4918
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583475c2a2a8849c0800000000000000
+      internalID: -3942749560025693307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_35
+      rect:
+        serializedVersion: 2
+        x: 6434
+        y: 4918
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebed3b623f5a23440800000000000000
+      internalID: 4914172607159590590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_36
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 4304
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b36c8932dc52170800000000000000
+      internalID: 8153148253194828648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_37
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 4304
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187750f6f8f2ae6a0800000000000000
+      internalID: -6419266025773762687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_38
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 4304
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b99658096ef88840800000000000000
+      internalID: 5226707094628374962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_39
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 4304
+        width: 512
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d0406ff5c906430800000000000000
+      internalID: 3774188423699762525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_40
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 4305
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0312484727437ca00800000000000000
+      internalID: 776647126930432304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_41
+      rect:
+        serializedVersion: 2
+        x: 2952
+        y: 4305
+        width: 511
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a058e911be624e7e0800000000000000
+      internalID: -1737220765203397366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_42
+      rect:
+        serializedVersion: 2
+        x: 3531
+        y: 4305
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089662f21b4b75d80800000000000000
+      internalID: -8261936318294627968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_43
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 4305
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b211b3356a9ce6400800000000000000
+      internalID: 319414339788017963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_44
+      rect:
+        serializedVersion: 2
+        x: 4690
+        y: 4305
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0febc24a9dae72060800000000000000
+      internalID: 6928764772215996144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_45
+      rect:
+        serializedVersion: 2
+        x: 5269
+        y: 4305
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66576077ef2588d0800000000000000
+      internalID: -2844814918544828820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_46
+      rect:
+        serializedVersion: 2
+        x: 5849
+        y: 4305
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf6b18a28569a0a0800000000000000
+      internalID: -6869848144736456768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_47
+      rect:
+        serializedVersion: 2
+        x: 6428
+        y: 4305
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c25cf2de0e892db0800000000000000
+      internalID: -4816162132175596860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_48
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 3691
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf4ecff83aeceb20800000000000000
+      internalID: 3165162168665395115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_49
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d25271d16f4222760800000000000000
+      internalID: 7431542974583350573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_50
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfdb327338f566920800000000000000
+      internalID: 2983176820349976060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_51
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1b7cd8fd198ca30800000000000000
+      internalID: 4235795838884360619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_52
+      rect:
+        serializedVersion: 2
+        x: 2363
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c478299d922667a60800000000000000
+      internalID: 7671426947155658572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_53
+      rect:
+        serializedVersion: 2
+        x: 2942
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9682ade1f9a555b0800000000000000
+      internalID: -5380207323285125473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_54
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4408fd6cff7f36400800000000000000
+      internalID: 316369076771323972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_55
+      rect:
+        serializedVersion: 2
+        x: 4100
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9f8b04512dddf90800000000000000
+      internalID: -6927149663103944257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_56
+      rect:
+        serializedVersion: 2
+        x: 4679
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12cbea0b362afe770800000000000000
+      internalID: 8642304758996974625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_57
+      rect:
+        serializedVersion: 2
+        x: 5258
+        y: 3691
+        width: 511
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9430f21fcf8119050800000000000000
+      internalID: 5805448869314495305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_58
+      rect:
+        serializedVersion: 2
+        x: 5836
+        y: 3691
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403e68bc18ead5b50800000000000000
+      internalID: 6583610102774162180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_59
+      rect:
+        serializedVersion: 2
+        x: 6415
+        y: 3691
+        width: 511
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ac9f0617c2ad800800000000000000
+      internalID: 637871162696256021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_60
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 3077
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ec05f3dad22a680800000000000000
+      internalID: -8745377304285229563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_61
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 3077
+        width: 510
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e9de296e03cfd780800000000000000
+      internalID: -8655985492121167389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_62
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 3077
+        width: 510
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246834096e6be8790800000000000000
+      internalID: -7525876825910442430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_63
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 3077
+        width: 510
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a379f66c992d551c0800000000000000
+      internalID: -4515471493468022982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_64
+      rect:
+        serializedVersion: 2
+        x: 2348
+        y: 3076
+        width: 509
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16b88e7c19d24e70800000000000000
+      internalID: 9098072913647023642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_65
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 3076
+        width: 509
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff6115473ba57e40800000000000000
+      internalID: 5653613161103847421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_66
+      rect:
+        serializedVersion: 2
+        x: 3506
+        y: 3076
+        width: 509
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5009e717f56edabd0800000000000000
+      internalID: -2617182510831988731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_67
+      rect:
+        serializedVersion: 2
+        x: 4077
+        y: 2462
+        width: 507
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9870ed0bfcb752d90800000000000000
+      internalID: -7123151103660783735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_68
+      rect:
+        serializedVersion: 2
+        x: 4085
+        y: 3076
+        width: 509
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44117efd73b9b7d0800000000000000
+      internalID: -2902091131142466483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_69
+      rect:
+        serializedVersion: 2
+        x: 4656
+        y: 2462
+        width: 509
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2dcf9d88f25d60e0800000000000000
+      internalID: -2275071009270805204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_70
+      rect:
+        serializedVersion: 2
+        x: 4664
+        y: 3076
+        width: 508
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 511772dba0c7b0460800000000000000
+      internalID: 7208992014101606677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_71
+      rect:
+        serializedVersion: 2
+        x: 5236
+        y: 2462
+        width: 510
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd4d3a90ee6c6760800000000000000
+      internalID: 7452453394330766792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_72
+      rect:
+        serializedVersion: 2
+        x: 5243
+        y: 3076
+        width: 508
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b389fbb1461176390800000000000000
+      internalID: -7825266705873004485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_73
+      rect:
+        serializedVersion: 2
+        x: 5816
+        y: 2462
+        width: 511
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef8d09f5d3162670800000000000000
+      internalID: 8513513955317878767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_74
+      rect:
+        serializedVersion: 2
+        x: 5822
+        y: 3076
+        width: 508
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131c2977f27226070800000000000000
+      internalID: 8098078164788625713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_75
+      rect:
+        serializedVersion: 2
+        x: 6396
+        y: 2462
+        width: 512
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc0e5da62a186bf0800000000000000
+      internalID: -330985819192030018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_76
+      rect:
+        serializedVersion: 2
+        x: 6402
+        y: 3076
+        width: 507
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7ede079aa251710800000000000000
+      internalID: 1663282544615745524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_77
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1848
+        width: 513
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b07fb70d04b33e40800000000000000
+      internalID: 5635045526828183731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_78
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2462
+        width: 507
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31c4ed25b6bf5b90800000000000000
+      internalID: -7250875985767907009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_79
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b767ab0dcf3eec740800000000000000
+      internalID: 5174323696868423291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_80
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2462
+        width: 508
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dfbd38d3e7cc42b0800000000000000
+      internalID: -5598880455328940078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_81
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045fb4b77f8b341a0800000000000000
+      internalID: -6826409237098531520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_82
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 2462
+        width: 508
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d3acb6f0172cf80800000000000000
+      internalID: -8087777669757125297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_83
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5d1cebfb551d040800000000000000
+      internalID: 4670608570587403735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_84
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 2462
+        width: 507
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09aeacab56813e1a0800000000000000
+      internalID: -6781549788685210992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_85
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cfcba89c32a91d70800000000000000
+      internalID: 9014414510301892548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_86
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 2462
+        width: 507
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c350df1bbd0f9850800000000000000
+      internalID: 6385837893978444739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_87
+      rect:
+        serializedVersion: 2
+        x: 2915
+        y: 1848
+        width: 515
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a90a84aadd7f410800000000000000
+      internalID: 1510919923438754345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_88
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 2462
+        width: 506
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff9d3316753e59580800000000000000
+      internalID: -8820894330702800385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_89
+      rect:
+        serializedVersion: 2
+        x: 3495
+        y: 1848
+        width: 515
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc0f6562e2537be30800000000000000
+      internalID: 4519139223417581772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_90
+      rect:
+        serializedVersion: 2
+        x: 3497
+        y: 2462
+        width: 507
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c0a14042ad097b0800000000000000
+      internalID: -5219432119899911103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_91
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 1848
+        width: 515
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77cba2619fbefcf0800000000000000
+      internalID: -216525100920617090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_92
+      rect:
+        serializedVersion: 2
+        x: 4655
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26aadb1575b85130800000000000000
+      internalID: 3555791420392121900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_93
+      rect:
+        serializedVersion: 2
+        x: 5235
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e561531d61a227610800000000000000
+      internalID: 1617401493666993758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_94
+      rect:
+        serializedVersion: 2
+        x: 5815
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23afef6e0edc39720800000000000000
+      internalID: 2851849354887494194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_95
+      rect:
+        serializedVersion: 2
+        x: 6395
+        y: 1848
+        width: 514
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3b938c7e955cae0800000000000000
+      internalID: -1529717646390873178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_96
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1234
+        width: 513
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa5411cb1cd44ed0800000000000000
+      internalID: -2430575887111660811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_97
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1234
+        width: 513
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c9d370354399ba0800000000000000
+      internalID: -6081772290578735997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_98
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 1234
+        width: 511
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49a33f9fb60940d0800000000000000
+      internalID: -3438209420441179825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_99
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 1234
+        width: 510
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848e70c6b6fe214a0800000000000000
+      internalID: -6623968857255581624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_100
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 1234
+        width: 509
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115010136911e9b20800000000000000
+      internalID: 3142968926716101905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_101
+      rect:
+        serializedVersion: 2
+        x: 2917
+        y: 1234
+        width: 507
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf631026ff9ab41f0800000000000000
+      internalID: -1059566372989618437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_102
+      rect:
+        serializedVersion: 2
+        x: 3497
+        y: 1234
+        width: 507
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ad849583e5cae50800000000000000
+      internalID: 6821931131668585111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_103
+      rect:
+        serializedVersion: 2
+        x: 4078
+        y: 1234
+        width: 506
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d61c55403778fe0800000000000000
+      internalID: -1186853514333033175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_104
+      rect:
+        serializedVersion: 2
+        x: 4658
+        y: 1234
+        width: 507
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d98bb4ffb603920800000000000000
+      internalID: 2967990898668379393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_105
+      rect:
+        serializedVersion: 2
+        x: 5239
+        y: 1234
+        width: 507
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58357e6ac485bdac0800000000000000
+      internalID: -3829369971907538043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_106
+      rect:
+        serializedVersion: 2
+        x: 5819
+        y: 1234
+        width: 507
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6981d81d4ee8580800000000000000
+      internalID: -8822863031305726269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_107
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 1234
+        width: 507
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0863b0087b1369980800000000000000
+      internalID: -8532577779809831296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_108
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 620
+        width: 507
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d53a4622f265f10800000000000000
+      internalID: 2258044087936703794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_109
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 620
+        width: 508
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6cf8856c0c47d7c0800000000000000
+      internalID: -4046682124042306449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_110
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 620
+        width: 508
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e87373578ba2c120800000000000000
+      internalID: 2432695346442500328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_111
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 620
+        width: 508
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2ac34330f841c60800000000000000
+      internalID: 7788006899554493162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_112
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 620
+        width: 508
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 232a8b23f237a4f00800000000000000
+      internalID: 1101819705397125682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_113
+      rect:
+        serializedVersion: 2
+        x: 2925
+        y: 620
+        width: 508
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea232bd8b6540ca0800000000000000
+      internalID: -6051616647328617757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_114
+      rect:
+        serializedVersion: 2
+        x: 3506
+        y: 620
+        width: 509
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5590330101df27870800000000000000
+      internalID: 8679277677329451349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_115
+      rect:
+        serializedVersion: 2
+        x: 4087
+        y: 620
+        width: 509
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e4b926dc899e1280800000000000000
+      internalID: -9070643769310071582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_116
+      rect:
+        serializedVersion: 2
+        x: 4668
+        y: 621
+        width: 509
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56516c1d8fbd5b990800000000000000
+      internalID: -7370743353404156571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_117
+      rect:
+        serializedVersion: 2
+        x: 5249
+        y: 621
+        width: 510
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d96a2229e2eb800800000000000000
+      internalID: 629992203059895653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_118
+      rect:
+        serializedVersion: 2
+        x: 5831
+        y: 621
+        width: 509
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebc1c8fa21069eb0800000000000000
+      internalID: -4713578675922940950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_119
+      rect:
+        serializedVersion: 2
+        x: 6412
+        y: 621
+        width: 510
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc4789fef4b796a0800000000000000
+      internalID: -6442481734729118477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_120
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 7
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3d759631ee15500800000000000000
+      internalID: 383349210442355632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      molz_idle_0: 3988388232382127514
+      molz_idle_1: -5221528768981765181
+      molz_idle_10: 997709375032890868
+      molz_idle_100: 3142968926716101905
+      molz_idle_101: -1059566372989618437
+      molz_idle_102: 6821931131668585111
+      molz_idle_103: -1186853514333033175
+      molz_idle_104: 2967990898668379393
+      molz_idle_105: -3829369971907538043
+      molz_idle_106: -8822863031305726269
+      molz_idle_107: -8532577779809831296
+      molz_idle_108: 2258044087936703794
+      molz_idle_109: -4046682124042306449
+      molz_idle_11: 4097965931266546825
+      molz_idle_110: 2432695346442500328
+      molz_idle_111: 7788006899554493162
+      molz_idle_112: 1101819705397125682
+      molz_idle_113: -6051616647328617757
+      molz_idle_114: 8679277677329451349
+      molz_idle_115: -9070643769310071582
+      molz_idle_116: -7370743353404156571
+      molz_idle_117: 629992203059895653
+      molz_idle_118: -4713578675922940950
+      molz_idle_119: -6442481734729118477
+      molz_idle_12: -6102773683254027023
+      molz_idle_120: 383349210442355632
+      molz_idle_13: 1586984141281384197
+      molz_idle_14: 2419531448929414073
+      molz_idle_15: -5655452575016092414
+      molz_idle_16: -8884915283497621114
+      molz_idle_17: -5188928449357544271
+      molz_idle_18: 1493846093953989248
+      molz_idle_19: 4090873555453346249
+      molz_idle_2: -7813591788846826470
+      molz_idle_20: 4646389947221257604
+      molz_idle_21: 6070544131514877312
+      molz_idle_22: -4196772809118460759
+      molz_idle_23: -2838046106082664776
+      molz_idle_24: -7446716915582553864
+      molz_idle_25: -6151024647151318650
+      molz_idle_26: 6132759582517555656
+      molz_idle_27: 6709868349557669574
+      molz_idle_28: 9161475444323974537
+      molz_idle_29: 3268181210932186287
+      molz_idle_3: -66876220306289157
+      molz_idle_30: -1945277236288497621
+      molz_idle_31: -9074349693699226343
+      molz_idle_32: 2772728940413757189
+      molz_idle_33: -2015313733184329459
+      molz_idle_34: -3942749560025693307
+      molz_idle_35: 4914172607159590590
+      molz_idle_36: 8153148253194828648
+      molz_idle_37: -6419266025773762687
+      molz_idle_38: 5226707094628374962
+      molz_idle_39: 3774188423699762525
+      molz_idle_4: 3621422133246509002
+      molz_idle_40: 776647126930432304
+      molz_idle_41: -1737220765203397366
+      molz_idle_42: -8261936318294627968
+      molz_idle_43: 319414339788017963
+      molz_idle_44: 6928764772215996144
+      molz_idle_45: -2844814918544828820
+      molz_idle_46: -6869848144736456768
+      molz_idle_47: -4816162132175596860
+      molz_idle_48: 3165162168665395115
+      molz_idle_49: 7431542974583350573
+      molz_idle_5: -8839524586997254559
+      molz_idle_50: 2983176820349976060
+      molz_idle_51: 4235795838884360619
+      molz_idle_52: 7671426947155658572
+      molz_idle_53: -5380207323285125473
+      molz_idle_54: 316369076771323972
+      molz_idle_55: -6927149663103944257
+      molz_idle_56: 8642304758996974625
+      molz_idle_57: 5805448869314495305
+      molz_idle_58: 6583610102774162180
+      molz_idle_59: 637871162696256021
+      molz_idle_6: -7187697536018956572
+      molz_idle_60: -8745377304285229563
+      molz_idle_61: -8655985492121167389
+      molz_idle_62: -7525876825910442430
+      molz_idle_63: -4515471493468022982
+      molz_idle_64: 9098072913647023642
+      molz_idle_65: 5653613161103847421
+      molz_idle_66: -2617182510831988731
+      molz_idle_67: -7123151103660783735
+      molz_idle_68: -2902091131142466483
+      molz_idle_69: -2275071009270805204
+      molz_idle_7: 5951441972442773097
+      molz_idle_70: 7208992014101606677
+      molz_idle_71: 7452453394330766792
+      molz_idle_72: -7825266705873004485
+      molz_idle_73: 8513513955317878767
+      molz_idle_74: 8098078164788625713
+      molz_idle_75: -330985819192030018
+      molz_idle_76: 1663282544615745524
+      molz_idle_77: 5635045526828183731
+      molz_idle_78: -7250875985767907009
+      molz_idle_79: 5174323696868423291
+      molz_idle_8: -8579933755103963353
+      molz_idle_80: -5598880455328940078
+      molz_idle_81: -6826409237098531520
+      molz_idle_82: -8087777669757125297
+      molz_idle_83: 4670608570587403735
+      molz_idle_84: -6781549788685210992
+      molz_idle_85: 9014414510301892548
+      molz_idle_86: 6385837893978444739
+      molz_idle_87: 1510919923438754345
+      molz_idle_88: -8820894330702800385
+      molz_idle_89: 4519139223417581772
+      molz_idle_9: 7864651743641413156
+      molz_idle_90: -5219432119899911103
+      molz_idle_91: -216525100920617090
+      molz_idle_92: 3555791420392121900
+      molz_idle_93: 1617401493666993758
+      molz_idle_94: 2851849354887494194
+      molz_idle_95: -1529717646390873178
+      molz_idle_96: -2430575887111660811
+      molz_idle_97: -6081772290578735997
+      molz_idle_98: -3438209420441179825
+      molz_idle_99: -6623968857255581624
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
