@@ -1458,8 +1458,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814474586}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.82556, y: 0.16227, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8255615, y: 0.16229248, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3455,6 +3455,8 @@ MonoBehaviour:
   medium1Image: {fileID: 630057132}
   hard0Image: {fileID: 465488570}
   hard1Image: {fileID: 289845685}
+  difficultyText: {fileID: 0}
+  modeText: {fileID: 0}
 --- !u!1 &2070871426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,7 +3709,7 @@ SceneRoots:
   - {fileID: 630352909}
   - {fileID: 2017846734}
   - {fileID: 1160502774}
+  - {fileID: 814474588}
   - {fileID: 613351600}
   - {fileID: 155338804}
   - {fileID: 1615015795}
-  - {fileID: 814474588}
