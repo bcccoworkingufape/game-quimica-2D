@@ -1,0 +1,104 @@
+{
+    "compounds": [
+        {
+            "id": 1,
+            "compoundName": "Etanoato de etila",
+            "color": "#FFFFFF",
+            "state": "LIQUID",
+            "groupName": "S1",
+            "density": 0.899999992787,
+            "meltingPoint": 50.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 2,
+            "compoundName": "Butanoato de sódio",
+            "color": "#B6BFFF",
+            "state": "SOLID",
+            "groupName": "S2",
+            "density": 1.1,
+            "meltingPoint": 52.899999992787,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 3,
+            "compoundName": "Ácido propanoico",
+            "color": "#e6ffff",
+            "state": "LIQUID",
+            "groupName": "SA",
+            "density": 1.04999999,
+            "meltingPoint": 53.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 4,
+            "compoundName": "Butan-1-amina",
+            "color": "#e6ffff",
+            "state": "LIQUID",
+            "groupName": "SB",
+            "density": 0.87777,
+            "meltingPoint": 54.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 5,
+            "compoundName": "Ácido oleico",
+            "color": "#FF0",
+            "state": "LIQUID",
+            "groupName": "A1",
+            "density": 0.8899999,
+            "meltingPoint": 55.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 6,
+            "compoundName": "4-aminobenzenossulfonamida",
+            "color": "#B6BFFF",
+            "state": "SOLID",
+            "groupName": "A2",
+            "density": 1.2999999523162842,
+            "meltingPoint": 56.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 7,
+            "compoundName": "Decano-1-amina",
+            "color": "#B6BAAA",
+            "state": "LIQUID",
+            "groupName": "B",
+            "density": 0.7777,
+            "meltingPoint": 57.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 8,
+            "compoundName": "Cicloexanona",
+            "color": "#FFFFFF",
+            "state": "LIQUID",
+            "groupName": "N1",
+            "density": 0.939,
+            "meltingPoint": 58.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 9,
+            "compoundName": "Metilbenzeno",
+            "color": "#FFFFFF",
+            "state": "LIQUID",
+            "groupName": "N2",
+            "density": 0.870,
+            "meltingPoint": 59.0,
+            "boilingPoint": 100.0
+        },
+        {
+            "id": 10,
+            "compoundName": "orto-diclorobenzeno",
+            "color": "#FFFFFF",
+            "state": "LIQUID",
+            "groupName": "I",
+            "density": 1.299,
+            "meltingPoint": 65.0,
+            "boilingPoint": 100.0
+        }
+    ]
+}

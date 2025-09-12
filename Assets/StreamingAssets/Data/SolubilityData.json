@@ -1,0 +1,804 @@
+{
+  "solutions": [
+    {
+      "id": 1,
+      "solventId": 1,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em Agua",
+      "color": "#e6ffE0",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 2,
+      "solventId": 2,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em Eter dietilico",
+      "color": "#e6ffff",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 3,
+      "solventId": 3,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em Tornassol",
+      "color": "#e6ffffFb",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Incolor"
+    },
+    {
+      "id": 4,
+      "solventId": 4,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em NaOH 5%",
+      "color": "#FFFFF4",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 5,
+      "solventId": 5,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em NaHCO3 5%",
+      "color": "#FFFFF5",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 6,
+      "solventId": 6,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em HCl 5%",
+      "color": "#FFFFF6",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 7,
+      "solventId": 7,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em H2SO4 96%",
+      "color": "#FFFFF7",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 8,
+      "solventId": 8,
+      "compoundId": 1,
+      "solutionName": "Solucao de Etanoato de etila em H3PO4 85%",
+      "color": "#FFFFF8",
+      "state": "LIQUID",
+      "density": 0.9020000100135803,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 9,
+      "solventId": 1,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em Agua",
+      "color": "#FFFFF990",
+      "state": "SOLID_LIQUID",
+      "density": 1.0549999475479126,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 10,
+      "solventId": 2,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1.0549999475479126,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 11,
+      "solventId": 3,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em Tornassol",
+      "color": "#00FF",
+      "state": "SOLID_LIQUID",
+      "density": 1.0549999475479126,
+      "solubilityResult": "A"
+    },
+    {
+      "id": 12,
+      "solventId": 4,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1.0549999475479126,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 13,
+      "solventId": 5,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 14,
+      "solventId": 6,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 15,
+      "solventId": 7,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 16,
+      "solventId": 8,
+      "compoundId": 2,
+      "solutionName": "Solucao de Butanoato de sodio em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 17,
+      "solventId": 1,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em Agua",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 18,
+      "solventId": 2,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 19,
+      "solventId": 3,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em Tornassol",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "V"
+    },
+    {
+      "id": 20,
+      "solventId": 4,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 21,
+      "solventId": 5,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 22,
+      "solventId": 6,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 23,
+      "solventId": 7,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 24,
+      "solventId": 8,
+      "compoundId": 3,
+      "solutionName": "Solucao de Acido propanoico em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 25,
+      "solventId": 1,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em Agua",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 26,
+      "solventId": 2,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 27,
+      "solventId": 3,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em Tornassol",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "A"
+    },
+    {
+      "id": 28,
+      "solventId": 4,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 29,
+      "solventId": 5,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 30,
+      "solventId": 6,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 31,
+      "solventId": 7,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 32,
+      "solventId": 8,
+      "compoundId": 4,
+      "solutionName": "Solucao de Butan-1-amina em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 33,
+      "solventId": 1,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em Agua",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 34,
+      "solventId": 2,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 35,
+      "solventId": 3,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em Tornassol",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 36,
+      "solventId": 4,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 37,
+      "solventId": 5,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 38,
+      "solventId": 6,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 39,
+      "solventId": 7,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 40,
+      "solventId": 8,
+      "compoundId": 5,
+      "solutionName": "Solucao de Acido oleico em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 41,
+      "solventId": 1,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em Agua",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 42,
+      "solventId": 2,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 43,
+      "solventId": 3,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em Tornassol",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 44,
+      "solventId": 4,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 45,
+      "solventId": 5,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 46,
+      "solventId": 6,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 47,
+      "solventId": 7,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 48,
+      "solventId": 8,
+      "compoundId": 6,
+      "solutionName": "Solucao de 4-aminobenzenossulfonamida em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "SOLID_LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 49,
+      "solventId": 1,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em Agua",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 50,
+      "solventId": 2,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 51,
+      "solventId": 3,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em Tornassol",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 52,
+      "solventId": 4,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 53,
+      "solventId": 5,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 54,
+      "solventId": 6,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 55,
+      "solventId": 7,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 56,
+      "solventId": 8,
+      "compoundId": 7,
+      "solutionName": "Solucao de Decano-1-amina em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 57,
+      "solventId": 1,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em Agua",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 58,
+      "solventId": 2,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 59,
+      "solventId": 3,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em Tornassol",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 60,
+      "solventId": 4,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 61,
+      "solventId": 5,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 62,
+      "solventId": 6,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 63,
+      "solventId": 7,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 64,
+      "solventId": 8,
+      "compoundId": 8,
+      "solutionName": "Solucao de Cicloexanona em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 65,
+      "solventId": 1,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em Agua",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 66,
+      "solventId": 2,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 67,
+      "solventId": 3,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em Tornassol",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 68,
+      "solventId": 4,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 69,
+      "solventId": 5,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 70,
+      "solventId": 6,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 71,
+      "solventId": 7,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 72,
+      "solventId": 8,
+      "compoundId": 9,
+      "solutionName": "Solucao de Metilbenzeno em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 73,
+      "solventId": 1,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em Agua",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 74,
+      "solventId": 2,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em Eter dietilico",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "Soluble"
+    },
+    {
+      "id": 75,
+      "solventId": 3,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em Tornassol",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 76,
+      "solventId": 4,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em NaOH 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 77,
+      "solventId": 5,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em NaHCO3 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 78,
+      "solventId": 6,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em HCl 5%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleBelow"
+    },
+    {
+      "id": 79,
+      "solventId": 7,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em H2SO4 96%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    },
+    {
+      "id": 80,
+      "solventId": 8,
+      "compoundId": 10,
+      "solutionName": "Solucao de orto-diclorobbenzeno em H3PO4 85%",
+      "color": "#FFFFFF",
+      "state": "LIQUID",
+      "density": 1,
+      "solubilityResult": "InsolubleAbove"
+    }
+  ]
+}
