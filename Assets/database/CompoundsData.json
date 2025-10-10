@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Etanoato de etila",
+        "state": "LIQUID",
+        "group": "S1",
+        "density": 0.9,
+        "meltingPoint": -83.6,
+        "boilingPoint": 77.1
+    },
+    {
+        "id": 2,
+        "name": "Butanoato de sódio",
+        "state": "SOLID",
+        "group": "S2",
+        "density": 1.1,
+        "meltingPoint": 251.0,
+        "boilingPoint": 330.0
+    },
+    {
+        "id": 3,
+        "name": "Ácido propanoico",
+        "state": "LIQUID",
+        "group": "SA",
+        "density": 1.0,
+        "meltingPoint": -20.8,
+        "boilingPoint": 141.0
+    },
+    {
+        "id": 4,
+        "name": "Butan-1-amina",
+        "state": "LIQUID",
+        "group": "SB",
+        "density": 0.7,
+        "meltingPoint": -49.1,
+        "boilingPoint": 77.8
+    },
+    {
+        "id": 5,
+        "name": "Ácido oleico",
+        "state": "LIQUID",
+        "group": "A1",
+        "density": 0.9,
+        "meltingPoint": 13.4,
+        "boilingPoint": 360.0
+    },
+    {
+        "id": 6,
+        "name": "4-aminobenzenossulfonamida",
+        "state": "SOLID",
+        "group": "A2",
+        "density": 1.1,
+        "meltingPoint": 165.0,
+        "boilingPoint": 288.0
+    },
+    {
+        "id": 7,
+        "name": "Decano-1-amina",
+        "state": "LIQUID",
+        "group": "B",
+        "density": 0.8,
+        "meltingPoint": 17.0,
+        "boilingPoint": 217.0
+    },
+    {
+        "id": 8,
+        "name": "Cicloexanona",
+        "state": "LIQUID",
+        "group": "N1",
+        "density": 0.9,
+        "meltingPoint": -47.0,
+        "boilingPoint": 155.7
+    },
+    {
+        "id": 9,
+        "name": "Metilbenzeno",
+        "state": "LIQUID",
+        "group": "N2",
+        "density": 0.9,
+        "meltingPoint": -95.0,
+        "boilingPoint": 110.6
+    },
+    {
+        "id": 10,
+        "name": "orto-diclorobenzeno",
+        "state": "LIQUID",
+        "group": "I",
+        "density": 1.3,
+        "meltingPoint": -17.0,
+        "boilingPoint": 180.5
+    }
+]
