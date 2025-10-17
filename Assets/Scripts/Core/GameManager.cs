@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -8,15 +9,18 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
-        // --- Singleton ---
         public static GameManager Instance { get; private set; }
 
-        // --- Estados do Jogo ---
+        [Header("Scene Transition")]
+        [SerializeField] private GameObject fadeCanvasPrefab;
+        [SerializeField] private float fadeDuration = 0.5f;
+
+        private SceneFader sceneFader;
+
         public DifficultyLevelData CurrentDifficulty { get; private set; }
         public int PlayerLives { get; private set; }
         public int PlayerScore { get; private set; }
 
-        // --- Histórico de Navegação (para o botão "Voltar") ---
         private Stack<string> sceneHistory = new Stack<string>();
 
         public event Action<DifficultyLevelData> OnDifficultyChanged;
@@ -24,11 +28,24 @@ namespace Core
 
         private void Awake()
         {
-            // Garante que exista apenas uma instância do GameManager
             if (Instance == null)
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject); // Não destrói o GameManager ao carregar nova cena
+                DontDestroyOnLoad(gameObject);
+
+                if (fadeCanvasPrefab != null)
+                {
+                    GameObject fadeCanvasInstance = Instantiate(fadeCanvasPrefab);
+                    sceneFader = fadeCanvasInstance.GetComponent<SceneFader>();
+                    DontDestroyOnLoad(fadeCanvasInstance);
+
+                    sceneFader.SetInstantVisible();
+                    StartCoroutine(sceneFader.FadeIn(fadeDuration));
+                }
+                else
+                {
+                    Debug.LogError("FadeCanvas Prefab não foi atribuído no GameManager!");
+                }
             }
             else
             {
@@ -36,20 +53,29 @@ namespace Core
             }
         }
 
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
 
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
 
-        // --- Métodos de Gerenciamento de Estado ---
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            // Garantia: ao terminar o carregamento, desfaz o preto
+            if (sceneFader != null && sceneFader.Alpha > 0.01f)
+                StartCoroutine(sceneFader.FadeIn(fadeDuration));
+        }
 
         public void SetDifficulty(DifficultyLevelData newDifficulty)
         {
             CurrentDifficulty = newDifficulty;
-
-            // Loga a seleção e quantas vidas essa dificuldade terá
-            Debug.Log($"Dificuldade selecionada: {CurrentDifficulty.difficultyName} | Vidas iniciais: {CurrentDifficulty.startingLives}");
-
-            // Notifica UI (menu, HUD, etc.)
             OnDifficultyChanged?.Invoke(CurrentDifficulty);
         }
+
         public void StartGame()
         {
             if (CurrentDifficulty == null)
@@ -60,8 +86,6 @@ namespace Core
 
             PlayerLives = CurrentDifficulty.startingLives;
             PlayerScore = 0;
-
-            // Notifica UI que as vidas foram inicializadas
             OnLivesChanged?.Invoke(PlayerLives);
 
             LoadScene("2_LabScene");
@@ -69,16 +93,10 @@ namespace Core
 
         public void LoseLife()
         {
-            if (PlayerLives > 0)
-            {
-                PlayerLives--;
-            }
-
-            // Adicionar lógica de derrota aqui se as vidas chegarem a 0
+            if (PlayerLives > 0) PlayerLives--;
             if (PlayerLives <= 0)
             {
                 Debug.Log("Game Over!");
-                // TODO: Chamar o painel de derrota
             }
         }
 
@@ -87,33 +105,47 @@ namespace Core
             PlayerScore += (int)(points * CurrentDifficulty.scoreMultiplier);
         }
 
-
-        // --- Sistema de Navegação ---
-
         public void LoadScene(string sceneName)
         {
+            StartCoroutine(LoadSceneWithFade(sceneName));
+        }
+
+        private IEnumerator LoadSceneWithFade(string sceneName)
+        {
+            if (sceneFader != null)
+                yield return StartCoroutine(sceneFader.FadeOut(fadeDuration));
+
             string currentScene = SceneManager.GetActiveScene().name;
             if (!string.IsNullOrEmpty(currentScene))
-            {
                 sceneHistory.Push(currentScene);
-            }
 
-            SceneManager.LoadScene(sceneName);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+            while (!asyncLoad.isDone) yield return null;
+
+            // Não fazemos FadeIn aqui — ele acontece no OnSceneLoaded
         }
 
         public void GoBack()
         {
-            if (sceneHistory.Count > 0)
-            {
-                string previousScene = sceneHistory.Pop();
-                SceneManager.LoadScene(previousScene);
-            }
-            else
+            StartCoroutine(GoBackWithFade());
+        }
+
+        private IEnumerator GoBackWithFade()
+        {
+            if (sceneHistory.Count == 0)
             {
                 Debug.LogWarning("Não há cenas no histórico para voltar.");
-                // TODO: voltar para o menu principal como fallback
-                // SceneManager.LoadScene("1_MenuScene"); 
+                yield break;
             }
+
+            if (sceneFader != null)
+                yield return StartCoroutine(sceneFader.FadeOut(fadeDuration));
+
+            string previousScene = sceneHistory.Pop();
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(previousScene);
+            while (!asyncLoad.isDone) yield return null;
+
+            // FadeIn virá pelo OnSceneLoaded
         }
     }
 }

@@ -1684,6 +1684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6c85bbf9ae6e34db928dbf2d2ab18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeCanvasPrefab: {fileID: 2615416742227946493, guid: ec7cca64109c68f4aaf783534586649c, type: 3}
+  fadeDuration: 0.5
 --- !u!4 &460822231
 Transform:
   m_ObjectHideFlags: 0
