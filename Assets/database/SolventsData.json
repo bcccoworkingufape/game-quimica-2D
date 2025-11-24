@@ -1,66 +1,66 @@
 [
-    {
-        "id": 1,
-        "name": "Água",
-        "state": "LIQUID",
-        "density": 1.0,
-        "meltingPoint": 0.0,
-        "boilingPoint": 100.0
-    },
-    {
-        "id": 2,
-        "name": "Éter dietílico",
-        "state": "LIQUID",
-        "density": 0.7,
-        "meltingPoint": -116.3,
-        "boilingPoint": 34.6
-    },
-    {
-        "id": 3,
-        "name": "Tornassol",
-        "state": "LIQUID",
-        "density": 1.0,
-        "meltingPoint": 0.0,
-        "boilingPoint": 100.0
-    },
-    {
-        "id": 4,
-        "name": "NaOH 5%",
-        "state": "LIQUID",
-        "density": 1.1,
-        "meltingPoint": -1.0,
-        "boilingPoint": 102.0
-    },
-    {
-        "id": 5,
-        "compoundName": "NaHCO₃  5%",
-        "state": "LIQUID",
-        "density": 1.0,
-        "meltingPoint": 0.0,
-        "boilingPoint": 100.0
-    },
-    {
-        "id": 6,
-        "name": "HCl 5%",
-        "state": "LIQUID",
-        "density": 1.0,
-        "meltingPoint": -3.0,
-        "boilingPoint": 101.0
-    },
-    {
-        "id": 7,
-        "name": "H₂SO₄ 96%",
-        "state": "LIQUID",
-        "density": 1.8,
-        "meltingPoint": 10.0,
-        "boilingPoint": 337.0
-    },
-    {
-        "id": 8,
-        "name": "H₃PO₄ 85%",
-        "state": "LIQUID",
-        "density": 1.7,
-        "meltingPoint": 21.0,
-        "boilingPoint": 158.0
-    }
+  {
+    "id": 1,
+    "name": "Água",
+    "state": "LIQUID",
+    "meltingPoint": 0.0,
+    "boilingPoint": 100.0,
+    "flaskType": "FLASK_01"
+  },
+  {
+    "id": 2,
+    "name": "Éter dietílico",
+    "state": "LIQUID",
+    "meltingPoint": -116.3,
+    "boilingPoint": 34.6,
+    "flaskType": "FLASK_02"
+  },
+  {
+    "id": 3,
+    "name": "Tornassol",
+    "state": "LIQUID",
+    "meltingPoint": 0.0,
+    "boilingPoint": 100.0,
+    "flaskType": "FLASK_01"
+  },
+  {
+    "id": 4,
+    "name": "NaOH 5%",
+    "state": "LIQUID",
+    "meltingPoint": -1.0,
+    "boilingPoint": 102.0,
+    "flaskType": "FLASK_03"
+  },
+  {
+    "id": 5,
+    "name": "NaHCO₃  5%",
+    "state": "LIQUID",
+    "meltingPoint": 0.0,
+    "boilingPoint": 100.0,
+    "flaskType": "FLASK_03"
+  },
+  {
+    "id": 6,
+    "name": "HCl 5%",
+    "state": "LIQUID",
+    "meltingPoint": -3.0,
+    "boilingPoint": 101.0,
+    "flaskType": "FLASK_04"
+  },
+  {
+    "id": 7,
+    "name": "H₂SO₄ 96%",
+    "state": "LIQUID",
+    "meltingPoint": 10.0,
+    "boilingPoint": 337.0,
+    "flaskType": "FLASK_04"
+  },
+  {
+    "id": 8,
+    "name": "H₃PO₄ 85%",
+    "state": "LIQUID",
+    "meltingPoint": 21.0,
+    "boilingPoint": 158.0,
+    "flaskType": "FLASK_04"
+  }
 ]
