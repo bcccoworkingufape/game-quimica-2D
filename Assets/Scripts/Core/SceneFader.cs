@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(CanvasGroup))]
 public class SceneFader : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve ease = null; // opcional (EaseInOut)
+    [SerializeField] private AnimationCurve ease = null;
     private CanvasGroup canvasGroup;
     private Coroutine running;
 
@@ -16,10 +16,8 @@ public class SceneFader : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
         if (ease == null || ease.length == 0)
         {
-            // EaseInOut padrão caso não configure no Inspector
             ease = AnimationCurve.EaseInOut(0, 0, 1, 1);
         }
-        // começa bloqueando raycasts se estiver visível
         canvasGroup.blocksRaycasts = canvasGroup.alpha > 0.99f;
         canvasGroup.interactable = false;
     }
@@ -28,7 +26,7 @@ public class SceneFader : MonoBehaviour
     {
         StopCurrent();
         canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;   // bloqueia cliques enquanto a tela está preta
+        canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = false;
     }
 
@@ -63,7 +61,6 @@ public class SceneFader : MonoBehaviour
         float start = canvasGroup.alpha;
         float t = 0f;
 
-        // se vamos para preto, já bloqueia input
         if (target > start)
         {
             canvasGroup.blocksRaycasts = true;
@@ -81,7 +78,6 @@ public class SceneFader : MonoBehaviour
 
         canvasGroup.alpha = target;
 
-        // se terminamos transparente, libera input
         if (Mathf.Approximately(target, 0f))
         {
             canvasGroup.blocksRaycasts = false;

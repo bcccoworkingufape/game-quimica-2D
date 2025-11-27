@@ -1,15 +1,8 @@
 using UnityEngine;
+using Domain;
 
 namespace Data
 {
-    public enum GameMode
-    {
-        Estudos,
-        Experimentos,
-        Desafio
-    }
-
-    [CreateAssetMenu(fileName = "NewDifficultyLevel", menuName = "ChemistryLab/Difficulty Level")]
     public class DifficultyLevelData : ScriptableObject
     {
         [Tooltip("Nome da dificuldade, ex: Fácil")]
@@ -28,6 +21,6 @@ namespace Data
         [Tooltip("Modo de jogo associado a esta dificuldade")]
         public GameMode mode = GameMode.Estudos;
 
-        public string ModeLabel => mode.ToString(); 
+        public string ModeLabel => mode.ToString();
     }
 }

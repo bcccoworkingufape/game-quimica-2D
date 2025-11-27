@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
-using System;
 using Data;
 
 namespace Core
@@ -46,6 +46,8 @@ namespace Core
                 {
                     Debug.LogError("FadeCanvas Prefab não foi atribuído no GameManager!");
                 }
+
+                // Inicializa o ServiceLocator / GameContext aqui se quiser.
             }
             else
             {
@@ -65,7 +67,6 @@ namespace Core
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // Garantia: ao terminar o carregamento, desfaz o preto
             if (sceneFader != null && sceneFader.Alpha > 0.01f)
                 StartCoroutine(sceneFader.FadeIn(fadeDuration));
         }
@@ -94,6 +95,8 @@ namespace Core
         public void LoseLife()
         {
             if (PlayerLives > 0) PlayerLives--;
+            OnLivesChanged?.Invoke(PlayerLives);
+
             if (PlayerLives <= 0)
             {
                 Debug.Log("Game Over!");
@@ -121,8 +124,6 @@ namespace Core
 
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
             while (!asyncLoad.isDone) yield return null;
-
-            // Não fazemos FadeIn aqui — ele acontece no OnSceneLoaded
         }
 
         public void GoBack()
@@ -144,8 +145,6 @@ namespace Core
             string previousScene = sceneHistory.Pop();
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(previousScene);
             while (!asyncLoad.isDone) yield return null;
-
-            // FadeIn virá pelo OnSceneLoaded
         }
     }
 }

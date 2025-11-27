@@ -1,0 +1,14 @@
+namespace Domain.Entities
+{
+    /// <summary>
+    /// Contrato comum para substâncias químicas (composto ou solvente).
+    /// </summary>
+    public interface IChemicalSubstance
+    {
+        int Id { get; }
+        string Name { get; }
+        AggregateState State { get; }
+        float MeltingPoint { get; }
+        float BoilingPoint { get; }
+    }
+}
