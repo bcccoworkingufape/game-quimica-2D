@@ -3,11 +3,11 @@ using UnityEngine;
 using TMPro;
 using Data;
 using Core;
-using Presentation.Lab;  
+using Presentation.Lab;
 
 namespace LabScripts
 {
-    public class UIController : MonoBehaviour
+    public class LabUIController : MonoBehaviour
     {
         [Header("Painéis principais")]
         public GameObject solutionAnimationPanel;
@@ -149,7 +149,7 @@ namespace LabScripts
             }
             else
             {
-                Debug.LogWarning("TestManager não atribuído no UIController. Exibindo animação mesmo assim.");
+                Debug.LogWarning("TestManager não atribuído no LabUIController. Exibindo animação mesmo assim.");
                 ShowSolutionAnimationPanel();
             }
         }
@@ -162,6 +162,16 @@ namespace LabScripts
             Debug.Log("Ação Cancelada para o item: " + currentItemName);
             HideConfirmationPanel();
         }
+
+
+        public void OnRepeatMixButton()
+        {
+            // Fecha o painel de animação
+            HideSolutionAnimationPanel();
+
+            // TODO: Adicionar lógica de resetar a animação, e visualmente ver ela ocorrendo novamente
+        }
+
 
         // ─────────────────────────────────────────────
         // Solution Animation Panel

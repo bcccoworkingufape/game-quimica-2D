@@ -15,7 +15,7 @@ namespace Presentation.Lab
     public class TestManager : MonoBehaviour
     {
         [Header("Referências de UI")]
-        [SerializeField] private UIController uiController;
+        [SerializeField] private LabUIController uiController;
 
         [Header("Questão atual")]
         [Tooltip("ID do composto 'misterioso' que o jogador precisa descobrir.")]
@@ -37,7 +37,7 @@ namespace Presentation.Lab
 
             if (uiController == null)
             {
-                uiController = FindObjectOfType<UIController>();
+                uiController = FindObjectOfType<LabUIController>();
             }
         }
 
@@ -64,7 +64,7 @@ namespace Presentation.Lab
         }
 
         /// <summary>
-        /// Chamado pelo UIController quando o jogador clica em "Sim" no popup.
+        /// Chamado pelo LabUIController quando o jogador clica em "Sim" no popup.
         /// </summary>
         public void OnConfirmMix()
         {
