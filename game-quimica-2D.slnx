@@ -42,7 +42,6 @@
   <Project Path="Unity.AdaptivePerformance.csproj" />
   <Project Path="Unity.Notifications.csproj" />
   <Project Path="Unity.2D.PixelPerfect.Editor.csproj" />
-  <Project Path="Unity.AdaptivePerformance.Samsung.Android.csproj" />
   <Project Path="Unity.Notifications.Unified.csproj" />
   <Project Path="Unity.InputSystem.ForUI.csproj" />
   <Project Path="Unity.Collections.CodeGen.csproj" />
@@ -50,11 +49,9 @@
   <Project Path="Unity.2D.Animation.Runtime.csproj" />
   <Project Path="Unity.Mathematics.Editor.csproj" />
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
-  <Project Path="Unity.AdaptivePerformance.Simulator.VRR.Extension.csproj" />
   <Project Path="Unity.InputSystem.TestFramework.csproj" />
   <Project Path="Unity.CollabProxy.Editor.csproj" />
   <Project Path="Unity.VisualScripting.Shared.Editor.csproj" />
-  <Project Path="Unity.AdaptivePerformance.Samsung.Android.Editor.csproj" />
   <Project Path="Unity.Profiling.Core.csproj" />
   <Project Path="Unity.AdaptivePerformance.Simulator.Editor.csproj" />
   <Project Path="Unity.AdaptivePerformance.Profiler.Editor.csproj" />

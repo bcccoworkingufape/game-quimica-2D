@@ -1,4 +1,4 @@
-namespace Domain.Enums
+namespace Domain
 {
     /// <summary>
     /// Tipo de frasco usado na animação.

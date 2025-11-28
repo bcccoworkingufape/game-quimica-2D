@@ -47,7 +47,7 @@ namespace Core
                     Debug.LogError("FadeCanvas Prefab não foi atribuído no GameManager!");
                 }
 
-                // Inicializa o ServiceLocator / GameContext aqui se quiser.
+                // Inicializa o ServiceLocator / GameContext
             }
             else
             {

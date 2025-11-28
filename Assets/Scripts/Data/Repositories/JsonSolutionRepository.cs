@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Text.Json;
+using Newtonsoft.Json;
 using Domain;
 
 namespace Data
@@ -11,7 +11,7 @@ namespace Data
         public JsonSolutionRepository(IJsonProvider provider)
         {
             var json = provider.LoadText(DataIndex.SolubilityFile);
-            var dtos = JsonSerializer.Deserialize<List<SolutionDto>>(json);
+            var dtos = JsonConvert.DeserializeObject<List<SolutionDto>>(json);
             _byKey = new Dictionary<SolutionKey, Solution>();
 
             if (dtos != null)

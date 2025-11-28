@@ -12,7 +12,7 @@ namespace MenuScripts
         public Image fillImage;  // O GameObject "Fill" do Slider
         public Sprite[] progressSprites; // Array de sprites (0-5)
 
-        public UI_MenuScene UIMenuScene;
+        public MenuUIController UIMenuScene;
 
         private int progress = 0;
 

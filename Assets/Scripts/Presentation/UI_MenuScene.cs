@@ -1,5 +1,4 @@
-// File: Scripts/Presentation/Menu/UI_MenuScene.cs
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Data;
@@ -224,3 +223,4 @@ namespace MenuScripts
         }
     }
 }
+*/

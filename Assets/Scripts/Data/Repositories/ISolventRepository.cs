@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public interface ICompoundRepository
+    public interface ISolventRepository
     {
-        IReadOnlyList<Compound> ListAll();
-        Compound GetById(int id);
+        IReadOnlyList<Solvent> ListAll();
+        Solvent GetById(int id);
     }
 }

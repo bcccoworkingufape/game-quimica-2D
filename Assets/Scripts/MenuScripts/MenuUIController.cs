@@ -10,7 +10,7 @@ using TMPro;
 
 namespace MenuScripts
 {
-    public class UI_MenuScene : MonoBehaviour
+    public class MenuUIController : MonoBehaviour
     {
 
         // --- Referências aos ScriptableObjects de Dificuldade ---

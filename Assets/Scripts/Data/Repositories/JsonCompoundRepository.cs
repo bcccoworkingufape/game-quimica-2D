@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Text.Json;
+using Newtonsoft.Json;
 using Domain;
 
 namespace Data
@@ -11,7 +11,7 @@ namespace Data
         public JsonCompoundRepository(IJsonProvider provider)
         {
             var json = provider.LoadText(DataIndex.CompoundsFile);
-            var dtos = JsonSerializer.Deserialize<List<CompoundDto>>(json);
+            var dtos = JsonConvert.DeserializeObject<List<CompoundDto>>(json);
             _byId = new Dictionary<int, Compound>();
 
             if (dtos != null)

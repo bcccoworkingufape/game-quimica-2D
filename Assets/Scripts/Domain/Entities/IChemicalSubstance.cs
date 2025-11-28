@@ -1,4 +1,4 @@
-namespace Domain.Entities
+namespace Domain
 {
     /// <summary>
     /// Contrato comum para substâncias químicas (composto ou solvente).
