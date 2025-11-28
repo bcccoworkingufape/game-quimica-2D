@@ -6,7 +6,7 @@ using Core;
 
 public class NavbarController : MonoBehaviour
 {
-    public UI_MenuScene menuController;
+    public MenuUIController menuController;
 
     private void Start()
     {
