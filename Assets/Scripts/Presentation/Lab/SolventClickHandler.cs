@@ -20,6 +20,21 @@ public class SolventClickHandler : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Clique direto no objeto (2D/3D)
+        TriggerMix();
+    }
+
+    /// <summary>
+    /// Método público para ser chamado pelo botão de UI (OnClick).
+    /// </summary>
+    public void OnSolventButtonClick()
+    {
+        // Clique em botão da UI
+        TriggerMix();
+    }
+
+    private void TriggerMix()
+    {
         if (testManager == null)
         {
             Debug.LogWarning("[SolventClickHandler] TestManager não atribuído.");

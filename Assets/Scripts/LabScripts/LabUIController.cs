@@ -143,7 +143,7 @@ namespace LabScripts
             HideConfirmationPanel();
 
             // Dispara a lógica de mistura (consulta banco/cache, histórico, etc)
-            if (testManager != null)
+            if (testManager.name != null)
             {
                 testManager.OnConfirmMix();
             }

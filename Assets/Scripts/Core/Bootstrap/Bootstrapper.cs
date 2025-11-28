@@ -6,15 +6,26 @@ namespace Core
 {
     /// <summary>
     /// Inicializa repositórios, serviços de domínio e registra no ServiceLocator.
-    /// Script está em um GameObject na primeira cena (ex: 0_BootstrapScene).
+    /// Coloque este script em qualquer cena que possa ser usada como ponto de entrada
+    /// (ex: 1_MenuScene e 2_LabScene). Ele se garante para não inicializar duas vezes.
     /// </summary>
     public class Bootstrapper : MonoBehaviour
     {
+        private static bool _initialized = false;
+
         [Header("Pasta de dados (dentro de StreamingAssets)")]
         private string dataFolder = "Data";
 
         private void Awake()
         {
+            if (_initialized)
+            {
+                // Já inicializado em outra cena -> descarta este Bootstrapper
+                Destroy(gameObject);
+                return;
+            }
+
+            _initialized = true;
             DontDestroyOnLoad(gameObject);
 
             var rootPath = System.IO.Path.Combine(
@@ -24,9 +35,9 @@ namespace Core
             // Provider que lê os JSONs
             IJsonProvider provider = new FileJsonProvider(rootPath);
 
-            // Repositórios (já fazem cache em memória no construtor)
+            // Repositórios (com cache)
             ICompoundRepository compoundRepo = new JsonCompoundRepository(provider);
-            ISolventRepository solventRepo   = new JsonSolventRepository(provider);
+            ISolventRepository  solventRepo  = new JsonSolventRepository(provider);
             ISolutionRepository solutionRepo = new JsonSolutionRepository(provider);
 
             // Serviços de domínio

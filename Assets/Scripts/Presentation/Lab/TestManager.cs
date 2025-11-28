@@ -1,7 +1,7 @@
 using UnityEngine;
 using Domain;
 using Core;
-using LabScripts;  
+using LabScripts;
 
 namespace Presentation.Lab
 {
@@ -32,8 +32,8 @@ namespace Presentation.Lab
         private void Awake()
         {
             _solubilityService = ServiceLocator.Resolve<ISolubilityService>();
-            _historyService    = ServiceLocator.Resolve<IHistoryService>();
-            _gameManager       = GameManager.Instance;
+            _historyService = ServiceLocator.Resolve<IHistoryService>();
+            _gameManager = GameManager.Instance;
 
             if (uiController == null)
             {
@@ -54,7 +54,7 @@ namespace Presentation.Lab
         /// </summary>
         public void OnSolventClicked(int solventId, string solventName)
         {
-            _selectedSolventId   = solventId;
+            _selectedSolventId = solventId;
             _selectedSolventName = solventName;
 
             if (uiController != null)
@@ -68,6 +68,8 @@ namespace Presentation.Lab
         /// </summary>
         public void OnConfirmMix()
         {
+            Debug.Log("[TestManager] OnConfirmMix chamado.");
+
             if (currentCompoundId <= 0 || _selectedSolventId <= 0)
             {
                 Debug.LogWarning($"[TestManager] Composto ou solvente não configurados. compound={currentCompoundId}, solvent={_selectedSolventId}");
@@ -78,9 +80,9 @@ namespace Presentation.Lab
                 _solubilityService,
                 _historyService);
 
-            var request  = new MixSolutionRequest(currentCompoundId, _selectedSolventId);
+            var request = new MixSolutionRequest(currentCompoundId, _selectedSolventId);
             var response = useCase.Execute(request);
-            var outcome  = response.Outcome;
+            var outcome = response.Outcome;
 
             // Prints com as chaves importantes para você casar com animações
             Debug.Log($"[MIX] compoundId={outcome.Compound.Id}, solventId={outcome.Solvent.Id}, " +
@@ -99,5 +101,6 @@ namespace Presentation.Lab
             // Abre painel de animação
             uiController?.ShowSolutionAnimationPanel();
         }
+
     }
 }
