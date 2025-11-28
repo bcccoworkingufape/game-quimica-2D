@@ -17,14 +17,19 @@ namespace Core
 
         private SceneFader sceneFader;
 
+        // Estado do jogo
         public DifficultyLevelData CurrentDifficulty { get; private set; }
         public int PlayerLives { get; private set; }
         public int PlayerScore { get; private set; }
 
-        private Stack<string> sceneHistory = new Stack<string>();
+        private readonly Stack<string> sceneHistory = new Stack<string>();
 
+        // Eventos para UI / outros sistemas
         public event Action<DifficultyLevelData> OnDifficultyChanged;
         public event Action<int> OnLivesChanged;
+        public event Action<int> OnScoreChanged;
+        public event Action OnGameStarted;
+        public event Action OnGameOver;
 
         private void Awake()
         {
@@ -33,6 +38,7 @@ namespace Core
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
 
+                // Inicializa fade
                 if (fadeCanvasPrefab != null)
                 {
                     GameObject fadeCanvasInstance = Instantiate(fadeCanvasPrefab);
@@ -47,7 +53,8 @@ namespace Core
                     Debug.LogError("FadeCanvas Prefab não foi atribuído no GameManager!");
                 }
 
-                // Inicializa o ServiceLocator / GameContext
+                // Aqui você pode chamar Bootstrapper / GameContext se quiser
+                // GameContext.Initialize();
             }
             else
             {
@@ -67,9 +74,14 @@ namespace Core
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            // Toda vez que uma cena terminar de carregar, se ainda estiver escuro, faz o fade-in
             if (sceneFader != null && sceneFader.Alpha > 0.01f)
                 StartCoroutine(sceneFader.FadeIn(fadeDuration));
         }
+
+        // ─────────────────────────────────────────────
+        // Dificuldade / estado
+        // ─────────────────────────────────────────────
 
         public void SetDifficulty(DifficultyLevelData newDifficulty)
         {
@@ -87,26 +99,47 @@ namespace Core
 
             PlayerLives = CurrentDifficulty.startingLives;
             PlayerScore = 0;
+
             OnLivesChanged?.Invoke(PlayerLives);
+            OnScoreChanged?.Invoke(PlayerScore);
+            OnGameStarted?.Invoke();
 
             LoadScene("2_LabScene");
         }
 
         public void LoseLife()
         {
-            if (PlayerLives > 0) PlayerLives--;
+            if (PlayerLives > 0)
+                PlayerLives--;
+
             OnLivesChanged?.Invoke(PlayerLives);
 
             if (PlayerLives <= 0)
             {
                 Debug.Log("Game Over!");
+                OnGameOver?.Invoke();
+                // Aqui você pode chamar uma cena de resultados, se quiser
+                // LoadScene("3_ResultsScene");
             }
         }
 
         public void AddScore(int points)
         {
-            PlayerScore += (int)(points * CurrentDifficulty.scoreMultiplier);
+            if (CurrentDifficulty == null)
+            {
+                PlayerScore += points;
+            }
+            else
+            {
+                PlayerScore += (int)(points * CurrentDifficulty.scoreMultiplier);
+            }
+
+            OnScoreChanged?.Invoke(PlayerScore);
         }
+
+        // ─────────────────────────────────────────────
+        // Controle de cenas + fade + histórico
+        // ─────────────────────────────────────────────
 
         public void LoadScene(string sceneName)
         {
@@ -123,7 +156,9 @@ namespace Core
                 sceneHistory.Push(currentScene);
 
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-            while (!asyncLoad.isDone) yield return null;
+            while (!asyncLoad.isDone)
+                yield return null;
+            // Fade-in será chamado em OnSceneLoaded
         }
 
         public void GoBack()
@@ -144,7 +179,9 @@ namespace Core
 
             string previousScene = sceneHistory.Pop();
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(previousScene);
-            while (!asyncLoad.isDone) yield return null;
+            while (!asyncLoad.isDone)
+                yield return null;
+            // Fade-in será chamado em OnSceneLoaded
         }
     }
 }

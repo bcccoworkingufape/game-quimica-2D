@@ -34,8 +34,8 @@ namespace Domain
             }
 
             // Regra simples: LL/SL derivado dos estados
-            var mixtureType = (compound.State == AggregateState.SOLID &&
-                               solvent.State == AggregateState.LIQUID)
+            var mixtureType = (compound.State == PhysicalState.SOLID &&
+                               solvent.State == PhysicalState.LIQUID)
                 ? MixtureType.SL
                 : MixtureType.LL;
 

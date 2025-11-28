@@ -7,7 +7,7 @@ namespace Domain
     {
         public int Id { get; }
         public string Name { get; }
-        public AggregateState State { get; }
+        public PhysicalState State { get; }
         public string Group { get; }
         public float Density { get; }
         public float MeltingPoint { get; }
@@ -16,7 +16,7 @@ namespace Domain
         public Compound(
             int id,
             string name,
-            AggregateState state,
+            PhysicalState state,
             string group,
             float density,
             float meltingPoint,

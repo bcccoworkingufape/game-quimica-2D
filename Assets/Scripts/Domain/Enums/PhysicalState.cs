@@ -3,7 +3,7 @@ namespace Domain
     /// <summary>
     /// Estado físico (agregado) da substância.
     /// </summary>
-    public enum AggregateState
+    public enum PhysicalState
     {
         SOLID,
         LIQUID

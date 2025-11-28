@@ -7,8 +7,8 @@ namespace Data
         public static Solvent ToDomain(this SolventDto dto)
         {
             var state = dto.state == "SOLID"
-                ? AggregateState.SOLID
-                : AggregateState.LIQUID;
+                ? PhysicalState.SOLID
+                : PhysicalState.LIQUID;
 
             // Enum.Parse com ignoreCase pra ter tolerância
             var flask = (FlaskType)System.Enum.Parse(

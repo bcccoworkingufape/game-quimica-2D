@@ -3,7 +3,7 @@ using System.IO;
 namespace Data
 {
     /// <summary>
-    /// Lê JSON do sistema de arquivos (ex.: StreamingAssets/Data).
+    /// Lê JSON de database
     /// </summary>
     public class FileJsonProvider : IJsonProvider
     {

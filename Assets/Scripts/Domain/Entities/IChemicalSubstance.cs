@@ -7,7 +7,7 @@ namespace Domain
     {
         int Id { get; }
         string Name { get; }
-        AggregateState State { get; }
+        PhysicalState State { get; }
         float MeltingPoint { get; }
         float BoilingPoint { get; }
     }

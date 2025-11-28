@@ -12,6 +12,7 @@ namespace Data
         {
             var json = provider.LoadText(DataIndex.CompoundsFile);
             var dtos = JsonConvert.DeserializeObject<List<CompoundDto>>(json);
+
             _byId = new Dictionary<int, Compound>();
 
             if (dtos != null)
@@ -25,7 +26,7 @@ namespace Data
         }
 
         public IReadOnlyList<Compound> ListAll() =>
-            new List<Compound>(_byId.Values);
+            new List<Compound>(_byId.Values);   // snapshot
 
         public Compound GetById(int id) =>
             _byId.TryGetValue(id, out var c) ? c : null;

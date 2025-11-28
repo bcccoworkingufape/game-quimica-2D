@@ -12,6 +12,7 @@ namespace Data
         {
             var json = provider.LoadText(DataIndex.SolubilityFile);
             var dtos = JsonConvert.DeserializeObject<List<SolutionDto>>(json);
+
             _byKey = new Dictionary<SolutionKey, Solution>();
 
             if (dtos != null)

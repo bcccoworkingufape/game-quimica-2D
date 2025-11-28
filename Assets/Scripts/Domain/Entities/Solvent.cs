@@ -7,7 +7,7 @@ namespace Domain
     {
         public int Id { get; }
         public string Name { get; }
-        public AggregateState State { get; }
+        public PhysicalState State { get; }
         public float MeltingPoint { get; }
         public float BoilingPoint { get; }
         public FlaskType FlaskType { get; }
@@ -21,7 +21,7 @@ namespace Domain
         public Solvent(
             int id,
             string name,
-            AggregateState state,
+            PhysicalState state,
             float meltingPoint,
             float boilingPoint,
             FlaskType flaskType)

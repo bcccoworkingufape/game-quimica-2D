@@ -3,11 +3,13 @@ using UnityEngine;
 using TMPro;
 using Data;
 using Core;
+using Presentation.Lab;  
 
 namespace LabScripts
 {
     public class UIController : MonoBehaviour
     {
+        [Header("Painéis principais")]
         public GameObject solutionAnimationPanel;
         public GameObject confirmationPanel;
         public GameObject questionPanel;
@@ -16,6 +18,8 @@ namespace LabScripts
         public GameObject pauseMenuPanel;
         public GameObject questionErrorPanel;
         public GameObject questionVictoryPanel;
+
+        [Header("Textos de UI")]
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
@@ -26,7 +30,14 @@ namespace LabScripts
         public TextMeshProUGUI difficultyText;
         public TextMeshProUGUI livesText;
         public TextMeshProUGUI modeText;
-        // Hide the confirmation panel at the start
+
+        [Header("Integração com lógica da fase")]
+        [SerializeField] private TestManager testManager;
+
+        // ─────────────────────────────────────────────
+        // Ciclo de vida
+        // ─────────────────────────────────────────────
+
         void OnEnable()
         {
             if (GameManager.Instance != null)
@@ -49,30 +60,34 @@ namespace LabScripts
         {
             HideAllPanels();
 
-            var gm = Core.GameManager.Instance;
+            var gm = GameManager.Instance;
             if (gm != null && gm.CurrentDifficulty != null)
             {
                 UpdateDifficultyLabel(gm.CurrentDifficulty);
-                if (modeText != null) modeText.text = gm.CurrentDifficulty.ModeLabel;
                 UpdateLivesLabel(gm.PlayerLives);
             }
         }
 
-        private void HandleDifficultyChanged(Data.DifficultyLevelData data)
+        // ─────────────────────────────────────────────
+        // Handlers de eventos do GameManager
+        // ─────────────────────────────────────────────
+
+        private void HandleDifficultyChanged(DifficultyLevelData data)
         {
             UpdateDifficultyLabel(data);
-            if (modeText != null && data != null)
-                modeText.text = data.ModeLabel;
         }
-        private void HandleLivesChanged(int lives) => UpdateLivesLabel(lives);
 
-        private void UpdateDifficultyLabel(Data.DifficultyLevelData data)
+        private void HandleLivesChanged(int lives)
+        {
+            UpdateLivesLabel(lives);
+        }
+
+        private void UpdateDifficultyLabel(DifficultyLevelData data)
         {
             if (data == null) return;
 
             if (difficultyText != null)
                 difficultyText.text = $"{data.difficultyName}";
-            // {data.startingLives} vidas • x{data.scoreMultiplier:0.#} pontos";
 
             if (modeText != null)
                 modeText.text = data.ModeLabel;
@@ -84,21 +99,32 @@ namespace LabScripts
             livesText.text = $"Vidas: {lives}";
         }
 
+        // ─────────────────────────────────────────────
+        // Controle de painéis
+        // ─────────────────────────────────────────────
+
         public void HideAllPanels()
         {
             solutionAnimationPanel?.SetActive(false);
             confirmationPanel?.SetActive(false);
             questionPanel?.SetActive(false);
             historyPanel?.SetActive(false);
+            treePanel?.SetActive(false);
             pauseMenuPanel?.SetActive(false);
-
+            questionErrorPanel?.SetActive(false);
+            questionVictoryPanel?.SetActive(false);
         }
 
+        // ─────────────────────────────────────────────
         // Confirmation Panel
+        // ─────────────────────────────────────────────
+
         public void ShowConfirmationPanel(string itemName)
         {
             currentItemName = itemName;
-            confirmationPanelText.text = "Iniciar mistura de solubilidade com " + itemName + "?";
+
+            if (confirmationPanelText != null)
+                confirmationPanelText.text = "Iniciar mistura de solubilidade com " + itemName + "?";
 
             confirmationPanel?.SetActive(true);
         }
@@ -108,24 +134,42 @@ namespace LabScripts
             confirmationPanel?.SetActive(false);
         }
 
+        /// <summary>
+        /// Botão "Sim" do popup.
+        /// </summary>
         public void OnConfirmAction()
         {
             Debug.Log("Ação Confirmada para o item: " + currentItemName);
-            ShowSolutionAnimationPanel();
+            HideConfirmationPanel();
+
+            // Dispara a lógica de mistura (consulta banco/cache, histórico, etc)
+            if (testManager != null)
+            {
+                testManager.OnConfirmMix();
+            }
+            else
+            {
+                Debug.LogWarning("TestManager não atribuído no UIController. Exibindo animação mesmo assim.");
+                ShowSolutionAnimationPanel();
+            }
         }
 
+        /// <summary>
+        /// Botão "Não" do popup.
+        /// </summary>
         public void OnCancelAction()
         {
             Debug.Log("Ação Cancelada para o item: " + currentItemName);
-            HideConfirmationPanel(); // Oculta o painel após o cancelamento
+            HideConfirmationPanel();
         }
 
+        // ─────────────────────────────────────────────
         // Solution Animation Panel
+        // ─────────────────────────────────────────────
+
         public void ShowSolutionAnimationPanel()
         {
             solutionAnimationPanel?.SetActive(true);
-
-            HideConfirmationPanel();
         }
 
         public void HideSolutionAnimationPanel()
@@ -133,7 +177,10 @@ namespace LabScripts
             solutionAnimationPanel?.SetActive(false);
         }
 
+        // ─────────────────────────────────────────────
         // Question Panel
+        // ─────────────────────────────────────────────
+
         public void ShowQuestionPanel()
         {
             questionPanel?.SetActive(true);
@@ -150,7 +197,10 @@ namespace LabScripts
             HideQuestionPanel();
         }
 
+        // ─────────────────────────────────────────────
         // History Panel
+        // ─────────────────────────────────────────────
+
         public void ShowHistoryPanel()
         {
             historyPanel?.SetActive(true);
@@ -161,7 +211,10 @@ namespace LabScripts
             historyPanel?.SetActive(false);
         }
 
+        // ─────────────────────────────────────────────
         // Tree Panel
+        // ─────────────────────────────────────────────
+
         public void ShowTreePanel()
         {
             treePanel?.SetActive(true);
@@ -172,8 +225,10 @@ namespace LabScripts
             treePanel?.SetActive(false);
         }
 
-
+        // ─────────────────────────────────────────────
         // Question Error Panel
+        // ─────────────────────────────────────────────
+
         public void ShowQuestionErrorPanel()
         {
             questionErrorPanel?.SetActive(true);
@@ -185,7 +240,10 @@ namespace LabScripts
             questionPanel?.SetActive(true);
         }
 
+        // ─────────────────────────────────────────────
         // Question Victory Panel
+        // ─────────────────────────────────────────────
+
         public void ShowQuestionVictoryPanel()
         {
             questionVictoryPanel?.SetActive(true);
@@ -196,34 +254,33 @@ namespace LabScripts
             questionVictoryPanel?.SetActive(false);
         }
 
-        // --- MÉTODOS DO MENU DE PAUSA ---
+        // ─────────────────────────────────────────────
+        // Menu de pausa
+        // ─────────────────────────────────────────────
 
         /// <summary>
-        /// Este método é chamado pelo botão de pausa (||) na tela do laboratório.
+        /// Botão de pausa (||) na tela do laboratório.
         /// </summary>
         public void PauseGame()
         {
             pauseMenuPanel?.SetActive(true);
-            // Pausa o tempo do jogo
             Time.timeScale = 0f;
         }
 
         /// <summary>
-        /// Este método é chamado pelo botão "Retomar" dentro do painel de pausa.
+        /// Botão "Retomar" dentro do painel de pausa.
         /// </summary>
         public void ResumeGame()
         {
             pauseMenuPanel?.SetActive(false);
-            // Volta o tempo do jogo ao normal
             Time.timeScale = 1f;
         }
 
         /// <summary>
-        /// Este método é chamado pelo botão "Voltar ao Menu Principal" no painel de pausa.
+        /// Botão "Voltar ao Menu Principal" no painel de pausa.
         /// </summary>
         public void ReturnToMainMenu()
         {
-            // IMPORTANTE: Sempre restaure o Time.timeScale antes de mudar de cena
             Time.timeScale = 1f;
             GameManager.Instance.LoadScene("1_MenuScene");
         }

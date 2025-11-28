@@ -151,6 +151,8 @@ namespace MenuScripts
         // Seleção de dificuldade
         public void SelectEasy()
         {
+            Debug.Log("Selecionado: EASY");
+
             easy0Image?.SetActive(false);
             easy1Image?.SetActive(true);
 
@@ -166,6 +168,7 @@ namespace MenuScripts
 
         public void SelectMedium()
         {
+            Debug.Log("Selecionado: MEDIUM");
             easy0Image?.SetActive(true);
             easy1Image?.SetActive(false);
 
@@ -181,6 +184,8 @@ namespace MenuScripts
 
         public void SelectHard()
         {
+            Debug.Log("Selecionado: HARD");
+
             easy0Image?.SetActive(true);
             easy1Image?.SetActive(false);
 

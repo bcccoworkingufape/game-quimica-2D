@@ -7,8 +7,8 @@ namespace Data
         public static Compound ToDomain(this CompoundDto dto)
         {
             var state = dto.state == "SOLID"
-                ? AggregateState.SOLID
-                : AggregateState.LIQUID;
+                ? PhysicalState.SOLID
+                : PhysicalState.LIQUID;
 
             return new Compound(
                 dto.id,
