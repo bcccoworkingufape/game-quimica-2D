@@ -16,16 +16,35 @@ namespace Presentation.Lab
 
         private IHistoryService _historyService;
 
-        private void Awake()
+        // IMPORTANTE: só Start, sem Awake nem OnEnable
+        private void Start()
         {
             _historyService = ServiceLocator.Resolve<IHistoryService>();
+
+            if (_historyService == null)
+            {
+                Debug.LogError("[HistoryPanelController] IHistoryService não resolvido no Start.");
+            }
+
+            if (listContainer == null)
+                Debug.LogError("[HistoryPanelController] ListContainer não atribuído.");
+            if (historyItemPrefab == null)
+                Debug.LogError("[HistoryPanelController] HistoryItemPrefab não atribuído.");
         }
 
-        /// <summary>
-        /// Atualiza a lista de histórico na UI.
-        /// </summary>
         public void RefreshHistory()
         {
+            if (_historyService == null)
+            {
+                Debug.LogWarning("[HistoryPanelController] HistoryService nulo ao tentar atualizar histórico.");
+                return;
+            }
+            if (listContainer == null || historyItemPrefab == null)
+            {
+                Debug.LogWarning("[HistoryPanelController] ListContainer ou HistoryItemPrefab não atribuídos.");
+                return;
+            }
+
             // Limpa itens antigos
             for (int i = listContainer.childCount - 1; i >= 0; i--)
             {
@@ -33,19 +52,22 @@ namespace Presentation.Lab
             }
 
             var entries = _historyService.GetAll();
+            Debug.Log($"[HistoryPanel] Atualizando histórico. Qtd entradas: {entries.Count}");
 
             foreach (var entry in entries)
             {
                 var go = Instantiate(historyItemPrefab, listContainer);
-                var text = go.GetComponentInChildren<TextMeshProUGUI>();
+                var rect = go.transform as RectTransform;
+                rect.localScale = Vector3.one;
 
-                if (text != null)
-                {
-                    var o = entry.Outcome;
-                    text.text =
-                        $"{entry.Order}) {o.Compound.Name} + {o.Solvent.Name} → " +
-                        $"{o.SolubilityResult} ({o.MixtureType}) / Litmus: {o.LitmusResult}";
-                }
+                var text = go.GetComponentInChildren<TextMeshProUGUI>();
+                if (text == null) continue;
+
+                var o = entry.Outcome;
+                text.text =
+                    $"{entry.Order}) {o.Compound.Name} + {o.Solvent.Name} → " +
+                    $"{o.SolubilityResult} ({o.MixtureType})\n" +
+                    $"Litmus: {o.LitmusResult}";
             }
         }
     }

@@ -28,31 +28,31 @@ namespace Core
             _initialized = true;
             DontDestroyOnLoad(gameObject);
 
+            Debug.Log("[Bootstrapper] Inicializando serviços...");
+
             var rootPath = System.IO.Path.Combine(
                 Application.streamingAssetsPath,
                 dataFolder);
 
-            // Provider que lê os JSONs
             IJsonProvider provider = new FileJsonProvider(rootPath);
 
-            // Repositórios (com cache)
             ICompoundRepository compoundRepo = new JsonCompoundRepository(provider);
             ISolventRepository  solventRepo  = new JsonSolventRepository(provider);
             ISolutionRepository solutionRepo = new JsonSolutionRepository(provider);
 
-            // Serviços de domínio
             ISolubilityService solubilityService = new SolubilityService(
                 compoundRepo, solventRepo, solutionRepo);
 
             IHistoryService historyService = new InMemoryHistoryService();
 
-            // Registro no ServiceLocator
             ServiceLocator.Register<ICompoundRepository>(compoundRepo);
             ServiceLocator.Register<ISolventRepository>(solventRepo);
             ServiceLocator.Register<ISolutionRepository>(solutionRepo);
 
             ServiceLocator.Register<ISolubilityService>(solubilityService);
             ServiceLocator.Register<IHistoryService>(historyService);
+
+            Debug.Log("[Bootstrapper] Serviços registrados no ServiceLocator.");
         }
     }
 }

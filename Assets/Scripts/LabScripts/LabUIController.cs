@@ -33,6 +33,8 @@ namespace LabScripts
 
         [Header("Integração com lógica da fase")]
         [SerializeField] private TestManager testManager;
+        [Header("Integração histórico")]
+        [SerializeField] private HistoryPanelController historyPanelController;
 
         // ─────────────────────────────────────────────
         // Ciclo de vida
@@ -143,7 +145,7 @@ namespace LabScripts
             HideConfirmationPanel();
 
             // Dispara a lógica de mistura (consulta banco/cache, histórico, etc)
-            if (testManager.name != null)
+            if (testManager != null)
             {
                 testManager.OnConfirmMix();
             }
@@ -213,7 +215,14 @@ namespace LabScripts
 
         public void ShowHistoryPanel()
         {
+            // 1) ativa o painel (chamando o OnEnable do HistoryPanelController)
             historyPanel?.SetActive(true);
+
+            // 2) atualiza a lista
+            if (historyPanelController != null)
+            {
+                historyPanelController.RefreshHistory();
+            }
         }
 
         public void HideHistoryPanel()

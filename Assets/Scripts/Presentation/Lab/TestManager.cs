@@ -31,14 +31,22 @@ namespace Presentation.Lab
 
         private void Awake()
         {
-            _solubilityService = ServiceLocator.Resolve<ISolubilityService>();
-            _historyService = ServiceLocator.Resolve<IHistoryService>();
-            _gameManager = GameManager.Instance;
-
             if (uiController == null)
             {
                 uiController = FindObjectOfType<LabUIController>();
             }
+        }
+
+        private void Start()
+        {
+            _solubilityService = ServiceLocator.Resolve<ISolubilityService>();
+            _historyService = ServiceLocator.Resolve<IHistoryService>();
+            _gameManager = GameManager.Instance;
+
+            if (_solubilityService == null)
+                Debug.LogError("[TestManager] ISolubilityService não resolvido.");
+            if (_historyService == null)
+                Debug.LogError("[TestManager] IHistoryService não resolvido.");
         }
 
         /// <summary>
