@@ -45,7 +45,9 @@ namespace Core
 
             IHistoryService historyService = new InMemoryHistoryService();
             IScoringService scoringService = new ScoringService();
+            //IQuestionService questionService = new QuestionService();
 
+            //ServiceLocator.Register<IQuestionService>(questionService);
             ServiceLocator.Register<ICompoundRepository>(compoundRepo);
             ServiceLocator.Register<ISolventRepository>(solventRepo);
             ServiceLocator.Register<ISolutionRepository>(solutionRepo);

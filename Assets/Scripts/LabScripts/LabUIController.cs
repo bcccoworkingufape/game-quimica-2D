@@ -6,11 +6,12 @@ using Core;
 using Presentation.Lab;
 using Domain;
 
-
 namespace LabScripts
 {
     public class LabUIController : MonoBehaviour
     {
+        private const string LabSceneName = "2_LabScene";
+
         [Header("Painéis principais")]
         public GameObject solutionAnimationPanel;
         public GameObject confirmationPanel;
@@ -20,14 +21,13 @@ namespace LabScripts
         public GameObject pauseMenuPanel;
         public GameObject questionErrorPanel;
         public GameObject questionVictoryPanel;
+        public GameObject defeatPanel;
 
         [Header("Textos de UI")]
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
-
-        [Header("UI de Perguntas")]
         public TextMeshProUGUI[] questionAlternativeTexts;
-
+        public TextMeshProUGUI victoryCompoundText;
 
         [HideInInspector]
         public string currentItemName;
@@ -39,8 +39,10 @@ namespace LabScripts
 
         [Header("Integração com lógica da fase")]
         [SerializeField] private TestManager testManager;
+
         [Header("Integração histórico")]
         [SerializeField] private HistoryPanelController historyPanelController;
+
         [Header("Integração fluxo de perguntas")]
         [SerializeField] private QuestionFlowPresenter questionFlowPresenter;
 
@@ -54,6 +56,7 @@ namespace LabScripts
             {
                 GameManager.Instance.OnDifficultyChanged += HandleDifficultyChanged;
                 GameManager.Instance.OnLivesChanged += HandleLivesChanged;
+                GameManager.Instance.OnGameOver += HandleGameOver;
             }
         }
 
@@ -63,6 +66,7 @@ namespace LabScripts
             {
                 GameManager.Instance.OnDifficultyChanged -= HandleDifficultyChanged;
                 GameManager.Instance.OnLivesChanged -= HandleLivesChanged;
+                GameManager.Instance.OnGameOver -= HandleGameOver;
             }
         }
 
@@ -90,6 +94,11 @@ namespace LabScripts
         private void HandleLivesChanged(int lives)
         {
             UpdateLivesLabel(lives);
+        }
+
+        private void HandleGameOver()
+        {
+            ShowDefeatPanel();
         }
 
         private void UpdateDifficultyLabel(DifficultyLevelData data)
@@ -123,6 +132,7 @@ namespace LabScripts
             pauseMenuPanel?.SetActive(false);
             questionErrorPanel?.SetActive(false);
             questionVictoryPanel?.SetActive(false);
+            defeatPanel?.SetActive(false);
         }
 
         // ─────────────────────────────────────────────
@@ -173,15 +183,13 @@ namespace LabScripts
             HideConfirmationPanel();
         }
 
-
         public void OnRepeatMixButton()
         {
             // Fecha o painel de animação
             HideSolutionAnimationPanel();
 
-            // TODO: Adicionar lógica de resetar a animação, e visualmente ver ela ocorrendo novamente
+            // TODO: lógica de repetir visualmente a animação da mistura
         }
-
 
         // ─────────────────────────────────────────────
         // Solution Animation Panel
@@ -239,6 +247,7 @@ namespace LabScripts
         /// </summary>
         public void OnQuestionSelect(int optionIndex)
         {
+            Debug.Log($"[LabUI] Alternativa escolhida index={optionIndex}");
             HideQuestionPanel();
 
             if (questionFlowPresenter != null)
@@ -266,18 +275,14 @@ namespace LabScripts
             }
         }
 
-
-
         // ─────────────────────────────────────────────
         // History Panel
         // ─────────────────────────────────────────────
 
         public void ShowHistoryPanel()
         {
-            // 1) ativa o painel (chamando o OnEnable do HistoryPanelController)
             historyPanel?.SetActive(true);
 
-            // 2) atualiza a lista
             if (historyPanelController != null)
             {
                 historyPanelController.RefreshHistory();
@@ -315,21 +320,105 @@ namespace LabScripts
         public void HideQuestionErrorPanel()
         {
             questionErrorPanel?.SetActive(false);
-            questionPanel?.SetActive(true);
+            questionPanel?.SetActive(true); // volta para as alternativas
         }
 
         // ─────────────────────────────────────────────
         // Question Victory Panel
         // ─────────────────────────────────────────────
 
+        /// <summary>
+        /// Exibe o painel de vitória preenchendo o texto "Composto X".
+        /// </summary>
+        public void ShowQuestionVictoryPanel(string compoundName)
+        {
+            if (victoryCompoundText != null)
+                victoryCompoundText.text = string.IsNullOrEmpty(compoundName)
+                    ? "Composto X:"
+                    : $"Composto X: {compoundName}";
+
+            questionVictoryPanel?.SetActive(true);
+        }
+
+        // fallback caso alguém chame sem nome
         public void ShowQuestionVictoryPanel()
         {
-            questionVictoryPanel?.SetActive(true);
+            ShowQuestionVictoryPanel(string.Empty);
         }
 
         public void HideQuestionVictoryPanel()
         {
             questionVictoryPanel?.SetActive(false);
+        }
+
+        /// <summary>
+        /// Botão "Próxima fase" no painel de vitória.
+        /// </summary>
+        public void OnVictoryNextPhase()
+        {
+            HideQuestionVictoryPanel();
+
+            if (questionFlowPresenter != null)
+            {
+                // Seleciona uma nova questão (ou mostra msg de "todas respondidas")
+                questionFlowPresenter.ShowQuestionForCurrentCompound();
+            }
+            else
+            {
+                Debug.LogWarning("[LabUIController] QuestionFlowPresenter não atribuído em OnVictoryNextPhase.");
+            }
+        }
+
+        /// <summary>
+        /// Botão "Reiniciar" no painel de vitória.
+        /// </summary>
+        public void OnVictoryRestart()
+        {
+            HideQuestionVictoryPanel();
+            RestartLab();
+        }
+
+        /// <summary>
+        /// Botão "Voltar ao menu" no painel de vitória.
+        /// </summary>
+        public void OnVictoryReturnToMenu()
+        {
+            HideQuestionVictoryPanel();
+            ReturnToMainMenu();
+        }
+
+        // ─────────────────────────────────────────────
+        // Defeat Panel (Derrota)
+        // ─────────────────────────────────────────────
+
+        public void ShowDefeatPanel()
+        {
+            defeatPanel?.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
+        public void HideDefeatPanel()
+        {
+            defeatPanel?.SetActive(false);
+            Time.timeScale = 1f;
+        }
+
+        /// <summary>
+        /// Botão "Reiniciar" no painel de derrota.
+        /// </summary>
+        public void OnDefeatRestart()
+        {
+            HideDefeatPanel();
+            RestartLab();
+        }
+
+        /// <summary>
+        /// Botão "Voltar ao menu" no painel de derrota.
+        /// </summary>
+        public void OnDefeatReturnToMenu()
+        {
+            HideDefeatPanel();
+            ReturnToMainMenu();
         }
 
         // ─────────────────────────────────────────────
@@ -361,6 +450,16 @@ namespace LabScripts
         {
             Time.timeScale = 1f;
             GameManager.Instance.LoadScene("1_MenuScene");
+        }
+
+        // ─────────────────────────────────────────────
+        // Utilidades internas
+        // ─────────────────────────────────────────────
+
+        private void RestartLab()
+        {
+            Time.timeScale = 1f;
+            GameManager.Instance.LoadScene(LabSceneName);
         }
     }
 }

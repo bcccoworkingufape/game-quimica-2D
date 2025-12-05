@@ -8,10 +8,10 @@ namespace Presentation.Lab
 {
     /// <summary>
     /// Gerencia o fluxo de perguntas:
-    /// - mantém um banco de questões em memória
-    /// - escolhe uma questão aleatória entre as não concluídas
-    /// - informa o TestManager qual é o compoundId do composto misterioso
-    /// - valida resposta via SubmitAnswerUseCase
+    /// - mantém uma lista de questões em memória
+    /// - escolhe uma questão aleatória entre as que restam
+    /// - avisa o TestManager qual é o compoundId da questão
+    /// - valida a resposta e aciona os painéis de vitória/erro
     /// </summary>
     public class QuestionFlowPresenter : MonoBehaviour
     {
@@ -23,7 +23,6 @@ namespace Presentation.Lab
         private GameManager _gameManager;
 
         private readonly List<Question> _remainingQuestions = new List<Question>();
-
         private Question _currentQuestion;
         private int _currentQuestionIndex = -1;
         private int _currentStreak;
@@ -42,7 +41,7 @@ namespace Presentation.Lab
             var scoringService = ServiceLocator.Resolve<IScoringService>();
             if (scoringService == null)
             {
-                Debug.LogError("[QuestionFlowPresenter] IScoringService não resolvido.");
+                Debug.LogError("[QuestionFlowPresenter] IScoringService não resolvido. Verifique o Bootstrapper.");
                 return;
             }
 
@@ -53,7 +52,7 @@ namespace Presentation.Lab
         }
 
         // --------------------------------------------------------------------
-        // Carrega as questões (versão hard-coded, igual ao seu exemplo)
+        // Carrega as questões (hard-coded por enquanto)
         // --------------------------------------------------------------------
         private void LoadQuestions()
         {
@@ -163,29 +162,8 @@ namespace Presentation.Lab
         }
 
         // --------------------------------------------------------------------
-        // Início de uma rodada de pergunta
+        // Seleção da questão (sempre RANDOM das que restam)
         // --------------------------------------------------------------------
-
-        public void ShowQuestionForCurrentCompound()
-        {
-            if (_remainingQuestions.Count == 0)
-            {
-                Debug.Log("Você respondeu a todas as perguntas!! Parabéns");
-                return;
-            }
-
-            if (_currentQuestion == null)
-            {
-                SelectNewQuestion();
-            }
-
-            if (_currentQuestion == null)
-                return;
-
-            uiController?.SetupQuestionPanel(_currentQuestion);
-            uiController?.ShowQuestionPanel();
-        }
-
         private void SelectNewQuestion()
         {
             if (_remainingQuestions.Count == 0)
@@ -199,17 +177,37 @@ namespace Presentation.Lab
             _currentQuestionIndex = Random.Range(0, _remainingQuestions.Count);
             _currentQuestion = _remainingQuestions[_currentQuestionIndex];
 
-            // Importante: informa ao TestManager qual composto é o alvo.
+            // LOG: id da questão + id do composto
+            Debug.Log($"[QuestionFlowPresenter] Questão selecionada Id={_currentQuestion.Id}, CompoundId={_currentQuestion.CompoundId}");
+
+            // avisa o TestManager qual é o composto misterioso
             if (testManager != null)
             {
                 testManager.SetCurrentCompound(_currentQuestion.CompoundId);
             }
         }
 
-        // --------------------------------------------------------------------
-        // Resposta do jogador (índice da alternativa)
-        // --------------------------------------------------------------------
+        public void ShowQuestionForCurrentCompound()
+        {
+            if (_remainingQuestions.Count == 0)
+            {
+                Debug.Log("Você respondeu a todas as perguntas!! Parabéns");
+                return;
+            }
 
+            if (_currentQuestion == null)
+                SelectNewQuestion();
+
+            if (_currentQuestion == null)
+                return;
+
+            uiController?.SetupQuestionPanel(_currentQuestion);
+            uiController?.ShowQuestionPanel();
+        }
+
+        // --------------------------------------------------------------------
+        // Resposta do jogador
+        // --------------------------------------------------------------------
         public void OnAnswerSelected(int optionIndex)
         {
             if (_currentQuestion == null)
@@ -227,7 +225,7 @@ namespace Presentation.Lab
             string selectedAnswer = _currentQuestion.Alternatives[optionIndex];
 
             var request = new SubmitAnswerRequest(_currentQuestion, selectedAnswer, _currentStreak);
-            var result = _submitAnswerUseCase.Execute(request);
+            var result  = _submitAnswerUseCase.Execute(request);
 
             _currentStreak = result.NewStreak;
 
@@ -243,7 +241,10 @@ namespace Presentation.Lab
 
             if (result.IsCorrect)
             {
-                // remove da lista para não repetir essa questão
+                // guarda o nome ANTES de limpar o estado
+                string compoundName = _currentQuestion.CorrectAnswer;
+
+                // remove da lista para não repetir
                 if (_currentQuestionIndex >= 0 && _currentQuestionIndex < _remainingQuestions.Count)
                 {
                     _remainingQuestions.RemoveAt(_currentQuestionIndex);
@@ -252,11 +253,10 @@ namespace Presentation.Lab
                 _currentQuestion = null;
                 _currentQuestionIndex = -1;
 
-                uiController?.ShowQuestionVictoryPanel();
+                uiController?.ShowQuestionVictoryPanel(compoundName);
             }
             else
             {
-                // mantém a mesma questão para tentar de novo depois
                 uiController?.ShowQuestionErrorPanel();
             }
         }
