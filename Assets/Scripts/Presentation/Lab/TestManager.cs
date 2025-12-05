@@ -21,6 +21,8 @@ namespace Presentation.Lab
         [Tooltip("ID do composto 'misterioso' que o jogador precisa descobrir.")]
         [SerializeField] private int currentCompoundId;
 
+        public int CurrentCompoundId => currentCompoundId;
+
         private int _selectedSolventId = -1;
         private string _selectedSolventName;
 
@@ -56,6 +58,7 @@ namespace Presentation.Lab
         {
             currentCompoundId = compoundId;
         }
+
 
         /// <summary>
         /// Chamado pelo script de clique do solvente (SolventClickHandler).

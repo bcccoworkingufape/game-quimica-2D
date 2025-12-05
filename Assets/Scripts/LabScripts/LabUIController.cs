@@ -4,6 +4,8 @@ using TMPro;
 using Data;
 using Core;
 using Presentation.Lab;
+using Domain;
+
 
 namespace LabScripts
 {
@@ -23,6 +25,10 @@ namespace LabScripts
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
 
+        [Header("UI de Perguntas")]
+        public TextMeshProUGUI[] questionAlternativeTexts;
+
+
         [HideInInspector]
         public string currentItemName;
 
@@ -35,6 +41,8 @@ namespace LabScripts
         [SerializeField] private TestManager testManager;
         [Header("Integração histórico")]
         [SerializeField] private HistoryPanelController historyPanelController;
+        [Header("Integração fluxo de perguntas")]
+        [SerializeField] private QuestionFlowPresenter questionFlowPresenter;
 
         // ─────────────────────────────────────────────
         // Ciclo de vida
@@ -193,6 +201,29 @@ namespace LabScripts
         // Question Panel
         // ─────────────────────────────────────────────
 
+        public void SetupQuestionPanel(Question question)
+        {
+            if (questionAlternativeTexts == null || questionAlternativeTexts.Length == 0)
+                return;
+
+            for (int i = 0; i < questionAlternativeTexts.Length; i++)
+            {
+                var label = questionAlternativeTexts[i];
+                if (label == null) continue;
+
+                bool hasOption = i < question.Alternatives.Count;
+                var parentObj = label.transform.parent != null
+                    ? label.transform.parent.gameObject
+                    : null;
+
+                if (parentObj != null)
+                    parentObj.SetActive(hasOption);
+
+                if (hasOption)
+                    label.text = question.Alternatives[i];
+            }
+        }
+
         public void ShowQuestionPanel()
         {
             questionPanel?.SetActive(true);
@@ -203,11 +234,39 @@ namespace LabScripts
             questionPanel?.SetActive(false);
         }
 
-        public void OnQuestionSelect(string answer)
+        /// <summary>
+        /// Chamado pelos botões de alternativa. O índice vem direto do OnClick do botão.
+        /// </summary>
+        public void OnQuestionSelect(int optionIndex)
         {
-            Debug.Log("Resposta selecionada: " + answer);
             HideQuestionPanel();
+
+            if (questionFlowPresenter != null)
+            {
+                questionFlowPresenter.OnAnswerSelected(optionIndex);
+            }
+            else
+            {
+                Debug.LogWarning("[LabUIController] QuestionFlowPresenter não atribuído.");
+            }
         }
+
+        /// <summary>
+        /// Botão na HUD para abrir a pergunta da rodada atual.
+        /// </summary>
+        public void OpenQuestionForCurrentCompound()
+        {
+            if (questionFlowPresenter != null)
+            {
+                questionFlowPresenter.ShowQuestionForCurrentCompound();
+            }
+            else
+            {
+                Debug.LogWarning("[LabUIController] QuestionFlowPresenter não atribuído.");
+            }
+        }
+
+
 
         // ─────────────────────────────────────────────
         // History Panel

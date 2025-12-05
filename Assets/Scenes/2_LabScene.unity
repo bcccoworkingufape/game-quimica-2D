@@ -450,9 +450,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1665864730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 487.24, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116426813
@@ -1207,6 +1207,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348818322}
   m_CullTransparentMesh: 1
+--- !u!1 &355858932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355858934}
+  - component: {fileID: 355858933}
+  m_Layer: 0
+  m_Name: LabPresenters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &355858933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355858932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1c9b8906cbfc24583a9e033090a21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Presentation.Lab.QuestionFlowPresenter
+  uiController: {fileID: 2094343733}
+  testManager: {fileID: 307922120}
+--- !u!4 &355858934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355858932}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.62487, y: 0, z: 38.30547}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383312397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,7 +1723,7 @@ GameObject:
   - component: {fileID: 486348217}
   - component: {fileID: 486348216}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Texto2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1750,7 +1796,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 44.4
-  m_fontSizeBase: 40
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -2242,7 +2288,7 @@ GameObject:
   - component: {fileID: 546865397}
   - component: {fileID: 546865400}
   m_Layer: 5
-  m_Name: Item4
+  m_Name: AlternativeButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2377,13 +2423,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2094343733}
-        m_TargetAssemblyTypeName: LabScripts.UIController, Assembly-CSharp
+        m_TargetAssemblyTypeName: LabScripts.LabUIController, Assembly-CSharp
         m_MethodName: OnQuestionSelect
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 4-aminobenzenossulfonamida
           m_BoolArgument: 0
@@ -2653,9 +2699,9 @@ RectTransform:
   - {fileID: 1642481748}
   m_Father: {fileID: 146192049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 410.45, y: -514.95}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 668, y: 163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614680812
@@ -3195,8 +3241,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2094343733}
-        m_TargetAssemblyTypeName: LabScripts.UIController, Assembly-CSharp
-        m_MethodName: ShowQuestionPanel
+        m_TargetAssemblyTypeName: LabScripts.LabUIController, Assembly-CSharp
+        m_MethodName: OpenQuestionForCurrentCompound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3878,7 +3924,7 @@ GameObject:
   - component: {fileID: 979587614}
   - component: {fileID: 979587613}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Texto3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3951,7 +3997,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 55.4
-  m_fontSizeBase: 40
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -4034,9 +4080,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1665864730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 331.24, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003404645
@@ -4191,9 +4237,9 @@ RectTransform:
   - {fileID: 22135948}
   m_Father: {fileID: 146192049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 410.45, y: -90.95001}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 668, y: 163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057699925
@@ -4503,7 +4549,7 @@ GameObject:
   - component: {fileID: 1202968842}
   - component: {fileID: 1202968845}
   m_Layer: 5
-  m_Name: Item1
+  m_Name: AlternativeButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4638,9 +4684,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2094343733}
-        m_TargetAssemblyTypeName: LabScripts.UIController, Assembly-CSharp
+        m_TargetAssemblyTypeName: LabScripts.LabUIController, Assembly-CSharp
         m_MethodName: OnQuestionSelect
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5446,9 +5492,9 @@ RectTransform:
   - {fileID: 592616210}
   m_Father: {fileID: 146192049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 410.45, y: -302.95}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 668, y: 163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378265678
@@ -5756,7 +5802,7 @@ GameObject:
   - component: {fileID: 1426324904}
   - component: {fileID: 1426324903}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Texto4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5829,7 +5875,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 31.25
-  m_fontSizeBase: 40
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -5894,7 +5940,7 @@ GameObject:
   - component: {fileID: 1448682511}
   - component: {fileID: 1448682514}
   m_Layer: 5
-  m_Name: Item3
+  m_Name: AlternativeButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6029,13 +6075,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2094343733}
-        m_TargetAssemblyTypeName: LabScripts.UIController, Assembly-CSharp
+        m_TargetAssemblyTypeName: LabScripts.LabUIController, Assembly-CSharp
         m_MethodName: OnQuestionSelect
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Decano-1-Amina
           m_BoolArgument: 0
@@ -6052,7 +6098,7 @@ GameObject:
   - component: {fileID: 1482028870}
   - component: {fileID: 1482028869}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Texto1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6125,7 +6171,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 61.85
-  m_fontSizeBase: 40
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -7216,8 +7262,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LabScripts.UIController, Assembly-CSharp
+      - m_Target: {fileID: 2094343733}
+        m_TargetAssemblyTypeName: LabScripts.LabUIController, Assembly-CSharp
         m_MethodName: HideQuestionVictoryPanel
         m_Mode: 1
         m_Arguments:
@@ -9648,7 +9694,7 @@ GameObject:
   - component: {fileID: 2022085060}
   - component: {fileID: 2022085063}
   m_Layer: 5
-  m_Name: Item2
+  m_Name: AlternativeButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9783,13 +9829,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2094343733}
-        m_TargetAssemblyTypeName: LabScripts.UIController, Assembly-CSharp
+        m_TargetAssemblyTypeName: LabScripts.LabUIController, Assembly-CSharp
         m_MethodName: OnQuestionSelect
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: "Butanoato de S\xF3dio"
           m_BoolArgument: 0
@@ -10301,9 +10347,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1665864730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175.23999, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087014181
@@ -10398,12 +10444,18 @@ MonoBehaviour:
   questionVictoryPanel: {fileID: 789800434}
   confirmationPanelText: {fileID: 487446504}
   solutionAnimationText: {fileID: 1563116710}
+  questionAlternativeTexts:
+  - {fileID: 1482028869}
+  - {fileID: 486348216}
+  - {fileID: 979587613}
+  - {fileID: 1426324903}
   currentItemName: 
   difficultyText: {fileID: 1940263495}
   livesText: {fileID: 861145934}
   modeText: {fileID: 1694631037}
   testManager: {fileID: 307922120}
   historyPanelController: {fileID: 610811575}
+  questionFlowPresenter: {fileID: 355858933}
 --- !u!1 &2107974264
 GameObject:
   m_ObjectHideFlags: 0
@@ -10564,6 +10616,7 @@ SceneRoots:
   - {fileID: 2094343732}
   - {fileID: 460822231}
   - {fileID: 307922121}
+  - {fileID: 355858934}
   - {fileID: 383312399}
   - {fileID: 1836663127}
   - {fileID: 422686094}

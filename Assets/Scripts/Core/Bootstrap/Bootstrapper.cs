@@ -37,13 +37,14 @@ namespace Core
             IJsonProvider provider = new FileJsonProvider(rootPath);
 
             ICompoundRepository compoundRepo = new JsonCompoundRepository(provider);
-            ISolventRepository  solventRepo  = new JsonSolventRepository(provider);
+            ISolventRepository solventRepo = new JsonSolventRepository(provider);
             ISolutionRepository solutionRepo = new JsonSolutionRepository(provider);
 
-            ISolubilityService solubilityService = new SolubilityService(
-                compoundRepo, solventRepo, solutionRepo);
+            ISolubilityService solubilityService =
+                new SolubilityService(compoundRepo, solventRepo, solutionRepo);
 
             IHistoryService historyService = new InMemoryHistoryService();
+            IScoringService scoringService = new ScoringService();
 
             ServiceLocator.Register<ICompoundRepository>(compoundRepo);
             ServiceLocator.Register<ISolventRepository>(solventRepo);
@@ -51,6 +52,7 @@ namespace Core
 
             ServiceLocator.Register<ISolubilityService>(solubilityService);
             ServiceLocator.Register<IHistoryService>(historyService);
+            ServiceLocator.Register<IScoringService>(scoringService);
 
             Debug.Log("[Bootstrapper] Serviços registrados no ServiceLocator.");
         }
