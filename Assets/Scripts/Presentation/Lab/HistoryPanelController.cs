@@ -12,9 +12,12 @@ namespace Presentation.Lab
     public class HistoryPanelController : MonoBehaviour
     {
         [Header("Referências de UI")]
-        [SerializeField] private ScrollRect scrollRect;         
+        [SerializeField] private ScrollRect scrollRect;
         [SerializeField] private RectTransform listContainer;       // Content do ScrollView
         [SerializeField] private GameObject historyItemPrefab;
+        [Header("Empty state")]
+        [SerializeField] private GameObject emptyStateObject;
+        [SerializeField, TextArea] private string emptyStateMessage = "Inicie Alguma Mistura!";
 
         private IHistoryService _historyService;
 
@@ -32,7 +35,16 @@ namespace Presentation.Lab
 
             if (scrollRect != null && listContainer == null)
                 listContainer = scrollRect.content;
+
+            if (emptyStateObject != null)
+            {
+                var tmp = emptyStateObject.GetComponent<TextMeshProUGUI>();
+                if (tmp != null) tmp.text = emptyStateMessage;
+
+                emptyStateObject.SetActive(false);
+            }
         }
+
 
         public void RefreshHistory(bool keepScrollPosition = false)
         {
@@ -55,7 +67,23 @@ namespace Presentation.Lab
                 Destroy(listContainer.GetChild(i).gameObject);
 
             var entries = _historyService.GetAll();
+            int count = entries?.Count ?? 0;
 
+            if (emptyStateObject != null)
+                emptyStateObject.SetActive(count == 0);
+
+            if (count == 0)
+            {
+                if (scrollRect != null)
+                {
+                    scrollRect.horizontalNormalizedPosition = 0f;
+                    scrollRect.StopMovement();
+                    scrollRect.verticalNormalizedPosition = keepScrollPosition ? prevY : 1f;
+                }
+                return;
+            }
+
+            // renderiza itens
             foreach (var entry in entries)
             {
                 var go = Instantiate(historyItemPrefab, listContainer);
@@ -81,8 +109,9 @@ namespace Presentation.Lab
             {
                 scrollRect.horizontalNormalizedPosition = 0f;
                 scrollRect.StopMovement();
-                scrollRect.verticalNormalizedPosition = keepScrollPosition ? prevY : 1f; // 1 = topo
+                scrollRect.verticalNormalizedPosition = keepScrollPosition ? prevY : 1f;
             }
         }
+
     }
 }
