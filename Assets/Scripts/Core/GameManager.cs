@@ -18,6 +18,8 @@ namespace Core
         private SceneFader sceneFader;
 
         // Estado do jogo
+        [SerializeField] private DifficultyLevelData defaultDifficulty;
+
         public DifficultyLevelData CurrentDifficulty { get; private set; }
         public int PlayerLives { get; private set; }
         public int PlayerScore { get; private set; }
@@ -74,10 +76,20 @@ namespace Core
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // Toda vez que uma cena terminar de carregar, se ainda estiver escuro, faz o fade-in
+            // Fade in
             if (sceneFader != null && sceneFader.Alpha > 0.01f)
                 StartCoroutine(sceneFader.FadeIn(fadeDuration));
+
+            // Fallback para cenas rodando direto (ex: abrir 2_LabScene e apertar Play)
+            EnsureDefaultDifficulty();
+            EnsurePlayerStateInitialized();
+
+            // Força UI sincronizar (quem assinou os eventos no OnEnable recebe aqui)
+            OnDifficultyChanged?.Invoke(CurrentDifficulty);
+            OnLivesChanged?.Invoke(PlayerLives);
+            OnScoreChanged?.Invoke(PlayerScore);
         }
+
 
         // ─────────────────────────────────────────────
         // Dificuldade / estado
@@ -91,6 +103,8 @@ namespace Core
 
         public void StartGame()
         {
+            EnsureDefaultDifficulty();
+
             if (CurrentDifficulty == null)
             {
                 Debug.LogError("Nenhuma dificuldade foi selecionada antes de iniciar o jogo!");
@@ -136,6 +150,34 @@ namespace Core
 
             OnScoreChanged?.Invoke(PlayerScore);
         }
+
+        private void EnsureDefaultDifficulty()
+        {
+            if (CurrentDifficulty != null) return;
+
+            if (defaultDifficulty == null)
+            {
+                Debug.LogWarning("[GameManager] defaultDifficulty NÃO atribuído. Dificuldade ficará nula até alguém chamar SetDifficulty().");
+                return;
+            }
+
+            SetDifficulty(defaultDifficulty);
+            Debug.Log($"[GameManager] Default difficulty aplicada: {defaultDifficulty.difficultyName}");
+        }
+
+        private void EnsurePlayerStateInitialized()
+        {
+            if (SceneManager.GetActiveScene().name != "2_LabScene") return;
+            if (CurrentDifficulty == null) return;
+
+            if (PlayerLives <= 0)
+                PlayerLives = Mathf.Max(1, CurrentDifficulty.startingLives);
+
+            if (PlayerScore < 0)
+                PlayerScore = 0;
+        }
+
+
 
         // ─────────────────────────────────────────────
         // Controle de cenas + fade + histórico
