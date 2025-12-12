@@ -45,12 +45,12 @@ namespace Presentation.Lab
                 return;
             }
 
-            _submitAnswerUseCase = new SubmitAnswerUseCase(scoringService);
-            _gameManager = GameManager.Instance;
-
             _historyService = ServiceLocator.Resolve<IHistoryService>();
             if (_historyService == null)
-                Debug.LogError("[QuestionFlowPresenter] IHistoryService não resolvido. Verifique o Bootstrapper.");
+                Debug.LogWarning("[QuestionFlowPresenter] IHistoryService não resolvido (histórico não será limpo).");
+
+            _submitAnswerUseCase = new SubmitAnswerUseCase(scoringService);
+            _gameManager = GameManager.Instance;
 
             LoadQuestions();
             PrepareNextCompound(forceNew: true);
@@ -278,10 +278,13 @@ namespace Presentation.Lab
 
             if (forceNew || _currentQuestion == null)
             {
-                _historyService?.Clear();
-                SelectNewQuestion();
+                _historyService?.Clear();          // limpa o histórico da fase anterior
+                testManager?.ResetRoundState();    // limpa solvente selecionado etc 
+
+                SelectNewQuestion();               // seleciona novo compound e chama testManager.SetCurrentCompound(...)
             }
         }
+
 
     }
 }

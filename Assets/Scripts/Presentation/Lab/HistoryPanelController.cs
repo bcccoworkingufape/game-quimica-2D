@@ -32,8 +32,22 @@ namespace Presentation.Lab
                 Debug.LogError("[HistoryPanelController] HistoryItemPrefab não atribuído.");
         }
 
+        private bool EnsureHistoryService()
+        {
+            if (_historyService != null) return true;
+
+            _historyService = ServiceLocator.Resolve<IHistoryService>();
+            return _historyService != null;
+        }
+
+
         public void RefreshHistory()
         {
+            if (!EnsureHistoryService())
+            {
+                Debug.LogWarning("[HistoryPanelController] HistoryService nulo ao tentar atualizar histórico.");
+                return;
+            }
             if (_historyService == null)
             {
                 Debug.LogWarning("[HistoryPanelController] HistoryService nulo ao tentar atualizar histórico.");
