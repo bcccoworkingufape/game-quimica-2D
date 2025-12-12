@@ -21,7 +21,7 @@ namespace Presentation.Lab
 
         private SubmitAnswerUseCase _submitAnswerUseCase;
         private GameManager _gameManager;
-
+        private IHistoryService _historyService;
         private readonly List<Question> _remainingQuestions = new List<Question>();
         private Question _currentQuestion;
         private int _currentQuestionIndex = -1;
@@ -47,6 +47,10 @@ namespace Presentation.Lab
 
             _submitAnswerUseCase = new SubmitAnswerUseCase(scoringService);
             _gameManager = GameManager.Instance;
+
+            _historyService = ServiceLocator.Resolve<IHistoryService>();
+            if (_historyService == null)
+                Debug.LogError("[QuestionFlowPresenter] IHistoryService não resolvido. Verifique o Bootstrapper.");
 
             LoadQuestions();
             PrepareNextCompound(forceNew: true);
@@ -273,7 +277,10 @@ namespace Presentation.Lab
             }
 
             if (forceNew || _currentQuestion == null)
-                SelectNewQuestion(); // aqui dentro jah faz testManager.SetCurrentCompound(...), etc
+            {
+                _historyService?.Clear();
+                SelectNewQuestion();
+            }
         }
 
     }
