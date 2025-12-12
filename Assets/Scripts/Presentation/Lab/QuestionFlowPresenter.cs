@@ -49,6 +49,7 @@ namespace Presentation.Lab
             _gameManager = GameManager.Instance;
 
             LoadQuestions();
+            PrepareNextCompound(forceNew: true);
         }
 
         // --------------------------------------------------------------------
@@ -261,10 +262,19 @@ namespace Presentation.Lab
             }
         }
 
-        public void PrepareNextCompound()
+        public void PrepareNextCompound(bool forceNew = false)
         {
-            SelectNewQuestion(); // mantém a mesma lógica de sorteio
-                                 // NÃO chama uiController.ShowQuestionPanel() aqui
+            if (_remainingQuestions.Count == 0)
+            {
+                Debug.Log("Você respondeu a todas as perguntas!! Parabéns");
+                _currentQuestion = null;
+                _currentQuestionIndex = -1;
+                return;
+            }
+
+            if (forceNew || _currentQuestion == null)
+                SelectNewQuestion(); // aqui dentro jah faz testManager.SetCurrentCompound(...), etc
         }
+
     }
 }

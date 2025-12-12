@@ -359,7 +359,7 @@ namespace LabScripts
             ResetFlowState(resetScore: false); // fecha tudo + reseta vidas/seleções
 
             if (questionFlowPresenter != null)
-                questionFlowPresenter.PrepareNextCompound(); 
+                questionFlowPresenter?.PrepareNextCompound(forceNew: true);
             else
                 Debug.LogWarning("[LabUIController] QuestionFlowPresenter não atribuído em OnVictoryNextPhase.");
         }

@@ -116,7 +116,6 @@ namespace Presentation.Lab
 
             // Abre painel de animação
             uiController?.ShowSolutionAnimationPanel();
-
         }
 
         public void ResetRoundState()
