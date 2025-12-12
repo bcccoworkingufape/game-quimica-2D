@@ -79,13 +79,18 @@ namespace Presentation.Lab
         /// </summary>
         public void OnConfirmMix()
         {
-            Debug.Log("[TestManager] OnConfirmMix chamado.");
-
+            if (_solubilityService == null || _historyService == null)
+            {
+                Debug.LogError("[TestManager] Serviços não inicializados (solubility/history).");
+                return;
+            }
             if (currentCompoundId <= 0 || _selectedSolventId <= 0)
             {
                 Debug.LogWarning($"[TestManager] Composto ou solvente não configurados. compound={currentCompoundId}, solvent={_selectedSolventId}");
                 return;
             }
+
+
 
             var useCase = new MixSolutionUseCase(
                 _solubilityService,
@@ -111,6 +116,14 @@ namespace Presentation.Lab
 
             // Abre painel de animação
             uiController?.ShowSolutionAnimationPanel();
+
+        }
+
+        public void ResetRoundState()
+        {
+            currentCompoundId = 0;
+            _selectedSolventId = -1;
+            _selectedSolventName = null;
         }
 
     }

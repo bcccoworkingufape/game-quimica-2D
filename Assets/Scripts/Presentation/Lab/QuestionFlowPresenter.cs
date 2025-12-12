@@ -225,7 +225,7 @@ namespace Presentation.Lab
             string selectedAnswer = _currentQuestion.Alternatives[optionIndex];
 
             var request = new SubmitAnswerRequest(_currentQuestion, selectedAnswer, _currentStreak);
-            var result  = _submitAnswerUseCase.Execute(request);
+            var result = _submitAnswerUseCase.Execute(request);
 
             _currentStreak = result.NewStreak;
 
@@ -259,6 +259,12 @@ namespace Presentation.Lab
             {
                 uiController?.ShowQuestionErrorPanel();
             }
+        }
+
+        public void PrepareNextCompound()
+        {
+            SelectNewQuestion(); // mantém a mesma lógica de sorteio
+                                 // NÃO chama uiController.ShowQuestionPanel() aqui
         }
     }
 }

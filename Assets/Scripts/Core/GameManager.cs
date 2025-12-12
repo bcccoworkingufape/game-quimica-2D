@@ -177,6 +177,23 @@ namespace Core
                 PlayerScore = 0;
         }
 
+        // Reseta o estado de gameplay mantendo a dificuldade/modo atual.
+        // Use resetScore=true para "Reiniciar" e false para "Próxima fase" (se quiser manter score).
+        public void ResetRunState(bool resetScore)
+        {
+            EnsureDefaultDifficulty();
+
+            if (CurrentDifficulty != null)
+                PlayerLives = Mathf.Max(1, CurrentDifficulty.startingLives);
+
+            if (resetScore)
+                PlayerScore = 0;
+
+            OnLivesChanged?.Invoke(PlayerLives);
+
+            if (resetScore)
+                OnScoreChanged?.Invoke(PlayerScore);
+        }
 
 
         // ─────────────────────────────────────────────

@@ -2178,6 +2178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeCanvasPrefab: {fileID: 2615416742227946493, guid: ec7cca64109c68f4aaf783534586649c, type: 3}
   fadeDuration: 0.5
+  defaultDifficulty: {fileID: 11400000, guid: 70b5a0aebe470f449ab4fd519f62993f, type: 2}
 --- !u!4 &460822231
 Transform:
   m_ObjectHideFlags: 0
@@ -11613,7 +11614,7 @@ MonoBehaviour:
   - {fileID: 486348216}
   - {fileID: 979587613}
   - {fileID: 1426324903}
-  victoryCompoundText: {fileID: 1625292245}
+  victoryCompoundText: {fileID: 1864702242}
   currentItemName: 
   difficultyText: {fileID: 1940263495}
   livesText: {fileID: 861145934}
