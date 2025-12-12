@@ -485,7 +485,7 @@ namespace LabScripts
             GameManager.Instance?.ResetRunState(resetScore);
 
             // reseta seleção (compound/solvente) da rodada
-            testManager?.ResetRoundState();
+            testManager?.ResetRoundState(clearCompound: false);
         }
 
     }

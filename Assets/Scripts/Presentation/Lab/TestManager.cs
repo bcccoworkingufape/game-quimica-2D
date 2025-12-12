@@ -118,12 +118,15 @@ namespace Presentation.Lab
             uiController?.ShowSolutionAnimationPanel();
         }
 
-        public void ResetRoundState()
+        public void ResetRoundState(bool clearCompound = false)
         {
-            currentCompoundId = 0;
+            if (clearCompound)
+                currentCompoundId = 0;
+
             _selectedSolventId = -1;
             _selectedSolventName = null;
         }
+
 
     }
 }
