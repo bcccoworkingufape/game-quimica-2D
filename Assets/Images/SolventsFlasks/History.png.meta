@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a79e38978be05a4b88ae90318f3032e
+guid: 0e0a62153e24f534ea6455ca58095f88
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8485601858048743080
-    second: tornassol_flask_0
+      213: 320218474723957359
+    second: History_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tornassol_flask_0
+      name: History_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 194
-        height: 228
+        width: 196
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a6d3666ee9e2c570800000000000000
-      internalID: 8485601858048743080
+      spriteID: f6a50749105a17400800000000000000
+      internalID: 320218474723957359
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tornassol_flask_0: 8485601858048743080
+      History_0: 320218474723957359
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

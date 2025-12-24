@@ -335,7 +335,7 @@ namespace LabScripts
             if (victoryCompoundText != null)
                 victoryCompoundText.text = string.IsNullOrEmpty(compoundName)
                     ? "Composto X:"
-                    : $"Composto X: {compoundName}";
+                    : $"Composto X:\n {compoundName}";
 
             questionVictoryPanel?.SetActive(true);
         }
