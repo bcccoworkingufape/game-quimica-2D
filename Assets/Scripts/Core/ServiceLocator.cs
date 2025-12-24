@@ -26,24 +26,31 @@ namespace Core
             }
 
             if (_services.ContainsKey(type))
-            {
                 _services[type] = instance;
-            }
             else
-            {
                 _services.Add(type, instance);
+        }
+
+        public static bool TryResolve<T>(out T instance)
+        {
+            var type = typeof(T);
+
+            if (_services.TryGetValue(type, out var obj) && obj is T typed)
+            {
+                instance = typed;
+                return true;
             }
+
+            instance = default;
+            return false;
         }
 
         public static T Resolve<T>()
         {
+            if (TryResolve<T>(out var instance))
+                return instance;
+
             var type = typeof(T);
-
-            if (_services.TryGetValue(type, out var instance))
-            {
-                return (T)instance;
-            }
-
             Debug.LogError($"Serviço do tipo {type.Name} não encontrado no ServiceLocator.");
             return default;
         }

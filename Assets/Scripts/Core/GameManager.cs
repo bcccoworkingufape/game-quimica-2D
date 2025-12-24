@@ -5,10 +5,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Data;
 
+using Domain;
+using LabScripts;
+using Presentation.Lab;
+
 namespace Core
 {
     public class GameManager : MonoBehaviour
     {
+        private const string LabSceneName = "2_LabScene";
         public static GameManager Instance { get; private set; }
 
         [Header("Scene Transition")]
@@ -55,7 +60,7 @@ namespace Core
                     Debug.LogError("FadeCanvas Prefab não foi atribuído no GameManager!");
                 }
 
-                // Aqui você pode chamar Bootstrapper / GameContext se quiser
+                // pode-se chamar Bootstrapper / GameContext
                 // GameContext.Initialize();
             }
             else
@@ -84,13 +89,32 @@ namespace Core
             EnsureDefaultDifficulty();
             EnsurePlayerStateInitialized();
 
+            if (scene.name == LabSceneName)
+                ResetLabSceneState();
+
             // Força UI sincronizar (quem assinou os eventos no OnEnable recebe aqui)
             OnDifficultyChanged?.Invoke(CurrentDifficulty);
             OnLivesChanged?.Invoke(PlayerLives);
             OnScoreChanged?.Invoke(PlayerScore);
         }
 
+        private void ResetLabSceneState()
+        {
+            // 1) nunca “vazar” pause/gameover pra dentro do lab
+            Time.timeScale = 1f;
 
+            // 2) fecha painéis (se algum ficou ativo por qualquer motivo)
+            var ui = FindObjectOfType<LabUIController>();
+            ui?.HideAllPanels();
+
+            // 3) limpa seleção de solvente / estado da rodada
+            var testManager = FindObjectOfType<TestManager>();
+            testManager?.ResetRoundState(clearCompound: false);
+
+            // 4) limpa histórico ao entrar no lab (além do clear por fase)
+            if (ServiceLocator.TryResolve<IHistoryService>(out var history))
+                history.Clear();
+        }
         // ─────────────────────────────────────────────
         // Dificuldade / estado
         // ─────────────────────────────────────────────
