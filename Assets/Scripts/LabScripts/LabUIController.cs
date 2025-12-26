@@ -38,7 +38,11 @@ namespace LabScripts
         public TextMeshProUGUI livesText;
         public TextMeshProUGUI modeText;
         [Header("Botões HUD")]
-        [SerializeField] private GameObject treeButtonObject;
+        [SerializeField] private Button treeButton; //Button do ícone da árvore aqui
+        // arraste aqui os Graphics que devem ficar PB (Image do ícone, TMP do texto, etc)
+        [SerializeField] private Graphic[] treeButtonGraphicsToTint;
+        [SerializeField] private Color treeEnabledColor = Color.white;
+        [SerializeField] private Color treeDisabledColor = Color.black;
 
         [Header("Integração com lógica da fase")]
         [SerializeField] private TestManager testManager;
@@ -124,9 +128,9 @@ namespace LabScripts
             var gm = GameManager.Instance;
             var mode = gm != null && gm.CurrentDifficulty != null
                 ? gm.CurrentDifficulty.mode
-                : GameMode.Estudos;
+                : GameMode.Experimentos;
 
-            if (mode == GameMode.Experimentos)
+            if (mode == GameMode.Estudos)
                 livesText.text = "Sem penalidade";
             else
                 livesText.text = $"Vidas: {lives}";
@@ -140,15 +144,36 @@ namespace LabScripts
 
             bool treeAllowed = data.mode != GameMode.Desafio;
 
-            // fecha o painel se estiver aberto
+            // se não pode usar, fecha o painel se estiver aberto
             if (!treeAllowed)
                 treePanel?.SetActive(false);
 
-            // esconde/mostra o botão (se você setar no Inspector)
-            if (treeButtonObject != null)
-                treeButtonObject.SetActive(treeAllowed);
+            // mantém o botão visível, só desabilita + PB
+            SetTreeButtonEnabled(treeAllowed);
         }
 
+
+        private void SetTreeButtonEnabled(bool enabled)
+        {
+            if (treeButton != null)
+                treeButton.interactable = enabled;
+
+            var tint = enabled ? treeEnabledColor : treeDisabledColor;
+
+            if (treeButtonGraphicsToTint != null && treeButtonGraphicsToTint.Length > 0)
+            {
+                foreach (var g in treeButtonGraphicsToTint)
+                {
+                    if (g != null) g.color = tint;
+                }
+            }
+            else
+            {
+                // fallback: tenta tingir apenas o targetGraphic do Button
+                if (treeButton != null && treeButton.targetGraphic != null)
+                    treeButton.targetGraphic.color = tint;
+            }
+        }
 
         // ─────────────────────────────────────────────
         // Controle de painéis
