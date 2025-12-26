@@ -14,6 +14,9 @@ namespace Core
     public class GameManager : MonoBehaviour
     {
         private const string LabSceneName = "2_LabScene";
+        private const string MenuSceneName = "1_MenuScene";
+        private const string gameClearSceneName = "3_Win_Game";
+
         public static GameManager Instance { get; private set; }
 
         [Header("Scene Transition")]
@@ -38,12 +41,29 @@ namespace Core
         public event Action OnGameStarted;
         public event Action OnGameOver;
 
+        // ─────────────────────────────────────────────
+        // Estado do "run" de perguntas (precisa sobreviver a Restart do Lab)
+        // ─────────────────────────────────────────────
+        private readonly HashSet<int> _completedQuestionIds = new HashSet<int>();
+
+        public int TotalQuestionsInRun { get; private set; } = 0;
+
+        public int ActiveQuestionId { get; private set; } = 0;
+
+        // true quando acertou a questão ativa, mas ainda NÃO avançou (Próxima fase)
+        public bool ActiveQuestionAnsweredCorrect { get; private set; } = false;
+
+        private string _lastSceneBeforeLoad = null;
+
         private void Awake()
         {
             if (Instance == null)
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+
+                // Inicializa estado do run (novo play)
+                ResetQuestionRun();
 
                 // Inicializa fade
                 if (fadeCanvasPrefab != null)
@@ -89,10 +109,18 @@ namespace Core
             EnsureDefaultDifficulty();
             EnsurePlayerStateInitialized();
 
+            // Se voltou pro MENU, o próximo "Jogar" deve começar do zero (todas as questões)
+            if (scene.name == MenuSceneName)
+            {
+                ResetQuestionRun();
+                Time.timeScale = 1f;
+            }
+
+            // Ao entrar no LAB: reset visual/rodada/histórico (mas NÃO reseta o run de questões)
             if (scene.name == LabSceneName)
                 ResetLabSceneState();
 
-            // Força UI sincronizar (quem assinou os eventos no OnEnable recebe aqui)
+            // Força UI sincronizar
             OnDifficultyChanged?.Invoke(CurrentDifficulty);
             OnLivesChanged?.Invoke(PlayerLives);
             OnScoreChanged?.Invoke(PlayerScore);
@@ -107,14 +135,93 @@ namespace Core
             var ui = FindObjectOfType<LabUIController>();
             ui?.HideAllPanels();
 
-            // 3) limpa seleção de solvente / estado da rodada
+            // 3) limpa seleção de solvente / estado da rodada (não mexe no compoundId por padrão)
             var testManager = FindObjectOfType<TestManager>();
             testManager?.ResetRoundState(clearCompound: false);
 
-            // 4) limpa histórico ao entrar no lab (além do clear por fase)
-            if (ServiceLocator.TryResolve<IHistoryService>(out var history))
-                history.Clear();
+            // 4) limpa histórico ao entrar no lab
+            try
+            {
+                var history = ServiceLocator.Resolve<IHistoryService>();
+                history?.Clear();
+            }
+            catch { /* ignore */ }
         }
+
+        // ─────────────────────────────────────────────
+        // Run de Perguntas (persistente entre Restart do Lab)
+        // ─────────────────────────────────────────────
+
+        public void SetTotalQuestions(int total)
+        {
+            TotalQuestionsInRun = Mathf.Max(0, total);
+        }
+
+        public bool IsQuestionCompleted(int questionId) => _completedQuestionIds.Contains(questionId);
+
+        public void SetActiveQuestion(int questionId)
+        {
+            ActiveQuestionId = questionId;
+        }
+
+        public void MarkActiveQuestionCorrect()
+        {
+            ActiveQuestionAnsweredCorrect = true;
+        }
+
+        /// <summary>
+        /// Chamado quando o jogador clica "Próxima fase" (aqui sim a questão é considerada concluída no run).
+        /// </summary>
+        public void CommitActiveQuestionAsCompleted()
+        {
+            if (ActiveQuestionId > 0)
+                _completedQuestionIds.Add(ActiveQuestionId);
+
+            // limpa a questão ativa para a próxima fase realmente escolher outra
+            ActiveQuestionId = 0;
+
+            ActiveQuestionAnsweredCorrect = false;
+
+            TryHandleGameCleared();
+        }
+
+
+        public void ResetQuestionRun()
+        {
+            _completedQuestionIds.Clear();
+            TotalQuestionsInRun = 0;
+            ActiveQuestionId = 0;
+            ActiveQuestionAnsweredCorrect = false;
+        }
+
+        private void TryHandleGameCleared()
+        {
+            if (TotalQuestionsInRun <= 0) return;
+
+            if (_completedQuestionIds.Count < TotalQuestionsInRun)
+                return;
+
+            // Não precisa estar com "vidas cheias", só não pode ter dado game over.
+            // Em Experimentos, não existe game over, então também pode zerar.
+            if (CurrentDifficulty != null && CurrentDifficulty.mode != GameMode.Experimentos)
+            {
+                if (PlayerLives <= 0) return;
+            }
+
+            HandleGameCleared();
+        }
+
+        public void HandleGameCleared()
+        {
+            Debug.Log("[GameManager] Zerou o game!");
+            Time.timeScale = 1f;
+
+            if (!string.IsNullOrWhiteSpace(gameClearSceneName))
+                LoadScene(gameClearSceneName);
+            else
+                Debug.LogWarning("[GameManager] gameClearSceneName não configurado.");
+        }
+
         // ─────────────────────────────────────────────
         // Dificuldade / estado
         // ─────────────────────────────────────────────
@@ -129,6 +236,9 @@ namespace Core
         {
             EnsureDefaultDifficulty();
 
+            // Novo "Jogar" (menu → lab) começa do zero nas questões
+            ResetQuestionRun();
+
             if (CurrentDifficulty == null)
             {
                 Debug.LogError("Nenhuma dificuldade foi selecionada antes de iniciar o jogo!");
@@ -142,18 +252,18 @@ namespace Core
             OnScoreChanged?.Invoke(PlayerScore);
             OnGameStarted?.Invoke();
 
-            LoadScene("2_LabScene");
+            LoadScene(LabSceneName);
         }
 
         public void LoseLife()
         {
-
             if (CurrentDifficulty != null && CurrentDifficulty.mode == GameMode.Experimentos)
             {
-                // opcional: manter HUD consistente
+                // Sem penalidade
                 OnLivesChanged?.Invoke(PlayerLives);
                 return;
             }
+
             if (PlayerLives > 0)
                 PlayerLives--;
 
@@ -163,8 +273,6 @@ namespace Core
             {
                 Debug.Log("Game Over!");
                 OnGameOver?.Invoke();
-                // Aqui pode-se chamar uma cena de resultados.. LeaderBoard seria interessante?
-                // LoadScene("3_ResultsScene");
             }
         }
 
@@ -198,7 +306,7 @@ namespace Core
 
         private void EnsurePlayerStateInitialized()
         {
-            if (SceneManager.GetActiveScene().name != "2_LabScene") return;
+            if (SceneManager.GetActiveScene().name != LabSceneName) return;
             if (CurrentDifficulty == null) return;
 
             if (PlayerLives <= 0)
@@ -209,12 +317,12 @@ namespace Core
         }
 
         // Reseta o estado de gameplay mantendo a dificuldade/modo atual.
-        // Use resetScore=true para "Reiniciar" e false para "Próxima fase" (se quiser manter score).
-        public void ResetRunState(bool resetScore)
+        // Use resetScore=true para "Reiniciar" e false para "Próxima fase" (mantém score).
+        public void ResetRunState(bool resetScore, bool resetLives)
         {
             EnsureDefaultDifficulty();
 
-            if (CurrentDifficulty != null)
+            if (resetLives && CurrentDifficulty != null)
                 PlayerLives = Mathf.Max(1, CurrentDifficulty.startingLives);
 
             if (resetScore)
@@ -240,6 +348,8 @@ namespace Core
         {
             if (sceneFader != null)
                 yield return StartCoroutine(sceneFader.FadeOut(fadeDuration));
+
+            _lastSceneBeforeLoad = SceneManager.GetActiveScene().name;
 
             string currentScene = SceneManager.GetActiveScene().name;
             if (!string.IsNullOrEmpty(currentScene))

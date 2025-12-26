@@ -418,7 +418,7 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryNextPhase()
         {
-            ResetFlowState(resetScore: false); // fecha tudo + reseta vidas/seleções
+            ResetFlowState(resetScore: false, resetLives: false); // fecha tudo + reseta vidas/seleções
 
             if (questionFlowPresenter != null)
                 questionFlowPresenter?.PrepareNextCompound(forceNew: true);
@@ -433,7 +433,7 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryRestart()
         {
-            ResetFlowState(resetScore: true);
+            ResetFlowState(resetScore: true, resetLives: true);
             RestartLab();
         }
 
@@ -443,9 +443,10 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryReturnToMenu()
         {
-            ResetFlowState(resetScore: false);
+            ResetFlowState(resetScore: false, resetLives: true);
             ReturnToMainMenu();
         }
+
 
 
         // ─────────────────────────────────────────────
@@ -469,9 +470,10 @@ namespace LabScripts
         /// </summary>
         public void OnDefeatRestart()
         {
-            ResetFlowState(resetScore: true);
+            ResetFlowState(resetScore: true, resetLives: true);
             RestartLab();
         }
+
 
 
         /// <summary>
@@ -479,9 +481,10 @@ namespace LabScripts
         /// </summary>
         public void OnDefeatReturnToMenu()
         {
-            ResetFlowState(resetScore: false);
+            ResetFlowState(resetScore: false, resetLives: true);
             ReturnToMainMenu();
         }
+
 
         // ─────────────────────────────────────────────
         // Menu de pausa
@@ -524,12 +527,10 @@ namespace LabScripts
             GameManager.Instance.LoadScene(LabSceneName);
         }
 
-        private void ResetFlowState(bool resetScore)
+        private void ResetFlowState(bool resetScore, bool resetLives)
         {
-            // garante que o jogo não fique pausado por causa do painel de derrota
             Time.timeScale = 1f;
 
-            // fecha “painéis de fluxo” (sem efeitos colaterais tipo reabrir questionPanel)
             if (solutionAnimationPanel) solutionAnimationPanel.SetActive(false);
             if (confirmationPanel) confirmationPanel.SetActive(false);
             if (questionPanel) questionPanel.SetActive(false);
@@ -540,13 +541,11 @@ namespace LabScripts
             if (historyPanel) historyPanel.SetActive(false);
             if (treePanel) treePanel.SetActive(false);
 
-            // opcional: limpa texto do composto no painel de vitória (evita “sobra” visual)
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
-            // reseta vidas/score conforme pedido
-            GameManager.Instance?.ResetRunState(resetScore);
+            // controla se reseta vidas ou não
+            GameManager.Instance?.ResetRunState(resetScore, resetLives);
 
-            // reseta seleção (compound/solvente) da rodada
             testManager?.ResetRoundState(clearCompound: false);
         }
 
