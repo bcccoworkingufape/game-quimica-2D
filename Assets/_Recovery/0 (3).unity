@@ -2626,7 +2626,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4405,7 +4405,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 207.00491, y: 5.073536, z: -590.863, w: -28.031769}
+  m_margin: {x: 207.00491, y: 5.073536, z: -264.82416, w: -28.031769}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12996,7 +12996,6 @@ MonoBehaviour:
   difficultyText: {fileID: 1940263495}
   livesText: {fileID: 861145934}
   modeText: {fileID: 1694631037}
-  treeButtonObject: {fileID: 868139512}
   testManager: {fileID: 307922120}
   historyPanelController: {fileID: 610811575}
   questionFlowPresenter: {fileID: 355858933}

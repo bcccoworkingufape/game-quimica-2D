@@ -18,7 +18,7 @@ namespace Core
 
         [Header("Scene Transition")]
         [SerializeField] private GameObject fadeCanvasPrefab;
-        [SerializeField] private float fadeDuration = 0.5f;
+        [SerializeField] private float fadeDuration = 0.2f;
 
         private SceneFader sceneFader;
 
@@ -147,6 +147,13 @@ namespace Core
 
         public void LoseLife()
         {
+
+            if (CurrentDifficulty != null && CurrentDifficulty.mode == GameMode.Experimentos)
+            {
+                // opcional: manter HUD consistente
+                OnLivesChanged?.Invoke(PlayerLives);
+                return;
+            }
             if (PlayerLives > 0)
                 PlayerLives--;
 
@@ -156,7 +163,7 @@ namespace Core
             {
                 Debug.Log("Game Over!");
                 OnGameOver?.Invoke();
-                // Aqui você pode chamar uma cena de resultados, se quiser
+                // Aqui pode-se chamar uma cena de resultados.. LeaderBoard seria interessante?
                 // LoadScene("3_ResultsScene");
             }
         }

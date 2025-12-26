@@ -1,18 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using Data;
 using Core;
-using System.Collections;
-using System;
 using TMPro;
-
+using Domain;
 
 namespace MenuScripts
 {
     public class MenuUIController : MonoBehaviour
     {
-
         // --- Referências aos ScriptableObjects de Dificuldade ---
         [Header("Dados de Dificuldade")]
         public DifficultyLevelData easyDifficulty;
@@ -52,30 +48,41 @@ namespace MenuScripts
         private void OnEnable()
         {
             if (GameManager.Instance != null)
-            {
                 GameManager.Instance.OnDifficultyChanged += HandleDifficultyChanged;
-            }
         }
 
         private void OnDisable()
         {
             if (GameManager.Instance != null)
-            {
                 GameManager.Instance.OnDifficultyChanged -= HandleDifficultyChanged;
-            }
         }
-
 
         private void Start()
         {
-            GameManager.Instance.SetDifficulty(easyDifficulty);
-            DeselectAllDifficulties();
             ShowLoadingPanel();
-            UpdateDifficultyLabel(GameManager.Instance.CurrentDifficulty);
+
+            if (GameManager.Instance == null)
+            {
+                Debug.LogError("[MenuUIController] GameManager.Instance é nulo. Verifique se o GameManager está na cena inicial.");
+                return;
+            }
+
+            // respeita a dificuldade já escolhida (se voltou do Lab), senão usa easy
+            var current = GameManager.Instance.CurrentDifficulty != null
+                ? GameManager.Instance.CurrentDifficulty
+                : easyDifficulty;
+
+            // garante que o GameManager não fique nulo
+            if (GameManager.Instance.CurrentDifficulty == null && current != null)
+                GameManager.Instance.SetDifficulty(current);
+
+            ApplyDifficultySelectionVisuals(current);
+            UpdateDifficultyLabel(current);
         }
 
         private void HandleDifficultyChanged(DifficultyLevelData data)
         {
+            ApplyDifficultySelectionVisuals(data);
             UpdateDifficultyLabel(data);
         }
 
@@ -83,8 +90,13 @@ namespace MenuScripts
         {
             if (difficultyText == null || data == null) return;
 
-            // Exemplo: "Fácil * 3 vidas * x1.0 pontos"
-            difficultyText.text = $"{data.difficultyName} * {data.startingLives} vidas * x{data.scoreMultiplier:0.#} pontos";
+            string livesLabel =
+                data.mode == GameMode.Experimentos
+                    ? "sem penalidade"
+                    : $"{data.startingLives} vidas";
+
+            difficultyText.text =
+                $"{data.difficultyName} * {livesLabel} * x{data.scoreMultiplier:0.#} pontos";
 
             if (modeText != null)
                 modeText.text = data.ModeLabel;
@@ -98,12 +110,11 @@ namespace MenuScripts
             settingsPanel?.SetActive(false);
             loadingPanel?.SetActive(false);
 
-            homeButton.interactable = false;
-            shopButton.interactable = true;
-            settingsButton.interactable = true;
+            if (homeButton != null) homeButton.interactable = false;
+            if (shopButton != null) shopButton.interactable = true;
+            if (settingsButton != null) settingsButton.interactable = true;
 
             OnHomeButtonClick();
-
         }
 
         public void ShowShopPanel()
@@ -113,9 +124,9 @@ namespace MenuScripts
             settingsPanel?.SetActive(false);
             loadingPanel?.SetActive(false);
 
-            shopButton.interactable = false;
-            homeButton.interactable = true;
-            settingsButton.interactable = true;
+            if (shopButton != null) shopButton.interactable = false;
+            if (homeButton != null) homeButton.interactable = true;
+            if (settingsButton != null) settingsButton.interactable = true;
 
             OnShopButtonClick();
         }
@@ -127,9 +138,9 @@ namespace MenuScripts
             settingsPanel?.SetActive(true);
             loadingPanel?.SetActive(false);
 
-            settingsButton.interactable = false;
-            homeButton.interactable = true;
-            shopButton.interactable = true;
+            if (settingsButton != null) settingsButton.interactable = false;
+            if (homeButton != null) homeButton.interactable = true;
+            if (shopButton != null) shopButton.interactable = true;
 
             OnSettingsButtonClick();
         }
@@ -145,68 +156,64 @@ namespace MenuScripts
         // Ação do botão "Jogar"
         public void LoadLabScene()
         {
+            if (GameManager.Instance == null) return;
             GameManager.Instance.StartGame();
         }
 
-        // Seleção de dificuldade
+        // Seleção de dificuldade (OnClick)
         public void SelectEasy()
         {
             Debug.Log("Selecionado: EASY");
-
-            easy0Image?.SetActive(false);
-            easy1Image?.SetActive(true);
-
-            medium0Image?.SetActive(true);
-            medium1Image?.SetActive(false);
-
-            hard0Image?.SetActive(true);
-            hard1Image?.SetActive(false);
-
-            GameManager.Instance.SetDifficulty(easyDifficulty);
-            //UpdateDifficultySelectionVisuals(easy1Image);
+            SelectDifficulty(easyDifficulty);
         }
 
         public void SelectMedium()
         {
             Debug.Log("Selecionado: MEDIUM");
-            easy0Image?.SetActive(true);
-            easy1Image?.SetActive(false);
-
-            medium0Image?.SetActive(false);
-            medium1Image?.SetActive(true);
-
-            hard0Image?.SetActive(true);
-            hard1Image?.SetActive(false);
-
-            GameManager.Instance.SetDifficulty(mediumDifficulty);
-            //UpdateDifficultySelectionVisuals(medium1Image);
+            SelectDifficulty(mediumDifficulty);
         }
 
         public void SelectHard()
         {
             Debug.Log("Selecionado: HARD");
-
-            easy0Image?.SetActive(true);
-            easy1Image?.SetActive(false);
-
-            medium0Image?.SetActive(true);
-            medium1Image?.SetActive(false);
-
-            hard0Image?.SetActive(false);
-            hard1Image?.SetActive(true);
-
-            GameManager.Instance.SetDifficulty(hardDifficulty);
-            //UpdateDifficultySelectionVisuals(hard1Image);
+            SelectDifficulty(hardDifficulty);
         }
 
-        /*TODO: lógica refatorada para selecionar imagens ativadas/desativadas
-        private void UpdateDifficultySelectionVisuals(GameObject activeImage)
+        // centralizar a seleção
+        private void SelectDifficulty(DifficultyLevelData data)
         {
-            easy1Image?.SetActive(false);
-            medium1Image?.SetActive(false);
-            hard1Image?.SetActive(false);
-            activeImage?.SetActive(true);
-        }*/
+            if (data == null)
+            {
+                Debug.LogWarning("[MenuUIController] DifficultyLevelData nulo em SelectDifficulty().");
+                return;
+            }
+
+            ApplyDifficultySelectionVisuals(data);
+
+            if (GameManager.Instance != null)
+                GameManager.Instance.SetDifficulty(data);
+
+            UpdateDifficultyLabel(data);
+        }
+
+        // garante que o highlight bate com a dificuldade atual
+        private void ApplyDifficultySelectionVisuals(DifficultyLevelData data)
+        {
+            if (data == null) data = easyDifficulty;
+
+            bool isEasy = data == easyDifficulty;
+            bool isMedium = data == mediumDifficulty;
+            bool isHard = data == hardDifficulty;
+
+            easy0Image?.SetActive(!isEasy);
+            easy1Image?.SetActive(isEasy);
+
+            medium0Image?.SetActive(!isMedium);
+            medium1Image?.SetActive(isMedium);
+
+            hard0Image?.SetActive(!isHard);
+            hard1Image?.SetActive(isHard);
+        }
 
         // Funções auxiliares
         private void OnHomeButtonClick()
@@ -243,14 +250,6 @@ namespace MenuScripts
 
             shopIcon0?.SetActive(true);
             shopIcon1?.SetActive(false);
-        }
-
-        // Deselect all difficulty highlights
-        public void DeselectAllDifficulties()
-        {
-            easy1Image?.SetActive(false);
-            medium1Image?.SetActive(false);
-            hard1Image?.SetActive(false);
         }
     }
 }

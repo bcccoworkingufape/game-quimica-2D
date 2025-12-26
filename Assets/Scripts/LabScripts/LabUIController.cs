@@ -5,6 +5,7 @@ using Data;
 using Core;
 using Presentation.Lab;
 using Domain;
+using UnityEngine.UI;
 
 namespace LabScripts
 {
@@ -36,6 +37,8 @@ namespace LabScripts
         public TextMeshProUGUI difficultyText;
         public TextMeshProUGUI livesText;
         public TextMeshProUGUI modeText;
+        [Header("Botões HUD")]
+        [SerializeField] private GameObject treeButtonObject;
 
         [Header("Integração com lógica da fase")]
         [SerializeField] private TestManager testManager;
@@ -89,6 +92,8 @@ namespace LabScripts
         private void HandleDifficultyChanged(DifficultyLevelData data)
         {
             UpdateDifficultyLabel(data);
+            ApplyModeRules(data);
+            UpdateLivesLabel(GameManager.Instance != null ? GameManager.Instance.PlayerLives : 0);
         }
 
         private void HandleLivesChanged(int lives)
@@ -115,8 +120,35 @@ namespace LabScripts
         private void UpdateLivesLabel(int lives)
         {
             if (livesText == null) return;
-            livesText.text = $"Vidas: {lives}";
+
+            var gm = GameManager.Instance;
+            var mode = gm != null && gm.CurrentDifficulty != null
+                ? gm.CurrentDifficulty.mode
+                : GameMode.Estudos;
+
+            if (mode == GameMode.Experimentos)
+                livesText.text = "Sem penalidade";
+            else
+                livesText.text = $"Vidas: {lives}";
         }
+
+
+
+        private void ApplyModeRules(DifficultyLevelData data)
+        {
+            if (data == null) return;
+
+            bool treeAllowed = data.mode != GameMode.Desafio;
+
+            // fecha o painel se estiver aberto
+            if (!treeAllowed)
+                treePanel?.SetActive(false);
+
+            // esconde/mostra o botão (se você setar no Inspector)
+            if (treeButtonObject != null)
+                treeButtonObject.SetActive(treeAllowed);
+        }
+
 
         // ─────────────────────────────────────────────
         // Controle de painéis
@@ -300,8 +332,13 @@ namespace LabScripts
 
         public void ShowTreePanel()
         {
+            var gm = GameManager.Instance;
+            if (gm != null && gm.CurrentDifficulty != null && gm.CurrentDifficulty.mode == GameMode.Desafio)
+                return;
+
             treePanel?.SetActive(true);
         }
+
 
         public void HideTreePanel()
         {
