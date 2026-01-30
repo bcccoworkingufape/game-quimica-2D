@@ -3400,7 +3400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619203062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12983,7 +12983,7 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 1764350053}
   questionErrorPanel: {fileID: 1621478424}
   questionVictoryPanel: {fileID: 789800434}
-  defeatPanel: {fileID: 0}
+  defeatPanel: {fileID: 1398846297}
   confirmationPanelText: {fileID: 487446504}
   solutionAnimationText: {fileID: 1563116710}
   questionAlternativeTexts: []
