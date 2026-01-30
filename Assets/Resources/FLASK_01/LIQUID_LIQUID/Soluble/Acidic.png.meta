@@ -1,0 +1,3874 @@
+fileFormatVersion: 2
+guid: e92ddcf8c16efb044b43dcb9bacbf8c7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8575286125687618887
+    second: Acidic_0
+  - first:
+      213: -5795943793841055585
+    second: Acidic_1
+  - first:
+      213: 7093291279167544205
+    second: Acidic_2
+  - first:
+      213: 3449916634162535484
+    second: Acidic_3
+  - first:
+      213: 991092445090696611
+    second: Acidic_4
+  - first:
+      213: 1635095833889593080
+    second: Acidic_5
+  - first:
+      213: -4524553974484571391
+    second: Acidic_6
+  - first:
+      213: -5070805424907965178
+    second: Acidic_7
+  - first:
+      213: 207712266464676523
+    second: Acidic_8
+  - first:
+      213: 9176106647910359564
+    second: Acidic_9
+  - first:
+      213: -3833266121236987528
+    second: Acidic_10
+  - first:
+      213: 468190131987222635
+    second: Acidic_11
+  - first:
+      213: 4874586481670327559
+    second: Acidic_12
+  - first:
+      213: -7313496776106480273
+    second: Acidic_13
+  - first:
+      213: -3287084669012289908
+    second: Acidic_14
+  - first:
+      213: -1323379716142152965
+    second: Acidic_15
+  - first:
+      213: 1969035546907363813
+    second: Acidic_16
+  - first:
+      213: -5610233273416953855
+    second: Acidic_17
+  - first:
+      213: -115748672148331231
+    second: Acidic_18
+  - first:
+      213: -2567127594050219238
+    second: Acidic_19
+  - first:
+      213: 1366566475177029214
+    second: Acidic_20
+  - first:
+      213: -2415042747955994218
+    second: Acidic_21
+  - first:
+      213: -8043272965173536814
+    second: Acidic_22
+  - first:
+      213: -4612173938495003272
+    second: Acidic_23
+  - first:
+      213: 8108043448995926024
+    second: Acidic_24
+  - first:
+      213: 5042887506577223931
+    second: Acidic_25
+  - first:
+      213: -8170713548260397932
+    second: Acidic_26
+  - first:
+      213: 4845501895431128983
+    second: Acidic_27
+  - first:
+      213: 8684936188601457349
+    second: Acidic_28
+  - first:
+      213: 2516852848330978821
+    second: Acidic_29
+  - first:
+      213: -2487230467558101463
+    second: Acidic_30
+  - first:
+      213: 8155184901914677241
+    second: Acidic_31
+  - first:
+      213: -6199362327800699015
+    second: Acidic_32
+  - first:
+      213: 762792729408914602
+    second: Acidic_33
+  - first:
+      213: 1246954947866474048
+    second: Acidic_34
+  - first:
+      213: 4801264744146918187
+    second: Acidic_35
+  - first:
+      213: 6534866917079795004
+    second: Acidic_36
+  - first:
+      213: -384035661430126209
+    second: Acidic_37
+  - first:
+      213: -7578232829500178604
+    second: Acidic_38
+  - first:
+      213: 6002923903795234632
+    second: Acidic_39
+  - first:
+      213: 5394804743275692881
+    second: Acidic_40
+  - first:
+      213: -8389674627296645433
+    second: Acidic_41
+  - first:
+      213: 2911996904833183675
+    second: Acidic_42
+  - first:
+      213: 3628805134455836000
+    second: Acidic_43
+  - first:
+      213: -3299338903048618008
+    second: Acidic_44
+  - first:
+      213: -1646444724575587848
+    second: Acidic_45
+  - first:
+      213: 4874365492896577821
+    second: Acidic_46
+  - first:
+      213: 2964075125348293078
+    second: Acidic_47
+  - first:
+      213: 7953896353776457903
+    second: Acidic_48
+  - first:
+      213: 6205342924966137624
+    second: Acidic_49
+  - first:
+      213: 7241521863043415930
+    second: Acidic_50
+  - first:
+      213: -5200443111670958950
+    second: Acidic_51
+  - first:
+      213: 4470275334112956058
+    second: Acidic_52
+  - first:
+      213: 5885443048411895677
+    second: Acidic_53
+  - first:
+      213: -8465193785166089249
+    second: Acidic_54
+  - first:
+      213: -6434548357931178575
+    second: Acidic_55
+  - first:
+      213: -4679038808729040111
+    second: Acidic_56
+  - first:
+      213: 8821898370180425758
+    second: Acidic_57
+  - first:
+      213: 3891778457502003485
+    second: Acidic_58
+  - first:
+      213: 622511867039938636
+    second: Acidic_59
+  - first:
+      213: -6248737804586681130
+    second: Acidic_60
+  - first:
+      213: -4991081790054309847
+    second: Acidic_61
+  - first:
+      213: 5689286841451314787
+    second: Acidic_62
+  - first:
+      213: 8598724178277011206
+    second: Acidic_63
+  - first:
+      213: -705497514038967266
+    second: Acidic_64
+  - first:
+      213: -9162562916195006303
+    second: Acidic_65
+  - first:
+      213: -535545451223095700
+    second: Acidic_66
+  - first:
+      213: -7923380515399186033
+    second: Acidic_67
+  - first:
+      213: 6098594822394615323
+    second: Acidic_68
+  - first:
+      213: -7716628133906830375
+    second: Acidic_69
+  - first:
+      213: 1931977516972598428
+    second: Acidic_70
+  - first:
+      213: -1823802591819794751
+    second: Acidic_71
+  - first:
+      213: -6130762264118024788
+    second: Acidic_72
+  - first:
+      213: 118325248175314037
+    second: Acidic_73
+  - first:
+      213: -2029745647685924333
+    second: Acidic_74
+  - first:
+      213: 1828596941431516673
+    second: Acidic_75
+  - first:
+      213: 8177535807209324781
+    second: Acidic_76
+  - first:
+      213: 5521031317622567511
+    second: Acidic_77
+  - first:
+      213: 3899737381057704150
+    second: Acidic_78
+  - first:
+      213: 7856674084343006676
+    second: Acidic_79
+  - first:
+      213: 2350162186735875353
+    second: Acidic_80
+  - first:
+      213: 7577706311324605508
+    second: Acidic_81
+  - first:
+      213: 7964313080257596738
+    second: Acidic_82
+  - first:
+      213: 1582175747299044993
+    second: Acidic_83
+  - first:
+      213: -1906397656570941004
+    second: Acidic_84
+  - first:
+      213: 4141038574920222515
+    second: Acidic_85
+  - first:
+      213: 5069680162827810574
+    second: Acidic_86
+  - first:
+      213: -3361847603464612481
+    second: Acidic_87
+  - first:
+      213: 8904289864678852296
+    second: Acidic_88
+  - first:
+      213: 7961892860363443762
+    second: Acidic_89
+  - first:
+      213: 5286757734297907536
+    second: Acidic_90
+  - first:
+      213: -8837203253206224356
+    second: Acidic_91
+  - first:
+      213: 4505844947797739741
+    second: Acidic_92
+  - first:
+      213: -687741147083226409
+    second: Acidic_93
+  - first:
+      213: -221117161722040600
+    second: Acidic_94
+  - first:
+      213: -1147246620874591701
+    second: Acidic_95
+  - first:
+      213: -1925720800461966913
+    second: Acidic_96
+  - first:
+      213: 4894045945449861512
+    second: Acidic_97
+  - first:
+      213: -6059202364137057933
+    second: Acidic_98
+  - first:
+      213: 431048371956503639
+    second: Acidic_99
+  - first:
+      213: 5658200256642756649
+    second: Acidic_100
+  - first:
+      213: -6012031234507092186
+    second: Acidic_101
+  - first:
+      213: 7344407445923688862
+    second: Acidic_102
+  - first:
+      213: -6142170697977642443
+    second: Acidic_103
+  - first:
+      213: 5439913914993109414
+    second: Acidic_104
+  - first:
+      213: -5889464861515336021
+    second: Acidic_105
+  - first:
+      213: -5355934191304881051
+    second: Acidic_106
+  - first:
+      213: 1163795891963535370
+    second: Acidic_107
+  - first:
+      213: 6043815480976615477
+    second: Acidic_108
+  - first:
+      213: -5022395706437627787
+    second: Acidic_109
+  - first:
+      213: 8849969509311292324
+    second: Acidic_110
+  - first:
+      213: 6908531444443975742
+    second: Acidic_111
+  - first:
+      213: -139960165618480346
+    second: Acidic_112
+  - first:
+      213: 8720763999760847369
+    second: Acidic_113
+  - first:
+      213: 7586309083995301658
+    second: Acidic_114
+  - first:
+      213: -7341531264291733882
+    second: Acidic_115
+  - first:
+      213: 1724233407460197561
+    second: Acidic_116
+  - first:
+      213: -5839603171338238919
+    second: Acidic_117
+  - first:
+      213: -8432413177509720385
+    second: Acidic_118
+  - first:
+      213: -9188469404531775168
+    second: Acidic_119
+  - first:
+      213: -1931414278077426435
+    second: Acidic_120
+  - first:
+      213: 8778521628974695274
+    second: Acidic_121
+  - first:
+      213: -7135084749088417989
+    second: Acidic_122
+  - first:
+      213: -4968045105657251826
+    second: Acidic_123
+  - first:
+      213: -3014869939512838727
+    second: Acidic_124
+  - first:
+      213: 6978619194807454343
+    second: Acidic_125
+  - first:
+      213: -5748355700845814127
+    second: Acidic_126
+  - first:
+      213: 7536112139309464921
+    second: Acidic_127
+  - first:
+      213: 2739467894275260806
+    second: Acidic_128
+  - first:
+      213: 7717168890392353025
+    second: Acidic_129
+  - first:
+      213: -1128377708187137443
+    second: Acidic_130
+  - first:
+      213: -6387896805541072067
+    second: Acidic_131
+  - first:
+      213: -8205098839517062581
+    second: Acidic_132
+  - first:
+      213: 3000946026849808648
+    second: Acidic_133
+  - first:
+      213: 7654742068939523459
+    second: Acidic_134
+  - first:
+      213: 8575910646345642897
+    second: Acidic_135
+  - first:
+      213: 9143366653571893925
+    second: Acidic_136
+  - first:
+      213: -1566759921403897060
+    second: Acidic_137
+  - first:
+      213: -7058546404997481538
+    second: Acidic_138
+  - first:
+      213: -3569195425744108833
+    second: Acidic_139
+  - first:
+      213: -6466873644609284299
+    second: Acidic_140
+  - first:
+      213: 1500373784879057058
+    second: Acidic_141
+  - first:
+      213: -3043119590067228224
+    second: Acidic_142
+  - first:
+      213: -1506840474130274091
+    second: Acidic_143
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Acidic_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2cd07d3b67ef880800000000000000
+      internalID: -8575286125687618887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_1
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9859f5e3dba09fa0800000000000000
+      internalID: -5795943793841055585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_2
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b582726de607260800000000000000
+      internalID: 7093291279167544205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_3
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c18fb76e090ef20800000000000000
+      internalID: 3449916634162535484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_4
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad4439e35111cd00800000000000000
+      internalID: 991092445090696611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_5
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6d5b07ff601b610800000000000000
+      internalID: 1635095833889593080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_6
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10be3cfd12e8531c0800000000000000
+      internalID: -4524553974484571391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_7
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60dac331551e0a9b0800000000000000
+      internalID: -5070805424907965178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_8
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa4e12b431f1e200800000000000000
+      internalID: 207712266464676523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_9
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c022cc11164185f70800000000000000
+      internalID: 9176106647910359564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_10
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8714122b5c08dcac0800000000000000
+      internalID: -3833266121236987528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_11
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 6606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b601178c1785f7600800000000000000
+      internalID: 468190131987222635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d81e2149206a340800000000000000
+      internalID: 4874586481670327559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_13
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d65324e6d318a90800000000000000
+      internalID: -7313496776106480273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_14
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86d3e4c8ede162d0800000000000000
+      internalID: -3287084669012289908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_15
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2c364e82962ade0800000000000000
+      internalID: -1323379716142152965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_16
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9c783c56b635b10800000000000000
+      internalID: 1969035546907363813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_17
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100d7e6ef827422b0800000000000000
+      internalID: -5610233273416953855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_18
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12520692237c46ef0800000000000000
+      internalID: -115748672148331231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_19
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a13988fed0bbf5cd0800000000000000
+      internalID: -2567127594050219238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_20
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e62e208f407f210800000000000000
+      internalID: 1366566475177029214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_21
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69123ba8a6b0c7ed0800000000000000
+      internalID: -2415042747955994218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_22
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7145f6add806090800000000000000
+      internalID: -8043272965173536814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_23
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 6006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875e0b14d344effb0800000000000000
+      internalID: -4612173938495003272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 800d5d00f8e858070800000000000000
+      internalID: 8108043448995926024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_25
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf07ac7087febf540800000000000000
+      internalID: 5042887506577223931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_26
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ca772715bcb9e80800000000000000
+      internalID: -8170713548260397932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_27
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79787a32d4eae3340800000000000000
+      internalID: 4845501895431128983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_28
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ca5682e277178870800000000000000
+      internalID: 8684936188601457349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_29
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506b2b8a458ade220800000000000000
+      internalID: 2516852848330978821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_30
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92eaba251159b7dd0800000000000000
+      internalID: -2487230467558101463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_31
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffc044d5790d2170800000000000000
+      internalID: 8155184901914677241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_32
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9772089fec077f9a0800000000000000
+      internalID: -6199362327800699015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_33
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa44ba922fbf59a00800000000000000
+      internalID: 762792729408914602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_34
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0463f7e1be21e4110800000000000000
+      internalID: 1246954947866474048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_35
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 5406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2bdb7bb8d481a240800000000000000
+      internalID: 4801264744146918187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_36
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c354efe76d280ba50800000000000000
+      internalID: 6534866917079795004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_37
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f790063c991abaaf0800000000000000
+      internalID: -384035661430126209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_38
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f307c8465b4d690800000000000000
+      internalID: -7578232829500178604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_39
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8478a635c7bae4350800000000000000
+      internalID: 6002923903795234632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_40
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1534a83c4523eda40800000000000000
+      internalID: 5394804743275692881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_41
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce20ea7063e19b80800000000000000
+      internalID: -8389674627296645433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_42
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf6e9ba1cd796820800000000000000
+      internalID: 2911996904833183675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_43
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d8a562b0b1c5230800000000000000
+      internalID: 3628805134455836000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_44
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eff8229fb46632d0800000000000000
+      internalID: -3299338903048618008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_45
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f13b590f37a629e0800000000000000
+      internalID: -1646444724575587848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_46
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19b58d179935a340800000000000000
+      internalID: 4874365492896577821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_47
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 4806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9d4f54f92822920800000000000000
+      internalID: 2964075125348293078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_48
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8de1b979ae16e60800000000000000
+      internalID: 7953896353776457903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_49
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81f0710538ecd1650800000000000000
+      internalID: 6205342924966137624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_50
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f7de764cd0f7460800000000000000
+      internalID: 7241521863043415930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_51
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94b9360b8054d7b0800000000000000
+      internalID: -5200443111670958950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_52
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e4ef95bbb990e30800000000000000
+      internalID: 4470275334112956058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_53
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d771266254b4da150800000000000000
+      internalID: 5885443048411895677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_54
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3b4585a17958a80800000000000000
+      internalID: -8465193785166089249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_55
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b560733c54e3b6a0800000000000000
+      internalID: -6434548357931178575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_56
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b407b7ef6b01fb0800000000000000
+      internalID: -4679038808729040111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_57
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18a337c3ddad6a70800000000000000
+      internalID: 8821898370180425758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_58
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11bce733ef520630800000000000000
+      internalID: 3891778457502003485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_59
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 4206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48716fae3b93a800800000000000000
+      internalID: 622511867039938636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_60
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc7e0fe2160849a0800000000000000
+      internalID: -6248737804586681130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_61
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92064ea4e8d1cbab0800000000000000
+      internalID: -4991081790054309847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_62
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e720a3d3864fe40800000000000000
+      internalID: 5689286841451314787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_63
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f83c7051ec45770800000000000000
+      internalID: 8598724178277011206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_64
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1449c5bfb19536f0800000000000000
+      internalID: -705497514038967266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_65
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a88704b29908d080800000000000000
+      internalID: -9162562916195006303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_66
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6665c2ef3c5198f0800000000000000
+      internalID: -535545451223095700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_67
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89416fa66f7a0290800000000000000
+      internalID: -7923380515399186033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_68
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b161ed1edaf82a450800000000000000
+      internalID: 6098594822394615323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_69
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dba2beb89709e490800000000000000
+      internalID: -7716628133906830375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_70
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c94613dc053cfca10800000000000000
+      internalID: 1931977516972598428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_71
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 3606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c6f426a43d80b6e0800000000000000
+      internalID: -1823802591819794751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_72
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca520e4f3382beaa0800000000000000
+      internalID: -6130762264118024788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_73
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5741371bf2064a100800000000000000
+      internalID: 118325248175314037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_74
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a09456615e4d3e0800000000000000
+      internalID: -2029745647685924333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_75
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e246bda3b706910800000000000000
+      internalID: 1828596941431516673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_76
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0cfbe7d717c7170800000000000000
+      internalID: 8177535807209324781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_77
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75233b05bb4ae9c40800000000000000
+      internalID: 5521031317622567511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_78
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0b1438c76ae1630800000000000000
+      internalID: 3899737381057704150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_79
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d548490473880d60800000000000000
+      internalID: 7856674084343006676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_80
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91572f0ae047d9020800000000000000
+      internalID: 2350162186735875353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_81
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c1db2edbb692960800000000000000
+      internalID: 7577706311324605508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_82
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d40ccbc8ce68e60800000000000000
+      internalID: 7964313080257596738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_83
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 3006
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e6ffd957405f510800000000000000
+      internalID: 1582175747299044993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_84
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1b37f8e6d1b85e0800000000000000
+      internalID: -1906397656570941004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_85
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3374f4bc4ace77930800000000000000
+      internalID: 4141038574920222515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_86
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07323e6f3f1b5640800000000000000
+      internalID: 5069680162827810574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_87
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f755e7e9a615851d0800000000000000
+      internalID: -3361847603464612481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_88
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c64b497474629b70800000000000000
+      internalID: 8904289864678852296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_89
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e8ea16f535e7e60800000000000000
+      internalID: 7961892860363443762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_90
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051306e16265e5940800000000000000
+      internalID: 5286757734297907536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_91
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1277b47672fb5580800000000000000
+      internalID: -8837203253206224356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_92
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd809766b1af78e30800000000000000
+      internalID: 4505844947797739741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_93
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d24fae0217a476f0800000000000000
+      internalID: -687741147083226409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_94
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eea0d9ec1f6eecf0800000000000000
+      internalID: -221117161722040600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_95
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 2406
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22b005d6492410f0800000000000000
+      internalID: -1147246620874591701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_96
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb132e782277645e0800000000000000
+      internalID: -1925720800461966913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_97
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 881dafc8bd42be340800000000000000
+      internalID: 4894045945449861512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_98
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37157678d8369eba0800000000000000
+      internalID: -6059202364137057933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_99
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7545a73e5346bf500800000000000000
+      internalID: 431048371956503639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_100
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920373da727f58e40800000000000000
+      internalID: 5658200256642756649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_101
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fc6a00279f09ca0800000000000000
+      internalID: -6012031234507092186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_102
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91f304e8a39ce560800000000000000
+      internalID: 7344407445923688862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_103
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532ca35fa40a2caa0800000000000000
+      internalID: -6142170697977642443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_104
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a96edf32e47e7b40800000000000000
+      internalID: 5439913914993109414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_105
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6bb3489ea644ea0800000000000000
+      internalID: -5889464861515336021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_106
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c47eeda36eba5b0800000000000000
+      internalID: -5355934191304881051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_107
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 1806
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00ab8b9232a62010800000000000000
+      internalID: 1163795891963535370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_108
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5382e9f8822ffd350800000000000000
+      internalID: 6043815480976615477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_109
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570965cf6bddc4ab0800000000000000
+      internalID: -5022395706437627787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_110
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3a98b216861da70800000000000000
+      internalID: 8849969509311292324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_111
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3013b9eeb800ef50800000000000000
+      internalID: 6908531444443975742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_112
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b0b9d88f2ce0ef0800000000000000
+      internalID: -139960165618480346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_113
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90292c737a0660970800000000000000
+      internalID: 8720763999760847369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_114
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17ebdbfaebf74960800000000000000
+      internalID: 7586309083995301658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_115
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e77745634ad1a90800000000000000
+      internalID: -7341531264291733882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_116
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4c6811625bde710800000000000000
+      internalID: 1724233407460197561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_117
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934c32feadf85fea0800000000000000
+      internalID: -5839603171338238919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_118
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbec53354ec0afa80800000000000000
+      internalID: -8432413177509720385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_119
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 1206
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049a65952cffb7080800000000000000
+      internalID: -9188469404531775168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_120
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4d31972fc3235e0800000000000000
+      internalID: -1931414278077426435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_121
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a63ce1439e293d970800000000000000
+      internalID: 8778521628974695274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_122
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37174859361bfc90800000000000000
+      internalID: -7135084749088417989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_123
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e087e295c45fd0bb0800000000000000
+      internalID: -4968045105657251826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_124
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5755373c70926d0800000000000000
+      internalID: -3014869939512838727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_125
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a8831fe2909d060800000000000000
+      internalID: 6978619194807454343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_126
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e5e7832fcb930b0800000000000000
+      internalID: -5748355700845814127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_127
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95dbc0b0016a59860800000000000000
+      internalID: 7536112139309464921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_128
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6814dd7198b840620800000000000000
+      internalID: 2739467894275260806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_129
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 109188fe734e81b60800000000000000
+      internalID: 7717168890392353025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_130
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a490be3723750f0800000000000000
+      internalID: -1128377708187137443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_131
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 606
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d333fdb23b1a957a0800000000000000
+      internalID: -6387896805541072067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_132
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a9d93f312a12e80800000000000000
+      internalID: -8205098839517062581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_133
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 801b080038085a920800000000000000
+      internalID: 3000946026849808648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_134
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385016aea5b1b3a60800000000000000
+      internalID: 7654742068939523459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_135
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1933ce4bb41c30770800000000000000
+      internalID: 8575910646345642897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_136
+      rect:
+        serializedVersion: 2
+        x: 2002
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa0e4d1783c3ee70800000000000000
+      internalID: 9143366653571893925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_137
+      rect:
+        serializedVersion: 2
+        x: 2502
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1bd66c0720c14ae0800000000000000
+      internalID: -1566759921403897060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_138
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebbb38341710b0e90800000000000000
+      internalID: -7058546404997481538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_139
+      rect:
+        serializedVersion: 2
+        x: 3502
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2c292bbaba77ec0800000000000000
+      internalID: -3569195425744108833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_140
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5375ab5eeac0146a0800000000000000
+      internalID: -6466873644609284299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_141
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8460e020662d410800000000000000
+      internalID: 1500373784879057058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_142
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1b2012bdaa4c5d0800000000000000
+      internalID: -3043119590067228224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Acidic_143
+      rect:
+        serializedVersion: 2
+        x: 5502
+        y: 6
+        width: 497
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d8a8468290a61be0800000000000000
+      internalID: -1506840474130274091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Acidic_0: -8575286125687618887
+      Acidic_1: -5795943793841055585
+      Acidic_10: -3833266121236987528
+      Acidic_100: 5658200256642756649
+      Acidic_101: -6012031234507092186
+      Acidic_102: 7344407445923688862
+      Acidic_103: -6142170697977642443
+      Acidic_104: 5439913914993109414
+      Acidic_105: -5889464861515336021
+      Acidic_106: -5355934191304881051
+      Acidic_107: 1163795891963535370
+      Acidic_108: 6043815480976615477
+      Acidic_109: -5022395706437627787
+      Acidic_11: 468190131987222635
+      Acidic_110: 8849969509311292324
+      Acidic_111: 6908531444443975742
+      Acidic_112: -139960165618480346
+      Acidic_113: 8720763999760847369
+      Acidic_114: 7586309083995301658
+      Acidic_115: -7341531264291733882
+      Acidic_116: 1724233407460197561
+      Acidic_117: -5839603171338238919
+      Acidic_118: -8432413177509720385
+      Acidic_119: -9188469404531775168
+      Acidic_12: 4874586481670327559
+      Acidic_120: -1931414278077426435
+      Acidic_121: 8778521628974695274
+      Acidic_122: -7135084749088417989
+      Acidic_123: -4968045105657251826
+      Acidic_124: -3014869939512838727
+      Acidic_125: 6978619194807454343
+      Acidic_126: -5748355700845814127
+      Acidic_127: 7536112139309464921
+      Acidic_128: 2739467894275260806
+      Acidic_129: 7717168890392353025
+      Acidic_13: -7313496776106480273
+      Acidic_130: -1128377708187137443
+      Acidic_131: -6387896805541072067
+      Acidic_132: -8205098839517062581
+      Acidic_133: 3000946026849808648
+      Acidic_134: 7654742068939523459
+      Acidic_135: 8575910646345642897
+      Acidic_136: 9143366653571893925
+      Acidic_137: -1566759921403897060
+      Acidic_138: -7058546404997481538
+      Acidic_139: -3569195425744108833
+      Acidic_14: -3287084669012289908
+      Acidic_140: -6466873644609284299
+      Acidic_141: 1500373784879057058
+      Acidic_142: -3043119590067228224
+      Acidic_143: -1506840474130274091
+      Acidic_15: -1323379716142152965
+      Acidic_16: 1969035546907363813
+      Acidic_17: -5610233273416953855
+      Acidic_18: -115748672148331231
+      Acidic_19: -2567127594050219238
+      Acidic_2: 7093291279167544205
+      Acidic_20: 1366566475177029214
+      Acidic_21: -2415042747955994218
+      Acidic_22: -8043272965173536814
+      Acidic_23: -4612173938495003272
+      Acidic_24: 8108043448995926024
+      Acidic_25: 5042887506577223931
+      Acidic_26: -8170713548260397932
+      Acidic_27: 4845501895431128983
+      Acidic_28: 8684936188601457349
+      Acidic_29: 2516852848330978821
+      Acidic_3: 3449916634162535484
+      Acidic_30: -2487230467558101463
+      Acidic_31: 8155184901914677241
+      Acidic_32: -6199362327800699015
+      Acidic_33: 762792729408914602
+      Acidic_34: 1246954947866474048
+      Acidic_35: 4801264744146918187
+      Acidic_36: 6534866917079795004
+      Acidic_37: -384035661430126209
+      Acidic_38: -7578232829500178604
+      Acidic_39: 6002923903795234632
+      Acidic_4: 991092445090696611
+      Acidic_40: 5394804743275692881
+      Acidic_41: -8389674627296645433
+      Acidic_42: 2911996904833183675
+      Acidic_43: 3628805134455836000
+      Acidic_44: -3299338903048618008
+      Acidic_45: -1646444724575587848
+      Acidic_46: 4874365492896577821
+      Acidic_47: 2964075125348293078
+      Acidic_48: 7953896353776457903
+      Acidic_49: 6205342924966137624
+      Acidic_5: 1635095833889593080
+      Acidic_50: 7241521863043415930
+      Acidic_51: -5200443111670958950
+      Acidic_52: 4470275334112956058
+      Acidic_53: 5885443048411895677
+      Acidic_54: -8465193785166089249
+      Acidic_55: -6434548357931178575
+      Acidic_56: -4679038808729040111
+      Acidic_57: 8821898370180425758
+      Acidic_58: 3891778457502003485
+      Acidic_59: 622511867039938636
+      Acidic_6: -4524553974484571391
+      Acidic_60: -6248737804586681130
+      Acidic_61: -4991081790054309847
+      Acidic_62: 5689286841451314787
+      Acidic_63: 8598724178277011206
+      Acidic_64: -705497514038967266
+      Acidic_65: -9162562916195006303
+      Acidic_66: -535545451223095700
+      Acidic_67: -7923380515399186033
+      Acidic_68: 6098594822394615323
+      Acidic_69: -7716628133906830375
+      Acidic_7: -5070805424907965178
+      Acidic_70: 1931977516972598428
+      Acidic_71: -1823802591819794751
+      Acidic_72: -6130762264118024788
+      Acidic_73: 118325248175314037
+      Acidic_74: -2029745647685924333
+      Acidic_75: 1828596941431516673
+      Acidic_76: 8177535807209324781
+      Acidic_77: 5521031317622567511
+      Acidic_78: 3899737381057704150
+      Acidic_79: 7856674084343006676
+      Acidic_8: 207712266464676523
+      Acidic_80: 2350162186735875353
+      Acidic_81: 7577706311324605508
+      Acidic_82: 7964313080257596738
+      Acidic_83: 1582175747299044993
+      Acidic_84: -1906397656570941004
+      Acidic_85: 4141038574920222515
+      Acidic_86: 5069680162827810574
+      Acidic_87: -3361847603464612481
+      Acidic_88: 8904289864678852296
+      Acidic_89: 7961892860363443762
+      Acidic_9: 9176106647910359564
+      Acidic_90: 5286757734297907536
+      Acidic_91: -8837203253206224356
+      Acidic_92: 4505844947797739741
+      Acidic_93: -687741147083226409
+      Acidic_94: -221117161722040600
+      Acidic_95: -1147246620874591701
+      Acidic_96: -1925720800461966913
+      Acidic_97: 4894045945449861512
+      Acidic_98: -6059202364137057933
+      Acidic_99: 431048371956503639
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
