@@ -2325,9 +2325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6c85bbf9ae6e34db928dbf2d2ab18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeCanvasPrefab: {fileID: 2615416742227946493, guid: ec7cca64109c68f4aaf783534586649c, type: 3}
-  fadeDuration: 0.5
-  defaultDifficulty: {fileID: 11400000, guid: 70b5a0aebe470f449ab4fd519f62993f, type: 2}
+  fadeCanvasPrefab: {fileID: 0}
+  fadeDuration: 0.2
+  defaultDifficulty: {fileID: 0}
 --- !u!4 &460822231
 Transform:
   m_ObjectHideFlags: 0
@@ -3400,7 +3400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &619203062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6894,10 +6894,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1321617564}
   - component: {fileID: 1321617567}
-  - component: {fileID: 1321617566}
-  - component: {fileID: 1321617565}
+  - component: {fileID: 1321617568}
+  - component: {fileID: 1321617569}
   m_Layer: 5
-  m_Name: Solution_1
+  m_Name: Flask_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6922,7 +6922,15 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000076294, y: 238}
   m_SizeDelta: {x: 340, y: 399.4}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1321617565
+--- !u!222 &1321617567
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321617563}
+  m_CullTransparentMesh: 1
+--- !u!95 &1321617568
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -6932,7 +6940,7 @@ Animator:
   m_GameObject: {fileID: 1321617563}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5f194aa4cb884d74ebabf32aa319be91, type: 2}
+  m_Controller: {fileID: 9100000, guid: 031b71f0099cec847a7a98c2743edf5c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6944,7 +6952,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1321617566
+--- !u!114 &1321617569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6955,7 +6963,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -6964,9 +6972,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8221694614592105248, guid: 4d5520dd63d90104f9b367e7af55ef1f, type: 3}
+  m_Sprite: {fileID: 3483360546945567320, guid: ef1b665df5bd36a4d8be71e2388334ac, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6974,14 +6982,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1321617567
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321617563}
-  m_CullTransparentMesh: 1
 --- !u!1 &1338942748
 GameObject:
   m_ObjectHideFlags: 0
@@ -12983,27 +12983,22 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 1764350053}
   questionErrorPanel: {fileID: 1621478424}
   questionVictoryPanel: {fileID: 789800434}
-  defeatPanel: {fileID: 1398846297}
+  defeatPanel: {fileID: 0}
   confirmationPanelText: {fileID: 487446504}
   solutionAnimationText: {fileID: 1563116710}
-  questionAlternativeTexts:
-  - {fileID: 1482028869}
-  - {fileID: 486348216}
-  - {fileID: 979587613}
-  - {fileID: 1426324903}
-  victoryCompoundText: {fileID: 1864702242}
+  questionAlternativeTexts: []
+  victoryCompoundText: {fileID: 0}
   currentItemName: 
   difficultyText: {fileID: 1940263495}
   livesText: {fileID: 861145934}
   modeText: {fileID: 1694631037}
-  treeButton: {fileID: 868139514}
-  treeButtonGraphicsToTint:
-  - {fileID: 868139515}
+  treeButton: {fileID: 0}
+  treeButtonGraphicsToTint: []
   treeEnabledColor: {r: 1, g: 1, b: 1, a: 1}
-  treeDisabledColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
-  testManager: {fileID: 307922120}
-  historyPanelController: {fileID: 610811575}
-  questionFlowPresenter: {fileID: 355858933}
+  treeDisabledColor: {r: 0, g: 0, b: 0, a: 1}
+  testManager: {fileID: 0}
+  historyPanelController: {fileID: 0}
+  questionFlowPresenter: {fileID: 0}
 --- !u!1 &2098853086
 GameObject:
   m_ObjectHideFlags: 0
