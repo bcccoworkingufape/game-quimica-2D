@@ -254,6 +254,7 @@ namespace LabScripts
 
         public void ShowSolutionAnimationPanel()
         {
+            // TODO: CHAMAR FUNÇÃO DE ATUALIZAÇÃO PARÂMETROS DE ANIMAÇÃO AQUI (flaskType, mixtureType, ...);
             solutionAnimationPanel?.SetActive(true);
         }
 
@@ -548,6 +549,29 @@ namespace LabScripts
 
             testManager?.ResetRoundState(clearCompound: false);
         }
+
+        /*TODO: fazer função que atualiza parâmetros de animação de frascos
+        flaskType
+            FLASK_01 -- 0
+            FLASK_02 -- 1 
+            FLASK_03 -- 2
+            FLASK_04 -- 3
+        
+        mixtureType
+            LIQUID_LIQUID -- 0
+            SOLID_LIQUID -- 1
+        
+        solubilityResult
+            Soluble -- 0
+            InsolubleFloat -- 1
+            InsolubleSink -- 2
+        
+        litmusResult
+            None -- 0
+            Basic -- 1
+            Neutral -- 2
+            Acidic -- 3
+        */
 
     }
 }
