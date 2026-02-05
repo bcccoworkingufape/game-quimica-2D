@@ -17,6 +17,10 @@ namespace Presentation.Lab
         [Header("Referências de UI")]
         [SerializeField] private LabUIController uiController;
 
+        [Header("Referência de Animação")]
+        [Tooltip("Controller que atualiza os parâmetros do Animator do frasco")]
+        [SerializeField] private FlaskAnimationController flaskAnimationController;
+
         [Header("Questão atual")]
         [Tooltip("ID do composto 'misterioso' que o jogador precisa descobrir.")]
         [SerializeField] private int currentCompoundId;
@@ -104,6 +108,16 @@ namespace Presentation.Lab
             Debug.Log($"[MIX] compoundId={outcome.Compound.Id}, solventId={outcome.Solvent.Id}, " +
                       $"mixtureType={outcome.MixtureType}, solubility={outcome.SolubilityResult}, " +
                       $"litmus={outcome.LitmusResult}, flask={outcome.FlaskType}");
+
+            // Atualiza os parâmetros do Animator do frasco
+            if (flaskAnimationController != null)
+            {
+                flaskAnimationController.SetAnimationFromOutcome(outcome);
+            }
+            else
+            {
+                Debug.LogWarning("[TestManager] FlaskAnimationController não atribuído. Animação não será atualizada.");
+            }
 
             // Atualiza o texto de animação
             if (uiController != null && uiController.solutionAnimationText != null)

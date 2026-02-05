@@ -24,6 +24,10 @@ namespace LabScripts
         public GameObject questionVictoryPanel;
         public GameObject defeatPanel;
 
+        [Header("Animação do Painel de Solução")]
+        [Tooltip("Controlador de animação de escala do painel de solução (opcional)")]
+        [SerializeField] private SolutionPanelAnimator solutionPanelAnimator;
+
         [Header("Textos de UI")]
         public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
@@ -181,7 +185,7 @@ namespace LabScripts
 
         public void HideAllPanels()
         {
-            solutionAnimationPanel?.SetActive(false);
+            solutionAnimationPanel?.SetActive(true); // solutionAnimationPanel precisa estar ativo todo momento
             confirmationPanel?.SetActive(false);
             questionPanel?.SetActive(false);
             historyPanel?.SetActive(false);
@@ -254,13 +258,30 @@ namespace LabScripts
 
         public void ShowSolutionAnimationPanel()
         {
-            // TODO: CHAMAR FUNÇÃO DE ATUALIZAÇÃO PARÂMETROS DE ANIMAÇÃO AQUI (flaskType, mixtureType, ...);
-            solutionAnimationPanel?.SetActive(true);
+            // Se temos o SolutionPanelAnimator, usa animação de escala (painel sempre ativo)
+            if (solutionPanelAnimator != null)
+            {
+                solutionPanelAnimator.Open();
+            }
+            else
+            {
+                // Fallback: ativa/desativa o GameObject (pode causar problemas com Animator)
+                solutionAnimationPanel?.SetActive(true);
+            }
         }
 
         public void HideSolutionAnimationPanel()
         {
-            solutionAnimationPanel?.SetActive(false);
+            // Se temos o SolutionPanelAnimator, usa animação de escala
+            if (solutionPanelAnimator != null)
+            {
+                solutionPanelAnimator.Close();
+            }
+            else
+            {
+                // Fallback: ativa/desativa o GameObject
+                solutionAnimationPanel?.SetActive(true); // true para nao desativar o painel
+            }
         }
 
         // ─────────────────────────────────────────────
@@ -532,7 +553,7 @@ namespace LabScripts
         {
             Time.timeScale = 1f;
 
-            if (solutionAnimationPanel) solutionAnimationPanel.SetActive(false);
+            if (solutionAnimationPanel) solutionAnimationPanel.SetActive(true);
             if (confirmationPanel) confirmationPanel.SetActive(false);
             if (questionPanel) questionPanel.SetActive(false);
             if (pauseMenuPanel) pauseMenuPanel.SetActive(false);
@@ -549,29 +570,6 @@ namespace LabScripts
 
             testManager?.ResetRoundState(clearCompound: false);
         }
-
-        /*TODO: fazer função que atualiza parâmetros de animação de frascos
-        flaskType
-            FLASK_01 -- 0
-            FLASK_02 -- 1 
-            FLASK_03 -- 2
-            FLASK_04 -- 3
-        
-        mixtureType
-            LIQUID_LIQUID -- 0
-            SOLID_LIQUID -- 1
-        
-        solubilityResult
-            Soluble -- 0
-            InsolubleFloat -- 1
-            InsolubleSink -- 2
-        
-        litmusResult
-            None -- 0
-            Basic -- 1
-            Neutral -- 2
-            Acidic -- 3
-        */
 
     }
 }
