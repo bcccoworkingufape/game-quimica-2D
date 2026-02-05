@@ -57,6 +57,9 @@ namespace LabScripts
         [Header("Integração fluxo de perguntas")]
         [SerializeField] private QuestionFlowPresenter questionFlowPresenter;
 
+        [Header("Animator Controller")]
+        [SerializeField] private Animator animator;
+
         // ─────────────────────────────────────────────
         // Ciclo de vida
         // ─────────────────────────────────────────────
@@ -247,7 +250,9 @@ namespace LabScripts
         public void OnRepeatMixButton()
         {
             // Fecha o painel de animação
-            HideSolutionAnimationPanel();
+            // HideSolutionAnimationPanel();
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            animator.Play(stateInfo.fullPathHash, -1, 0f);
 
             // TODO: lógica de repetir visualmente a animação da mistura
         }
@@ -262,6 +267,7 @@ namespace LabScripts
             if (solutionPanelAnimator != null)
             {
                 solutionPanelAnimator.Open();
+                animator.enabled = true;
             }
             else
             {
@@ -275,6 +281,11 @@ namespace LabScripts
             // Se temos o SolutionPanelAnimator, usa animação de escala
             if (solutionPanelAnimator != null)
             {
+                // Reseta a animação
+                var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                animator.Play(stateInfo.fullPathHash, -1, 0f);
+                animator.enabled = false;
+
                 solutionPanelAnimator.Close();
             }
             else
