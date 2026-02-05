@@ -2597,7 +2597,7 @@ MonoBehaviour:
   m_text: Iniciar mistura de solubilidade com <text>?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -5749240162441900614, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.75
+  m_fontSize: 34.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3179,7 +3179,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 3483360546945567320, guid: ef1b665df5bd36a4d8be71e2388334ac, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3580,7 +3580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619203062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3590,7 +3590,7 @@ RectTransform:
   m_GameObject: {fileID: 619203061}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 585683031}
@@ -13199,6 +13199,7 @@ MonoBehaviour:
   testManager: {fileID: 307922120}
   historyPanelController: {fileID: 610811575}
   questionFlowPresenter: {fileID: 355858933}
+  animator: {fileID: 585683033}
 --- !u!1 &2098853086
 GameObject:
   m_ObjectHideFlags: 0
