@@ -430,9 +430,12 @@ namespace Presentation.Lab
             Stack<string> flaskStack = new Stack<string>(flaskList);
 
             // 2. Tenta manter os mesmos parâmetros (mixture, solubility, litmus) mas com outros FLASK
-            string fallbackWithOtherFlask = $"{flaskStack.Pop()}+{mixture}+{solubility}+{litmus}";
-            if (StateExists(fallbackWithOtherFlask))
-                return fallbackWithOtherFlask;
+            while (flaskStack.Count > 0)
+            {
+                string fallbackWithOtherFlask = $"{flaskStack.Pop()}+{mixture}+{solubility}+{litmus}";
+                if (StateExists(fallbackWithOtherFlask))
+                    return fallbackWithOtherFlask;
+            }
 
             // 3. Estado padrão absoluto
             const string defaultState = "Empty_flask";
