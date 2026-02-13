@@ -3580,7 +3580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &619203062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8794,8 +8794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
+  m_text: "O composto \xE9 <b>l\xEDquido</b> e <b>sol\xFAvel</b> no <b>\xC1gua</b>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
   m_sharedMaterial: {fileID: -5749240162441900614, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
@@ -8822,13 +8821,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.65
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
