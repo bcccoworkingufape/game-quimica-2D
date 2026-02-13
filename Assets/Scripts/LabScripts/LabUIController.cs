@@ -33,6 +33,7 @@ namespace LabScripts
         public TextMeshProUGUI solutionAnimationText;
         public TextMeshProUGUI[] questionAlternativeTexts;
         public TextMeshProUGUI victoryCompoundText;
+        public TextMeshProUGUI questionPanelTitle;
 
         [HideInInspector]
         public string currentItemName;
