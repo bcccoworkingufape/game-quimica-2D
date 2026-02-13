@@ -147,6 +147,7 @@ namespace Presentation.Lab
             _gm?.SetActiveQuestion(_currentQuestion.Id);
 
             testManager?.SetCurrentCompound(_currentQuestion.CompoundId);
+            Debug.Log("A questão atual é a de id: " + _currentQuestion.Id);
         }
 
         public void ShowQuestionForCurrentCompound()
