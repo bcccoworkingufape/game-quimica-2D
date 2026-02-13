@@ -1,5 +1,6 @@
 using UnityEngine;
 using Domain;
+using System.Collections.Generic;
 
 namespace Presentation.Lab
 {
@@ -187,7 +188,7 @@ namespace Presentation.Lab
                 return "N/A";
 
             AnimatorStateInfo stateInfo = flaskAnimator.GetCurrentAnimatorStateInfo(0);
-            
+
             // Tenta encontrar o nome do estado verificando os hashes conhecidos
             // Como o Unity não expõe o nome diretamente, verificamos os estados possíveis
             return $"Hash:{stateInfo.fullPathHash}, NormalizedTime:{stateInfo.normalizedTime:F2}";
@@ -401,9 +402,8 @@ namespace Presentation.Lab
         /// Tenta encontrar um estado válido, usando fallbacks se necessário.
         /// Ordem de fallback:
         /// 1. Estado exato
-        /// 2. Mesmo flask/mixture com Soluble (se era Insoluble)
-        /// 3. FLASK_01 com mesmos parâmetros
-        /// 4. FLASK_01+LIQUID_LIQUID+Soluble+None (estado padrão)
+        /// 2. Mesmo resultado (mixture+solubility+litmus) com outro frasco (apenas altera o FLASK)
+        /// 3. Estado padrão absoluto: Empty_flask
         /// </summary>
         private string FindValidStateWithFallback(SolubilityOutcome outcome, string originalStateName)
         {
@@ -411,51 +411,31 @@ namespace Presentation.Lab
             if (StateExists(originalStateName))
                 return originalStateName;
 
-            string flask = outcome.FlaskType.ToString();
             string mixture = outcome.MixtureType == MixtureType.LL ? "LIQUID_LIQUID" : "SOLID_LIQUID";
+            string flask = outcome.FlaskType.ToString();
+            string solubility = outcome.SolubilityResult.ToString();
             string litmus = outcome.LitmusResult.ToString();
 
-            // 2. Se era InsolubleFloat ou InsolubleSink, tenta Soluble
-            if (outcome.SolubilityResult != SolubilityResultKind.Soluble)
+            // Uma lista pra manipular dinamicamente a alternância de frascos
+            List<string> flaskList = new List<string>
             {
-                string fallback1 = $"{flask}+{mixture}+Soluble+{litmus}";
-                if (StateExists(fallback1))
-                    return fallback1;
+                "FLASK_01",
+                "FLASK_02",
+                "FLASK_03",
+                "FLASK_04"
+            };
 
-                // Também tenta com litmus=None
-                string fallback1b = $"{flask}+{mixture}+Soluble+None";
-                if (StateExists(fallback1b))
-                    return fallback1b;
-            }
+            flaskList.Remove(flask);
 
-            // 3. Tenta com litmus=None (se não era None)
-            if (litmus != "None")
-            {
-                string fallback2 = $"{flask}+{mixture}+{outcome.SolubilityResult}+None";
-                if (StateExists(fallback2))
-                    return fallback2;
-            }
+            Stack<string> flaskStack = new Stack<string>(flaskList);
 
-            // 4. Tenta FLASK_01 com os mesmos parâmetros
-            if (flask != "FLASK_01")
-            {
-                string fallback3 = $"FLASK_01+{mixture}+{outcome.SolubilityResult}+{litmus}";
-                if (StateExists(fallback3))
-                    return fallback3;
+            // 2. Tenta manter os mesmos parâmetros (mixture, solubility, litmus) mas com outros FLASK
+            string fallbackWithOtherFlask = $"{flaskStack.Pop()}+{mixture}+{solubility}+{litmus}";
+            if (StateExists(fallbackWithOtherFlask))
+                return fallbackWithOtherFlask;
 
-                // FLASK_01 com Soluble
-                string fallback3b = $"FLASK_01+{mixture}+Soluble+{litmus}";
-                if (StateExists(fallback3b))
-                    return fallback3b;
-
-                // FLASK_01 com Soluble e None
-                string fallback3c = $"FLASK_01+{mixture}+Soluble+None";
-                if (StateExists(fallback3c))
-                    return fallback3c;
-            }
-
-            // 5. Estado padrão absoluto
-            const string defaultState = "FLASK_01+LIQUID_LIQUID+Soluble+None";
+            // 3. Estado padrão absoluto
+            const string defaultState = "Empty_flask";
             if (StateExists(defaultState))
                 return defaultState;
 
