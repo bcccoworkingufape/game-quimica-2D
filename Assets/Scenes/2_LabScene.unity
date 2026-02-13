@@ -2477,7 +2477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "BUTANOATO DE S\xD3DIO"
+  m_text: "Op\xE7\xE3o 2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
   m_sharedMaterial: {fileID: -5749240162441900614, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
@@ -2504,7 +2504,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.4
+  m_fontSize: 72
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5407,7 +5407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DECANO-1-AMINA
+  m_text: "Op\xE7\xE3o 3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
   m_sharedMaterial: {fileID: -5749240162441900614, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
@@ -5434,7 +5434,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.4
+  m_fontSize: 72
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7934,7 +7934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4-AMINOBENZENOSSULFONAMIDA
+  m_text: "Op\xE7\xE3o 4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
   m_sharedMaterial: {fileID: -5749240162441900614, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
@@ -7961,7 +7961,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.25
+  m_fontSize: 72
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8230,7 +8230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xC1cido propanoico"
+  m_text: "Op\xE7\xE3o 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
   m_sharedMaterial: {fileID: -5749240162441900614, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
@@ -8257,7 +8257,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.85
+  m_fontSize: 72
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13087,7 +13087,11 @@ MonoBehaviour:
   solutionPanelAnimator: {fileID: 619203065}
   confirmationPanelText: {fileID: 487446504}
   solutionAnimationText: {fileID: 1563116710}
-  questionAlternativeTexts: []
+  questionAlternativeTexts:
+  - {fileID: 1482028869}
+  - {fileID: 486348216}
+  - {fileID: 979587613}
+  - {fileID: 1426324903}
   victoryCompoundText: {fileID: 1864702242}
   questionPanelTitle: {fileID: 139179164}
   currentItemName: 
