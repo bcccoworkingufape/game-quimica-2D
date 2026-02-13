@@ -39,7 +39,7 @@ namespace Presentation.Lab
         {
             if (uiController == null)
             {
-                uiController = FindObjectOfType<LabUIController>();
+                uiController = FindFirstObjectByType<LabUIController>();
             }
         }
 

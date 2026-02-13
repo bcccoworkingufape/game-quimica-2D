@@ -22,8 +22,8 @@ namespace Presentation.Lab
 
         private void Awake()
         {
-            if (uiController == null) uiController = FindObjectOfType<LabUIController>();
-            if (testManager == null) testManager = FindObjectOfType<TestManager>();
+            if (uiController == null) uiController = FindFirstObjectByType<LabUIController>();
+            if (testManager == null) testManager = FindFirstObjectByType<TestManager>();
         }
 
         private void Start()

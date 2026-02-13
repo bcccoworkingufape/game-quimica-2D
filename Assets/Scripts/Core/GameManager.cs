@@ -132,11 +132,11 @@ namespace Core
             Time.timeScale = 1f;
 
             // 2) fecha painéis (se algum ficou ativo por qualquer motivo)
-            var ui = FindObjectOfType<LabUIController>();
+            var ui = FindFirstObjectByType<LabUIController>();
             ui?.HideAllPanels();
 
             // 3) limpa seleção de solvente / estado da rodada (não mexe no compoundId por padrão)
-            var testManager = FindObjectOfType<TestManager>();
+            var testManager = FindFirstObjectByType<TestManager>();
             testManager?.ResetRoundState(clearCompound: false);
 
             // 4) limpa histórico ao entrar no lab

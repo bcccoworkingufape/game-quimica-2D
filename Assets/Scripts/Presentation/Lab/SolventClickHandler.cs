@@ -14,7 +14,7 @@ public class SolventClickHandler : MonoBehaviour
     {
         if (testManager == null)
         {
-            testManager = FindObjectOfType<TestManager>();
+            testManager = FindFirstObjectByType<TestManager>();
         }
     }
 
