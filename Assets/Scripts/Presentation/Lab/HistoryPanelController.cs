@@ -20,6 +20,7 @@ namespace Presentation.Lab
         [SerializeField, TextArea] private string emptyStateMessage = "Inicie Alguma Mistura!";
 
         private IHistoryService _historyService;
+        private TestMessageHandler _messageHandler = new TestMessageHandler();
 
         private bool EnsureHistoryService()
         {
@@ -95,59 +96,7 @@ namespace Presentation.Lab
 
                 var outcome = entry.Outcome;
 
-                string solventName = outcome.Solvent.Name;
-
-                string compoundState = "";
-                switch (outcome.Compound.State)
-                {
-                    case PhysicalState.LIQUID:
-                        compoundState = "líquido";
-                        break;
-                    case PhysicalState.SOLID:
-                        compoundState = "sólido";
-                        break;
-                }
-
-                string litmusText = "";
-                switch (outcome.LitmusResult)
-                {
-                    case LitmusResultKind.Acidic:
-                        litmusText = "vermelho";
-                        break;
-                    case LitmusResultKind.Basic:
-                        litmusText = "azul";
-                        break;
-                    default:
-                        litmusText = "incolor";
-                        break;
-                }
-
-                string solubilityText = "";
-                switch (outcome.SolubilityResult)
-                {
-                    case SolubilityResultKind.Soluble:
-                        solubilityText = "solúvel";
-                        break;
-                    case SolubilityResultKind.InsolubleFloat:
-                        solubilityText = "boia";
-                        break;
-                    case SolubilityResultKind.InsolubleSink:
-                        solubilityText = "afunda";
-                        break;
-                }
-
-
-                if (solventName == "Tornassol")
-                {
-                    text.text = $"{entry.Order}) " +
-                                $"O composto é {compoundState} e {solubilityText} no <b>{solventName}</b> e fica {litmusText}";
-                }
-                else
-                {
-                    text.text =
-                        $"{entry.Order}) " +
-                        $"O composto é {compoundState} e {solubilityText} no <b>{solventName}</b>";
-                }
+                text.text = _messageHandler.GetHistoryMessage(entry);
             }
 
             // força o layout recalcular tamanho do Content (isso destrava o scroll)

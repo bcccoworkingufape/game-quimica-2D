@@ -34,6 +34,7 @@ namespace Presentation.Lab
         private ISolubilityService _solubilityService;
         private IHistoryService _historyService;
         private GameManager _gameManager;
+        private TestMessageHandler _messageHandler = new TestMessageHandler();
 
         private void Awake()
         {
@@ -123,9 +124,7 @@ namespace Presentation.Lab
             if (uiController != null && uiController.solutionAnimationText != null)
             {
                 uiController.solutionAnimationText.text =
-                    $"Mistura: {outcome.Compound.Name} + {outcome.Solvent.Name}\n" +
-                    $"Tipo: {outcome.MixtureType} • Resultado: {outcome.SolubilityResult}\n" +
-                    $"Tornassol: {outcome.LitmusResult} • Frasco: {outcome.FlaskType}";
+                    _messageHandler.GetTestMessage(response);
             }
 
             // Abre painel de animação
