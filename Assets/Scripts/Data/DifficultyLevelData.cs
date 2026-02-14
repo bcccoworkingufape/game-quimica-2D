@@ -23,8 +23,8 @@ namespace Data
 
         public string ModeLabel => mode switch
         {
-            GameMode.Estudo_Livre => "Estudo Livre",
-            GameMode.Experimentos => "Experimentos",
+            GameMode.Estudo_Livre => "Estudos",
+            GameMode.Experimentos => "Laboratório",
             GameMode.Desafio => "Desafio",
             _ => mode.ToString()
         };
