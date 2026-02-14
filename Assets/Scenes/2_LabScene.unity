@@ -1989,6 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f361eb020c09e774b843088b8ac91d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.Bootstrapper
+  dataFolder: Data
 --- !u!4 &383312399
 Transform:
   m_ObjectHideFlags: 0
@@ -3589,7 +3590,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619203061}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -200}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4603,7 +4604,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 207.00491, y: 5.073536, z: -590.863, w: -28.031769}
+  m_margin: {x: 213.50948, y: 1.1170235, z: -590.863, w: -6.7938175}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

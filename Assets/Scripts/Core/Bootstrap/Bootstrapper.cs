@@ -13,8 +13,8 @@ namespace Core
     {
         private static bool _initialized = false;
 
-        [Header("Pasta de dados (dentro de StreamingAssets)")]
-        private string dataFolder = "Data";
+        [Header("Pasta de dados (dentro de Resources)")]
+        [SerializeField] private string dataFolder = "Data";
 
         private void Awake()
         {
@@ -30,11 +30,11 @@ namespace Core
 
             Debug.Log("[Bootstrapper] Inicializando serviços...");
 
-            var rootPath = System.IO.Path.Combine(
-                Application.streamingAssetsPath,
-                dataFolder);
-
-            IJsonProvider provider = new FileJsonProvider(rootPath);
+            // Usa ResourcesJsonProvider em vez de FileJsonProvider.
+            // Resources.Load<TextAsset> funciona em TODAS as plataformas
+            // (Android, iOS, Desktop, WebGL), ao contrário de File.ReadAllText
+            // que não consegue ler de StreamingAssets no Android (dentro do APK).
+            IJsonProvider provider = new ResourcesJsonProvider(dataFolder);
 
             ICompoundRepository compoundRepo = new JsonCompoundRepository(provider);
             ISolventRepository solventRepo = new JsonSolventRepository(provider);
@@ -45,9 +45,7 @@ namespace Core
 
             IHistoryService historyService = new InMemoryHistoryService();
             IScoringService scoringService = new ScoringService();
-            //IQuestionService questionService = new QuestionService();
 
-            //ServiceLocator.Register<IQuestionService>(questionService);
             ServiceLocator.Register<ICompoundRepository>(compoundRepo);
             ServiceLocator.Register<ISolventRepository>(solventRepo);
             ServiceLocator.Register<ISolutionRepository>(solutionRepo);
@@ -56,7 +54,7 @@ namespace Core
             ServiceLocator.Register<IHistoryService>(historyService);
             ServiceLocator.Register<IScoringService>(scoringService);
 
-            Debug.Log("[Bootstrapper] Serviços registrados no ServiceLocator.");
+            Debug.Log("[Bootstrapper] Serviços registrados no ServiceLocator com sucesso.");
         }
     }
 }

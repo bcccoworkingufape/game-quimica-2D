@@ -10,7 +10,6 @@ Library: C:\UnityProjects\bcc\game-quimica-2D\Temp\BurstOutput\tempburstlibs\arm
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\UnityProjects\bcc\game-quimica-2D\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\UnityProjects\bcc\game-quimica-2D\Library\Burst
 --output=C:\UnityProjects\bcc\game-quimica-2D\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -127,7 +126,6 @@ Library: C:\UnityProjects\bcc\game-quimica-2D\Temp\BurstOutput\tempburstlibs\arm
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\UnityProjects\bcc\game-quimica-2D\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\UnityProjects\bcc\game-quimica-2D\Library\Burst
 --output=C:\UnityProjects\bcc\game-quimica-2D\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -156,7 +154,6 @@ Library: C:\UnityProjects\bcc\game-quimica-2D\Temp\BurstOutput\tempburstlibs\arm
 --float-mode=Fast
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\UnityProjects\bcc\game-quimica-2D\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.2.9f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\UnityProjects\bcc\game-quimica-2D\Library\Burst
 --output=C:\UnityProjects\bcc\game-quimica-2D\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated

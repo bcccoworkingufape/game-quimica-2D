@@ -110,7 +110,6 @@ namespace MenuScripts
             "Cientistas não falham. Eles eliminam hipóteses que não funcionam!",
             "O laboratório é seu. Os compostos aguardam. Boa sorte, cientista!!",
             "Conhecimento é a única coisa que aumenta quando compartilhado.",
-            "Lembre-se: até o café precisa de química pra ficar pronto."
         };
 
         private void OnEnable()
