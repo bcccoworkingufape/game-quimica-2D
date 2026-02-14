@@ -91,7 +91,7 @@ namespace MenuScripts
             if (difficultyText == null || data == null) return;
 
             string livesLabel =
-                data.mode == GameMode.Experimentos
+                data.mode == GameMode.Estudo_Livre
                     ? "sem penalidade"
                     : $"{data.startingLives} vidas";
 

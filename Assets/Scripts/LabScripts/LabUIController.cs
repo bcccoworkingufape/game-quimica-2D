@@ -136,9 +136,9 @@ namespace LabScripts
             var gm = GameManager.Instance;
             var mode = gm != null && gm.CurrentDifficulty != null
                 ? gm.CurrentDifficulty.mode
-                : GameMode.Experimentos;
+                : GameMode.Estudo_Livre;
 
-            if (mode == GameMode.Estudos)
+            if (mode == GameMode.Estudo_Livre)
                 livesText.text = "Sem penalidade";
             else
                 livesText.text = $"Vidas: {lives}";

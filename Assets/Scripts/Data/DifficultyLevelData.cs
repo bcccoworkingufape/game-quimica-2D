@@ -19,7 +19,7 @@ namespace Data
 
         [Header("Modo")]
         [Tooltip("Modo de jogo associado a esta dificuldade")]
-        public GameMode mode = GameMode.Estudos;
+        public GameMode mode = GameMode.Estudo_Livre;
 
         public string ModeLabel => mode.ToString();
     }

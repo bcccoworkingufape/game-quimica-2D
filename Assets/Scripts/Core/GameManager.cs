@@ -13,8 +13,9 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
-        private const string LabSceneName = "2_LabScene";
         private const string MenuSceneName = "1_MenuScene";
+
+        private const string LabSceneName = "2_LabScene";
         private const string gameClearSceneName = "3_Win_Game";
 
         public static GameManager Instance { get; private set; }
@@ -203,7 +204,7 @@ namespace Core
 
             // Não precisa estar com "vidas cheias", só não pode ter dado game over.
             // Em Experimentos, não existe game over, então também pode zerar.
-            if (CurrentDifficulty != null && CurrentDifficulty.mode != GameMode.Experimentos)
+            if (CurrentDifficulty != null && CurrentDifficulty.mode != GameMode.Estudo_Livre)
             {
                 if (PlayerLives <= 0) return;
             }
@@ -257,7 +258,7 @@ namespace Core
 
         public void LoseLife()
         {
-            if (CurrentDifficulty != null && CurrentDifficulty.mode == GameMode.Experimentos)
+            if (CurrentDifficulty != null && CurrentDifficulty.mode == GameMode.Estudo_Livre)
             {
                 // Sem penalidade
                 OnLivesChanged?.Invoke(PlayerLives);
