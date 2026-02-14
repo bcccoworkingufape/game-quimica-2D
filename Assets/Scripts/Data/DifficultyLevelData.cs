@@ -21,6 +21,12 @@ namespace Data
         [Tooltip("Modo de jogo associado a esta dificuldade")]
         public GameMode mode = GameMode.Estudo_Livre;
 
-        public string ModeLabel => mode.ToString();
+        public string ModeLabel => mode switch
+        {
+            GameMode.Estudo_Livre => "Estudo Livre",
+            GameMode.Experimentos => "Experimentos",
+            GameMode.Desafio => "Desafio",
+            _ => mode.ToString()
+        };
     }
 }

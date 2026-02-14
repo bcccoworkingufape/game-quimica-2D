@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7be05931c05c7f43b285bd18d9add41, type: 3}
   m_Name: Medio
   m_EditorClassIdentifier: 
-  difficultyName: Experimentos
+  difficultyName: Médio
   startingLives: 3
   availableHints: 1
   scoreMultiplier: 1

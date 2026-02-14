@@ -11,8 +11,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7be05931c05c7f43b285bd18d9add41, type: 3}
   m_Name: Facil
-  m_EditorClassIdentifier: 
-  difficultyName: Estudo Livre
+  m_EditorClassIdentifier:
+  difficultyName: Fácil
   startingLives: 99
   availableHints: 1
   scoreMultiplier: 0
