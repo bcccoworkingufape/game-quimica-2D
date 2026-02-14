@@ -4,6 +4,7 @@ using Data;
 using Core;
 using TMPro;
 using Domain;
+using System.Collections;
 
 namespace MenuScripts
 {
@@ -44,6 +45,73 @@ namespace MenuScripts
         [Header("UI Texts")]
         public TextMeshProUGUI difficultyText;
         public TextMeshProUGUI modeText;
+
+        [Header("Loading Screen - Dicas")]
+        [SerializeField] private TextMeshProUGUI hintText;
+        [SerializeField] private float hintChangeInterval = 3f;
+
+        private Coroutine _hintCoroutine;
+
+        // Dicas
+        private static readonly string[] LoadingHints = new string[]
+        {
+            // ═══════════════════════════════════════════
+            // DICAS DE GAMEPLAY
+            // ═══════════════════════════════════════════
+            "Se flutua, é menos denso. Se afunda, é mais denso. Molz sempre observando!",
+            "O tornassol fica vermelho em ácidos e azul em bases. Anota aí!!",
+            "A árvore de decisão é sua melhor amiga... exceto no modo Desafio..",
+            "Nem todo composto reage igual com NaOH e HCl. Teste ambos!",
+            "Sais orgânicos geralmente são solúveis em água. Comece por aí!",
+            "Quando em dúvida, teste com água primeiro. É o solvente universal!",
+            "Ésteres costumam ser solúveis em éter dietílico. Lembre-se disso!",
+            "No modo Estudo Livre você pode errar à vontade. Aproveite para aprender!",
+            "Responder errado no modo Experimentos custa uma vida. Pense bem!",
+            "O modo Desafio testa tudo que você aprendeu. Sem árvore, sem moleza!",
+            "Preste atenção no tipo de mistura: líquido-líquido ou sólido-líquido.",
+            
+            // ═══════════════════════════════════════════
+            // CURIOSIDADES CIENTÍFICAS
+            // ═══════════════════════════════════════════
+            "Você sabia? 'Semelhante dissolve semelhante' é a regra de ouro da solubilidade!",
+            "O etanoato de etila dá o cheiro característico de esmalte de unhas.",
+            "Aminas como a butan-1-amina têm cheiro de peixe. Molz não é fã.",
+            "O ácido oleico é encontrado no azeite de oliva. Química no almoço!",
+            "Compostos aromáticos têm anéis de benzeno, não necessariamente cheiro.",
+            "A 4-aminobenzenossulfonamida é usada em antibióticos! Química salva vidas.",
+            "O metilbenzeno também é conhecido como tolueno. Nome de laboratório!",
+            "Cicloexanona é usada na produção de nylon. Química está em tudo!",
+            "Ácidos carboxílicos como o propanoico doam H⁺ facilmente.",
+            "Bases orgânicas como aminas aceitam H⁺. É o oposto dos ácidos!",
+            //"Densidade determina se algo flutua ou afunda.",
+            "O pH neutro é 7. Abaixo é ácido, acima é básico. Simples assim!",
+            
+            // ═══════════════════════════════════════════
+            // MOLZ - O RATINHO CIENTISTA (divertidas)
+            // ═══════════════════════════════════════════
+            "Dizem que Molz sonha com fórmulas químicas. E com queijo do reino.",
+            "Molz não erra experimentos. Ele apenas descobre resultados inesperados.",
+            "O jaleco do Molz tem manchas de todos os solventes..",
+            //"Molz acredita em você! ... Mas confere o histórico só pra ter certeza.",
+            "Perguntaram ao Molz qual seu elemento favorito. Ele disse: 'Queijônio'..",
+            "Molz tentou fazer café no laboratório. O orientador não aprovou.",
+            "Molz acha que todo problema se resolve com mais um experimento.",
+            "Se Molz pudesse, colocaria queijo na tabela periódica.",
+            "Molz leu todos os rótulos de produtos de limpeza. Por diversão.",
+            "O bigode do Molz vibra quando ele encontra a mistura correta!",
+            "Molz já derrubou um erlenmeyer. Só um. Ele jura.",
+            "Curiosidade: Molz vem de 'Molécula'. (E quase que seu nome era 'Moléquim')",
+            
+            // ═══════════════════════════════════════════
+            // MOTIVACIONAIS / ESTILO LoL e Terraria 👀
+            // ═══════════════════════════════════════════
+            "A química é como a vida: questão de encontrar o equilíbrio certo.",
+            "Cada erro é um experimento. Cada acerto, uma descoberta!",
+            "Cientistas não falham. Eles eliminam hipóteses que não funcionam!",
+            "O laboratório é seu. Os compostos aguardam. Boa sorte, cientista!!",
+            "Conhecimento é a única coisa que aumenta quando compartilhado.",
+            "Lembre-se: até o café precisa de química pra ficar pronto."
+        };
 
         private void OnEnable()
         {
@@ -109,6 +177,7 @@ namespace MenuScripts
             shopPanel?.SetActive(false);
             settingsPanel?.SetActive(false);
             loadingPanel?.SetActive(false);
+            StopHintCycle();
 
             if (homeButton != null) homeButton.interactable = false;
             if (shopButton != null) shopButton.interactable = true;
@@ -123,6 +192,7 @@ namespace MenuScripts
             shopPanel?.SetActive(true);
             settingsPanel?.SetActive(false);
             loadingPanel?.SetActive(false);
+            StopHintCycle();
 
             if (shopButton != null) shopButton.interactable = false;
             if (homeButton != null) homeButton.interactable = true;
@@ -137,6 +207,7 @@ namespace MenuScripts
             shopPanel?.SetActive(false);
             settingsPanel?.SetActive(true);
             loadingPanel?.SetActive(false);
+            StopHintCycle();
 
             if (settingsButton != null) settingsButton.interactable = false;
             if (homeButton != null) homeButton.interactable = true;
@@ -151,12 +222,51 @@ namespace MenuScripts
             shopPanel?.SetActive(false);
             settingsPanel?.SetActive(false);
             loadingPanel?.SetActive(true);
+            StartHintCycle();
+        }
+
+        // ─────────────────────────────────────────────
+        // Sistema de Dicas (Loading Screen)
+        // ─────────────────────────────────────────────
+
+        private void StartHintCycle()
+        {
+            StopHintCycle();
+            ShowRandomHint();
+            _hintCoroutine = StartCoroutine(HintCycleCoroutine());
+        }
+
+        private void StopHintCycle()
+        {
+            if (_hintCoroutine != null)
+            {
+                StopCoroutine(_hintCoroutine);
+                _hintCoroutine = null;
+            }
+        }
+
+        private IEnumerator HintCycleCoroutine()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(hintChangeInterval);
+                ShowRandomHint();
+            }
+        }
+
+        private void ShowRandomHint()
+        {
+            if (hintText == null || LoadingHints.Length == 0) return;
+            
+            int index = Random.Range(0, LoadingHints.Length);
+            hintText.text = LoadingHints[index];
         }
 
         // Ação do botão "Jogar"
         public void LoadLabScene()
         {
             if (GameManager.Instance == null) return;
+            StopHintCycle();
             GameManager.Instance.StartGame();
         }
 
