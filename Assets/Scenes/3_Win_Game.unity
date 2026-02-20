@@ -321,7 +321,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 129, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116426813
 MonoBehaviour:
@@ -532,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Presentation.Lab.TestManager
   uiController: {fileID: 2094343733}
+  flaskAnimationController: {fileID: 0}
   currentCompoundId: 3
 --- !u!4 &307922121
 Transform:
@@ -654,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f361eb020c09e774b843088b8ac91d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Core.Bootstrapper
+  dataFolder: Data
 --- !u!4 &383312399
 Transform:
   m_ObjectHideFlags: 0
@@ -930,7 +932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Op\xE7\xF5es (?)"
+  m_text: "Op\xE7\xF5es"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e9ff60bd2900e9c4faaa8e2f9944eb74, type: 2}
   m_sharedMaterial: {fileID: 4439226228655720011, guid: e9ff60bd2900e9c4faaa8e2f9944eb74, type: 2}
@@ -1177,7 +1179,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 129, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673010601
 MonoBehaviour:
@@ -1326,7 +1328,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -576}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1799383429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1660,7 +1662,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 129, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003404645
 MonoBehaviour:
@@ -1856,7 +1858,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 129, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192887753
 MonoBehaviour:
@@ -2212,7 +2214,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1378265679}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2094343733}
+        m_TargetAssemblyTypeName: LabScripts.LabUIController, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1378265679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2581,7 +2595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Voc\xEA Venceu!!"
+  m_text: "Voc\xEA Venceu!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e9ff60bd2900e9c4faaa8e2f9944eb74, type: 2}
   m_sharedMaterial: {fileID: 4439226228655720011, guid: e9ff60bd2900e9c4faaa8e2f9944eb74, type: 2}
@@ -2717,7 +2731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Voltar ao menu
+  m_text: Voltar ao Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e9ff60bd2900e9c4faaa8e2f9944eb74, type: 2}
   m_sharedMaterial: {fileID: 4439226228655720011, guid: e9ff60bd2900e9c4faaa8e2f9944eb74, type: 2}
@@ -2823,7 +2837,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2087014180}
   - {fileID: 1192887752}
@@ -2834,8 +2848,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 580}
-  m_SizeDelta: {x: 800, y: 154.5}
+  m_AnchoredPosition: {x: 0, y: 574}
+  m_SizeDelta: {x: 900, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665864731
 MonoBehaviour:
@@ -2855,13 +2869,13 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 50
+  m_Spacing: 40
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &1799383428
 GameObject:
@@ -3006,7 +3020,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.8, y: 81}
+  m_AnchoredPosition: {x: 0.8, y: 83}
   m_SizeDelta: {x: 820.9, y: 142.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864702242
@@ -3029,7 +3043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Parab\xE9ns @Fulano!!!\nVoc\xEA \xE9 o Mestre da Qu\xEDmica!"
+  m_text: "Parab\xE9ns,\nVoc\xEA \xE9 o Mestre da Qu\xEDmica!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
   m_sharedMaterial: {fileID: -5749240162441900614, guid: 745e9d7dd48726f48bf2a3ad22552048, type: 2}
@@ -3415,7 +3429,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 129, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087014181
 MonoBehaviour:
@@ -3508,6 +3522,7 @@ MonoBehaviour:
   questionErrorPanel: {fileID: 0}
   questionVictoryPanel: {fileID: 789800434}
   defeatPanel: {fileID: 0}
+  solutionPanelAnimator: {fileID: 0}
   confirmationPanelText: {fileID: 0}
   solutionAnimationText: {fileID: 0}
   questionAlternativeTexts:
@@ -3516,6 +3531,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   victoryCompoundText: {fileID: 1864702242}
+  questionPanelTitle: {fileID: 0}
   currentItemName: 
   difficultyText: {fileID: 0}
   livesText: {fileID: 0}
@@ -3528,6 +3544,7 @@ MonoBehaviour:
   testManager: {fileID: 307922120}
   historyPanelController: {fileID: 0}
   questionFlowPresenter: {fileID: 355858933}
+  animator: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
