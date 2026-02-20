@@ -3,7 +3,7 @@
 
   # 🧪 Molz - Química em Jogo
 
-  **Um app-jogo para dispositivos móveis onde você investiga compostos misteriosos em um laboratório virtual.**
+  **Um app mobile de Química Orgânica em que você identifica compostos por meio de experimentos.**
 
   [![Jogo Educacional](https://img.shields.io/badge/Jogo-Educacional-6C4AB6)](#-sobre-o-jogo)
   [![Mobile](https://img.shields.io/badge/Plataforma-Android-00B8D9)](#-como-jogar-no-android)
@@ -14,151 +14,95 @@
 
 ## 🔬 Sobre o jogo
 
-**Molz** é um app-jogo de investigação científica com foco em **Química Orgânica**.
+**Molz** é um jogo de laboratório com foco em **Química Orgânica**.
 
-Você entra em um laboratório virtual e recebe um desafio:  
-identificar um **composto misterioso** por meio de experimentos.
+A proposta é simples:  
+você recebe um **composto misterioso**, faz testes e tenta descobrir qual substância é.
 
-Cada experimento gera uma pista.  
-Cada pista ajuda a eliminar hipóteses.  
-Sua missão é observar, comparar e concluir.
+Cada teste gera uma pista.  
+Com as pistas, você elimina opções e responde.
 
 ---
 
 ## 🎮 Como jogar
 
-### 1) Receba um composto misterioso
-O jogo apresenta uma substância que você precisa identificar.
+1. **Receba um composto misterioso**
+2. **Escolha um solvente ou reagente**
+3. **Observe o resultado da mistura**
+4. **Teste novamente, se precisar**
+5. **Responda qual é o composto**
+6. **Pontue e avance**
 
-### 2) Faça experimentos
-Escolha solventes e reagentes para testar o comportamento do composto.
+### Resultados que aparecem no jogo
 
-### 3) Observe os resultados
-Você verá se a substância:
-- dissolve
-- flutua
-- afunda
+**Solubilidade**
+- **S** = dissolveu
+- **I↑** = não dissolveu e flutuou
+- **I↓** = não dissolveu e afundou
 
-E também poderá verificar o comportamento com tornassol:
-- ácido
-- básico
-- neutro
-
-### 4) Monte sua hipótese
-Com base nos resultados, escolha a resposta correta.
-
-### 5) Avance para o próximo desafio
-Acertou? Você pontua e segue para um novo composto.
+**Tornassol**
+- **Vermelho** = ácido
+- **Azul** = básico
+- **Sem mudança** = neutro
 
 ---
 
-## 🧠 O que você pratica no Molz
+## 🧠 O que você pratica
 
-Molz foi criado para apoiar o aprendizado por experimentação, com foco em:
-
-- **Solubilidade**
-- **Leitura de resultados experimentais**
-- **Identificação de padrões**
-- **Raciocínio por hipótese**
-- **Conceitos de ácido e base**
+- Solubilidade
+- Observação de resultados
+- Comparação de pistas
+- Raciocínio por hipótese
+- Conceitos de ácido e base
 
 ---
 
-## 🧪 Pistas que aparecem no laboratório
+## ✨ Recursos
 
-### Resultado de solubilidade
-
-| Resultado | Significado |
-|----------|-------------|
-| **S** | A substância dissolveu |
-| **I↑** | Não dissolveu e flutuou |
-| **I↓** | Não dissolveu e afundou |
-
-### Resultado com tornassol
-
-| Cor | Indica |
-|-----|--------|
-| 🔴 Vermelho | Ácido |
-| 🔵 Azul | Básico |
-| ⚪ Sem mudança | Neutro |
-
----
-
-## ✨ Recursos do jogo
-
-- 🧪 Laboratório virtual com experimentos
-- 🎯 Desafios de identificação de compostos
+- 🧪 Experimentos no laboratório virtual
+- 🎯 Desafios de identificação
 - 💡 Sistema de dicas
-- 📈 Pontuação por desempenho
+- 📈 Pontuação
 - 🎚️ Níveis de dificuldade
-- 📚 Aprendizado com base em observação e teste
 
 ---
 
 ## 📱 Como jogar no Android
 
-O **Molz** foi feito para **dispositivos móveis**.
+O **Molz** foi feito para **celular**.
 
-### Disponível atualmente
-Para jogar agora:
-1. Baixe o arquivo **APK** (Android)
+### Disponível agora
+Para jogar:
+1. Baixe o **APK** (Android)
 2. Instale no celular
-3. Abra o app e comece a investigar no laboratório
+3. Abra o app
 
-### Futuramente na Google Play Store
-O Molz está em preparação para lançamento na **Google Play Store**.
+### Futuramente na Google Play
+O jogo também está sendo preparado para lançamento na **Google Play Store**.
 
-Quando estiver disponível por lá, a instalação ficará mais simples:
-- download direto pela loja
-- atualizações mais fáceis
-- acesso mais rápido para estudantes e professores
+Quando estiver disponível por lá, a instalação será feita direto pela loja.
 
-> Enquanto isso, a versão em APK continua sendo a forma oficial de jogar no Android.
+> Por enquanto, a versão em APK é a forma oficial de jogar no Android.
 
 ---
 
-## 👩‍🔬 Para quem é este jogo
+## 👩‍🔬 Público
 
-Molz pode ser usado por:
+Molz é voltado para:
 
-- Estudantes (ensino médio e superior)
-- Professores em atividades de apoio
+- Estudantes
+- Professores
 - Projetos de extensão
-- Feiras e oficinas de ciência
-- Pessoas curiosas sobre Química
-
----
-
-## 📸 Visual e proposta
-
-Molz foi pensado como uma experiência de laboratório no celular:
-
-- frascos e reagentes
-- testes rápidos
-- leitura clara dos resultados
-- progressão por investigação
+- Oficinas e feiras de ciência
+- Quem gosta de Química
 
 ---
 
 ## 📘 Guia de desenvolvimento (Overleaf)
 
-Para documentação de desenvolvimento (estrutura do projeto e guia técnico), acesse:
+Documentação técnica do projeto:
 
 👉 https://www.overleaf.com/read/kmgkhjwyfgrh#0e0b23
-
----
-
-## 🤝 Contribuições
-
-Sugestões e melhorias são bem-vindas.
-
-Se quiser colaborar com:
-- conteúdo educacional
-- interface
-- acessibilidade
-- experiência de jogo
-
-fique à vontade para abrir uma issue ou pull request.
 
 ---
 
