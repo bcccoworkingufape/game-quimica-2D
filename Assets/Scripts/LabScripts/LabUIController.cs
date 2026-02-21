@@ -49,6 +49,12 @@ namespace LabScripts
         [SerializeField] private Color treeEnabledColor = Color.white;
         [SerializeField] private Color treeDisabledColor = Color.black;
 
+        [Header("Vidas (corações)")]
+        [SerializeField] private GameObject[] heartIcons;
+
+        [Header("Estrelas (painel de vitória)")]
+        [SerializeField] private GameObject[] starIcons;
+
         [Header("Integração com lógica da fase")]
         [SerializeField] private TestManager testManager;
 
@@ -94,6 +100,7 @@ namespace LabScripts
             {
                 UpdateDifficultyLabel(gm.CurrentDifficulty);
                 UpdateLivesLabel(gm.PlayerLives);
+                RefreshHearts(gm.PlayerLives);
             }
         }
 
@@ -105,12 +112,16 @@ namespace LabScripts
         {
             UpdateDifficultyLabel(data);
             ApplyModeRules(data);
-            UpdateLivesLabel(GameManager.Instance != null ? GameManager.Instance.PlayerLives : 0);
+
+            int lives = GameManager.Instance != null ? GameManager.Instance.PlayerLives : 0;
+            UpdateLivesLabel(lives);
+            RefreshHearts(lives);
         }
 
         private void HandleLivesChanged(int lives)
         {
             UpdateLivesLabel(lives);
+            RefreshHearts(lives);
         }
 
         private void HandleGameOver()
@@ -144,7 +155,12 @@ namespace LabScripts
                 livesText.text = $"Vidas: {lives}";
         }
 
-
+        private void RefreshHearts(int lives)
+        {
+            var mode = GetCurrentMode();
+            bool nopenalty = mode == GameMode.Estudo_Livre;
+            SetIconsActive(heartIcons, nopenalty ? heartIcons.Length : lives);
+        }
 
         private void ApplyModeRules(DifficultyLevelData data)
         {
@@ -433,6 +449,7 @@ namespace LabScripts
                     ? "Composto X:"
                     : $"Composto X:\n {compoundName}";
 
+            RefreshStars();
             questionVictoryPanel?.SetActive(true);
         }
 
@@ -445,6 +462,7 @@ namespace LabScripts
         public void HideQuestionVictoryPanel()
         {
             questionVictoryPanel?.SetActive(false);
+            SetIconsActive(starIcons, 0);
         }
 
         /// <summary>
@@ -577,10 +595,45 @@ namespace LabScripts
 
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
+            SetIconsActive(starIcons, 0);
+
             // controla se reseta vidas ou não
             GameManager.Instance?.ResetRunState(resetScore, resetLives);
 
             testManager?.ResetRoundState(clearCompound: false);
+        }
+
+        // ─────────────────────────────────────────────
+        // Helpers
+        // ─────────────────────────────────────────────
+
+        private GameMode GetCurrentMode()
+        {
+            var gm = GameManager.Instance;
+            return gm != null && gm.CurrentDifficulty != null
+                ? gm.CurrentDifficulty.mode
+                : GameMode.Estudo_Livre;
+        }
+
+        private void RefreshStars()
+        {
+            var gm = GameManager.Instance;
+            int lives = gm != null ? gm.PlayerLives : 0;
+            bool nopenalty = GetCurrentMode() == GameMode.Estudo_Livre;
+            SetIconsActive(starIcons, nopenalty ? starIcons.Length : lives);
+        }
+
+        /// <summary>
+        /// Ativa os primeiros 'count' ícones do array e desativa o restante.
+        /// </summary>
+        private static void SetIconsActive(GameObject[] icons, int count)
+        {
+            if (icons == null) return;
+            for (int i = 0; i < icons.Length; i++)
+            {
+                if (icons[i] != null)
+                    icons[i].SetActive(i < count);
+            }
         }
 
     }
