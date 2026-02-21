@@ -256,7 +256,7 @@ namespace MenuScripts
         private void ShowRandomHint()
         {
             if (hintText == null || LoadingHints.Length == 0) return;
-            
+
             int index = Random.Range(0, LoadingHints.Length);
             hintText.text = LoadingHints[index];
         }
@@ -359,6 +359,17 @@ namespace MenuScripts
 
             shopIcon0?.SetActive(true);
             shopIcon1?.SetActive(false);
+        }
+
+        // Botão "Fechar o jogo" (encerra a aplicacao).
+        public void QuitGame()
+        {
+            Time.timeScale = 1f;
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
         }
     }
 }

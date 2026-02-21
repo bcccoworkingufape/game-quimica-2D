@@ -569,6 +569,19 @@ namespace LabScripts
             GameManager.Instance.LoadScene("1_MenuScene");
         }
 
+        /// <summary>
+        /// Botão "Fechar o jogo" (encerra a aplicacao).
+        /// </summary>
+        public void QuitGame()
+        {
+            Time.timeScale = 1f;
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
+
         // ─────────────────────────────────────────────
         // Utilidades internas
         // ─────────────────────────────────────────────
