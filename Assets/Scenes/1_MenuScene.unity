@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 118835097}
   - component: {fileID: 118835096}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Settings_Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,9 +664,9 @@ RectTransform:
   - {fileID: 764079173}
   m_Father: {fileID: 1765436483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 505.5, y: -3427.5}
   m_SizeDelta: {x: 1011, y: 663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &289845687
@@ -874,7 +874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &341847879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 437803933}
   - component: {fileID: 437803932}
   m_Layer: 5
-  m_Name: Settings_Page
+  m_Name: Settings_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1171,9 +1171,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1765436483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 505.5, y: -2791}
   m_SizeDelta: {x: 1011, y: 490}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465488572
@@ -1435,9 +1435,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1765436483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 505.5, y: -245}
   m_SizeDelta: {x: 1011, y: 490}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &579885726
@@ -1599,9 +1599,9 @@ RectTransform:
   - {fileID: 1822150315}
   m_Father: {fileID: 1765436483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 505.5, y: -2154.5}
   m_SizeDelta: {x: 1011, y: 663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630057134
@@ -2821,7 +2821,7 @@ GameObject:
   - component: {fileID: 1196222572}
   - component: {fileID: 1196222571}
   m_Layer: 5
-  m_Name: Settings_Panel
+  m_Name: Settings_Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3762,9 +3762,9 @@ RectTransform:
   - {fileID: 140324313}
   m_Father: {fileID: 1765436483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 505.5, y: -881.5}
   m_SizeDelta: {x: 1011, y: 663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663039120
@@ -3921,7 +3921,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00177, y: 162.32715}
-  m_SizeDelta: {x: 1011, y: 0}
+  m_SizeDelta: {x: 1011, y: 3759}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765436484
 MonoBehaviour:
@@ -4215,9 +4215,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1765436483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 505.5, y: -1518}
   m_SizeDelta: {x: 1011, y: 490}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1908081588
@@ -4851,7 +4851,7 @@ MonoBehaviour:
   hardDifficulty: {fileID: 11400000, guid: 55fd37e7c79b529428b44ea73bc268fe, type: 2}
   homePanel: {fileID: 341847878}
   shopPanel: {fileID: 330290482}
-  settingsPanel: {fileID: 1196222569}
+  settingsPanel: {fileID: 437803930}
   navbarPanel: {fileID: 998200870}
   loadingPanel: {fileID: 12819073}
   homeButton: {fileID: 856708042}
