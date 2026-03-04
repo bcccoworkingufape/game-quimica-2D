@@ -223,9 +223,14 @@ namespace LabScripts
         public void ShowConfirmationPanel(string itemName)
         {
             currentItemName = itemName;
+            string defaultText = "Deseja realizar o teste de solubilidade da substância desconhecida em <b>" + itemName + "</b>?";
+            string litmusText = "Deseja adicionar tornassol à substância desconhecida?";
 
             if (confirmationPanelText != null)
-                confirmationPanelText.text = "Iniciar mistura de solubilidade com " + itemName + "?";
+                if (currentItemName == "Tornassol")
+                    confirmationPanelText.text = litmusText;
+                else
+                    confirmationPanelText.text = defaultText;
 
             confirmationPanel?.SetActive(true);
         }
