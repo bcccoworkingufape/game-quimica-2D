@@ -224,7 +224,7 @@ namespace LabScripts
         {
             currentItemName = itemName;
             string defaultText = "Deseja realizar o teste de solubilidade da substância desconhecida em <b>" + itemName + "</b>?";
-            string litmusText = "Deseja adicionar tornassol à substância desconhecida?";
+            string litmusText = "Deseja adicionar <b>tornassol</b> à substância desconhecida?";
 
             if (confirmationPanelText != null)
                 if (currentItemName == "Tornassol")
