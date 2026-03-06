@@ -1,142 +1,266 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using Presentation.Common;
 
 namespace Presentation.Lab
 {
     /// <summary>
-    /// Controla a exibição do painel de animação de solução com efeito de escala.
-    /// O painel permanece sempre ativo na hierarquia, mas com escala zero quando "fechado".
-    /// Isso garante que o Animator do frasco funcione corretamente.
+    /// Controls the solution animation panel using a scale animation.
+    ///
+    /// The panel stays active in the hierarchy at all times, using a very small
+    /// scale when "closed". This allows child animators to keep working correctly.
+    ///
+    /// The legend text appears after a delay with a fade-in using LeanTween.
     /// </summary>
     public class SolutionPanelAnimator : MonoBehaviour
     {
-        [Header("Configurações de Animação")]
-        [Tooltip("Duração da animação de abrir/fechar em segundos")]
+        #region Inspector
+
+        [Header("Panel Animation")]
+        [Tooltip("Duration of the open/close animation in seconds.")]
         [SerializeField] private float animationDuration = 0.3f;
 
-        [Tooltip("Tipo de easing para a animação")]
-        [SerializeField] private UIAnimator.EaseType easeType = UIAnimator.EaseType.EaseOut;
+        [Tooltip("Easing used by the panel scale animation.")]
+        [SerializeField] private UIAnimator.EaseType panelEaseType = UIAnimator.EaseType.EaseOut;
 
-        [Tooltip("Escala quando o painel está 'fechado' (quase zero para manter ativo)")]
+        [Tooltip("Scale used when the panel is considered closed.")]
         [SerializeField] private float closedScale = 0.001f;
 
-        [Tooltip("Escala quando o painel está aberto")]
+        [Tooltip("Scale used when the panel is open.")]
         [SerializeField] private float openScale = 1f;
 
-        [Header("Referências")]
-        [Tooltip("Transform do painel a ser animado (se vazio, usa este GameObject)")]
+        [Header("References")]
+        [Tooltip("Panel transform to animate. If empty, this object's transform is used.")]
         [SerializeField] private Transform panelTransform;
 
-        [Header("Estado")]
+        [Header("Legend Animation")]
+        [Tooltip("Legend TextMeshProUGUI shown after the panel opens.")]
+        [SerializeField] private TextMeshProUGUI legendText;
+
+        [Tooltip("Delay before the legend starts appearing.")]
+        [SerializeField] private float legendDelay = 4f;
+
+        [Tooltip("Duration of the legend fade-in.")]
+        [SerializeField] private float legendFadeDuration = 0.6f;
+
+        [Tooltip("LeanTween easing used in the legend fade.")]
+        [SerializeField] private LeanTweenType legendFadeEase = LeanTweenType.easeOutQuad;
+
+        [Header("Initial State")]
+        [Tooltip("Defines whether the panel starts closed.")]
         [SerializeField] private bool startClosed = true;
 
-        private bool _isOpen;
-        private Coroutine _currentAnimation;
+        #endregion
 
-        /// <summary>
-        /// Indica se o painel está atualmente aberto (visível).
-        /// </summary>
+        #region State
+
+        private bool _isOpen;
+        private Coroutine _panelAnimationCoroutine;
+        private Coroutine _legendDelayCoroutine;
+        private int _legendTweenId = -1;
+
         public bool IsOpen => _isOpen;
+
+        #endregion
+
+        #region Unity Lifecycle
 
         private void Awake()
         {
             if (panelTransform == null)
+            {
                 panelTransform = transform;
+            }
 
-            if (startClosed)
-            {
-                // Começa fechado (escala mínima)
-                panelTransform.localScale = Vector3.one * closedScale;
-                _isOpen = false;
-            }
-            else
-            {
-                panelTransform.localScale = Vector3.one * openScale;
-                _isOpen = true;
-            }
+            ApplyInitialState();
         }
 
+        private void OnDisable()
+        {
+            StopPanelAnimation();
+            CancelLegendAnimation();
+        }
+
+        #endregion
+
+        #region Public API
+
         /// <summary>
-        /// Abre o painel com animação de escala.
+        /// Opens the panel with scale animation and starts the delayed legend fade-in.
         /// </summary>
         public void Open()
         {
-            Debug.Log($"[SolutionPanelAnimator] Open() chamado. _isOpen={_isOpen}, panelTransform={panelTransform?.name ?? "NULL"}");
-
             if (_isOpen)
             {
-                Debug.Log("[SolutionPanelAnimator] Painel já está aberto, ignorando.");
                 return;
             }
 
-            StopCurrentAnimation();
+            _isOpen = true;
 
-            Debug.Log($"[SolutionPanelAnimator] Iniciando animação de {closedScale} para {openScale}");
+            StopPanelAnimation();
 
-            _currentAnimation = UIAnimator.ScaleTo(
+            _panelAnimationCoroutine = UIAnimator.ScaleTo(
                 this,
                 panelTransform,
-                Vector3.one * closedScale,
-                Vector3.one * openScale,
+                panelTransform.localScale,
+                GetOpenScale(),
                 animationDuration,
-                easeType,
-                () =>
-                {
-                    _isOpen = true;
-                    Debug.Log("[SolutionPanelAnimator] Animação de abertura concluída!");
-                }
+                panelEaseType,
+                OnPanelAnimationFinished
             );
+
+            StartLegendFadeIn();
         }
 
         /// <summary>
-        /// Fecha o painel com animação de escala.
+        /// Closes the panel with scale animation and hides the legend immediately.
         /// </summary>
         public void Close()
         {
-            if (!_isOpen) return;
+            if (!_isOpen)
+            {
+                return;
+            }
 
-            StopCurrentAnimation();
+            _isOpen = false;
 
-            _currentAnimation = UIAnimator.ScaleTo(
+            StopPanelAnimation();
+            CancelLegendAnimation();
+            SetLegendAlpha(0f);
+
+            _panelAnimationCoroutine = UIAnimator.ScaleTo(
                 this,
                 panelTransform,
-                Vector3.one * openScale,
-                Vector3.one * closedScale,
+                panelTransform.localScale,
+                GetClosedScale(),
                 animationDuration,
-                easeType,
-                () => _isOpen = false
+                panelEaseType,
+                OnPanelAnimationFinished
             );
         }
 
         /// <summary>
-        /// Alterna entre aberto e fechado.
+        /// Toggles the panel state between open and closed.
         /// </summary>
         public void Toggle()
         {
             if (_isOpen)
+            {
                 Close();
-            else
-                Open();
+                return;
+            }
+
+            Open();
         }
 
         /// <summary>
-        /// Define o estado imediatamente sem animação.
+        /// Sets the panel state instantly, without animation.
         /// </summary>
         public void SetStateImmediate(bool open)
         {
-            StopCurrentAnimation();
+            StopPanelAnimation();
+            CancelLegendAnimation();
 
             _isOpen = open;
-            panelTransform.localScale = Vector3.one * (open ? openScale : closedScale);
+            panelTransform.localScale = open ? GetOpenScale() : GetClosedScale();
+            SetLegendAlpha(open ? 1f : 0f);
         }
 
-        private void StopCurrentAnimation()
+        #endregion
+
+        #region Panel Animation
+
+        private void ApplyInitialState()
         {
-            if (_currentAnimation != null)
+            _isOpen = !startClosed;
+            panelTransform.localScale = _isOpen ? GetOpenScale() : GetClosedScale();
+            SetLegendAlpha(_isOpen ? 1f : 0f);
+        }
+
+        private void StopPanelAnimation()
+        {
+            if (_panelAnimationCoroutine == null)
             {
-                StopCoroutine(_currentAnimation);
-                _currentAnimation = null;
+                return;
+            }
+
+            StopCoroutine(_panelAnimationCoroutine);
+            _panelAnimationCoroutine = null;
+        }
+
+        private void OnPanelAnimationFinished()
+        {
+            _panelAnimationCoroutine = null;
+        }
+
+        private Vector3 GetOpenScale()
+        {
+            return Vector3.one * openScale;
+        }
+
+        private Vector3 GetClosedScale()
+        {
+            return Vector3.one * closedScale;
+        }
+
+        #endregion
+
+        #region Legend Animation
+
+        private void StartLegendFadeIn()
+        {
+            if (legendText == null)
+            {
+                return;
+            }
+
+            CancelLegendAnimation();
+            SetLegendAlpha(0f);
+
+            _legendDelayCoroutine = StartCoroutine(DelayedLegendFadeIn());
+        }
+
+        private IEnumerator DelayedLegendFadeIn()
+        {
+            yield return new WaitForSeconds(legendDelay);
+
+            _legendTweenId = LeanTween
+                .value(legendText.gameObject, 0f, 1f, legendFadeDuration)
+                .setEase(legendFadeEase)
+                .setOnUpdate((float alpha) => SetLegendAlpha(alpha))
+                .uniqueId;
+
+            _legendDelayCoroutine = null;
+        }
+
+        private void CancelLegendAnimation()
+        {
+            if (_legendDelayCoroutine != null)
+            {
+                StopCoroutine(_legendDelayCoroutine);
+                _legendDelayCoroutine = null;
+            }
+
+            if (_legendTweenId != -1)
+            {
+                LeanTween.cancel(_legendTweenId);
+                _legendTweenId = -1;
             }
         }
+
+        private void SetLegendAlpha(float alpha)
+        {
+            if (legendText == null)
+            {
+                return;
+            }
+
+            Color color = legendText.color;
+            color.a = alpha;
+            legendText.color = color;
+        }
+
+        #endregion
     }
 }
