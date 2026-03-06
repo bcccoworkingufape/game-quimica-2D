@@ -22,6 +22,8 @@ namespace MenuScripts
         public GameObject settingsPanel;
         public GameObject navbarPanel;
         public GameObject loadingPanel;
+        public GameObject aboutPanel;
+        public GameObject helpPanel;
 
         [Header("Botões e Ícones")]
         public Button homeButton;
@@ -48,6 +50,7 @@ namespace MenuScripts
 
         [Header("Loading Screen - Dicas")]
         [SerializeField] private TextMeshProUGUI hintText;
+
         [SerializeField] private float hintChangeInterval = 3f;
 
         private Coroutine _hintCoroutine;
@@ -69,7 +72,6 @@ namespace MenuScripts
             "Responder errado no modo Experimentos custa uma vida. Pense bem!",
             "O modo Desafio testa tudo que você aprendeu. Sem árvore, sem moleza!",
             "Preste atenção no tipo de mistura: líquido-líquido ou sólido-líquido.",
-            
             // ═══════════════════════════════════════════
             // CURIOSIDADES CIENTÍFICAS
             // ═══════════════════════════════════════════
@@ -85,7 +87,6 @@ namespace MenuScripts
             "Bases orgânicas como aminas aceitam H⁺. É o oposto dos ácidos!",
             //"Densidade determina se algo flutua ou afunda.",
             "O pH neutro é 7. Abaixo é ácido, acima é básico. Simples assim!",
-            
             // ═══════════════════════════════════════════
             // MOLZ - O RATINHO CIENTISTA (divertidas)
             // ═══════════════════════════════════════════
@@ -101,7 +102,6 @@ namespace MenuScripts
             "O bigode do Molz vibra quando ele encontra a mistura correta!",
             "Molz já derrubou um erlenmeyer. Só um. Ele jura.",
             "Curiosidade: Molz vem de 'Molécula'. (E quase que seu nome era 'Moléquim')",
-            
             // ═══════════════════════════════════════════
             // MOTIVACIONAIS / ESTILO LoL e Terraria 👀
             // ═══════════════════════════════════════════
@@ -370,6 +370,30 @@ namespace MenuScripts
 #else
             Application.Quit();
 #endif
+        }
+
+        // ─────────────────────────────────────────────
+        // Painéis Sobre o Jogo / Ajuda
+        // ─────────────────────────────────────────────
+
+        public void ShowAboutPanel()
+        {
+            aboutPanel?.SetActive(true);
+        }
+
+        public void HideAboutPanel()
+        {
+            aboutPanel?.SetActive(false);
+        }
+
+        public void ShowHelpPanel()
+        {
+            helpPanel?.SetActive(true);
+        }
+
+        public void HideHelpPanel()
+        {
+            helpPanel?.SetActive(false);
         }
     }
 }

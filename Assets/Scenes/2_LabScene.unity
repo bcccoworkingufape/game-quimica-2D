@@ -3524,7 +3524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &619203062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3599,14 +3599,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Presentation.Lab.SolutionPanelAnimator
   animationDuration: 0.3
-  easeType: 3
+  panelEaseType: 3
   closedScale: 0.001
   openScale: 1
   panelTransform: {fileID: 619203062}
   legendText: {fileID: 1563116710}
-  textDelay: 3
-  textFadeDuration: 0.6
-  textEaseType: 3
+  legendDelay: 3
+  legendFadeDuration: 0.6
+  legendFadeEase: 2
   startClosed: 1
 --- !u!1 &628447650
 GameObject:
@@ -13522,6 +13522,7 @@ MonoBehaviour:
   difficultyText: {fileID: 1940263495}
   livesText: {fileID: 861145934}
   modeText: {fileID: 1694631037}
+  percentageText: {fileID: 348818324}
   treeButton: {fileID: 868139514}
   treeButtonGraphicsToTint: []
   treeEnabledColor: {r: 1, g: 1, b: 1, a: 1}
