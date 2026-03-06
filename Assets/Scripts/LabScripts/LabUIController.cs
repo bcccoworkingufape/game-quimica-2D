@@ -68,6 +68,8 @@ namespace LabScripts
         [Header("Animator Controller")]
         [SerializeField] private Animator animator;
 
+        //[Header("UI")]
+
         // ─────────────────────────────────────────────
         // Ciclo de vida
         // ─────────────────────────────────────────────
