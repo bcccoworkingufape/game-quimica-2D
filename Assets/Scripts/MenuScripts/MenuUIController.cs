@@ -24,6 +24,7 @@ namespace MenuScripts
         public GameObject loadingPanel;
         public GameObject aboutPanel;
         public GameObject helpPanel;
+        public GameObject fadePanel;
 
         [Header("Botões e Ícones")]
         public Button homeButton;
@@ -379,21 +380,29 @@ namespace MenuScripts
         public void ShowAboutPanel()
         {
             aboutPanel?.SetActive(true);
+            navbarPanel?.SetActive(false);
+            fadePanel?.SetActive(true);
         }
 
         public void HideAboutPanel()
         {
             aboutPanel?.SetActive(false);
+            navbarPanel?.SetActive(true);
+            fadePanel?.SetActive(false);
         }
 
         public void ShowHelpPanel()
         {
             helpPanel?.SetActive(true);
+            navbarPanel?.SetActive(false);
+            fadePanel?.SetActive(true);
         }
 
         public void HideHelpPanel()
         {
             helpPanel?.SetActive(false);
+            navbarPanel?.SetActive(true);
+            fadePanel?.SetActive(false);
         }
     }
 }
