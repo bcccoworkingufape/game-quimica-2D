@@ -41,6 +41,7 @@ namespace Core
         public event Action<int> OnScoreChanged;
         public event Action OnGameStarted;
         public event Action OnGameOver;
+        public event Action<int> OnProgressChanged;
 
         // ─────────────────────────────────────────────
         // Estado do "run" de perguntas (precisa sobreviver a Restart do Lab)
@@ -125,6 +126,7 @@ namespace Core
             OnDifficultyChanged?.Invoke(CurrentDifficulty);
             OnLivesChanged?.Invoke(PlayerLives);
             OnScoreChanged?.Invoke(PlayerScore);
+            OnProgressChanged?.Invoke(GetProgressPercentage());
         }
 
         private void ResetLabSceneState()
@@ -156,6 +158,13 @@ namespace Core
         public void SetTotalQuestions(int total)
         {
             TotalQuestionsInRun = Mathf.Max(0, total);
+            OnProgressChanged?.Invoke(GetProgressPercentage());
+        }
+
+        public int GetProgressPercentage()
+        {
+            if (TotalQuestionsInRun <= 0) return 0;
+            return Mathf.RoundToInt((float)_completedQuestionIds.Count / TotalQuestionsInRun * 100f);
         }
 
         public bool IsQuestionCompleted(int questionId) => _completedQuestionIds.Contains(questionId);
@@ -183,6 +192,8 @@ namespace Core
 
             ActiveQuestionAnsweredCorrect = false;
 
+            OnProgressChanged?.Invoke(GetProgressPercentage());
+
             TryHandleGameCleared();
         }
 
@@ -193,6 +204,7 @@ namespace Core
             TotalQuestionsInRun = 0;
             ActiveQuestionId = 0;
             ActiveQuestionAnsweredCorrect = false;
+            OnProgressChanged?.Invoke(0);
         }
 
         private void TryHandleGameCleared()

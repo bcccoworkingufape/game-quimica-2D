@@ -42,6 +42,7 @@ namespace LabScripts
         public TextMeshProUGUI difficultyText;
         public TextMeshProUGUI livesText;
         public TextMeshProUGUI modeText;
+        public TextMeshProUGUI percentageText;
         [Header("Botões HUD")]
         [SerializeField] private Button treeButton; //Button do ícone da árvore aqui
         // arraste aqui os Graphics que devem ficar PB (Image do ícone, TMP do texto, etc)
@@ -78,6 +79,7 @@ namespace LabScripts
                 GameManager.Instance.OnDifficultyChanged += HandleDifficultyChanged;
                 GameManager.Instance.OnLivesChanged += HandleLivesChanged;
                 GameManager.Instance.OnGameOver += HandleGameOver;
+                GameManager.Instance.OnProgressChanged += HandleProgressChanged;
             }
         }
 
@@ -88,6 +90,7 @@ namespace LabScripts
                 GameManager.Instance.OnDifficultyChanged -= HandleDifficultyChanged;
                 GameManager.Instance.OnLivesChanged -= HandleLivesChanged;
                 GameManager.Instance.OnGameOver -= HandleGameOver;
+                GameManager.Instance.OnProgressChanged -= HandleProgressChanged;
             }
         }
 
@@ -102,6 +105,9 @@ namespace LabScripts
                 UpdateLivesLabel(gm.PlayerLives);
                 RefreshHearts(gm.PlayerLives);
             }
+
+            if (gm != null)
+                UpdatePercentageText(gm.GetProgressPercentage());
         }
 
         // ─────────────────────────────────────────────
@@ -127,6 +133,17 @@ namespace LabScripts
         private void HandleGameOver()
         {
             ShowDefeatPanel();
+        }
+
+        private void HandleProgressChanged(int percentage)
+        {
+            UpdatePercentageText(percentage);
+        }
+
+        private void UpdatePercentageText(int percentage)
+        {
+            if (percentageText != null)
+                percentageText.text = $"{percentage}%";
         }
 
         private void UpdateDifficultyLabel(DifficultyLevelData data)
@@ -527,6 +544,7 @@ namespace LabScripts
         /// </summary>
         public void OnDefeatRestart()
         {
+            GameManager.Instance?.ResetQuestionRun();
             ResetFlowState(resetScore: true, resetLives: true);
             RestartLab();
         }
