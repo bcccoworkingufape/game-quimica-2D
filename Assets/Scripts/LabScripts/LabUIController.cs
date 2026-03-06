@@ -68,7 +68,8 @@ namespace LabScripts
         [Header("Animator Controller")]
         [SerializeField] private Animator animator;
 
-        //[Header("UI")]
+        [Header("Painel de Informações")]
+        public GameObject infoPanel;
 
         // ─────────────────────────────────────────────
         // Ciclo de vida
@@ -99,6 +100,7 @@ namespace LabScripts
         void Start()
         {
             HideAllPanels();
+            ShowInfoPanel();
 
             var gm = GameManager.Instance;
             if (gm != null && gm.CurrentDifficulty != null)
@@ -110,6 +112,23 @@ namespace LabScripts
 
             if (gm != null)
                 UpdatePercentageText(gm.GetProgressPercentage());
+        }
+
+        // ─────────────────────────────────────────────
+        // Painel de Informações (overlay inicial)
+        // ─────────────────────────────────────────────
+
+        public void ShowInfoPanel()
+        {
+            infoPanel?.SetActive(true);
+        }
+
+        /// <summary>
+        /// Chamado pelo botão "Entendi!" no painel de informações.
+        /// </summary>
+        public void HideInfoPanel()
+        {
+            infoPanel?.SetActive(false);
         }
 
         // ─────────────────────────────────────────────
