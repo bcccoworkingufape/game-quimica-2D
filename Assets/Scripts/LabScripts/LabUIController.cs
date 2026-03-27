@@ -71,6 +71,7 @@ namespace LabScripts
 
         [Header("Painel de Informações")]
         public GameObject infoPanel;
+        
         [Header("Toggle de Música")]
         [SerializeField] private GameObject musicOnObject;
         [SerializeField] private GameObject musicOffObject;

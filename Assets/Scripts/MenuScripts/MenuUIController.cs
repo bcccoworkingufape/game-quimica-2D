@@ -49,6 +49,9 @@ namespace MenuScripts
         [Header("UI Texts")]
         public TextMeshProUGUI difficultyText;
         public TextMeshProUGUI modeText;
+        [Header("Toggle de Música")]
+        [SerializeField] private GameObject musicOnObject;
+        [SerializeField] private GameObject musicOffObject;
 
         [Header("Loading Screen - Dicas")]
         [SerializeField] private TextMeshProUGUI hintText;
@@ -418,5 +421,40 @@ namespace MenuScripts
             navbarPanel?.SetActive(true);
             fadePanel?.SetActive(false);
         }
+
+        // ─────────────────────────────────────────────
+        // Música
+        // ─────────────────────────────────────────────
+
+        public void OnClickEnableMusic()
+        {
+            if (MusicManager.Instance == null) return;
+
+            MusicManager.Instance.EnableMusic();
+            RefreshMusicToggleVisual();
+        }
+
+        public void OnClickDisableMusic()
+        {
+            if (MusicManager.Instance == null) return;
+
+            MusicManager.Instance.DisableMusic();
+            RefreshMusicToggleVisual();
+        }
+
+        public void RefreshMusicToggleVisual()
+        {
+            if (MusicManager.Instance == null) return;
+
+            bool isEnabled = MusicManager.Instance.IsMusicEnabled();
+
+            if (musicOnObject != null)
+                musicOnObject.SetActive(isEnabled);
+
+            if (musicOffObject != null)
+                musicOffObject.SetActive(!isEnabled);
+        }
+
+
     }
 }
