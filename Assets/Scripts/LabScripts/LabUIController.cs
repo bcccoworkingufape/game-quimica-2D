@@ -6,6 +6,7 @@ using Core;
 using Presentation.Lab;
 using Domain;
 using UnityEngine.UI;
+using Core.Audio;
 
 namespace LabScripts
 {
@@ -70,6 +71,9 @@ namespace LabScripts
 
         [Header("Painel de Informações")]
         public GameObject infoPanel;
+        [Header("Toggle de Música")]
+        [SerializeField] private GameObject musicOnObject;
+        [SerializeField] private GameObject musicOffObject;
 
         // ─────────────────────────────────────────────
         // Ciclo de vida
@@ -112,6 +116,8 @@ namespace LabScripts
 
             if (gm != null)
                 UpdatePercentageText(gm.GetProgressPercentage());
+
+            RefreshMusicToggleVisual();
         }
 
         // ─────────────────────────────────────────────
@@ -692,6 +698,45 @@ namespace LabScripts
                     icons[i].SetActive(i < count);
             }
         }
+
+        // ─────────────────────────────────────────────
+        // Música
+        // ─────────────────────────────────────────────
+
+        public void OnClickEnableMusic()
+        {
+            if (MusicManager.Instance == null) return;
+
+            MusicManager.Instance.EnableM   usic();
+            RefreshMusicToggleVisual();
+        }
+
+        public void OnClickDisableMusic()
+        {
+            if (MusicManager.Instance == null) return;
+
+            MusicManager.Instance.DisableMusic();
+            RefreshMusicToggleVisual();
+        }
+
+        public void RefreshMusicToggleVisual()
+        {
+            if (MusicManager.Instance == null) return;
+
+            bool isEnabled = MusicManager.Instance.IsMusicEnabled();
+
+            if (musicOnObject != null)
+                musicOnObject.SetActive(isEnabled);
+
+            if (musicOffObject != null)
+                musicOffObject.SetActive(!isEnabled);
+        }
+
+
+
+
+
+
 
     }
 }
