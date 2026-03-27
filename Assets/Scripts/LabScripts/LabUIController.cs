@@ -707,7 +707,7 @@ namespace LabScripts
         {
             if (MusicManager.Instance == null) return;
 
-            MusicManager.Instance.EnableM   usic();
+            MusicManager.Instance.EnableMusic();
             RefreshMusicToggleVisual();
         }
 
