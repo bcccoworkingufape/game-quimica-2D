@@ -5,6 +5,7 @@ using Core;
 using TMPro;
 using Domain;
 using System.Collections;
+using Core.Audio;
 
 namespace MenuScripts
 {
@@ -222,7 +223,13 @@ namespace MenuScripts
             shopPanel?.SetActive(false);
             settingsPanel?.SetActive(false);
             loadingPanel?.SetActive(true);
+
             StartHintCycle();
+
+            if (MusicManager.Instance != null && MusicManager.Instance.IsMusicEnabled())
+            {
+                MusicManager.Instance.StartMenuMusicFromLoading(targetVolume: 0.55f, duration: 1.8f);
+            }
         }
 
         // ─────────────────────────────────────────────
@@ -266,7 +273,14 @@ namespace MenuScripts
         public void LoadLabScene()
         {
             if (GameManager.Instance == null) return;
+
             StopHintCycle();
+
+            if (MusicManager.Instance != null && MusicManager.Instance.IsMusicEnabled())
+            {
+                MusicManager.Instance.FadeTo(0.6f, 0.25f);
+            }
+
             GameManager.Instance.StartGame();
         }
 

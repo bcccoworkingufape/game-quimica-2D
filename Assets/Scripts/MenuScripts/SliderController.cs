@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Data;
-using Core; 
+using Core;
 
 namespace MenuScripts
 {
