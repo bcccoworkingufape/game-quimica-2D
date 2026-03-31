@@ -12,7 +12,9 @@ namespace MenuScripts
         [SerializeField] private Image fillImage;  // O GameObject "Fill" do Slider
         [SerializeField] private Sprite[] progressSprites; // Array de sprites (0-5)
 
-        private NavbarController navbarController;
+        [Header("Controllers")]
+        [SerializeField] private NavbarController navbarController;
+        [SerializeField] private MenuUIController menuUIController;
 
         private int progress = 0;
 
@@ -43,6 +45,7 @@ namespace MenuScripts
             }
 
             navbarController.OnClickHome();
+            menuUIController.HideLoadingPanel();
         }
     }
 }

@@ -180,6 +180,13 @@ namespace MenuScripts
             }
         }
 
+        public void HideLoadingPanel()
+        {
+            loadingPanel?.SetActive(false);
+            homePanel?.SetActive(true);
+
+            StopHintCycle();
+        }
         // ─────────────────────────────────────────────
         // Sistema de Dicas (Loading Screen)
         // ─────────────────────────────────────────────
