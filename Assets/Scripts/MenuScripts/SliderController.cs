@@ -8,21 +8,17 @@ namespace MenuScripts
 {
     public class Slider_Controller : MonoBehaviour
     {
-        public Slider slider;
-        public Image fillImage;  // O GameObject "Fill" do Slider
-        public Sprite[] progressSprites; // Array de sprites (0-5)
+        [SerializeField] private Slider slider;
+        [SerializeField] private Image fillImage;  // O GameObject "Fill" do Slider
+        [SerializeField] private Sprite[] progressSprites; // Array de sprites (0-5)
 
-        public MenuUIController UIMenuScene;
+        private NavbarController navbarController;
 
         private int progress = 0;
 
         private void Start()
         {
-
-            if (UIMenuScene.loadingPanel)
-            {
-                StartCoroutine(LoadProgressBar());
-            }
+            StartCoroutine(LoadProgressBar());
         }
 
         public void IncreaseProgress()
@@ -46,7 +42,7 @@ namespace MenuScripts
                 yield return new WaitForSeconds(0.8f); // tempo em segundos
             }
 
-            UIMenuScene.ShowHomePanel();
+            navbarController.OnClickHome();
         }
     }
 }

@@ -23,20 +23,9 @@ namespace MenuScripts
         public GameObject settingsPanel;
         public GameObject navbarPanel;
         public GameObject loadingPanel;
-        public GameObject aboutPanel;
-        public GameObject helpPanel;
-        public GameObject fadePanel;
-
-        [Header("Botões e Ícones")]
-        public Button homeButton;
-        public Button shopButton;
-        public Button settingsButton;
-        public GameObject homeIcon0;
-        public GameObject homeIcon1;
-        public GameObject shopIcon0;
-        public GameObject shopIcon1;
-        public GameObject settingsIcon0;
-        public GameObject settingsIcon1;
+        private GameObject aboutPanel;
+        private GameObject helpPanel;
+        private GameObject fadePanel;
 
         [Header("Imagens de Seleção Dificuldade")]
         public GameObject easy0Image;
@@ -175,50 +164,6 @@ namespace MenuScripts
         }
 
         // Painéis principais
-        public void ShowHomePanel()
-        {
-            homePanel?.SetActive(true);
-            shopPanel?.SetActive(false);
-            settingsPanel?.SetActive(false);
-            loadingPanel?.SetActive(false);
-            StopHintCycle();
-
-            if (homeButton != null) homeButton.interactable = false;
-            if (shopButton != null) shopButton.interactable = true;
-            if (settingsButton != null) settingsButton.interactable = true;
-
-            OnHomeButtonClick();
-        }
-
-        public void ShowShopPanel()
-        {
-            homePanel?.SetActive(false);
-            shopPanel?.SetActive(true);
-            settingsPanel?.SetActive(false);
-            loadingPanel?.SetActive(false);
-            StopHintCycle();
-
-            if (shopButton != null) shopButton.interactable = false;
-            if (homeButton != null) homeButton.interactable = true;
-            if (settingsButton != null) settingsButton.interactable = true;
-
-            OnShopButtonClick();
-        }
-
-        public void ShowSettingsPanel()
-        {
-            homePanel?.SetActive(false);
-            shopPanel?.SetActive(false);
-            settingsPanel?.SetActive(true);
-            loadingPanel?.SetActive(false);
-            StopHintCycle();
-
-            if (settingsButton != null) settingsButton.interactable = false;
-            if (homeButton != null) homeButton.interactable = true;
-            if (shopButton != null) shopButton.interactable = true;
-
-            OnSettingsButtonClick();
-        }
 
         public void ShowLoadingPanel()
         {
@@ -340,43 +285,6 @@ namespace MenuScripts
 
             hard0Image?.SetActive(!isHard);
             hard1Image?.SetActive(isHard);
-        }
-
-        // Funções auxiliares
-        private void OnHomeButtonClick()
-        {
-            homeIcon0?.SetActive(false);
-            homeIcon1?.SetActive(true);
-
-            shopIcon0?.SetActive(true);
-            shopIcon1?.SetActive(false);
-
-            settingsIcon0?.SetActive(true);
-            settingsIcon1?.SetActive(false);
-        }
-
-        private void OnShopButtonClick()
-        {
-            shopIcon0?.SetActive(false);
-            shopIcon1?.SetActive(true);
-
-            homeIcon0?.SetActive(true);
-            homeIcon1?.SetActive(false);
-
-            settingsIcon0?.SetActive(true);
-            settingsIcon1?.SetActive(false);
-        }
-
-        private void OnSettingsButtonClick()
-        {
-            settingsIcon0?.SetActive(false);
-            settingsIcon1?.SetActive(true);
-
-            homeIcon0?.SetActive(true);
-            homeIcon1?.SetActive(false);
-
-            shopIcon0?.SetActive(true);
-            shopIcon1?.SetActive(false);
         }
 
         // Botão "Fechar o jogo" (encerra a aplicacao).
