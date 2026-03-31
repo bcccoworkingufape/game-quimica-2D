@@ -2536,9 +2536,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2017846735}
-        m_TargetAssemblyTypeName: MenuScripts.UI_MenuScene, Assembly-CSharp
-        m_MethodName: ShowShopPanel
+      - m_Target: {fileID: 619577147}
+        m_TargetAssemblyTypeName: NavbarController, Assembly-CSharp
+        m_MethodName: OnClickShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2762,9 +2762,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2017846735}
-        m_TargetAssemblyTypeName: MenuScripts.UI_MenuScene, Assembly-CSharp
-        m_MethodName: ShowHomePanel
+      - m_Target: {fileID: 619577147}
+        m_TargetAssemblyTypeName: NavbarController, Assembly-CSharp
+        m_MethodName: OnClickHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3640,6 +3640,8 @@ MonoBehaviour:
   - {fileID: -4285788358253815455, guid: f94f6fd1f9f6ea244ba40e1326875bf9, type: 3}
   - {fileID: 3310958161121019826, guid: 1138ce9f4f3fe3b448426746d7c95e78, type: 3}
   - {fileID: -1705047673377073398, guid: cc89eb78159d5a2419d7e3259e70792a, type: 3}
+  navbarController: {fileID: 619577147}
+  menuUIController: {fileID: 2017846735}
 --- !u!4 &1160502774
 Transform:
   m_ObjectHideFlags: 0
@@ -4193,9 +4195,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2017846735}
-        m_TargetAssemblyTypeName: MenuScripts.UI_MenuScene, Assembly-CSharp
-        m_MethodName: ShowSettingsPanel
+      - m_Target: {fileID: 619577147}
+        m_TargetAssemblyTypeName: NavbarController, Assembly-CSharp
+        m_MethodName: OnClickSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4272,9 +4274,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 767861865}
   - {fileID: 856708041}
   - {fileID: 1598133373}
-  - {fileID: 767861865}
   m_Father: {fileID: 998200871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
