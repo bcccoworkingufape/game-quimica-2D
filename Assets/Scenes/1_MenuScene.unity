@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 198775170}
   - component: {fileID: 198775169}
   m_Layer: 5
-  m_Name: Shop0_Image
+  m_Name: Disabled_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 291226269}
   - component: {fileID: 291226268}
   m_Layer: 5
-  m_Name: Settings1_Image
+  m_Name: Enabled_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,6 +1784,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &619577146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 619577148}
+  - component: {fileID: 619577147}
+  m_Layer: 0
+  m_Name: Navbar_Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &619577147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619577146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c02a01a3aa199459ea67cfd1ab70bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NavbarController
+  homeButton: {fileID: 856708042}
+  settingsButton: {fileID: 1598133374}
+  shopButton: {fileID: 767861866}
+  homeDisabled: {fileID: 1887565392}
+  homeEnabled: {fileID: 2129995738}
+  settingsDisabled: {fileID: 637540197}
+  settingsEnabled: {fileID: 291226268}
+  shopDisabled: {fileID: 198775169}
+  shopEnabled: {fileID: 1155089518}
+  homePage: {fileID: 341847878}
+  settingsPage: {fileID: 437803930}
+  shopPage: {fileID: 330290482}
+--- !u!4 &619577148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619577146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45966, y: -0.09189, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625531311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +2035,7 @@ GameObject:
   - component: {fileID: 637540198}
   - component: {fileID: 637540197}
   m_Layer: 5
-  m_Name: Setttings0_Image
+  m_Name: Disabled_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2209,9 +2265,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 330290483}
-  - {fileID: 437803931}
   - {fileID: 341847879}
+  - {fileID: 437803931}
+  - {fileID: 330290483}
   m_Father: {fileID: 155338804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3764,7 +3820,7 @@ GameObject:
   - component: {fileID: 1155089519}
   - component: {fileID: 1155089518}
   m_Layer: 5
-  m_Name: Shop1_Image
+  m_Name: Enabled_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4497,9 +4553,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 767861865}
   - {fileID: 856708041}
   - {fileID: 1598133373}
+  - {fileID: 767861865}
   m_Father: {fileID: 998200871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5469,7 +5525,7 @@ GameObject:
   - component: {fileID: 1887565393}
   - component: {fileID: 1887565392}
   m_Layer: 5
-  m_Name: Home0_Image
+  m_Name: Disabled_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6372,7 +6428,7 @@ GameObject:
   - component: {fileID: 2129995739}
   - component: {fileID: 2129995738}
   m_Layer: 5
-  m_Name: Home1_Image
+  m_Name: Enabled_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6556,6 +6612,7 @@ SceneRoots:
   - {fileID: 630352909}
   - {fileID: 830552998}
   - {fileID: 2017846734}
+  - {fileID: 619577148}
   - {fileID: 1160502774}
   - {fileID: 814474588}
   - {fileID: 1127489788}
