@@ -27,14 +27,6 @@ namespace MenuScripts
         private GameObject helpPanel;
         private GameObject fadePanel;
 
-        [Header("Imagens de Seleção Dificuldade")]
-        public GameObject easy0Image;
-        public GameObject easy1Image;
-        public GameObject medium0Image;
-        public GameObject medium1Image;
-        public GameObject hard0Image;
-        public GameObject hard1Image;
-
         [Header("UI Texts")]
         public TextMeshProUGUI difficultyText;
         public TextMeshProUGUI modeText;
@@ -284,14 +276,6 @@ namespace MenuScripts
             bool isMedium = data == mediumDifficulty;
             bool isHard = data == hardDifficulty;
 
-            easy0Image?.SetActive(!isEasy);
-            easy1Image?.SetActive(isEasy);
-
-            medium0Image?.SetActive(!isMedium);
-            medium1Image?.SetActive(isMedium);
-
-            hard0Image?.SetActive(!isHard);
-            hard1Image?.SetActive(isHard);
         }
 
         // Botão "Fechar o jogo" (encerra a aplicacao).
