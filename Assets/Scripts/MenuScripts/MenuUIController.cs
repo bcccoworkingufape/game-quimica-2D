@@ -23,9 +23,9 @@ namespace MenuScripts
         public GameObject settingsPanel;
         public GameObject navbarPanel;
         public GameObject loadingPanel;
-        private GameObject aboutPanel;
-        private GameObject helpPanel;
-        private GameObject fadePanel;
+        public GameObject aboutPanel;
+        public GameObject helpPanel;
+        public GameObject fadePanel;
 
         [Header("UI Texts")]
         public TextMeshProUGUI difficultyText;
