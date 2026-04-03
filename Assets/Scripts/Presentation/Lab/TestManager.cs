@@ -2,7 +2,7 @@ using UnityEngine;
 using Domain;
 using Core;
 using LabScripts;
-
+using Core.Audio;
 namespace Presentation.Lab
 {
     /// <summary>
@@ -89,48 +89,38 @@ namespace Presentation.Lab
                 Debug.LogError("[TestManager] Serviços não inicializados (solubility/history).");
                 return;
             }
+
             if (currentCompoundId <= 0 || _selectedSolventId <= 0)
             {
                 Debug.LogWarning($"[TestManager] Composto ou solvente não configurados. compound={currentCompoundId}, solvent={_selectedSolventId}");
                 return;
             }
 
+            SfxManager.Instance?.PlayBottleFill();
+            SfxManager.Instance?.PlayMix();
 
-
-            var useCase = new MixSolutionUseCase(
-                _solubilityService,
-                _historyService);
-
+            var useCase = new MixSolutionUseCase(_solubilityService, _historyService);
             var request = new MixSolutionRequest(currentCompoundId, _selectedSolventId);
             var response = useCase.Execute(request);
             var outcome = response.Outcome;
 
-            // Prints com as chaves importantes para você casar com animações
             Debug.Log($"[MIX] compoundId={outcome.Compound.Id}, solventId={outcome.Solvent.Id}, " +
                       $"mixtureType={outcome.MixtureType}, solubility={outcome.SolubilityResult}, " +
                       $"litmus={outcome.LitmusResult}, flask={outcome.FlaskType}");
 
-            // Atualiza os parâmetros do Animator do frasco
             if (flaskAnimationController != null)
-            {
                 flaskAnimationController.SetAnimationFromOutcome(outcome);
-            }
             else
-            {
                 Debug.LogWarning("[TestManager] FlaskAnimationController não atribuído. Animação não será atualizada.");
-            }
 
-            // Atualiza o texto de animação
             if (uiController != null && uiController.solutionAnimationText != null)
             {
                 uiController.solutionAnimationText.text =
                     _messageHandler.GetTestMessage(response);
             }
 
-            // Abre painel de animação
             uiController?.ShowSolutionAnimationPanel();
         }
-
         public void ResetRoundState(bool clearCompound = false)
         {
             if (clearCompound)

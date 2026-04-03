@@ -3,6 +3,8 @@ using UnityEngine;
 using Domain;
 using Core;
 using LabScripts;
+using Core.Audio;
+
 
 namespace Presentation.Lab
 {
@@ -183,11 +185,13 @@ namespace Presentation.Lab
 
             if (result.IsCorrect)
             {
+                SfxManager.Instance?.PlayCorrect();
                 _gm?.MarkActiveQuestionCorrect();
                 uiController?.ShowQuestionVictoryPanel(_currentQuestion.CorrectAnswer);
             }
             else
             {
+                SfxManager.Instance?.PlayWrong();
                 uiController?.ShowQuestionErrorPanel();
             }
         }

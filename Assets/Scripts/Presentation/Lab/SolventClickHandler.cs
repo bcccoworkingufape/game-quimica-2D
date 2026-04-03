@@ -1,5 +1,6 @@
 using UnityEngine;
 using Presentation.Lab;
+using Core.Audio;
 
 public class SolventClickHandler : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class SolventClickHandler : MonoBehaviour
             return;
         }
 
+        SfxManager.Instance?.PlayButtonClick();
         testManager.OnSolventClicked(solventId, solventName);
     }
 }

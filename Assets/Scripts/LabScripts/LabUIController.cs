@@ -71,7 +71,7 @@ namespace LabScripts
 
         [Header("Painel de Informações")]
         public GameObject infoPanel;
-        
+
         [Header("Toggle de Música")]
         [SerializeField] private GameObject musicOnObject;
         [SerializeField] private GameObject musicOffObject;
@@ -135,6 +135,7 @@ namespace LabScripts
         /// </summary>
         public void HideInfoPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
             infoPanel?.SetActive(false);
         }
 
@@ -290,10 +291,11 @@ namespace LabScripts
         /// </summary>
         public void OnConfirmAction()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             Debug.Log("Ação Confirmada para o item: " + currentItemName);
             HideConfirmationPanel();
 
-            // Dispara a lógica de mistura (consulta banco/cache, histórico, etc)
             if (testManager != null)
             {
                 testManager.OnConfirmMix();
@@ -310,6 +312,8 @@ namespace LabScripts
         /// </summary>
         public void OnCancelAction()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             Debug.Log("Ação Cancelada para o item: " + currentItemName);
             HideConfirmationPanel();
         }
@@ -318,10 +322,12 @@ namespace LabScripts
         {
             // Fecha o painel de animação
             // HideSolutionAnimationPanel();
+            SfxManager.Instance?.PlayButtonClick();
+            SfxManager.Instance?.PlayMix();
+
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             animator.Play(stateInfo.fullPathHash, -1, 0f);
 
-            // TODO: lógica de repetir visualmente a animação da mistura
         }
 
         // ─────────────────────────────────────────────
@@ -404,6 +410,8 @@ namespace LabScripts
         /// </summary>
         public void OnQuestionSelect(int optionIndex)
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             Debug.Log($"[LabUI] Alternativa escolhida index={optionIndex}");
             HideQuestionPanel();
 
@@ -422,6 +430,8 @@ namespace LabScripts
         /// </summary>
         public void OpenQuestionForCurrentCompound()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             if (questionFlowPresenter != null)
             {
                 questionFlowPresenter.ShowQuestionForCurrentCompound();
@@ -438,6 +448,8 @@ namespace LabScripts
 
         public void ShowHistoryPanel()
         {
+            SfxManager.Instance?.PlayHistoryClick();
+
             historyPanel?.SetActive(true);
 
             if (historyPanelController != null)
@@ -448,6 +460,7 @@ namespace LabScripts
 
         public void HideHistoryPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
             historyPanel?.SetActive(false);
         }
 
@@ -461,12 +474,14 @@ namespace LabScripts
             if (gm != null && gm.CurrentDifficulty != null && gm.CurrentDifficulty.mode == GameMode.Desafio)
                 return;
 
+            SfxManager.Instance?.PlayTreeClick();
             treePanel?.SetActive(true);
         }
 
 
         public void HideTreePanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
             treePanel?.SetActive(false);
         }
 
@@ -481,6 +496,7 @@ namespace LabScripts
 
         public void HideQuestionErrorPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
             questionErrorPanel?.SetActive(false);
             questionPanel?.SetActive(true); // volta para as alternativas
         }
@@ -520,10 +536,12 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryNextPhase()
         {
-            ResetFlowState(resetScore: false, resetLives: false); // fecha tudo + reseta vidas/seleções
+            SfxManager.Instance?.PlayButtonClick();
+
+            ResetFlowState(resetScore: false, resetLives: false);
 
             if (questionFlowPresenter != null)
-                questionFlowPresenter?.PrepareNextCompound(forceNew: true);
+                questionFlowPresenter.PrepareNextCompound(forceNew: true);
             else
                 Debug.LogWarning("[LabUIController] QuestionFlowPresenter não atribuído em OnVictoryNextPhase.");
         }
@@ -535,6 +553,8 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryRestart()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             ResetFlowState(resetScore: true, resetLives: true);
             RestartLab();
         }
@@ -545,10 +565,11 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryReturnToMenu()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             ResetFlowState(resetScore: false, resetLives: true);
             ReturnToMainMenu();
         }
-
 
 
         // ─────────────────────────────────────────────
@@ -557,12 +578,16 @@ namespace LabScripts
 
         public void ShowDefeatPanel()
         {
+            SfxManager.Instance?.PlayLose();
+
             defeatPanel?.SetActive(true);
             Time.timeScale = 0f;
         }
 
         public void HideDefeatPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             defeatPanel?.SetActive(false);
             Time.timeScale = 1f;
         }
@@ -572,6 +597,8 @@ namespace LabScripts
         /// </summary>
         public void OnDefeatRestart()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             GameManager.Instance?.ResetQuestionRun();
             ResetFlowState(resetScore: true, resetLives: true);
             RestartLab();
@@ -584,6 +611,8 @@ namespace LabScripts
         /// </summary>
         public void OnDefeatReturnToMenu()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             ResetFlowState(resetScore: false, resetLives: true);
             ReturnToMainMenu();
         }
@@ -598,6 +627,8 @@ namespace LabScripts
         /// </summary>
         public void PauseGame()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             pauseMenuPanel?.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -607,6 +638,8 @@ namespace LabScripts
         /// </summary>
         public void ResumeGame()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             pauseMenuPanel?.SetActive(false);
             Time.timeScale = 1f;
         }
@@ -616,6 +649,8 @@ namespace LabScripts
         /// </summary>
         public void ReturnToMainMenu()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             Time.timeScale = 1f;
             GameManager.Instance.LoadScene("1_MenuScene");
         }
@@ -625,6 +660,8 @@ namespace LabScripts
         /// </summary>
         public void QuitGame()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             Time.timeScale = 1f;
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -706,6 +743,8 @@ namespace LabScripts
 
         public void OnClickEnableMusic()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             if (MusicManager.Instance == null) return;
 
             MusicManager.Instance.EnableMusic();
@@ -714,6 +753,8 @@ namespace LabScripts
 
         public void OnClickDisableMusic()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             if (MusicManager.Instance == null) return;
 
             MusicManager.Instance.DisableMusic();

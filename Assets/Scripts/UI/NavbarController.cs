@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using Core.Audio;
 
 public class NavbarController : MonoBehaviour
 {
@@ -30,6 +30,8 @@ public class NavbarController : MonoBehaviour
     // Main functions
     public void OnClickHome()
     {
+        SfxManager.Instance?.PlayButtonClick();
+
         DisableButton(homeButton);
         EnableButton(settingsButton);
         EnableButton(shopButton);
@@ -48,6 +50,8 @@ public class NavbarController : MonoBehaviour
 
     public void OnClickSettings()
     {
+        SfxManager.Instance?.PlayButtonClick();
+
         DisableButton(settingsButton);
         EnableButton(homeButton);
         EnableButton(shopButton);
@@ -66,6 +70,8 @@ public class NavbarController : MonoBehaviour
 
     public void OnClickShop()
     {
+        SfxManager.Instance?.PlayButtonClick();
+
         DisableButton(shopButton);
         EnableButton(homeButton);
         EnableButton(settingsButton);

@@ -8,6 +8,8 @@ using Data;
 using Domain;
 using LabScripts;
 using Presentation.Lab;
+using Core.Audio;
+
 
 namespace Core
 {
@@ -228,6 +230,8 @@ namespace Core
         {
             Debug.Log("[GameManager] Zerou o game!");
             Time.timeScale = 1f;
+
+            SfxManager.Instance?.PlayWin();
 
             if (!string.IsNullOrWhiteSpace(gameClearSceneName))
                 LoadScene(gameClearSceneName);

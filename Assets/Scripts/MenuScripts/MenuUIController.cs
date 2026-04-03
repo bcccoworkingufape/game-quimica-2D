@@ -131,6 +131,7 @@ namespace MenuScripts
 
             ApplyDifficultySelectionVisuals(current);
             UpdateDifficultyLabel(current);
+            RefreshMusicToggleVisual();
         }
 
         private void HandleDifficultyChanged(DifficultyLevelData data)
@@ -219,6 +220,8 @@ namespace MenuScripts
         // Ação do botão "Jogar"
         public void LoadLabScene()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             if (GameManager.Instance == null) return;
 
             StopHintCycle();
@@ -234,18 +237,21 @@ namespace MenuScripts
         // Seleção de dificuldade (OnClick)
         public void SelectEasy()
         {
+            SfxManager.Instance?.PlayButtonClick();
             Debug.Log("Selecionado: EASY");
             SelectDifficulty(easyDifficulty);
         }
 
         public void SelectMedium()
         {
+            SfxManager.Instance?.PlayButtonClick();
             Debug.Log("Selecionado: MEDIUM");
             SelectDifficulty(mediumDifficulty);
         }
 
         public void SelectHard()
         {
+            SfxManager.Instance?.PlayButtonClick();
             Debug.Log("Selecionado: HARD");
             SelectDifficulty(hardDifficulty);
         }
@@ -281,6 +287,8 @@ namespace MenuScripts
         // Botão "Fechar o jogo" (encerra a aplicacao).
         public void QuitGame()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             Time.timeScale = 1f;
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -295,6 +303,8 @@ namespace MenuScripts
 
         public void ShowAboutPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             aboutPanel?.SetActive(true);
             navbarPanel?.SetActive(false);
             fadePanel?.SetActive(true);
@@ -302,6 +312,8 @@ namespace MenuScripts
 
         public void HideAboutPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             aboutPanel?.SetActive(false);
             navbarPanel?.SetActive(true);
             fadePanel?.SetActive(false);
@@ -309,6 +321,8 @@ namespace MenuScripts
 
         public void ShowHelpPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             helpPanel?.SetActive(true);
             navbarPanel?.SetActive(false);
             fadePanel?.SetActive(true);
@@ -316,6 +330,8 @@ namespace MenuScripts
 
         public void HideHelpPanel()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             helpPanel?.SetActive(false);
             navbarPanel?.SetActive(true);
             fadePanel?.SetActive(false);
@@ -327,6 +343,8 @@ namespace MenuScripts
 
         public void OnClickEnableMusic()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             if (MusicManager.Instance == null) return;
 
             MusicManager.Instance.EnableMusic();
@@ -335,6 +353,8 @@ namespace MenuScripts
 
         public void OnClickDisableMusic()
         {
+            SfxManager.Instance?.PlayButtonClick();
+
             if (MusicManager.Instance == null) return;
 
             MusicManager.Instance.DisableMusic();
