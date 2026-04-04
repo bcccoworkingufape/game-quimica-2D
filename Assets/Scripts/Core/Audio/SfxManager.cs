@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using Core.Audio;
 
 namespace Core.Audio
 {
@@ -43,6 +45,7 @@ namespace Core.Audio
 
         private void Awake()
         {
+            
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
@@ -56,6 +59,7 @@ namespace Core.Audio
             ConfigureAudioSource();
             LoadPreferences();
             LoadDefaultClipsIfNeeded();
+            
         }
 
         private void ConfigureAudioSource()
@@ -70,17 +74,16 @@ namespace Core.Audio
 
         private void LoadDefaultClipsIfNeeded()
         {
-            buttonClick ??= Resources.Load<AudioClip>("Assets/Resources/Audio/SFX/botao_click");
-            treeClick ??= Resources.Load<AudioClip>("Assets/Resources/Audio/SFX/arvore_click");
-            historyClick ??= Resources.Load<AudioClip>("Assets/Resources/Audio/SFX/historico_click");
-            mix ??= Resources.Load<AudioClip>("Assets/Resources/Audio/SFX/mistura");
-            correct ??= Resources.Load<AudioClip>("Assets/Resources/Audio/SFX/acertou");
-            bottleFill ??= Resources.Load<AudioClip>("Assets/Resources/Audio/SFX/garrafa_enchendo");
-
-            // Futuros:
-            // wrong ??= Resources.Load<AudioClip>("Audio/SFX/errou");
-            // win ??= Resources.Load<AudioClip>("Audio/SFX/ganhou");
-            // lose ??= Resources.Load<AudioClip>("Audio/SFX/perdeu");
+            if (buttonClick == null) buttonClick = Resources.Load<AudioClip>("Audio/SFX/botao_click");
+            if (treeClick == null) treeClick = Resources.Load<AudioClip>("Audio/SFX/arvore_click");
+            if (historyClick == null) historyClick = Resources.Load<AudioClip>("Audio/SFX/historico_click");
+            if (mix == null) mix = Resources.Load<AudioClip>("Audio/SFX/mistura");
+            if (correct == null) correct = Resources.Load<AudioClip>("Audio/SFX/acertou");
+            if (bottleFill == null) bottleFill = Resources.Load<AudioClip>("Audio/SFX/garrafa_enchendo");
+            //Futuros
+            if (wrong == null) wrong = Resources.Load<AudioClip>("Audio/SFX/errou");
+            if (win == null) win = Resources.Load<AudioClip>("Audio/SFX/ganhou");
+            if (lose == null) lose = Resources.Load<AudioClip>("Audio/SFX/perdeu");
         }
 
         public void EnableSfx()
@@ -93,7 +96,6 @@ namespace Core.Audio
         {
             _isSfxEnabled = false;
             SavePreferences();
-            StopAllSfx();
         }
 
         public void ToggleSfx()
@@ -109,28 +111,38 @@ namespace Core.Audio
                 _audioSource.volume = defaultVolume;
         }
 
-        public void StopAllSfx()
-        {
-            if (_audioSource != null)
-                _audioSource.Stop();
-        }
-
         public void Play(SfxId sfxId, float volumeScale = 1f)
         {
-            if (!_isSfxEnabled || _audioSource == null)
+            
+            if (!_isSfxEnabled)
+            {
                 return;
+            }
+            
+            if (_audioSource == null)
+            {
+                return;
+            }
 
             AudioClip clip = GetClip(sfxId);
             if (clip == null)
             {
-                Debug.LogWarning($"[SfxManager] Clip não encontrado para {sfxId}");
                 return;
             }
 
             _audioSource.PlayOneShot(clip, Mathf.Clamp01(volumeScale));
         }
 
-        public void PlayButtonClick() => Play(SfxId.ButtonClick);
+        public void PlayButtonClick() 
+        {
+            if (!_isSfxEnabled) 
+            {
+                return;
+            }
+            
+            Play(SfxId.ButtonClick);
+        }
+        
         public void PlayTreeClick() => Play(SfxId.TreeClick);
         public void PlayHistoryClick() => Play(SfxId.HistoryClick);
         public void PlayMix() => Play(SfxId.Mix);
