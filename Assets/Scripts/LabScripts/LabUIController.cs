@@ -76,6 +76,11 @@ namespace LabScripts
         [SerializeField] private GameObject musicOnObject;
         [SerializeField] private GameObject musicOffObject;
 
+        [Header("Toggle de SFX")]
+        [SerializeField] private GameObject sfxOnObject;
+        [SerializeField] private GameObject sfxOffObject;
+
+
         // ─────────────────────────────────────────────
         // Ciclo de vida
         // ─────────────────────────────────────────────
@@ -119,6 +124,7 @@ namespace LabScripts
                 UpdatePercentageText(gm.GetProgressPercentage());
 
             RefreshMusicToggleVisual();
+            RefreshSfxToggleVisual(); 
         }
 
         // ─────────────────────────────────────────────
@@ -760,7 +766,6 @@ namespace LabScripts
             MusicManager.Instance.DisableMusic();
             RefreshMusicToggleVisual();
         }
-
         public void RefreshMusicToggleVisual()
         {
             if (MusicManager.Instance == null) return;
@@ -774,11 +779,37 @@ namespace LabScripts
                 musicOffObject.SetActive(!isEnabled);
         }
 
+        
+        // ─────────────────────────────────────────────
+        // Sfx 
+        // ─────────────────────────────────────────────
 
+        public void OnClickEnableSfx()
+        {
+            Debug.Log("=== LAB: CLICOU EM LIGAR SFX ===");
+            SfxManager.Instance?.EnableSfx();
+            RefreshSfxToggleVisual();
+        }
 
+        public void OnClickDisableSfx()
+        {
+            Debug.Log("=== LAB: CLICOU EM DESLIGAR SFX ===");
+            SfxManager.Instance?.DisableSfx();
+            RefreshSfxToggleVisual();
+        }
 
-
-
+        public void RefreshSfxToggleVisual()
+        {
+            if (SfxManager.Instance == null) return;
+            
+            bool isEnabled = SfxManager.Instance.IsSfxEnabled();
+            
+            if (sfxOnObject != null)
+                sfxOnObject.SetActive(isEnabled);
+            
+            if (sfxOffObject != null)
+                sfxOffObject.SetActive(!isEnabled);
+        }
 
     }
 }

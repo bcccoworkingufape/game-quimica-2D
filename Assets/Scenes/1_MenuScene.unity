@@ -676,6 +676,82 @@ PrefabInstance:
       propertyPath: m_fontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6023711427383449305, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023711427383449305, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023711427383449305, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2017846735}
+    - target: {fileID: 6023711427383449305, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023711427383449305, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OnClickEnableSfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023711427383449305, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MenuScripts.MenuUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023711427383449305, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2017846735}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OnClickDisableSfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MenuScripts.MenuUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: MenuScripts.MenuUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763745252006744, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2396,6 +2472,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1585468291541420249, guid: 8309258d926d6c94f8cb4a443970c239, type: 3}
   m_PrefabInstance: {fileID: 694082521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &694987578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5524372207325648847, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+  m_PrefabInstance: {fileID: 59184670}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &741185446
 GameObject:
@@ -4442,6 +4523,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1323302295119091457, guid: fd972d782b083df4aa07d9b34be854c1, type: 3}
   m_PrefabInstance: {fileID: 2101756133}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1508541096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2859397242587101860, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+  m_PrefabInstance: {fileID: 59184670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1509177381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,6 +5708,8 @@ MonoBehaviour:
   modeText: {fileID: 0}
   musicOnObject: {fileID: 295134287}
   musicOffObject: {fileID: 1101922087}
+  sfxOnObject: {fileID: 694987578}
+  sfxOffObject: {fileID: 1508541096}
   hintText: {fileID: 1455270151}
   hintChangeInterval: 3
 --- !u!1001 &2101756133
