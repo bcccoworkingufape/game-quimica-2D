@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ce386dd1a9df03743a47b2e4d6ab6c5c
+guid: 6ea5aa62a98ccfc4e91a28b54221716e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9048593517765135490
-    second: button_background_0
+      213: -3490414841333679882
+    second: medium_overlay_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_background_0
+      name: medium_overlay_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 668
-        height: 163
+        width: 935
+        height: 1497
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e73f4b81320fc6280800000000000000
-      internalID: -9048593517765135490
+      spriteID: 6f8fd8fd13e8f8fc0800000000000000
+      internalID: -3490414841333679882
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button_background_0: -9048593517765135490
+      medium_overlay_0: -3490414841333679882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
