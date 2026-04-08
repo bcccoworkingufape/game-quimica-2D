@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 8410758805274159841}
   - component: {fileID: 4650930908404088497}
   m_Layer: 5
-  m_Name: HugeOvelay
+  m_Name: HugeOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
