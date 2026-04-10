@@ -80,6 +80,10 @@ namespace LabScripts
         [SerializeField] private GameObject sfxOnObject;
         [SerializeField] private GameObject sfxOffObject;
 
+        [Header("Zoom da Árvore")]
+        [SerializeField] private Slider treeSlider;
+        [SerializeField] private Image treeImage;
+
 
         // ─────────────────────────────────────────────
         // Ciclo de vida
@@ -809,6 +813,15 @@ namespace LabScripts
             
             if (sfxOffObject != null)
                 sfxOffObject.SetActive(!isEnabled);
+        }
+
+        public void OnTreeSliderChange()
+        {
+            if (treeImage != null && treeSlider != null)
+            {
+                float zoomValue = treeSlider.value;
+                treeImage.transform.localScale = Vector3.one * zoomValue;
+            }
         }
 
     }
