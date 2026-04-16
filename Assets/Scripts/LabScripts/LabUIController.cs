@@ -4,6 +4,7 @@ using TMPro;
 using Data;
 using Core;
 using Presentation.Lab;
+using Presentation.Common;
 using Domain;
 using UnityEngine.UI;
 using Core.Audio;
@@ -44,9 +45,9 @@ namespace LabScripts
         public TextMeshProUGUI livesText;
         public TextMeshProUGUI modeText;
         public TextMeshProUGUI percentageText;
+
         [Header("Botões HUD")]
-        [SerializeField] private Button treeButton; //Button do ícone da árvore aqui
-        // arraste aqui os Graphics que devem ficar PB (Image do ícone, TMP do texto, etc)
+        [SerializeField] private Button treeButton;
         [SerializeField] private Graphic[] treeButtonGraphicsToTint;
         [SerializeField] private Color treeEnabledColor = Color.white;
         [SerializeField] private Color treeDisabledColor = Color.black;
@@ -128,7 +129,7 @@ namespace LabScripts
                 UpdatePercentageText(gm.GetProgressPercentage());
 
             RefreshMusicToggleVisual();
-            RefreshSfxToggleVisual(); 
+            RefreshSfxToggleVisual();
         }
 
         // ─────────────────────────────────────────────
@@ -224,14 +225,11 @@ namespace LabScripts
 
             bool treeAllowed = data.mode != GameMode.Desafio;
 
-            // se não pode usar, fecha o painel se estiver aberto
             if (!treeAllowed)
-                treePanel?.SetActive(false);
+                OverlayAnimator.HideImmediate(treePanel);
 
-            // mantém o botão visível, só desabilita + PB
             SetTreeButtonEnabled(treeAllowed);
         }
-
 
         private void SetTreeButtonEnabled(bool enabled)
         {
@@ -249,7 +247,6 @@ namespace LabScripts
             }
             else
             {
-                // fallback: tenta tingir apenas o targetGraphic do Button
                 if (treeButton != null && treeButton.targetGraphic != null)
                     treeButton.targetGraphic.color = tint;
             }
@@ -259,17 +256,23 @@ namespace LabScripts
         // Controle de painéis
         // ─────────────────────────────────────────────
 
+        /// <summary>
+        /// Fecha todos os painéis imediatamente (sem animação), usada na inicialização.
+        /// O solutionAnimationPanel permanece ativo pois possui tratamento próprio.
+        /// </summary>
         public void HideAllPanels()
         {
-            solutionAnimationPanel?.SetActive(true); // solutionAnimationPanel precisa estar ativo todo momento
-            confirmationPanel?.SetActive(false);
-            questionPanel?.SetActive(false);
-            historyPanel?.SetActive(false);
-            treePanel?.SetActive(false);
-            pauseMenuPanel?.SetActive(false);
-            questionErrorPanel?.SetActive(false);
-            questionVictoryPanel?.SetActive(false);
-            defeatPanel?.SetActive(false);
+            // solutionAnimationPanel precisa estar ativo todo momento — não entra aqui.
+            solutionAnimationPanel?.SetActive(true);
+
+            OverlayAnimator.HideImmediate(confirmationPanel);
+            OverlayAnimator.HideImmediate(questionPanel);
+            OverlayAnimator.HideImmediate(historyPanel);
+            OverlayAnimator.HideImmediate(treePanel);
+            OverlayAnimator.HideImmediate(pauseMenuPanel);
+            OverlayAnimator.HideImmediate(questionErrorPanel);
+            OverlayAnimator.HideImmediate(questionVictoryPanel);
+            OverlayAnimator.HideImmediate(defeatPanel);
         }
 
         // ─────────────────────────────────────────────
@@ -283,17 +286,14 @@ namespace LabScripts
             string litmusText = "Deseja adicionar <b>tornassol</b> à substância desconhecida?";
 
             if (confirmationPanelText != null)
-                if (currentItemName == "Tornassol")
-                    confirmationPanelText.text = litmusText;
-                else
-                    confirmationPanelText.text = defaultText;
+                confirmationPanelText.text = currentItemName == "Tornassol" ? litmusText : defaultText;
 
-            confirmationPanel?.SetActive(true);
+            OverlayAnimator.Show(confirmationPanel);
         }
 
         public void HideConfirmationPanel()
         {
-            confirmationPanel?.SetActive(false);
+            OverlayAnimator.Hide(confirmationPanel);
         }
 
         /// <summary>
@@ -330,23 +330,22 @@ namespace LabScripts
 
         public void OnRepeatMixButton()
         {
-            // Fecha o painel de animação
-            // HideSolutionAnimationPanel();
             SfxManager.Instance?.PlayButtonClick();
             SfxManager.Instance?.PlayMix();
 
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             animator.Play(stateInfo.fullPathHash, -1, 0f);
-
         }
 
         // ─────────────────────────────────────────────
         // Solution Animation Panel
         // ─────────────────────────────────────────────
 
+        // O solutionAnimationPanel possui tratamento próprio via SolutionPanelAnimator,
+        // portanto não entra no fluxo do OverlayAnimator.
+
         public void ShowSolutionAnimationPanel()
         {
-            // Se temos o SolutionPanelAnimator, usa animação de escala (painel sempre ativo)
             if (solutionPanelAnimator != null)
             {
                 solutionPanelAnimator.Open();
@@ -354,17 +353,14 @@ namespace LabScripts
             }
             else
             {
-                // Fallback: ativa/desativa o GameObject (pode causar problemas com Animator)
                 solutionAnimationPanel?.SetActive(true);
             }
         }
 
         public void HideSolutionAnimationPanel()
         {
-            // Se temos o SolutionPanelAnimator, usa animação de escala
             if (solutionPanelAnimator != null)
             {
-                // Reseta a animação
                 var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
                 animator.Play(stateInfo.fullPathHash, -1, 0f);
                 animator.enabled = false;
@@ -373,8 +369,7 @@ namespace LabScripts
             }
             else
             {
-                // Fallback: ativa/desativa o GameObject
-                solutionAnimationPanel?.SetActive(true); // true para nao desativar o painel
+                solutionAnimationPanel?.SetActive(true); // true para não desativar o painel
             }
         }
 
@@ -407,12 +402,12 @@ namespace LabScripts
 
         public void ShowQuestionPanel()
         {
-            questionPanel?.SetActive(true);
+            OverlayAnimator.Show(questionPanel);
         }
 
         public void HideQuestionPanel()
         {
-            questionPanel?.SetActive(false);
+            OverlayAnimator.Hide(questionPanel);
         }
 
         /// <summary>
@@ -460,18 +455,16 @@ namespace LabScripts
         {
             SfxManager.Instance?.PlayHistoryClick();
 
-            historyPanel?.SetActive(true);
+            OverlayAnimator.Show(historyPanel);
 
             if (historyPanelController != null)
-            {
                 historyPanelController.RefreshHistory();
-            }
         }
 
         public void HideHistoryPanel()
         {
             SfxManager.Instance?.PlayButtonClick();
-            historyPanel?.SetActive(false);
+            OverlayAnimator.Hide(historyPanel);
         }
 
         // ─────────────────────────────────────────────
@@ -485,14 +478,13 @@ namespace LabScripts
                 return;
 
             SfxManager.Instance?.PlayTreeClick();
-            treePanel?.SetActive(true);
+            OverlayAnimator.Show(treePanel);
         }
-
 
         public void HideTreePanel()
         {
             SfxManager.Instance?.PlayButtonClick();
-            treePanel?.SetActive(false);
+            OverlayAnimator.Hide(treePanel);
         }
 
         // ─────────────────────────────────────────────
@@ -501,14 +493,23 @@ namespace LabScripts
 
         public void ShowQuestionErrorPanel()
         {
-            questionErrorPanel?.SetActive(true);
+            OverlayAnimator.Show(questionErrorPanel);
         }
 
+        /// <summary>
+        /// Fecha o painel de erro e reabre o painel de alternativas.
+        /// O questionPanel abre com animação após o errorPanel terminar de fechar.
+        /// </summary>
         public void HideQuestionErrorPanel()
         {
             SfxManager.Instance?.PlayButtonClick();
-            questionErrorPanel?.SetActive(false);
-            questionPanel?.SetActive(true); // volta para as alternativas
+
+            // Aguarda a animação de saída do errorPanel terminar antes de abrir
+            // o questionPanel, mantendo a transição visualmente limpa.
+            OverlayAnimator.Hide(questionErrorPanel, onComplete: () =>
+            {
+                OverlayAnimator.Show(questionPanel);
+            });
         }
 
         // ─────────────────────────────────────────────
@@ -526,10 +527,10 @@ namespace LabScripts
                     : $"Composto X:\n {compoundName}";
 
             RefreshStars();
-            questionVictoryPanel?.SetActive(true);
+            OverlayAnimator.Show(questionVictoryPanel);
         }
 
-        // fallback caso alguém chame sem nome
+        // Fallback caso alguém chame sem nome.
         public void ShowQuestionVictoryPanel()
         {
             ShowQuestionVictoryPanel(string.Empty);
@@ -537,8 +538,10 @@ namespace LabScripts
 
         public void HideQuestionVictoryPanel()
         {
-            questionVictoryPanel?.SetActive(false);
-            SetIconsActive(starIcons, 0);
+            OverlayAnimator.Hide(questionVictoryPanel, onComplete: () =>
+            {
+                SetIconsActive(starIcons, 0);
+            });
         }
 
         /// <summary>
@@ -556,8 +559,6 @@ namespace LabScripts
                 Debug.LogWarning("[LabUIController] QuestionFlowPresenter não atribuído em OnVictoryNextPhase.");
         }
 
-
-
         /// <summary>
         /// Botão "Reiniciar" no painel de vitória.
         /// </summary>
@@ -568,7 +569,6 @@ namespace LabScripts
             ResetFlowState(resetScore: true, resetLives: true);
             RestartLab();
         }
-
 
         /// <summary>
         /// Botão "Voltar ao menu" no painel de vitória.
@@ -581,7 +581,6 @@ namespace LabScripts
             ReturnToMainMenu();
         }
 
-
         // ─────────────────────────────────────────────
         // Defeat Panel (Derrota)
         // ─────────────────────────────────────────────
@@ -590,7 +589,7 @@ namespace LabScripts
         {
             SfxManager.Instance?.PlayLose();
 
-            defeatPanel?.SetActive(true);
+            OverlayAnimator.Show(defeatPanel);
             Time.timeScale = 0f;
         }
 
@@ -598,8 +597,10 @@ namespace LabScripts
         {
             SfxManager.Instance?.PlayButtonClick();
 
-            defeatPanel?.SetActive(false);
-            Time.timeScale = 1f;
+            OverlayAnimator.Hide(defeatPanel, onComplete: () =>
+            {
+                Time.timeScale = 1f;
+            });
         }
 
         /// <summary>
@@ -614,8 +615,6 @@ namespace LabScripts
             RestartLab();
         }
 
-
-
         /// <summary>
         /// Botão "Voltar ao menu" no painel de derrota.
         /// </summary>
@@ -626,7 +625,6 @@ namespace LabScripts
             ResetFlowState(resetScore: false, resetLives: true);
             ReturnToMainMenu();
         }
-
 
         // ─────────────────────────────────────────────
         // Menu de pausa
@@ -639,7 +637,10 @@ namespace LabScripts
         {
             SfxManager.Instance?.PlayButtonClick();
 
-            pauseMenuPanel?.SetActive(true);
+            // timeScale é zerado DEPOIS de iniciar a animação para que o LeanTween
+            // ainda consiga processar o primeiro frame. ignoreTimeScale:true garante
+            // que a animação rode mesmo com timeScale == 0.
+            OverlayAnimator.Show(pauseMenuPanel, ignoreTimeScale: true);
             Time.timeScale = 0f;
         }
 
@@ -650,8 +651,10 @@ namespace LabScripts
         {
             SfxManager.Instance?.PlayButtonClick();
 
-            pauseMenuPanel?.SetActive(false);
+            // Restaura o timeScale antes de animar para que o jogo retome
+            // imediatamente; ignoreTimeScale:true mantém a animação de saída fluida.
             Time.timeScale = 1f;
+            OverlayAnimator.Hide(pauseMenuPanel, ignoreTimeScale: true);
         }
 
         /// <summary>
@@ -666,7 +669,7 @@ namespace LabScripts
         }
 
         /// <summary>
-        /// Botão "Fechar o jogo" (encerra a aplicacao).
+        /// Botão "Fechar o jogo" (encerra a aplicação).
         /// </summary>
         public void QuitGame()
         {
@@ -694,21 +697,23 @@ namespace LabScripts
         {
             Time.timeScale = 1f;
 
+            // solutionAnimationPanel tem tratamento próprio — permanece ativo.
             if (solutionAnimationPanel) solutionAnimationPanel.SetActive(true);
-            if (confirmationPanel) confirmationPanel.SetActive(false);
-            if (questionPanel) questionPanel.SetActive(false);
-            if (pauseMenuPanel) pauseMenuPanel.SetActive(false);
-            if (questionErrorPanel) questionErrorPanel.SetActive(false);
-            if (questionVictoryPanel) questionVictoryPanel.SetActive(false);
-            if (defeatPanel) defeatPanel.SetActive(false);
-            if (historyPanel) historyPanel.SetActive(false);
-            if (treePanel) treePanel.SetActive(false);
+
+            // Todos os outros overlays fecham imediatamente (reset de estado, sem animação).
+            OverlayAnimator.HideImmediate(confirmationPanel);
+            OverlayAnimator.HideImmediate(questionPanel);
+            OverlayAnimator.HideImmediate(pauseMenuPanel);
+            OverlayAnimator.HideImmediate(questionErrorPanel);
+            OverlayAnimator.HideImmediate(questionVictoryPanel);
+            OverlayAnimator.HideImmediate(defeatPanel);
+            OverlayAnimator.HideImmediate(historyPanel);
+            OverlayAnimator.HideImmediate(treePanel);
 
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
             SetIconsActive(starIcons, 0);
 
-            // controla se reseta vidas ou não
             GameManager.Instance?.ResetRunState(resetScore, resetLives);
 
             testManager?.ResetRoundState(clearCompound: false);
@@ -770,6 +775,7 @@ namespace LabScripts
             MusicManager.Instance.DisableMusic();
             RefreshMusicToggleVisual();
         }
+
         public void RefreshMusicToggleVisual()
         {
             if (MusicManager.Instance == null) return;
@@ -783,9 +789,8 @@ namespace LabScripts
                 musicOffObject.SetActive(!isEnabled);
         }
 
-        
         // ─────────────────────────────────────────────
-        // Sfx 
+        // SFX
         // ─────────────────────────────────────────────
 
         public void OnClickEnableSfx()
@@ -805,12 +810,12 @@ namespace LabScripts
         public void RefreshSfxToggleVisual()
         {
             if (SfxManager.Instance == null) return;
-            
+
             bool isEnabled = SfxManager.Instance.IsSfxEnabled();
-            
+
             if (sfxOnObject != null)
                 sfxOnObject.SetActive(isEnabled);
-            
+
             if (sfxOffObject != null)
                 sfxOffObject.SetActive(!isEnabled);
         }
@@ -823,6 +828,5 @@ namespace LabScripts
                 treeImage.transform.localScale = Vector3.one * zoomValue;
             }
         }
-
     }
 }
