@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Presentation.Common
@@ -21,8 +20,10 @@ namespace Presentation.Common
     ///   OverlayAnimator.HideImmediate(myPanel);
     /// </code>
     /// </summary>
-    public static class OverlayAnimator
+    public sealed class OverlayAnimator : MonoBehaviour
     {
+        public static OverlayAnimator Instance { get; private set; }
+
         // ─────────────────────────────────────────────────────────────────────
         // Configuration
         // ─────────────────────────────────────────────────────────────────────
@@ -52,18 +53,48 @@ namespace Presentation.Common
             /// alpha is also animated alongside the scale.
             /// </summary>
             public static bool AnimateFade = true;
+
+            /// <summary>
+            /// Optional capacity hint for LeanTween. Applied on first use only.
+            /// </summary>
+            public static int MaxSimultaneousTweens = 1200;
+
+            /// <summary>
+            /// Optional sequence capacity hint for LeanTween. Applied on first use only.
+            /// </summary>
+            public static int MaxSimultaneousSequences = 200;
         }
 
-        // ─────────────────────────────────────────────────────────────────────
-        // Internal state  (panel → active tween ids)
-        // ─────────────────────────────────────────────────────────────────────
+        private static bool s_LeanTweenInitialized;
 
-        private static readonly Dictionary<int, List<int>> s_ActiveTweens =
-            new Dictionary<int, List<int>>();
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            Warmup();
+        }
 
         // ─────────────────────────────────────────────────────────────────────
         // Public API
         // ─────────────────────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Explicitly pre-warms LeanTween.
+        ///
+        /// Call this from a persistent scene singleton (for example, a manual
+        /// node placed in Menu) to avoid first-use hitch in Lab overlays.
+        /// </summary>
+        public static void Warmup()
+        {
+            EnsureLeanTweenInitialized();
+        }
 
         /// <summary>
         /// Animates <paramref name="panel"/> open (scale + fade in).
@@ -75,9 +106,18 @@ namespace Presentation.Common
         /// Pass <c>true</c> when the game is paused (Time.timeScale == 0) so the
         /// animation still runs — e.g. the pause menu panel.
         /// </param>
-        public static void Show(GameObject panel, Action onComplete = null, bool ignoreTimeScale = false)
+        public static void Show(
+            GameObject panel,
+            Action onComplete = null,
+            bool ignoreTimeScale = false
+        )
         {
-            if (panel == null) return;
+            if (panel == null)
+            {
+                return;
+            }
+
+            Warmup();
 
             CancelTweens(panel);
 
@@ -89,17 +129,12 @@ namespace Presentation.Common
                 rt.localScale = Vector3.one * Config.ClosedScale;
             }
 
-            var ids = GetOrCreateList(panel);
-
             // --- Scale tween ---
-            int scaleId = LeanTween
+            LeanTween
                 .scale(panel, Vector3.one * Config.OpenScale, Config.Duration)
                 .setEase(Config.ShowEase)
                 .setIgnoreTimeScale(ignoreTimeScale)
-                .setOnComplete(() => onComplete?.Invoke())
-                .uniqueId;
-
-            ids.Add(scaleId);
+                .setOnComplete(() => onComplete?.Invoke());
 
             // --- Fade tween (optional) ---
             if (Config.AnimateFade)
@@ -109,14 +144,11 @@ namespace Presentation.Common
                 {
                     cg.alpha = 0f;
 
-                    int fadeId = LeanTween
+                    LeanTween
                         .value(panel, 0f, 1f, Config.Duration)
                         .setEase(Config.ShowEase)
                         .setIgnoreTimeScale(ignoreTimeScale)
-                        .setOnUpdate((float a) => cg.alpha = a)
-                        .uniqueId;
-
-                    ids.Add(fadeId);
+                        .setOnUpdate((float a) => cg.alpha = a);
                 }
             }
         }
@@ -131,30 +163,41 @@ namespace Presentation.Common
         /// Pass <c>true</c> when the game is paused (Time.timeScale == 0) so the
         /// animation still runs — e.g. the pause menu panel.
         /// </param>
-        public static void Hide(GameObject panel, Action onComplete = null, bool ignoreTimeScale = false)
+        public static void Hide(
+            GameObject panel,
+            Action onComplete = null,
+            bool ignoreTimeScale = false
+        )
         {
-            if (panel == null) return;
+            if (panel == null)
+            {
+                return;
+            }
+
+            Warmup();
 
             // Already inactive — nothing to do.
-            if (!panel.activeSelf) return;
+            if (!panel.activeSelf)
+            {
+                return;
+            }
 
             CancelTweens(panel);
 
-            var ids = GetOrCreateList(panel);
-
             // --- Scale tween ---
-            int scaleId = LeanTween
+            LeanTween
                 .scale(panel, Vector3.one * Config.ClosedScale, Config.Duration)
                 .setEase(Config.HideEase)
                 .setIgnoreTimeScale(ignoreTimeScale)
                 .setOnComplete(() =>
                 {
-                    panel.SetActive(false);
-                    onComplete?.Invoke();
-                })
-                .uniqueId;
+                    if (panel != null)
+                    {
+                        panel.SetActive(false);
+                    }
 
-            ids.Add(scaleId);
+                    onComplete?.Invoke();
+                });
 
             // --- Fade tween (optional) ---
             if (Config.AnimateFade)
@@ -162,14 +205,11 @@ namespace Presentation.Common
                 var cg = GetOrAddCanvasGroup(panel);
                 if (cg != null)
                 {
-                    int fadeId = LeanTween
+                    LeanTween
                         .value(panel, cg.alpha, 0f, Config.Duration)
                         .setEase(Config.HideEase)
                         .setIgnoreTimeScale(ignoreTimeScale)
-                        .setOnUpdate((float a) => cg.alpha = a)
-                        .uniqueId;
-
-                    ids.Add(fadeId);
+                        .setOnUpdate((float a) => cg.alpha = a);
                 }
             }
         }
@@ -180,7 +220,12 @@ namespace Presentation.Common
         /// </summary>
         public static void ShowImmediate(GameObject panel)
         {
-            if (panel == null) return;
+            if (panel == null)
+            {
+                return;
+            }
+
+            Warmup();
 
             CancelTweens(panel);
             panel.SetActive(true);
@@ -189,7 +234,10 @@ namespace Presentation.Common
             if (Config.AnimateFade)
             {
                 var cg = GetOrAddCanvasGroup(panel);
-                if (cg != null) cg.alpha = 1f;
+                if (cg != null)
+                {
+                    cg.alpha = 1f;
+                }
             }
         }
 
@@ -199,7 +247,12 @@ namespace Presentation.Common
         /// </summary>
         public static void HideImmediate(GameObject panel)
         {
-            if (panel == null) return;
+            if (panel == null)
+            {
+                return;
+            }
+
+            Warmup();
 
             CancelTweens(panel);
             panel.transform.localScale = Vector3.one * Config.ClosedScale;
@@ -207,7 +260,10 @@ namespace Presentation.Common
             if (Config.AnimateFade)
             {
                 var cg = GetOrAddCanvasGroup(panel);
-                if (cg != null) cg.alpha = 0f;
+                if (cg != null)
+                {
+                    cg.alpha = 0f;
+                }
             }
 
             panel.SetActive(false);
@@ -219,30 +275,18 @@ namespace Presentation.Common
 
         private static void CancelTweens(GameObject panel)
         {
-            int key = panel.GetInstanceID();
-
-            if (!s_ActiveTweens.TryGetValue(key, out var ids)) return;
-
-            foreach (int id in ids)
-            {
-                if (LeanTween.isTweening(id))
-                    LeanTween.cancel(id);
-            }
-
-            ids.Clear();
+            LeanTween.cancel(panel);
         }
 
-        private static List<int> GetOrCreateList(GameObject panel)
+        private static void EnsureLeanTweenInitialized()
         {
-            int key = panel.GetInstanceID();
-
-            if (!s_ActiveTweens.TryGetValue(key, out var list))
+            if (s_LeanTweenInitialized)
             {
-                list = new List<int>(2);
-                s_ActiveTweens[key] = list;
+                return;
             }
 
-            return list;
+            LeanTween.init(Config.MaxSimultaneousTweens, Config.MaxSimultaneousSequences);
+            s_LeanTweenInitialized = true;
         }
 
         /// <summary>
@@ -254,7 +298,10 @@ namespace Presentation.Common
         {
             var cg = go.GetComponent<CanvasGroup>();
             if (cg == null)
+            {
                 cg = go.AddComponent<CanvasGroup>();
+            }
+
             return cg;
         }
     }

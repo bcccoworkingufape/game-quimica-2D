@@ -114,6 +114,8 @@ namespace LabScripts
 
         void Start()
         {
+            Time.timeScale = 1f;
+
             HideAllPanels();
             ShowInfoPanel();
 
@@ -590,7 +592,7 @@ namespace LabScripts
         {
             SfxManager.Instance?.PlayLose();
 
-            OverlayAnimator.Show(defeatPanel);
+            OverlayAnimator.Show(defeatPanel, ignoreTimeScale: true);
             Time.timeScale = 0f;
         }
 
@@ -601,7 +603,7 @@ namespace LabScripts
             OverlayAnimator.Hide(defeatPanel, onComplete: () =>
             {
                 Time.timeScale = 1f;
-            });
+            }, ignoreTimeScale: true);
         }
 
         /// <summary>
