@@ -6,6 +6,7 @@ using TMPro;
 using Domain;
 using System.Collections;
 using Core.Audio;
+using Presentation.Common;
 
 namespace MenuScripts
 {
@@ -116,6 +117,10 @@ namespace MenuScripts
 
         private void Start()
         {
+            OverlayAnimator.HideImmediate(aboutPanel);
+            OverlayAnimator.HideImmediate(helpPanel);
+            OverlayAnimator.HideImmediate(fadePanel);
+
             ShowLoadingPanel();
 
             if (GameManager.Instance == null)
@@ -310,36 +315,42 @@ namespace MenuScripts
         {
             SfxManager.Instance?.PlayButtonClick();
 
-            aboutPanel?.SetActive(true);
             navbarPanel?.SetActive(false);
-            fadePanel?.SetActive(true);
+            OverlayAnimator.Show(fadePanel);
+            OverlayAnimator.Show(aboutPanel);
         }
 
         public void HideAboutPanel()
         {
             SfxManager.Instance?.PlayButtonClick();
 
-            aboutPanel?.SetActive(false);
-            navbarPanel?.SetActive(true);
-            fadePanel?.SetActive(false);
+            OverlayAnimator.Hide(aboutPanel, onComplete: () =>
+            {
+                navbarPanel?.SetActive(true);
+            });
+
+            OverlayAnimator.Hide(fadePanel);
         }
 
         public void ShowHelpPanel()
         {
             SfxManager.Instance?.PlayButtonClick();
 
-            helpPanel?.SetActive(true);
             navbarPanel?.SetActive(false);
-            fadePanel?.SetActive(true);
+            OverlayAnimator.Show(fadePanel);
+            OverlayAnimator.Show(helpPanel);
         }
 
         public void HideHelpPanel()
         {
             SfxManager.Instance?.PlayButtonClick();
 
-            helpPanel?.SetActive(false);
-            navbarPanel?.SetActive(true);
-            fadePanel?.SetActive(false);
+            OverlayAnimator.Hide(helpPanel, onComplete: () =>
+            {
+                navbarPanel?.SetActive(true);
+            });
+
+            OverlayAnimator.Hide(fadePanel);
         }
 
         // ─────────────────────────────────────────────

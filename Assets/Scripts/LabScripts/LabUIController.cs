@@ -138,7 +138,7 @@ namespace LabScripts
 
         public void ShowInfoPanel()
         {
-            infoPanel?.SetActive(true);
+            OverlayAnimator.Show(infoPanel);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace LabScripts
         public void HideInfoPanel()
         {
             SfxManager.Instance?.PlayButtonClick();
-            infoPanel?.SetActive(false);
+            OverlayAnimator.Hide(infoPanel);
         }
 
         // ─────────────────────────────────────────────
@@ -273,6 +273,7 @@ namespace LabScripts
             OverlayAnimator.HideImmediate(questionErrorPanel);
             OverlayAnimator.HideImmediate(questionVictoryPanel);
             OverlayAnimator.HideImmediate(defeatPanel);
+            OverlayAnimator.HideImmediate(infoPanel);
         }
 
         // ─────────────────────────────────────────────
@@ -709,6 +710,7 @@ namespace LabScripts
             OverlayAnimator.HideImmediate(defeatPanel);
             OverlayAnimator.HideImmediate(historyPanel);
             OverlayAnimator.HideImmediate(treePanel);
+            OverlayAnimator.HideImmediate(infoPanel);
 
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
