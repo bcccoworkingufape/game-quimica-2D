@@ -433,6 +433,11 @@ namespace Presentation.Lab
             while (flaskStack.Count > 0)
             {
                 string fallbackWithOtherFlask = $"{flaskStack.Pop()}+{mixture}+{solubility}+{litmus}";
+
+                // TODO: Hotfix temporário. Achar abordagem melhor
+                if(litmus == "Neutral")
+                    litmus = "None"; // Nenhuma animação foi pensada para o resultado neutro, então vamos usar a animação sem litmus como fallback
+
                 if (StateExists(fallbackWithOtherFlask))
                     return fallbackWithOtherFlask;
             }
