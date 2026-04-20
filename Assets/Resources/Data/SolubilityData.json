@@ -85,7 +85,7 @@
     "compoundId": 2,
     "solventId": 2,
     "solutionName": "Solucao de Butanoato de sodio em Eter dietilico",
-    "solubilityResult": "InsolubleFloat",
+    "solubilityResult": "InsolubleSink",
     "litmusResult": "None",
     "mixtureType": "SOLID_LIQUID"
   },
