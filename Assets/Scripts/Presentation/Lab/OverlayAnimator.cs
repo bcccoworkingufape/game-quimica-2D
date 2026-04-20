@@ -1,67 +1,25 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Presentation.Common
 {
     /// <summary>
     /// Generic helper for animating UI overlay panels using LeanTween.
-    ///
-    /// Centralises:
-    ///   - Show / Hide with scale + optional CanvasGroup fade
-    ///   - Per-panel tween cancellation (no overlap between calls)
-    ///   - Automatic SetActive(true) before opening and SetActive(false) after closing
-    ///   - Configurable easing, duration, and scale values via <see cref="OverlayAnimator.Config"/>
-    ///
-    /// Usage (static, no MonoBehaviour required):
-    /// <code>
-    ///   OverlayAnimator.Show(myPanel);
-    ///   OverlayAnimator.Hide(myPanel, onComplete: () => Debug.Log("closed"));
-    ///   OverlayAnimator.ShowImmediate(myPanel);
-    ///   OverlayAnimator.HideImmediate(myPanel);
-    /// </code>
     /// </summary>
     public sealed class OverlayAnimator : MonoBehaviour
     {
         public static OverlayAnimator Instance { get; private set; }
 
-        // ─────────────────────────────────────────────────────────────────────
-        // Configuration
-        // ─────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-        /// Shared animation settings.  Tweak once, applies to every overlay.
-        /// </summary>
         public static class Config
         {
-            /// <summary>Duration of every show/hide animation (seconds).</summary>
             public static float Duration = 0.25f;
-
-            /// <summary>Scale the panel punches UP to when opening.</summary>
             public static float OpenScale = 1f;
-
-            /// <summary>Starting scale used when the panel is hidden.</summary>
             public static float ClosedScale = 0.85f;
-
-            /// <summary>LeanTween ease used on Show.</summary>
             public static LeanTweenType ShowEase = LeanTweenType.easeOutBack;
-
-            /// <summary>LeanTween ease used on Hide.</summary>
             public static LeanTweenType HideEase = LeanTweenType.easeInBack;
-
-            /// <summary>
-            /// When true, a CanvasGroup is required (or auto-added) and its
-            /// alpha is also animated alongside the scale.
-            /// </summary>
             public static bool AnimateFade = true;
-
-            /// <summary>
-            /// Optional capacity hint for LeanTween. Applied on first use only.
-            /// </summary>
             public static int MaxSimultaneousTweens = 1200;
-
-            /// <summary>
-            /// Optional sequence capacity hint for LeanTween. Applied on first use only.
-            /// </summary>
             public static int MaxSimultaneousSequences = 200;
         }
 
@@ -81,31 +39,15 @@ namespace Presentation.Common
             Warmup();
         }
 
-        // ─────────────────────────────────────────────────────────────────────
-        // Public API
-        // ─────────────────────────────────────────────────────────────────────
-
         /// <summary>
         /// Explicitly pre-warms LeanTween.
-        ///
-        /// Call this from a persistent scene singleton (for example, a manual
-        /// node placed in Menu) to avoid first-use hitch in Lab overlays.
+        /// Call from a persistent singleton in the initial scene.
         /// </summary>
         public static void Warmup()
         {
             EnsureLeanTweenInitialized();
         }
 
-        /// <summary>
-        /// Animates <paramref name="panel"/> open (scale + fade in).
-        /// Activates the GameObject automatically before the animation starts.
-        /// </summary>
-        /// <param name="panel">Root GameObject of the overlay.</param>
-        /// <param name="onComplete">Optional callback invoked when the animation finishes.</param>
-        /// <param name="ignoreTimeScale">
-        /// Pass <c>true</c> when the game is paused (Time.timeScale == 0) so the
-        /// animation still runs — e.g. the pause menu panel.
-        /// </param>
         public static void Show(
             GameObject panel,
             Action onComplete = null,
@@ -118,7 +60,6 @@ namespace Presentation.Common
             }
 
             Warmup();
-
             CancelTweens(panel);
 
             panel.SetActive(true);
@@ -129,21 +70,81 @@ namespace Presentation.Common
                 rt.localScale = Vector3.one * Config.ClosedScale;
             }
 
-            // --- Scale tween ---
-            LeanTween
-                .scale(panel, Vector3.one * Config.OpenScale, Config.Duration)
-                .setEase(Config.ShowEase)
-                .setIgnoreTimeScale(ignoreTimeScale)
-                .setOnComplete(() => onComplete?.Invoke());
-
-            // --- Fade tween (optional) ---
             if (Config.AnimateFade)
             {
                 var cg = GetOrAddCanvasGroup(panel);
                 if (cg != null)
                 {
                     cg.alpha = 0f;
+                    cg.blocksRaycasts = true;
+                    cg.interactable = true;
+                }
+            }
 
+            if (Instance != null)
+            {
+                Instance.StartCoroutine(ShowNextFrame(panel, onComplete, ignoreTimeScale));
+            }
+            else
+            {
+                // fallback seguro caso o singleton ainda não exista por algum motivo
+                StartShowTween(panel, onComplete, ignoreTimeScale);
+            }
+        }
+
+        private static IEnumerator ShowNextFrame(
+            GameObject panel,
+            Action onComplete,
+            bool ignoreTimeScale
+        )
+        {
+            yield return null;
+
+            if (panel == null || !panel.activeInHierarchy)
+            {
+                yield break;
+            }
+
+            Canvas.ForceUpdateCanvases();
+            StartShowTween(panel, onComplete, ignoreTimeScale);
+        }
+
+        private static void StartShowTween(
+            GameObject panel,
+            Action onComplete,
+            bool ignoreTimeScale
+        )
+        {
+            if (panel == null)
+            {
+                return;
+            }
+
+            LeanTween
+                .scale(panel, Vector3.one * Config.OpenScale, Config.Duration)
+                .setEase(Config.ShowEase)
+                .setIgnoreTimeScale(ignoreTimeScale)
+                .setOnComplete(() =>
+                {
+                    if (Config.AnimateFade)
+                    {
+                        var cg = GetOrAddCanvasGroup(panel);
+                        if (cg != null)
+                        {
+                            cg.alpha = 1f;
+                            cg.blocksRaycasts = true;
+                            cg.interactable = true;
+                        }
+                    }
+
+                    onComplete?.Invoke();
+                });
+
+            if (Config.AnimateFade)
+            {
+                var cg = GetOrAddCanvasGroup(panel);
+                if (cg != null)
+                {
                     LeanTween
                         .value(panel, 0f, 1f, Config.Duration)
                         .setEase(Config.ShowEase)
@@ -153,16 +154,6 @@ namespace Presentation.Common
             }
         }
 
-        /// <summary>
-        /// Animates <paramref name="panel"/> closed (scale + fade out).
-        /// Deactivates the GameObject automatically when the animation finishes.
-        /// </summary>
-        /// <param name="panel">Root GameObject of the overlay.</param>
-        /// <param name="onComplete">Optional callback invoked after deactivation.</param>
-        /// <param name="ignoreTimeScale">
-        /// Pass <c>true</c> when the game is paused (Time.timeScale == 0) so the
-        /// animation still runs — e.g. the pause menu panel.
-        /// </param>
         public static void Hide(
             GameObject panel,
             Action onComplete = null,
@@ -176,7 +167,6 @@ namespace Presentation.Common
 
             Warmup();
 
-            // Already inactive — nothing to do.
             if (!panel.activeSelf)
             {
                 return;
@@ -184,7 +174,16 @@ namespace Presentation.Common
 
             CancelTweens(panel);
 
-            // --- Scale tween ---
+            if (Config.AnimateFade)
+            {
+                var cg = GetOrAddCanvasGroup(panel);
+                if (cg != null)
+                {
+                    cg.blocksRaycasts = false;
+                    cg.interactable = false;
+                }
+            }
+
             LeanTween
                 .scale(panel, Vector3.one * Config.ClosedScale, Config.Duration)
                 .setEase(Config.HideEase)
@@ -199,7 +198,6 @@ namespace Presentation.Common
                     onComplete?.Invoke();
                 });
 
-            // --- Fade tween (optional) ---
             if (Config.AnimateFade)
             {
                 var cg = GetOrAddCanvasGroup(panel);
@@ -214,10 +212,6 @@ namespace Presentation.Common
             }
         }
 
-        /// <summary>
-        /// Opens <paramref name="panel"/> instantly, with no animation.
-        /// Cancels any running tween and resets scale / alpha.
-        /// </summary>
         public static void ShowImmediate(GameObject panel)
         {
             if (panel == null)
@@ -237,14 +231,12 @@ namespace Presentation.Common
                 if (cg != null)
                 {
                     cg.alpha = 1f;
+                    cg.blocksRaycasts = true;
+                    cg.interactable = true;
                 }
             }
         }
 
-        /// <summary>
-        /// Closes <paramref name="panel"/> instantly, with no animation.
-        /// Cancels any running tween and deactivates the GameObject.
-        /// </summary>
         public static void HideImmediate(GameObject panel)
         {
             if (panel == null)
@@ -263,15 +255,13 @@ namespace Presentation.Common
                 if (cg != null)
                 {
                     cg.alpha = 0f;
+                    cg.blocksRaycasts = false;
+                    cg.interactable = false;
                 }
             }
 
             panel.SetActive(false);
         }
-
-        // ─────────────────────────────────────────────────────────────────────
-        // Internals
-        // ─────────────────────────────────────────────────────────────────────
 
         private static void CancelTweens(GameObject panel)
         {
@@ -289,11 +279,6 @@ namespace Presentation.Common
             s_LeanTweenInitialized = true;
         }
 
-        /// <summary>
-        /// Returns an existing CanvasGroup on <paramref name="go"/>, or adds one
-        /// if <see cref="Config.AnimateFade"/> is true and none exists.
-        /// Returns null when fade animation is disabled.
-        /// </summary>
         private static CanvasGroup GetOrAddCanvasGroup(GameObject go)
         {
             var cg = go.GetComponent<CanvasGroup>();

@@ -1655,7 +1655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3900077465748224188, guid: fd972d782b083df4aa07d9b34be854c1, type: 3}
       propertyPath: m_Name
-      value: Help
+      value: Help_panel
       objectReference: {fileID: 0}
     - target: {fileID: 3900077465748224188, guid: fd972d782b083df4aa07d9b34be854c1, type: 3}
       propertyPath: m_IsActive
@@ -3180,6 +3180,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998200870}
   m_CullTransparentMesh: 1
+--- !u!1 &1049266454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049266456}
+  - component: {fileID: 1049266457}
+  m_Layer: 0
+  m_Name: OverlayAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1049266456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049266454}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.88895, y: -0.19437, z: 24.3088}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1049266457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049266454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eebbd1c5aca8094696a7515b6bf722e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OverlayAnimatorBootstrap
 --- !u!1 &1094954420
 GameObject:
   m_ObjectHideFlags: 0
@@ -5846,7 +5890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3900077465748224188, guid: fd972d782b083df4aa07d9b34be854c1, type: 3}
       propertyPath: m_Name
-      value: About
+      value: About_panel
       objectReference: {fileID: 0}
     - target: {fileID: 3900077465748224188, guid: fd972d782b083df4aa07d9b34be854c1, type: 3}
       propertyPath: m_IsActive
@@ -6297,6 +6341,7 @@ SceneRoots:
   - {fileID: 814474588}
   - {fileID: 1127489788}
   - {fileID: 973328785}
+  - {fileID: 1049266456}
   - {fileID: 613351600}
   - {fileID: 155338804}
   - {fileID: 1615015795}

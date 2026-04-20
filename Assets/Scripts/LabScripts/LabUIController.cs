@@ -112,11 +112,13 @@ namespace LabScripts
             }
         }
 
-        void Start()
+        private IEnumerator Start()
         {
             Time.timeScale = 1f;
 
             HideAllPanels();
+
+            yield return null;
             ShowInfoPanel();
 
             var gm = GameManager.Instance;
