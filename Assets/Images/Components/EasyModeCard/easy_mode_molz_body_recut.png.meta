@@ -1,0 +1,1710 @@
+fileFormatVersion: 2
+guid: be4869e104c062c4092a87a24c599ec1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1960986469098045708
+    second: easy_mode_molz_body_recut_0
+  - first:
+      213: 7043015258636577017
+    second: easy_mode_molz_body_recut_1
+  - first:
+      213: 492769763022389023
+    second: easy_mode_molz_body_recut_2
+  - first:
+      213: -3353737069189245381
+    second: easy_mode_molz_body_recut_3
+  - first:
+      213: -6646684038712216523
+    second: easy_mode_molz_body_recut_4
+  - first:
+      213: 2433511937541708768
+    second: easy_mode_molz_body_recut_5
+  - first:
+      213: 2303549450851438337
+    second: easy_mode_molz_body_recut_6
+  - first:
+      213: -7048900616670044747
+    second: easy_mode_molz_body_recut_7
+  - first:
+      213: 8711899099757260889
+    second: easy_mode_molz_body_recut_8
+  - first:
+      213: -1353872966018424146
+    second: easy_mode_molz_body_recut_9
+  - first:
+      213: 4681675359155867164
+    second: easy_mode_molz_body_recut_10
+  - first:
+      213: -3148275950438708646
+    second: easy_mode_molz_body_recut_11
+  - first:
+      213: 7482864552425866956
+    second: easy_mode_molz_body_recut_12
+  - first:
+      213: 3273703863293498038
+    second: easy_mode_molz_body_recut_13
+  - first:
+      213: -2864778647050001688
+    second: easy_mode_molz_body_recut_14
+  - first:
+      213: -1217303457699206972
+    second: easy_mode_molz_body_recut_15
+  - first:
+      213: -2552083559071575856
+    second: easy_mode_molz_body_recut_16
+  - first:
+      213: -2649413479551737170
+    second: easy_mode_molz_body_recut_17
+  - first:
+      213: -7022862466533251460
+    second: easy_mode_molz_body_recut_18
+  - first:
+      213: -4367554230681944231
+    second: easy_mode_molz_body_recut_19
+  - first:
+      213: 8317386672707776009
+    second: easy_mode_molz_body_recut_20
+  - first:
+      213: 5677079142664640928
+    second: easy_mode_molz_body_recut_21
+  - first:
+      213: -6236465129984295525
+    second: easy_mode_molz_body_recut_22
+  - first:
+      213: -2665945951779099512
+    second: easy_mode_molz_body_recut_23
+  - first:
+      213: 3412762667724121728
+    second: easy_mode_molz_body_recut_24
+  - first:
+      213: 8028583037300951457
+    second: easy_mode_molz_body_recut_25
+  - first:
+      213: -3795452239805189011
+    second: easy_mode_molz_body_recut_26
+  - first:
+      213: -3696142777101614372
+    second: easy_mode_molz_body_recut_27
+  - first:
+      213: -4650346367707267746
+    second: easy_mode_molz_body_recut_28
+  - first:
+      213: -5933707790099823434
+    second: easy_mode_molz_body_recut_29
+  - first:
+      213: 4150107035075113668
+    second: easy_mode_molz_body_recut_30
+  - first:
+      213: -7495225051868978913
+    second: easy_mode_molz_body_recut_31
+  - first:
+      213: -6478366995442501276
+    second: easy_mode_molz_body_recut_32
+  - first:
+      213: -9085340069416785772
+    second: easy_mode_molz_body_recut_33
+  - first:
+      213: 3292253376054320130
+    second: easy_mode_molz_body_recut_34
+  - first:
+      213: 8279750291764753159
+    second: easy_mode_molz_body_recut_35
+  - first:
+      213: 4522597529185219512
+    second: easy_mode_molz_body_recut_36
+  - first:
+      213: 5440655427113426108
+    second: easy_mode_molz_body_recut_37
+  - first:
+      213: -1001496941817733995
+    second: easy_mode_molz_body_recut_38
+  - first:
+      213: 5256324021883160366
+    second: easy_mode_molz_body_recut_39
+  - first:
+      213: 405807230638855234
+    second: easy_mode_molz_body_recut_40
+  - first:
+      213: -6600079172650687079
+    second: easy_mode_molz_body_recut_41
+  - first:
+      213: -5333084685811213015
+    second: easy_mode_molz_body_recut_42
+  - first:
+      213: -126691543980358476
+    second: easy_mode_molz_body_recut_43
+  - first:
+      213: -8701177492975779947
+    second: easy_mode_molz_body_recut_44
+  - first:
+      213: -3750192290586643993
+    second: easy_mode_molz_body_recut_45
+  - first:
+      213: -8723341989756279010
+    second: easy_mode_molz_body_recut_46
+  - first:
+      213: -9174361494827210745
+    second: easy_mode_molz_body_recut_47
+  - first:
+      213: 1094249491249696046
+    second: easy_mode_molz_body_recut_48
+  - first:
+      213: -7285512822961937361
+    second: easy_mode_molz_body_recut_49
+  - first:
+      213: 2093699186832701872
+    second: easy_mode_molz_body_recut_50
+  - first:
+      213: -6208020403344480603
+    second: easy_mode_molz_body_recut_51
+  - first:
+      213: 2559691644538394427
+    second: easy_mode_molz_body_recut_52
+  - first:
+      213: 436699289697169216
+    second: easy_mode_molz_body_recut_53
+  - first:
+      213: 4566994270334816718
+    second: easy_mode_molz_body_recut_54
+  - first:
+      213: 9056799388990327583
+    second: easy_mode_molz_body_recut_55
+  - first:
+      213: 7333330212229149064
+    second: easy_mode_molz_body_recut_56
+  - first:
+      213: 6878553027485568670
+    second: easy_mode_molz_body_recut_57
+  - first:
+      213: 2496596194338844661
+    second: easy_mode_molz_body_recut_58
+  - first:
+      213: 4818348504337249934
+    second: easy_mode_molz_body_recut_59
+  - first:
+      213: -1925932622606220749
+    second: easy_mode_molz_body_recut_60
+  - first:
+      213: 665977975921681308
+    second: easy_mode_molz_body_recut_61
+  - first:
+      213: 3665985744831251031
+    second: easy_mode_molz_body_recut_62
+  - first:
+      213: -1274346395009948337
+    second: easy_mode_molz_body_recut_63
+  - first:
+      213: 2168872632111361547
+    second: easy_mode_molz_body_recut_64
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe3014323d29c4e0800000000000000
+      internalID: -1960986469098045708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_1
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f860beef01ddb160800000000000000
+      internalID: 7043015258636577017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_2
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fb0091d7ba6d600800000000000000
+      internalID: 492769763022389023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_3
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 2531
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b365ae887e12571d0800000000000000
+      internalID: -3353737069189245381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_4
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 534bc4a151c32c3a0800000000000000
+      internalID: -6646684038712216523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_5
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb98d1c63295c120800000000000000
+      internalID: 2433511937541708768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_6
+      rect:
+        serializedVersion: 2
+        x: 3531
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fcb84550ad7ff10800000000000000
+      internalID: 2303549450851438337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_7
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2531
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd995e5c364d2e90800000000000000
+      internalID: -7048900616670044747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_8
+      rect:
+        serializedVersion: 2
+        x: 4693
+        y: 2531
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 950b318d212e6e870800000000000000
+      internalID: 8711899099757260889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_9
+      rect:
+        serializedVersion: 2
+        x: 5275
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea2a775e5b3163de0800000000000000
+      internalID: -1353872966018424146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_10
+      rect:
+        serializedVersion: 2
+        x: 5856
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e4f204fe6a8f040800000000000000
+      internalID: 4681675359155867164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_11
+      rect:
+        serializedVersion: 2
+        x: 6437
+        y: 2531
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a023f04b31f44d0800000000000000
+      internalID: -3148275950438708646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_12
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1917
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc6c4bd1aa978d760800000000000000
+      internalID: 7482864552425866956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_13
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1917
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b2de6f91588e6d20800000000000000
+      internalID: 3273703863293498038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_14
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 1917
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2e57eaff24e38d0800000000000000
+      internalID: -2864778647050001688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_15
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1917
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8ebfb64f44b1fe0800000000000000
+      internalID: -1217303457699206972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_16
+      rect:
+        serializedVersion: 2
+        x: 2381
+        y: 1917
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d09c68468d259cd0800000000000000
+      internalID: -2552083559071575856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_17
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 1917
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea2ef204a746b3bd0800000000000000
+      internalID: -2649413479551737170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_18
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 1917
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76acdf9bc7c98e90800000000000000
+      internalID: -7022862466533251460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_19
+      rect:
+        serializedVersion: 2
+        x: 4122
+        y: 1917
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95fb2f641945363c0800000000000000
+      internalID: -4367554230681944231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_20
+      rect:
+        serializedVersion: 2
+        x: 4703
+        y: 1916
+        width: 512
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ea0568c1b4d6370800000000000000
+      internalID: 8317386672707776009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_21
+      rect:
+        serializedVersion: 2
+        x: 5283
+        y: 1916
+        width: 512
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a91e4cd66909ce40800000000000000
+      internalID: 5677079142664640928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_22
+      rect:
+        serializedVersion: 2
+        x: 5864
+        y: 1916
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9dfc29a100a379a0800000000000000
+      internalID: -6236465129984295525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_23
+      rect:
+        serializedVersion: 2
+        x: 6444
+        y: 1916
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ce0d91848a00bd0800000000000000
+      internalID: -2665945951779099512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1302
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086296090919c5f20800000000000000
+      internalID: 3412762667724121728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_25
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1302
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9cc043cb14b6f60800000000000000
+      internalID: 8028583037300951457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_26
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 1302
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64737c0c48d35bc0800000000000000
+      internalID: -3795452239805189011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_27
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1302
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd28bbb2ab9a4bcc0800000000000000
+      internalID: -3696142777101614372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_28
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 1302
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5db74efd96a67fb0800000000000000
+      internalID: -4650346367707267746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_29
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 1302
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4c12af33c37ada0800000000000000
+      internalID: -5933707790099823434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_30
+      rect:
+        serializedVersion: 2
+        x: 3545
+        y: 1302
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c270853c54289930800000000000000
+      internalID: 4150107035075113668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_31
+      rect:
+        serializedVersion: 2
+        x: 4125
+        y: 1302
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11adb7d68c9bf790800000000000000
+      internalID: -7495225051868978913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_32
+      rect:
+        serializedVersion: 2
+        x: 4705
+        y: 1302
+        width: 512
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469f800aa873816a0800000000000000
+      internalID: -6478366995442501276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_33
+      rect:
+        serializedVersion: 2
+        x: 5285
+        y: 1302
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4982ac2d7536ae180800000000000000
+      internalID: -9085340069416785772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_34
+      rect:
+        serializedVersion: 2
+        x: 5865
+        y: 1302
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c5c4e900f60bd20800000000000000
+      internalID: 3292253376054320130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_35
+      rect:
+        serializedVersion: 2
+        x: 6445
+        y: 1302
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7033399b50597e270800000000000000
+      internalID: 8279750291764753159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 688
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3f425bd7e73ce30800000000000000
+      internalID: 4522597529185219512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_37
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 688
+        width: 512
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc956ef847118b40800000000000000
+      internalID: 5440655427113426108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_38
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 688
+        width: 511
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c505b66d7f912f0800000000000000
+      internalID: -1001496941817733995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_39
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 688
+        width: 512
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27c2b449d632f840800000000000000
+      internalID: 5256324021883160366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_40
+      rect:
+        serializedVersion: 2
+        x: 2383
+        y: 689
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2449385b687b1a500800000000000000
+      internalID: 405807230638855234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_41
+      rect:
+        serializedVersion: 2
+        x: 2963
+        y: 689
+        width: 511
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 995a3b016fec764a0800000000000000
+      internalID: -6600079172650687079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_42
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 689
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d9521fbb31df5b0800000000000000
+      internalID: -5333084685811213015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_43
+      rect:
+        serializedVersion: 2
+        x: 4121
+        y: 689
+        width: 512
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4410546b6ed3ef0800000000000000
+      internalID: -126691543980358476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_44
+      rect:
+        serializedVersion: 2
+        x: 4701
+        y: 689
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ffd83cb253f3780800000000000000
+      internalID: -8701177492975779947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_45
+      rect:
+        serializedVersion: 2
+        x: 5280
+        y: 689
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1bc282bf3a4fbc0800000000000000
+      internalID: -3750192290586643993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_46
+      rect:
+        serializedVersion: 2
+        x: 5860
+        y: 689
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e17e356bda670f680800000000000000
+      internalID: -8723341989756279010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_47
+      rect:
+        serializedVersion: 2
+        x: 6439
+        y: 689
+        width: 511
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7086dcb04de1ea080800000000000000
+      internalID: -9174361494827210745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_48
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 75
+        width: 512
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d079d5d1e8f2f00800000000000000
+      internalID: 1094249491249696046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_49
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 75
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24ecc410b8a4ea90800000000000000
+      internalID: -7285512822961937361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_50
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 75
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b9ffa941505e0d10800000000000000
+      internalID: 2093699186832701872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_51
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 75
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6664ca55ea8d9a0800000000000000
+      internalID: -6208020403344480603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_52
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 65
+        width: 512
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b371f372df9d58320800000000000000
+      internalID: 2559691644538394427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_53
+      rect:
+        serializedVersion: 2
+        x: 2953
+        y: 65
+        width: 512
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04fa014b0b77f0600800000000000000
+      internalID: 436699289697169216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_54
+      rect:
+        serializedVersion: 2
+        x: 3532
+        y: 65
+        width: 512
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec11d868719316f30800000000000000
+      internalID: 4566994270334816718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_55
+      rect:
+        serializedVersion: 2
+        x: 4111
+        y: 65
+        width: 512
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b4ebe2f0730bd70800000000000000
+      internalID: 9056799388990327583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_56
+      rect:
+        serializedVersion: 2
+        x: 4690
+        y: 65
+        width: 512
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 881fe8079f835c560800000000000000
+      internalID: 7333330212229149064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_57
+      rect:
+        serializedVersion: 2
+        x: 5269
+        y: 65
+        width: 511
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e07fbc887857f50800000000000000
+      internalID: 6878553027485568670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_58
+      rect:
+        serializedVersion: 2
+        x: 5847
+        y: 75
+        width: 512
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ffa82fd201b5a220800000000000000
+      internalID: 2496596194338844661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: easy_mode_molz_body_recut_59
+      rect:
+        serializedVersion: 2
+        x: 6426
+        y: 75
+        width: 511
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e867e0d9f663ed240800000000000000
+      internalID: 4818348504337249934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d898da8c2721f904694ebd268c6403da
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      easy_mode_molz_body_recut_0: -1960986469098045708
+      easy_mode_molz_body_recut_1: 7043015258636577017
+      easy_mode_molz_body_recut_10: 4681675359155867164
+      easy_mode_molz_body_recut_11: -3148275950438708646
+      easy_mode_molz_body_recut_12: 7482864552425866956
+      easy_mode_molz_body_recut_13: 3273703863293498038
+      easy_mode_molz_body_recut_14: -2864778647050001688
+      easy_mode_molz_body_recut_15: -1217303457699206972
+      easy_mode_molz_body_recut_16: -2552083559071575856
+      easy_mode_molz_body_recut_17: -2649413479551737170
+      easy_mode_molz_body_recut_18: -7022862466533251460
+      easy_mode_molz_body_recut_19: -4367554230681944231
+      easy_mode_molz_body_recut_2: 492769763022389023
+      easy_mode_molz_body_recut_20: 8317386672707776009
+      easy_mode_molz_body_recut_21: 5677079142664640928
+      easy_mode_molz_body_recut_22: -6236465129984295525
+      easy_mode_molz_body_recut_23: -2665945951779099512
+      easy_mode_molz_body_recut_24: 3412762667724121728
+      easy_mode_molz_body_recut_25: 8028583037300951457
+      easy_mode_molz_body_recut_26: -3795452239805189011
+      easy_mode_molz_body_recut_27: -3696142777101614372
+      easy_mode_molz_body_recut_28: -4650346367707267746
+      easy_mode_molz_body_recut_29: -5933707790099823434
+      easy_mode_molz_body_recut_3: -3353737069189245381
+      easy_mode_molz_body_recut_30: 4150107035075113668
+      easy_mode_molz_body_recut_31: -7495225051868978913
+      easy_mode_molz_body_recut_32: -6478366995442501276
+      easy_mode_molz_body_recut_33: -9085340069416785772
+      easy_mode_molz_body_recut_34: 3292253376054320130
+      easy_mode_molz_body_recut_35: 8279750291764753159
+      easy_mode_molz_body_recut_36: 4522597529185219512
+      easy_mode_molz_body_recut_37: 5440655427113426108
+      easy_mode_molz_body_recut_38: -1001496941817733995
+      easy_mode_molz_body_recut_39: 5256324021883160366
+      easy_mode_molz_body_recut_4: -6646684038712216523
+      easy_mode_molz_body_recut_40: 405807230638855234
+      easy_mode_molz_body_recut_41: -6600079172650687079
+      easy_mode_molz_body_recut_42: -5333084685811213015
+      easy_mode_molz_body_recut_43: -126691543980358476
+      easy_mode_molz_body_recut_44: -8701177492975779947
+      easy_mode_molz_body_recut_45: -3750192290586643993
+      easy_mode_molz_body_recut_46: -8723341989756279010
+      easy_mode_molz_body_recut_47: -9174361494827210745
+      easy_mode_molz_body_recut_48: 1094249491249696046
+      easy_mode_molz_body_recut_49: -7285512822961937361
+      easy_mode_molz_body_recut_5: 2433511937541708768
+      easy_mode_molz_body_recut_50: 2093699186832701872
+      easy_mode_molz_body_recut_51: -6208020403344480603
+      easy_mode_molz_body_recut_52: 2559691644538394427
+      easy_mode_molz_body_recut_53: 436699289697169216
+      easy_mode_molz_body_recut_54: 4566994270334816718
+      easy_mode_molz_body_recut_55: 9056799388990327583
+      easy_mode_molz_body_recut_56: 7333330212229149064
+      easy_mode_molz_body_recut_57: 6878553027485568670
+      easy_mode_molz_body_recut_58: 2496596194338844661
+      easy_mode_molz_body_recut_59: 4818348504337249934
+      easy_mode_molz_body_recut_6: 2303549450851438337
+      easy_mode_molz_body_recut_60: -1925932622606220749
+      easy_mode_molz_body_recut_61: 665977975921681308
+      easy_mode_molz_body_recut_62: 3665985744831251031
+      easy_mode_molz_body_recut_63: -1274346395009948337
+      easy_mode_molz_body_recut_64: 2168872632111361547
+      easy_mode_molz_body_recut_7: -7048900616670044747
+      easy_mode_molz_body_recut_8: 8711899099757260889
+      easy_mode_molz_body_recut_9: -1353872966018424146
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

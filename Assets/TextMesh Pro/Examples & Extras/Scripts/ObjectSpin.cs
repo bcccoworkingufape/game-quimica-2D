@@ -7,7 +7,8 @@ namespace TMPro.Examples
 
     public class ObjectSpin : MonoBehaviour
     {
-        #pragma warning disable 0414
+       // #pragma warning disable 0414
+       
         public enum MotionType { Rotation, SearchLight, Translation };
         public MotionType Motion;
 

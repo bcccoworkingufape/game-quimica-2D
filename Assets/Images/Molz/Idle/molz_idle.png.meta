@@ -432,7 +432,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -469,6 +469,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -476,12 +489,12 @@ TextureImporter:
       name: molz_idle_0
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -498,12 +511,12 @@ TextureImporter:
       name: molz_idle_1
       rect:
         serializedVersion: 2
-        x: 614
+        x: 580
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -520,12 +533,12 @@ TextureImporter:
       name: molz_idle_2
       rect:
         serializedVersion: 2
-        x: 1195
+        x: 1160
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -542,12 +555,12 @@ TextureImporter:
       name: molz_idle_3
       rect:
         serializedVersion: 2
-        x: 1776
+        x: 1740
         y: 6147
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -564,12 +577,12 @@ TextureImporter:
       name: molz_idle_4
       rect:
         serializedVersion: 2
-        x: 2358
+        x: 2320
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -586,12 +599,12 @@ TextureImporter:
       name: molz_idle_5
       rect:
         serializedVersion: 2
-        x: 2939
+        x: 2900
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -608,12 +621,12 @@ TextureImporter:
       name: molz_idle_6
       rect:
         serializedVersion: 2
-        x: 3520
+        x: 3480
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -630,12 +643,12 @@ TextureImporter:
       name: molz_idle_7
       rect:
         serializedVersion: 2
-        x: 4101
+        x: 4060
         y: 6147
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -652,12 +665,12 @@ TextureImporter:
       name: molz_idle_8
       rect:
         serializedVersion: 2
-        x: 4682
+        x: 4640
         y: 6147
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -674,12 +687,12 @@ TextureImporter:
       name: molz_idle_9
       rect:
         serializedVersion: 2
-        x: 5264
+        x: 5220
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -696,12 +709,12 @@ TextureImporter:
       name: molz_idle_10
       rect:
         serializedVersion: 2
-        x: 5845
+        x: 5800
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -718,12 +731,12 @@ TextureImporter:
       name: molz_idle_11
       rect:
         serializedVersion: 2
-        x: 6426
+        x: 6380
         y: 6147
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -740,12 +753,12 @@ TextureImporter:
       name: molz_idle_12
       rect:
         serializedVersion: 2
-        x: 47
+        x: 0
         y: 5533
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -762,12 +775,12 @@ TextureImporter:
       name: molz_idle_13
       rect:
         serializedVersion: 2
-        x: 627
+        x: 580
         y: 5533
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -784,12 +797,12 @@ TextureImporter:
       name: molz_idle_14
       rect:
         serializedVersion: 2
-        x: 1208
+        x: 1160
         y: 5533
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -806,12 +819,12 @@ TextureImporter:
       name: molz_idle_15
       rect:
         serializedVersion: 2
-        x: 1789
+        x: 1740
         y: 5533
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -828,12 +841,12 @@ TextureImporter:
       name: molz_idle_16
       rect:
         serializedVersion: 2
-        x: 2370
+        x: 2320
         y: 5533
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -850,12 +863,12 @@ TextureImporter:
       name: molz_idle_17
       rect:
         serializedVersion: 2
-        x: 2950
+        x: 2900
         y: 5533
-        width: 512
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -872,12 +885,12 @@ TextureImporter:
       name: molz_idle_18
       rect:
         serializedVersion: 2
-        x: 3531
+        x: 3480
         y: 5533
-        width: 512
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -894,12 +907,12 @@ TextureImporter:
       name: molz_idle_19
       rect:
         serializedVersion: 2
-        x: 4111
+        x: 4060
         y: 5533
-        width: 512
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -916,12 +929,12 @@ TextureImporter:
       name: molz_idle_20
       rect:
         serializedVersion: 2
-        x: 4692
-        y: 5532
-        width: 512
-        height: 606
+        x: 4640
+        y: 5533
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -938,12 +951,12 @@ TextureImporter:
       name: molz_idle_21
       rect:
         serializedVersion: 2
-        x: 5272
-        y: 5532
-        width: 512
-        height: 606
+        x: 5220
+        y: 5533
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -960,12 +973,12 @@ TextureImporter:
       name: molz_idle_22
       rect:
         serializedVersion: 2
-        x: 5853
-        y: 5532
-        width: 511
-        height: 607
+        x: 5800
+        y: 5533
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -982,12 +995,12 @@ TextureImporter:
       name: molz_idle_23
       rect:
         serializedVersion: 2
-        x: 6433
-        y: 5532
-        width: 512
-        height: 607
+        x: 6380
+        y: 5533
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1004,12 +1017,12 @@ TextureImporter:
       name: molz_idle_24
       rect:
         serializedVersion: 2
-        x: 53
-        y: 4918
-        width: 512
-        height: 607
+        x: 0
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1026,12 +1039,12 @@ TextureImporter:
       name: molz_idle_25
       rect:
         serializedVersion: 2
-        x: 634
-        y: 4918
-        width: 511
-        height: 607
+        x: 580
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1048,12 +1061,12 @@ TextureImporter:
       name: molz_idle_26
       rect:
         serializedVersion: 2
-        x: 1214
-        y: 4918
-        width: 511
-        height: 607
+        x: 1160
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1070,12 +1083,12 @@ TextureImporter:
       name: molz_idle_27
       rect:
         serializedVersion: 2
-        x: 1794
-        y: 4918
-        width: 511
-        height: 607
+        x: 1740
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1092,12 +1105,12 @@ TextureImporter:
       name: molz_idle_28
       rect:
         serializedVersion: 2
-        x: 2374
-        y: 4918
-        width: 512
-        height: 608
+        x: 2320
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1114,12 +1127,12 @@ TextureImporter:
       name: molz_idle_29
       rect:
         serializedVersion: 2
-        x: 2954
-        y: 4918
-        width: 512
-        height: 608
+        x: 2900
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1136,12 +1149,12 @@ TextureImporter:
       name: molz_idle_30
       rect:
         serializedVersion: 2
-        x: 3534
-        y: 4918
-        width: 512
-        height: 608
+        x: 3480
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1158,12 +1171,12 @@ TextureImporter:
       name: molz_idle_31
       rect:
         serializedVersion: 2
-        x: 4114
-        y: 4918
-        width: 512
-        height: 608
+        x: 4060
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1180,12 +1193,12 @@ TextureImporter:
       name: molz_idle_32
       rect:
         serializedVersion: 2
-        x: 4694
-        y: 4918
-        width: 512
-        height: 608
+        x: 4640
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1202,12 +1215,12 @@ TextureImporter:
       name: molz_idle_33
       rect:
         serializedVersion: 2
-        x: 5274
-        y: 4918
-        width: 511
-        height: 607
+        x: 5220
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1224,12 +1237,12 @@ TextureImporter:
       name: molz_idle_34
       rect:
         serializedVersion: 2
-        x: 5854
-        y: 4918
-        width: 511
-        height: 607
+        x: 5800
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1246,12 +1259,12 @@ TextureImporter:
       name: molz_idle_35
       rect:
         serializedVersion: 2
-        x: 6434
-        y: 4918
-        width: 511
-        height: 607
+        x: 6380
+        y: 4919
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1268,12 +1281,12 @@ TextureImporter:
       name: molz_idle_36
       rect:
         serializedVersion: 2
-        x: 53
-        y: 4304
-        width: 512
-        height: 607
+        x: 0
+        y: 4305
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1290,12 +1303,12 @@ TextureImporter:
       name: molz_idle_37
       rect:
         serializedVersion: 2
-        x: 633
-        y: 4304
-        width: 512
-        height: 607
+        x: 580
+        y: 4305
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1312,12 +1325,12 @@ TextureImporter:
       name: molz_idle_38
       rect:
         serializedVersion: 2
-        x: 1213
-        y: 4304
-        width: 511
-        height: 607
+        x: 1160
+        y: 4305
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1334,12 +1347,12 @@ TextureImporter:
       name: molz_idle_39
       rect:
         serializedVersion: 2
-        x: 1792
-        y: 4304
-        width: 512
-        height: 606
+        x: 1740
+        y: 4305
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1356,12 +1369,12 @@ TextureImporter:
       name: molz_idle_40
       rect:
         serializedVersion: 2
-        x: 2372
+        x: 2320
         y: 4305
-        width: 512
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1378,12 +1391,12 @@ TextureImporter:
       name: molz_idle_41
       rect:
         serializedVersion: 2
-        x: 2952
+        x: 2900
         y: 4305
-        width: 511
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1400,12 +1413,12 @@ TextureImporter:
       name: molz_idle_42
       rect:
         serializedVersion: 2
-        x: 3531
+        x: 3480
         y: 4305
-        width: 512
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1422,12 +1435,12 @@ TextureImporter:
       name: molz_idle_43
       rect:
         serializedVersion: 2
-        x: 4110
+        x: 4060
         y: 4305
-        width: 512
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1444,12 +1457,12 @@ TextureImporter:
       name: molz_idle_44
       rect:
         serializedVersion: 2
-        x: 4690
+        x: 4640
         y: 4305
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1466,12 +1479,12 @@ TextureImporter:
       name: molz_idle_45
       rect:
         serializedVersion: 2
-        x: 5269
+        x: 5220
         y: 4305
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1488,12 +1501,12 @@ TextureImporter:
       name: molz_idle_46
       rect:
         serializedVersion: 2
-        x: 5849
+        x: 5800
         y: 4305
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1510,12 +1523,12 @@ TextureImporter:
       name: molz_idle_47
       rect:
         serializedVersion: 2
-        x: 6428
+        x: 6380
         y: 4305
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1532,12 +1545,12 @@ TextureImporter:
       name: molz_idle_48
       rect:
         serializedVersion: 2
-        x: 47
+        x: 0
         y: 3691
-        width: 512
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1554,12 +1567,12 @@ TextureImporter:
       name: molz_idle_49
       rect:
         serializedVersion: 2
-        x: 626
+        x: 580
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1576,12 +1589,12 @@ TextureImporter:
       name: molz_idle_50
       rect:
         serializedVersion: 2
-        x: 1205
+        x: 1160
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1598,12 +1611,12 @@ TextureImporter:
       name: molz_idle_51
       rect:
         serializedVersion: 2
-        x: 1784
+        x: 1740
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1620,12 +1633,12 @@ TextureImporter:
       name: molz_idle_52
       rect:
         serializedVersion: 2
-        x: 2363
+        x: 2320
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1642,12 +1655,12 @@ TextureImporter:
       name: molz_idle_53
       rect:
         serializedVersion: 2
-        x: 2942
+        x: 2900
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1664,12 +1677,12 @@ TextureImporter:
       name: molz_idle_54
       rect:
         serializedVersion: 2
-        x: 3521
+        x: 3480
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1686,12 +1699,12 @@ TextureImporter:
       name: molz_idle_55
       rect:
         serializedVersion: 2
-        x: 4100
+        x: 4060
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1708,12 +1721,12 @@ TextureImporter:
       name: molz_idle_56
       rect:
         serializedVersion: 2
-        x: 4679
+        x: 4640
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1730,12 +1743,12 @@ TextureImporter:
       name: molz_idle_57
       rect:
         serializedVersion: 2
-        x: 5258
+        x: 5220
         y: 3691
-        width: 511
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1752,12 +1765,12 @@ TextureImporter:
       name: molz_idle_58
       rect:
         serializedVersion: 2
-        x: 5836
+        x: 5800
         y: 3691
-        width: 512
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1774,12 +1787,12 @@ TextureImporter:
       name: molz_idle_59
       rect:
         serializedVersion: 2
-        x: 6415
+        x: 6380
         y: 3691
-        width: 511
-        height: 603
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1796,12 +1809,12 @@ TextureImporter:
       name: molz_idle_60
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 3077
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1818,12 +1831,12 @@ TextureImporter:
       name: molz_idle_61
       rect:
         serializedVersion: 2
-        x: 612
+        x: 580
         y: 3077
-        width: 510
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1840,12 +1853,12 @@ TextureImporter:
       name: molz_idle_62
       rect:
         serializedVersion: 2
-        x: 1191
+        x: 1160
         y: 3077
-        width: 510
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1862,12 +1875,12 @@ TextureImporter:
       name: molz_idle_63
       rect:
         serializedVersion: 2
-        x: 1769
+        x: 1740
         y: 3077
-        width: 510
-        height: 606
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1884,12 +1897,12 @@ TextureImporter:
       name: molz_idle_64
       rect:
         serializedVersion: 2
-        x: 2348
-        y: 3076
-        width: 509
-        height: 608
+        x: 2320
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1906,12 +1919,12 @@ TextureImporter:
       name: molz_idle_65
       rect:
         serializedVersion: 2
-        x: 2927
-        y: 3076
-        width: 509
-        height: 609
+        x: 2900
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1928,12 +1941,12 @@ TextureImporter:
       name: molz_idle_66
       rect:
         serializedVersion: 2
-        x: 3506
-        y: 3076
-        width: 509
-        height: 609
+        x: 3480
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1950,12 +1963,12 @@ TextureImporter:
       name: molz_idle_67
       rect:
         serializedVersion: 2
-        x: 4077
-        y: 2462
-        width: 507
-        height: 615
+        x: 4060
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1972,12 +1985,12 @@ TextureImporter:
       name: molz_idle_68
       rect:
         serializedVersion: 2
-        x: 4085
-        y: 3076
-        width: 509
-        height: 610
+        x: 4640
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1994,12 +2007,12 @@ TextureImporter:
       name: molz_idle_69
       rect:
         serializedVersion: 2
-        x: 4656
-        y: 2462
-        width: 509
-        height: 615
+        x: 5220
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2016,12 +2029,12 @@ TextureImporter:
       name: molz_idle_70
       rect:
         serializedVersion: 2
-        x: 4664
-        y: 3076
-        width: 508
-        height: 610
+        x: 5800
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2038,12 +2051,12 @@ TextureImporter:
       name: molz_idle_71
       rect:
         serializedVersion: 2
-        x: 5236
-        y: 2462
-        width: 510
-        height: 615
+        x: 6380
+        y: 3077
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2060,12 +2073,12 @@ TextureImporter:
       name: molz_idle_72
       rect:
         serializedVersion: 2
-        x: 5243
-        y: 3076
-        width: 508
-        height: 611
+        x: 0
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2082,12 +2095,12 @@ TextureImporter:
       name: molz_idle_73
       rect:
         serializedVersion: 2
-        x: 5816
-        y: 2462
-        width: 511
-        height: 615
+        x: 580
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2104,12 +2117,12 @@ TextureImporter:
       name: molz_idle_74
       rect:
         serializedVersion: 2
-        x: 5822
-        y: 3076
-        width: 508
-        height: 611
+        x: 1160
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2126,12 +2139,12 @@ TextureImporter:
       name: molz_idle_75
       rect:
         serializedVersion: 2
-        x: 6396
-        y: 2462
-        width: 512
-        height: 616
+        x: 1740
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2148,12 +2161,12 @@ TextureImporter:
       name: molz_idle_76
       rect:
         serializedVersion: 2
-        x: 6402
-        y: 3076
-        width: 507
-        height: 612
+        x: 2320
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2170,12 +2183,12 @@ TextureImporter:
       name: molz_idle_77
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1848
-        width: 513
-        height: 616
+        x: 2900
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2192,12 +2205,12 @@ TextureImporter:
       name: molz_idle_78
       rect:
         serializedVersion: 2
-        x: 21
-        y: 2462
-        width: 507
-        height: 612
+        x: 3480
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2214,12 +2227,12 @@ TextureImporter:
       name: molz_idle_79
       rect:
         serializedVersion: 2
-        x: 595
-        y: 1848
-        width: 514
-        height: 616
+        x: 4060
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2236,12 +2249,12 @@ TextureImporter:
       name: molz_idle_80
       rect:
         serializedVersion: 2
-        x: 600
-        y: 2462
-        width: 508
-        height: 613
+        x: 4640
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2258,12 +2271,12 @@ TextureImporter:
       name: molz_idle_81
       rect:
         serializedVersion: 2
-        x: 1175
-        y: 1848
-        width: 514
-        height: 616
+        x: 5220
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2280,12 +2293,12 @@ TextureImporter:
       name: molz_idle_82
       rect:
         serializedVersion: 2
-        x: 1179
-        y: 2462
-        width: 508
-        height: 613
+        x: 5800
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2302,12 +2315,12 @@ TextureImporter:
       name: molz_idle_83
       rect:
         serializedVersion: 2
-        x: 1755
-        y: 1848
-        width: 514
-        height: 616
+        x: 6380
+        y: 2463
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2324,12 +2337,12 @@ TextureImporter:
       name: molz_idle_84
       rect:
         serializedVersion: 2
-        x: 1759
-        y: 2462
-        width: 507
-        height: 613
+        x: 0
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2346,12 +2359,12 @@ TextureImporter:
       name: molz_idle_85
       rect:
         serializedVersion: 2
-        x: 2335
-        y: 1848
-        width: 514
-        height: 616
+        x: 580
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2368,12 +2381,12 @@ TextureImporter:
       name: molz_idle_86
       rect:
         serializedVersion: 2
-        x: 2338
-        y: 2462
-        width: 507
+        x: 1160
+        y: 1849
+        width: 580
         height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2390,12 +2403,12 @@ TextureImporter:
       name: molz_idle_87
       rect:
         serializedVersion: 2
-        x: 2915
-        y: 1848
-        width: 515
-        height: 616
+        x: 1740
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2412,12 +2425,12 @@ TextureImporter:
       name: molz_idle_88
       rect:
         serializedVersion: 2
-        x: 2918
-        y: 2462
-        width: 506
+        x: 2320
+        y: 1849
+        width: 580
         height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2434,12 +2447,12 @@ TextureImporter:
       name: molz_idle_89
       rect:
         serializedVersion: 2
-        x: 3495
-        y: 1848
-        width: 515
-        height: 616
+        x: 2900
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2456,12 +2469,12 @@ TextureImporter:
       name: molz_idle_90
       rect:
         serializedVersion: 2
-        x: 3497
-        y: 2462
-        width: 507
+        x: 3480
+        y: 1849
+        width: 580
         height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2478,12 +2491,12 @@ TextureImporter:
       name: molz_idle_91
       rect:
         serializedVersion: 2
-        x: 4075
-        y: 1848
-        width: 515
-        height: 616
+        x: 4060
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2500,12 +2513,12 @@ TextureImporter:
       name: molz_idle_92
       rect:
         serializedVersion: 2
-        x: 4655
-        y: 1848
-        width: 514
-        height: 616
+        x: 4640
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2522,12 +2535,12 @@ TextureImporter:
       name: molz_idle_93
       rect:
         serializedVersion: 2
-        x: 5235
-        y: 1848
-        width: 514
-        height: 616
+        x: 5220
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2544,12 +2557,12 @@ TextureImporter:
       name: molz_idle_94
       rect:
         serializedVersion: 2
-        x: 5815
-        y: 1848
-        width: 514
-        height: 616
+        x: 5800
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2566,12 +2579,12 @@ TextureImporter:
       name: molz_idle_95
       rect:
         serializedVersion: 2
-        x: 6395
-        y: 1848
-        width: 514
-        height: 616
+        x: 6380
+        y: 1849
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2588,12 +2601,12 @@ TextureImporter:
       name: molz_idle_96
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1234
-        width: 513
-        height: 616
+        x: 0
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2610,12 +2623,12 @@ TextureImporter:
       name: molz_idle_97
       rect:
         serializedVersion: 2
-        x: 595
-        y: 1234
-        width: 513
-        height: 616
+        x: 580
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2632,12 +2645,12 @@ TextureImporter:
       name: molz_idle_98
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 1234
-        width: 511
-        height: 615
+        x: 1160
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2654,12 +2667,12 @@ TextureImporter:
       name: molz_idle_99
       rect:
         serializedVersion: 2
-        x: 1756
-        y: 1234
-        width: 510
-        height: 615
+        x: 1740
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2676,12 +2689,12 @@ TextureImporter:
       name: molz_idle_100
       rect:
         serializedVersion: 2
-        x: 2336
-        y: 1234
-        width: 509
-        height: 615
+        x: 2320
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2698,12 +2711,12 @@ TextureImporter:
       name: molz_idle_101
       rect:
         serializedVersion: 2
-        x: 2917
-        y: 1234
-        width: 507
-        height: 615
+        x: 2900
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2720,12 +2733,12 @@ TextureImporter:
       name: molz_idle_102
       rect:
         serializedVersion: 2
-        x: 3497
-        y: 1234
-        width: 507
+        x: 3480
+        y: 1235
+        width: 580
         height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2742,12 +2755,12 @@ TextureImporter:
       name: molz_idle_103
       rect:
         serializedVersion: 2
-        x: 4078
-        y: 1234
-        width: 506
+        x: 4060
+        y: 1235
+        width: 580
         height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2764,12 +2777,12 @@ TextureImporter:
       name: molz_idle_104
       rect:
         serializedVersion: 2
-        x: 4658
-        y: 1234
-        width: 507
+        x: 4640
+        y: 1235
+        width: 580
         height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2786,12 +2799,12 @@ TextureImporter:
       name: molz_idle_105
       rect:
         serializedVersion: 2
-        x: 5239
-        y: 1234
-        width: 507
-        height: 613
+        x: 5220
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2808,12 +2821,12 @@ TextureImporter:
       name: molz_idle_106
       rect:
         serializedVersion: 2
-        x: 5819
-        y: 1234
-        width: 507
-        height: 613
+        x: 5800
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2830,12 +2843,12 @@ TextureImporter:
       name: molz_idle_107
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 1234
-        width: 507
-        height: 613
+        x: 6380
+        y: 1235
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2852,12 +2865,12 @@ TextureImporter:
       name: molz_idle_108
       rect:
         serializedVersion: 2
-        x: 21
-        y: 620
-        width: 507
-        height: 612
+        x: 0
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2874,12 +2887,12 @@ TextureImporter:
       name: molz_idle_109
       rect:
         serializedVersion: 2
-        x: 601
-        y: 620
-        width: 508
-        height: 612
+        x: 580
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2896,12 +2909,12 @@ TextureImporter:
       name: molz_idle_110
       rect:
         serializedVersion: 2
-        x: 1182
-        y: 620
-        width: 508
-        height: 611
+        x: 1160
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2918,12 +2931,12 @@ TextureImporter:
       name: molz_idle_111
       rect:
         serializedVersion: 2
-        x: 1763
-        y: 620
-        width: 508
-        height: 611
+        x: 1740
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2940,12 +2953,12 @@ TextureImporter:
       name: molz_idle_112
       rect:
         serializedVersion: 2
-        x: 2344
-        y: 620
-        width: 508
-        height: 611
+        x: 2320
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2962,12 +2975,12 @@ TextureImporter:
       name: molz_idle_113
       rect:
         serializedVersion: 2
-        x: 2925
-        y: 620
-        width: 508
-        height: 610
+        x: 2900
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2984,12 +2997,12 @@ TextureImporter:
       name: molz_idle_114
       rect:
         serializedVersion: 2
-        x: 3506
-        y: 620
-        width: 509
-        height: 609
+        x: 3480
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3006,12 +3019,12 @@ TextureImporter:
       name: molz_idle_115
       rect:
         serializedVersion: 2
-        x: 4087
-        y: 620
-        width: 509
-        height: 609
+        x: 4060
+        y: 621
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3028,12 +3041,12 @@ TextureImporter:
       name: molz_idle_116
       rect:
         serializedVersion: 2
-        x: 4668
+        x: 4640
         y: 621
-        width: 509
-        height: 607
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3050,12 +3063,12 @@ TextureImporter:
       name: molz_idle_117
       rect:
         serializedVersion: 2
-        x: 5249
+        x: 5220
         y: 621
-        width: 510
-        height: 606
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3072,12 +3085,12 @@ TextureImporter:
       name: molz_idle_118
       rect:
         serializedVersion: 2
-        x: 5831
+        x: 5800
         y: 621
-        width: 509
-        height: 606
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3094,12 +3107,12 @@ TextureImporter:
       name: molz_idle_119
       rect:
         serializedVersion: 2
-        x: 6412
+        x: 6380
         y: 621
-        width: 510
-        height: 605
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3116,12 +3129,12 @@ TextureImporter:
       name: molz_idle_120
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 7
-        width: 511
-        height: 604
+        width: 580
+        height: 614
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3134,11 +3147,253 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: molz_idle_121
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40666f080e6d297448c452994599ba47
+      internalID: 1147600916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_122
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce7156dfe046d94c8cf6e9312504c18
+      internalID: 790334028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_123
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bce70da2e135a4468755689010f23f3
+      internalID: 2068209260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_124
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11bd4bd3af187754abadfb5ac32e2b6b
+      internalID: 41584369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_125
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bb7e1c568390b428ca06b38fb2c38a
+      internalID: -708060393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_126
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e90dab3e3bdeb4eb20e97c17359790
+      internalID: -167962921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_127
+      rect:
+        serializedVersion: 2
+        x: 4060
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d5f3c1bf4eea9479c56f628b7c94cd
+      internalID: 661149114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_128
+      rect:
+        serializedVersion: 2
+        x: 4640
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752d487034918a4419c8cb375047951e
+      internalID: 1386726336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_129
+      rect:
+        serializedVersion: 2
+        x: 5220
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d27e1e60e29795428b914e0262c0838
+      internalID: 983759179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_130
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8c25c6d4af82a44825ace472342b5b
+      internalID: -1482069350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: molz_idle_131
+      rect:
+        serializedVersion: 2
+        x: 6380
+        y: 7
+        width: 580
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe45c65a8385d1a4196de4f73525b784
+      internalID: -1039753947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9ff17948b839bf14281a85cd1545eebd
     internalID: 0
     vertices: []
     indices: 
@@ -3146,7 +3401,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":12.0,"y":11.0},"gridSpriteSize":{"x":580.0,"y":614.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       molz_idle_0: 3988388232382127514
       molz_idle_1: -5221528768981765181
@@ -3174,7 +3431,18 @@ TextureImporter:
       molz_idle_119: -6442481734729118477
       molz_idle_12: -6102773683254027023
       molz_idle_120: 383349210442355632
+      molz_idle_121: 1147600916
+      molz_idle_122: 790334028
+      molz_idle_123: 2068209260
+      molz_idle_124: 41584369
+      molz_idle_125: -708060393
+      molz_idle_126: -167962921
+      molz_idle_127: 661149114
+      molz_idle_128: 1386726336
+      molz_idle_129: 983759179
       molz_idle_13: 1586984141281384197
+      molz_idle_130: -1482069350
+      molz_idle_131: -1039753947
       molz_idle_14: 2419531448929414073
       molz_idle_15: -5655452575016092414
       molz_idle_16: -8884915283497621114

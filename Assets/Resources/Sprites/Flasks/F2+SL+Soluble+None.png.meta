@@ -1,0 +1,5158 @@
+fileFormatVersion: 2
+guid: cd68e53da236c9c43b8b5a348d502129
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3483360546945567320
+    second: None_0
+  - first:
+      213: 6607896315507021901
+    second: None_1
+  - first:
+      213: -8174352033197197383
+    second: None_2
+  - first:
+      213: -599037203284762785
+    second: None_3
+  - first:
+      213: -6688718201767704653
+    second: None_4
+  - first:
+      213: -9209255712921561838
+    second: None_5
+  - first:
+      213: -5770401676832003476
+    second: None_6
+  - first:
+      213: -1390717575933476151
+    second: None_7
+  - first:
+      213: 6917178809018456750
+    second: None_8
+  - first:
+      213: 4989327323842310936
+    second: None_9
+  - first:
+      213: -46853211161506029
+    second: None_10
+  - first:
+      213: 8205640377598766184
+    second: None_11
+  - first:
+      213: -3938927197539146593
+    second: None_12
+  - first:
+      213: -2520265017766722866
+    second: None_13
+  - first:
+      213: -5664451133478220159
+    second: None_14
+  - first:
+      213: 7293026925922370241
+    second: None_15
+  - first:
+      213: 84038601781767413
+    second: None_16
+  - first:
+      213: -9110284829734019975
+    second: None_17
+  - first:
+      213: 2869221798550335938
+    second: None_18
+  - first:
+      213: -6768180797168416271
+    second: None_19
+  - first:
+      213: 3117752143875399339
+    second: None_20
+  - first:
+      213: 2562109066446749358
+    second: None_21
+  - first:
+      213: -1821275877128511961
+    second: None_22
+  - first:
+      213: 4123322642343194070
+    second: None_23
+  - first:
+      213: 3578492003774695347
+    second: None_24
+  - first:
+      213: 8031706523944668912
+    second: None_25
+  - first:
+      213: -4993949977817175903
+    second: None_26
+  - first:
+      213: -7897120236031300376
+    second: None_27
+  - first:
+      213: -3157000634378813923
+    second: None_28
+  - first:
+      213: 974687047339703106
+    second: None_29
+  - first:
+      213: -2534097887024172664
+    second: None_30
+  - first:
+      213: 346869913766275381
+    second: None_31
+  - first:
+      213: -5624207299041541154
+    second: None_32
+  - first:
+      213: 6637586606837816296
+    second: None_33
+  - first:
+      213: 1965641356122343314
+    second: None_34
+  - first:
+      213: 1009072523502359287
+    second: None_35
+  - first:
+      213: 8210463445024022464
+    second: None_36
+  - first:
+      213: 4648845384010406282
+    second: None_37
+  - first:
+      213: 5643544864785130432
+    second: None_38
+  - first:
+      213: -9169045871764542751
+    second: None_39
+  - first:
+      213: -3951861628272249001
+    second: None_40
+  - first:
+      213: -7045422324430651147
+    second: None_41
+  - first:
+      213: 8007467372692033536
+    second: None_42
+  - first:
+      213: -7223726910940978957
+    second: None_43
+  - first:
+      213: 3196542250857540993
+    second: None_44
+  - first:
+      213: -921327016216240730
+    second: None_45
+  - first:
+      213: 2015359206154909494
+    second: None_46
+  - first:
+      213: -7140459575192796812
+    second: None_47
+  - first:
+      213: -1597884705388988967
+    second: None_48
+  - first:
+      213: 6617415202387039702
+    second: None_49
+  - first:
+      213: 1048699960050837437
+    second: None_50
+  - first:
+      213: -4201930441027732807
+    second: None_51
+  - first:
+      213: -6560473266494660815
+    second: None_52
+  - first:
+      213: 2430769201733588148
+    second: None_53
+  - first:
+      213: 6114054356789495501
+    second: None_54
+  - first:
+      213: -7072908195208586260
+    second: None_55
+  - first:
+      213: 7684509812785084332
+    second: None_56
+  - first:
+      213: 1077972517726509591
+    second: None_57
+  - first:
+      213: 8453541233933993953
+    second: None_58
+  - first:
+      213: 4136982306031634803
+    second: None_59
+  - first:
+      213: 8506879332197695809
+    second: None_60
+  - first:
+      213: -332905307646932329
+    second: None_61
+  - first:
+      213: -6843378868648564449
+    second: None_62
+  - first:
+      213: -4158540634542639087
+    second: None_63
+  - first:
+      213: 6815767593590058758
+    second: None_64
+  - first:
+      213: -3093148139933735819
+    second: None_65
+  - first:
+      213: -4474802133735486581
+    second: None_66
+  - first:
+      213: 7986594631068729524
+    second: None_67
+  - first:
+      213: -6010675794309443903
+    second: None_68
+  - first:
+      213: -3689153075195974754
+    second: None_69
+  - first:
+      213: 6012967468321562641
+    second: None_70
+  - first:
+      213: -9148122955618973423
+    second: None_71
+  - first:
+      213: 167624490649297627
+    second: None_72
+  - first:
+      213: -3056689126050978654
+    second: None_73
+  - first:
+      213: 56511546284060708
+    second: None_74
+  - first:
+      213: -793863496579480286
+    second: None_75
+  - first:
+      213: 2460764412374413195
+    second: None_76
+  - first:
+      213: 8951875788717841058
+    second: None_77
+  - first:
+      213: -3678012942409789480
+    second: None_78
+  - first:
+      213: -8691551712535879183
+    second: None_79
+  - first:
+      213: 2800561413301997324
+    second: None_80
+  - first:
+      213: -2062307427161146978
+    second: None_81
+  - first:
+      213: 6139249656911513843
+    second: None_82
+  - first:
+      213: -607625308301898284
+    second: None_83
+  - first:
+      213: 5697001261100820056
+    second: None_84
+  - first:
+      213: 2248540423924568127
+    second: None_85
+  - first:
+      213: -5266675308397529495
+    second: None_86
+  - first:
+      213: 100532930553658170
+    second: None_87
+  - first:
+      213: -5794412070765603492
+    second: None_88
+  - first:
+      213: -8915211231280909951
+    second: None_89
+  - first:
+      213: 3572581319080981299
+    second: None_90
+  - first:
+      213: 7212483544756838045
+    second: None_91
+  - first:
+      213: 3283966774991131525
+    second: None_92
+  - first:
+      213: 732203515980974685
+    second: None_93
+  - first:
+      213: -4911392023433024990
+    second: None_94
+  - first:
+      213: -7682290613322766409
+    second: None_95
+  - first:
+      213: -1697942119031969441
+    second: None_96
+  - first:
+      213: -959535671945756529
+    second: None_97
+  - first:
+      213: -2531860809537621845
+    second: None_98
+  - first:
+      213: -909173215078085880
+    second: None_99
+  - first:
+      213: -5314430011960036682
+    second: None_100
+  - first:
+      213: -9066808652482532957
+    second: None_101
+  - first:
+      213: 8136043634695045646
+    second: None_102
+  - first:
+      213: 1633928710865295600
+    second: None_103
+  - first:
+      213: 8581017575495987208
+    second: None_104
+  - first:
+      213: -1698902840421603462
+    second: None_105
+  - first:
+      213: -3833864666790203254
+    second: None_106
+  - first:
+      213: 8333880453826420536
+    second: None_107
+  - first:
+      213: -6347470724578617502
+    second: None_108
+  - first:
+      213: -4370372262346044974
+    second: None_109
+  - first:
+      213: -956768909424968399
+    second: None_110
+  - first:
+      213: 9171385136206296039
+    second: None_111
+  - first:
+      213: -2943878858557137851
+    second: None_112
+  - first:
+      213: 5523263834689345337
+    second: None_113
+  - first:
+      213: -5532350494884814024
+    second: None_114
+  - first:
+      213: 8033890245043962522
+    second: None_115
+  - first:
+      213: -1951067675387388617
+    second: None_116
+  - first:
+      213: -6194740378409937929
+    second: None_117
+  - first:
+      213: -8682785989912326476
+    second: None_118
+  - first:
+      213: -7917213489094972894
+    second: None_119
+  - first:
+      213: 7243156340840704960
+    second: None_120
+  - first:
+      213: 6536317008803110051
+    second: None_121
+  - first:
+      213: -666505284677302492
+    second: None_122
+  - first:
+      213: -7208769205279159303
+    second: None_123
+  - first:
+      213: 5779941676084225714
+    second: None_124
+  - first:
+      213: -3538612739291916645
+    second: None_125
+  - first:
+      213: -1099574705100135290
+    second: None_126
+  - first:
+      213: -7613599204089918642
+    second: None_127
+  - first:
+      213: -483041328569402808
+    second: None_128
+  - first:
+      213: -5197086076026309024
+    second: None_129
+  - first:
+      213: -6284182082136074456
+    second: None_130
+  - first:
+      213: -6849640545740584199
+    second: None_131
+  - first:
+      213: 5189754218456397286
+    second: None_132
+  - first:
+      213: -7697245693606532026
+    second: None_133
+  - first:
+      213: -4056502127995400220
+    second: None_134
+  - first:
+      213: -418092898857514246
+    second: None_135
+  - first:
+      213: 825609702362131024
+    second: None_136
+  - first:
+      213: 366963241050058177
+    second: None_137
+  - first:
+      213: -1178128438487086836
+    second: None_138
+  - first:
+      213: -3775354046930089996
+    second: None_139
+  - first:
+      213: 4102316070559444009
+    second: None_140
+  - first:
+      213: 1007541193188520885
+    second: None_141
+  - first:
+      213: -97698897166571369
+    second: None_142
+  - first:
+      213: 5391098220180711
+    second: None_143
+  - first:
+      213: -2509475717038320542
+    second: None_144
+  - first:
+      213: -1627411207411640177
+    second: None_145
+  - first:
+      213: 8770181494893660669
+    second: None_146
+  - first:
+      213: -4360903724690945926
+    second: None_147
+  - first:
+      213: 2398104564930200264
+    second: None_148
+  - first:
+      213: 8217225215918204838
+    second: None_149
+  - first:
+      213: 3232103001181807719
+    second: None_150
+  - first:
+      213: -727796441309878355
+    second: None_151
+  - first:
+      213: 4353601818746918485
+    second: None_152
+  - first:
+      213: 699931178253281307
+    second: None_153
+  - first:
+      213: -1657264722498835788
+    second: None_154
+  - first:
+      213: 8536520995089929513
+    second: None_155
+  - first:
+      213: -7474204313342948099
+    second: None_156
+  - first:
+      213: -7379010006243775681
+    second: None_157
+  - first:
+      213: -1239303397476207130
+    second: None_158
+  - first:
+      213: 8159857767660189039
+    second: None_159
+  - first:
+      213: 7646960249761772191
+    second: None_160
+  - first:
+      213: -7570861121388911095
+    second: None_161
+  - first:
+      213: -5955315389944579989
+    second: None_162
+  - first:
+      213: -551600421877571330
+    second: None_163
+  - first:
+      213: 362485656235976950
+    second: None_164
+  - first:
+      213: 898279175222189021
+    second: None_165
+  - first:
+      213: -1784421654141908704
+    second: None_166
+  - first:
+      213: -5528293068912073689
+    second: None_167
+  - first:
+      213: -3336795718210749152
+    second: None_168
+  - first:
+      213: -3110242808072278902
+    second: None_169
+  - first:
+      213: 6820278767548198584
+    second: None_170
+  - first:
+      213: 3213578013870857925
+    second: None_171
+  - first:
+      213: -8702907452450805118
+    second: None_172
+  - first:
+      213: -3072900774241093011
+    second: None_173
+  - first:
+      213: 737297227763520223
+    second: None_174
+  - first:
+      213: 4607511613682473070
+    second: None_175
+  - first:
+      213: -5101027026099932295
+    second: None_176
+  - first:
+      213: 4453887628327572151
+    second: None_177
+  - first:
+      213: -5980610975420113259
+    second: None_178
+  - first:
+      213: 4954832274114504706
+    second: None_179
+  - first:
+      213: -3138507086876522194
+    second: None_180
+  - first:
+      213: 3843435023401781320
+    second: None_181
+  - first:
+      213: 4420548272370774823
+    second: None_182
+  - first:
+      213: -5957013343100129042
+    second: None_183
+  - first:
+      213: -4671047783001919593
+    second: None_184
+  - first:
+      213: 7054330190175859659
+    second: None_185
+  - first:
+      213: -647603985548688226
+    second: None_186
+  - first:
+      213: 8872520457252012154
+    second: None_187
+  - first:
+      213: 8040197226224893089
+    second: None_188
+  - first:
+      213: 6230082390192492094
+    second: None_189
+  - first:
+      213: 5180340885765269915
+    second: None_190
+  - first:
+      213: -4926876716184181348
+    second: None_191
+  - first:
+      213: -6037431962651332287
+    second: None_192
+  - first:
+      213: -567017818517877118
+    second: None_193
+  - first:
+      213: -4614520237450078312
+    second: None_194
+  - first:
+      213: 2369470424249873670
+    second: None_195
+  - first:
+      213: -49184715360228862
+    second: None_196
+  - first:
+      213: -3501164269412796326
+    second: None_197
+  - first:
+      213: -7150707339005911042
+    second: None_198
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36f8529d6bb25043b879a1645e52fcf
+      internalID: -1302073868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40a5cf2dfe9748418bd4bd4bb3fa5d8
+      internalID: 581390720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc08bd298c19154a85ebf1ebc756759
+      internalID: -819284189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5d817baa433404e8628936a0b656da
+      internalID: 1433244321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a5db247193de643a481350cd5db596
+      internalID: -1000857529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d961f73cb1b3b2a44b51e511d0f7dd20
+      internalID: 1147292667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_6
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca3bf510e149ee418a5f234ad6251ed
+      internalID: -553893688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_7
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da486561154e420478e47dc61e1b570b
+      internalID: 403718866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_8
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ab8cbd491d1f54ab2dcd2eef5da662
+      internalID: -1569300769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_9
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011088ef847ec1a49862c4c530a1f79a
+      internalID: 1491257598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_10
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3203d6ff1ce1bd4db9d8679d3148d8f
+      internalID: -1506890087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_11
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 11625
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdd470d2916e854d8b6c65975438e25
+      internalID: -193957079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448df1d43958c6f43aa37acbdfc66dae
+      internalID: 126601029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f07090afe3c643488802e16679231d6
+      internalID: -1790127424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f4f120fd374df4db9e058f1160d651
+      internalID: -1520407383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa452934eef87540bd185688d330961
+      internalID: -1375242454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_16
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191023ab8061e0d41aaa28702cc3238e
+      internalID: 784599026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_17
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196d9ac1abf14bf41972b29139ec5c27
+      internalID: -112984399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_18
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c657d7585496445968dd47b5ddde38
+      internalID: 1187820466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_19
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ca7d718eb3533499b300f496e83d4c
+      internalID: 1752706369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_20
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98424a081b867fa4f9317fbe5cc33f33
+      internalID: 738086186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_21
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131321fc7832f864680eed62f65826dd
+      internalID: 1126528587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_22
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8caa83bb110cd48b85c4c0eba86fd8
+      internalID: 1109202076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_23
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 10850
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a8d8a98e0890a45995b215ee187305
+      internalID: -1729610602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca328e37b3fd1c4390eb5cf3ae6758d
+      internalID: 480043097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_25
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0134284ade2519f4cbcf1efe4402d8a1
+      internalID: -1792313307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_26
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75ba8450623b89488f7d288dcc8d8b0
+      internalID: -1891585033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_27
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f327f4875e211d44b82b09817719b49c
+      internalID: -1902816474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_28
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7acc033d0c8876c4c8bdff056d3901d1
+      internalID: 227303681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_29
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4527c1a0944957e41b54dfaee67f7a9e
+      internalID: -2056005674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_30
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b16a37268b234149b4feb3facd0917d
+      internalID: -446789286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_31
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9a3651d422a6241aa7ed26bc7cccb0
+      internalID: -1910847321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_32
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292b373892dc2774c87a38a8ae4e2b1e
+      internalID: -1313056763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_33
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745e2a846d13ded4193058781b67e381
+      internalID: 750283945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_34
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2ad422bb6652a4493d2c0107e7fe28
+      internalID: 208176244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_35
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 10075
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76bdd80f99c7944984a1b4b8baa3e67
+      internalID: 668831561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f3fc7b06e43ca4b92eb5e813eac60a
+      internalID: 314208274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_37
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3367b77538c4ff5409518f211da0aa35
+      internalID: 751358165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_38
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0d8866bb23335439e2d5b88051446c
+      internalID: 773180114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_39
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add5071ba8e44de4ea1a05e96aae019f
+      internalID: 816177592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_40
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba99ce411b0d3a41a1357e5465a20da
+      internalID: 1624880028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_41
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3185366a744bf5844b3f1b73189d4f7c
+      internalID: -1058850187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_42
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372c9e5dc5cc27245a45c57cea691b44
+      internalID: 1136287244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_43
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56214e9200d43304a8efb280840753d5
+      internalID: -692221389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_44
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c11ce5f0f9b6442a3d8bbfbb310ff7
+      internalID: 1129921816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_45
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b5de19fc4bf554a9d076a219447dc4
+      internalID: -1498893854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_46
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0662dfb314095054c9dd72b58451e2da
+      internalID: 1753769141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_47
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 9300
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880afc27f5925e44b9e3a3243f215fad
+      internalID: 1457005283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c17fb09207a470439024983825cef3c
+      internalID: 2061009058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_49
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5268436adb3fffc479a9cd74a6338943
+      internalID: 1670208405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_50
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b74858533beac94f8b2c09df820ea5a
+      internalID: -1530855394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_51
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c20b0e26dcfa09469b605e217a71632
+      internalID: -332748860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_52
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e6f4f23adb9844ea5c2ac7d6015374
+      internalID: -1277047987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_53
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13335461f1d457a46bab4848266dde8a
+      internalID: -1232818882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_54
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7cc57872c49db4ba2254636f6e86f0
+      internalID: -2026451776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_55
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9dda293683842541b9b02508e9c7c3f
+      internalID: 1040912095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_56
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ecfe85c98623b4ba043542f049a2f0
+      internalID: 99451277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_57
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11f9e2acc3864149ab006c0b16250a6
+      internalID: -1077345036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_58
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44e72d7d852dfe469a0e9a2bbeb3aaa
+      internalID: 1027690794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_59
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 8525
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67a39c950c7ea442888b2c814229706
+      internalID: -679790800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435199b374fe368409e3b1aef3d923b9
+      internalID: -1785303276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_61
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40903689d13c5524ab9b1f443e675d75
+      internalID: 1695180800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_62
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2011d95b5c4d8cd48b4db0a1420796de
+      internalID: 1853606603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_63
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb9c5b28640f3f45b88f0f0083832eb
+      internalID: 1871220737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_64
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31fbea312ff80094797c981984b93597
+      internalID: 1325916822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_65
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ae686219eeb8c43aea2b48918e6bd6
+      internalID: -824406360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_66
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4834e9a920e13cc43b5c17647da72b52
+      internalID: 1791963774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_67
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e32d41204ffd44eaaa05632e706f8a
+      internalID: -847466181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_68
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91ee37641076624ab0cdcdec91b6913
+      internalID: 826073272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_69
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2a117427a7efc448dba5aad9b4f569
+      internalID: 996770483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_70
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec22b0eb9f7f28438469e7d188fd642
+      internalID: -463604113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_71
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 7750
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2556cc6283565468e28dcbbc58b04b
+      internalID: 205118197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6487050cc5c4d042ab58e4d197d5071
+      internalID: 701698273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_73
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e66107cedf60a84db1bb990b7ec5afa
+      internalID: -1215090419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_74
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2718d4d153218044889715ff5e77d0bc
+      internalID: 1655883738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_75
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0d219875342bb449ad2014dc13f29b
+      internalID: -504949815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_76
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c303c1fdb9ff3046838722098fd469a
+      internalID: 728380116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_77
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f9321f758eb5c4ca398e92ae34cabf
+      internalID: 1399709094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_78
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae64d63ef23082c48b606db19ff405ce
+      internalID: -1881153436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_79
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91675675c2d918341bd1e19855c5bbf4
+      internalID: 2017084609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_80
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c440e5ff51d784386e96985293a108
+      internalID: -1834300554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_81
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c39b552da04b884c90034f97ca5542e
+      internalID: 876455827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_82
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c02105097c50b4898ca37d8e8cee80
+      internalID: -1123288673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_83
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 6975
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910ab14c47242e448b8c607b06334cd7
+      internalID: 1707562209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c96f8dd8b293542925993bd0c63dff
+      internalID: -151963594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_85
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186a83f6e2cc2da48979752d9d2396ae
+      internalID: 1832615434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_86
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d8ba73ee6736a4eac225885116b459
+      internalID: 570651032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_87
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d28e16dd43517489c28373c97f9cb8
+      internalID: 1819009809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_88
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8f1494a12549a4b81a4618540280d7
+      internalID: 42857359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_89
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9a76fb26f290141af324cd1f61b269
+      internalID: -447773102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_90
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433a28a7ff69e564295268f3a7de9eae
+      internalID: 2105663699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_91
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0caf6f1170fbcb047b4dd6d0f943a082
+      internalID: -404814685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_92
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d119c3e8effbdf4fb27785e8f73cdbc
+      internalID: -1759237921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_93
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95ed774e00308d42a38285a4fc3902e
+      internalID: -1917364286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_94
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a912e3aaebf2e440bb1bb95f9abf61e
+      internalID: 280900856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_95
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 6200
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3c7298e436eec43a6a33b96950d3a0
+      internalID: 672847597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aecd42323a0c234980ec0378b6c2444
+      internalID: 1335056959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_97
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a536372b28171c142946e8491c4be6d8
+      internalID: -812772965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_98
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910df7413f71d5d4aa803857ee61a158
+      internalID: -1773956630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_99
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9465b548f05944badb08e87c8c8424
+      internalID: 1309030560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_100
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9a6d8d1c8020340994e1917f371048
+      internalID: -758021603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_101
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3fc06eb74476124d901e2324b038ee4
+      internalID: 1647584401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_102
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c6ca0d6fe8b0140901c4639e0c30fe
+      internalID: 717796643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_103
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b193ff2632cbe4848bde2d0c4d4c12a1
+      internalID: -389887952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_104
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7b168be694195409aab7819519406f
+      internalID: 470228851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_105
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084df607a4d5bd241a05f94145e8339e
+      internalID: 1283082835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_106
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383a3efba5bb2554fb96532624d3b480
+      internalID: -1042650004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_107
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 5425
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152030a37830eb64c98baef49efbff96
+      internalID: 758709407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900ae5b392df8eb4a82b34339ece284b
+      internalID: -1165819769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_109
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc6cc9147dd7f643b0d04e5cf62d5de
+      internalID: -409017191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_110
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4421ed9c8abb3194784296d8bf299a4c
+      internalID: -1829372716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_111
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4c334122db65c4780d1bc4865d3614
+      internalID: 1368890742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_112
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6875f0b4d9abad54da4e8061d16dc98b
+      internalID: 1007675983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_113
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247ef28cd639b0f4a81227a4985f8009
+      internalID: 1825891524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_114
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9165a2383f04466489afa280eadc3bf2
+      internalID: -527589824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_115
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8851e6476175047ad918627be254af
+      internalID: 448053698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_116
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a19a42b40871f341a2a4f2cdc2bdf5c
+      internalID: -1356339891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_117
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe1d159d1dfed64b9f08b99d31db6e0
+      internalID: -1024279249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_118
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b11d70ff3d717479f72fc428d19771
+      internalID: 659629022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_119
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 4650
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4041785170afcc84ba62d9774835d75c
+      internalID: -837584120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e679e5fe59178ac47a050807528352f0
+      internalID: 376393765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_121
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ffdc87efd768449a70ce7d866eed0d
+      internalID: -1864452885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_122
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8463c06344e163843ac4ab757928ab22
+      internalID: -865060412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_123
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec5b9e90e13e8f44a79d31db4fe5a8a
+      internalID: 786270582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_124
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1df96c0e966ede43bcff5ac391e6a2d
+      internalID: 623214587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_125
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620bb72410ffb0245acd7b20c03e2db7
+      internalID: -1229193406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_126
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 346d09ecab901da459176ab446643e9e
+      internalID: -1439676968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_127
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe81a8505010c143a158bbaef66a84b
+      internalID: 1761176699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_128
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608442ed79fd62e4cbaf9c8525a773fa
+      internalID: 811318839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_129
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42c642312d5fea478639aecd345d645
+      internalID: 52324132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_130
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16abce6c0f7523a4ea7bee65c65503f4
+      internalID: -2020843769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_131
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 3875
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66438bca62dd2946a9e13073251f32c
+      internalID: -382495403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_132
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13f01038ea047e43825ed4a0a0b55da
+      internalID: -1780272149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_133
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16dfcb4d0be54b4cb9967c7fd1cfca5
+      internalID: -408608824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_134
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003f41df6e69ce64fa5fd58a8457e24b
+      internalID: -340754235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_135
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e797dddf5a46d1847bad9ebd2fcf8c56
+      internalID: -336794014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_136
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c5a8d70756ba444afff79493250422
+      internalID: 447842850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_137
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78899e33a35b48e45a7001b3cc2186a2
+      internalID: -1457584668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_138
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8280cc13c5dd3243a5851ead53d5013
+      internalID: 1952109805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_139
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a313d6e29f444459c027aa048a3d1c
+      internalID: -90515241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_140
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd9f557b12e5774eb27336f114cd708
+      internalID: -111692695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_141
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75822fcf30d3df44e89420eefdc9a584
+      internalID: -1979208879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_142
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a694f26ce260d7140964cb46941fd8f5
+      internalID: 759224981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_143
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 3100
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4f98b1de66698488d46eab344fc584
+      internalID: 481357227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ef09db9bb0afe47977337109e8ca01
+      internalID: 66638482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_145
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675787ce59ebec64b96e27febcb6e452
+      internalID: -320330705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_146
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2781f1f298d05294fab791e0fc680eab
+      internalID: 1486536807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_147
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0391034ad1aa484429b088b75d1410fe
+      internalID: 876264586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_148
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8b755eeb4ee51428a6f16ca962a06c
+      internalID: -2108845745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_149
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034342e1aebfb4d42af35bc45b22598c
+      internalID: -1313485051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_150
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f829ff5575d694c8ee3e2e201feb8e
+      internalID: -150588964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_151
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9a51130d9036a40a5c6ae23fd94a95
+      internalID: -1841057309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_152
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8eb1f9c3186b2c4d84e4fa719ed1865
+      internalID: 1202658044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_153
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a064f5cfcad71f440897c1f5362f0d25
+      internalID: -1810734147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_154
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93b8258999e0d445a2f6c01b061365e
+      internalID: -74521931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_155
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 2325
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc74f9f8c6c96eb4b8f6ef9375d3ff58
+      internalID: -1085620632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4fe093dffa3f2418c9871b4d8fb788
+      internalID: 1465396044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_157
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cca05e2ea0f5314b955f66002814886
+      internalID: -2085653805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_158
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9e1429761e9fb4fb2452738684039e
+      internalID: -788943409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_159
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c374999b830aa4f8de09cecd6234f4
+      internalID: -180435787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_160
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3deba91dfd9ee0b409ddcf0298773545
+      internalID: -1211080207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_161
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427b71131e7054349bd35e7d4a76048f
+      internalID: -1977397428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_162
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0154cba8736474d49bee7a18fed88fe7
+      internalID: 1345730933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_163
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf8834842ea9014091ca8f0933a50db
+      internalID: 95885282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_164
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30acc455079c61043a70b9528ae97ba4
+      internalID: -1616216192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_165
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f975a231bdc42244a8226ee94bd9c7d8
+      internalID: 968137486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_166
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d284bf2ec95c534f911aa05034a3174
+      internalID: -92658659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_167
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 1550
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1892bef8f85cf014fbcf3b8d6f5f07fa
+      internalID: -1132075113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_168
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71196b437fe995b49b0fac13e15aa885
+      internalID: -1990553201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_169
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4db9a8dd9237a469e134a170324a45
+      internalID: 475466305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_170
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b8101d774c6714e93efb87bbf9f90c
+      internalID: -542394174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_171
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8302e64dd8c87f143ac354c4e6120d7f
+      internalID: 1808598180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_172
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215b29842611f6d4b833ba2a7f46e874
+      internalID: -421358224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_173
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d03a9cf0896ca4da4df33fb9bd562a
+      internalID: -1078878124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_174
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1769f0463d70c6b4dbd4f92a1833de52
+      internalID: -358720338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_175
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f763b70844ceb44cbad66aa0c9c12ec
+      internalID: -1771483686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_176
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0944bff8d3fc042b15e6b49205bbde
+      internalID: 945102776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_177
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba660714d8d61b24a84ecf5779771791
+      internalID: -1213689241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_178
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b7f2244fd7a7740b0ca8fa9c3391eb
+      internalID: 774665397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_179
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 775
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841c7c2b0c5c7b044b2e472443fff28f
+      internalID: -1014553096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_180
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f28d9252101dd479ef4f2fd2dcbc82
+      internalID: 317506453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_181
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0ee4f176172404b84510feea6209f2
+      internalID: 1832431567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_182
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e80ccf05dbbd24b9c2755618dd1fae
+      internalID: 107566643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_183
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3827c4b4abe1bd444b1e69acba271a3a
+      internalID: 1578874434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_184
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2b6ceb952ccef43a2304baf30e9bdb
+      internalID: 1352706677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_185
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a8a0d6fdcef4a4f891461ae5a12078
+      internalID: 323415858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_186
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53cb651afbd9cc4fbed8bb8d6c53603
+      internalID: 1876151503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_187
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce295683f884f2d4d8267c124a37cc9e
+      internalID: 770096822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_188
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e64fa73e78125d4995f1c9e362e9675
+      internalID: -2050141072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_189
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73efa2b52aa9e454bb38c69dffde1632
+      internalID: 718041065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_190
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18ee330dea8bb645a53959140fb0253
+      internalID: -1047799354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FLASK_02+SOLID_LIQUID+Soluble+None_191
+      rect:
+        serializedVersion: 2
+        x: 5500
+        y: 0
+        width: 500
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5bb2df9a18bc3d4e9dcbc6f34f31fb5
+      internalID: -1930039188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: be6f15c72c25a114390126c808a923a4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":12.0,"y":16.0},"gridSpriteSize":{"x":500.0,"y":775.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      FLASK_02+SOLID_LIQUID+Soluble+None_0: -1302073868
+      FLASK_02+SOLID_LIQUID+Soluble+None_1: 581390720
+      FLASK_02+SOLID_LIQUID+Soluble+None_10: -1506890087
+      FLASK_02+SOLID_LIQUID+Soluble+None_100: -758021603
+      FLASK_02+SOLID_LIQUID+Soluble+None_101: 1647584401
+      FLASK_02+SOLID_LIQUID+Soluble+None_102: 717796643
+      FLASK_02+SOLID_LIQUID+Soluble+None_103: -389887952
+      FLASK_02+SOLID_LIQUID+Soluble+None_104: 470228851
+      FLASK_02+SOLID_LIQUID+Soluble+None_105: 1283082835
+      FLASK_02+SOLID_LIQUID+Soluble+None_106: -1042650004
+      FLASK_02+SOLID_LIQUID+Soluble+None_107: 758709407
+      FLASK_02+SOLID_LIQUID+Soluble+None_108: -1165819769
+      FLASK_02+SOLID_LIQUID+Soluble+None_109: -409017191
+      FLASK_02+SOLID_LIQUID+Soluble+None_11: -193957079
+      FLASK_02+SOLID_LIQUID+Soluble+None_110: -1829372716
+      FLASK_02+SOLID_LIQUID+Soluble+None_111: 1368890742
+      FLASK_02+SOLID_LIQUID+Soluble+None_112: 1007675983
+      FLASK_02+SOLID_LIQUID+Soluble+None_113: 1825891524
+      FLASK_02+SOLID_LIQUID+Soluble+None_114: -527589824
+      FLASK_02+SOLID_LIQUID+Soluble+None_115: 448053698
+      FLASK_02+SOLID_LIQUID+Soluble+None_116: -1356339891
+      FLASK_02+SOLID_LIQUID+Soluble+None_117: -1024279249
+      FLASK_02+SOLID_LIQUID+Soluble+None_118: 659629022
+      FLASK_02+SOLID_LIQUID+Soluble+None_119: -837584120
+      FLASK_02+SOLID_LIQUID+Soluble+None_12: 126601029
+      FLASK_02+SOLID_LIQUID+Soluble+None_120: 376393765
+      FLASK_02+SOLID_LIQUID+Soluble+None_121: -1864452885
+      FLASK_02+SOLID_LIQUID+Soluble+None_122: -865060412
+      FLASK_02+SOLID_LIQUID+Soluble+None_123: 786270582
+      FLASK_02+SOLID_LIQUID+Soluble+None_124: 623214587
+      FLASK_02+SOLID_LIQUID+Soluble+None_125: -1229193406
+      FLASK_02+SOLID_LIQUID+Soluble+None_126: -1439676968
+      FLASK_02+SOLID_LIQUID+Soluble+None_127: 1761176699
+      FLASK_02+SOLID_LIQUID+Soluble+None_128: 811318839
+      FLASK_02+SOLID_LIQUID+Soluble+None_129: 52324132
+      FLASK_02+SOLID_LIQUID+Soluble+None_13: -1790127424
+      FLASK_02+SOLID_LIQUID+Soluble+None_130: -2020843769
+      FLASK_02+SOLID_LIQUID+Soluble+None_131: -382495403
+      FLASK_02+SOLID_LIQUID+Soluble+None_132: -1780272149
+      FLASK_02+SOLID_LIQUID+Soluble+None_133: -408608824
+      FLASK_02+SOLID_LIQUID+Soluble+None_134: -340754235
+      FLASK_02+SOLID_LIQUID+Soluble+None_135: -336794014
+      FLASK_02+SOLID_LIQUID+Soluble+None_136: 447842850
+      FLASK_02+SOLID_LIQUID+Soluble+None_137: -1457584668
+      FLASK_02+SOLID_LIQUID+Soluble+None_138: 1952109805
+      FLASK_02+SOLID_LIQUID+Soluble+None_139: -90515241
+      FLASK_02+SOLID_LIQUID+Soluble+None_14: -1520407383
+      FLASK_02+SOLID_LIQUID+Soluble+None_140: -111692695
+      FLASK_02+SOLID_LIQUID+Soluble+None_141: -1979208879
+      FLASK_02+SOLID_LIQUID+Soluble+None_142: 759224981
+      FLASK_02+SOLID_LIQUID+Soluble+None_143: 481357227
+      FLASK_02+SOLID_LIQUID+Soluble+None_144: 66638482
+      FLASK_02+SOLID_LIQUID+Soluble+None_145: -320330705
+      FLASK_02+SOLID_LIQUID+Soluble+None_146: 1486536807
+      FLASK_02+SOLID_LIQUID+Soluble+None_147: 876264586
+      FLASK_02+SOLID_LIQUID+Soluble+None_148: -2108845745
+      FLASK_02+SOLID_LIQUID+Soluble+None_149: -1313485051
+      FLASK_02+SOLID_LIQUID+Soluble+None_15: -1375242454
+      FLASK_02+SOLID_LIQUID+Soluble+None_150: -150588964
+      FLASK_02+SOLID_LIQUID+Soluble+None_151: -1841057309
+      FLASK_02+SOLID_LIQUID+Soluble+None_152: 1202658044
+      FLASK_02+SOLID_LIQUID+Soluble+None_153: -1810734147
+      FLASK_02+SOLID_LIQUID+Soluble+None_154: -74521931
+      FLASK_02+SOLID_LIQUID+Soluble+None_155: -1085620632
+      FLASK_02+SOLID_LIQUID+Soluble+None_156: 1465396044
+      FLASK_02+SOLID_LIQUID+Soluble+None_157: -2085653805
+      FLASK_02+SOLID_LIQUID+Soluble+None_158: -788943409
+      FLASK_02+SOLID_LIQUID+Soluble+None_159: -180435787
+      FLASK_02+SOLID_LIQUID+Soluble+None_16: 784599026
+      FLASK_02+SOLID_LIQUID+Soluble+None_160: -1211080207
+      FLASK_02+SOLID_LIQUID+Soluble+None_161: -1977397428
+      FLASK_02+SOLID_LIQUID+Soluble+None_162: 1345730933
+      FLASK_02+SOLID_LIQUID+Soluble+None_163: 95885282
+      FLASK_02+SOLID_LIQUID+Soluble+None_164: -1616216192
+      FLASK_02+SOLID_LIQUID+Soluble+None_165: 968137486
+      FLASK_02+SOLID_LIQUID+Soluble+None_166: -92658659
+      FLASK_02+SOLID_LIQUID+Soluble+None_167: -1132075113
+      FLASK_02+SOLID_LIQUID+Soluble+None_168: -1990553201
+      FLASK_02+SOLID_LIQUID+Soluble+None_169: 475466305
+      FLASK_02+SOLID_LIQUID+Soluble+None_17: -112984399
+      FLASK_02+SOLID_LIQUID+Soluble+None_170: -542394174
+      FLASK_02+SOLID_LIQUID+Soluble+None_171: 1808598180
+      FLASK_02+SOLID_LIQUID+Soluble+None_172: -421358224
+      FLASK_02+SOLID_LIQUID+Soluble+None_173: -1078878124
+      FLASK_02+SOLID_LIQUID+Soluble+None_174: -358720338
+      FLASK_02+SOLID_LIQUID+Soluble+None_175: -1771483686
+      FLASK_02+SOLID_LIQUID+Soluble+None_176: 945102776
+      FLASK_02+SOLID_LIQUID+Soluble+None_177: -1213689241
+      FLASK_02+SOLID_LIQUID+Soluble+None_178: 774665397
+      FLASK_02+SOLID_LIQUID+Soluble+None_179: -1014553096
+      FLASK_02+SOLID_LIQUID+Soluble+None_18: 1187820466
+      FLASK_02+SOLID_LIQUID+Soluble+None_180: 317506453
+      FLASK_02+SOLID_LIQUID+Soluble+None_181: 1832431567
+      FLASK_02+SOLID_LIQUID+Soluble+None_182: 107566643
+      FLASK_02+SOLID_LIQUID+Soluble+None_183: 1578874434
+      FLASK_02+SOLID_LIQUID+Soluble+None_184: 1352706677
+      FLASK_02+SOLID_LIQUID+Soluble+None_185: 323415858
+      FLASK_02+SOLID_LIQUID+Soluble+None_186: 1876151503
+      FLASK_02+SOLID_LIQUID+Soluble+None_187: 770096822
+      FLASK_02+SOLID_LIQUID+Soluble+None_188: -2050141072
+      FLASK_02+SOLID_LIQUID+Soluble+None_189: 718041065
+      FLASK_02+SOLID_LIQUID+Soluble+None_19: 1752706369
+      FLASK_02+SOLID_LIQUID+Soluble+None_190: -1047799354
+      FLASK_02+SOLID_LIQUID+Soluble+None_191: -1930039188
+      FLASK_02+SOLID_LIQUID+Soluble+None_2: -819284189
+      FLASK_02+SOLID_LIQUID+Soluble+None_20: 738086186
+      FLASK_02+SOLID_LIQUID+Soluble+None_21: 1126528587
+      FLASK_02+SOLID_LIQUID+Soluble+None_22: 1109202076
+      FLASK_02+SOLID_LIQUID+Soluble+None_23: -1729610602
+      FLASK_02+SOLID_LIQUID+Soluble+None_24: 480043097
+      FLASK_02+SOLID_LIQUID+Soluble+None_25: -1792313307
+      FLASK_02+SOLID_LIQUID+Soluble+None_26: -1891585033
+      FLASK_02+SOLID_LIQUID+Soluble+None_27: -1902816474
+      FLASK_02+SOLID_LIQUID+Soluble+None_28: 227303681
+      FLASK_02+SOLID_LIQUID+Soluble+None_29: -2056005674
+      FLASK_02+SOLID_LIQUID+Soluble+None_3: 1433244321
+      FLASK_02+SOLID_LIQUID+Soluble+None_30: -446789286
+      FLASK_02+SOLID_LIQUID+Soluble+None_31: -1910847321
+      FLASK_02+SOLID_LIQUID+Soluble+None_32: -1313056763
+      FLASK_02+SOLID_LIQUID+Soluble+None_33: 750283945
+      FLASK_02+SOLID_LIQUID+Soluble+None_34: 208176244
+      FLASK_02+SOLID_LIQUID+Soluble+None_35: 668831561
+      FLASK_02+SOLID_LIQUID+Soluble+None_36: 314208274
+      FLASK_02+SOLID_LIQUID+Soluble+None_37: 751358165
+      FLASK_02+SOLID_LIQUID+Soluble+None_38: 773180114
+      FLASK_02+SOLID_LIQUID+Soluble+None_39: 816177592
+      FLASK_02+SOLID_LIQUID+Soluble+None_4: -1000857529
+      FLASK_02+SOLID_LIQUID+Soluble+None_40: 1624880028
+      FLASK_02+SOLID_LIQUID+Soluble+None_41: -1058850187
+      FLASK_02+SOLID_LIQUID+Soluble+None_42: 1136287244
+      FLASK_02+SOLID_LIQUID+Soluble+None_43: -692221389
+      FLASK_02+SOLID_LIQUID+Soluble+None_44: 1129921816
+      FLASK_02+SOLID_LIQUID+Soluble+None_45: -1498893854
+      FLASK_02+SOLID_LIQUID+Soluble+None_46: 1753769141
+      FLASK_02+SOLID_LIQUID+Soluble+None_47: 1457005283
+      FLASK_02+SOLID_LIQUID+Soluble+None_48: 2061009058
+      FLASK_02+SOLID_LIQUID+Soluble+None_49: 1670208405
+      FLASK_02+SOLID_LIQUID+Soluble+None_5: 1147292667
+      FLASK_02+SOLID_LIQUID+Soluble+None_50: -1530855394
+      FLASK_02+SOLID_LIQUID+Soluble+None_51: -332748860
+      FLASK_02+SOLID_LIQUID+Soluble+None_52: -1277047987
+      FLASK_02+SOLID_LIQUID+Soluble+None_53: -1232818882
+      FLASK_02+SOLID_LIQUID+Soluble+None_54: -2026451776
+      FLASK_02+SOLID_LIQUID+Soluble+None_55: 1040912095
+      FLASK_02+SOLID_LIQUID+Soluble+None_56: 99451277
+      FLASK_02+SOLID_LIQUID+Soluble+None_57: -1077345036
+      FLASK_02+SOLID_LIQUID+Soluble+None_58: 1027690794
+      FLASK_02+SOLID_LIQUID+Soluble+None_59: -679790800
+      FLASK_02+SOLID_LIQUID+Soluble+None_6: -553893688
+      FLASK_02+SOLID_LIQUID+Soluble+None_60: -1785303276
+      FLASK_02+SOLID_LIQUID+Soluble+None_61: 1695180800
+      FLASK_02+SOLID_LIQUID+Soluble+None_62: 1853606603
+      FLASK_02+SOLID_LIQUID+Soluble+None_63: 1871220737
+      FLASK_02+SOLID_LIQUID+Soluble+None_64: 1325916822
+      FLASK_02+SOLID_LIQUID+Soluble+None_65: -824406360
+      FLASK_02+SOLID_LIQUID+Soluble+None_66: 1791963774
+      FLASK_02+SOLID_LIQUID+Soluble+None_67: -847466181
+      FLASK_02+SOLID_LIQUID+Soluble+None_68: 826073272
+      FLASK_02+SOLID_LIQUID+Soluble+None_69: 996770483
+      FLASK_02+SOLID_LIQUID+Soluble+None_7: 403718866
+      FLASK_02+SOLID_LIQUID+Soluble+None_70: -463604113
+      FLASK_02+SOLID_LIQUID+Soluble+None_71: 205118197
+      FLASK_02+SOLID_LIQUID+Soluble+None_72: 701698273
+      FLASK_02+SOLID_LIQUID+Soluble+None_73: -1215090419
+      FLASK_02+SOLID_LIQUID+Soluble+None_74: 1655883738
+      FLASK_02+SOLID_LIQUID+Soluble+None_75: -504949815
+      FLASK_02+SOLID_LIQUID+Soluble+None_76: 728380116
+      FLASK_02+SOLID_LIQUID+Soluble+None_77: 1399709094
+      FLASK_02+SOLID_LIQUID+Soluble+None_78: -1881153436
+      FLASK_02+SOLID_LIQUID+Soluble+None_79: 2017084609
+      FLASK_02+SOLID_LIQUID+Soluble+None_8: -1569300769
+      FLASK_02+SOLID_LIQUID+Soluble+None_80: -1834300554
+      FLASK_02+SOLID_LIQUID+Soluble+None_81: 876455827
+      FLASK_02+SOLID_LIQUID+Soluble+None_82: -1123288673
+      FLASK_02+SOLID_LIQUID+Soluble+None_83: 1707562209
+      FLASK_02+SOLID_LIQUID+Soluble+None_84: -151963594
+      FLASK_02+SOLID_LIQUID+Soluble+None_85: 1832615434
+      FLASK_02+SOLID_LIQUID+Soluble+None_86: 570651032
+      FLASK_02+SOLID_LIQUID+Soluble+None_87: 1819009809
+      FLASK_02+SOLID_LIQUID+Soluble+None_88: 42857359
+      FLASK_02+SOLID_LIQUID+Soluble+None_89: -447773102
+      FLASK_02+SOLID_LIQUID+Soluble+None_9: 1491257598
+      FLASK_02+SOLID_LIQUID+Soluble+None_90: 2105663699
+      FLASK_02+SOLID_LIQUID+Soluble+None_91: -404814685
+      FLASK_02+SOLID_LIQUID+Soluble+None_92: -1759237921
+      FLASK_02+SOLID_LIQUID+Soluble+None_93: -1917364286
+      FLASK_02+SOLID_LIQUID+Soluble+None_94: 280900856
+      FLASK_02+SOLID_LIQUID+Soluble+None_95: 672847597
+      FLASK_02+SOLID_LIQUID+Soluble+None_96: 1335056959
+      FLASK_02+SOLID_LIQUID+Soluble+None_97: -812772965
+      FLASK_02+SOLID_LIQUID+Soluble+None_98: -1773956630
+      FLASK_02+SOLID_LIQUID+Soluble+None_99: 1309030560
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

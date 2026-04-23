@@ -1,8 +1,8 @@
 using UnityEngine;
+using Domain;
 
 namespace Data
 {
-    [CreateAssetMenu(fileName = "NewDifficultyLevel", menuName = "ChemistryLab/Difficulty Level")]
     public class DifficultyLevelData : ScriptableObject
     {
         [Tooltip("Nome da dificuldade, ex: Fácil")]
@@ -16,5 +16,17 @@ namespace Data
 
         [Tooltip("Multiplicador de pontos para esta dificuldade")]
         public float scoreMultiplier = 1.0f;
+
+        [Header("Modo")]
+        [Tooltip("Modo de jogo associado a esta dificuldade")]
+        public GameMode mode = GameMode.Estudo_Livre;
+
+        public string ModeLabel => mode switch
+        {
+            GameMode.Estudo_Livre => "Estudos",
+            GameMode.Experimentos => "Laboratório",
+            GameMode.Desafio => "Desafio",
+            _ => mode.ToString()
+        };
     }
 }

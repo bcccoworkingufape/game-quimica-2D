@@ -11,6 +11,9 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 *.log
+/docs
+/docs/*
+/APKs
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -38,6 +41,7 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 *.tmp
 *.user
@@ -59,7 +63,7 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-*.apk
+# *.apk
 *.aab
 *.unitypackage
 *.unitypackage.meta
