@@ -136,12 +136,12 @@ namespace Core
             // 1) nunca “vazar” pause/gameover pra dentro do lab
             Time.timeScale = 1f;
 
-            // 2) fecha painéis (se algum ficou ativo por qualquer motivo)
-            var ui = FindFirstObjectByType<LabUIController>();
+            // 2) fecha painéis (se Findalgum ficou ativo por qualquer motivo)
+            var ui = FindAnyObjectByType<LabUIController>();
             ui?.HideAllPanels();
 
             // 3) limpa seleção de solvente / estado da rodada (não mexe no compoundId por padrão)
-            var testManager = FindFirstObjectByType<TestManager>();
+            var testManager = FindAnyObjectByType<TestManager>();
             testManager?.ResetRoundState(clearCompound: false);
 
             // 4) limpa histórico ao entrar no lab
