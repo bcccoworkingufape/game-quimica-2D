@@ -5,7 +5,8 @@
     "state": "LIQUID",
     "meltingPoint": 0.0,
     "boilingPoint": 100.0,
-    "flaskType": "FLASK_04"
+    "flaskType": "FLASK_04",
+    "chemical_class": "solvent"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "state": "LIQUID",
     "meltingPoint": -116.3,
     "boilingPoint": 34.6,
-    "flaskType": "FLASK_03"
+    "flaskType": "FLASK_03",
+    "chemical_class": "solvent"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "state": "LIQUID",
     "meltingPoint": 0.0,
     "boilingPoint": 100.0,
-    "flaskType": "FLASK_01"
+    "flaskType": "FLASK_01",
+    "chemical_class": "solution"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "state": "LIQUID",
     "meltingPoint": -1.0,
     "boilingPoint": 102.0,
-    "flaskType": "FLASK_01"
+    "flaskType": "FLASK_01",
+    "chemical_class": "solution"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "state": "LIQUID",
     "meltingPoint": 0.0,
     "boilingPoint": 100.0,
-    "flaskType": "FLASK_01"
+    "flaskType": "FLASK_01",
+    "chemical_class": "solution"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "state": "LIQUID",
     "meltingPoint": -3.0,
     "boilingPoint": 101.0,
-    "flaskType": "FLASK_04"
+    "flaskType": "FLASK_04",
+    "chemical_class": "solution"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "state": "LIQUID",
     "meltingPoint": 10.0,
     "boilingPoint": 337.0,
-    "flaskType": "FLASK_02"
+    "flaskType": "FLASK_02",
+    "chemical_class": "solution"
   },
   {
     "id": 8,
@@ -61,6 +68,7 @@
     "state": "LIQUID",
     "meltingPoint": 21.0,
     "boilingPoint": 158.0,
-    "flaskType": "FLASK_02"
+    "flaskType": "FLASK_02",
+    "chemical_class": "solution"
   }
 ]

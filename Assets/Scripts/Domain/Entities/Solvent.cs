@@ -17,6 +17,7 @@ namespace Domain
 
         float IChemicalSubstance.MeltingPoint => MeltingPoint;
         float IChemicalSubstance.BoilingPoint => BoilingPoint;
+        public string ChemicalClass { get; }
 
         public Solvent(
             int id,
@@ -24,7 +25,8 @@ namespace Domain
             PhysicalState state,
             float meltingPoint,
             float boilingPoint,
-            FlaskType flaskType)
+            FlaskType flaskType,
+            string chemicalClass)
         {
             Id = id;
             Name = name;
@@ -32,6 +34,7 @@ namespace Domain
             MeltingPoint = meltingPoint;
             BoilingPoint = boilingPoint;
             FlaskType = flaskType;
+            ChemicalClass = chemicalClass;
         }
 
         public override string ToString() => $"{Id}: {Name} ({FlaskType})";
