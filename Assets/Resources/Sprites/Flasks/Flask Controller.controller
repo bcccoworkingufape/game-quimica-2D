@@ -543,7 +543,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FLASK_03+LIQUID_LIQUID+InsolubleSink+None
+  m_Name: FLASK_03+SOLID_LIQUID+InsolubleSink+None
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -681,7 +681,7 @@ AnimatorController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Flask Controller
-  serializedVersion: 5
+  serializedVersion: 6
   m_AnimatorParameters:
   - m_Name: flaskType
     m_Type: 3
@@ -720,6 +720,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  m_EvaluateTransitionsOnStart: 0
 --- !u!1102 &484969568052615414
 AnimatorState:
   serializedVersion: 6
@@ -988,7 +989,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1107 &6183942543092882566
 AnimatorStateMachine:
-  serializedVersion: 6
+  serializedVersion: 7
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
