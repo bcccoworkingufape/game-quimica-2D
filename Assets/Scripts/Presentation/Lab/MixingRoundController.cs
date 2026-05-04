@@ -12,7 +12,7 @@ namespace Presentation.Lab
     /// - confirma a mistura (botão "Sim" do popup)
     /// - chama o caso de uso de solubilidade e atualiza a UI/animação
     /// </summary>
-    public class TestManager : MonoBehaviour
+    public class MixingRoundController : MonoBehaviour
     {
         [Header("Referências de UI")]
         [SerializeField] private LabUIController uiController;
@@ -51,9 +51,9 @@ namespace Presentation.Lab
             _gameManager = GameManager.Instance;
 
             if (_solubilityService == null)
-                Debug.LogError("[TestManager] ISolubilityService não resolvido.");
+                Debug.LogError("[MixingRoundController] ISolubilityService não resolvido.");
             if (_historyService == null)
-                Debug.LogError("[TestManager] IHistoryService não resolvido.");
+                Debug.LogError("[MixingRoundController] IHistoryService não resolvido.");
         }
 
         /// <summary>
@@ -86,13 +86,13 @@ namespace Presentation.Lab
         {
             if (_solubilityService == null || _historyService == null)
             {
-                Debug.LogError("[TestManager] Serviços não inicializados (solubility/history).");
+                Debug.LogError("[MixingRoundController] Serviços não inicializados (solubility/history).");
                 return;
             }
 
             if (currentCompoundId <= 0 || _selectedSolventId <= 0)
             {
-                Debug.LogWarning($"[TestManager] Composto ou solvente não configurados. compound={currentCompoundId}, solvent={_selectedSolventId}");
+                Debug.LogWarning($"[MixingRoundController] Composto ou solvente não configurados. compound={currentCompoundId}, solvent={_selectedSolventId}");
                 return;
             }
 
@@ -111,7 +111,7 @@ namespace Presentation.Lab
             if (flaskAnimationController != null)
                 flaskAnimationController.SetAnimationFromOutcome(outcome);
             else
-                Debug.LogWarning("[TestManager] FlaskAnimationController não atribuído. Animação não será atualizada.");
+                Debug.LogWarning("[MixingRoundController] FlaskAnimationController não atribuído. Animação não será atualizada.");
 
             if (uiController != null && uiController.solutionAnimationText != null)
             {

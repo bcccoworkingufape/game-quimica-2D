@@ -9,13 +9,13 @@ public class SolventClickHandler : MonoBehaviour
     [SerializeField] private string solventName;
 
     [Header("Referência")]
-    [SerializeField] private TestManager testManager;
+    [SerializeField] private MixingRoundController mixingRoundController;
 
     private void Awake()
     {
-        if (testManager == null)
+        if (mixingRoundController == null)
         {
-            testManager = FindAnyObjectByType<TestManager>();
+            mixingRoundController = FindAnyObjectByType<MixingRoundController>();
         }
     }
 
@@ -36,13 +36,13 @@ public class SolventClickHandler : MonoBehaviour
 
     private void TriggerMix()
     {
-        if (testManager == null)
+        if (mixingRoundController == null)
         {
-            Debug.LogWarning("[SolventClickHandler] TestManager não atribuído.");
+            Debug.LogWarning("[SolventClickHandler] MixingRoundController não atribuído.");
             return;
         }
 
         SfxManager.Instance?.PlayButtonClick();
-        testManager.OnSolventClicked(solventId, solventName);
+        mixingRoundController.OnSolventClicked(solventId, solventName);
     }
 }

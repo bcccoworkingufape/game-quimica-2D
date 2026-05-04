@@ -12,7 +12,7 @@ namespace Presentation.Lab
     {
         [Header("Referências")]
         [SerializeField] private LabUIController uiController;
-        [SerializeField] private TestManager testManager;
+        [SerializeField] private MixingRoundController mixingRoundController;
 
         private SubmitAnswerUseCase _submitAnswerUseCase;
         private GameManager _gm;
@@ -25,7 +25,7 @@ namespace Presentation.Lab
         private void Awake()
         {
             if (uiController == null) uiController = FindAnyObjectByType<LabUIController>();
-            if (testManager == null) testManager = FindAnyObjectByType<TestManager>();
+            if (mixingRoundController == null) mixingRoundController = FindAnyObjectByType<MixingRoundController>();
         }
 
         private void Start()
@@ -115,7 +115,7 @@ namespace Presentation.Lab
                 _currentQuestion = _allQuestions.Find(q => q.Id == _gm.ActiveQuestionId);
                 if (_currentQuestion != null)
                 {
-                    testManager?.SetCurrentCompound(_currentQuestion.CompoundId);
+                    mixingRoundController?.SetCurrentCompound(_currentQuestion.CompoundId);
                     return;
                 }
             }
@@ -148,7 +148,7 @@ namespace Presentation.Lab
             _currentQuestion = available[Random.Range(0, available.Count)];
             _gm?.SetActiveQuestion(_currentQuestion.Id);
 
-            testManager?.SetCurrentCompound(_currentQuestion.CompoundId);
+            mixingRoundController?.SetCurrentCompound(_currentQuestion.CompoundId);
             Debug.Log("A questão atual é a de id: " + _currentQuestion.Id);
         }
 
@@ -206,7 +206,7 @@ namespace Presentation.Lab
 
             // se zerou o game, o GameManager já troca de cena
             _historyService?.Clear();
-            testManager?.ResetRoundState();
+            mixingRoundController?.ResetRoundState();
 
             SelectNewQuestion();
         }
