@@ -59,7 +59,7 @@ namespace LabScripts
         [SerializeField] private GameObject[] starIcons;
 
         [Header("Integração com lógica da fase")]
-        [SerializeField] private TestManager testManager;
+        [SerializeField] private MixingRoundController mixingRoundController;
 
         [Header("Integração histórico")]
         [SerializeField] private HistoryPanelController historyPanelController;
@@ -311,13 +311,13 @@ namespace LabScripts
             Debug.Log("Ação Confirmada para o item: " + currentItemName);
             HideConfirmationPanel();
 
-            if (testManager != null)
+            if (mixingRoundController != null)
             {
-                testManager.OnConfirmMix();
+                mixingRoundController.OnConfirmMix();
             }
             else
             {
-                Debug.LogWarning("TestManager não atribuído no LabUIController. Exibindo animação mesmo assim.");
+                Debug.LogWarning("MixingRoundController não atribuído no LabUIController. Exibindo animação mesmo assim.");
                 ShowSolutionAnimationPanel();
             }
         }
@@ -722,7 +722,7 @@ namespace LabScripts
 
             GameManager.Instance?.ResetRunState(resetScore, resetLives);
 
-            testManager?.ResetRoundState(clearCompound: false);
+            mixingRoundController?.ResetRoundState(clearCompound: false);
         }
 
         // ─────────────────────────────────────────────

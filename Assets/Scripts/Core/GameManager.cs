@@ -133,16 +133,16 @@ namespace Core
 
         private void ResetLabSceneState()
         {
-            // 1) nunca “vazar” pause/gameover pra dentro do lab
+            // 1) nunca "vazar" pause/gameover pra dentro do lab
             Time.timeScale = 1f;
 
-            // 2) fecha painéis (se Findalgum ficou ativo por qualquer motivo)
+            // 2) fecha painéis (se algum ficou ativo por qualquer motivo)
             var ui = FindAnyObjectByType<LabUIController>();
             ui?.HideAllPanels();
 
             // 3) limpa seleção de solvente / estado da rodada (não mexe no compoundId por padrão)
-            var testManager = FindAnyObjectByType<TestManager>();
-            testManager?.ResetRoundState(clearCompound: false);
+            var mixingRoundController = FindAnyObjectByType<MixingRoundController>();
+            mixingRoundController?.ResetRoundState(clearCompound: false);
 
             // 4) limpa histórico ao entrar no lab
             try

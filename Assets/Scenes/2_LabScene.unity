@@ -2308,7 +2308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 4
   solventName: NaOH 5%
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &281383259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,7 +2804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Presentation.Lab.QuestionFlowPresenter
   uiController: {fileID: 2094343733}
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!4 &355858934
 Transform:
   m_ObjectHideFlags: 0
@@ -4970,7 +4970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -945.00006, y: 0}
+  m_AnchoredPosition: {x: -945, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628447652
@@ -6711,7 +6711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 6
   solventName: HCl 5%
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &922965032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7120,7 +7120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 7
   solventName: "H\u2082SO\u2084 96%"
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &957522808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7495,7 +7495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 1
   solventName: "\xC1gua"
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &1012961601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8348,7 +8348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 2
   solventName: "\xC9ter diet\xEDlico"
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &1253238902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8940,7 +8940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 3
   solventName: Tornassol
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &1321391743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10846,7 +10846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 8
   solventName: "H\u2083PO\u2084 85%"
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &1617349558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12289,7 +12289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SolventClickHandler
   solventId: 5
   solventName: "NaHCO\u2083  5%"
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 0}
 --- !u!114 &1787686485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14949,7 +14949,7 @@ MonoBehaviour:
   - {fileID: 1987952672}
   - {fileID: 1861345587}
   - {fileID: 2005491479}
-  testManager: {fileID: 307922120}
+  mixingRoundController: {fileID: 307922120}
   historyPanelController: {fileID: 1882458271}
   questionFlowPresenter: {fileID: 355858933}
   animator: {fileID: 585683033}
