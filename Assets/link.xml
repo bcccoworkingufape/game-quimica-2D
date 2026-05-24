@@ -1,0 +1,14 @@
+<linker>
+  <!-- Preserve Newtonsoft.Json reflection paths so IL2CPP stripping does not remove
+       constructors / setters used by JsonConvert.DeserializeObject. -->
+  <assembly fullname="Newtonsoft.Json" preserve="all"/>
+  <assembly fullname="Unity.Newtonsoft.Json" preserve="all"/>
+
+  <!-- DTOs / domain types deserialized via reflection. -->
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="Data.CompoundDto" preserve="all"/>
+    <type fullname="Data.SolventDto" preserve="all"/>
+    <type fullname="Data.SolutionDto" preserve="all"/>
+    <namespace fullname="Domain" preserve="all"/>
+  </assembly>
+</linker>
