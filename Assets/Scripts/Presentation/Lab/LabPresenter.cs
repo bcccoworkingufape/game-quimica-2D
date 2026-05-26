@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Core;
+using Data;
 using Domain;
 
 namespace Presentation.Lab
@@ -21,9 +22,6 @@ namespace Presentation.Lab
     /// </summary>
     public class LabPresenter : IDisposable
     {
-        private const string MenuSceneName = "1_MenuScene";
-        private const string LabSceneName = "2_LabScene";
-
         private readonly ILabView _view;
 
         private GameManager _gm;
@@ -87,8 +85,10 @@ namespace Presentation.Lab
         {
             if (data == null) return;
 
+            var rules = GameModeRulesFactory.For(data.mode);
+
             _view.RenderDifficulty(data, data.ModeLabel);
-            _view.SetTreeAvailable(data.mode != GameMode.Desafio);
+            _view.SetTreeAvailable(rules.AllowsDecisionTree);
 
             int lives = _gm != null ? _gm.PlayerLives : 0;
             _view.RenderLives(lives, data.mode);
@@ -121,7 +121,7 @@ namespace Presentation.Lab
 
         public int CurrentLives => _gm != null ? _gm.PlayerLives : 0;
 
-        public bool IsTreeAllowed => CurrentMode != GameMode.Desafio;
+        public bool IsTreeAllowed => GameModeRulesFactory.For(CurrentMode).AllowsDecisionTree;
 
         // ─────────────────────────────────────────────
         // Comandos de fluxo (chamados pela View em reação a cliques)
@@ -141,7 +141,7 @@ namespace Presentation.Lab
         {
             _view.ResetFlowState(resetScore: true, resetLives: true);
             Time.timeScale = 1f;
-            _gm?.LoadScene(LabSceneName);
+            _gm?.LoadScene(SceneNames.Lab);
         }
 
         public void OnDefeatRestartRequested()
@@ -149,20 +149,20 @@ namespace Presentation.Lab
             _gm?.ResetQuestionRun();
             _view.ResetFlowState(resetScore: true, resetLives: true);
             Time.timeScale = 1f;
-            _gm?.LoadScene(LabSceneName);
+            _gm?.LoadScene(SceneNames.Lab);
         }
 
         public void OnReturnToMenuAfterFlowRequested()
         {
             _view.ResetFlowState(resetScore: false, resetLives: true);
             Time.timeScale = 1f;
-            _gm?.LoadScene(MenuSceneName);
+            _gm?.LoadScene(SceneNames.Menu);
         }
 
         public void OnReturnToMenuFromPauseRequested()
         {
             Time.timeScale = 1f;
-            _gm?.LoadScene(MenuSceneName);
+            _gm?.LoadScene(SceneNames.Menu);
         }
     }
 }

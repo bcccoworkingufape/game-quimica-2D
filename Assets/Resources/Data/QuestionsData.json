@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "compoundId": 1,
+    "description": "Q1",
+    "correctAnswer": "Etanoato de etila",
+    "alternatives": ["Etanoato de etila", "Butanoato de sódio", "Cicloexanona", "Decano-1-amina"],
+    "hint": "Dica: é um éster.",
+    "feedback": "Etanoato de etila é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 2,
+    "compoundId": 2,
+    "description": "Q2",
+    "correctAnswer": "Butanoato de sódio",
+    "alternatives": ["Ácido propanoico", "Butanoato de sódio", "Cicloexanona", "Decano-1-amina"],
+    "hint": "Dica: Não é o Etanoato de etila.",
+    "feedback": "Butanoato de sódio é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 3,
+    "compoundId": 3,
+    "description": "Q3",
+    "correctAnswer": "Ácido propanoico",
+    "alternatives": ["Ácido propanoico", "Butanoato de sódio", "4-aminobenzenossulfonamida", "Decano-1-amina"],
+    "hint": "Dica: é um ácido carboxílico.",
+    "feedback": "Ácido propanoico é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 4,
+    "compoundId": 4,
+    "description": "Q4",
+    "correctAnswer": "Butan-1-amina",
+    "alternatives": ["Ácido propanoico", "Metilbenzeno", "Cicloexanona", "Butan-1-amina"],
+    "hint": "Dica: é uma amina.",
+    "feedback": "Butan-1-amina é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 5,
+    "compoundId": 5,
+    "description": "Q5",
+    "correctAnswer": "Ácido oleico",
+    "alternatives": ["Ácido oleico", "4-aminobenzenossulfonamida", "orto-diclorobenzeno", "Decano-1-amina"],
+    "hint": "Dica: é um ácido graxo.",
+    "feedback": "Ácido oleico é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 6,
+    "compoundId": 6,
+    "description": "Q6",
+    "correctAnswer": "4-aminobenzenossulfonamida",
+    "alternatives": ["Ácido propanoico", "Butanoato de sódio", "4-aminobenzenossulfonamida", "Decano-1-amina"],
+    "hint": "Dica: 4-aminobenzenossulfonamida.",
+    "feedback": "4-aminobenzenossulfonamida é um composto orgânico que forma uma solução incolor quando misturado com água. E afunda na água."
+  },
+  {
+    "id": 7,
+    "compoundId": 7,
+    "description": "Q7",
+    "correctAnswer": "Decano-1-amina",
+    "alternatives": ["Ácido oleico", "4-aminobenzenossulfonamida", "orto-diclorobenzeno", "Decano-1-amina"],
+    "hint": "Dica: é uma amina de cadeia longa.",
+    "feedback": "Decano-1-amina é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 8,
+    "compoundId": 8,
+    "description": "Q8",
+    "correctAnswer": "Cicloexanona",
+    "alternatives": ["Cicloexanona", "Ácido oleico", "Ácido propanoico", "4-aminobenzenossulfonamida"],
+    "hint": "Dica: é uma cetona cíclica.",
+    "feedback": "Cicloexanona é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 9,
+    "compoundId": 9,
+    "description": "Q9",
+    "correctAnswer": "Metilbenzeno",
+    "alternatives": ["Cicloexanona", "Butan-1-amina", "Metilbenzeno", "orto-diclorobenzeno"],
+    "hint": "Dica: é um composto aromático.",
+    "feedback": "Metilbenzeno é um composto orgânico que forma uma solução incolor quando misturado com água."
+  },
+  {
+    "id": 10,
+    "compoundId": 10,
+    "description": "Q10",
+    "correctAnswer": "orto-diclorobenzeno",
+    "alternatives": ["Cicloexanona", "Butan-1-amina", "Metilbenzeno", "orto-diclorobenzeno"],
+    "hint": "Dica: é um composto aromático com cloro.",
+    "feedback": "orto-diclorobenzeno é um composto orgânico que forma uma solução incolor quando misturado com água."
+  }
+]

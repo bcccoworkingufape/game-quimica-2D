@@ -19,9 +19,10 @@ namespace LabScripts
     /// </summary>
     public class LabUIController : MonoBehaviour, ILabView
     {
-        private const string LabSceneName = "2_LabScene";
-
         private LabPresenter _presenter;
+        private LabHudView _hud;
+        private LabAudioToggleView _audioToggle;
+        private LabPanelsView _panels;
 
         [Header("Painéis principais")]
         public GameObject solutionAnimationPanel;
@@ -100,6 +101,21 @@ namespace LabScripts
 
         private void Awake()
         {
+            _hud = new LabHudView(
+                difficultyText, livesText, modeText, percentageText,
+                heartIcons, starIcons,
+                treeButton, treeButtonGraphicsToTint, treeEnabledColor, treeDisabledColor,
+                treePanel);
+
+            var audioService = ServiceLocator.TryResolve<IAudioService>(out var a)
+                ? a : (IAudioService)new UnityAudioService();
+            _audioToggle = new LabAudioToggleView(musicOnObject, musicOffObject, sfxOnObject, sfxOffObject, audioService);
+
+            _panels = new LabPanelsView(
+                solutionAnimationPanel,
+                confirmationPanel, questionPanel, historyPanel, treePanel,
+                pauseMenuPanel, questionErrorPanel, questionVictoryPanel, defeatPanel, infoPanel);
+
             _presenter = new LabPresenter(this);
         }
 
@@ -155,56 +171,22 @@ namespace LabScripts
 
         public void RenderDifficulty(DifficultyLevelData data, string modeLabel)
         {
-            if (data == null) return;
-
-            if (difficultyText != null)
-                difficultyText.text = data.difficultyName;
-
-            if (modeText != null)
-                modeText.text = modeLabel;
+            _hud?.RenderDifficulty(data, modeLabel);
         }
 
         public void RenderLives(int lives, GameMode mode)
         {
-            if (livesText != null)
-            {
-                livesText.text = mode == GameMode.Estudo_Livre
-                    ? "Sem penalidade"
-                    : $"Vidas: {lives}";
-            }
-
-            bool nopenalty = mode == GameMode.Estudo_Livre;
-            SetIconsActive(heartIcons, nopenalty ? heartIcons.Length : lives);
+            _hud?.RenderLives(lives, mode);
         }
 
         public void RenderProgress(int percentage)
         {
-            if (percentageText != null)
-                percentageText.text = $"{percentage}%";
+            _hud?.RenderProgress(percentage);
         }
 
         public void SetTreeAvailable(bool available)
         {
-            if (!available)
-                OverlayAnimator.HideImmediate(treePanel);
-
-            if (treeButton != null)
-                treeButton.interactable = available;
-
-            var tint = available ? treeEnabledColor : treeDisabledColor;
-
-            if (treeButtonGraphicsToTint != null && treeButtonGraphicsToTint.Length > 0)
-            {
-                foreach (var g in treeButtonGraphicsToTint)
-                {
-                    if (g != null) g.color = tint;
-                }
-            }
-            else
-            {
-                if (treeButton != null && treeButton.targetGraphic != null)
-                    treeButton.targetGraphic.color = tint;
-            }
+            _hud?.SetTreeAvailable(available);
         }
 
         // ─────────────────────────────────────────────
@@ -217,18 +199,7 @@ namespace LabScripts
         /// </summary>
         public void HideAllPanels()
         {
-            // solutionAnimationPanel precisa estar ativo todo momento — não entra aqui.
-            solutionAnimationPanel?.SetActive(true);
-
-            OverlayAnimator.HideImmediate(confirmationPanel);
-            OverlayAnimator.HideImmediate(questionPanel);
-            OverlayAnimator.HideImmediate(historyPanel);
-            OverlayAnimator.HideImmediate(treePanel);
-            OverlayAnimator.HideImmediate(pauseMenuPanel);
-            OverlayAnimator.HideImmediate(questionErrorPanel);
-            OverlayAnimator.HideImmediate(questionVictoryPanel);
-            OverlayAnimator.HideImmediate(defeatPanel);
-            OverlayAnimator.HideImmediate(infoPanel);
+            _panels?.HideAll();
         }
 
         // ─────────────────────────────────────────────
@@ -430,7 +401,11 @@ namespace LabScripts
         public void ShowTreePanel()
         {
             var gm = GameManager.Instance;
-            if (gm != null && gm.CurrentDifficulty != null && gm.CurrentDifficulty.mode == GameMode.Desafio)
+            var mode = (gm != null && gm.CurrentDifficulty != null)
+                ? gm.CurrentDifficulty.mode
+                : GameMode.Estudo_Livre;
+
+            if (!GameModeRulesFactory.For(mode).AllowsDecisionTree)
                 return;
 
             SfxManager.Instance?.PlayTreeClick();
@@ -496,7 +471,7 @@ namespace LabScripts
         {
             OverlayAnimator.Hide(questionVictoryPanel, onComplete: () =>
             {
-                SetIconsActive(starIcons, 0);
+                _hud?.ClearStars();
             });
         }
 
@@ -651,7 +626,7 @@ namespace LabScripts
 
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
-            SetIconsActive(starIcons, 0);
+            _hud?.ClearStars();
 
             GameManager.Instance?.ResetRunState(resetScore, resetLives);
 
@@ -674,8 +649,7 @@ namespace LabScripts
         {
             var gm = GameManager.Instance;
             int lives = gm != null ? gm.PlayerLives : 0;
-            bool nopenalty = GetCurrentMode() == GameMode.Estudo_Livre;
-            SetIconsActive(starIcons, nopenalty ? starIcons.Length : lives);
+            _hud?.RefreshStars(lives, GetCurrentMode());
         }
 
         /// <summary>
@@ -683,12 +657,7 @@ namespace LabScripts
         /// </summary>
         private static void SetIconsActive(GameObject[] icons, int count)
         {
-            if (icons == null) return;
-            for (int i = 0; i < icons.Length; i++)
-            {
-                if (icons[i] != null)
-                    icons[i].SetActive(i < count);
-            }
+            LabHudView.SetIconsActive(icons, count);
         }
 
         // ─────────────────────────────────────────────
@@ -697,35 +666,17 @@ namespace LabScripts
 
         public void OnClickEnableMusic()
         {
-            SfxManager.Instance?.PlayButtonClick();
-
-            if (MusicManager.Instance == null) return;
-
-            MusicManager.Instance.EnableMusic();
-            RefreshMusicToggleVisual();
+            _audioToggle?.EnableMusic();
         }
 
         public void OnClickDisableMusic()
         {
-            SfxManager.Instance?.PlayButtonClick();
-
-            if (MusicManager.Instance == null) return;
-
-            MusicManager.Instance.DisableMusic();
-            RefreshMusicToggleVisual();
+            _audioToggle?.DisableMusic();
         }
 
         public void RefreshMusicToggleVisual()
         {
-            if (MusicManager.Instance == null) return;
-
-            bool isEnabled = MusicManager.Instance.IsMusicEnabled();
-
-            if (musicOnObject != null)
-                musicOnObject.SetActive(isEnabled);
-
-            if (musicOffObject != null)
-                musicOffObject.SetActive(!isEnabled);
+            _audioToggle?.RefreshMusicVisual();
         }
 
         // ─────────────────────────────────────────────
@@ -735,28 +686,18 @@ namespace LabScripts
         public void OnClickEnableSfx()
         {
             Debug.Log("=== LAB: CLICOU EM LIGAR SFX ===");
-            SfxManager.Instance?.EnableSfx();
-            RefreshSfxToggleVisual();
+            _audioToggle?.EnableSfx();
         }
 
         public void OnClickDisableSfx()
         {
             Debug.Log("=== LAB: CLICOU EM DESLIGAR SFX ===");
-            SfxManager.Instance?.DisableSfx();
-            RefreshSfxToggleVisual();
+            _audioToggle?.DisableSfx();
         }
 
         public void RefreshSfxToggleVisual()
         {
-            if (SfxManager.Instance == null) return;
-
-            bool isEnabled = SfxManager.Instance.IsSfxEnabled();
-
-            if (sfxOnObject != null)
-                sfxOnObject.SetActive(isEnabled);
-
-            if (sfxOffObject != null)
-                sfxOffObject.SetActive(!isEnabled);
+            _audioToggle?.RefreshSfxVisual();
         }
 
         public void OnTreeSliderChange()

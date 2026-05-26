@@ -1,6 +1,7 @@
 using UnityEngine;
 using Data;
 using Domain;
+using Core.Audio;
 
 namespace Core
 {
@@ -45,14 +46,20 @@ namespace Core
 
             IHistoryService historyService = new InMemoryHistoryService();
             IScoringService scoringService = new ScoringService();
+            IQuestionService questionService = new QuestionService();
+            IQuestionRepository questionRepo = new JsonQuestionRepository(provider);
+            IAudioService audioService = new UnityAudioService();
 
             ServiceLocator.Register<ICompoundRepository>(compoundRepo);
             ServiceLocator.Register<ISolventRepository>(solventRepo);
             ServiceLocator.Register<ISolutionRepository>(solutionRepo);
+            ServiceLocator.Register<IQuestionRepository>(questionRepo);
 
             ServiceLocator.Register<ISolubilityService>(solubilityService);
             ServiceLocator.Register<IHistoryService>(historyService);
             ServiceLocator.Register<IScoringService>(scoringService);
+            ServiceLocator.Register<IQuestionService>(questionService);
+            ServiceLocator.Register<IAudioService>(audioService);
 
             Debug.Log("[Bootstrapper] Serviços registrados no ServiceLocator com sucesso.");
         }

@@ -106,8 +106,9 @@ namespace Presentation.Menu
         {
             if (_gm == null) return;
 
-            if (MusicManager.Instance != null && MusicManager.Instance.IsMusicEnabled())
-                MusicManager.Instance.FadeTo(0.6f, 0.25f);
+            var audio = ServiceLocator.TryResolve<IAudioService>(out var a) ? a : null;
+            if (audio != null && audio.IsMusicEnabled)
+                audio.FadeMusicTo(0.6f, 0.25f);
 
             _gm.StartGame();
         }

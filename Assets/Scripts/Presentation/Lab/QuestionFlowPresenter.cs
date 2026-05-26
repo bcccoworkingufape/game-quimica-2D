@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Domain;
+using Data;
 using Core;
 using LabScripts;
 using Core.Audio;
@@ -57,55 +58,15 @@ namespace Presentation.Lab
         {
             _allQuestions.Clear();
 
-            _allQuestions.Add(new Question(1, 1, "Q1",
-                new List<string> { "Etanoato de etila", "Butanoato de sódio", "Cicloexanona", "Decano-1-amina" },
-                "Etanoato de etila", "Dica: é um éster.",
-                "Etanoato de etila é um composto orgânico que forma uma solução incolor quando misturado com água."));
+            var repo = ServiceLocator.Resolve<IQuestionRepository>();
+            if (repo == null)
+            {
+                Debug.LogError("[QuestionFlowPresenter] IQuestionRepository não resolvido. Verifique o Bootstrapper.");
+                return;
+            }
 
-            _allQuestions.Add(new Question(2, 2, "Q2",
-                new List<string> { "Ácido propanoico", "Butanoato de sódio", "Cicloexanona", "Decano-1-amina" },
-                "Butanoato de sódio", "Dica: Não é o Etanoato de etila.",
-                "Butanoato de sódio é um composto orgânico que forma uma solução incolor quando misturado com água."));
-
-            _allQuestions.Add(new Question(3, 3, "Q3",
-                new List<string> { "Ácido propanoico", "Butanoato de sódio", "4-aminobenzenossulfonamida", "Decano-1-amina" },
-                "Ácido propanoico", "Dica: é um ácido carboxílico.",
-                "Ácido propanoico é um composto orgânico que forma uma solução incolor quando misturado com água."));
-
-            _allQuestions.Add(new Question(4, 4, "Q4",
-                new List<string> { "Ácido propanoico", "Metilbenzeno", "Cicloexanona", "Butan-1-amina" },
-                "Butan-1-amina", "Dica: é uma amina.",
-                "Butan-1-amina é um composto orgânico que forma uma solução incolor quando misturado com água."));
-
-            _allQuestions.Add(new Question(5, 5, "Q5",
-                new List<string> { "Ácido oleico", "4-aminobenzenossulfonamida", "orto-diclorobenzeno", "Decano-1-amina" },
-                "Ácido oleico", "Dica: é um ácido graxo.",
-                "Ácido oleico é um composto orgânico que forma uma solução incolor quando misturado com água."));
-
-            _allQuestions.Add(new Question(6, 6, "Q6",
-                new List<string> { "Ácido propanoico", "Butanoato de sódio", "4-aminobenzenossulfonamida", "Decano-1-amina" },
-                "4-aminobenzenossulfonamida", "Dica: 4-aminobenzenossulfonamida.",
-                "4-aminobenzenossulfonamida é um composto orgânico que forma uma solução incolor quando misturado com água. E afunda na água."));
-
-            _allQuestions.Add(new Question(7, 7, "Q7",
-                new List<string> { "Ácido oleico", "4-aminobenzenossulfonamida", "orto-diclorobenzeno", "Decano-1-amina" },
-                "Decano-1-amina", "Dica: é uma amina de cadeia longa.",
-                "Decano-1-amina é um composto orgânico que forma uma solução incolor quando misturado com água."));
-
-            _allQuestions.Add(new Question(8, 8, "Q8",
-                new List<string> { "Cicloexanona", "Ácido oleico", "Ácido propanoico", "4-aminobenzenossulfonamida" },
-                "Cicloexanona", "Dica: é uma cetona cíclica.",
-                "Cicloexanona é um composto orgânico que forma uma solução incolor quando misturado com água."));
-
-            _allQuestions.Add(new Question(9, 9, "Q9",
-                new List<string> { "Cicloexanona", "Butan-1-amina", "Metilbenzeno", "orto-diclorobenzeno" },
-                "Metilbenzeno", "Dica: é um composto aromático.",
-                "Metilbenzeno é um composto orgânico que forma uma solução incolor quando misturado com água."));
-
-            _allQuestions.Add(new Question(10, 10, "Q10",
-                new List<string> { "Cicloexanona", "Butan-1-amina", "Metilbenzeno", "orto-diclorobenzeno" },
-                "orto-diclorobenzeno", "Dica: é um composto aromático com cloro.",
-                "orto-diclorobenzeno é um composto orgânico que forma uma solução incolor quando misturado com água."));
+            foreach (var q in repo.ListAll())
+                _allQuestions.Add(q);
         }
 
         private void PrepareOrRestoreActiveQuestion()
