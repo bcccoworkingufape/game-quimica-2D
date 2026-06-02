@@ -17,6 +17,22 @@ public class WinSceneUI_Controller : MonoBehaviour
             return;
         }
 
+        if (nomeDaCena == SceneNames.Lab)
+        {
+            GameManager.Instance.StartGame();
+            return;
+        }
+
         GameManager.Instance.LoadScene(nomeDaCena);
+    }
+
+    public void JogarNovamente()
+    {
+        LoadScene(SceneNames.Lab);
+    }
+
+    public void VoltarAoMenuInicial()
+    {
+        LoadScene(SceneNames.Menu);
     }
 }
