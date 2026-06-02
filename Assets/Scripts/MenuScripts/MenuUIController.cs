@@ -80,8 +80,8 @@ namespace MenuScripts
             "A 4-aminobenzenossulfonamida é usada em antibióticos! Química salva vidas.",
             "O metilbenzeno também é conhecido como tolueno. Nome de laboratório!",
             "Cicloexanona é usada na produção de nylon. Química está em tudo!",
-            "Ácidos carboxílicos como o propanoico doam H⁺ facilmente.",
-            "Bases orgânicas como aminas aceitam H⁺. É o oposto dos ácidos!",
+            "Ácidos carboxílicos como o propanoico doam H<sup>+</sup> facilmente.",
+            "Bases orgânicas como aminas aceitam H<sup>+</sup>. É o oposto dos ácidos!",
             //"Densidade determina se algo flutua ou afunda.",
             "O pH neutro é 7. Abaixo é ácido, acima é básico. Simples assim!",
             // ═══════════════════════════════════════════
