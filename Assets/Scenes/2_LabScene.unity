@@ -1290,6 +1290,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127780421}
   m_CullTransparentMesh: 1
+--- !u!1 &128632244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5524372207325648847, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+  m_PrefabInstance: {fileID: 108075611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &146192048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,6 +4116,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510068726}
   m_CullTransparentMesh: 1
+--- !u!1 &531538924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2859397242587101860, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+  m_PrefabInstance: {fileID: 108075611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &541724094
 GameObject:
   m_ObjectHideFlags: 0
@@ -9607,6 +9617,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378265676}
   m_CullTransparentMesh: 1
+--- !u!1 &1394863618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5524372207325648847, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+  m_PrefabInstance: {fileID: 425546219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1426324901
 GameObject:
   m_ObjectHideFlags: 0
@@ -9904,6 +9919,11 @@ MonoBehaviour:
           m_StringArgument: Decano-1-Amina
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1477421384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2859397242587101860, guid: 149573afada6e9a4995f652d085639c4, type: 3}
+  m_PrefabInstance: {fileID: 425546219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1482028867
 GameObject:
   m_ObjectHideFlags: 0
@@ -14847,10 +14867,10 @@ MonoBehaviour:
   questionFlowPresenter: {fileID: 355858933}
   animator: {fileID: 585683033}
   infoPanel: {fileID: 1712172198}
-  musicOnObject: {fileID: 0}
-  musicOffObject: {fileID: 0}
-  sfxOnObject: {fileID: 0}
-  sfxOffObject: {fileID: 0}
+  musicOnObject: {fileID: 1394863618}
+  musicOffObject: {fileID: 1477421384}
+  sfxOnObject: {fileID: 128632244}
+  sfxOffObject: {fileID: 531538924}
   treeSlider: {fileID: 1493628378}
   treeImage: {fileID: 731971374}
 --- !u!1001 &4160010739852325065
