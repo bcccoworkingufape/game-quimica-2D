@@ -16,6 +16,8 @@
 /APKs
 /docs_webmedia_2026/
 /docs_webmedia_2026/*
+Windows exec
+Windows exec/
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
