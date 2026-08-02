@@ -7,11 +7,17 @@ using Domain;
 using System.Collections;
 using Core.Audio;
 using Presentation.Common;
+using Presentation.Menu;
 
 namespace MenuScripts
 {
-    public class MenuUIController : MonoBehaviour
+    /// <summary>
+    /// View do menu no padrão MVP. Mantém todos os SerializeField/métodos públicos
+    /// usados pelos OnClick das scenes/prefabs e delega decisões ao <see cref="MenuPresenter"/>.
+    /// </summary>
+    public class MenuUIController : MonoBehaviour, IMenuView
     {
+        private MenuPresenter _presenter;
         // --- Referências aos ScriptableObjects de Dificuldade ---
         [Header("Dados de Dificuldade")]
         public DifficultyLevelData easyDifficulty;
@@ -74,8 +80,8 @@ namespace MenuScripts
             "A 4-aminobenzenossulfonamida é usada em antibióticos! Química salva vidas.",
             "O metilbenzeno também é conhecido como tolueno. Nome de laboratório!",
             "Cicloexanona é usada na produção de nylon. Química está em tudo!",
-            "Ácidos carboxílicos como o propanoico doam H⁺ facilmente.",
-            "Bases orgânicas como aminas aceitam H⁺. É o oposto dos ácidos!",
+            "Ácidos carboxílicos como o propanoico doam H<sup>+</sup> facilmente.",
+            "Bases orgânicas como aminas aceitam H<sup>+</sup>. É o oposto dos ácidos!",
             //"Densidade determina se algo flutua ou afunda.",
             "O pH neutro é 7. Abaixo é ácido, acima é básico. Simples assim!",
             // ═══════════════════════════════════════════
@@ -103,16 +109,21 @@ namespace MenuScripts
             "Conhecimento é a única coisa que aumenta quando compartilhado.",
         };
 
+        private void Awake()
+        {
+            _presenter = new MenuPresenter(this);
+        }
+
         private void OnEnable()
         {
-            if (GameManager.Instance != null)
-                GameManager.Instance.OnDifficultyChanged += HandleDifficultyChanged;
+            // O Presenter assina OnDifficultyChanged do Model (GameManager) e
+            // executa a sincronização inicial (seleção, rótulo, toggles de áudio).
+            _presenter?.Initialize(easyDifficulty, mediumDifficulty, hardDifficulty);
         }
 
         private void OnDisable()
         {
-            if (GameManager.Instance != null)
-                GameManager.Instance.OnDifficultyChanged -= HandleDifficultyChanged;
+            _presenter?.Dispose();
         }
 
         private void Start()
@@ -122,35 +133,15 @@ namespace MenuScripts
             OverlayAnimator.HideImmediate(fadePanel);
 
             ShowLoadingPanel();
-
-            if (GameManager.Instance == null)
-            {
-                Debug.LogError("[MenuUIController] GameManager.Instance é nulo. Verifique se o GameManager está na cena inicial.");
-                return;
-            }
-
-            // respeita a dificuldade já escolhida (se voltou do Lab), senão usa easy
-            var current = GameManager.Instance.CurrentDifficulty != null
-                ? GameManager.Instance.CurrentDifficulty
-                : easyDifficulty;
-
-            // garante que o GameManager não fique nulo
-            if (GameManager.Instance.CurrentDifficulty == null && current != null)
-                GameManager.Instance.SetDifficulty(current);
-
-            ApplyDifficultySelectionVisuals(current);
-            UpdateDifficultyLabel(current);
-            RefreshMusicToggleVisual();
-            RefreshSfxToggleVisual(); 
+            // Sincronização inicial (dificuldade, toggles) já ocorreu em
+            // MenuPresenter.Initialize() via OnEnable.
         }
 
-        private void HandleDifficultyChanged(DifficultyLevelData data)
-        {
-            ApplyDifficultySelectionVisuals(data);
-            UpdateDifficultyLabel(data);
-        }
+        // ─────────────────────────────────────────────
+        // IMenuView — comandos disparados pelo MenuPresenter
+        // ─────────────────────────────────────────────
 
-        private void UpdateDifficultyLabel(DifficultyLevelData data)
+        public void RenderDifficulty(DifficultyLevelData data)
         {
             if (difficultyText == null || data == null) return;
 
@@ -164,6 +155,14 @@ namespace MenuScripts
 
             if (modeText != null)
                 modeText.text = data.ModeLabel;
+        }
+
+        public void ApplySelectionVisuals(DifficultyLevelData data)
+        {
+            // Hook para destacar visualmente a dificuldade ativa.
+            // Hoje não há sprites de highlight conectados; o método permanece como
+            // ponto de extensão para o Presenter sinalizar a seleção atual.
+            if (data == null) data = easyDifficulty;
         }
 
         // Painéis principais
@@ -227,71 +226,43 @@ namespace MenuScripts
             hintText.text = LoadingHints[index];
         }
 
-        // Ação do botão "Jogar"
+        // Ação do botão "Jogar" — delega ao Presenter (que cuida do fade da música
+        // e dispara GameManager.StartGame()).
         public void LoadLabScene()
         {
             SfxManager.Instance?.PlayButtonClick();
-
             if (GameManager.Instance == null) return;
 
             StopHintCycle();
-
-            if (MusicManager.Instance != null && MusicManager.Instance.IsMusicEnabled())
-            {
-                MusicManager.Instance.FadeTo(0.6f, 0.25f);
-            }
-
-            GameManager.Instance.StartGame();
+            _presenter?.StartGame();
         }
 
-        // Seleção de dificuldade (OnClick)
+        // Seleção de dificuldade (OnClick) — delegam ao Presenter
         public void SelectEasy()
         {
             SfxManager.Instance?.PlayButtonClick();
             Debug.Log("Selecionado: EASY");
-            SelectDifficulty(easyDifficulty);
+            _presenter?.SelectEasy();
         }
 
         public void SelectMedium()
         {
             SfxManager.Instance?.PlayButtonClick();
             Debug.Log("Selecionado: MEDIUM");
-            SelectDifficulty(mediumDifficulty);
+            _presenter?.SelectMedium();
         }
 
         public void SelectHard()
         {
             SfxManager.Instance?.PlayButtonClick();
             Debug.Log("Selecionado: HARD");
-            SelectDifficulty(hardDifficulty);
-        }
-
-        // centralizar a seleção
-        private void SelectDifficulty(DifficultyLevelData data)
-        {
-            if (data == null)
-            {
-                Debug.LogWarning("[MenuUIController] DifficultyLevelData nulo em SelectDifficulty().");
-                return;
-            }
-
-            ApplyDifficultySelectionVisuals(data);
-
-            if (GameManager.Instance != null)
-                GameManager.Instance.SetDifficulty(data);
-
-            UpdateDifficultyLabel(data);
+            _presenter?.SelectHard();
         }
 
         // garante que o highlight bate com a dificuldade atual
         private void ApplyDifficultySelectionVisuals(DifficultyLevelData data)
         {
-            if (data == null) data = easyDifficulty;
-
-            bool isEasy = data == easyDifficulty;
-            bool isMedium = data == mediumDifficulty;
-            bool isHard = data == hardDifficulty;
-
+            ApplySelectionVisuals(data);
         }
 
         // Botão "Fechar o jogo" (encerra a aplicacao).

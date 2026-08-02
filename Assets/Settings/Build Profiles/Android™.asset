@@ -36,7 +36,7 @@ MonoBehaviour:
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
     - line: '|   companyName: BCC Coworking'
-    - line: '|   productName: ''Molz: Quimica em Jogo'''
+    - line: '|   productName: "Molz: Qu\xEDmica em Jogo"'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
@@ -167,7 +167,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.0.3'
+    - line: '|   bundleVersion: 1.0.4'
     - line: '|   preloadedAssets:'
     - line: '|   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100,
         type: 3}'
@@ -950,6 +950,7 @@ MonoBehaviour:
     - line: '|   captureStartupLogs: {}'
     - line: '|   activeInputHandler: 1'
     - line: '|   windowsGamepadBackendHint: 0'
+    - line: '|   enableDirectStorage: 0'
     - line: '|   cloudProjectId: cf5c40e6-4bdc-4668-a17b-bbd68c079d84'
     - line: '|   framebufferDepthMemorylessMode: 0'
     - line: '|   qualitySettingsNames: []'
@@ -973,10 +974,10 @@ MonoBehaviour:
     - rid: 2916562662045777994
       type: {class: AndroidPlatformBuildSettings, ns: UnityEditor.Android, asm: UnityEditor.Android.Extensions}
       data:
-        m_Development: 0
-        m_ConnectProfiler: 0
+        m_Development: 1
+        m_ConnectProfiler: 1
         m_BuildWithDeepProfilingSupport: 0
-        m_AllowDebugging: 0
+        m_AllowDebugging: 1
         m_WaitForManagedDebugger: 0
         m_ManagedDebuggerFixedPort: 0
         m_ExplicitNullChecks: 0
@@ -993,7 +994,7 @@ MonoBehaviour:
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
         m_CurrentDeploymentTargetId: __builtin__target_default
-        m_BuildType: 2
+        m_BuildType: 1
         m_LinkTimeOptimization: 0
         m_BuildAppBundle: 0
         m_IPAddressToConnect: 

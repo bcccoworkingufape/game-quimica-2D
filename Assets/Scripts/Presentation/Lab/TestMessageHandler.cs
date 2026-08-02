@@ -6,15 +6,13 @@ namespace Presentation.Lab
 {
     public class TestMessageHandler
     {
-        private string litmusMessagePattern =
-            "O composto é <b>{0}</b> e <b>{1}</b> no <b>{2}</b> e fica <b>{3}</b>";
         private string defaultMessagePattern =
-            "O composto é <b>{0}</b> e <b>{1}</b> no solvente <b>{2}</b>";
+            "O composto é <b>{0}</b>{1} {2}";
+        private string litmusMessagePattern =
+            "O composto é <b>{0}</b> {1}";
 
-        private Dictionary<string, string> GetMixtureProperties(SolubilityOutcome outcome)
+        private Dictionary<string, string> MapOutcome(SolubilityOutcome outcome)
         {
-            string solventName = outcome.Solvent.Name;
-
             string compoundState;
             switch (outcome.Compound.State)
             {
@@ -29,34 +27,48 @@ namespace Presentation.Lab
                     break;
             }
 
-            string litmusText;
-            switch (outcome.LitmusResult)
-            {
-                case LitmusResultKind.Acidic:
-                    litmusText = "vermelho";
-                    break;
-                case LitmusResultKind.Basic:
-                    litmusText = "azul";
-                    break;
-                default:
-                    litmusText = "incolor";
-                    break;
-            }
-
             string solubilityText;
             switch (outcome.SolubilityResult)
             {
                 case SolubilityResultKind.Soluble:
-                    solubilityText = "solúvel";
+                    solubilityText = " e <b>solúvel</b> em";
                     break;
                 case SolubilityResultKind.InsolubleFloat:
-                    solubilityText = "flutua";
+                    solubilityText = ", <b>insolúvel</b> e <b>menos denso</b> do que";
                     break;
                 case SolubilityResultKind.InsolubleSink:
-                    solubilityText = "afunda";
+                    solubilityText = ", <b>insolúvel</b> e <b>mais denso</b> do que";
                     break;
                 default:
                     solubilityText = "desconhecido";
+                    break;
+            }
+
+            string solventName = outcome.Solvent.Name;
+            switch (outcome.Solvent.ChemicalClass)
+            {
+                case "solvent":
+                    solventName = "<b>" + solventName + "</b>";
+                    break;
+                case "solution":
+                    solventName = "solução de <b>" + solventName + "</b>";
+                    break;
+                default:
+                    solventName = "<b>" + solventName + "</b>";
+                    break;
+            }
+
+            string litmusText;
+            switch (outcome.LitmusResult)
+            {
+                case LitmusResultKind.Acidic:
+                    litmusText = "e altera a cor do tornassol para <b>vermelho</b>";
+                    break;
+                case LitmusResultKind.Basic:
+                    litmusText = "e altera a cor do tornassol para <b>azul</b>";
+                    break;
+                default:
+                    litmusText = "e <b>não altera a cor</b> do tornassol";
                     break;
             }
 
@@ -65,52 +77,37 @@ namespace Presentation.Lab
                 ["solventName"] = solventName,
                 ["compoundState"] = compoundState,
                 ["litmusText"] = litmusText,
-                ["solubilityText"] = solubilityText
+                ["solubilityText"] = solubilityText,
             };
+        }
+
+        private string BuildMessage(SolubilityOutcome outcome, string orderPrefix = "")
+        {
+            var properties = MapOutcome(outcome);
+
+            bool isLitmus = outcome.Solvent.Name == "Tornassol";
+            string compoundState = properties["compoundState"];
+            string litmusText = properties["litmusText"];
+            string solubilityText = properties["solubilityText"];
+            string solventName = properties["solventName"];
+
+            string body;
+            if (isLitmus)
+                body = string.Format(litmusMessagePattern, compoundState, litmusText);
+            else
+                body = string.Format(defaultMessagePattern, compoundState, solubilityText, solventName);
+
+            return orderPrefix + body;
         }
 
         public string GetHistoryMessage(MixtureHistoryEntry entry)
         {
-            var properties = GetMixtureProperties(entry.Outcome);
-
-            string solventName = properties["solventName"];
-            string compoundState = properties["compoundState"];
-            string litmusText = properties["litmusText"];
-            string solubilityText = properties["solubilityText"];
-
-            if (solventName == "Tornassol")
-                return $"{entry.Order}) "
-                    + string.Format(
-                        litmusMessagePattern,
-                        compoundState,
-                        solubilityText,
-                        solventName,
-                        litmusText
-                    );
-
-            return $"{entry.Order}) "
-                + string.Format(defaultMessagePattern, compoundState, solubilityText, solventName);
+            return BuildMessage(entry.Outcome, $"{entry.Order}) ");
         }
 
         public string GetTestMessage(MixSolutionResponse response)
         {
-            var properties = GetMixtureProperties(response.Outcome);
-
-            string solventName = properties["solventName"];
-            string compoundState = properties["compoundState"];
-            string litmusText = properties["litmusText"];
-            string solubilityText = properties["solubilityText"];
-
-            if (solventName == "Tornassol")
-                return string.Format(
-                    litmusMessagePattern,
-                    compoundState,
-                    solubilityText,
-                    solventName,
-                    litmusText
-                );
-
-            return string.Format(defaultMessagePattern, compoundState, solubilityText, solventName);
+            return BuildMessage(response.Outcome);
         }
     }
 }

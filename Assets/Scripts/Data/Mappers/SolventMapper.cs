@@ -22,7 +22,8 @@ namespace Data
                 state,
                 dto.meltingPoint,
                 dto.boilingPoint,
-                flask);
+                flask,
+                dto.chemical_class);
         }
     }
 }

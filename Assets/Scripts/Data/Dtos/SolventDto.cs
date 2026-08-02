@@ -12,5 +12,6 @@ namespace Data
         public float meltingPoint;
         public float boilingPoint;
         public string flaskType; // "FLASK_01" etc.
+        public string chemical_class; // "solvent", "solution"
     }
 }

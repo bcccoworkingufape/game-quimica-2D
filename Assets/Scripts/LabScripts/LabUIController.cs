@@ -11,9 +11,18 @@ using Core.Audio;
 
 namespace LabScripts
 {
-    public class LabUIController : MonoBehaviour
+    /// <summary>
+    /// View do laboratório no padrão MVP.
+    /// Apenas exibe o estado e encaminha entradas do usuário para o
+    /// <see cref="LabPresenter"/>. Mantém todas as referências serializadas
+    /// e métodos públicos historicamente usados pelos OnClick das scenes/prefabs.
+    /// </summary>
+    public class LabUIController : MonoBehaviour, ILabView
     {
-        private const string LabSceneName = "2_LabScene";
+        private LabPresenter _presenter;
+        private LabHudView _hud;
+        private LabAudioToggleView _audioToggle;
+        private LabPanelsView _panels;
 
         [Header("Painéis principais")]
         public GameObject solutionAnimationPanel;
@@ -59,7 +68,7 @@ namespace LabScripts
         [SerializeField] private GameObject[] starIcons;
 
         [Header("Integração com lógica da fase")]
-        [SerializeField] private TestManager testManager;
+        [SerializeField] private MixingRoundController mixingRoundController;
 
         [Header("Integração histórico")]
         [SerializeField] private HistoryPanelController historyPanelController;
@@ -90,26 +99,36 @@ namespace LabScripts
         // Ciclo de vida
         // ─────────────────────────────────────────────
 
+        private void Awake()
+        {
+            _hud = new LabHudView(
+                difficultyText, livesText, modeText, percentageText,
+                heartIcons, starIcons,
+                treeButton, treeButtonGraphicsToTint, treeEnabledColor, treeDisabledColor,
+                treePanel);
+
+            var audioService = ServiceLocator.TryResolve<IAudioService>(out var a)
+                ? a : (IAudioService)new UnityAudioService();
+            _audioToggle = new LabAudioToggleView(musicOnObject, musicOffObject, sfxOnObject, sfxOffObject, audioService);
+
+            _panels = new LabPanelsView(
+                solutionAnimationPanel,
+                confirmationPanel, questionPanel, historyPanel, treePanel,
+                pauseMenuPanel, questionErrorPanel, questionVictoryPanel, defeatPanel, infoPanel);
+
+            _presenter = new LabPresenter(this);
+        }
+
         void OnEnable()
         {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.OnDifficultyChanged += HandleDifficultyChanged;
-                GameManager.Instance.OnLivesChanged += HandleLivesChanged;
-                GameManager.Instance.OnGameOver += HandleGameOver;
-                GameManager.Instance.OnProgressChanged += HandleProgressChanged;
-            }
+            // Presenter assina os eventos do Model (GameManager) e dispara a
+            // sincronização inicial (dificuldade, vidas, progresso, regras de modo).
+            _presenter?.Initialize(questionFlowPresenter);
         }
 
         void OnDisable()
         {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.OnDifficultyChanged -= HandleDifficultyChanged;
-                GameManager.Instance.OnLivesChanged -= HandleLivesChanged;
-                GameManager.Instance.OnGameOver -= HandleGameOver;
-                GameManager.Instance.OnProgressChanged -= HandleProgressChanged;
-            }
+            _presenter?.Dispose();
         }
 
         private IEnumerator Start()
@@ -121,16 +140,8 @@ namespace LabScripts
             yield return null;
             ShowInfoPanel();
 
-            var gm = GameManager.Instance;
-            if (gm != null && gm.CurrentDifficulty != null)
-            {
-                UpdateDifficultyLabel(gm.CurrentDifficulty);
-                UpdateLivesLabel(gm.PlayerLives);
-                RefreshHearts(gm.PlayerLives);
-            }
-
-            if (gm != null)
-                UpdatePercentageText(gm.GetProgressPercentage());
+            // Sincronização de dificuldade/vidas/progresso é responsabilidade
+            // do LabPresenter (executada em Initialize via OnEnable).
 
             RefreshMusicToggleVisual();
             RefreshSfxToggleVisual();
@@ -155,105 +166,27 @@ namespace LabScripts
         }
 
         // ─────────────────────────────────────────────
-        // Handlers de eventos do GameManager
+        // ILabView — comandos disparados pelo LabPresenter
         // ─────────────────────────────────────────────
 
-        private void HandleDifficultyChanged(DifficultyLevelData data)
+        public void RenderDifficulty(DifficultyLevelData data, string modeLabel)
         {
-            UpdateDifficultyLabel(data);
-            ApplyModeRules(data);
-
-            int lives = GameManager.Instance != null ? GameManager.Instance.PlayerLives : 0;
-            UpdateLivesLabel(lives);
-            RefreshHearts(lives);
+            _hud?.RenderDifficulty(data, modeLabel);
         }
 
-        private void HandleLivesChanged(int lives)
+        public void RenderLives(int lives, GameMode mode)
         {
-            UpdateLivesLabel(lives);
-            RefreshHearts(lives);
+            _hud?.RenderLives(lives, mode);
         }
 
-        private void HandleGameOver()
+        public void RenderProgress(int percentage)
         {
-            ShowDefeatPanel();
+            _hud?.RenderProgress(percentage);
         }
 
-        private void HandleProgressChanged(int percentage)
+        public void SetTreeAvailable(bool available)
         {
-            UpdatePercentageText(percentage);
-        }
-
-        private void UpdatePercentageText(int percentage)
-        {
-            if (percentageText != null)
-                percentageText.text = $"{percentage}%";
-        }
-
-        private void UpdateDifficultyLabel(DifficultyLevelData data)
-        {
-            if (data == null) return;
-
-            if (difficultyText != null)
-                difficultyText.text = $"{data.difficultyName}";
-
-            if (modeText != null)
-                modeText.text = data.ModeLabel;
-        }
-
-        private void UpdateLivesLabel(int lives)
-        {
-            if (livesText == null) return;
-
-            var gm = GameManager.Instance;
-            var mode = gm != null && gm.CurrentDifficulty != null
-                ? gm.CurrentDifficulty.mode
-                : GameMode.Estudo_Livre;
-
-            if (mode == GameMode.Estudo_Livre)
-                livesText.text = "Sem penalidade";
-            else
-                livesText.text = $"Vidas: {lives}";
-        }
-
-        private void RefreshHearts(int lives)
-        {
-            var mode = GetCurrentMode();
-            bool nopenalty = mode == GameMode.Estudo_Livre;
-            SetIconsActive(heartIcons, nopenalty ? heartIcons.Length : lives);
-        }
-
-        private void ApplyModeRules(DifficultyLevelData data)
-        {
-            if (data == null) return;
-
-            bool treeAllowed = data.mode != GameMode.Desafio;
-
-            if (!treeAllowed)
-                OverlayAnimator.HideImmediate(treePanel);
-
-            SetTreeButtonEnabled(treeAllowed);
-        }
-
-        private void SetTreeButtonEnabled(bool enabled)
-        {
-            if (treeButton != null)
-                treeButton.interactable = enabled;
-
-            var tint = enabled ? treeEnabledColor : treeDisabledColor;
-
-            if (treeButtonGraphicsToTint != null && treeButtonGraphicsToTint.Length > 0)
-            {
-                foreach (var g in treeButtonGraphicsToTint)
-                {
-                    if (g != null) g.color = tint;
-                }
-            }
-            else
-            {
-                if (treeButton != null && treeButton.targetGraphic != null)
-                    treeButton.targetGraphic.color = tint;
-            }
+            _hud?.SetTreeAvailable(available);
         }
 
         // ─────────────────────────────────────────────
@@ -266,18 +199,7 @@ namespace LabScripts
         /// </summary>
         public void HideAllPanels()
         {
-            // solutionAnimationPanel precisa estar ativo todo momento — não entra aqui.
-            solutionAnimationPanel?.SetActive(true);
-
-            OverlayAnimator.HideImmediate(confirmationPanel);
-            OverlayAnimator.HideImmediate(questionPanel);
-            OverlayAnimator.HideImmediate(historyPanel);
-            OverlayAnimator.HideImmediate(treePanel);
-            OverlayAnimator.HideImmediate(pauseMenuPanel);
-            OverlayAnimator.HideImmediate(questionErrorPanel);
-            OverlayAnimator.HideImmediate(questionVictoryPanel);
-            OverlayAnimator.HideImmediate(defeatPanel);
-            OverlayAnimator.HideImmediate(infoPanel);
+            _panels?.HideAll();
         }
 
         // ─────────────────────────────────────────────
@@ -311,13 +233,13 @@ namespace LabScripts
             Debug.Log("Ação Confirmada para o item: " + currentItemName);
             HideConfirmationPanel();
 
-            if (testManager != null)
+            if (mixingRoundController != null)
             {
-                testManager.OnConfirmMix();
+                mixingRoundController.OnConfirmMix();
             }
             else
             {
-                Debug.LogWarning("TestManager não atribuído no LabUIController. Exibindo animação mesmo assim.");
+                Debug.LogWarning("MixingRoundController não atribuído no LabUIController. Exibindo animação mesmo assim.");
                 ShowSolutionAnimationPanel();
             }
         }
@@ -479,7 +401,11 @@ namespace LabScripts
         public void ShowTreePanel()
         {
             var gm = GameManager.Instance;
-            if (gm != null && gm.CurrentDifficulty != null && gm.CurrentDifficulty.mode == GameMode.Desafio)
+            var mode = (gm != null && gm.CurrentDifficulty != null)
+                ? gm.CurrentDifficulty.mode
+                : GameMode.Estudo_Livre;
+
+            if (!GameModeRulesFactory.For(mode).AllowsDecisionTree)
                 return;
 
             SfxManager.Instance?.PlayTreeClick();
@@ -545,7 +471,7 @@ namespace LabScripts
         {
             OverlayAnimator.Hide(questionVictoryPanel, onComplete: () =>
             {
-                SetIconsActive(starIcons, 0);
+                _hud?.ClearStars();
             });
         }
 
@@ -555,13 +481,7 @@ namespace LabScripts
         public void OnVictoryNextPhase()
         {
             SfxManager.Instance?.PlayButtonClick();
-
-            ResetFlowState(resetScore: false, resetLives: false);
-
-            if (questionFlowPresenter != null)
-                questionFlowPresenter.PrepareNextCompound(forceNew: true);
-            else
-                Debug.LogWarning("[LabUIController] QuestionFlowPresenter não atribuído em OnVictoryNextPhase.");
+            _presenter?.OnNextPhaseRequested();
         }
 
         /// <summary>
@@ -570,9 +490,7 @@ namespace LabScripts
         public void OnVictoryRestart()
         {
             SfxManager.Instance?.PlayButtonClick();
-
-            ResetFlowState(resetScore: true, resetLives: true);
-            RestartLab();
+            _presenter?.OnRestartRequested();
         }
 
         /// <summary>
@@ -581,9 +499,7 @@ namespace LabScripts
         public void OnVictoryReturnToMenu()
         {
             SfxManager.Instance?.PlayButtonClick();
-
-            ResetFlowState(resetScore: false, resetLives: true);
-            ReturnToMainMenu();
+            _presenter?.OnReturnToMenuAfterFlowRequested();
         }
 
         // ─────────────────────────────────────────────
@@ -614,10 +530,7 @@ namespace LabScripts
         public void OnDefeatRestart()
         {
             SfxManager.Instance?.PlayButtonClick();
-
-            GameManager.Instance?.ResetQuestionRun();
-            ResetFlowState(resetScore: true, resetLives: true);
-            RestartLab();
+            _presenter?.OnDefeatRestartRequested();
         }
 
         /// <summary>
@@ -626,9 +539,7 @@ namespace LabScripts
         public void OnDefeatReturnToMenu()
         {
             SfxManager.Instance?.PlayButtonClick();
-
-            ResetFlowState(resetScore: false, resetLives: true);
-            ReturnToMainMenu();
+            _presenter?.OnReturnToMenuAfterFlowRequested();
         }
 
         // ─────────────────────────────────────────────
@@ -668,9 +579,7 @@ namespace LabScripts
         public void ReturnToMainMenu()
         {
             SfxManager.Instance?.PlayButtonClick();
-
-            Time.timeScale = 1f;
-            GameManager.Instance.LoadScene("1_MenuScene");
+            _presenter?.OnReturnToMenuFromPauseRequested();
         }
 
         /// <summary>
@@ -692,13 +601,12 @@ namespace LabScripts
         // Utilidades internas
         // ─────────────────────────────────────────────
 
-        private void RestartLab()
-        {
-            Time.timeScale = 1f;
-            GameManager.Instance.LoadScene(LabSceneName);
-        }
-
-        private void ResetFlowState(bool resetScore, bool resetLives)
+        /// <summary>
+        /// Implementação de <see cref="ILabView.ResetFlowState"/>: limpa overlays
+        /// e sincroniza estado de gameplay via GameManager. Pública para o
+        /// Presenter chamar, mas também usada internamente.
+        /// </summary>
+        public void ResetFlowState(bool resetScore, bool resetLives)
         {
             Time.timeScale = 1f;
 
@@ -718,11 +626,11 @@ namespace LabScripts
 
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
-            SetIconsActive(starIcons, 0);
+            _hud?.ClearStars();
 
             GameManager.Instance?.ResetRunState(resetScore, resetLives);
 
-            testManager?.ResetRoundState(clearCompound: false);
+            mixingRoundController?.ResetRoundState(clearCompound: false);
         }
 
         // ─────────────────────────────────────────────
@@ -741,8 +649,7 @@ namespace LabScripts
         {
             var gm = GameManager.Instance;
             int lives = gm != null ? gm.PlayerLives : 0;
-            bool nopenalty = GetCurrentMode() == GameMode.Estudo_Livre;
-            SetIconsActive(starIcons, nopenalty ? starIcons.Length : lives);
+            _hud?.RefreshStars(lives, GetCurrentMode());
         }
 
         /// <summary>
@@ -750,12 +657,7 @@ namespace LabScripts
         /// </summary>
         private static void SetIconsActive(GameObject[] icons, int count)
         {
-            if (icons == null) return;
-            for (int i = 0; i < icons.Length; i++)
-            {
-                if (icons[i] != null)
-                    icons[i].SetActive(i < count);
-            }
+            LabHudView.SetIconsActive(icons, count);
         }
 
         // ─────────────────────────────────────────────
@@ -764,35 +666,17 @@ namespace LabScripts
 
         public void OnClickEnableMusic()
         {
-            SfxManager.Instance?.PlayButtonClick();
-
-            if (MusicManager.Instance == null) return;
-
-            MusicManager.Instance.EnableMusic();
-            RefreshMusicToggleVisual();
+            _audioToggle?.EnableMusic();
         }
 
         public void OnClickDisableMusic()
         {
-            SfxManager.Instance?.PlayButtonClick();
-
-            if (MusicManager.Instance == null) return;
-
-            MusicManager.Instance.DisableMusic();
-            RefreshMusicToggleVisual();
+            _audioToggle?.DisableMusic();
         }
 
         public void RefreshMusicToggleVisual()
         {
-            if (MusicManager.Instance == null) return;
-
-            bool isEnabled = MusicManager.Instance.IsMusicEnabled();
-
-            if (musicOnObject != null)
-                musicOnObject.SetActive(isEnabled);
-
-            if (musicOffObject != null)
-                musicOffObject.SetActive(!isEnabled);
+            _audioToggle?.RefreshMusicVisual();
         }
 
         // ─────────────────────────────────────────────
@@ -802,28 +686,18 @@ namespace LabScripts
         public void OnClickEnableSfx()
         {
             Debug.Log("=== LAB: CLICOU EM LIGAR SFX ===");
-            SfxManager.Instance?.EnableSfx();
-            RefreshSfxToggleVisual();
+            _audioToggle?.EnableSfx();
         }
 
         public void OnClickDisableSfx()
         {
             Debug.Log("=== LAB: CLICOU EM DESLIGAR SFX ===");
-            SfxManager.Instance?.DisableSfx();
-            RefreshSfxToggleVisual();
+            _audioToggle?.DisableSfx();
         }
 
         public void RefreshSfxToggleVisual()
         {
-            if (SfxManager.Instance == null) return;
-
-            bool isEnabled = SfxManager.Instance.IsSfxEnabled();
-
-            if (sfxOnObject != null)
-                sfxOnObject.SetActive(isEnabled);
-
-            if (sfxOffObject != null)
-                sfxOffObject.SetActive(!isEnabled);
+            _audioToggle?.RefreshSfxVisual();
         }
 
         public void OnTreeSliderChange()

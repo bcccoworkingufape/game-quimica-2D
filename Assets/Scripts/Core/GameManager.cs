@@ -1,43 +1,38 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Data;
-
 using Domain;
 using LabScripts;
 using Presentation.Lab;
 using Core.Audio;
 
-
 namespace Core
 {
+    /// <summary>
+    /// Facade que coordena o estado global do jogo (dificuldade, vidas, score),
+    /// delegando responsabilidades para <see cref="QuestionRunTracker"/> (progresso do run),
+    /// <see cref="SceneRouter"/> (carregamento de cenas + histórico) e
+    /// <see cref="IGameModeRules"/> (regras específicas do modo).
+    /// </summary>
     public class GameManager : MonoBehaviour
     {
-        private const string MenuSceneName = "1_MenuScene";
-
-        private const string LabSceneName = "2_LabScene";
-        private const string gameClearSceneName = "3_Win_Game";
-
         public static GameManager Instance { get; private set; }
 
         [Header("Scene Transition")]
         [SerializeField] private GameObject fadeCanvasPrefab;
         [SerializeField] private float fadeDuration = 0.2f;
 
-        private SceneFader sceneFader;
-
-        // Estado do jogo
         [SerializeField] private DifficultyLevelData defaultDifficulty;
 
         public DifficultyLevelData CurrentDifficulty { get; private set; }
         public int PlayerLives { get; private set; }
         public int PlayerScore { get; private set; }
 
-        private readonly Stack<string> sceneHistory = new Stack<string>();
+        private SceneFader _sceneFader;
+        private SceneRouter _router;
+        private readonly QuestionRunTracker _runTracker = new QuestionRunTracker();
 
-        // Eventos para UI / outros sistemas
         public event Action<DifficultyLevelData> OnDifficultyChanged;
         public event Action<int> OnLivesChanged;
         public event Action<int> OnScoreChanged;
@@ -45,52 +40,47 @@ namespace Core
         public event Action OnGameOver;
         public event Action<int> OnProgressChanged;
 
-        // ─────────────────────────────────────────────
-        // Estado do "run" de perguntas (precisa sobreviver a Restart do Lab)
-        // ─────────────────────────────────────────────
-        private readonly HashSet<int> _completedQuestionIds = new HashSet<int>();
+        public int TotalQuestionsInRun => _runTracker.TotalQuestionsInRun;
+        public int ActiveQuestionId => _runTracker.ActiveQuestionId;
+        public bool ActiveQuestionAnsweredCorrect => _runTracker.ActiveQuestionAnsweredCorrect;
 
-        public int TotalQuestionsInRun { get; private set; } = 0;
-
-        public int ActiveQuestionId { get; private set; } = 0;
-
-        // true quando acertou a questão ativa, mas ainda NÃO avançou (Próxima fase)
-        public bool ActiveQuestionAnsweredCorrect { get; private set; } = false;
-
-        private string _lastSceneBeforeLoad = null;
+        private IGameModeRules CurrentRules =>
+            CurrentDifficulty != null ? GameModeRulesFactory.For(CurrentDifficulty.mode) : null;
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-
-                // Inicializa estado do run (novo play)
-                ResetQuestionRun();
-
-                // Inicializa fade
-                if (fadeCanvasPrefab != null)
-                {
-                    GameObject fadeCanvasInstance = Instantiate(fadeCanvasPrefab);
-                    sceneFader = fadeCanvasInstance.GetComponent<SceneFader>();
-                    DontDestroyOnLoad(fadeCanvasInstance);
-
-                    sceneFader.SetInstantVisible();
-                    StartCoroutine(sceneFader.FadeIn(fadeDuration));
-                }
-                else
-                {
-                    Debug.LogError("FadeCanvas Prefab não foi atribuído no GameManager!");
-                }
-
-                // pode-se chamar Bootstrapper / GameContext
-                // GameContext.Initialize();
-            }
-            else
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            _runTracker.OnProgressChanged += pct => OnProgressChanged?.Invoke(pct);
+            _runTracker.OnRunCleared += TryHandleGameCleared;
+            _runTracker.Reset();
+
+            InitializeSceneRouter();
+        }
+
+        private void InitializeSceneRouter()
+        {
+            if (fadeCanvasPrefab == null)
+            {
+                Debug.LogError("FadeCanvas Prefab não foi atribuído no GameManager!");
+                return;
+            }
+
+            var fadeCanvasInstance = Instantiate(fadeCanvasPrefab);
+            _sceneFader = fadeCanvasInstance.GetComponent<SceneFader>();
+            DontDestroyOnLoad(fadeCanvasInstance);
+
+            _sceneFader.SetInstantVisible();
+            StartCoroutine(_sceneFader.FadeIn(fadeDuration));
+
+            _router = new SceneRouter(this, _sceneFader, fadeDuration);
         }
 
         private void OnEnable()
@@ -105,26 +95,20 @@ namespace Core
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // Fade in
-            if (sceneFader != null && sceneFader.Alpha > 0.01f)
-                StartCoroutine(sceneFader.FadeIn(fadeDuration));
+            _router?.NotifySceneLoaded();
 
-            // Fallback para cenas rodando direto (ex: abrir 2_LabScene e apertar Play)
             EnsureDefaultDifficulty();
             EnsurePlayerStateInitialized();
 
-            // Se voltou pro MENU, o próximo "Jogar" deve começar do zero (todas as questões)
-            if (scene.name == MenuSceneName)
+            if (scene.name == SceneNames.Menu)
             {
-                ResetQuestionRun();
+                _runTracker.Reset();
                 Time.timeScale = 1f;
             }
 
-            // Ao entrar no LAB: reset visual/rodada/histórico (mas NÃO reseta o run de questões)
-            if (scene.name == LabSceneName)
+            if (scene.name == SceneNames.Lab)
                 ResetLabSceneState();
 
-            // Força UI sincronizar
             OnDifficultyChanged?.Invoke(CurrentDifficulty);
             OnLivesChanged?.Invoke(PlayerLives);
             OnScoreChanged?.Invoke(PlayerScore);
@@ -133,18 +117,14 @@ namespace Core
 
         private void ResetLabSceneState()
         {
-            // 1) nunca “vazar” pause/gameover pra dentro do lab
             Time.timeScale = 1f;
 
-            // 2) fecha painéis (se Findalgum ficou ativo por qualquer motivo)
             var ui = FindAnyObjectByType<LabUIController>();
             ui?.HideAllPanels();
 
-            // 3) limpa seleção de solvente / estado da rodada (não mexe no compoundId por padrão)
-            var testManager = FindAnyObjectByType<TestManager>();
-            testManager?.ResetRoundState(clearCompound: false);
+            var mixingRoundController = FindAnyObjectByType<MixingRoundController>();
+            mixingRoundController?.ResetRoundState(clearCompound: false);
 
-            // 4) limpa histórico ao entrar no lab
             try
             {
                 var history = ServiceLocator.Resolve<IHistoryService>();
@@ -154,74 +134,22 @@ namespace Core
         }
 
         // ─────────────────────────────────────────────
-        // Run de Perguntas (persistente entre Restart do Lab)
+        // Run de Perguntas (delegado para QuestionRunTracker)
         // ─────────────────────────────────────────────
 
-        public void SetTotalQuestions(int total)
-        {
-            TotalQuestionsInRun = Mathf.Max(0, total);
-            OnProgressChanged?.Invoke(GetProgressPercentage());
-        }
-
-        public int GetProgressPercentage()
-        {
-            if (TotalQuestionsInRun <= 0) return 0;
-            return Mathf.RoundToInt((float)_completedQuestionIds.Count / TotalQuestionsInRun * 100f);
-        }
-
-        public bool IsQuestionCompleted(int questionId) => _completedQuestionIds.Contains(questionId);
-
-        public void SetActiveQuestion(int questionId)
-        {
-            ActiveQuestionId = questionId;
-        }
-
-        public void MarkActiveQuestionCorrect()
-        {
-            ActiveQuestionAnsweredCorrect = true;
-        }
-
-        /// <summary>
-        /// Chamado quando o jogador clica "Próxima fase" (aqui sim a questão é considerada concluída no run).
-        /// </summary>
-        public void CommitActiveQuestionAsCompleted()
-        {
-            if (ActiveQuestionId > 0)
-                _completedQuestionIds.Add(ActiveQuestionId);
-
-            // limpa a questão ativa para a próxima fase realmente escolher outra
-            ActiveQuestionId = 0;
-
-            ActiveQuestionAnsweredCorrect = false;
-
-            OnProgressChanged?.Invoke(GetProgressPercentage());
-
-            TryHandleGameCleared();
-        }
-
-
-        public void ResetQuestionRun()
-        {
-            _completedQuestionIds.Clear();
-            TotalQuestionsInRun = 0;
-            ActiveQuestionId = 0;
-            ActiveQuestionAnsweredCorrect = false;
-            OnProgressChanged?.Invoke(0);
-        }
+        public void SetTotalQuestions(int total) => _runTracker.SetTotal(total);
+        public int GetProgressPercentage() => _runTracker.GetProgressPercentage();
+        public bool IsQuestionCompleted(int questionId) => _runTracker.IsCompleted(questionId);
+        public void SetActiveQuestion(int questionId) => _runTracker.SetActive(questionId);
+        public void MarkActiveQuestionCorrect() => _runTracker.MarkActiveCorrect();
+        public void CommitActiveQuestionAsCompleted() => _runTracker.Commit();
+        public void ResetQuestionRun() => _runTracker.Reset();
 
         private void TryHandleGameCleared()
         {
-            if (TotalQuestionsInRun <= 0) return;
-
-            if (_completedQuestionIds.Count < TotalQuestionsInRun)
+            var rules = CurrentRules;
+            if (rules != null && rules.AppliesLifePenalty && PlayerLives <= 0)
                 return;
-
-            // Não precisa estar com "vidas cheias", só não pode ter dado game over.
-            // Em Experimentos, não existe game over, então também pode zerar.
-            if (CurrentDifficulty != null && CurrentDifficulty.mode != GameMode.Estudo_Livre)
-            {
-                if (PlayerLives <= 0) return;
-            }
 
             HandleGameCleared();
         }
@@ -233,10 +161,10 @@ namespace Core
 
             SfxManager.Instance?.PlayWin();
 
-            if (!string.IsNullOrWhiteSpace(gameClearSceneName))
-                LoadScene(gameClearSceneName);
+            if (!string.IsNullOrWhiteSpace(SceneNames.WinGame))
+                LoadScene(SceneNames.WinGame);
             else
-                Debug.LogWarning("[GameManager] gameClearSceneName não configurado.");
+                Debug.LogWarning("[GameManager] WinGame scene não configurada.");
         }
 
         // ─────────────────────────────────────────────
@@ -252,9 +180,7 @@ namespace Core
         public void StartGame()
         {
             EnsureDefaultDifficulty();
-
-            // Novo "Jogar" (menu → lab) começa do zero nas questões
-            ResetQuestionRun();
+            _runTracker.Reset();
 
             if (CurrentDifficulty == null)
             {
@@ -269,14 +195,14 @@ namespace Core
             OnScoreChanged?.Invoke(PlayerScore);
             OnGameStarted?.Invoke();
 
-            LoadScene(LabSceneName);
+            LoadScene(SceneNames.Lab);
         }
 
         public void LoseLife()
         {
-            if (CurrentDifficulty != null && CurrentDifficulty.mode == GameMode.Estudo_Livre)
+            var rules = CurrentRules;
+            if (rules != null && !rules.AppliesLifePenalty)
             {
-                // Sem penalidade
                 OnLivesChanged?.Invoke(PlayerLives);
                 return;
             }
@@ -295,15 +221,8 @@ namespace Core
 
         public void AddScore(int points)
         {
-            if (CurrentDifficulty == null)
-            {
-                PlayerScore += points;
-            }
-            else
-            {
-                PlayerScore += (int)(points * CurrentDifficulty.scoreMultiplier);
-            }
-
+            float multiplier = CurrentDifficulty != null ? CurrentDifficulty.scoreMultiplier : 1f;
+            PlayerScore += (int)(points * multiplier);
             OnScoreChanged?.Invoke(PlayerScore);
         }
 
@@ -323,7 +242,7 @@ namespace Core
 
         private void EnsurePlayerStateInitialized()
         {
-            if (SceneManager.GetActiveScene().name != LabSceneName) return;
+            if (SceneManager.GetActiveScene().name != SceneNames.Lab) return;
             if (CurrentDifficulty == null) return;
 
             if (PlayerLives <= 0)
@@ -333,8 +252,6 @@ namespace Core
                 PlayerScore = 0;
         }
 
-        // Reseta o estado de gameplay mantendo a dificuldade/modo atual.
-        // Use resetScore=true para "Reiniciar" e false para "Próxima fase" (mantém score).
         public void ResetRunState(bool resetScore, bool resetLives)
         {
             EnsureDefaultDifficulty();
@@ -346,59 +263,15 @@ namespace Core
                 PlayerScore = 0;
 
             OnLivesChanged?.Invoke(PlayerLives);
-
             if (resetScore)
                 OnScoreChanged?.Invoke(PlayerScore);
         }
 
-
         // ─────────────────────────────────────────────
-        // Controle de cenas + fade + histórico
+        // Controle de cenas (delegado para SceneRouter)
         // ─────────────────────────────────────────────
 
-        public void LoadScene(string sceneName)
-        {
-            StartCoroutine(LoadSceneWithFade(sceneName));
-        }
-
-        private IEnumerator LoadSceneWithFade(string sceneName)
-        {
-            if (sceneFader != null)
-                yield return StartCoroutine(sceneFader.FadeOut(fadeDuration));
-
-            _lastSceneBeforeLoad = SceneManager.GetActiveScene().name;
-
-            string currentScene = SceneManager.GetActiveScene().name;
-            if (!string.IsNullOrEmpty(currentScene))
-                sceneHistory.Push(currentScene);
-
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-            while (!asyncLoad.isDone)
-                yield return null;
-            // Fade-in será chamado em OnSceneLoaded
-        }
-
-        public void GoBack()
-        {
-            StartCoroutine(GoBackWithFade());
-        }
-
-        private IEnumerator GoBackWithFade()
-        {
-            if (sceneHistory.Count == 0)
-            {
-                Debug.LogWarning("Não há cenas no histórico para voltar.");
-                yield break;
-            }
-
-            if (sceneFader != null)
-                yield return StartCoroutine(sceneFader.FadeOut(fadeDuration));
-
-            string previousScene = sceneHistory.Pop();
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(previousScene);
-            while (!asyncLoad.isDone)
-                yield return null;
-            // Fade-in será chamado em OnSceneLoaded
-        }
+        public void LoadScene(string sceneName) => _router?.LoadScene(sceneName);
+        public void GoBack() => _router?.GoBack();
     }
 }
