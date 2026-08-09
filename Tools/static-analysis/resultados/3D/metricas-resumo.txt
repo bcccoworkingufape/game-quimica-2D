@@ -1,0 +1,49 @@
+﻿===== 3D (ChemistryLab) =====
+arquivos analisados            : 81
+linhas fisicas                 : 6695
+linhas de codigo (sem branco)  : 5590
+linhas de comentario           : 228
+densidade de comentarios (%)   : 3.9
+classes                        : 75
+interfaces                     : 1
+structs/records                : 0
+enums                          : 5
+tipos acoplados a Unity        : 58  (77.3% das classes)
+membros analisados             : 433
+
+CC media                       : 2.00
+CC mediana                     : 1.0
+CC maxima                      : 19
+CC total (soma)                : 864
+membros com CC > 10            : 6  (1.4%)
+membros com CC > 20            : 0
+
+Maintainability Index medio    : 67.5
+MI mediano                     : 68.0
+membros com MI < 20 (ruim)     : 0
+membros com MI 20-64 (moderado): 196
+membros com MI >= 65 (bom)     : 237  (54.7%)
+
+LOC media por membro           : 11.0
+membros com mais de 60 linhas  : 4
+membros com aninhamento >= 4   : 45
+acoplamento eferente medio     : 13.4
+
+God Classes (>300 LOC ou >25 membros publicos) : 5
+   PowderBlendShapeController2         641 LOC    7 pub  CC   54  Gameplay\Animation\PowderBlendShapeController.cs
+   SubstanceManager                    592 LOC   36 pub  CC   56  Json\SubstanceManager.cs
+   PowderBlendController               375 LOC    5 pub  CC   33  Gameplay\Animation\PowderBlendController.cs
+   UIManager                           352 LOC   33 pub  CC   31  UI\Shared\UIManager.cs
+   QuestionManager                     336 LOC   10 pub  CC   31  Gameplay\Questions\QuestionManager.cs
+
+TOP 10 membros por complexidade ciclomatica:
+   CC  19  MI  33.6    79 LOC  QuestionManager.GetMixDescription
+   CC  14  MI  21.1   177 LOC  PowderBlendController.UpdateSphereColor
+   CC  14  MI  21.2   177 LOC  PowderBlendShapeController2.UpdateSphereColor
+   CC  13  MI  45.1    36 LOC  AnalyticsAnimController.GetAnimationName
+   CC  12  MI  37.6    58 LOC  UIManager.TogglePanel
+   CC  12  MI  48.7    26 LOC  EnumTranslator.ParseSolubilityResult
+   CC  10  MI  44.1    37 LOC  PowderBlendController.ResetAndAnimateBlendShapes
+   CC  10  MI  44.2    37 LOC  PowderBlendShapeController2.ResetAndAnimateBlendShapes
+   CC  10  MI  40.6    48 LOC  HistoryListManager.PopulateHistory
+   CC   8  MI  38.7    60 LOC  PowderBlendController.Start

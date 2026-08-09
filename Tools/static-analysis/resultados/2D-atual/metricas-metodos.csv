@@ -1,0 +1,497 @@
+﻿projeto;arquivo;tipo;membro;loc;cc;aninhamento;parametros;halstead_volume;maintainability_index
+2D (Molz atual);Core\Audio\IAudioService.cs;IAudioService;IsSfxEnabled (prop);1;1;0;0;8;93.5
+2D (Molz atual);Core\Audio\IAudioService.cs;IAudioService;IsMusicEnabled (prop);1;1;0;0;8;93.5
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;Instance (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;Awake;16;3;2;0;233.8;56.7
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;OnEnable;4;1;0;0;24;77.1
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;OnDisable;4;1;0;0;24;77.1
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;ConfigureAudioSource;10;2;1;0;191.8;61.9
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;LoadDefaultClipsIfNeeded;18;4;2;0;240.8;55.4
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;HandleSceneLoaded;19;7;1;2;304.2;53.8
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;PrepareMenuMusicSilently;21;4;3;0;303.1;53.2
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;StartMenuMusicFromLoading;24;7;3;2;569.4;49.7
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;PlaySceneMusic;13;5;2;2;191.8;59
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;StopMusic;15;4;2;1;229.2;57.3
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;FadeTo;7;3;1;2;188;65.2
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;CrossFadeTo;10;4;1;2;165.1;62.1
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;FadeRoutine;24;5;2;3;539.1;50.1
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;FadeOutAndStop;17;2;2;1;368;54.9
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;CrossFadeRoutine;33;3;2;2;824.5;46.1
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;StopCurrentFade;8;2;2;0;65.7;67.3
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;EnableMusic;8;3;1;0;125.3;65.2
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;DisableMusic;6;1;0;0;51.9;70.9
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;ToggleMusic;5;2;1;0;49.8;72.6
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;IsMusicEnabled;4;1;0;0;11.6;79.3
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;SetVolume;7;3;1;1;110.4;66.9
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;LoadPreferences;4;1;0;0;57.1;74.4
+2D (Molz atual);Core\Audio\MusicManager.cs;MusicManager;SavePreferences;5;2;0;0;84;71
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;Instance (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;IsSfxEnabled;1;1;0;0;2;97.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;Awake;18;3;2;0;233.8;55.6
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;ConfigureAudioSource;9;2;1;0;162.5;63.4
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;LoadDefaultClipsIfNeeded;13;10;1;0;827.3;53.9
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;EnableSfx;5;1;0;0;31.7;74.1
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;DisableSfx;5;1;0;0;31.7;74.1
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;ToggleSfx;5;2;1;0;49.8;72.6
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;SetVolume;6;2;1;1;89.9;69.1
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;Play;21;4;2;2;239.7;54
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayButtonClick;9;2;2;0;66.6;66.1
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayTreeClick;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayHistoryClick;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayMix;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayCorrect;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayWrong;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayWin;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayLose;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;PlayBottleFill;1;1;0;0;19.7;90.8
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;GetClip;16;11;0;1;318.9;54.7
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;LoadPreferences;4;1;0;0;57.1;74.4
+2D (Molz atual);Core\Audio\SfxManager.cs;SfxManager;SavePreferences;5;2;0;0;84;71
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayButtonClick;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayTreeClick;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayHistoryClick;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayMix;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayCorrect;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayWrong;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayWin;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayLose;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;PlayBottleFill;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;EnableSfx;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;DisableSfx;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;EnableMusic;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;DisableMusic;1;2;0;0;27;89.7
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;FadeMusicTo;2;2;0;2;41.5;81.8
+2D (Molz atual);Core\Audio\UnityAudioService.cs;UnityAudioService;StartMenuMusicFromLoading;2;2;0;2;41.5;81.8
+2D (Molz atual);Core\Bootstrap\Bootstrapper.cs;Bootstrapper;Awake;46;2;2;0;1260.3;41.8
+2D (Molz atual);Core\GameManager.cs;GameManager;Instance (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\GameManager.cs;GameManager;CurrentDifficulty (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\GameManager.cs;GameManager;PlayerLives (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\GameManager.cs;GameManager;PlayerScore (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\GameManager.cs;GameManager;Awake;17;4;2;0;288.4;55.4
+2D (Molz atual);Core\GameManager.cs;GameManager;InitializeSceneRouter;17;2;2;0;358.2;55
+2D (Molz atual);Core\GameManager.cs;GameManager;OnEnable;4;1;0;0;24;77.1
+2D (Molz atual);Core\GameManager.cs;GameManager;OnDisable;4;1;0;0;24;77.1
+2D (Molz atual);Core\GameManager.cs;GameManager;OnSceneLoaded;21;8;2;2;452.8;51.5
+2D (Molz atual);Core\GameManager.cs;GameManager;ResetLabSceneState;17;5;2;0;346.8;54.7
+2D (Molz atual);Core\GameManager.cs;GameManager;SetTotalQuestions;1;1;0;1;19.7;90.8
+2D (Molz atual);Core\GameManager.cs;GameManager;GetProgressPercentage;1;1;0;0;15.5;91.5
+2D (Molz atual);Core\GameManager.cs;GameManager;IsQuestionCompleted;1;1;0;1;19.7;90.8
+2D (Molz atual);Core\GameManager.cs;GameManager;SetActiveQuestion;1;1;0;1;19.7;90.8
+2D (Molz atual);Core\GameManager.cs;GameManager;MarkActiveQuestionCorrect;1;1;0;0;15.5;91.5
+2D (Molz atual);Core\GameManager.cs;GameManager;CommitActiveQuestionAsCompleted;1;1;0;0;15.5;91.5
+2D (Molz atual);Core\GameManager.cs;GameManager;ResetQuestionRun;1;1;0;0;15.5;91.5
+2D (Molz atual);Core\GameManager.cs;GameManager;TryHandleGameCleared;8;4;1;0;116.7;65.3
+2D (Molz atual);Core\GameManager.cs;GameManager;HandleGameCleared;12;3;1;0;242.5;59.4
+2D (Molz atual);Core\GameManager.cs;GameManager;SetDifficulty;5;2;0;1;50.2;72.6
+2D (Molz atual);Core\GameManager.cs;GameManager;StartGame;20;5;2;0;338.6;53.2
+2D (Molz atual);Core\GameManager.cs;GameManager;LoseLife;20;8;2;0;335.2;52.9
+2D (Molz atual);Core\GameManager.cs;GameManager;AddScore;6;3;0;1;153.8;67.3
+2D (Molz atual);Core\GameManager.cs;GameManager;EnsureDefaultDifficulty;13;3;2;0;182.7;59.5
+2D (Molz atual);Core\GameManager.cs;GameManager;EnsurePlayerStateInitialized;11;5;1;0;264.4;59.6
+2D (Molz atual);Core\GameManager.cs;GameManager;ResetRunState;14;7;1;2;261.5;57.1
+2D (Molz atual);Core\GameManager.cs;GameManager;LoadScene;1;2;0;1;24;90.1
+2D (Molz atual);Core\GameManager.cs;GameManager;GoBack;1;2;0;0;19.7;90.7
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;TotalQuestionsInRun (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;ActiveQuestionId (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;ActiveQuestionAnsweredCorrect (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;SetTotal;5;1;0;1;74.2;71.5
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;GetProgressPercentage;5;2;1;0;144.9;69.4
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;IsCompleted;1;1;0;1;19.7;90.8
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;SetActive;1;1;0;1;8;93.5
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;MarkActiveCorrect;1;1;0;0;8;93.5
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;Commit;14;5;1;0;253.8;57.5
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;Reset;8;2;0;0;114.4;65.6
+2D (Molz atual);Core\QuestionRunTracker.cs;QuestionRunTracker;EmitProgress;1;2;0;0;30;89.4
+2D (Molz atual);Core\SceneFader.cs;SceneFader;Awake;10;3;2;0;269.2;60.8
+2D (Molz atual);Core\SceneFader.cs;SceneFader;SetInstantVisible;7;1;0;0;93.8;67.6
+2D (Molz atual);Core\SceneFader.cs;SceneFader;SetInstantHidden;7;1;0;0;91.4;67.7
+2D (Molz atual);Core\SceneFader.cs;SceneFader;FadeOut;4;1;0;1;38.1;75.7
+2D (Molz atual);Core\SceneFader.cs;SceneFader;FadeIn;4;1;0;1;38.1;75.7
+2D (Molz atual);Core\SceneFader.cs;SceneFader;Fade;7;1;0;2;104;67.3
+2D (Molz atual);Core\SceneFader.cs;SceneFader;FadeRoutine;33;4;2;2;718.5;46.3
+2D (Molz atual);Core\SceneFader.cs;SceneFader;StopCurrent;8;2;2;0;65.7;67.3
+2D (Molz atual);Core\SceneRouter.cs;SceneRouter;SceneRouter (ctor);6;1;0;3;46.5;71.2
+2D (Molz atual);Core\SceneRouter.cs;SceneRouter;NotifySceneLoaded;5;3;1;0;108.4;70.1
+2D (Molz atual);Core\SceneRouter.cs;SceneRouter;LoadScene;4;1;0;1;39.9;75.5
+2D (Molz atual);Core\SceneRouter.cs;SceneRouter;LoadSceneWithFade;12;4;1;1;355;58.1
+2D (Molz atual);Core\SceneRouter.cs;SceneRouter;GoBack;4;1;0;0;34.9;75.9
+2D (Molz atual);Core\SceneRouter.cs;SceneRouter;GoBackWithFade;15;4;2;0;369.3;55.8
+2D (Molz atual);Core\ServiceLocator.cs;ServiceLocator;Register;15;3;2;1;267.9;56.9
+2D (Molz atual);Core\ServiceLocator.cs;ServiceLocator;TryResolve;13;3;2;1;204.3;59.1
+2D (Molz atual);Core\ServiceLocator.cs;ServiceLocator;Resolve;9;2;1;0;173.9;63.2
+2D (Molz atual);Core\ServiceLocator.cs;ServiceLocator;Clear;4;1;0;0;24;77.1
+2D (Molz atual);Data\Mappers\CompoundMapper.cs;CompoundMapper;ToDomain;15;2;0;1;237.7;57.4
+2D (Molz atual);Data\Mappers\QuestionMapper.cs;QuestionMapper;ToDomain;11;1;0;1;145.9;62
+2D (Molz atual);Data\Mappers\SolutionMapper.cs;SolutionMapper;ToDomain;20;1;0;1;387.6;53.4
+2D (Molz atual);Data\Mappers\SolventMapper.cs;SolventMapper;ToDomain;21;2;0;1;379.6;52.8
+2D (Molz atual);Data\Providers\FileJsonProvider.cs;FileJsonProvider;FileJsonProvider (ctor);4;1;0;1;15.5;78.4
+2D (Molz atual);Data\Providers\FileJsonProvider.cs;FileJsonProvider;LoadText;5;1;0;1;89.9;70.9
+2D (Molz atual);Data\Providers\ResourcesJsonProvider.cs;ResourcesJsonProvider;ResourcesJsonProvider (ctor);4;1;0;1;15.5;78.4
+2D (Molz atual);Data\Providers\ResourcesJsonProvider.cs;ResourcesJsonProvider;LoadText;19;3;2;1;395;53.5
+2D (Molz atual);Data\Repositories\JsonCompoundRepository.cs;JsonCompoundRepository;JsonCompoundRepository (ctor);16;3;4;1;401.1;55.1
+2D (Molz atual);Data\Repositories\JsonCompoundRepository.cs;JsonCompoundRepository;ListAll;2;1;0;0;38.1;82.2
+2D (Molz atual);Data\Repositories\JsonCompoundRepository.cs;JsonCompoundRepository;GetById;2;2;0;1;57.1;80.9
+2D (Molz atual);Data\Repositories\JsonQuestionRepository.cs;JsonQuestionRepository;JsonQuestionRepository (ctor);15;3;2;1;524.8;54.9
+2D (Molz atual);Data\Repositories\JsonQuestionRepository.cs;JsonQuestionRepository;ListAll;1;1;0;0;2;97.8
+2D (Molz atual);Data\Repositories\JsonQuestionRepository.cs;JsonQuestionRepository;GetById;2;2;0;1;57.1;80.9
+2D (Molz atual);Data\Repositories\JsonSolutionRepository.cs;JsonSolutionRepository;JsonSolutionRepository (ctor);17;3;4;1;475.7;54
+2D (Molz atual);Data\Repositories\JsonSolutionRepository.cs;JsonSolutionRepository;ListAll;2;1;0;0;38.1;82.2
+2D (Molz atual);Data\Repositories\JsonSolutionRepository.cs;JsonSolutionRepository;GetByIds;5;2;0;2;129.3;69.7
+2D (Molz atual);Data\Repositories\JsonSolventRepository.cs;JsonSolventRepository;JsonSolventRepository (ctor);15;3;4;1;401.1;55.7
+2D (Molz atual);Data\Repositories\JsonSolventRepository.cs;JsonSolventRepository;ListAll;2;1;0;0;38.1;82.2
+2D (Molz atual);Data\Repositories\JsonSolventRepository.cs;JsonSolventRepository;GetById;2;2;0;1;57.1;80.9
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;Id (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;Name (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;State (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;Group (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;Density (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;MeltingPoint (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;BoilingPoint (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;Compound (ctor);17;1;0;7;125.1;58.3
+2D (Molz atual);Domain\Entities\Compound.cs;Compound;ToString;1;1;0;0;25.8;90
+2D (Molz atual);Domain\Entities\IChemicalSubstance.cs;IChemicalSubstance;Id (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\IChemicalSubstance.cs;IChemicalSubstance;Name (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\IChemicalSubstance.cs;IChemicalSubstance;State (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\IChemicalSubstance.cs;IChemicalSubstance;MeltingPoint (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\IChemicalSubstance.cs;IChemicalSubstance;BoilingPoint (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\MixtureHistoryEntry.cs;MixtureHistoryEntry;Order (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\MixtureHistoryEntry.cs;MixtureHistoryEntry;Timestamp (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\MixtureHistoryEntry.cs;MixtureHistoryEntry;Outcome (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\MixtureHistoryEntry.cs;MixtureHistoryEntry;MixtureHistoryEntry (ctor);6;1;0;3;46.5;71.2
+2D (Molz atual);Domain\Entities\MixtureHistoryEntry.cs;MixtureHistoryEntry;ToString;7;1;0;0;172;65.8
+2D (Molz atual);Domain\Entities\PlayerProfile.cs;PlayerProfile;PlayerName (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Domain\Entities\PlayerProfile.cs;PlayerProfile;Lives (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Domain\Entities\PlayerProfile.cs;PlayerProfile;Score (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Domain\Entities\PlayerProfile.cs;PlayerProfile;PlayerProfile (ctor);6;1;0;2;46.5;71.2
+2D (Molz atual);Domain\Entities\PlayerProfile.cs;PlayerProfile;AddScore;1;1;0;1;8;93.5
+2D (Molz atual);Domain\Entities\PlayerProfile.cs;PlayerProfile;LoseLife;4;2;1;0;36.5;75.7
+2D (Molz atual);Domain\Entities\PlayerProfile.cs;PlayerProfile;Reset;6;1;0;2;46.5;71.2
+2D (Molz atual);Domain\Entities\Question.cs;Question;Id (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Question.cs;Question;CompoundId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Question.cs;Question;Description (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Question.cs;Question;CorrectAnswer (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Question.cs;Question;Alternatives (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Question.cs;Question;Hint (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Question.cs;Question;Feedback (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Question.cs;Question;Question (ctor);26;7;2;7;415.5;49.9
+2D (Molz atual);Domain\Entities\SolubilityOutcome.cs;SolubilityOutcome;Compound (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\SolubilityOutcome.cs;SolubilityOutcome;Solvent (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\SolubilityOutcome.cs;SolubilityOutcome;MixtureType (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\SolubilityOutcome.cs;SolubilityOutcome;SolubilityResult (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\SolubilityOutcome.cs;SolubilityOutcome;LitmusResult (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\SolubilityOutcome.cs;SolubilityOutcome;SolubilityOutcome (ctor);13;1;0;5;83.8;62.1
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;Id (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;CompoundId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;SolventId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;Name (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;SolubilityResult (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;LitmusResult (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;Solution (ctor);15;1;0;6;104;60.1
+2D (Molz atual);Domain\Entities\Solution.cs;Solution;ToString;2;1;0;0;25.8;83.4
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;Id (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;Name (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;State (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;MeltingPoint (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;BoilingPoint (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;FlaskType (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;ChemicalClass (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;Solvent (ctor);17;1;0;7;125.1;58.3
+2D (Molz atual);Domain\Entities\Solvent.cs;Solvent;ToString;1;1;0;0;25.8;90
+2D (Molz atual);Domain\Services\GameModeRules.cs;GameModeRulesFactory;For;14;4;1;1;211.8;58.2
+2D (Molz atual);Domain\Services\GameModeRules.cs;EstudoLivreRules;VisibleLifeIcons;1;1;0;2;2;97.8
+2D (Molz atual);Domain\Services\GameModeRules.cs;ExperimentosRules;VisibleLifeIcons;1;1;0;2;2;97.8
+2D (Molz atual);Domain\Services\GameModeRules.cs;DesafioRules;VisibleLifeIcons;1;1;0;2;2;97.8
+2D (Molz atual);Domain\Services\IGameModeRules.cs;IGameModeRules;Mode (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Services\IGameModeRules.cs;IGameModeRules;Label (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Services\IGameModeRules.cs;IGameModeRules;AllowsDecisionTree (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Services\IGameModeRules.cs;IGameModeRules;AppliesLifePenalty (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Services\IGameModeRules.cs;IGameModeRules;LivesOverrideText (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\Services\InMemoryHistoryService.cs;InMemoryHistoryService;Register;14;2;1;1;242.9;58
+2D (Molz atual);Domain\Services\InMemoryHistoryService.cs;InMemoryHistoryService;GetAll;1;1;0;0;2;97.8
+2D (Molz atual);Domain\Services\InMemoryHistoryService.cs;InMemoryHistoryService;Clear;5;1;0;0;41.5;73.3
+2D (Molz atual);Domain\Services\QuestionService.cs;QuestionService;CreateMysteryCompoundQuestion;52;8;3;3;1300.1;39.7
+2D (Molz atual);Domain\Services\QuestionService.cs;QuestionService;Shuffle;9;2;2;1;288.9;61.7
+2D (Molz atual);Domain\Services\ScoringService.cs;ScoringService;ScoringService (ctor);4;1;0;1;15.5;78.4
+2D (Molz atual);Domain\Services\ScoringService.cs;ScoringService;ComputePoints;5;2;1;2;74.2;71.4
+2D (Molz atual);Domain\Services\SolubilityService.cs;SolubilityService;SolubilityService (ctor);9;4;0;3;179.8;62.9
+2D (Molz atual);Domain\Services\SolubilityService.cs;SolubilityService;GetOutcome;25;6;2;2;589.3;49.3
+2D (Molz atual);Domain\States\GameStateMachine.cs;GameStateMachine;CurrentState (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Domain\States\GameStateMachine.cs;GameStateMachine;Register;5;2;1;1;118.9;70
+2D (Molz atual);Domain\States\GameStateMachine.cs;GameStateMachine;TryGet;10;2;2;1;162.5;62.4
+2D (Molz atual);Domain\States\GameStateMachine.cs;GameStateMachine;Transition;14;5;1;0;372.9;56.3
+2D (Molz atual);Domain\States\GameStates.cs;DelegateGameState;Name (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\States\GameStates.cs;DelegateGameState;DelegateGameState (ctor);6;2;0;3;57.4;70.4
+2D (Molz atual);Domain\States\GameStates.cs;DelegateGameState;OnEnter;1;2;0;0;19.7;90.7
+2D (Molz atual);Domain\States\GameStates.cs;DelegateGameState;OnExit;1;2;0;0;19.7;90.7
+2D (Molz atual);Domain\States\GameStates.cs;MenuState;MenuState (ctor);1;1;0;2;2;97.8
+2D (Molz atual);Domain\States\GameStates.cs;LabState;LabState (ctor);1;1;0;2;2;97.8
+2D (Molz atual);Domain\States\GameStates.cs;QuestionState;QuestionState (ctor);1;1;0;2;2;97.8
+2D (Molz atual);Domain\States\GameStates.cs;MixingState;MixingState (ctor);1;1;0;2;2;97.8
+2D (Molz atual);Domain\States\GameStates.cs;VictoryState;VictoryState (ctor);1;1;0;2;2;97.8
+2D (Molz atual);Domain\States\GameStates.cs;DefeatState;DefeatState (ctor);1;1;0;2;2;97.8
+2D (Molz atual);Domain\States\GameStates.cs;WinGameState;WinGameState (ctor);1;1;0;2;2;97.8
+2D (Molz atual);Domain\States\IGameState.cs;IGameState;Name (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\GenerateMysteryQuestionUseCase.cs;GenerateMysteryQuestionRequest;CompoundId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\GenerateMysteryQuestionUseCase.cs;GenerateMysteryQuestionRequest;GenerateMysteryQuestionRequest (ctor);4;1;0;1;15.5;78.4
+2D (Molz atual);Domain\UseCases\GenerateMysteryQuestionUseCase.cs;GenerateMysteryQuestionResponse;Question (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\GenerateMysteryQuestionUseCase.cs;GenerateMysteryQuestionResponse;GenerateMysteryQuestionResponse (ctor);4;1;0;1;15.5;78.4
+2D (Molz atual);Domain\UseCases\GenerateMysteryQuestionUseCase.cs;GenerateMysteryQuestionUseCase;GenerateMysteryQuestionUseCase (ctor);9;3;0;2;117.2;64.3
+2D (Molz atual);Domain\UseCases\GenerateMysteryQuestionUseCase.cs;GenerateMysteryQuestionUseCase;Execute;14;2;2;1;290;57.5
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionRequest;CompoundId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionRequest;SolventId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionRequest;MixSolutionRequest (ctor);5;1;0;2;30;74.3
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionResponse;Outcome (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionResponse;HistoryEntry (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionResponse;MixSolutionResponse (ctor);5;1;0;2;30;74.3
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionUseCase;MixSolutionUseCase (ctor);7;1;0;2;30;71.1
+2D (Molz atual);Domain\UseCases\MixSolutionUseCase.cs;MixSolutionUseCase;Execute;13;1;0;1;162.5;60.1
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerRequest;Question (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerRequest;SelectedAnswer (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerRequest;CurrentStreak (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerRequest;SubmitAnswerRequest (ctor);6;1;0;3;46.5;71.2
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerResponse;IsCorrect (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerResponse;EarnedPoints (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerResponse;NewStreak (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerResponse;Feedback (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerResponse;SubmitAnswerResponse (ctor);7;1;0;4;64.5;68.8
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerUseCase;SubmitAnswerUseCase (ctor);5;2;0;1;59.2;72.1
+2D (Molz atual);Domain\UseCases\SubmitAnswerUseCase.cs;SubmitAnswerUseCase;Execute;19;4;1;1;551.8;52.4
+2D (Molz atual);Domain\ValueObjects\SolutionKey.cs;SolutionKey;CompoundId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\ValueObjects\SolutionKey.cs;SolutionKey;SolventId (prop);1;1;0;0;8;93.5
+2D (Molz atual);Domain\ValueObjects\SolutionKey.cs;SolutionKey;SolutionKey (ctor);5;1;0;2;30;74.3
+2D (Molz atual);Domain\ValueObjects\SolutionKey.cs;SolutionKey;GetHashCode;2;1;0;0;24;83.6
+2D (Molz atual);Domain\ValueObjects\SolutionKey.cs;SolutionKey;Equals;4;3;0;1;56.5;74.2
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;Awake;19;2;0;0;604.3;52.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnEnable;6;2;0;0;33.2;72.1
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnDisable;4;2;0;0;28.5;76.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;Start;15;1;0;0;114.4;59.8
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowInfoPanel;4;1;0;0;28.5;76.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideInfoPanel;5;2;0;0;66.6;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;RenderDifficulty;4;2;0;2;43;75.2
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;RenderLives;4;2;0;2;43;75.2
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;RenderProgress;4;2;0;1;33.2;75.9
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;SetTreeAvailable;4;2;0;1;33.2;75.9
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideAllPanels;4;2;0;0;28.5;76.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowConfirmationPanel;11;3;1;1;216.3;60.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideConfirmationPanel;4;1;0;0;28.5;76.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnConfirmAction;17;3;2;0;241.5;56.1
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnCancelAction;7;2;0;0;96;67.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnRepeatMixButton;8;3;0;0;199;63.8
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowSolutionAnimationPanel;12;3;2;0;140.2;61
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideSolutionAnimationPanel;15;3;2;0;279.7;56.8
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;SetupQuestionPanel;22;8;3;1;581.4;50.3
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowQuestionPanel;4;1;0;0;28.5;76.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideQuestionPanel;4;1;0;0;28.5;76.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnQuestionSelect;16;3;2;1;218.5;56.9
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OpenQuestionForCurrentCompound;13;3;2;0;148.7;60.1
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowHistoryPanel;9;3;1;0;125.1;64.1
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideHistoryPanel;5;2;0;0;66.6;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowTreePanel;13;5;1;0;317.1;57.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideTreePanel;5;2;0;0;66.6;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowQuestionErrorPanel;4;1;0;0;28.5;76.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideQuestionErrorPanel;11;2;1;0;140.2;62
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowQuestionVictoryPanel;10;3;1;1;160.5;62.3
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowQuestionVictoryPanel;4;1;0;0;28.5;76.5
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideQuestionVictoryPanel;7;2;1;0;96;67.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnVictoryNextPhase;5;3;0;0;64.5;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnVictoryRestart;5;3;0;0;64.5;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnVictoryReturnToMenu;5;3;0;0;64.5;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ShowDefeatPanel;7;2;0;0;123;66.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;HideDefeatPanel;9;2;1;0;162.8;63.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnDefeatRestart;5;3;0;0;64.5;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnDefeatReturnToMenu;5;3;0;0;64.5;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;PauseGame;10;2;0;0;123;63.3
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ResumeGame;9;2;0;0;123;64.3
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ReturnToMainMenu;5;3;0;0;64.5;71.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;QuitGame;11;2;0;0;92;63.3
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;ResetFlowState;26;6;1;2;652.5;48.6
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;GetCurrentMode;7;3;0;0;127.4;66.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;RefreshStars;6;3;0;0;153.8;67.3
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;SetIconsActive;4;1;0;2;38.1;75.7
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnClickEnableMusic;4;2;0;0;28.5;76.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnClickDisableMusic;4;2;0;0;28.5;76.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;RefreshMusicToggleVisual;4;2;0;0;28.5;76.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnClickEnableSfx;5;2;0;0;57.4;72.2
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnClickDisableSfx;5;2;0;0;57.4;72.2
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;RefreshSfxToggleVisual;4;2;0;0;28.5;76.4
+2D (Molz atual);LabScripts\LabUIController.cs;LabUIController;OnTreeSliderChange;8;3;2;0;144.9;64.8
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;Awake;4;1;0;0;33.2;76.1
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;OnEnable;6;2;0;0;51.8;70.8
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;OnDisable;4;2;0;0;28.5;76.4
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;Start;10;1;0;0;96.8;64.1
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;RenderDifficulty;15;5;1;1;320.6;56.1
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;ApplySelectionVisuals;7;2;1;1;41.5;70
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;ShowLoadingPanel;14;7;2;0;344.9;56.3
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;HideLoadingPanel;7;3;0;0;81.4;67.8
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;StartHintCycle;6;1;0;0;65.7;70.2
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;StopHintCycle;8;2;2;0;65.7;67.3
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;HintCycleCoroutine;8;2;2;0;74;66.9
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;ShowRandomHint;7;3;1;0;178.8;65.4
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;LoadLabScene;8;4;1;0;133.4;64.9
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;SelectEasy;6;3;0;0;97.7;68.7
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;SelectMedium;6;3;0;0;97.7;68.7
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;SelectHard;6;3;0;0;97.7;68.7
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;ApplyDifficultySelectionVisuals;4;1;0;1;19.7;77.7
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;QuitGame;11;2;0;0;92;63.3
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;ShowAboutPanel;8;3;0;0;134.9;65
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;HideAboutPanel;11;3;1;0;180.1;61.1
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;ShowHelpPanel;8;3;0;0;134.9;65
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;HideHelpPanel;11;3;1;0;180.1;61.1
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;OnClickEnableMusic;9;3;1;0;134.9;63.9
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;OnClickDisableMusic;9;3;1;0;134.9;63.9
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;RefreshMusicToggleVisual;12;4;1;0;219.6;59.5
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;OnClickEnableSfx;6;2;0;0;83.8;69.3
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;OnClickDisableSfx;6;2;0;0;83.8;69.3
+2D (Molz atual);MenuScripts\MenuUIController.cs;MenuUIController;RefreshSfxToggleVisual;12;4;1;0;219.6;59.5
+2D (Molz atual);MenuScripts\SliderController.cs;Slider_Controller;Start;4;1;0;0;25.3;76.9
+2D (Molz atual);MenuScripts\SliderController.cs;Slider_Controller;IncreaseProgress;6;1;0;0;134;68
+2D (Molz atual);MenuScripts\SliderController.cs;Slider_Controller;UpdateVisual;4;1;0;0;38.1;75.7
+2D (Molz atual);MenuScripts\SliderController.cs;Slider_Controller;LoadProgressBar;11;2;2;0;192.6;61
+2D (Molz atual);Presentation\Common\SimpleSpriteAnimator.cs;SimpleSpriteAnimator;Awake;8;2;2;0;131.8;65.2
+2D (Molz atual);Presentation\Common\SimpleSpriteAnimator.cs;SimpleSpriteAnimator;LoadAndPlayAnimation;16;3;2;4;330.7;55.7
+2D (Molz atual);Presentation\Common\SimpleSpriteAnimator.cs;SimpleSpriteAnimator;PlayAnimation;6;2;1;1;101.6;68.7
+2D (Molz atual);Presentation\Common\SimpleSpriteAnimator.cs;SimpleSpriteAnimator;Animate;13;3;4;0;257.5;58.4
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;ScaleTo;11;1;0;7;94;63.3
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;ScaleTo;10;1;0;6;102.2;64
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;ScalePop;9;1;0;5;74.2;66
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;ScaleCoroutine;26;4;2;6;475.7;49.8
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;ScalePopCoroutine;20;3;1;4;388.4;53.1
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;ApplyEasing;13;9;0;2;473.1;55.8
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;BounceEaseOut;14;4;3;1;456.3;55.8
+2D (Molz atual);Presentation\Common\UIAnimator.cs;UIAnimator;ElasticEaseOut;11;4;0;1;294.4;59.5
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;Awake;4;1;0;0;15.5;78.4
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;ValidateAndSetupAnimator;34;5;4;0;548.8;46.7
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;SetAnimationFromOutcome;44;6;2;1;534.7;44.2
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;ApplyAnimationParameters;29;2;2;1;707.8;47.9
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;GetCurrentStateName;11;3;1;0;176.4;61.1
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;BuildAnimationKey;9;1;0;1;249.7;62.3
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;FlaskTypeToInt;11;6;0;1;148.7;61.3
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;MixtureTypeToInt;9;4;0;1;89.9;65
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;SolubilityResultToInt;10;5;0;1;118.5;63
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;LitmusResultToInt;11;6;0;1;148.7;61.3
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;FlaskTypeToString;11;6;0;1;148.7;61.3
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;MixtureTypeToString;9;4;0;1;89.9;65
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;SolubilityResultToString;10;5;0;1;118.5;63
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;LitmusResultToString;11;6;0;1;148.7;61.3
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;TestDefaultAnimation;19;2;2;0;320.4;54.3
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;TestCrossFadeAnimation;15;2;2;0;187.3;58.2
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;PlayAnimationDirectly;36;6;4;1;625.5;45.7
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;FindValidStateWithFallback;44;7;3;2;980.5;42.3
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;StateExists;5;1;0;1;89.9;70.9
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;LogCurrentStateAfterFrame;10;3;2;0;264.4;60.8
+2D (Molz atual);Presentation\Lab\FlaskAnimationController.cs;FlaskAnimationController;BuildStateNameForAnimator;9;2;0;1;297.2;61.6
+2D (Molz atual);Presentation\Lab\HistoryPanelController.cs;HistoryPanelController;EnsureHistoryService;6;2;1;0;112.6;68.4
+2D (Molz atual);Presentation\Lab\HistoryPanelController.cs;HistoryPanelController;Awake;16;6;3;0;354.6;55.1
+2D (Molz atual);Presentation\Lab\HistoryPanelController.cs;HistoryPanelController;RefreshHistory;65;17;4;1;1814.4;35.3
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;LabPresenter (ctor);4;2;0;1;59.2;74.2
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;Initialize;27;4;2;1;487.3;49.4
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;Dispose;11;3;2;0;180.9;61.1
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;HandleDifficultyChanged;12;3;1;1;330;58.4
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;HandleLivesChanged;5;1;0;1;60.9;72.1
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;HandleGameOver;4;1;0;0;24;77.1
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;HandleProgressChanged;4;1;0;1;28.5;76.5
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;OnNextPhaseRequested;9;2;1;0;174.2;63.2
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;OnRestartRequested;6;2;0;0;138.2;67.8
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;OnDefeatRestartRequested;7;3;0;0;171.9;65.5
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;OnReturnToMenuAfterFlowRequested;6;2;0;0;140.2;67.7
+2D (Molz atual);Presentation\Lab\LabPresenter.cs;LabPresenter;OnReturnToMenuFromPauseRequested;5;2;0;0;70.3;71.6
+2D (Molz atual);Presentation\Lab\MixingRoundController.cs;MixingRoundController;Awake;7;2;2;0;72.3;68.3
+2D (Molz atual);Presentation\Lab\MixingRoundController.cs;MixingRoundController;Start;11;3;1;0;260.1;60
+2D (Molz atual);Presentation\Lab\MixingRoundController.cs;MixingRoundController;SetCurrentCompound;4;1;0;1;15.5;78.4
+2D (Molz atual);Presentation\Lab\MixingRoundController.cs;MixingRoundController;OnSolventClicked;10;2;2;2;100;63.9
+2D (Molz atual);Presentation\Lab\MixingRoundController.cs;MixingRoundController;OnConfirmMix;39;11;2;0;1194.2;42.3
+2D (Molz atual);Presentation\Lab\MixingRoundController.cs;MixingRoundController;ResetRoundState;8;2;1;1;74.2;66.9
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;Instance (prop);1;1;0;0;18.1;91.1
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;Awake;13;3;2;0;139;60.3
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;Warmup;4;1;0;0;15.5;78.4
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;Show;43;7;4;3;788.8;43.1
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;ShowNextFrame;16;3;2;3;165;57.8
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;StartShowTween;44;7;5;3;911.6;42.5
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;Hide;57;9;4;3;1106.1;39.2
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;ShowImmediate;24;4;4;1;420;51
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;HideImmediate;25;4;4;1;420;50.6
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;CancelTweens;4;1;0;1;28.5;76.5
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;EnsureLeanTweenInitialized;10;2;2;0;110.4;63.6
+2D (Molz atual);Presentation\Lab\OverlayAnimator.cs;OverlayAnimator;GetOrAddCanvasGroup;10;2;2;1;152.9;62.6
+2D (Molz atual);Presentation\Lab\OverlayAnimatorBootstrap.cs;OverlayAnimatorBootstrap;Awake;14;2;2;0;157.2;59.4
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;Awake;5;3;1;0;128;69.6
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;Start;24;4;2;0;453.2;50.8
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;LoadQuestions;14;3;2;0;264.4;57.6
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;PrepareOrRestoreActiveQuestion;14;5;4;0;274;57.3
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;GetAvailableQuestions;11;4;3;0;235.6;60.1
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;SelectNewQuestion;16;4;2;0;401.9;55
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;ShowQuestionForCurrentCompound;12;5;1;0;203.1;59.6
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;OnAnswerSelected;30;12;3;1;835.3;45.7
+2D (Molz atual);Presentation\Lab\QuestionFlowPresenter.cs;QuestionFlowPresenter;PrepareNextCompound;11;5;1;1;152.9;61.3
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;Awake;9;2;2;0;64.5;66.2
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;OnDisable;5;1;0;0;28.1;74.5
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;Open;23;2;2;0;215.5;53.7
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;Close;23;2;2;0;252;53.2
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;Toggle;10;2;2;0;59.8;65.5
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;SetStateImmediate;9;3;0;1;159.9;63.3
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;ApplyInitialState;6;3;0;0;127.4;67.9
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;StopPanelAnimation;10;2;2;0;75.3;64.8
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;OnPanelAnimationFinished;4;1;0;0;15.5;78.4
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;GetOpenScale;4;1;0;0;28.5;76.5
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;GetClosedScale;4;1;0;0;28.5;76.5
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;StartLegendFadeIn;12;2;2;0;122.6;61.6
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;DelayedLegendFadeIn;12;1;0;0;252.7;59.5
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;CancelLegendAnimation;14;3;2;0;163.5;59.1
+2D (Molz atual);Presentation\Lab\SolutionPanelAnimator.cs;SolutionPanelAnimator;SetLegendAlpha;11;2;2;1;124;62.4
+2D (Molz atual);Presentation\Lab\SolventClickHandler.cs;SolventClickHandler;Awake;7;2;2;0;72.3;68.3
+2D (Molz atual);Presentation\Lab\SolventClickHandler.cs;SolventClickHandler;OnMouseDown;5;1;0;0;15.5;76.3
+2D (Molz atual);Presentation\Lab\SolventClickHandler.cs;SolventClickHandler;OnSolventButtonClick;5;1;0;0;15.5;76.3
+2D (Molz atual);Presentation\Lab\SolventClickHandler.cs;SolventClickHandler;TriggerMix;11;3;2;0;165;61.4
+2D (Molz atual);Presentation\Lab\TestMessageHandler.cs;TestMessageHandler;MapOutcome;69;10;1;1;1381.4;36.6
+2D (Molz atual);Presentation\Lab\TestMessageHandler.cs;TestMessageHandler;BuildMessage;18;2;1;2;493.3;53.5
+2D (Molz atual);Presentation\Lab\TestMessageHandler.cs;TestMessageHandler;GetHistoryMessage;4;1;0;1;57.4;74.4
+2D (Molz atual);Presentation\Lab\TestMessageHandler.cs;TestMessageHandler;GetTestMessage;4;1;0;1;33.2;76.1
+2D (Molz atual);Presentation\Lab\Views\LabAudioToggleView.cs;LabAudioToggleView;LabAudioToggleView (ctor);11;1;0;5;83.8;63.7
+2D (Molz atual);Presentation\Lab\Views\LabAudioToggleView.cs;LabAudioToggleView;EnableMusic;6;3;0;0;69.2;69.7
+2D (Molz atual);Presentation\Lab\Views\LabAudioToggleView.cs;LabAudioToggleView;DisableMusic;6;3;0;0;69.2;69.7
+2D (Molz atual);Presentation\Lab\Views\LabAudioToggleView.cs;LabAudioToggleView;RefreshMusicVisual;7;4;1;0;190.2;65.1
+2D (Molz atual);Presentation\Lab\Views\LabAudioToggleView.cs;LabAudioToggleView;EnableSfx;5;2;0;0;43.2;73
+2D (Molz atual);Presentation\Lab\Views\LabAudioToggleView.cs;LabAudioToggleView;DisableSfx;5;2;0;0;43.2;73
+2D (Molz atual);Presentation\Lab\Views\LabAudioToggleView.cs;LabAudioToggleView;RefreshSfxVisual;7;4;1;0;190.2;65.1
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;LabHudView (ctor);25;1;0;11;216.2;53
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;RenderDifficulty;9;4;1;2;150.1;63.4
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;RenderLives;10;4;1;2;279.7;60.5
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;RenderProgress;5;2;1;1;59.2;72.1
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;SetTreeAvailable;20;11;4;1;483.3;51.3
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;RefreshStars;6;2;0;2;178.8;67
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;ClearStars;1;1;0;0;19.7;90.8
+2D (Molz atual);Presentation\Lab\Views\LabHudView.cs;LabHudView;SetIconsActive;7;4;2;2;215.5;64.7
+2D (Molz atual);Presentation\Lab\Views\LabPanelsView.cs;LabPanelsView;LabPanelsView (ctor);5;2;0;2;60.9;72
+2D (Molz atual);Presentation\Lab\Views\LabPanelsView.cs;LabPanelsView;HideAll;6;3;1;0;190.4;66.7
+2D (Molz atual);Presentation\Menu\DifficultySelectorPresenter.cs;DifficultySelectorPresenter;DifficultySelectorPresenter (ctor);4;2;0;1;59.2;74.2
+2D (Molz atual);Presentation\Menu\DifficultySelectorPresenter.cs;DifficultySelectorPresenter;Initialize;14;4;2;0;214.1;58.1
+2D (Molz atual);Presentation\Menu\DifficultySelectorPresenter.cs;DifficultySelectorPresenter;Dispose;8;3;2;0;89.9;66.2
+2D (Molz atual);Presentation\Menu\DifficultySelectorPresenter.cs;DifficultySelectorPresenter;HandleDifficultyChanged;5;1;0;1;53.2;72.5
+2D (Molz atual);Presentation\Menu\DifficultySelectorPresenter.cs;DifficultySelectorPresenter;Select;5;3;1;1;68.5;71.5
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;MenuPresenter (ctor);4;2;0;1;59.2;74.2
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;Initialize;32;6;2;3;614.7;46.8
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;Dispose;8;3;2;0;89.9;66.2
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;HandleDifficultyChanged;5;1;0;1;53.2;72.5
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;SelectEasy;1;1;0;0;11.6;92.4
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;SelectMedium;1;1;0;0;11.6;92.4
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;SelectHard;1;1;0;0;11.6;92.4
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;SelectDifficulty;15;3;2;1;198.8;57.8
+2D (Molz atual);Presentation\Menu\MenuPresenter.cs;MenuPresenter;StartGame;10;5;1;0;267.5;60.5
+2D (Molz atual);UI\FloatingEffect.cs;FloatingEffect;Start;4;1;0;0;24;77.1
+2D (Molz atual);UI\FloatingEffect.cs;FloatingEffect;Update;5;1;0;0;133.8;69.7
+2D (Molz atual);UI\NavbarController.cs;NavbarController;OnClickHome;19;2;0;0;275.1;54.8
+2D (Molz atual);UI\NavbarController.cs;NavbarController;OnClickSettings;19;2;0;0;275.1;54.8
+2D (Molz atual);UI\NavbarController.cs;NavbarController;OnClickShop;18;2;0;0;275.1;55.3
+2D (Molz atual);UI\NavbarController.cs;NavbarController;ShowHomePage;8;1;0;0;56.5;67.9
+2D (Molz atual);UI\NavbarController.cs;NavbarController;ShowSettingsPage;7;1;0;0;56.5;69.2
+2D (Molz atual);UI\NavbarController.cs;NavbarController;ShowShopPage;7;1;0;0;56.5;69.2
+2D (Molz atual);UI\NavbarController.cs;NavbarController;EnableGameObject;4;1;0;1;28.5;76.5
+2D (Molz atual);UI\NavbarController.cs;NavbarController;DisableGameObject;4;1;0;1;28.5;76.5
+2D (Molz atual);UI\NavbarController.cs;NavbarController;DisableButton;4;1;0;1;24;77.1
+2D (Molz atual);UI\NavbarController.cs;NavbarController;EnableButton;4;1;0;1;24;77.1
+2D (Molz atual);UI\NavbarController.cs;NavbarController;EnableImage;4;1;0;1;24;77.1
+2D (Molz atual);UI\NavbarController.cs;NavbarController;DisableImage;4;1;0;1;24;77.1
+2D (Molz atual);UI\TreeSolventGroupButtons.cs;TreeSolventGroupButtons;updateMessage;61;11;1;1;1974;36.5
+2D (Molz atual);WinSceneScripts\WinSceneUIController.cs;WinSceneUI_Controller;LoadScene;22;4;2;1;320.9;52.6
+2D (Molz atual);WinSceneScripts\WinSceneUIController.cs;WinSceneUI_Controller;JogarNovamente;4;1;0;0;28.5;76.5
+2D (Molz atual);WinSceneScripts\WinSceneUIController.cs;WinSceneUI_Controller;VoltarAoMenuInicial;4;1;0;0;28.5;76.5

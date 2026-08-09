@@ -1,0 +1,49 @@
+﻿===== 2D (Molz atual) =====
+arquivos analisados            : 91
+linhas fisicas                 : 6921
+linhas de codigo (sem branco)  : 5093
+linhas de comentario           : 695
+densidade de comentarios (%)   : 12.0
+classes                        : 79
+interfaces                     : 16
+structs/records                : 7
+enums                          : 9
+tipos acoplados a Unity        : 24  (30.4% das classes)
+membros analisados             : 496
+
+CC media                       : 2.33
+CC mediana                     : 2.0
+CC maxima                      : 17
+CC total (soma)                : 1158
+membros com CC > 10            : 6  (1.2%)
+membros com CC > 20            : 0
+
+Maintainability Index medio    : 72.5
+MI mediano                     : 71.2
+membros com MI < 20 (ruim)     : 0
+membros com MI 20-64 (moderado): 173
+membros com MI >= 65 (bom)     : 323  (65.1%)
+
+LOC media por membro           : 8.3
+membros com mais de 60 linhas  : 3
+membros com aninhamento >= 4   : 14
+acoplamento eferente medio     : 11.4
+
+God Classes (>300 LOC ou >25 membros publicos) : 5
+   LabUIController                     692 LOC   67 pub  CC   78  LabScripts\LabUIController.cs
+   FlaskAnimationController            458 LOC    3 pub  CC   63  Presentation\Lab\FlaskAnimationController.cs
+   MenuUIController                    379 LOC   32 pub  CC   50  MenuScripts\MenuUIController.cs
+   MusicManager                        334 LOC   13 pub  CC   50  Core\Audio\MusicManager.cs
+   GameManager                         259 LOC   28 pub  CC   50  Core\GameManager.cs
+
+TOP 10 membros por complexidade ciclomatica:
+   CC  17  MI  35.3    65 LOC  HistoryPanelController.RefreshHistory
+   CC  12  MI  45.7    30 LOC  QuestionFlowPresenter.OnAnswerSelected
+   CC  11  MI  54.7    16 LOC  SfxManager.GetClip
+   CC  11  MI  42.3    39 LOC  MixingRoundController.OnConfirmMix
+   CC  11  MI  51.3    20 LOC  LabHudView.SetTreeAvailable
+   CC  11  MI  36.5    61 LOC  TreeSolventGroupButtons.updateMessage
+   CC  10  MI  53.9    13 LOC  SfxManager.LoadDefaultClipsIfNeeded
+   CC  10  MI  36.6    69 LOC  TestMessageHandler.MapOutcome
+   CC   9  MI  55.8    13 LOC  UIAnimator.ApplyEasing
+   CC   9  MI  39.2    57 LOC  OverlayAnimator.Hide

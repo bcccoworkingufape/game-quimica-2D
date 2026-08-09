@@ -1,0 +1,19 @@
+regra;ocorrencias;descricao
+UNT0008;93;Null propagation on Unity objects
+CS0649;48;Field is never assigned to, and will always have its default value
+S2325;21;Methods and properties that don't access instance data should be static
+S3903;7;Types should be defined in named namespaces
+S2933;4;Fields that are only assigned in the constructor should be "readonly"
+S1135;3;Track uses of "TODO" tags
+S3881;3;"IDisposable" should be implemented correctly
+UNT0026;3;GetComponent always allocates
+S1121;3;Assignments should not be made from within sub-expressions
+UNT0039;2;Use RequireComponent attribute when self-invoking GetComponent
+S2190;2;Loops and recursions should not be infinite
+S2955;2;Generic parameters not constrained to reference types should not be compared to "null"
+S4144;1;Methods should not have identical implementations
+UNT0038;1;WaitForSeconds caching 
+S3928;1;Parameter names used into ArgumentException constructors should match an existing one 
+S1854;1;Unused assignments should be removed
+UNT0007;1;Null coalescing on Unity objects
+S1481;1;Unused local variables should be removed
