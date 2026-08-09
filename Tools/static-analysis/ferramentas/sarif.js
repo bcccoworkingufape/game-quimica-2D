@@ -71,6 +71,35 @@ Object.entries(byFile).sort(porQtd).slice(0, 15).forEach(([f, n]) => {
   W('  ' + String(n).padStart(4) + 'x  ' + f);
 });
 
+// Reprodutibilidade: o Roslyn emite os diagnosticos em ordem nao deterministica
+// (compilacao paralela). Reescreve o SARIF com os achados ordenados, para que duas
+// execucoes do mesmo codigo produzam arquivos byte a byte identicos.
+const chave = (x) => {
+  const l = (x.locations || [])[0];
+  const pl = l && l.physicalLocation;
+  const uri = pl && pl.artifactLocation ? pl.artifactLocation.uri : '';
+  const ln = pl && pl.region ? pl.region.startLine || 0 : 0;
+  const col = pl && pl.region ? pl.region.startColumn || 0 : 0;
+  return [x.ruleId || '', uri, String(ln).padStart(7, '0'), String(col).padStart(5, '0')].join('|');
+};
+if (run.results) run.results.sort((a, b) => chave(a).localeCompare(chave(b), 'en'));
+if (driver && driver.rules) driver.rules.sort((a, b) => (a.id || '').localeCompare(b.id || '', 'en'));
+
+// Remove telemetria de tempo de execucao (medicao de relogio, varia a cada execucao
+// e nao descreve nenhum achado).
+if (run.properties) {
+  delete run.properties.analyzerExecutionTime;
+  if (Object.keys(run.properties).length === 0) delete run.properties;
+}
+JSON.stringify(sarif, (k, v) => {
+  if (v && typeof v === 'object' && !Array.isArray(v)) {
+    delete v.executionTimeInSeconds;
+    delete v.executionTimeInPercentage;
+  }
+  return v;
+});
+fs.writeFileSync(process.argv[2], JSON.stringify(sarif, null, 2), 'utf8');
+
 fs.writeFileSync(path.replace(/\.sarif$/, '-resumo.txt'), out.join('\n'), 'utf8');
 const csv = ['regra;ocorrencias;descricao'].concat(
   Object.entries(byRule).sort(porQtd)
