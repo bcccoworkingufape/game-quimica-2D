@@ -57,20 +57,23 @@ W('  code smell    : ' + cat['code-smell']);
 W('  vulnerability : ' + cat.vulnerability);
 W('  nao rotulado  : ' + cat.outro);
 W('');
+// ordenacao deterministica: quantidade desc, depois id da regra asc
+const porQtd = (a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'en');
+
 W('TOP 20 regras mais acionadas:');
-Object.entries(byRule).sort((a, b) => b[1] - a[1]).slice(0, 20).forEach(([id, n]) => {
+Object.entries(byRule).sort(porQtd).slice(0, 20).forEach(([id, n]) => {
   const r = rules[id] || {};
   W('  ' + String(n).padStart(4) + 'x  ' + id.padEnd(7) + ' ' + (r.name || '').slice(0, 92));
 });
 W('');
 W('TOP 15 arquivos com mais violacoes:');
-Object.entries(byFile).sort((a, b) => b[1] - a[1]).slice(0, 15).forEach(([f, n]) => {
+Object.entries(byFile).sort(porQtd).slice(0, 15).forEach(([f, n]) => {
   W('  ' + String(n).padStart(4) + 'x  ' + f);
 });
 
 fs.writeFileSync(path.replace(/\.sarif$/, '-resumo.txt'), out.join('\n'), 'utf8');
 const csv = ['regra;ocorrencias;descricao'].concat(
-  Object.entries(byRule).sort((a, b) => b[1] - a[1])
+  Object.entries(byRule).sort(porQtd)
     .map(([id, n]) => id + ';' + n + ';' + ((rules[id] && rules[id].name) || '').replace(/;/g, ','))
 ).join('\n');
 fs.writeFileSync(path.replace(/\.sarif$/, '-regras.csv'), csv, 'utf8');

@@ -14,19 +14,19 @@ TOP 20 regras mais acionadas:
     21x  S2325   Methods and properties that don't access instance data should be static
      7x  S3903   Types should be defined in named namespaces
      4x  S2933   Fields that are only assigned in the constructor should be "readonly"
+     3x  S1121   Assignments should not be made from within sub-expressions
      3x  S1135   Track uses of "TODO" tags
      3x  S3881   "IDisposable" should be implemented correctly
      3x  UNT0026 GetComponent always allocates
-     3x  S1121   Assignments should not be made from within sub-expressions
-     2x  UNT0039 Use RequireComponent attribute when self-invoking GetComponent
      2x  S2190   Loops and recursions should not be infinite
      2x  S2955   Generic parameters not constrained to reference types should not be compared to "null"
-     1x  S4144   Methods should not have identical implementations
-     1x  UNT0038 WaitForSeconds caching 
-     1x  S3928   Parameter names used into ArgumentException constructors should match an existing one 
-     1x  S1854   Unused assignments should be removed
-     1x  UNT0007 Null coalescing on Unity objects
+     2x  UNT0039 Use RequireComponent attribute when self-invoking GetComponent
      1x  S1481   Unused local variables should be removed
+     1x  S1854   Unused assignments should be removed
+     1x  S3928   Parameter names used into ArgumentException constructors should match an existing one 
+     1x  S4144   Methods should not have identical implementations
+     1x  UNT0007 Null coalescing on Unity objects
+     1x  UNT0038 WaitForSeconds caching 
 
 TOP 15 arquivos com mais violacoes:
     45x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/LabScripts/LabUIController.cs
@@ -38,9 +38,9 @@ TOP 15 arquivos com mais violacoes:
      6x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Core/GameManager.cs
      6x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/MenuScripts/SliderController.cs
      6x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Lab/LabPresenter.cs
-     5x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Lab/MixingRoundController.cs
      5x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Lab/HistoryPanelController.cs
+     5x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Lab/MixingRoundController.cs
      4x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Lab/SolventClickHandler.cs
-     3x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/UI/TreeSolventGroupButtons.cs
      3x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Common/SimpleSpriteAnimator.cs
+     3x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Common/UIAnimator.cs
      3x  file:///C:/UnityProjects/bcc/game-quimica-2D/Assets/Scripts/Presentation/Lab/TestMessageHandler.cs

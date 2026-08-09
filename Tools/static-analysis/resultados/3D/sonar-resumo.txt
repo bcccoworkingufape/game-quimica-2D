@@ -25,24 +25,24 @@ TOP 20 regras mais acionadas:
      4x  UNT0022 Inefficient position/rotation assignment
      3x  S3459   Unassigned members should be removed
      2x  CS0105  Using directive appeared previously in this namespace
+     2x  S1066   Mergeable "if" statements should be combined
      2x  S4144   Methods should not have identical implementations
      2x  UNT0001 Empty Unity message
-     2x  S1066   Mergeable "if" statements should be combined
-     1x  S1144   Unused private types or members should be removed
+     1x  S1125   Boolean literals should not be redundant
 
 TOP 15 arquivos com mais violacoes:
     29x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Shared/UIManager.cs
     12x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Questions/QuestionManager.cs
     10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Animation/AnimationManager.cs
-    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/SolventsListManager.cs
-    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Json/SubstanceManager.cs
     10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Questions/BasicSceneLoader.cs
+    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Json/SubstanceManager.cs
+    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/SolventsListManager.cs
      9x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Core/GameManager.cs
      8x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Chemistry/GameControllerChemical.cs
      7x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Animation/PowderBlendController.cs
      6x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Animation/PowderBlendShapeController.cs
      6x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/History/ReactionHistoryManager.cs
      6x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/ConfirmationPopup.cs
-     5x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/HistoryListManager.cs
      5x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Player/PlayerUIController.cs
      5x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Questions/QuestionLoader.cs
+     5x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/HistoryListManager.cs

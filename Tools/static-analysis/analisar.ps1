@@ -25,6 +25,12 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+
+# Reprodutibilidade: sem isto, as descricoes das regras do compilador (CS####) saem
+# no idioma do sistema, e o mesmo codigo gera relatorios diferentes em maquinas diferentes.
+$env:DOTNET_CLI_UI_LANGUAGE = 'en'
+$env:VSLANG = '1033'
+
 $here  = Split-Path -Parent $MyInvocation.MyCommand.Path
 $ferr  = Join-Path $here 'ferramentas'
 $res   = Join-Path $here 'resultados'

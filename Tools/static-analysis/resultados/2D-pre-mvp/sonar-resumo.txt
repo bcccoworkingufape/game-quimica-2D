@@ -13,21 +13,21 @@ TOP 20 regras mais acionadas:
     48x  CS0649  Field is never assigned to, and will always have its default value
     22x  S2325   Methods and properties that don't access instance data should be static
      7x  S3903   Types should be defined in named namespaces
-     4x  S2933   Fields that are only assigned in the constructor should be "readonly"
      4x  S1481   Unused local variables should be removed
-     3x  S1135   Track uses of "TODO" tags
+     4x  S2933   Fields that are only assigned in the constructor should be "readonly"
      3x  S1121   Assignments should not be made from within sub-expressions
+     3x  S1135   Track uses of "TODO" tags
      2x  S125    Sections of code should not be commented out
-     2x  UNT0039 Use RequireComponent attribute when self-invoking GetComponent
      2x  S2190   Loops and recursions should not be infinite
      2x  UNT0026 GetComponent always allocates
-     1x  S1118   Utility classes should not have public constructors
-     1x  S4144   Methods should not have identical implementations
-     1x  UNT0038 WaitForSeconds caching 
-     1x  S3928   Parameter names used into ArgumentException constructors should match an existing one 
-     1x  S2955   Generic parameters not constrained to reference types should not be compared to "null"
+     2x  UNT0039 Use RequireComponent attribute when self-invoking GetComponent
      1x  S1066   Mergeable "if" statements should be combined
+     1x  S1118   Utility classes should not have public constructors
+     1x  S2955   Generic parameters not constrained to reference types should not be compared to "null"
+     1x  S3928   Parameter names used into ArgumentException constructors should match an existing one 
+     1x  S4144   Methods should not have identical implementations
      1x  UNT0007 Null coalescing on Unity objects
+     1x  UNT0038 WaitForSeconds caching 
 
 TOP 15 arquivos com mais violacoes:
     54x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/LabScripts/LabUIController.cs
@@ -40,8 +40,8 @@ TOP 15 arquivos com mais violacoes:
      5x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Lab/HistoryPanelController.cs
      5x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Lab/MixingRoundController.cs
      4x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Lab/SolventClickHandler.cs
-     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/UI/TreeSolventGroupButtons.cs
      3x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Common/SimpleSpriteAnimator.cs
-     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Lab/TestMessageHandler.cs
      3x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Common/UIAnimator.cs
-     2x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/utils/Utils.cs
+     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Lab/TestMessageHandler.cs
+     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/UI/TreeSolventGroupButtons.cs
+     2x  file:///C:/Users/ben/AppData/Local/Temp/molz-baseline/Assets/Scripts/Presentation/Lab/OverlayAnimator.cs
