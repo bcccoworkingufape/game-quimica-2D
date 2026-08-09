@@ -15,13 +15,13 @@ UNT0008;4;Null propagation on Unity objects
 UNT0022;4;Inefficient position/rotation assignment
 S3459;3;Unassigned members should be removed
 CS0105;2;Using directive appeared previously in this namespace
+S1066;2;Mergeable "if" statements should be combined
 S4144;2;Methods should not have identical implementations
 UNT0001;2;Empty Unity message
-S1066;2;Mergeable "if" statements should be combined
-S1144;1;Unused private types or members should be removed
-S4136;1;Method overloads should be grouped together
-S2326;1;Unused type parameters should be removed
-S1186;1;Methods should not be empty
 S1125;1;Boolean literals should not be redundant
+S1144;1;Unused private types or members should be removed
+S1186;1;Methods should not be empty
 S1481;1;Unused local variables should be removed
+S2326;1;Unused type parameters should be removed
 S3626;1;Jump statements should not be redundant
+S4136;1;Method overloads should be grouped together
