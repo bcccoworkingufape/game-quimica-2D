@@ -1,0 +1,27 @@
+regra;ocorrencias;descricao
+CS0649;54;Field is never assigned to, and will always have its default value
+S2325;36;Methods and properties that don't access instance data should be static
+S125;31;Sections of code should not be commented out
+S2094;12;Classes should not be empty
+UNT0039;12;Use RequireComponent attribute when self-invoking GetComponent
+CS0618;11;Type or member is obsolete
+UNT0026;10;GetComponent always allocates
+UNT0038;8;WaitForSeconds caching 
+S2933;7;Fields that are only assigned in the constructor should be "readonly"
+S3903;7;Types should be defined in named namespaces
+UNT0013;6;Remove invalid SerializeField attribute
+S1135;4;Track uses of "TODO" tags
+UNT0008;4;Null propagation on Unity objects
+UNT0022;4;Inefficient position/rotation assignment
+S3459;3;Unassigned members should be removed
+CS0105;2;Using directive appeared previously in this namespace
+S4144;2;Methods should not have identical implementations
+UNT0001;2;Empty Unity message
+S1066;2;Mergeable "if" statements should be combined
+S1144;1;Unused private types or members should be removed
+S4136;1;Method overloads should be grouped together
+S2326;1;Unused type parameters should be removed
+S1186;1;Methods should not be empty
+S1125;1;Boolean literals should not be redundant
+S1481;1;Unused local variables should be removed
+S3626;1;Jump statements should not be redundant

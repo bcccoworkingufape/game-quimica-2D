@@ -1,0 +1,48 @@
+===== SonarAnalyzer.CSharp 10.31 — 3D (ChemistryLab) =====
+violacoes no codigo proprio (assets/scripts): 224
+regras distintas acionadas                  : 26
+
+por categoria (tags da regra):
+  bug           : 0
+  code smell    : 0
+  vulnerability : 0
+  nao rotulado  : 224
+
+TOP 20 regras mais acionadas:
+    54x  CS0649  Field is never assigned to, and will always have its default value
+    36x  S2325   Methods and properties that don't access instance data should be static
+    31x  S125    Sections of code should not be commented out
+    12x  S2094   Classes should not be empty
+    12x  UNT0039 Use RequireComponent attribute when self-invoking GetComponent
+    11x  CS0618  Type or member is obsolete
+    10x  UNT0026 GetComponent always allocates
+     8x  UNT0038 WaitForSeconds caching 
+     7x  S2933   Fields that are only assigned in the constructor should be "readonly"
+     7x  S3903   Types should be defined in named namespaces
+     6x  UNT0013 Remove invalid SerializeField attribute
+     4x  S1135   Track uses of "TODO" tags
+     4x  UNT0008 Null propagation on Unity objects
+     4x  UNT0022 Inefficient position/rotation assignment
+     3x  S3459   Unassigned members should be removed
+     2x  CS0105  Using directive appeared previously in this namespace
+     2x  S4144   Methods should not have identical implementations
+     2x  UNT0001 Empty Unity message
+     2x  S1066   Mergeable "if" statements should be combined
+     1x  S1144   Unused private types or members should be removed
+
+TOP 15 arquivos com mais violacoes:
+    29x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Shared/UIManager.cs
+    12x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Questions/QuestionManager.cs
+    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Animation/AnimationManager.cs
+    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/SolventsListManager.cs
+    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Json/SubstanceManager.cs
+    10x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Questions/BasicSceneLoader.cs
+     9x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Core/GameManager.cs
+     8x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Chemistry/GameControllerChemical.cs
+     7x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Animation/PowderBlendController.cs
+     6x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Animation/PowderBlendShapeController.cs
+     6x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/History/ReactionHistoryManager.cs
+     6x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/ConfirmationPopup.cs
+     5x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/UI/Panels/HistoryListManager.cs
+     5x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Player/PlayerUIController.cs
+     5x  file:///C:/UnityProjects/bcc/game-quimica/ChemistryLab/Assets/Scripts/Gameplay/Questions/QuestionLoader.cs

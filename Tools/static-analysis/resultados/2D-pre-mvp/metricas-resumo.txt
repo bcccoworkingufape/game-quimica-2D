@@ -1,0 +1,49 @@
+﻿===== 2D pre-MVP (1226b59) =====
+arquivos analisados            : 97
+linhas fisicas                 : 6124
+linhas de codigo (sem branco)  : 4522
+linhas de comentario           : 524
+densidade de comentarios (%)   : 10.4
+classes                        : 52
+interfaces                     : 9
+structs/records                : 7
+enums                          : 9
+tipos acoplados a Unity        : 22  (42.3% das classes)
+membros analisados             : 398
+
+CC media                       : 2.44
+CC mediana                     : 2.0
+CC maxima                      : 17
+CC total (soma)                : 973
+membros com CC > 10            : 5  (1.3%)
+membros com CC > 20            : 0
+
+Maintainability Index medio    : 69.9
+MI mediano                     : 67.5
+membros com MI < 20 (ruim)     : 0
+membros com MI 20-64 (moderado): 171
+membros com MI >= 65 (bom)     : 227  (57.0%)
+
+LOC media por membro           : 9.7
+membros com mais de 60 linhas  : 3
+membros com aninhamento >= 4   : 15
+acoplamento eferente medio     : 13.1
+
+God Classes (>300 LOC ou >25 membros publicos) : 5
+   LabUIController                     824 LOC   62 pub  CC   99  LabScripts\LabUIController.cs
+   FlaskAnimationController            458 LOC    3 pub  CC   63  Presentation\Lab\FlaskAnimationController.cs
+   MenuUIController                    413 LOC   30 pub  CC   54  MenuScripts\MenuUIController.cs
+   GameManager                         388 LOC   28 pub  CC   59  Core\GameManager.cs
+   MusicManager                        334 LOC   13 pub  CC   50  Core\Audio\MusicManager.cs
+
+TOP 10 membros por complexidade ciclomatica:
+   CC  17  MI  35.3    65 LOC  HistoryPanelController.RefreshHistory
+   CC  12  MI  45.7    30 LOC  QuestionFlowPresenter.OnAnswerSelected
+   CC  11  MI  54.7    16 LOC  SfxManager.GetClip
+   CC  11  MI  42.3    39 LOC  MixingRoundController.OnConfirmMix
+   CC  11  MI  36.5    61 LOC  TreeSolventGroupButtons.updateMessage
+   CC  10  MI  53.9    13 LOC  SfxManager.LoadDefaultClipsIfNeeded
+   CC  10  MI  36.6    69 LOC  TestMessageHandler.MapOutcome
+   CC   9  MI  48.5    27 LOC  GameManager.OnSceneLoaded
+   CC   9  MI  52.2    20 LOC  LabUIController.SetTreeButtonEnabled
+   CC   9  MI  55.8    13 LOC  UIAnimator.ApplyEasing
