@@ -109,8 +109,13 @@ namespace MenuScripts
             "Conhecimento é a única coisa que aumenta quando compartilhado.",
         };
 
+        private IAudioService _audio;
+
         private void Awake()
         {
+            // Mesmo fallback tolerante ja usado em LabUIController.Awake.
+            _audio = ServiceLocator.TryResolve<IAudioService>(out var a)
+                ? a : (IAudioService)new UnityAudioService();
             _presenter = new MenuPresenter(this);
         }
 
@@ -176,9 +181,11 @@ namespace MenuScripts
 
             StartHintCycle();
 
-            if (MusicManager.Instance != null && MusicManager.Instance.IsMusicEnabled())
+            // IAudioService.IsMusicEnabled ja e (Instance != null && IsMusicEnabled()),
+            // entao a condicao composta original colapsa sem perda de semantica.
+            if (_audio.IsMusicEnabled)
             {
-                MusicManager.Instance.StartMenuMusicFromLoading(targetVolume: 0.55f, duration: 1.8f);
+                _audio.StartMenuMusicFromLoading(targetVolume: 0.55f, duration: 1.8f);
             }
         }
 
@@ -230,7 +237,7 @@ namespace MenuScripts
         // e dispara GameManager.StartGame()).
         public void LoadLabScene()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             if (GameManager.Instance == null) return;
 
             StopHintCycle();
@@ -240,21 +247,21 @@ namespace MenuScripts
         // Seleção de dificuldade (OnClick) — delegam ao Presenter
         public void SelectEasy()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             Debug.Log("Selecionado: EASY");
             _presenter?.SelectEasy();
         }
 
         public void SelectMedium()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             Debug.Log("Selecionado: MEDIUM");
             _presenter?.SelectMedium();
         }
 
         public void SelectHard()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             Debug.Log("Selecionado: HARD");
             _presenter?.SelectHard();
         }
@@ -268,7 +275,7 @@ namespace MenuScripts
         // Botão "Fechar o jogo" (encerra a aplicacao).
         public void QuitGame()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             Time.timeScale = 1f;
 #if UNITY_EDITOR
@@ -284,7 +291,7 @@ namespace MenuScripts
 
         public void ShowAboutPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             navbarPanel?.SetActive(false);
             OverlayAnimator.Show(fadePanel);
@@ -293,7 +300,7 @@ namespace MenuScripts
 
         public void HideAboutPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             OverlayAnimator.Hide(aboutPanel, onComplete: () =>
             {
@@ -305,7 +312,7 @@ namespace MenuScripts
 
         public void ShowHelpPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             navbarPanel?.SetActive(false);
             OverlayAnimator.Show(fadePanel);
@@ -314,7 +321,7 @@ namespace MenuScripts
 
         public void HideHelpPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             OverlayAnimator.Hide(helpPanel, onComplete: () =>
             {
@@ -330,29 +337,31 @@ namespace MenuScripts
 
         public void OnClickEnableMusic()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
-            if (MusicManager.Instance == null) return;
+            if (!_audio.IsMusicAvailable) return;
 
-            MusicManager.Instance.EnableMusic();
+            _audio.EnableMusic();
             RefreshMusicToggleVisual();
         }
 
         public void OnClickDisableMusic()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
-            if (MusicManager.Instance == null) return;
+            if (!_audio.IsMusicAvailable) return;
 
-            MusicManager.Instance.DisableMusic();
+            _audio.DisableMusic();
             RefreshMusicToggleVisual();
         }
 
         public void RefreshMusicToggleVisual()
         {
-            if (MusicManager.Instance == null) return;
+            // Indisponivel != desligado: sem informacao, a UI de toggle fica
+            // exatamente como estava, que e o comportamento do Estado C.
+            if (!_audio.IsMusicAvailable) return;
 
-            bool isEnabled = MusicManager.Instance.IsMusicEnabled();
+            bool isEnabled = _audio.IsMusicEnabled;
 
             if (musicOnObject != null)
                 musicOnObject.SetActive(isEnabled);
@@ -368,22 +377,23 @@ namespace MenuScripts
         public void OnClickEnableSfx()
         {
             Debug.Log("=== LAB: CLICOU EM LIGAR SFX ===");
-            SfxManager.Instance?.EnableSfx();
+            _audio?.EnableSfx();
             RefreshSfxToggleVisual();
         }
 
         public void OnClickDisableSfx()
         {
             Debug.Log("=== LAB: CLICOU EM DESLIGAR SFX ===");
-            SfxManager.Instance?.DisableSfx();
+            _audio?.DisableSfx();
             RefreshSfxToggleVisual();
         }
 
         public void RefreshSfxToggleVisual()
         {
-            if (SfxManager.Instance == null) return;
-            
-            bool isEnabled = SfxManager.Instance.IsSfxEnabled();
+            // Mesma distincao aplicada ao SFX.
+            if (!_audio.IsSfxAvailable) return;
+
+            bool isEnabled = _audio.IsSfxEnabled;
 
             if (sfxOnObject != null)
                 sfxOnObject.SetActive(isEnabled);

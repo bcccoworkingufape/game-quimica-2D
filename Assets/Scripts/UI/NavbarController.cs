@@ -4,6 +4,15 @@ using Core.Audio;
 
 public class NavbarController : MonoBehaviour
 {
+    private IAudioService _audio;
+
+    private void Awake()
+    {
+        // Mesmo fallback tolerante usado nos demais consumidores de audio.
+        _audio = Core.ServiceLocator.TryResolve<IAudioService>(out var a)
+            ? a : (IAudioService)new UnityAudioService();
+    }
+
 
     [Header("Buttons")]
     [SerializeField] private Button homeButton;
@@ -30,7 +39,7 @@ public class NavbarController : MonoBehaviour
     // Main functions
     public void OnClickHome()
     {
-        SfxManager.Instance?.PlayButtonClick();
+        _audio?.PlayButtonClick();
 
         DisableButton(homeButton);
         EnableButton(settingsButton);
@@ -50,7 +59,7 @@ public class NavbarController : MonoBehaviour
 
     public void OnClickSettings()
     {
-        SfxManager.Instance?.PlayButtonClick();
+        _audio?.PlayButtonClick();
 
         DisableButton(settingsButton);
         EnableButton(homeButton);
@@ -70,7 +79,7 @@ public class NavbarController : MonoBehaviour
 
     public void OnClickShop()
     {
-        SfxManager.Instance?.PlayButtonClick();
+        _audio?.PlayButtonClick();
 
         DisableButton(shopButton);
         EnableButton(homeButton);
