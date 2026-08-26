@@ -116,7 +116,7 @@ namespace MenuScripts
             // Mesmo fallback tolerante ja usado em LabUIController.Awake.
             _audio = ServiceLocator.TryResolve<IAudioService>(out var a)
                 ? a : (IAudioService)new UnityAudioService();
-            _presenter = new MenuPresenter(this);
+            _presenter = new MenuPresenter(this, _audio);
         }
 
         private void OnEnable()

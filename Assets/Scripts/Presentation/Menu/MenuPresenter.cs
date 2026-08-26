@@ -18,6 +18,7 @@ namespace Presentation.Menu
     public class MenuPresenter : IDisposable
     {
         private readonly IMenuView _view;
+        private readonly IAudioService _audio;
         private GameManager _gm;
         private bool _subscribed;
 
@@ -25,9 +26,15 @@ namespace Presentation.Menu
         private DifficultyLevelData _medium;
         private DifficultyLevelData _hard;
 
-        public MenuPresenter(IMenuView view)
+        /// <summary>
+        /// A View e quem cria este Presenter, entao ela pode fornecer as
+        /// dependencias no momento da construcao. O audio deixou de ser buscado
+        /// num registro global: chega pela assinatura, e visivel a quem le a classe.
+        /// </summary>
+        public MenuPresenter(IMenuView view, IAudioService audio)
         {
             _view = view ?? throw new ArgumentNullException(nameof(view));
+            _audio = audio;
         }
 
         public void Initialize(
@@ -106,9 +113,12 @@ namespace Presentation.Menu
         {
             if (_gm == null) return;
 
-            var audio = ServiceLocator.TryResolve<IAudioService>(out var a) ? a : null;
-            if (audio != null && audio.IsMusicEnabled)
-                audio.FadeMusicTo(0.6f, 0.25f);
+            // A guarda de nulo e preservada: em C o lookup podia devolver null e
+            // o fade era pulado. Aqui _audio vem da View e nao e nulo, entao a
+            // guarda fica inerte — mas mante-la conserva a forma defensiva do
+            // Estado C sem alterar nenhum caminho executavel.
+            if (_audio != null && _audio.IsMusicEnabled)
+                _audio.FadeMusicTo(0.6f, 0.25f);
 
             _gm.StartGame();
         }

@@ -137,6 +137,75 @@ namespace Molz.Characterization
                 string.Join("\n  ", vazamentos));
         }
 
+        /// <summary>
+        /// Etapa D: nenhum registro global novo pode ter sido introduzido para
+        /// substituir o ServiceLocator. A constraint aprovada mantem o registry
+        /// existente; ela nao autoriza um sucessor com outro nome.
+        /// </summary>
+        [Test]
+        public void NoReplacementGlobalRegistryWasIntroduced()
+        {
+            var proibidos = new[]
+            {
+                "GameServices", "ServiceRegistry", "AppContext",
+                "DependencyContainer", "ServiceProvider", "Services.Instance",
+            };
+
+            var violacoes = new List<string>();
+
+            foreach (var arquivo in Fontes())
+            {
+                var rel = Relativo(arquivo);
+                var linhas = File.ReadAllLines(arquivo);
+                for (var i = 0; i < linhas.Length; i++)
+                {
+                    var linha = Regex.Replace(linhas[i], @"//.*$|///.*$", "");
+                    foreach (var nome in proibidos)
+                        if (linha.Contains(nome))
+                            violacoes.Add(rel + ":" + (i + 1) + "  " + linhas[i].Trim());
+                }
+            }
+
+            Assert.IsEmpty(violacoes,
+                "registro global substituto introduzido:\n  " + string.Join("\n  ", violacoes));
+        }
+
+        /// <summary>
+        /// Etapa D1: os tres repositorios de solubilidade chegam ao seu consumidor
+        /// por injecao de construtor, nao por lookup global. Se alguem voltar a
+        /// registra-los, a cerimonia removida retorna sem ninguem perceber.
+        /// </summary>
+        [Test]
+        public void SolubilityRepositoriesAreNotGloballyRegistered()
+        {
+            var boot = Path.Combine(ScriptsDir, "Core", "Bootstrap", "Bootstrapper.cs");
+            var linhas = File.ReadAllLines(boot)
+                .Select(l => Regex.Replace(l, @"//.*$|///.*$", ""))
+                .ToList();
+
+            foreach (var tipo in new[] { "ICompoundRepository", "ISolventRepository", "ISolutionRepository" })
+                Assert.IsFalse(
+                    linhas.Any(l => l.Contains("Register<" + tipo + ">")),
+                    tipo + " nao deve ser registrado: chega por construtor em SolubilityService");
+        }
+
+        /// <summary>
+        /// Etapa D2: o MenuPresenter recebe audio por construtor. Se o lookup
+        /// global voltar para dentro dele, a composicao explicita se perde.
+        /// </summary>
+        [Test]
+        public void MenuPresenterReceivesAudioByConstructor()
+        {
+            var presenter = Path.Combine(ScriptsDir, "Presentation", "Menu", "MenuPresenter.cs");
+            var texto = File.ReadAllText(presenter);
+
+            Assert.IsTrue(texto.Contains("MenuPresenter(IMenuView view, IAudioService audio)"),
+                "o construtor deve declarar a dependencia de audio");
+            Assert.IsFalse(
+                Regex.IsMatch(Regex.Replace(texto, @"//.*|///.*", ""), @"ServiceLocator\s*\."),
+                "MenuPresenter nao deve mais resolver dependencia globalmente");
+        }
+
         [Test]
         public void MenuTogglesPreserveAvailabilityGuard()
         {
