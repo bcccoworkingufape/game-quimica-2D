@@ -3,7 +3,7 @@ namespace Domain
     /// <summary>
     /// Solvente usado nas misturas (água, éter, NaOH, etc.).
     /// </summary>
-    public class Solvent : IChemicalSubstance
+    public class Solvent
     {
         public int Id { get; }
         public string Name { get; }
@@ -12,11 +12,6 @@ namespace Domain
         public float BoilingPoint { get; }
         public FlaskType FlaskType { get; }
 
-        int IChemicalSubstance.Id => Id;
-        string IChemicalSubstance.Name => Name;
-
-        float IChemicalSubstance.MeltingPoint => MeltingPoint;
-        float IChemicalSubstance.BoilingPoint => BoilingPoint;
         public string ChemicalClass { get; }
 
         public Solvent(

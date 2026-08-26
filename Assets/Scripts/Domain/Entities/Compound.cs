@@ -3,7 +3,7 @@ namespace Domain
     /// <summary>
     /// Composto orgânico (o “mistério” a ser descoberto).
     /// </summary>
-    public class Compound : IChemicalSubstance
+    public class Compound
     {
         public int Id { get; }
         public string Name { get; }

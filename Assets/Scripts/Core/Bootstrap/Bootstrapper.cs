@@ -46,7 +46,6 @@ namespace Core
 
             IHistoryService historyService = new InMemoryHistoryService();
             IScoringService scoringService = new ScoringService();
-            IQuestionService questionService = new QuestionService();
             IQuestionRepository questionRepo = new JsonQuestionRepository(provider);
             IAudioService audioService = new UnityAudioService();
 
@@ -58,7 +57,6 @@ namespace Core
             ServiceLocator.Register<ISolubilityService>(solubilityService);
             ServiceLocator.Register<IHistoryService>(historyService);
             ServiceLocator.Register<IScoringService>(scoringService);
-            ServiceLocator.Register<IQuestionService>(questionService);
             ServiceLocator.Register<IAudioService>(audioService);
 
             Debug.Log("[Bootstrapper] Serviços registrados no ServiceLocator com sucesso.");

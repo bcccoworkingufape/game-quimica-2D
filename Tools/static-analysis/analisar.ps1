@@ -19,7 +19,7 @@
 #>
 [CmdletBinding()]
 param(
-  [ValidateSet('Tudo', '3D', '2D', '2Dpre')] [string]$Apenas = 'Tudo',
+  [ValidateSet('Tudo', '3D', '2D', '2Dpre', 'C', 'D0', 'D')] [string]$Apenas = 'Tudo',
   [switch]$SemSonar,
   [switch]$SemMetricas
 )
@@ -39,6 +39,10 @@ $repo3D = Join-Path (Split-Path -Parent $repo2D) 'game-quimica'
 $tpl    = Join-Path $repo2D 'Assembly-CSharp.csproj'
 $tmp    = Join-Path $env:TEMP 'molz-analise'
 $wt     = Join-Path $env:TEMP 'molz-baseline'
+# Estados do experimento de refatoracao controlada do Paper 1 (C -> D0 -> D).
+# Medidos por worktree em ref fixo, para nao depender do estado da arvore de trabalho.
+$wtC    = Join-Path $env:TEMP 'molz-estado-C'
+$wtD    = Join-Path $env:TEMP 'molz-estado-D'
 
 function Titulo($t) { Write-Host "`n$('=' * 62)`n  $t`n$('=' * 62)" -ForegroundColor Cyan }
 function Passo($t)  { Write-Host "  -> $t" -ForegroundColor DarkGray }
@@ -56,25 +60,31 @@ if (-not $SemSonar -and -not (Test-Path $tpl)) {
 New-Item -ItemType Directory -Force $tmp, $res | Out-Null
 
 # ---------- alvos ----------
+# 'padrao' marca os alvos do comparativo historico A/B/C, que rodam com -Apenas Tudo.
+# Os estados do experimento (C, D0, D) so rodam quando pedidos por nome, para nao
+# alterar o COMPARATIVO.md nem o comportamento pre-existente do script.
 $alvos = @(
-  @{ id = '3D';    pasta = '3D';          rotulo = '3D (ChemistryLab)';      scripts = (Join-Path $repo3D 'ChemistryLab\Assets\Scripts') }
-  @{ id = '2Dpre'; pasta = '2D-pre-mvp';  rotulo = '2D pre-MVP (1226b59)';   scripts = (Join-Path $wt 'Assets\Scripts') }
-  @{ id = '2D';    pasta = '2D-atual';    rotulo = '2D (Molz atual)';        scripts = (Join-Path $repo2D 'Assets\Scripts') }
-) | Where-Object { $Apenas -eq 'Tudo' -or $_.id -eq $Apenas }
+  @{ id = '3D';    pasta = '3D';          rotulo = '3D (ChemistryLab)';      scripts = (Join-Path $repo3D 'ChemistryLab\Assets\Scripts'); padrao = $true }
+  @{ id = '2Dpre'; pasta = '2D-pre-mvp';  rotulo = '2D pre-MVP (1226b59)';   scripts = (Join-Path $wt 'Assets\Scripts');   padrao = $true; ref = '1226b59'; wt = $wt }
+  @{ id = '2D';    pasta = '2D-atual';    rotulo = '2D (Molz atual)';        scripts = (Join-Path $repo2D 'Assets\Scripts'); padrao = $true }
 
-# ---------- worktree da versao historica, se necessario ----------
-$precisaWorktree = $alvos | Where-Object { $_.id -eq '2Dpre' }
-if ($precisaWorktree) {
-  Titulo 'Recuperando a versao anterior a reestruturacao (commit 1226b59)'
+  @{ id = 'C';     pasta = 'estado-C';    rotulo = 'Estado C (baseline)';    scripts = (Join-Path $wtC 'Assets\Scripts');  padrao = $false; ref = 'analise-estatica/versao-C^{}'; wt = $wtC }
+  @{ id = 'D0';    pasta = 'estado-D0';   rotulo = 'Estado D0 (sem codigo morto)'; scripts = (Join-Path $repo2D 'Assets\Scripts'); padrao = $false }
+  @{ id = 'D';     pasta = 'estado-D';    rotulo = 'Estado D (simplificado)'; scripts = (Join-Path $wtD 'Assets\Scripts'); padrao = $false; ref = 'analise-estatica/versao-D^{}'; wt = $wtD }
+) | Where-Object { ($Apenas -eq 'Tudo' -and $_.padrao) -or $_.id -eq $Apenas }
+
+# ---------- worktrees dos alvos ancorados em ref ----------
+foreach ($a in @($alvos | Where-Object { $_.ref })) {
+  Titulo "Recuperando $($a.rotulo) - ref $($a.ref)"
   $ErrorActionPreference = 'Continue'
   git -C $repo2D worktree prune | Out-Null
-  if (Test-Path $wt) { git -C $repo2D worktree remove $wt --force | Out-Null }
-  git -C $repo2D worktree add $wt 1226b59 --quiet
+  if (Test-Path $a.wt) { git -C $repo2D worktree remove $a.wt --force | Out-Null }
+  git -C $repo2D worktree add $a.wt $a.ref --quiet --detach
   $okWt = ($LASTEXITCODE -eq 0)
   $ErrorActionPreference = 'Stop'
-  if ($okWt) { Passo "worktree em $wt" }
-  else { Write-Warning 'nao foi possivel criar o worktree; a versao pre-MVP sera ignorada'
-         $alvos = $alvos | Where-Object { $_.id -ne '2Dpre' } }
+  if ($okWt) { Passo "worktree em $($a.wt)" }
+  else { Write-Warning "nao foi possivel criar o worktree de $($a.id); esse alvo sera ignorado"
+         $alvos = $alvos | Where-Object { $_.id -ne $a.id } }
 }
 
 # ---------- compila o CodeMetrics uma vez ----------
@@ -113,11 +123,13 @@ foreach ($a in $alvos) {
   }
 }
 
-# ---------- limpeza do worktree ----------
-if (Test-Path $wt) {
-  $ErrorActionPreference = 'Continue'
-  git -C $repo2D worktree remove $wt --force | Out-Null
-  $ErrorActionPreference = 'Stop'
+# ---------- limpeza dos worktrees ----------
+foreach ($p in @($wt, $wtC, $wtD)) {
+  if (Test-Path $p) {
+    $ErrorActionPreference = 'Continue'
+    git -C $repo2D worktree remove $p --force | Out-Null
+    $ErrorActionPreference = 'Stop'
+  }
 }
 
 # ---------- consolidacao ----------
