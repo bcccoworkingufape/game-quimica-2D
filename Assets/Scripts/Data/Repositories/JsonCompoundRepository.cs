@@ -19,10 +19,31 @@ namespace Data
             {
                 foreach (var dto in dtos)
                 {
-                    var compound = dto.ToDomain();
+                    var compound = ToDomain(dto);
                     _byId[compound.Id] = compound;
                 }
             }
+        }
+
+        /// <summary>
+        /// Transformacao da representacao externa para a entidade de dominio.
+        /// Movida de Data/Mappers/CompoundMapper.cs na Etapa B2, sem alteracao:
+        /// state desconhecido continua caindo em LIQUID sem validacao.
+        /// </summary>
+        private static Compound ToDomain(CompoundDto dto)
+        {
+            var state = dto.state == "SOLID"
+                ? PhysicalState.SOLID
+                : PhysicalState.LIQUID;
+
+            return new Compound(
+                dto.id,
+                dto.name,
+                state,
+                dto.group,
+                dto.density,
+                dto.meltingPoint,
+                dto.boilingPoint);
         }
 
         public IReadOnlyList<Compound> ListAll() =>
