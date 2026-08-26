@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Testes de caracterizacao do Estado C do Molz.
+
+    Compila APENAS os fontes de producao livres de UnityEngine, direto de
+    Assets/Scripts, sem copiar codigo e sem alterar nada dentro de Assets/.
+    Roda headless com `dotnet test`, sem licenca nem editor Unity.
+
+    Fora do escopo do pipeline de metricas: Tools/ nao e analisado por
+    Tools/static-analysis/ferramentas/genproj.js, que compila somente
+    Assets/Scripts/**/*.cs. Portanto este projeto nao afeta C, D0 nem D.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <!-- Unity 6000.4.1f1 compila em C# 9; manter paridade de linguagem -->
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <AssemblyName>Molz.Characterization</AssemblyName>
+    <RootNamespace>Molz.Characterization</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!--
+      CS0649: campo nunca atribuido. Esperado nos DTOs — quem atribui e o
+      Newtonsoft por reflexao. CS0067: evento sem assinante (QuestionRunTracker).
+      Suprimidos aqui porque sao ruido de compilacao fora da Unity, nao defeito.
+    -->
+    <NoWarn>$(NoWarn);CS0649;CS0067</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup Label="Testes de caracterizacao">
+    <Compile Include="Tests\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Label="Producao — somente fontes sem UnityEngine">
+    <Compile Include="..\..\Assets\Scripts\Domain\**\*.cs" />
+    <Compile Include="..\..\Assets\Scripts\Data\Dtos\*.cs" />
+    <Compile Include="..\..\Assets\Scripts\Data\Mappers\*.cs" />
+    <Compile Include="..\..\Assets\Scripts\Data\Repositories\*.cs" />
+    <Compile Include="..\..\Assets\Scripts\Data\Providers\IJsonProvider.cs" />
+    <Compile Include="..\..\Assets\Scripts\Data\Providers\FileJsonProvider.cs" />
+    <Compile Include="..\..\Assets\Scripts\Data\DataIndex.cs" />
+    <Compile Include="..\..\Assets\Scripts\Core\QuestionRunTracker.cs" />
+    <!--
+      Deliberadamente FORA:
+        Data/Providers/ResourcesJsonProvider.cs  -> usa UnityEngine.Resources
+        Data/DifficultyLevelData.cs              -> herda ScriptableObject
+      Sao os 2 unicos arquivos de Data/ que tocam a engine.
+    -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 13.0.x e a versao que com.unity.nuget.newtonsoft-json 3.2.2 empacota -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <!-- NUnit 3.x: mesma familia do com.unity.ext.nunit, para portar depois se preciso -->
+    <PackageReference Include="NUnit" Version="3.14.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
