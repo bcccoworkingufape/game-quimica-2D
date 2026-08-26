@@ -120,6 +120,59 @@ durante D é desvio e exige registro.**
 
 ---
 
+## Roteiro manual da Etapa C — áudio
+
+A suíte cobre a **invariante estrutural** (`AudioBoundaryTests`): nenhum arquivo fora de
+`Core/Audio` conhece `SfxManager` ou `MusicManager`. O **comportamento** de áudio depende do
+runtime Unity e é verificado à mão. Execute na build, sem alterar as cenas.
+
+### Música por cena
+
+1. Abrir `1_MenuScene`. Confirmar que a música do menu toca.
+2. Ir para o laboratório. Confirmar a faixa esperada.
+3. Zerar o run e ir para a tela de vitória. Confirmar o comportamento esperado.
+
+### Toggle de música
+
+4. Desligar a música no menu. Confirmar silêncio **e** que o ícone alterna para *off*.
+5. Trocar de cena e voltar. Confirmar que continua desligada.
+6. Fechar e reabrir o jogo. Confirmar persistência (`PlayerPrefs` `music_enabled`).
+
+### Toggle de SFX
+
+7. Desligar o SFX. Executar uma ação com som. Confirmar silêncio.
+8. Reativar. Confirmar que o som volta e o ícone alterna.
+9. Fechar e reabrir. Confirmar persistência (`sfx_enabled`).
+
+### SFX de gameplay — os que tinham acesso concreto
+
+10. Misturar um solvente: confirmar *bottle fill* e *mix*.
+11. Responder certo: confirmar *correct*. Responder errado: confirmar *wrong*.
+12. Zerar o run: confirmar *win*. Perder todas as vidas: confirmar *lose*.
+13. Abrir a árvore de decisão: confirmar *tree click*. Abrir o histórico: confirmar *history click*.
+14. Clicar em botões de menu e navbar: confirmar *button click*.
+
+### Disponibilidade — a distinção preservada na Etapa C
+
+Este é o caso que motivou a extensão de `IAudioService`. `SfxManager` existe **apenas** em
+`1_MenuScene`; `MusicManager` existe em `1_MenuScene` e `2_LabScene`.
+
+15. Rodar `2_LabScene` diretamente pelo editor, sem passar pelo menu. `SfxManager` estará
+    ausente. Confirmar que o jogo **não lança exceção** e que o áudio simplesmente não toca.
+16. Rodar `3_Win_Game` diretamente. Ambos os managers ausentes. Mesma confirmação.
+17. No menu, com os managers presentes, alternar os toggles e confirmar que os ícones
+    refletem o estado real.
+
+> **O que a extensão protege:** com o manager indisponível, `RefreshMusicToggleVisual` e
+> `RefreshSfxToggleVisual` do menu retornam cedo e **não tocam** nos objetos de UI — o
+> estado autorado na cena permanece. Sem `IsMusicAvailable`/`IsSfxAvailable`, a UI passaria
+> a exibir *off*, porque `IsMusicEnabled` devolve `false` tanto para "ausente" quanto para
+> "desligado". Divergência conhecida e **não normalizada**: `LabAudioToggleView` guarda
+> contra `_audio == null`, que nunca é nulo, então o Lab exibe *off* nesse cenário. Isso já
+> era assim no Estado C.
+
+---
+
 ## Fora do alcance desta suíte
 
 Cobertura por roteiro manual reproduzível, descrito na seção 21 do Decision Gate:
