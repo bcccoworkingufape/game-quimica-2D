@@ -18,6 +18,7 @@ namespace Presentation.Lab
         private SubmitAnswerUseCase _submitAnswerUseCase;
         private GameManager _gm;
         private IHistoryService _historyService;
+        private IAudioService _audio;
 
         private readonly List<Question> _allQuestions = new List<Question>();
         private Question _currentQuestion;
@@ -43,6 +44,10 @@ namespace Presentation.Lab
                 Debug.LogWarning("[QuestionFlowPresenter] IHistoryService não resolvido (histórico não será limpo).");
 
             _submitAnswerUseCase = new SubmitAnswerUseCase(scoringService);
+            // Fallback identico ao de LabUIController.Awake: audio ausente
+            // continua sendo no-op silencioso, nunca excecao.
+            _audio = ServiceLocator.TryResolve<IAudioService>(out var a)
+                ? a : new UnityAudioService();
             _gm = GameManager.Instance;
 
             LoadQuestions();
@@ -146,13 +151,13 @@ namespace Presentation.Lab
 
             if (result.IsCorrect)
             {
-                SfxManager.Instance?.PlayCorrect();
+                _audio?.PlayCorrect();
                 _gm?.MarkActiveQuestionCorrect();
                 uiController?.ShowQuestionVictoryPanel(_currentQuestion.CorrectAnswer);
             }
             else
             {
-                SfxManager.Instance?.PlayWrong();
+                _audio?.PlayWrong();
                 uiController?.ShowQuestionErrorPanel();
             }
         }

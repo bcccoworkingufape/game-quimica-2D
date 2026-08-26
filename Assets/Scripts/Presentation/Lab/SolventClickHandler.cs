@@ -11,12 +11,17 @@ public class SolventClickHandler : MonoBehaviour
     [Header("Referência")]
     [SerializeField] private MixingRoundController mixingRoundController;
 
+    private IAudioService _audio;
+
     private void Awake()
     {
         if (mixingRoundController == null)
         {
             mixingRoundController = FindAnyObjectByType<MixingRoundController>();
         }
+
+        _audio = Core.ServiceLocator.TryResolve<IAudioService>(out var a)
+            ? a : new UnityAudioService();
     }
 
     private void OnMouseDown()
@@ -42,7 +47,7 @@ public class SolventClickHandler : MonoBehaviour
             return;
         }
 
-        SfxManager.Instance?.PlayButtonClick();
+        _audio?.PlayButtonClick();
         mixingRoundController.OnSolventClicked(solventId, solventName);
     }
 }

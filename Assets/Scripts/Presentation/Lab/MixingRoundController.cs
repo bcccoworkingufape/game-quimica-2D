@@ -33,6 +33,7 @@ namespace Presentation.Lab
         // Serviços de domínio
         private ISolubilityService _solubilityService;
         private IHistoryService _historyService;
+        private IAudioService _audio;
         private GameManager _gameManager;
         private TestMessageHandler _messageHandler = new TestMessageHandler();
 
@@ -48,6 +49,10 @@ namespace Presentation.Lab
         {
             _solubilityService = ServiceLocator.Resolve<ISolubilityService>();
             _historyService = ServiceLocator.Resolve<IHistoryService>();
+            // Fallback identico ao ja usado em LabUIController.Awake: a ausencia da
+            // porta nao pode transformar audio silencioso em NullReferenceException.
+            _audio = ServiceLocator.TryResolve<IAudioService>(out var a)
+                ? a : new UnityAudioService();
             _gameManager = GameManager.Instance;
 
             if (_solubilityService == null)
@@ -96,8 +101,8 @@ namespace Presentation.Lab
                 return;
             }
 
-            SfxManager.Instance?.PlayBottleFill();
-            SfxManager.Instance?.PlayMix();
+            _audio?.PlayBottleFill();
+            _audio?.PlayMix();
 
             var useCase = new MixSolutionUseCase(_solubilityService, _historyService);
             var request = new MixSolutionRequest(currentCompoundId, _selectedSolventId);

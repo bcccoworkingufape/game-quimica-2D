@@ -17,6 +17,12 @@ namespace Core.Audio
         public void PlayLose() => SfxManager.Instance?.PlayLose();
         public void PlayBottleFill() => SfxManager.Instance?.PlayBottleFill();
 
+        // Disponibilidade: e este adapter — o unico ponto do sistema autorizado a
+        // conhecer os singletons — que traduz "o manager existe?" para o contrato.
+        // Sem isto, IsSfxEnabled==false colapsaria "ausente" com "desligado".
+        public bool IsSfxAvailable => SfxManager.Instance != null;
+        public bool IsMusicAvailable => MusicManager.Instance != null;
+
         public bool IsSfxEnabled => SfxManager.Instance != null && SfxManager.Instance.IsSfxEnabled();
         public void EnableSfx() => SfxManager.Instance?.EnableSfx();
         public void DisableSfx() => SfxManager.Instance?.DisableSfx();

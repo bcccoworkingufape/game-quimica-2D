@@ -159,7 +159,11 @@ namespace Core
             Debug.Log("[GameManager] Zerou o game!");
             Time.timeScale = 1f;
 
-            SfxManager.Instance?.PlayWin();
+            // Resolvido no momento do uso: o GameManager sobrevive as trocas de
+            // cena e o registro pode nao existir quando ele e criado.
+            var audio = ServiceLocator.TryResolve<IAudioService>(out var a)
+                ? a : (IAudioService)new UnityAudioService();
+            audio?.PlayWin();
 
             if (!string.IsNullOrWhiteSpace(SceneNames.WinGame))
                 LoadScene(SceneNames.WinGame);
