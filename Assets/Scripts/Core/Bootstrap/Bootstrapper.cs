@@ -49,9 +49,10 @@ namespace Core
             IQuestionRepository questionRepo = new JsonQuestionRepository(provider);
             IAudioService audioService = new UnityAudioService();
 
-            ServiceLocator.Register<ICompoundRepository>(compoundRepo);
-            ServiceLocator.Register<ISolventRepository>(solventRepo);
-            ServiceLocator.Register<ISolutionRepository>(solutionRepo);
+            // Os tres repositorios de solubilidade NAO sao registrados: nenhum
+            // consumidor os resolve globalmente. Eles chegam onde precisam por
+            // injecao de construtor no SolubilityService (linha 45), que e a
+            // composicao explicita que ja existia. Registra-los era cerimonia.
             ServiceLocator.Register<IQuestionRepository>(questionRepo);
 
             ServiceLocator.Register<ISolubilityService>(solubilityService);
