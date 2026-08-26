@@ -219,5 +219,49 @@ namespace Molz.Characterization
         {
             Assert.IsNull(Dataset.Questions().GetById(999));
         }
+
+        [Test]
+        public void F05_Questions_EveryFieldIsMaterialized_PinnedContent()
+        {
+            // Fixa o conteudo real de uma questao campo a campo.
+            //
+            // Motivo: apos a Etapa B1 a materializacao de Question passa a
+            // depender da correspondencia entre os nomes dos parametros do
+            // construtor e as chaves do JSON. Renomear um parametro e uma
+            // refatoracao que o compilador aceita, mas que quebraria o
+            // carregamento em silencio — o campo viraria string.Empty ou 0.
+            //
+            // Os testes F05 anteriores ja cobrem compoundId, correctAnswer e
+            // alternatives. Este fecha a lacuna de id, description, hint e
+            // feedback, que passariam despercebidos.
+            var q = Dataset.Questions().ListAll().Single(x => x.Id == 1);
+
+            Assert.AreEqual(1, q.Id);
+            Assert.AreEqual(1, q.CompoundId);
+            Assert.AreEqual("Q1", q.Description);
+            Assert.AreEqual("Etanoato de etila", q.CorrectAnswer);
+            Assert.AreEqual("Dica: é um éster.", q.Hint);
+            Assert.AreEqual(
+                "Etanoato de etila é um composto orgânico que forma uma solução incolor quando misturado com água.",
+                q.Feedback);
+            CollectionAssert.AreEqual(
+                new[] { "Etanoato de etila", "Butanoato de sódio", "Cicloexanona", "Decano-1-amina" },
+                q.Alternatives.ToList());
+        }
+
+        [Test]
+        public void F05_Questions_NoFieldIsSilentlyEmpty()
+        {
+            // Complementa o teste acima em todo o dataset: nenhuma questao pode
+            // ter texto vazio. Se a materializacao perder um campo, as 10 caem
+            // juntas e a falha e inequivoca.
+            var all = Dataset.Questions().ListAll();
+
+            Assert.IsTrue(all.All(q => q.Id > 0), "todo Id foi materializado");
+            Assert.IsTrue(all.All(q => q.Description.Length > 0), "toda Description foi materializada");
+            Assert.IsTrue(all.All(q => q.CorrectAnswer.Length > 0), "todo CorrectAnswer foi materializado");
+            Assert.IsTrue(all.All(q => q.Hint.Length > 0), "todo Hint foi materializado");
+            Assert.IsTrue(all.All(q => q.Feedback.Length > 0), "todo Feedback foi materializado");
+        }
     }
 }
