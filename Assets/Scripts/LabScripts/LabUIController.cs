@@ -22,6 +22,7 @@ namespace LabScripts
         private LabPresenter _presenter;
         private LabHudView _hud;
         private LabAudioToggleView _audioToggle;
+        private IAudioService _audio;
         private LabPanelsView _panels;
 
         [Header("Painéis principais")]
@@ -107,9 +108,9 @@ namespace LabScripts
                 treeButton, treeButtonGraphicsToTint, treeEnabledColor, treeDisabledColor,
                 treePanel);
 
-            var audioService = ServiceLocator.TryResolve<IAudioService>(out var a)
+            _audio = ServiceLocator.TryResolve<IAudioService>(out var a)
                 ? a : (IAudioService)new UnityAudioService();
-            _audioToggle = new LabAudioToggleView(musicOnObject, musicOffObject, sfxOnObject, sfxOffObject, audioService);
+            _audioToggle = new LabAudioToggleView(musicOnObject, musicOffObject, sfxOnObject, sfxOffObject, _audio);
 
             _panels = new LabPanelsView(
                 solutionAnimationPanel,
@@ -161,7 +162,7 @@ namespace LabScripts
         /// </summary>
         public void HideInfoPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             OverlayAnimator.Hide(infoPanel);
         }
 
@@ -228,7 +229,7 @@ namespace LabScripts
         /// </summary>
         public void OnConfirmAction()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             Debug.Log("Ação Confirmada para o item: " + currentItemName);
             HideConfirmationPanel();
@@ -249,7 +250,7 @@ namespace LabScripts
         /// </summary>
         public void OnCancelAction()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             Debug.Log("Ação Cancelada para o item: " + currentItemName);
             HideConfirmationPanel();
@@ -257,8 +258,8 @@ namespace LabScripts
 
         public void OnRepeatMixButton()
         {
-            SfxManager.Instance?.PlayButtonClick();
-            SfxManager.Instance?.PlayMix();
+            _audio?.PlayButtonClick();
+            _audio?.PlayMix();
 
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             animator.Play(stateInfo.fullPathHash, -1, 0f);
@@ -342,7 +343,7 @@ namespace LabScripts
         /// </summary>
         public void OnQuestionSelect(int optionIndex)
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             Debug.Log($"[LabUI] Alternativa escolhida index={optionIndex}");
             HideQuestionPanel();
@@ -362,7 +363,7 @@ namespace LabScripts
         /// </summary>
         public void OpenQuestionForCurrentCompound()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             if (questionFlowPresenter != null)
             {
@@ -380,7 +381,7 @@ namespace LabScripts
 
         public void ShowHistoryPanel()
         {
-            SfxManager.Instance?.PlayHistoryClick();
+            _audio?.PlayHistoryClick();
 
             OverlayAnimator.Show(historyPanel);
 
@@ -390,7 +391,7 @@ namespace LabScripts
 
         public void HideHistoryPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             OverlayAnimator.Hide(historyPanel);
         }
 
@@ -408,13 +409,13 @@ namespace LabScripts
             if (!GameModeRulesFactory.For(mode).AllowsDecisionTree)
                 return;
 
-            SfxManager.Instance?.PlayTreeClick();
+            _audio?.PlayTreeClick();
             OverlayAnimator.Show(treePanel);
         }
 
         public void HideTreePanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             OverlayAnimator.Hide(treePanel);
         }
 
@@ -433,7 +434,7 @@ namespace LabScripts
         /// </summary>
         public void HideQuestionErrorPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             // Aguarda a animação de saída do errorPanel terminar antes de abrir
             // o questionPanel, mantendo a transição visualmente limpa.
@@ -480,7 +481,7 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryNextPhase()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             _presenter?.OnNextPhaseRequested();
         }
 
@@ -489,7 +490,7 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryRestart()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             _presenter?.OnRestartRequested();
         }
 
@@ -498,7 +499,7 @@ namespace LabScripts
         /// </summary>
         public void OnVictoryReturnToMenu()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             _presenter?.OnReturnToMenuAfterFlowRequested();
         }
 
@@ -508,7 +509,7 @@ namespace LabScripts
 
         public void ShowDefeatPanel()
         {
-            SfxManager.Instance?.PlayLose();
+            _audio?.PlayLose();
 
             OverlayAnimator.Show(defeatPanel, ignoreTimeScale: true);
             Time.timeScale = 0f;
@@ -516,7 +517,7 @@ namespace LabScripts
 
         public void HideDefeatPanel()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             OverlayAnimator.Hide(defeatPanel, onComplete: () =>
             {
@@ -529,7 +530,7 @@ namespace LabScripts
         /// </summary>
         public void OnDefeatRestart()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             _presenter?.OnDefeatRestartRequested();
         }
 
@@ -538,7 +539,7 @@ namespace LabScripts
         /// </summary>
         public void OnDefeatReturnToMenu()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             _presenter?.OnReturnToMenuAfterFlowRequested();
         }
 
@@ -551,7 +552,7 @@ namespace LabScripts
         /// </summary>
         public void PauseGame()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             // timeScale é zerado DEPOIS de iniciar a animação para que o LeanTween
             // ainda consiga processar o primeiro frame. ignoreTimeScale:true garante
@@ -565,7 +566,7 @@ namespace LabScripts
         /// </summary>
         public void ResumeGame()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             // Restaura o timeScale antes de animar para que o jogo retome
             // imediatamente; ignoreTimeScale:true mantém a animação de saída fluida.
@@ -578,7 +579,7 @@ namespace LabScripts
         /// </summary>
         public void ReturnToMainMenu()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
             _presenter?.OnReturnToMenuFromPauseRequested();
         }
 
@@ -587,7 +588,7 @@ namespace LabScripts
         /// </summary>
         public void QuitGame()
         {
-            SfxManager.Instance?.PlayButtonClick();
+            _audio?.PlayButtonClick();
 
             Time.timeScale = 1f;
 #if UNITY_EDITOR
