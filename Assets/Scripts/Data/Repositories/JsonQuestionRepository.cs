@@ -16,14 +16,19 @@ namespace Data
         public JsonQuestionRepository(IJsonProvider provider)
         {
             var json = provider.LoadText(DataIndex.QuestionsFile);
-            var dtos = JsonConvert.DeserializeObject<List<QuestionDto>>(json) ?? new List<QuestionDto>();
 
-            _byId = new Dictionary<int, Question>(dtos.Count);
-            _ordered = new List<Question>(dtos.Count);
+            // Question nao precisava de DTO: as chaves do JSON ja correspondem, uma a
+            // uma, aos parametros do construtor da entidade, e o Newtonsoft materializa
+            // por esse construtor — o que preserva as invariantes de Question.cs:33-46.
+            // A entidade segue sem atributo de serializacao, sem setter e com um unico
+            // construtor publico. Ver SpikeQuestionDeserialization no projeto de testes.
+            var questions = JsonConvert.DeserializeObject<List<Question>>(json) ?? new List<Question>();
 
-            foreach (var dto in dtos)
+            _byId = new Dictionary<int, Question>(questions.Count);
+            _ordered = new List<Question>(questions.Count);
+
+            foreach (var q in questions)
             {
-                var q = dto.ToDomain();
                 _byId[q.Id] = q;
                 _ordered.Add(q);
             }

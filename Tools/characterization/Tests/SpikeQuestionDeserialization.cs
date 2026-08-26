@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Data;
 using Domain;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 
 namespace Molz.Characterization
@@ -22,46 +22,51 @@ namespace Molz.Characterization
     ///   3. alternativas com mesma contagem, mesmo conteudo e MESMA ORDEM;
     ///   4. lista vazia/ausente -> [CorrectAnswer];
     ///   5. zero atributos de serializacao em Domain;
-    ///   6. resultado identico, campo a campo, ao caminho DTO + Mapper.
+    ///   6. resultado identico, campo a campo, ao JSON de origem.
+    ///
+    /// Ate a Etapa B1 o criterio 6 comparava contra QuestionDto + QuestionMapper.
+    /// Removidos os dois, a suite permanece como regressao: e ela que trava o
+    /// acoplamento implicito entre as chaves do JSON e os nomes dos parametros
+    /// do construtor de Question, que agora e o que sustenta a materializacao.
     /// </summary>
     [TestFixture]
     public class SpikeQuestionDeserialization
     {
         private static string Json() => Dataset.RawJson("QuestionsData.json");
 
-        private static List<Question> ViaDto()
-        {
-            var dtos = JsonConvert.DeserializeObject<List<QuestionDto>>(Json());
-            return dtos.Select(d => d.ToDomain()).ToList();
-        }
-
         private static List<Question> Direto() =>
             JsonConvert.DeserializeObject<List<Question>>(Json());
 
         // ------------------------------------------------ criterio 6
         [Test]
-        public void Spike_DirectDeserialization_MatchesDtoPath_FieldByField()
+        public void Spike_DirectDeserialization_MatchesRawJson_FieldByField()
         {
-            var viaDto = ViaDto();
+            // Ate a Etapa B1 esta comparacao era feita contra o caminho
+            // QuestionDto + QuestionMapper. Removidos os dois, o contraste passa
+            // a ser com uma leitura independente do JSON cru via JObject, que
+            // nao compartilha codigo com a materializacao sob teste.
+            var cru = JArray.Parse(Json());
             var direto = Direto();
 
-            Assert.AreEqual(viaDto.Count, direto.Count, "mesma cardinalidade");
+            Assert.AreEqual(cru.Count, direto.Count, "mesma cardinalidade");
 
-            for (var i = 0; i < viaDto.Count; i++)
+            for (var i = 0; i < cru.Count; i++)
             {
-                var a = viaDto[i];
-                var b = direto[i];
-                var ctx = "indice " + i + " (id " + a.Id + ")";
+                var e = cru[i];
+                var q = direto[i];
+                var ctx = "indice " + i + " (id " + (int)e["id"] + ")";
 
-                Assert.AreEqual(a.Id, b.Id, ctx + " Id");
-                Assert.AreEqual(a.CompoundId, b.CompoundId, ctx + " CompoundId");
-                Assert.AreEqual(a.Description, b.Description, ctx + " Description");
-                Assert.AreEqual(a.CorrectAnswer, b.CorrectAnswer, ctx + " CorrectAnswer");
-                Assert.AreEqual(a.Hint, b.Hint, ctx + " Hint");
-                Assert.AreEqual(a.Feedback, b.Feedback, ctx + " Feedback");
+                Assert.AreEqual((int)e["id"], q.Id, ctx + " Id");
+                Assert.AreEqual((int)e["compoundId"], q.CompoundId, ctx + " CompoundId");
+                Assert.AreEqual((string)e["description"], q.Description, ctx + " Description");
+                Assert.AreEqual((string)e["correctAnswer"], q.CorrectAnswer, ctx + " CorrectAnswer");
+                Assert.AreEqual((string)e["hint"], q.Hint, ctx + " Hint");
+                Assert.AreEqual((string)e["feedback"], q.Feedback, ctx + " Feedback");
 
                 // criterio 3: contagem, conteudo E ordem
-                CollectionAssert.AreEqual(a.Alternatives.ToList(), b.Alternatives.ToList(),
+                CollectionAssert.AreEqual(
+                    e["alternatives"].Select(x => (string)x).ToList(),
+                    q.Alternatives.ToList(),
                     ctx + " Alternatives (conteudo e ordem)");
             }
         }

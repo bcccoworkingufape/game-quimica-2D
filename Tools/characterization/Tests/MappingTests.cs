@@ -109,25 +109,25 @@ namespace Molz.Characterization
             Assert.AreEqual("Solucao de teste", dto.ToDomain().Name);
         }
 
-        // ---------------------------------------------------- QuestionMapper
-        [Test]
-        public void QuestionMapper_IsPurePositionalPassThrough()
-        {
-            // QuestionMapper.cs:8-18 nao converte nem valida nada.
-            // Note a inversao de ordem: alternatives entra antes de correctAnswer
-            // porque o construtor de Question declara nessa ordem.
-            var dto = new QuestionDto
-            {
-                id = 7,
-                compoundId = 3,
-                description = "Q7",
-                correctAnswer = "B",
-                alternatives = new System.Collections.Generic.List<string> { "A", "B", "C" },
-                hint = "dica",
-                feedback = "feedback"
-            };
+        // -------------------------------------------- invariantes de Question
+        // A Etapa B1 removeu QuestionDto e QuestionMapper: o mapper era passagem
+        // posicional pura e a defesa real sempre esteve dentro da entidade.
+        // Estes testes continuam caracterizando exatamente o mesmo comportamento,
+        // agora exercitando a entidade diretamente — que e onde a regra vive.
+        // A materializacao a partir do JSON esta coberta por
+        // SpikeQuestionDeserialization e pelos testes F05.
 
-            var q = dto.ToDomain();
+        [Test]
+        public void QuestionEntity_KeepsFieldsAsGiven()
+        {
+            var q = new Question(
+                id: 7,
+                compoundId: 3,
+                description: "Q7",
+                alternatives: new System.Collections.Generic.List<string> { "A", "B", "C" },
+                correctAnswer: "B",
+                hint: "dica",
+                feedback: "feedback");
 
             Assert.AreEqual(7, q.Id);
             Assert.AreEqual(3, q.CompoundId);
@@ -141,20 +141,10 @@ namespace Molz.Characterization
         [Test]
         public void QuestionEntity_NormalizesNullsItself()
         {
-            // A defesa esta na entidade (Question.cs:33-36), nao no mapper.
-            var dto = new QuestionDto
-            {
-                id = 1,
-                compoundId = 1,
-                description = null,
-                correctAnswer = null,
-                alternatives = null,
-                hint = null,
-                feedback = null
-            };
+            // Question.cs:33-36
+            var q = new Question(1, 1, null, null, null, null, null);
 
-            var q = dto.ToDomain();
-
+            Assert.AreEqual(string.Empty, q.Description);
             Assert.AreEqual(string.Empty, q.CorrectAnswer);
             Assert.AreEqual(string.Empty, q.Hint);
             Assert.AreEqual(string.Empty, q.Feedback);
@@ -165,21 +155,30 @@ namespace Molz.Characterization
         public void QuestionEntity_EmptyAlternatives_GetsCorrectAnswerAsOnlyOption()
         {
             // Question.cs:39-46 garante pelo menos uma alternativa.
-            var dto = new QuestionDto
-            {
-                id = 1,
-                compoundId = 1,
-                description = "Q1",
-                correctAnswer = "Resposta",
-                alternatives = new System.Collections.Generic.List<string>(),
-                hint = "",
-                feedback = ""
-            };
-
-            var q = dto.ToDomain();
+            var q = new Question(
+                id: 1,
+                compoundId: 1,
+                description: "Q1",
+                alternatives: new System.Collections.Generic.List<string>(),
+                correctAnswer: "Resposta",
+                hint: "",
+                feedback: "");
 
             Assert.AreEqual(1, q.Alternatives.Count);
             Assert.AreEqual("Resposta", q.Alternatives[0]);
+        }
+
+        [Test]
+        public void QuestionEntity_CopiesAlternatives_DoesNotAliasCallerList()
+        {
+            // Question.cs:45 faz new List<string>(alternatives). Mutar a lista de
+            // origem depois nao pode alterar a entidade.
+            var origem = new System.Collections.Generic.List<string> { "A", "B" };
+            var q = new Question(1, 1, "Q", origem, "A", "", "");
+
+            origem.Add("C");
+
+            Assert.AreEqual(2, q.Alternatives.Count);
         }
 
         // --------------------------------------------------------- auxiliares
