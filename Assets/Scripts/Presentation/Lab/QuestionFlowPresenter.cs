@@ -138,7 +138,15 @@ namespace Presentation.Lab
 
             string selectedAnswer = _currentQuestion.Alternatives[optionIndex];
 
-            var request = new SubmitAnswerRequest(_currentQuestion, selectedAnswer, _currentStreak);
+            // O multiplicador sai do ScriptableObject de dificuldade e viaja no
+            // request. Mesmo fallback de GameManager.cs:228: 1f quando nao ha
+            // dificuldade definida.
+            float multiplier = _gm != null && _gm.CurrentDifficulty != null
+                ? _gm.CurrentDifficulty.scoreMultiplier
+                : 1f;
+
+            var request = new SubmitAnswerRequest(
+                _currentQuestion, selectedAnswer, _currentStreak, multiplier);
             var result = _submitAnswerUseCase.Execute(request);
 
             _currentStreak = result.NewStreak;

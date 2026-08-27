@@ -223,10 +223,15 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Acumula pontos ja calculados. Na Etapa E1 o multiplicador de
+        /// dificuldade saiu daqui para o ScoringService: a regra de pontuacao
+        /// estava partida entre um servico de dominio e este MonoBehaviour.
+        /// O que resta e estado de sessao e notificacao, que sao papel do Manager.
+        /// </summary>
         public void AddScore(int points)
         {
-            float multiplier = CurrentDifficulty != null ? CurrentDifficulty.scoreMultiplier : 1f;
-            PlayerScore += (int)(points * multiplier);
+            PlayerScore += points;
             OnScoreChanged?.Invoke(PlayerScore);
         }
 

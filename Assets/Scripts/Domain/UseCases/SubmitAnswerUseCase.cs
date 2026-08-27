@@ -8,11 +8,19 @@ namespace Domain
         public string SelectedAnswer { get; }
         public int CurrentStreak { get; }
 
-        public SubmitAnswerRequest(Question question, string selectedAnswer, int currentStreak)
+        /// <summary>
+        /// Multiplicador do modo de dificuldade corrente. Default 1f preserva
+        /// o fallback de GameManager.cs:228 quando nao ha dificuldade definida.
+        /// </summary>
+        public float DifficultyMultiplier { get; }
+
+        public SubmitAnswerRequest(Question question, string selectedAnswer, int currentStreak,
+            float difficultyMultiplier = 1f)
         {
             Question = question;
             SelectedAnswer = selectedAnswer;
             CurrentStreak = currentStreak;
+            DifficultyMultiplier = difficultyMultiplier;
         }
     }
 
@@ -55,7 +63,8 @@ namespace Domain
                 request.Question.CorrectAnswer,
                 StringComparison.OrdinalIgnoreCase);
 
-            int points = _scoringService.ComputePoints(isCorrect, request.CurrentStreak);
+            int points = _scoringService.ComputePoints(
+                isCorrect, request.CurrentStreak, request.DifficultyMultiplier);
             int newStreak = isCorrect ? request.CurrentStreak + 1 : 0;
 
             string feedback = isCorrect

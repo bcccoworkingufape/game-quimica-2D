@@ -12,10 +12,15 @@ namespace Domain
             _basePoints = basePoints;
         }
 
-        public int ComputePoints(bool isCorrect, int streak)
+        public int ComputePoints(bool isCorrect, int streak, float difficultyMultiplier = 1f)
         {
             if (!isCorrect) return 0;
-            return _basePoints + (streak * 10);
+
+            int basePoints = _basePoints + (streak * 10);
+
+            // Mesma ordem de operacoes do Estado C: o base ja e inteiro e o
+            // truncamento acontece DEPOIS da multiplicacao, nao arredondando.
+            return (int)(basePoints * difficultyMultiplier);
         }
     }
 }
