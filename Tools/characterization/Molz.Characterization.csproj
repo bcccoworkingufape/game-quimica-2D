@@ -37,12 +37,14 @@
   <ItemGroup Label="Producao — somente fontes sem UnityEngine">
     <Compile Include="..\..\Assets\Scripts\Domain\**\*.cs" />
     <Compile Include="..\..\Assets\Scripts\Data\Dtos\*.cs" />
-    <Compile Include="..\..\Assets\Scripts\Data\Mappers\*.cs" />
     <Compile Include="..\..\Assets\Scripts\Data\Repositories\*.cs" />
     <Compile Include="..\..\Assets\Scripts\Data\Providers\IJsonProvider.cs" />
     <Compile Include="..\..\Assets\Scripts\Data\Providers\FileJsonProvider.cs" />
     <Compile Include="..\..\Assets\Scripts\Data\DataIndex.cs" />
     <Compile Include="..\..\Assets\Scripts\Core\QuestionRunTracker.cs" />
+    <!-- Formatter POCO, sem nenhum tipo de UnityEngine: e o seam que permite
+         verificar a semantica do reagente indicador fora do editor. -->
+    <Compile Include="..\..\Assets\Scripts\Presentation\Lab\TestMessageHandler.cs" />
     <!--
       Deliberadamente FORA:
         Data/Providers/ResourcesJsonProvider.cs  -> usa UnityEngine.Resources
