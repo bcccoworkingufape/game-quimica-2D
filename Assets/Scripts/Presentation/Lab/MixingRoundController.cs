@@ -1,7 +1,6 @@
 using UnityEngine;
 using Domain;
 using Core;
-using LabScripts;
 using Core.Audio;
 namespace Presentation.Lab
 {
@@ -14,8 +13,10 @@ namespace Presentation.Lab
     /// </summary>
     public class MixingRoundController : MonoBehaviour
     {
-        [Header("Referências de UI")]
-        [SerializeField] private LabUIController uiController;
+        // A View chega por composicao explicita (LabUIController.Awake), nao
+        // por campo serializado: assim este orquestrador nao conhece o tipo
+        // concreto do MonoBehaviour de UI.
+        private IMixingView _view;
 
         [Header("Referência de Animação")]
         [Tooltip("Controller que atualiza os parâmetros do Animator do frasco")]
@@ -37,12 +38,14 @@ namespace Presentation.Lab
         private GameManager _gameManager;
         private TestMessageHandler _messageHandler = new TestMessageHandler();
 
-        private void Awake()
+        /// <summary>
+        /// Chamado por <see cref="LabScripts.LabUIController"/> no Awake dele.
+        /// Nenhum uso da View ocorre em Awake/OnEnable/Start deste componente,
+        /// entao a ordem relativa entre os Awake nao importa.
+        /// </summary>
+        public void SetView(IMixingView view)
         {
-            if (uiController == null)
-            {
-                uiController = FindAnyObjectByType<LabUIController>();
-            }
+            _view = view;
         }
 
         private void Start()
@@ -78,12 +81,9 @@ namespace Presentation.Lab
             _selectedSolventId = solventId;
             _selectedSolventName = solventName;
 
-            if (uiController != null)
-            {
-                // A identidade quimica vem do dominio; a View so recebe a decisao.
-                bool isIndicator = solventId == Solvent.LitmusIndicatorId;
-                uiController.ShowConfirmationPanel(solventName, isIndicator);
-            }
+            // A identidade quimica vem do dominio; a View so recebe a decisao.
+            bool isIndicator = solventId == Solvent.LitmusIndicatorId;
+            _view?.ShowConfirmationPanel(solventName, isIndicator);
         }
 
         /// <summary>
@@ -120,13 +120,8 @@ namespace Presentation.Lab
             else
                 Debug.LogWarning("[MixingRoundController] FlaskAnimationController não atribuído. Animação não será atualizada.");
 
-            if (uiController != null && uiController.solutionAnimationText != null)
-            {
-                uiController.solutionAnimationText.text =
-                    _messageHandler.GetTestMessage(response);
-            }
-
-            uiController?.ShowSolutionAnimationPanel();
+            _view?.SetSolutionResultText(_messageHandler.GetTestMessage(response));
+            _view?.ShowSolutionAnimationPanel();
         }
         public void ResetRoundState(bool clearCompound = false)
         {

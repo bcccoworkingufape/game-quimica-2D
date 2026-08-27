@@ -17,7 +17,7 @@ namespace LabScripts
     /// <see cref="LabPresenter"/>. Mantém todas as referências serializadas
     /// e métodos públicos historicamente usados pelos OnClick das scenes/prefabs.
     /// </summary>
-    public class LabUIController : MonoBehaviour, ILabView
+    public class LabUIController : MonoBehaviour, ILabView, IMixingView
     {
         private LabPresenter _presenter;
         private LabHudView _hud;
@@ -118,6 +118,11 @@ namespace LabScripts
                 pauseMenuPanel, questionErrorPanel, questionVictoryPanel, defeatPanel, infoPanel);
 
             _presenter = new LabPresenter(this);
+
+            // Composicao explicita dos orquestradores. A View ja possui as
+            // referencias serializadas; empurrar-se como contrato elimina a
+            // dependencia concreta na direcao oposta, sem tocar na cena.
+            mixingRoundController?.SetView(this);
         }
 
         void OnEnable()
@@ -277,6 +282,18 @@ namespace LabScripts
 
         // O solutionAnimationPanel possui tratamento próprio via SolutionPanelAnimator,
         // portanto não entra no fluxo do OverlayAnimator.
+
+        /// <summary>
+        /// Operacao de View exigida por <see cref="IMixingView"/>. Antes da
+        /// Etapa G o orquestrador escrevia direto no TextMeshProUGUI publico.
+        /// A guarda de nulo preserva o comportamento do Estado C: sem o
+        /// componente, o texto simplesmente nao e exibido.
+        /// </summary>
+        public void SetSolutionResultText(string message)
+        {
+            if (solutionAnimationText != null)
+                solutionAnimationText.text = message;
+        }
 
         public void ShowSolutionAnimationPanel()
         {
