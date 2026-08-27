@@ -17,7 +17,7 @@ namespace LabScripts
     /// <see cref="LabPresenter"/>. Mantém todas as referências serializadas
     /// e métodos públicos historicamente usados pelos OnClick das scenes/prefabs.
     /// </summary>
-    public class LabUIController : MonoBehaviour, ILabView, IMixingView
+    public class LabUIController : MonoBehaviour, ILabView, IMixingView, IQuestionView
     {
         private LabPresenter _presenter;
         private LabHudView _hud;
@@ -123,6 +123,7 @@ namespace LabScripts
             // referencias serializadas; empurrar-se como contrato elimina a
             // dependencia concreta na direcao oposta, sem tocar na cena.
             mixingRoundController?.SetView(this);
+            questionFlowPresenter?.SetView(this);
         }
 
         void OnEnable()
@@ -327,6 +328,18 @@ namespace LabScripts
         // ─────────────────────────────────────────────
         // Question Panel
         // ─────────────────────────────────────────────
+
+        /// <summary>
+        /// Operacao de View exigida por <see cref="IQuestionView"/>. Antes da
+        /// Etapa G o orquestrador escrevia direto no TextMeshProUGUI publico,
+        /// e sem guarda de nulo — a linha estourava se o campo faltasse.
+        /// A guarda aqui torna o caminho tolerante, como os vizinhos ja eram.
+        /// </summary>
+        public void SetQuestionTitle(string title)
+        {
+            if (questionPanelTitle != null)
+                questionPanelTitle.text = title;
+        }
 
         public void SetupQuestionPanel(Question question)
         {

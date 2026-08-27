@@ -3,7 +3,6 @@ using UnityEngine;
 using Domain;
 using Data;
 using Core;
-using LabScripts;
 using Core.Audio;
 
 
@@ -11,8 +10,10 @@ namespace Presentation.Lab
 {
     public class QuestionFlowPresenter : MonoBehaviour
     {
+        // A View chega por composicao explicita (LabUIController.Awake).
+        private IQuestionView _view;
+
         [Header("Referências")]
-        [SerializeField] private LabUIController uiController;
         [SerializeField] private MixingRoundController mixingRoundController;
 
         private SubmitAnswerUseCase _submitAnswerUseCase;
@@ -24,9 +25,18 @@ namespace Presentation.Lab
         private Question _currentQuestion;
         private int _currentStreak;
 
+        /// <summary>
+        /// Chamado por <see cref="LabScripts.LabUIController"/> no Awake dele.
+        /// Este componente nao usa a View em Awake/OnEnable/Start, entao a
+        /// ordem relativa entre os Awake nao importa.
+        /// </summary>
+        public void SetView(IQuestionView view)
+        {
+            _view = view;
+        }
+
         private void Awake()
         {
-            if (uiController == null) uiController = FindAnyObjectByType<LabUIController>();
             if (mixingRoundController == null) mixingRoundController = FindAnyObjectByType<MixingRoundController>();
         }
 
@@ -126,9 +136,9 @@ namespace Presentation.Lab
             if (_currentQuestion == null)
                 return;
 
-            uiController.questionPanelTitle.text = $"Questão {_currentQuestion.Id}";
-            uiController?.SetupQuestionPanel(_currentQuestion);
-            uiController?.ShowQuestionPanel();
+            _view?.SetQuestionTitle($"Questão {_currentQuestion.Id}");
+            _view?.SetupQuestionPanel(_currentQuestion);
+            _view?.ShowQuestionPanel();
         }
 
         public void OnAnswerSelected(int optionIndex)
@@ -161,12 +171,12 @@ namespace Presentation.Lab
             {
                 _audio?.PlayCorrect();
                 _gm?.MarkActiveQuestionCorrect();
-                uiController?.ShowQuestionVictoryPanel(_currentQuestion.CorrectAnswer);
+                _view?.ShowQuestionVictoryPanel(_currentQuestion.CorrectAnswer);
             }
             else
             {
                 _audio?.PlayWrong();
-                uiController?.ShowQuestionErrorPanel();
+                _view?.ShowQuestionErrorPanel();
             }
         }
 
