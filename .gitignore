@@ -11,8 +11,13 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 *.log
-/docs
+# /docs e area de trabalho local e segue ignorada. A excecao abaixo cobre
+# apenas docs/paper/, onde ficam os artefatos cientificos do Paper 1 (ADRs,
+# protocolo). Sem a re-inclusao do proprio diretorio o git nao desce nele e
+# a negacao do conteudo nao teria efeito.
 /docs/*
+!/docs/paper/
+!/docs/paper/**
 /APKs
 /docs_webmedia_2026/
 /docs_webmedia_2026/*
