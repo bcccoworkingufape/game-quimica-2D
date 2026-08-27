@@ -136,7 +136,11 @@ namespace Presentation.Lab
             if (_currentQuestion == null)
                 return;
 
-            _view?.SetQuestionTitle($"Questão {_currentQuestion.Id}");
+            // Sem `?.` de proposito, espelhando o Estado C: a linha original era
+            // `uiController.questionPanelTitle.text = ...`, tambem sem guarda,
+            // enquanto as duas seguintes usavam `?.`. A Etapa G move a
+            // dependencia, nao a tolerancia a nulo.
+            _view.SetQuestionTitle($"Questão {_currentQuestion.Id}");
             _view?.SetupQuestionPanel(_currentQuestion);
             _view?.ShowQuestionPanel();
         }

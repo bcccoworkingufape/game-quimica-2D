@@ -331,14 +331,17 @@ namespace LabScripts
 
         /// <summary>
         /// Operacao de View exigida por <see cref="IQuestionView"/>. Antes da
-        /// Etapa G o orquestrador escrevia direto no TextMeshProUGUI publico,
-        /// e sem guarda de nulo — a linha estourava se o campo faltasse.
-        /// A guarda aqui torna o caminho tolerante, como os vizinhos ja eram.
+        /// Etapa G o orquestrador escrevia direto no TextMeshProUGUI publico.
+        ///
+        /// Deliberadamente SEM guarda de nulo: o codigo do Estado C tambem nao
+        /// tinha, e a Etapa G move a dependencia, nao o comportamento da View.
+        /// Se o campo faltar, o resultado continua sendo NullReferenceException,
+        /// exatamente como antes. Tornar o caminho tolerante seria uma correcao,
+        /// e correcoes nao pertencem a esta intervencao.
         /// </summary>
         public void SetQuestionTitle(string title)
         {
-            if (questionPanelTitle != null)
-                questionPanelTitle.text = title;
+            questionPanelTitle.text = title;
         }
 
         public void SetupQuestionPanel(Question question)
