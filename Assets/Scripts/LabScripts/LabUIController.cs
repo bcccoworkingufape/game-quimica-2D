@@ -207,14 +207,20 @@ namespace LabScripts
         // Confirmation Panel
         // ─────────────────────────────────────────────
 
-        public void ShowConfirmationPanel(string itemName)
+        /// <summary>
+        /// A View recebe a decisao semantica pronta. Antes da Etapa F1 ela
+        /// reclassificava a quimica por conta propria, comparando o texto de
+        /// exibicao com um literal. O texto em pt-BR continua sendo
+        /// responsabilidade daqui; a identidade do reagente, nao.
+        /// </summary>
+        public void ShowConfirmationPanel(string itemName, bool isIndicator)
         {
             currentItemName = itemName;
             string defaultText = "Deseja realizar o teste de solubilidade da substância desconhecida em <b>" + itemName + "</b>?";
             string litmusText = "Deseja adicionar <b>tornassol</b> à substância desconhecida?";
 
             if (confirmationPanelText != null)
-                confirmationPanelText.text = currentItemName == "Tornassol" ? litmusText : defaultText;
+                confirmationPanelText.text = isIndicator ? litmusText : defaultText;
 
             OverlayAnimator.Show(confirmationPanel);
         }

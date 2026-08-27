@@ -206,6 +206,34 @@ namespace Molz.Characterization
                 "MenuPresenter nao deve mais resolver dependencia globalmente");
         }
 
+        /// <summary>
+        /// Etapa F1: a identidade do reagente indicador nao pode voltar a ser
+        /// decidida por comparacao com o texto de exibicao. Se um literal
+        /// "Tornassol" reaparecer em codigo executavel, a duplicacao volta.
+        /// </summary>
+        [Test]
+        public void IndicatorIdentityIsNotDecidedByDisplayName()
+        {
+            var violacoes = new List<string>();
+
+            foreach (var arquivo in Fontes())
+            {
+                var rel = Relativo(arquivo);
+                var linhas = File.ReadAllLines(arquivo);
+                for (var i = 0; i < linhas.Length; i++)
+                {
+                    // comentarios podem citar o nome para documentar o dataset
+                    var codigo = Regex.Replace(linhas[i], @"//.*$|///.*$", "");
+                    if (codigo.Contains("\"Tornassol\""))
+                        violacoes.Add(rel + ":" + (i + 1) + "  " + linhas[i].Trim());
+                }
+            }
+
+            Assert.IsEmpty(violacoes,
+                "identidade quimica decidida por texto de exibicao:\n  " +
+                string.Join("\n  ", violacoes));
+        }
+
         [Test]
         public void MenuTogglesPreserveAvailabilityGuard()
         {

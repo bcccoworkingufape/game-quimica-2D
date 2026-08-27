@@ -84,7 +84,7 @@ namespace Presentation.Lab
         {
             var properties = MapOutcome(outcome);
 
-            bool isLitmus = outcome.Solvent.Name == "Tornassol";
+            bool isLitmus = outcome.Solvent.IsIndicator;
             string compoundState = properties["compoundState"];
             string litmusText = properties["litmusText"];
             string solubilityText = properties["solubilityText"];

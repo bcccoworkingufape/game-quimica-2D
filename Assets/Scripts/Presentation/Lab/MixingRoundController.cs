@@ -80,7 +80,9 @@ namespace Presentation.Lab
 
             if (uiController != null)
             {
-                uiController.ShowConfirmationPanel(solventName);
+                // A identidade quimica vem do dominio; a View so recebe a decisao.
+                bool isIndicator = solventId == Solvent.LitmusIndicatorId;
+                uiController.ShowConfirmationPanel(solventName, isIndicator);
             }
         }
 
