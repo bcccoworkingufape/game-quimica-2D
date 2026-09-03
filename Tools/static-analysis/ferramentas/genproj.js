@@ -23,12 +23,22 @@ for (const dll of extraDlls) {
 }
 const analyzers = (tpl.match(/<Analyzer Include="[^"]*"\s*\/>/g) || []).join('\n    ');
 
-// ProjectReference usa caminho relativo a raiz do projeto Unity: converte para absoluto
-const tplDir = pathMod.dirname(pathMod.resolve(templateCsproj));
-const projRefs = (tpl.match(/<ProjectReference Include="[^"]*"[\s\S]*?<\/ProjectReference>|<ProjectReference Include="[^"]*"\s*\/>/g) || [])
-  .map(pr => pr.replace(/Include="([^"]*)"/, (m, p) =>
-    'Include="' + pathMod.join(tplDir, p) + '"'))
-  .join('\n    ');
+// As <ProjectReference> do template NAO sao copiadas para o projeto de analise.
+//
+// O Assembly-CSharp.csproj gerado pela Unity referencia os csproj dos pacotes
+// (45 deles: VisualScripting, Burst, Timeline, InputSystem, 2D.*, etc). Copia-las
+// faria o MSBuild COMPILAR esses projetos so para analisar Assets/Scripts, o que
+// e desnecessario e, com muitos pacotes, esgota a memoria do build.
+//
+// Elas tambem nao sao necessarias: o codigo proprio do jogo usa apenas TextMeshPro,
+// UnityEngine.UI e InputSystem desse conjunto, e esses tres ja entram como
+// referencia binaria direta pelo bloco extraDlls acima — que existe exatamente
+// porque essas DLLs "o Unity resolve via ProjectReference e nao aparecem como
+// <Reference>". Os outros 42 pacotes nao sao referenciados por nenhum arquivo de
+// Assets/Scripts.
+//
+// A analise precisa de referencias binarias para resolver tipos, nao de projetos
+// para construir.
 const defines = (tpl.match(/<DefineConstants>([\s\S]*?)<\/DefineConstants>/) || [])[1] || '';
 
 const proj = `<Project Sdk="Microsoft.NET.Sdk">
@@ -74,10 +84,6 @@ ${['LeanTween/Framework', 'QuickOutline/Scripts', 'EasyLoadingScreen'].map(d => 
 
   <ItemGroup>
     ${refs}
-  </ItemGroup>
-
-  <ItemGroup>
-    ${projRefs}
   </ItemGroup>
 </Project>
 `;
