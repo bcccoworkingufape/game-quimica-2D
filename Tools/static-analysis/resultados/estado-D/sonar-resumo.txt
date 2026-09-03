@@ -1,0 +1,47 @@
+===== SonarAnalyzer.CSharp 10.31 — Estado D (simplificado) =====
+violacoes no codigo proprio (assets/scripts): 143
+regras distintas acionadas                  : 19
+
+por categoria (tags da regra):
+  bug           : 0
+  code smell    : 0
+  vulnerability : 0
+  nao rotulado  : 143
+
+TOP 20 regras mais acionadas:
+    48x  CS0649  Field is never assigned to, and will always have its default value
+    44x  UNT0008 Null propagation on Unity objects
+    19x  S2325   Methods and properties that don't access instance data should be static
+     6x  S3903   Types should be defined in named namespaces
+     4x  S2933   Fields that are only assigned in the constructor should be "readonly"
+     3x  S1121   Assignments should not be made from within sub-expressions
+     3x  S1135   Track uses of "TODO" tags
+     3x  UNT0026 GetComponent always allocates
+     2x  S3881   "IDisposable" should be implemented correctly
+     2x  S927    Parameter names should match base declaration and other partial definitions
+     1x  S1481   Unused local variables should be removed
+     1x  S1854   Unused assignments should be removed
+     1x  S2190   Loops and recursions should not be infinite
+     1x  S2955   Generic parameters not constrained to reference types should not be compared to "null"
+     1x  S3928   Parameter names used into ArgumentException constructors should match an existing one 
+     1x  S4144   Methods should not have identical implementations
+     1x  UNT0007 Null coalescing on Unity objects
+     1x  UNT0038 WaitForSeconds caching 
+     1x  UNT0039 Use RequireComponent attribute when self-invoking GetComponent
+
+TOP 15 arquivos com mais violacoes:
+    25x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/LabScripts/LabUIController.cs
+    19x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/UI/NavbarController.cs
+    17x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/MenuScripts/MenuUIController.cs
+    15x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Core/Audio/UnityAudioService.cs
+    11x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Presentation/Lab/FlaskAnimationController.cs
+     6x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/MenuScripts/SliderController.cs
+     6x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Presentation/Lab/LabPresenter.cs
+     6x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Presentation/Lab/QuestionFlowPresenter.cs
+     5x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Core/GameManager.cs
+     5x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Presentation/Lab/HistoryPanelController.cs
+     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Presentation/Common/UIAnimator.cs
+     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Presentation/Lab/SolventClickHandler.cs
+     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Presentation/Lab/TestMessageHandler.cs
+     3x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/UI/TreeSolventGroupButtons.cs
+     2x  file:///C:/Users/ben/AppData/Local/Temp/molz-estado-D/Assets/Scripts/Core/PortraitAspectCamera.cs
