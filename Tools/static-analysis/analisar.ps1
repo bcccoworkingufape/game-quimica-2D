@@ -42,6 +42,7 @@ $wt     = Join-Path $env:TEMP 'molz-baseline'
 # Estados do experimento de refatoracao controlada do Paper 1 (C -> D0 -> D).
 # Medidos por worktree em ref fixo, para nao depender do estado da arvore de trabalho.
 $wtC    = Join-Path $env:TEMP 'molz-estado-C'
+$wtD0   = Join-Path $env:TEMP 'molz-estado-D0'
 $wtD    = Join-Path $env:TEMP 'molz-estado-D'
 
 function Titulo($t) { Write-Host "`n$('=' * 62)`n  $t`n$('=' * 62)" -ForegroundColor Cyan }
@@ -69,7 +70,7 @@ $alvos = @(
   @{ id = '2D';    pasta = '2D-atual';    rotulo = '2D (Molz atual)';        scripts = (Join-Path $repo2D 'Assets\Scripts'); padrao = $true }
 
   @{ id = 'C';     pasta = 'estado-C';    rotulo = 'Estado C (baseline)';    scripts = (Join-Path $wtC 'Assets\Scripts');  padrao = $false; ref = 'analise-estatica/versao-C^{}'; wt = $wtC }
-  @{ id = 'D0';    pasta = 'estado-D0';   rotulo = 'Estado D0 (sem codigo morto)'; scripts = (Join-Path $repo2D 'Assets\Scripts'); padrao = $false }
+  @{ id = 'D0';    pasta = 'estado-D0';   rotulo = 'Estado D0 (sem codigo morto)'; scripts = (Join-Path $wtD0 'Assets\Scripts'); padrao = $false; ref = 'a788ea8927d4c20afeba7d3b2e3e536d362025d2'; wt = $wtD0 }
   @{ id = 'D';     pasta = 'estado-D';    rotulo = 'Estado D (simplificado)'; scripts = (Join-Path $wtD 'Assets\Scripts'); padrao = $false; ref = 'analise-estatica/versao-D^{}'; wt = $wtD }
 ) | Where-Object { ($Apenas -eq 'Tudo' -and $_.padrao) -or $_.id -eq $Apenas }
 
@@ -124,7 +125,7 @@ foreach ($a in $alvos) {
 }
 
 # ---------- limpeza dos worktrees ----------
-foreach ($p in @($wt, $wtC, $wtD)) {
+foreach ($p in @($wt, $wtC, $wtD0, $wtD)) {
   if (Test-Path $p) {
     $ErrorActionPreference = 'Continue'
     git -C $repo2D worktree remove $p --force | Out-Null
