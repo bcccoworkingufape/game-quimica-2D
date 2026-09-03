@@ -650,19 +650,11 @@ namespace LabScripts
         {
             Time.timeScale = 1f;
 
-            // solutionAnimationPanel tem tratamento próprio — permanece ativo.
-            if (solutionAnimationPanel) solutionAnimationPanel.SetActive(true);
-
-            // Todos os outros overlays fecham imediatamente (reset de estado, sem animação).
-            OverlayAnimator.HideImmediate(confirmationPanel);
-            OverlayAnimator.HideImmediate(questionPanel);
-            OverlayAnimator.HideImmediate(pauseMenuPanel);
-            OverlayAnimator.HideImmediate(questionErrorPanel);
-            OverlayAnimator.HideImmediate(questionVictoryPanel);
-            OverlayAnimator.HideImmediate(defeatPanel);
-            OverlayAnimator.HideImmediate(historyPanel);
-            OverlayAnimator.HideImmediate(treePanel);
-            OverlayAnimator.HideImmediate(infoPanel);
+            // Fecha os overlays pelo colaborador que existe exatamente para isso.
+            // Ate a Etapa H este metodo repetia, linha a linha, as mesmas dez
+            // operacoes que LabPanelsView.HideAll ja fazia sobre os mesmos
+            // paineis — inclusive manter o solutionAnimationPanel ativo.
+            _panels?.HideAll();
 
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
