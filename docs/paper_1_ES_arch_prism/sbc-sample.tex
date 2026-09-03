@@ -3,14 +3,16 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 %\usepackage[brazil]{babel}
-\usepackage[misc,geometry]{ifsym} 
+\usepackage[misc,geometry]{ifsym}
 \usepackage{fontspec}
 \usepackage{fontawesome}
 \usepackage{academicons}
 \usepackage{color}
-\usepackage{hyperref} 
+\usepackage{hyperref}
 \usepackage{aas_macros}
 \usepackage[bottom]{footmisc}
+\usepackage{booktabs}
+\usepackage{multirow}
 
 \definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
 \definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
@@ -19,42 +21,27 @@
 \hypersetup{colorlinks,breaklinks,
             linkcolor=darkblue,urlcolor=darkblue,
             anchorcolor=darkblue,citecolor=darkblue}
-%\hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue}
 
 %%%%%%% IMPORTANT: We disable hyperlinks by default with this line, to avoid the error "\pdfendlink ended up in different nesting level" while writing.
 %\hypersetup{draft}
 
 \jid{JSERD}
-\jtitle{Journal of Software Engineering Research and Development, 2019, 6:1, }
-\doi{10.5753/jserd.2019.xxx}
+\jtitle{Journal of Software Engineering Research and Development, 2026, }
+\doi{10.5753/jserd.2026.xxx}
 \copyrightstatement{This work is licensed under a Creative Commons Attribution 4.0 International License.}
-\jyear{2019}
+\jyear{2026}
 
 
+\title[Architectural Simplification and Internal Software Quality]{Architectural Simplification and Internal Software Quality in a Unity-Based Serious Game: A Comparative Case Study}
 
-\title[Presenting the new SBC journal template]{Presenting the new SBC journal template}
+%% NEEDS SOURCE: the definitive author list and the ORCID identifiers for this
+%% paper have not been fixed yet. The two authors below are the ones documented
+%% in the PIBIC 2025--2026 research plan and final report.
+\author[Rezende and Rocha 2026]{
+\affil{\textbf{Jo\~ao Guilherme Benjamin Alves de Rezende}~~[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:benj7100@gmail.com}{~\textbf{\textit{benj7100@gmail.com}}} ]}
 
-
-%% Please note that the command \and is not supported in \author.
-\author[Viterbo et al. 2019]{
-\affil{\textbf{José Viterbo}~\href{https://orcid.org/0000-0002-0339-6624}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Federal Fluminense~}|\href{mailto:viterbo@ic.uff.br}{~\textbf{\textit{viterbo@ic.uff.br}}} ]}
-
-%\affil{\href{https://orcid.org/0000-0002-0339-6624}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{José Viterbo}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Federal Fluminense~~}\href{mailto:viterbo@ic.uff.br}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{viterbo@ic.uff.br}}}
-
-\affil{\textbf{Clodis Boscarioli}~\href{https://orcid.org/0000-0002-7110-2026}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Estadual do Oeste do Paraná~}|\href{mailto:clodis.boscarioli@unioeste}{~\textbf{\textit{clodis.boscarioli@unioeste.br}}} ]}
-
-%\affil{\href{https://orcid.org/0000-0002-7110-2026}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{Clodis Boscarioli}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Estadual do Oeste do Paraná~~}\href{mailto:clodis.boscarioli@unioeste}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{clodis.boscarioli@unioeste.br}}}
-
-\affil{\textbf{Roberto Pereira}~\href{https://orcid.org/0000-0003-3052-3016}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Federal do Paraná~}|\href{mailto:robertop.ihc@gmail.com}{~\textbf{\textit{robertop.ihc@gmail.com}}} ]}
-
-%\affil{\href{https://orcid.org/0000-0003-3052-3016}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{Roberto Pereira}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Federal do Paraná~~}\href{mailto:robertop.ihc@gmail.com}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{robertop.ihc@gmail.com}}}
-
-\affil{\textbf{Cristiano Maciel}~\href{https://orcid.org/0000-0002-2431-8457}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Federal de Mato Grosso~}|\href{mailto:cmaciel@ufmt.br}{~\textbf{\textit{cmaciel@ufmt.br}}} ]}
-
-%\affil{\href{https://orcid.org/0000-0002-2431-8457}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{Cristiano Maciel}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Federal de Mato Grosso~~}\href{mailto:cmaciel@ufmt.br}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{cmaciel@ufmt.br}}}
+\affil{\textbf{Rodrigo Gusm\~ao de Carvalho Rocha}~~[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:rodrigo.rocha@ufape.edu.br}{~\textbf{\textit{rodrigo.rocha@ufape.edu.br}}} ]}
 }
-
-%%%%%%% You may comment or delete the line above to make hyperlinks in your paper active. If you then encounter a strange "\pdfendlink ended up in different nesting level than \pdfstartlink", don't worry! Uncomment the line again, and see https://www.overleaf.com/help/246 for further information.
 
 \begin{document}
 
@@ -64,245 +51,1132 @@
 \begin{abstract}
 \textbf{Abstract}
 
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+%% ABSTRACT -- written last, see Section ordering in the writing protocol.
+Architectural refactoring is commonly reported as an activity that adds structure to a system. Less is known about the opposite direction: what happens to internal software quality indicators when abstractions that do not carry a concrete responsibility are removed from a working system. This paper reports a comparative case study of responsibility-driven architectural simplification applied to Molz, a Unity-based serious game for organic chemistry. Three snapshots of the same system were measured with a single frozen instrument: the pre-intervention baseline C, an intermediate control state D0 obtained by removing dead code only, and the simplified state D. Separating the control from the intervention was necessary because the code removed in C$\rightarrow$D0 had a higher mean maintainability index (80.3 versus 72.5) and lower mean efferent coupling (4.50 versus 11.4) than the system as a whole, so its removal moved every normalized mean unfavourably. Between D0 and D the system lost five classes and gained two interfaces and six members, while the aggregate indicators barely moved: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, and mean efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states inverted the sign of the first two: maintainability fell by 0.06 and complexity rose by 0.01, showing that the aggregate movements were composition effects rather than changes in surviving code. The set of types referencing the engine was identical in both states (23 types), while its percentage rose from 35.4\% to 38.3\% through denominator change alone. Functional behaviour was preserved under 118 characterization and architecture-invariant tests, a clean engine import, and manual full-flow verification. Two a-priori simplification hypotheses were rejected by implementation evidence rather than confirmed. The study contributes a protocol for responsibility-driven simplification with recorded retention decisions, a control design that separates dead-code removal from architectural intervention, and evidence that structural simplification does not translate into uniform movement of aggregate quality indicators.
 \end{abstract}
 
 \begin{keywords}
-Proceedings, Template, BCS, Content Repository, Indexing
+Software architecture, Architectural refactoring, Internal software quality, Maintainability, Coupling, Game software engineering, Unity, Case study
 \end{keywords}
-
-%\begin{license}
-%Published under the Creative Commons Attribution 4.0 International Public License (CC BY 4.0)
-%\end{license}
-
-
 
 \end{frontmatter}
 
 
+%% =========================================================================
 \section{Introduction}
-\label{sec:intro}
+%% =========================================================================
 
-Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+Refactoring is defined as a change to the internal structure of software that
+makes it easier to understand and cheaper to modify without altering its
+observable behaviour \cite{fowler2018,mens2004}. In empirical studies the
+activity is most often observed in one direction: structure is added. Classes
+are extracted, interfaces are introduced, responsibilities are distributed
+across new components. The catalogues of code smells contain the opposite case
+as well --- Speculative Generality, Lazy Class, Middle Man, Dead Code
+\cite{fowler2018} --- but the evidence base for removing structure is thinner
+than the evidence base for adding it, and thinner still at the level of
+architecture rather than of individual classes.
 
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+This matters because the two directions do not behave symmetrically under
+measurement. Aggregate indicators such as the maintainability index
+\cite{coleman1994}, cyclomatic complexity \cite{mccabe1976} and efferent
+coupling \cite{martin2003} are means over a population of members or types.
+When structure is added, the population grows; when structure is removed, the
+population shrinks. A mean can therefore move without any surviving component
+having changed at all. Studies that report only aggregate deltas cannot
+distinguish the two, and the literature already reports that refactoring
+produces mixed rather than uniform metric outcomes
+\cite{szoke2017,bavota2015,palomba2018}.
 
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on \cite{abt1961}. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government \cite{abt1961} of the people, by the people, for the people, shall not perish from the earth.
+Game software adds a further dimension. Games are built on engines that impose
+their own composition model, lifecycle and serialization mechanics
+\cite{aleem2016,politowski2025}, and engine-specific structures are a
+recognized source of maintainability problems
+\cite{nardone2023,borrelli2020}. In an engine-based system, a component's
+dependency on the engine is not a free design variable: it is partly fixed by
+the way the engine instantiates and wires objects. Whether architectural
+simplification can reduce that dependency, and what happens to internal quality
+indicators when it is attempted, is an open empirical question.
 
+This paper reports a comparative case study of \emph{responsibility-driven
+architectural simplification} in Molz, a Unity-based serious game for the
+solubility classification of organic compounds. The guiding principle of the
+intervention was not to impose a target architectural style, but to reassess
+each existing abstraction against the responsibility it actually performed in
+the running system, and to retain only those carrying a concrete one.
 
-Now we are engaged in a great civil war, testing whether that nation, \cite{abt1967} or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this (see \textbf{ Table~\ref{tab1}}).
+The study is organized around three snapshots of the same system. State C is
+the pre-intervention baseline. State D0 is an intermediate control obtained by
+removing dead code and nothing else. State D is the result of eight
+architectural stages applied to D0. The control checkpoint was introduced after
+an audit found that a substantial part of the baseline was unreachable; without
+it, the metric consequences of deleting unreachable code would have been
+credited to the architectural intervention.
 
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, \citet{lwt}, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+\medskip\noindent\textbf{Objective.} To investigate how responsibility-driven
+architectural simplification of a functionally preserved Unity-based serious
+game changed its structural organization and internal software quality
+indicators, distinguishing the effect of dead-code removal from that of the
+subsequent architectural intervention.
 
-Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal Sargent, Boksenberg, \& Steidel \citet{sbs}.
+\medskip\noindent\textbf{RQ1.} How did the system's architectural organization
+change when existing abstractions were reassessed according to their concrete
+responsibilities and redundant architectural elements were simplified?
 
-\begin{table}[!ht]
-\caption{This is an example of table caption.}
-\centering
-\begin{tabular}{@{}cc@{}}
-\hline\hline
-Dimension & Classification accuracy \\
-\hline%
- 1  & 0.6232 \\
- 2  & 0.9635 \\ 
- 3  & 0.9724 \\ 
- 4  & 0.9690 \\ 
- 5  & 0.9840 \\ 
- 6  & 0.9842 \\ 
- 7  & 0.9873 \\ 
- 8  & 0.9884 \\
- 9  & 0.9873 \\ 
- 10 & 0.9898 \\ 
- 11 & 0.9914 \\
-\hline\hline
-\end{tabular}
-\label{tab1}
-\end{table}
+\medskip\noindent\textbf{RQ2.} How did internal software quality indicators ---
+maintainability, cyclomatic complexity, structural coupling, engine dependency,
+and structural size --- differ between the pre-intervention state D0 and the
+simplified state D, and how do those differences relate to changes in component
+population?
 
- 
-\section{Example of Head Level 1}
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, \cite{abt1979} by the people, for the people, shall not perish from the earth.
-
-\subsection{This is an example of head level 2}
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
-
-\begin{quotation}
-This is a longer quotation. It consists of two paragraphs of text, neither of which are particularly interesting.
-
-This is the second paragraph of the quotation. It is just as dull as the first paragraph.
-\end{quotation} 
-
-\subsubsection{This is an example of head level 3}
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
-
-\paragraph{This is an example of head level 4.}
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
-Let
-\[
-x=(x_1,\dots,x_n)\in R^n
-\]be an \(n\)-dimensional vector. The sparse PCA problem can be written as
-\begin{equation}\label{eq1}
-\max\limits_{x}\{x^TAx-\rho\|x\|_0:x^Tx=1\},
-\end{equation}
-It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion\break equation (\ref{eq1}). 
-\[\max\limits_{x}\{x^TAx :x^Tx=1\}.\]
-If $A$ The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here.
-
-
-Equation (\ref{eq1}) is a special case of the following sparse generalized eigenvector problem (GEV):
-\begin{equation}\label{GEV}
-\max\limits_{x}\{x^TAx-\rho \|x\|_0: x^TBx\leq 1\},
-\end{equation}
-
-Now we are $A\in S^n $ engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. $\|x\|_\epsilon= \sum\limits_{i=1}^n\frac{\log(1+\frac{|x_i|}{\epsilon})}{\log(1+\frac{1}{\epsilon})}.$ We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. $\|x\|_0$ by $\|x\|_1$ It is altogether fitting and proper that we should do this in (\ref{GEV}).
-
-Let $\rho_\epsilon= {\rho}/{\log(1+\frac{1}{\epsilon})}$. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far:
-\begin{align}
-\min\limits_{x,y}  \{\tau\|x\|_2^2-[ &x^T(A+\tau I_n)x-\rho_\epsilon\sum\limits_{i=1}^n\log(y_i+\epsilon)]: \\
-  & x^TBx\leq 1, -y\leq x\leq y\}
-\end{align}
-by choosing an appropriate $\tau\in R$ such that $A+\tau I_n\in S_+^n$ (the set of positive semidefinite matrices of size $n\times n$ defined over $R$). Suppose
-\begin{align*}
-g((x,y),(z,w)):&=\tau\|x\|_2^2-z^T(A+\tau I_n)z\\
-               &+\rho_\epsilon\sum\limits_{i=1}^n\log(\epsilon+w_i)-2(x-z)^T\\
-               &+\rho_\epsilon\sum\limits_{i=1}^n\frac{y_i-w_i}{w_i+\epsilon},
-\end{align*}
-which is the majorization function of
-\begin{equation}\label{mm}
-f(x,y)=\tau\|x\|_2^2+\rho_\epsilon\sum\limits_{i=1}^n\log(\epsilon+y_i)-x^T(A+\tau I_n)x.
-\end{equation}
-
-We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
-
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
-\begin{verse}
- There is an environment 
- for verse \\ 
- Whose features some poets % within a stanza.
- will curse. 
-
- For instead of making\\
- Them do \emph{all} line breaking, \\
- It allows them to put too many words on a line when they'd rather be 
- forced to be terse.
-\end{verse} 
-If $A$ The brave men, living and dead, who struggled, here, have consecrated\footnote{This is an example of text footnote.} it far above our poor power to add or detract. The world will little note, nor long remember, what we say here \textbf{Table~\ref{tab2}}.
-
-\section{THIS IS AN EXAMPLE OF HEAD LEVEL 1}
-
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
-
-
-\begin{table*}
-\caption{It is rather for us to be here dedicated to the great $\alpha^{(1)}$ and $\alpha^{(2)}$ task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last.} 
-\centering
-\begin{tabular*}{\textwidth}{@{}c\x c\x c\x c\x c\x c\x c\x c\x c\x c\x c\x c@{}}
-\hline \hline
- Layer   & $V_{\rm P0}$   & $V_{\rm S0}$     &  $\epsilon^{(1)}$  &  $\epsilon^{(2)}$ 
-         & $\delta^{(1)}$ & $\delta^{(2)}$  &  $\delta^{(3)}$    & $\gamma^{(1)}$ 
-         & $\gamma^{(2)}$ & $\alpha^{(1)}$  & $\alpha^{(2)}$ \\
- number  & (km/s)        & (km/s)          & ~                  & ~ 
-         & ~             & ~               & ~                  & ~ 
-         & ~             & $(^\circ)$       & $(^\circ)$ \\
-%
-\hline
- 1 & 3.5 & 2.0 & 0.20 & -0.05 & 0.00 & -0.20 & -0.05 & 0.20 & ~0.05 & 20 & 10 \\ 
- 2 & 2.5 & 1.5 & 0.10 & -0.15 & 0.05 & -0.15 & ~0.00 & 0.10 & -0.05 & 20 & 40 \\ 
- 3 & 3.0 & 1.8 & 0.20 & -0.05 & 0.25 & ~0.05 & ~0.20 & 0.15 & ~0.00 & 20 & 70$^a$ \\
-\hline \hline
-\end{tabular*}\label{tab2}
+\medskip\noindent\textbf{RQ3.} How were changes in internal software quality
+distributed across components removed as dead code, directly refactored,
+indirectly affected, structurally preserved, and newly introduced by the
+architectural intervention?
 
 \medskip
-\tabnote{$^a$This is an example of table footnote}
-\tabnote{This is an example of table footnote}
-\tabnote{This is an example of table footnote}
+
+The contributions of the paper are four. First, a protocol for
+responsibility-driven architectural simplification in which retention decisions
+are recorded with the same weight as removal decisions, and in which an a-priori
+hypothesis can be rejected by implementation evidence. Second, a C/D0/D
+comparative design that quantitatively separates dead-code removal from
+architectural intervention under verified functional preservation and a frozen
+measurement instrument. Third, evidence that structural simplification did not
+produce uniform movement of aggregate indicators, together with an explicit
+decomposition of within-component change against composition effect --- including
+two indicators whose sign inverts once the population is controlled. Fourth, a
+component-level analysis showing that the measured structural changes were
+confined to the components classified as directly or indirectly affected, while
+the source-preserved group remained metric-identical.
+
+The remainder of the paper is organized as follows. Section~\ref{sec:related}
+positions the study against work on internal quality measurement, architectural
+refactoring and game software architecture. Section~\ref{sec:design} describes
+the case study design. Section~\ref{sec:results} reports the results for the
+three research questions. Section~\ref{sec:discussion} interprets them.
+Section~\ref{sec:threats} discusses threats to validity, and
+Section~\ref{sec:conclusion} concludes.
+
+
+%% =========================================================================
+\section{Background and Related Work}\label{sec:related}
+%% =========================================================================
+
+\subsection{Internal Software Quality and Architecture}
+
+Maintainability is one of the product-quality characteristics of ISO/IEC 25010
+\cite{iso25010}, but the standard does not prescribe how to estimate it from
+source code. Practice has settled on a small set of structural proxies.
+
+The \emph{maintainability index} (MI) combines Halstead volume, cyclomatic
+complexity and lines of code into a single composite score
+\cite{coleman1994}. Its convenience is also its principal weakness: the
+composite was calibrated on a specific corpus, and the relationship between the
+score and the maintenance effort actually experienced by developers is
+indirect. Systematic reviews of maintainability prediction report wide
+variation in which metrics are used and how they are validated
+\cite{riaz2009,ardito2020}. An influential alternative line of work argues that
+maintainability is better assessed by mapping ISO characteristics onto several
+separately reported source-code properties --- volume, unit size, unit
+complexity, duplication, unit testing --- rather than collapsing them into one
+number \cite{heitlager2007}, and by benchmarking those properties against a
+population of comparable systems \cite{baggen2012}.
+
+Cyclomatic complexity \cite{mccabe1976} has attracted a parallel critique.
+Shepperd \cite{shepperd1988} argued that the measure rests on weak theoretical
+foundations and that, for a large class of software, it is largely a proxy for
+size. Since MI incorporates both cyclomatic complexity and lines of code, the
+two critiques compound.
+
+Coupling has a firmer conceptual basis. Chidamber and Kemerer
+\cite{chidamber1994} defined coupling between objects as the number of other
+classes a class depends upon, and Martin \cite{martin2003} defined efferent
+coupling at package level together with the dependency inversion principle,
+under which modules should depend on abstractions rather than on concrete
+implementations. Efferent coupling counts outgoing dependencies; it says how
+many other types a type must know about, not whether knowing about them is
+justified.
+
+We therefore treat MI, cyclomatic complexity and efferent coupling as
+\emph{internal software quality indicators} and not as measurements of
+maintainability itself. This distinction is not rhetorical: as
+Section~\ref{sec:results} shows, two of these indicators move in one direction
+in aggregate and in the opposite direction once the population is held fixed.
+
+\subsection{Architectural Refactoring and Simplification}
+
+Surveys of refactoring \cite{mens2004} and the catalogue of smells and
+corresponding transformations \cite{fowler2018} cover both the addition and the
+removal of structure. Empirically, however, the reported outcomes of refactoring
+on internal quality attributes are mixed rather than uniformly positive.
+Sz\H{o}ke et al.\ \cite{szoke2017}, studying large-scale industrial systems,
+found that a single refactoring had only a small and sometimes negative effect
+on maintainability, while the accumulated process had a beneficial one. Bavota
+et al.\ \cite{bavota2015} found that refactoring operations are not a direct
+consequence of poor metric profiles or of the presence of smells. Palomba et
+al.\ \cite{palomba2018} found that the impact of smells on maintainability
+varies substantially by smell type and by system.
+
+Removal of structure has been studied most systematically in the specific case
+of dead code. Romano et al.\ \cite{romano2020} report a multi-study
+investigation showing that dead code is widespread and that developers perceive
+it as harmful to comprehensibility, and Eder et al.\ \cite{eder2012} measured
+unused code in an industrial system and its relation to maintenance effort.
+This literature establishes that removing unreachable code is worthwhile; it
+does not report what removing it does to the aggregate metric profile of the
+system that remains --- which is precisely the confound the control state D0 in
+this study is designed to isolate.
+
+At the architectural level, the relevant body of work is architectural
+technical debt. Verdecchia et al.\ \cite{verdecchia2020,verdecchia2021} built
+and evaluated a grounded theory of architectural technical debt, characterizing
+it as design decisions that were suitable when taken but later hinder progress
+--- a description that fits abstractions whose justification has since
+disappeared. Kruchten et al.\ \cite{kruchten2012} discuss the metaphor and its
+limits, and Li et al.\ \cite{li2022} map the literature on architecture erosion
+and its symptoms. This work is largely diagnostic: it characterizes and detects
+degradation. Studies that apply a simplification intervention to a working
+system and then measure what happened, with a control for confounding
+deletions, are considerably rarer.
+
+\subsection{Game Software Architecture and Engine Dependency}
+
+Game development has been characterized as a distinct software engineering
+context, with its own process life cycle and its own recurring difficulties
+\cite{aleem2016}. Engine architecture has recently received direct attention:
+Politowski et al.\ \cite{politowski2025} recovered and compared the
+architectures of ten open-source engines, identifying excessive coupling as a
+recurrent issue and showing in a controlled experiment that explicit
+architectural models let developers perform understanding and impact-analysis
+tasks faster and more correctly. Ullmann et al.\ \cite{ullmann2023} visualized
+subsystem coupling patterns across engines and found the low-level renderer,
+platform-independence layer and resource manager to be frequently coupled to
+the engine core.
+
+Closer to the present case, Nardone et al.\ \cite{nardone2023} derived a
+catalogue of 28 video-game bad smells from developer discussions, and Borrelli
+et al.\ \cite{borrelli2020} implemented static detection of seven Unity-specific
+smells covering performance, maintainability and incorrect behaviour. Both
+establish that engine-specific structures are a legitimate object of internal
+quality analysis. Neither measures what happens to engine dependency when a
+game is deliberately restructured.
+
+\subsection{Research Gap}\label{sec:gap}
+
+Table~\ref{tab:gap} summarizes what the surveyed literature covers and what
+remains insufficiently addressed for the question of this paper.
+
+The gap we claim is deliberately narrow. It is \emph{not} that architectural
+simplification is unstudied: architectural technical debt research studies the
+conditions under which structure becomes a liability
+\cite{verdecchia2020,verdecchia2021,li2022}, and refactoring research studies
+the removal of dispensable elements \cite{fowler2018,romano2020}. It is also
+not that mixed metric outcomes are unknown: they are reported repeatedly
+\cite{szoke2017,bavota2015,palomba2018}.
+
+What we did not find covered is the combination of three properties in a single
+study: (i) an intervention whose decision rule is the concrete responsibility of
+each existing abstraction, applied to a working engine-based system, with
+retention decisions recorded as results rather than as non-events; (ii) an
+explicit control state that separates the metric effect of deleting unreachable
+code from the metric effect of the architectural intervention; and (iii) an
+analysis that separates within-component change from population composition
+effects, so that aggregate movements are not read as changes in surviving code.
+
+\begin{table*}[t]
+\centering
+\caption{What the surveyed literature covers, and what remains insufficiently
+addressed for the question studied here.}
+\label{tab:gap}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.38\textwidth}p{0.34\textwidth}}
+\toprule
+\textbf{Topic} & \textbf{Existing literature covers} & \textbf{Insufficiently addressed} \\
+\midrule
+Refactoring and metrics &
+Catalogues of transformations and smells; large-scale evidence that effects on
+internal quality are mixed and often small \cite{fowler2018,mens2004,szoke2017,bavota2015,palomba2018} &
+Whether an observed aggregate movement reflects change in surviving components
+or a change in the population being averaged \\
+\addlinespace
+Architecture and maintainability &
+Composite and multi-property maintainability models, their calibration and
+their limits \cite{coleman1994,heitlager2007,baggen2012,riaz2009,ardito2020} &
+Behaviour of these indicators under an intervention that reduces the number of
+components rather than increasing it \\
+\addlinespace
+Technical debt &
+Grounded theory of architectural technical debt; erosion symptoms and their
+detection \cite{verdecchia2020,verdecchia2021,kruchten2012,li2022} &
+Applied interventions with before/after measurement and a control for
+confounding deletions \\
+\addlinespace
+Game architecture and engine coupling &
+Engine architecture recovery and comparison; subsystem coupling patterns;
+Unity-specific smell catalogues and detectors \cite{politowski2025,ullmann2023,nardone2023,borrelli2020} &
+Whether restructuring a game changes the set of components that depend on the
+engine, as opposed to the proportion \\
+\addlinespace
+Simplification and removal of abstractions &
+Dispensable smells; empirical study of dead code and unused code
+\cite{fowler2018,romano2020,eder2012} &
+Removal decided per abstraction by its concrete responsibility, with retention
+and rejected hypotheses reported as results \\
+\bottomrule
+\end{tabular}
 \end{table*}
 
 
-\begin{itemize}
-\item This is a longer itemize list. It consists of two paragraphs of text, neither of which are particularly interesting {\sc ii}.
-\item This is a longer itemize list. It consists of two paragraphs of text, neither of which are particularly interesting.
-\item This is a longer itemize list. It consists of two paragraphs of text, neither of which are particularly interesting.
+%% =========================================================================
+\section{Case Study Design}\label{sec:design}
+%% =========================================================================
+
+The study follows the guidelines of Runeson and H\"ost \cite{runeson2009} for
+case study research in software engineering. It is a single-case, embedded,
+\emph{improving} case study: the object is one system, the units of analysis
+are its components, and the researchers intervened in the object and measured
+the result.
+
+\subsection{Molz and Study Context}
+
+Molz is a mobile serious game for organic chemistry, implemented in Unity with
+C\#. It represents the solubility classification procedure used to identify
+unknown organic compounds: the player performs virtual tests with solvents and
+reagents, observes simulated outcomes, and narrows the set of candidate
+compounds by elimination. The chemical responses are driven by a structured
+dataset rather than by a physical simulation, and the game offers three modes
+with decreasing levels of support.
+
+The system was developed in an interdisciplinary academic context at the
+Universidade Federal do Agreste de Pernambuco, with contributions from
+computing, chemistry, education and design, and is publicly available as an
+open research artefact.\footnote{\url{https://github.com/bcccoworkingufape/game-quimica-2D}}
+Development followed Scrum with sprints tracked on GitHub Projects, and the
+architecture was documented as a layered Model-View-Presenter organization with
+Data, Domain, Core and Presentation layers. A user evaluation with 103
+participants was conducted and reported separately; it is context for this
+study, not evidence within it.
+
+An earlier 3D version of the game exists in the project's history. It is
+\emph{not} a state of this experiment and is not used as a baseline or as a
+point of comparison. The entire experiment reported here takes place inside the
+2D system.
+
+Molz is a suitable object for this question for three reasons. It is small
+enough that every abstraction can be individually audited and every decision
+recorded, at 91 source files and roughly 5\,000 lines of code in the baseline.
+It is real: it is a released product with users, not a constructed example. And
+it is engine-based, so that engine dependency is a genuine design constraint
+rather than a stylistic preference.
+
+\subsection{Experimental States C, D0 and D}
+
+Three snapshots of \texttt{Assets/Scripts} were defined, each pinned to an
+immutable commit and recovered for measurement in an isolated worktree
+(Table~\ref{tab:states}).
+
+\begin{table}[htb]
+\centering
+\caption{Experimental states. Each is pinned to a commit and a branch; C and D
+also carry annotated tags.}
+\label{tab:states}
+\small
+\begin{tabular}{llp{0.36\columnwidth}}
+\toprule
+\textbf{State} & \textbf{Commit} & \textbf{Role} \\
+\midrule
+C  & \texttt{9b9816d} & Pre-intervention baseline \\
+D0 & \texttt{a788ea8} & Dead-code removal control \\
+D  & \texttt{934eea6} & Simplified state \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The three states support three comparisons:
+
+\begin{itemize}\itemsep2pt
+\item $\text{C} \rightarrow \text{D0}$ --- the effect of removing dead code (control);
+\item $\text{D0} \rightarrow \text{D}$ --- the effect of the architectural intervention (principal comparison);
+\item $\text{C} \rightarrow \text{D}$ --- the total observed transformation.
 \end{itemize}
 
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+D0 is not a third competing architecture. It exists because an audit of the
+baseline found that a substantial part of the Domain layer had no consumers.
+Deleting unreachable code changes every aggregate mean, because the deleted
+population is not a random sample of the system. Without D0, that change would
+have been indistinguishable from the effect of the architectural work.
 
-\begin{enumerate}%
-\item This is a longer numbered list. It consists of two paragraphs of text, neither of which are particularly interesting.
-\item This is a short numbered list. It consists of two paragraphs of text.
+\subsection{Architectural Simplification Protocol}
+
+The intervention was not the application of a target architectural style. An
+initial hypothesis of migrating the system to Clean Architecture / Ports and
+Adapters was formulated, audited against the baseline, and \emph{rejected before
+any code was written}: state C already had a Unity-free domain layer, separated
+Data, Domain and Presentation folders, and abstractions carrying concrete
+responsibilities. The decision rule adopted instead was:
+
+\begin{quote}
+\emph{For each existing abstraction, identify the responsibility it performs in
+the running system. Retain the abstraction if and only if that responsibility is
+concrete and is not already discharged elsewhere.}
+\end{quote}
+
+Four outcomes were possible for each abstraction: REMOVE, MERGE, STRENGTHEN
+(the abstraction is justified but bypassed in practice) and KEEP. KEEP decisions
+were recorded with their evidence, on the same footing as changes, so that a
+retention is reportable as a result rather than as the absence of one.
+
+The intervention proceeded in eight stages (Table~\ref{tab:stages}). Each stage
+was implemented in isolation, compiled, verified against the test suite, and
+approved by a human reviewer before the next stage began. Stage A alone
+produced D0; stages B through H produced D.
+
+\begin{table}[htb]
+\centering
+\caption{Intervention stages. Stage A produced the control state D0; stages B--H
+produced the simplified state D.}
+\label{tab:stages}
+\small
+\begin{tabular}{cp{0.68\columnwidth}}
+\toprule
+\textbf{Stage} & \textbf{Intervention} \\
+\midrule
+A & Dead-code removal: 11 files, 20 types \\
+B & Data layer: one DTO and four mappers removed; transformation localized in the repositories \\
+C & Audio boundary adopted: 56 concrete accesses to engine singletons reduced to 0 \\
+D & Partial explicit composition: three dead registrations removed; one presenter composed by constructor; service registry deliberately retained \\
+E & Score multiplier consolidated into the domain scoring service \\
+F & Indicator-reagent semantics given a single owner in the domain entity \\
+G & View\,$\leftrightarrow$\,orchestrator cycles broken through two role contracts \\
+H & Panel-reset duplication replaced by the existing collaborator \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two constraints were imposed on the intervention and observed throughout. No
+\texttt{MonoBehaviour} was renamed, moved between namespaces, or relocated in a
+way that would invalidate an asset GUID, because that would silently break
+scene serialization. And no global access mechanism was to be replaced by
+another global access mechanism: a change that substitutes one ambient
+singleton for another was not counted as simplification.
+
+\subsection{Functional-Parity Protocol}
+
+The criterion for the experiment is $\mathrm{Behaviour}(\text{C}) =
+\mathrm{Behaviour}(\text{D})$. Because the object is an engine-based game whose
+wiring lives partly in serialized scene data, no single verification technique
+is sufficient. Five were combined.
+
+\emph{Characterization and invariant tests.} A suite of 118 tests was written
+against state C before any modification and kept unchanged thereafter. It
+covers data loading and deserialization, solubility rules, gameplay rules,
+session state, entity invariants, repository materialization, scoring, indicator
+semantics, and two architecture-boundary invariants enforced by source scanning.
+The suite compiles the engine-free production files outside Unity; it is not
+part of the population measured by the instrument.
+
+The suite deliberately preserves several behaviours that would ordinarily be
+treated as defects, including a difficulty asset with a zero score multiplier,
+a divergence in the default difficulty, an inert branch in a UI controller, and
+the specific parsing policy applied to malformed dataset entries. Correcting any
+of them would have changed behaviour and broken the parity criterion.
+
+\emph{Compilation.} Both through an isolated project definition and through the
+engine's own assembly, in each state.
+
+\emph{Engine import.} The Unity project was imported in state D with zero
+missing-script errors and zero serialization errors, confirming that no GUID or
+serialized binding was invalidated.
+
+\emph{Manual full-flow verification.} A scripted walkthrough of the complete
+game flow in all three modes.
+
+\emph{Smoke verification} after the final stage, covering phase restart, panel
+reset and return to menu.
+
+\subsection{Measurement Instrument}
+
+All three states were measured with a single instrument, frozen at one commit
+and never read from inside the measured worktrees. It consists of a Roslyn-based
+metrics extractor built on \texttt{Microsoft.CodeAnalysis.CSharp} 4.11.0, plus
+SonarAnalyzer.CSharp 10.31.0.145097 and the engine's own analyzers, executed on
+.NET SDK 9.0.306 under Unity 6000.4.1f1. Each state is recovered with a detached
+worktree at its pinned commit, so production content and measurement tooling
+remain separate; no snapshot is modified to accommodate the instrument.
+
+The instrument reports, per type, lines of code, efferent coupling, and whether
+the type references \texttt{UnityEngine}; and, per member, cyclomatic complexity
+and maintainability index. Aggregations are computed from the raw per-type and
+per-member records rather than from summary output.
+
+Two properties of the instrument were verified explicitly. \emph{Determinism}:
+re-executing the pipeline on state D produced byte-identical artefacts,
+including the analyzer SARIF. \emph{Version equivalence}: an error in the
+project-generation step was found and corrected during the study; after the
+correction, state C was re-measured through the real entry point and the
+resulting files were byte-identical to those produced before, so all three
+states are measured by the same instrument version.
+
+Analyzer violation counts were also collected (C 197, D0 191, D 143). They are
+auxiliary pipeline output and are not used to answer any research question here;
+interpreting individual findings belongs to a separate study.
+
+\subsection{Component Classification}
+
+To answer RQ3, every source file was assigned to exactly one category. The
+assignment was derived mechanically from the commit history --- which files each
+stage touched --- rather than from post-hoc judgement.
+
+\begin{description}\itemsep2pt
+\item[DEAD CODE REMOVED] Present in C, removed exclusively in $\text{C}\rightarrow\text{D0}$,
+after triple evidence of unreachability: no C\# references, no GUID references in
+scenes, prefabs or assets, and no occurrence of the type name in serialized YAML.
+\item[DIRECTLY REFACTORED] Component whose code or responsibility was a deliberate
+target of stages B--H.
+\item[INDIRECTLY AFFECTED] Component changed only to accommodate a change whose
+primary target was another component.
+\item[PRESERVED] Existing component deliberately left unmodified by the relevant
+architectural interventions.
+\item[NEW INTERVENTION ARTIFACT] Element absent from the baseline, introduced as a
+necessary part of the intervention.
+\end{description}
+
+A component that does not exist in a given state is recorded as \emph{absent},
+never as zero. A NEW INTERVENTION ARTIFACT therefore has no row for C or D0, and
+DEAD CODE REMOVED has no row for D0 or D. Substituting zero would inject
+artificial values into every mean.
+
+\subsection{Analysis Procedure}
+
+Three analyses were performed on the frozen measurements.
+
+\emph{Aggregate comparison.} All summary values were recomputed from the raw
+per-type and per-member records in each state and cross-checked against the
+instrument's own summary; all 42 values matched.
+
+\emph{Matched-population analysis.} Aggregate means confound two phenomena:
+change inside surviving components, and change in the population being averaged.
+Components were therefore matched across states by a stable identity key ---
+\texttt{file|type} for types and \texttt{file|type|member} for members --- and
+the mean was recomputed over the intersection only. Keys that were not unique
+within a state, which occurred for two method overloads in each state, were
+\emph{excluded} from matching rather than resolved by assumption.
+
+\emph{Category analysis.} Metrics were aggregated within each RQ3 category, with
+units kept explicit: lines of code, efferent coupling and type counts are
+per-type quantities; cyclomatic complexity and maintainability index are
+per-member quantities, and group-level values for them are means over the
+members belonging to the group, never aggregated per type.
+
+No statistical significance testing was performed. The study measures one
+system at three points in time; there is no sample over which a test would be
+defined, and no test is reported.
+
+
+%% =========================================================================
+\section{Results}\label{sec:results}
+%% =========================================================================
+
+\subsection{RQ1 --- Architectural Reorganization}\label{sec:rq1}
+
+Table~\ref{tab:rq1} records the outcome of the responsibility assessment for
+each abstraction examined. Thirteen concerns were audited: three led to removal or
+merging, two to strengthening, three to a local simplification or a change
+of ownership, and five to a documented retention.
+
+\begin{table*}[t]
+\centering
+\caption{RQ1 --- responsibility assessment of each abstraction. Retention
+decisions are reported with the same status as changes.}
+\label{tab:rq1}
+\small
+\begin{tabular}{p{0.16\textwidth}p{0.13\textwidth}p{0.32\textwidth}p{0.13\textwidth}p{0.16\textwidth}}
+\toprule
+\textbf{Concern} & \textbf{Initial hypothesis} & \textbf{Evidence found} & \textbf{Decision} & \textbf{Consequence} \\
+\midrule
+Question mapper & Redundant & Purely positional pass-through; invariants live in the entity & REMOVE & Binding now rests on constructor parameter names \\
+\addlinespace
+Question DTO & Redundant & 1:1 copy, no type conversion & REMOVE & Verified by a nine-criterion spike before removal \\
+\addlinespace
+Three further mappers & Duplicated & One caller each; real conversion present & MERGE & Transformation became a private repository method \\
+\addlinespace
+Remaining DTOs & Useful & Case conversion, string-to-enum, one rename & KEEP & Representation boundary preserved \\
+\addlinespace
+Repository surface & Cleanup candidate & Four methods without consumers, three of which lost them \emph{in Stage A} & KEEP & Removing them would credit the intervention with a control effect \\
+\addlinespace
+Audio port & Necessary but bypassed & 56 concrete accesses against 2 port consumers & STRENGTHEN & 56 $\rightarrow$ 0; port gained two availability members \\
+\addlinespace
+Service locator & \textbf{Redundant} & Full removal would require scene scanning, layer inversion or a lifetime change & \textbf{HYPOTHESIS REJECTED} $\rightarrow$ KEEP + SIMPLIFY & Three dead registrations removed; registry retained for cross-scene lifetime \\
+\addlinespace
+Game manager responsibilities & Broad decomposition & Only scoring was split across layers & Selective SIMPLIFY & One move, seven documented retentions \\
+\addlinespace
+Indicator identity & Duplicated in Presentation & Confirmed at two sites & MOVE & Ownership moved to the domain entity \\
+\addlinespace
+Solvent group buttons & Duplicated & The consumer sustaining the duplication was removed \emph{in Stage A} & \textbf{HYPOTHESIS REJECTED} $\rightarrow$ KEEP & Content is editorial and carries markup \\
+\addlinespace
+View\,$\leftrightarrow$\,orchestrator cycles & Breakable & Two concrete reverse dependencies, two engine-type leaks & STRENGTHEN & Two role contracts introduced; the existing view contract untouched \\
+\addlinespace
+God-object candidates & Decomposition & Only one duplication had a better existing owner & Local SIMPLIFY & One consolidation, nine retentions \\
+\addlinespace
+Pre-existing dead members & Dead & Already dead in C & PRESERVE FOR PARITY & Retained so control and intervention stay separable \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Structurally, the intervention produced a system with \emph{fewer classes and
+more interfaces}: from D0 to D the class count fell from 65 to 60, the interface
+count rose from 12 to 14, and the member count rose from 451 to 457. Five files
+were removed and two were added. This is the opposite of the shape usually
+associated with simplification, and it follows directly from the decision rule:
+abstractions were removed where they carried no responsibility, and introduced
+where a responsibility existed that no abstraction expressed --- specifically,
+two role contracts that broke concrete cycles between views and orchestrators.
+
+\medskip\noindent\textbf{Four mechanisms of abstraction utility.} The
+usefulness of an abstraction turned out to be context-dependent rather than
+determined by the pattern it resembled. Four distinct mechanisms appeared in the
+audit, and they are epistemologically different:
+
+\begin{enumerate}\itemsep2pt
+\item \emph{Abstraction without a current responsibility} --- removed. The question
+mapper performed a positional copy that the entity constructor already performed.
+\item \emph{Abstraction with a concrete responsibility but bypassed in practice} ---
+strengthened. The audio port was well-formed, but 56 call sites reached the engine
+singletons directly instead of going through it.
+\item \emph{Abstraction whose responsibility only the removal attempt revealed} ---
+retained. The service locator appeared redundant under static inspection; the
+attempt to remove it showed that it carried a cross-scene lifetime responsibility
+that no other mechanism in the system discharged. Here static inspection was
+\emph{incomplete}.
+\item \emph{Abstraction whose justification an earlier transformation had already
+removed} --- retained. The duplication in the solvent group buttons had a consumer
+when it was first identified, and that consumer was deleted in Stage A. Here
+static inspection was \emph{correct at the time} and became obsolete.
 \end{enumerate}
 
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+Cases 3 and 4 both produce a retained abstraction, but for opposite reasons: in
+one the analysis was wrong, in the other the system moved underneath a correct
+analysis. Reporting them as a single category of ``false positives'' would lose
+the distinction.
 
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on.
+\subsection{RQ2 --- Internal Quality Indicators}\label{sec:rq2}
 
-It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom
+\subsubsection{Aggregate measurements}
 
-\begin{unnumlist}
-  \item First unnumbered item which has no label. This is an example
-  of sample text for unnumbered list. This is an example
-  of sample text for unnumbered list. This is an example
-  of sample text for unnumbered list.
-  \item Second unnumbered item.
-  \item Third unnumbered item.
-\end{unnumlist}
+Table~\ref{tab:aggregate} reports the full aggregate profile of the three
+states.
 
+\begin{table}[htb]
+\centering
+\caption{Aggregate measurements across the three states. CC and MI are
+per-member quantities; LOC, coupling and type counts are per-type.}
+\label{tab:aggregate}
+\small
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Indicator} & \textbf{C} & \textbf{D0} & \textbf{D} \\
+\midrule
+Source files            & 91    & 80    & 77 \\
+LOC (non-blank)         & 5\,093 & 4\,738 & 4\,729 \\
+Comment lines           & 695   & 649   & 825 \\
+Classes                 & 79    & 65    & 60 \\
+Interfaces              & 16    & 12    & 14 \\
+Structs / records       & 7     & 5     & 5 \\
+Enums                   & 9     & 9     & 9 \\
+Members                 & 496   & 451   & 457 \\
+\addlinespace
+CC mean                 & 2.33  & 2.39  & 2.38 \\
+CC median               & 2.0   & 2.0   & 2.0 \\
+CC max                  & 17    & 17    & 17 \\
+CC total                & 1\,158 & 1\,078 & 1\,089 \\
+\addlinespace
+MI mean                 & 72.5  & 71.7  & 71.8 \\
+MI median               & 71.2  & 70.2  & 70.9 \\
+Members with MI $\geq$ 65 & 323 & 287   & 293 \\
+\addlinespace
+Efferent coupling mean  & 11.4  & 12.8  & 13.4 \\
+Engine-coupled classes  & 24    & 23    & 23 \\
+\quad as \% of classes  & 30.4  & 35.4  & 38.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\subsection{Feature extraction using DCPCA}
+Between D0 and D the system lost 3 files, 9 lines of code and 5 classes, and
+gained 2 interfaces and 6 members. The three principal indicators moved very
+little: MI mean rose by 0.1 on a 0--100 scale, CC mean fell by 0.01 on a scale
+whose observed mean is about 2.4, and mean efferent coupling rose by 0.6.
 
-Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+Between C and D0 --- the control --- MI mean fell by 0.8 and mean efferent
+coupling rose by 1.4, even though the only action taken was the deletion of
+unreachable code.
 
- 
+\subsubsection{Matched-population analysis}
 
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this\break \textbf{Figure \ref{Fig1}}.
+The aggregate figures above mix two phenomena: change inside components that
+exist in both states, and change in the population over which the mean is taken.
+Table~\ref{tab:matched} separates them.
 
- 
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried  and that this government of the people, by the people, for the people, shall not perish from the earth \textbf{Figure \ref{Fig2}}.
+\begin{table}[htb]
+\centering
+\caption{Matched-population analysis, D0 $\rightarrow$ D. The sign of the
+system-wide MI and CC movement inverts once the population is held fixed.}
+\label{tab:matched}
+\small
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Basis} & \textbf{D0} & \textbf{D} & \textbf{$\Delta$} \\
+\midrule
+\multicolumn{4}{l}{\emph{Members, system-wide (n = 442 matched)}} \\
+MI, aggregate mean      & 71.7  & 71.8  & $+0.1$ \\
+MI, matched members     & 71.87 & 71.80 & $-0.06$ \\
+CC, aggregate mean      & 2.39  & 2.38  & $-0.01$ \\
+CC, matched members     & 2.41  & 2.42  & $+0.01$ \\
+\addlinespace
+\multicolumn{4}{l}{\emph{Directly refactored types}} \\
+Coupling, matched (n = 19) & 26.84 & 28.37 & $+1.53$ \\
+Coupling, raw group mean   & 22.29 & 28.37 & $+6.08$ \\
+Coupling of removed types  & 5.00  & ---   & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
 
+Three observations follow.
 
-\begin{figure}
-\begin{center}
-%\includegraphics[width=\columnwidth]{fig1.eps}
-\includegraphics{fpo.eps}
-\caption{This is an example of figure caption.}\label{Fig1}
+\emph{First, the signs invert.} The aggregate MI mean rises while matched-member
+MI falls; the aggregate CC mean falls while matched-member CC rises. Both
+aggregate movements are composition effects, driven by the eleven new members ---
+largely simple properties with high MI --- and the five removed ones. Reporting
+the aggregate delta alone would have supported the statement that maintainability
+improved slightly; the matched analysis shows that within surviving code it did
+not.
+
+\emph{Second, the magnitudes are negligible either way.} Only 65 of 442 matched
+members (14.7\%) changed MI at all, and only 12 (2.7\%) changed CC. On scales of
+0--100 and roughly 2.4, movements of 0.06 and 0.01 carry no practical weight in
+either direction.
+
+\emph{Third, the coupling increase is real and partly genuine.} Of the $+6.08$
+raw increase in the directly refactored group, $+1.53$ is within-type change
+among the 19 surviving types, and the remainder follows from removing five types
+whose mean coupling (5.00) was far below the group mean. Fourteen of the 19
+survivors changed, twelve upwards and two downwards; the largest increases were
+in the repositories that absorbed the mapper logic --- one rose from 12 to 19,
+another from 14 to 19, another from 12 to 15. Architectural responsibility
+redistribution and measured coupling increase are related here, but they are not
+the same phenomenon, and the increase is not merely a redistribution artefact.
+
+\subsubsection{Engine dependency}
+
+The set of types referencing \texttt{UnityEngine} was compared by identity, not
+by count:
+
+\begin{center}\small
+\begin{tabular}{lr}
+Engine-coupled types in D0 & 23 \\
+Engine-coupled types in D  & 23 \\
+Intersection               & 23 \\
+Present only in D0         & --- (empty) \\
+Present only in D          & --- (empty) \\
+\end{tabular}
 \end{center}
-\end{figure}
 
-\begin{figure*}
-\begin{center}
-\includegraphics[width=30pc, height=12pc]{fpo.eps}
-\caption{It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which $x^{(0)}=x_1$ and $x^{(0)}=x_2$, where $x_1=(\frac{1}{\sqrt{3,522}},\dots,\frac{1}{\sqrt{3,522}})^T$ and $x_2=(\frac{1}{\sqrt{1,000}}, \dots, \frac{1}{\sqrt{1,000}},0,\dots,0)^T $. they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth $(x^{(0)})^Tx^{(0)}=1$.}
- \label{Fig2}
-\end{center}
-\end{figure*}
+The set is identical. The percentage rose from 35.4\% to 38.3\% because the
+class population fell from 65 to 60 while the absolute count stayed constant.
+The movement of that percentage is therefore a denominator effect and carries no
+information about engine dependency.
 
-It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+This is the clearest single result of the study, and it contradicted an
+expectation that had been central to the earlier framing of the work. The
+components that depend on the engine are the components the engine instantiates
+and wires --- the \texttt{MonoBehaviour} classes that scenes reference by GUID.
+Restructuring the layers above them did not change which components those are.
 
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the\break people, by the people, for the people, shall not perish from the earth Figure \textbf{\ref{Fig2}}.
+\subsection{RQ3 --- Distribution Across Component Categories}\label{sec:rq3}
+
+Table~\ref{tab:rq3dist} gives the distribution of files across the five
+categories in each state, and Table~\ref{tab:rq3metrics} the group metrics.
+
+\begin{table}[htb]
+\centering
+\caption{RQ3 --- distribution of source files by category. A dash denotes
+absence, not zero.}
+\label{tab:rq3dist}
+\small
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Category} & \textbf{C} & \textbf{D0} & \textbf{D} \\
+\midrule
+Directly refactored        & 24 & 24 & 19 \\
+Indirectly affected        & 1  & 1  & 1 \\
+Preserved                  & 55 & 55 & 55 \\
+Dead code removed          & 11 & ---& --- \\
+New intervention artifact  & ---& ---& 2 \\
+\midrule
+\textbf{Total}             & \textbf{91} & \textbf{80} & \textbf{77} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[t]
+\centering
+\caption{RQ3 --- group metrics. The upper block is the intervention
+(D0 $\rightarrow$ D); the lower block is the control (C $\rightarrow$ D0).}
+\label{tab:rq3metrics}
+\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+\textbf{Group} & \textbf{Types} & \textbf{Members} & \textbf{LOC} & \textbf{CC mean} & \textbf{MI mean} & \textbf{Coupling mean} & \textbf{Engine} \\
+\midrule
+Directly refactored, D0   & 24 & 199 & 2\,357 & 2.44 & 71.2 & 22.29 & 8 \\
+Directly refactored, D    & 19 & 204 & 2\,505 & 2.43 & 71.4 & 28.37 & 8 \\
+\addlinespace
+Indirectly affected, D0   & 3  & 11  & 58    & 1.36 & 83.5 & 7.00  & 0 \\
+Indirectly affected, D    & 3  & 12  & 67    & 1.33 & 84.0 & 7.67  & 0 \\
+\addlinespace
+\textbf{Preserved, D0}    & \textbf{64} & \textbf{241} & \textbf{3\,286} & \textbf{2.40} & \textbf{71.5} & \textbf{9.56} & \textbf{15} \\
+\textbf{Preserved, D}     & \textbf{64} & \textbf{241} & \textbf{3\,286} & \textbf{2.40} & \textbf{71.5} & \textbf{9.56} & \textbf{15} \\
+\addlinespace
+New intervention artifact, D & 2 & 0 & 30 & n/a & n/a & 0.50 & 0 \\
+\midrule
+\multicolumn{8}{l}{\emph{Control, C $\rightarrow$ D0}} \\
+Dead code removed (C only) & 20 & 45  & 356 & \textbf{1.78} & \textbf{80.3} & \textbf{4.50} & --- \\
+Whole project in C, for contrast & 111 & 496 & --- & 2.33 & 72.5 & 11.4 & --- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The new intervention artifacts have zero members because both are pure
+interfaces; the instrument assigns no cyclomatic complexity or maintainability
+index to declarations without bodies. Their coupling of 0.50 is reported as
+measured.
+
+\medskip\noindent\textbf{The preserved group is metric-identical.} Across
+D0~$\rightarrow$~D, the 64 preserved types show no change in any reported
+indicator: same type count, same member count, same lines of code, same
+complexity, same maintainability, same coupling, same engine-coupled count. In
+the remaining groups the control transition C~$\rightarrow$~D0 is likewise near
+zero: $-7$ lines and $-0.12$ coupling in the directly refactored group, $-0.02$
+coupling in the preserved group, and no change at all in the indirectly affected
+group.
+
+\medskip\noindent\textbf{The removed dead code was not representative.} The 20
+types deleted in the control had mean MI 80.3 against 72.5 for the project, mean
+cyclomatic complexity 1.78 against 2.33, and mean efferent coupling 4.50 against
+11.4. They were simpler, better-scoring and less coupled than the system
+average --- which is unsurprising, since code that nothing calls tends to be
+small and to depend on little. Removing them therefore moved every normalized
+mean unfavourably. This is the confound the control state was introduced to
+isolate, and it is quantitatively large enough to have swamped the effect of the
+architectural intervention had the two been measured together.
+
+\medskip\noindent\textbf{Interpretation and its limit.} The measured structural
+changes were confined to components classified as directly or indirectly
+affected, while the preserved group remained metric-identical. This is evidence
+that the changes were \emph{contained}. It is not an independent validation of
+the classification and not a causal attribution: the preserved group is
+\emph{defined} by the absence of relevant source changes, and the metrics are
+derived from static code, so its metric identity partly follows from its
+definition. Classification and result are not independent, and we do not claim
+they are.
+
+\subsection{Summary of Unexpected Findings}
+
+Six results ran against the expectations held at the start of the study.
+
+\begin{enumerate}\itemsep2pt
+\item Removing dead code moved every normalized mean unfavourably, because the
+removed population scored better than the system average.
+\item Engine dependency did not fall: the same 23 types in D0 and D, with the
+percentage rising through denominator change alone.
+\item Simplification produced fewer classes but \emph{more} interfaces and more
+members.
+\item Two a-priori simplification hypotheses were rejected by implementation
+evidence, for two different reasons.
+\item The MI and CC movements invert sign under matched-population analysis.
+\item Coupling rose in the repositories that absorbed the mapper logic, both by
+redistribution and as a genuine within-type increase.
+\end{enumerate}
 
 
-\paragraph{This is an example of head level 4.}
+%% =========================================================================
+\section{Discussion}\label{sec:discussion}
+%% =========================================================================
 
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+\subsection{Aggregate Indicators and Population Change}
+
+The clearest methodological lesson of this study is that an aggregate mean over
+a population that is itself being modified is a poor instrument for evaluating
+an intervention that modifies the population.
+
+Two of our three principal indicators change sign between the aggregate and the
+matched view (Table~\ref{tab:matched}). Had we reported only the aggregate, the
+natural narrative would have been that simplification produced a small
+improvement in maintainability and a small reduction in complexity. The matched
+analysis shows that within the 442 members present in both states, maintainability
+moved down by 0.06 and complexity up by 0.01 --- and that the aggregate movement
+came from eleven newly introduced members, mostly simple properties that score
+well on MI.
+
+Both readings are arithmetically correct. They answer different questions. The
+aggregate answers ``what is the profile of the system that now exists''; the
+matched analysis answers ``what happened to the code that survived''. For
+evaluating an intervention, the second is the relevant one, and it is the one
+the literature reports less often.
+
+The same point applies with more force to the control transition. Removing
+unreachable code is uncontroversially good practice \cite{romano2020,eder2012},
+and it made every normalized indicator in this system worse. Nothing about the
+surviving code changed; the composition of the population did. A study that
+combined dead-code removal with an architectural intervention and reported the
+aggregate delta would have attributed this movement to the architecture.
+
+This is consistent with, and gives a concrete mechanism for, the repeatedly
+reported finding that refactoring produces mixed rather than uniform metric
+outcomes \cite{szoke2017,bavota2015,palomba2018}. Part of the mixture may be
+population effects rather than disagreement about the value of the
+transformations.
+
+\subsection{Engine Dependency Is Structural, Not Architectural}
+
+The engine-coupled set was identical in D0 and D: the same 23 types, with empty
+differences in both directions. This is the result that most directly
+contradicted the study's initial framing.
+
+The explanation is specific to engine-based systems and consistent with what the
+engine architecture literature reports about coupling to engine cores
+\cite{politowski2025,ullmann2023}. In Unity, a component that a scene
+instantiates must be a \texttt{MonoBehaviour}; a field that the editor
+serializes must be visible to the engine's serializer; a lifetime that spans
+scene loads must be managed by an engine mechanism \cite{unitydocs}. These are
+not layering choices that an architect can revise. They are the terms on which the engine
+composes the application.
+
+The architectural layers above that boundary can be reorganized freely, and were.
+But reorganizing them does not migrate a type across the boundary, because the
+boundary is defined by what the engine must instantiate, not by what the design
+would prefer. Interpreting the movement from 35.4\% to 38.3\% as increased
+engine dependency would be a denominator artefact; interpreting a hypothetical
+movement downwards as reduced dependency would have been equally unfounded.
+
+The practical implication for engine-based systems is that engine dependency
+should be reported as a set, and its change as a set difference. A percentage
+whose denominator is the class population will move whenever the population
+moves, for reasons that have nothing to do with the engine.
+
+\subsection{Responsibility as a Decision Rule}
+
+The intervention did not apply a target architectural style, and the a-priori
+hypothesis of migrating to Clean Architecture was rejected during the audit,
+before any code was written, because the baseline already had a Unity-free
+domain and abstractions carrying real responsibilities.
+
+What replaced it --- assessing each abstraction against the responsibility it
+concretely performs --- produced an outcome that no style-driven rule would have
+produced. It removed a DTO and four mappers, but retained three other DTOs that
+performed genuine representation conversion. It retained a service locator that
+a style-driven rule would have eliminated, because the removal attempt revealed a
+cross-scene lifetime responsibility that nothing else discharged. And it
+\emph{introduced} two interfaces, because two concrete cycles existed for which
+no abstraction expressed the responsibility.
+
+The four mechanisms identified in Section~\ref{sec:rq1} suggest a practical
+ordering. Mechanisms 1 and 2 --- no responsibility, and bypassed responsibility
+--- are decidable by static inspection. Mechanisms 3 and 4 are not. Mechanism 3
+(the responsibility that only the removal attempt reveals) means that static
+inspection can be \emph{incomplete}: some responsibilities are visible only in
+the runtime composition model, which for an engine-based system lives partly in
+serialized data. Mechanism 4 (the justification that an earlier transformation
+already removed) means that a correct analysis can become obsolete during a
+staged intervention, which is an argument for re-deriving candidates after each
+stage rather than fixing the plan at the outset.
+
+This connects to the architectural technical debt literature
+\cite{verdecchia2020,verdecchia2021}, which characterizes such debt as decisions
+that were appropriate when taken and later became obstacles. Mechanism 4 is the
+inverse-and-benign case: an item of apparent debt whose justification
+disappeared, making the item harmless rather than harmful, and detectable only
+by re-examination.
+
+\subsection{What Simplification Cost and What It Bought}
+
+The intervention did not buy a better metric profile. Within surviving code the
+indicators were flat to marginally worse, and mean efferent coupling rose both
+in aggregate ($+0.6$) and among matched surviving types in the directly
+refactored group ($+1.53$).
+
+The coupling increase has a concrete cause. Removing four mappers moved their
+transformation logic into the repositories that had called them, so those
+repositories now depend on more types than before. Whether this is an
+improvement is a design judgement, not a metric one: the system has fewer
+indirection layers and fewer components to keep consistent, at the cost of
+repositories that know more. The metric records the cost and is silent about the
+benefit --- which is precisely the limitation that the multi-property
+maintainability models were designed to address \cite{heitlager2007,baggen2012},
+and a reason not to treat a coupling mean as a verdict.
+
+What the intervention did produce is structural: 56 direct accesses to engine
+audio singletons reduced to zero behind an existing port; two concrete cycles
+between views and orchestrators replaced by role contracts; one duplicated
+domain rule given a single owner; three dead service registrations removed. These
+are changes in the dependency structure that the aggregate indicators do not
+express, and reporting them requires the architectural narrative of
+Section~\ref{sec:rq1} alongside the numbers.
+
+We deliberately do not claim that state D is better than state D0. The study
+measured what changed; whether the trade is worthwhile depends on which future
+changes the system will actually face, and that is not observable from a static
+snapshot.
+
+\subsection{Implications}
+
+For \emph{researchers}: interventions that change component population should
+report matched-population results alongside aggregate ones, and should separate
+deletion effects from restructuring effects. In this study the deletion effect
+was larger than the restructuring effect on every aggregate indicator.
+
+For \emph{practitioners} working on engine-based systems: engine dependency is
+best tracked as a set of types rather than as a percentage, and abstractions
+should be assessed against the responsibility they discharge in the composed,
+running system --- not against the catalogued pattern they resemble in source
+\cite{gamma1995}.
+
+For both: a retention decision, recorded with its evidence, is a result. Five of the thirteen audited
+concerns in this study ended in a retention decision, and two of those
+overturned an a-priori hypothesis. A protocol that only records changes would have reported
+none of it.
 
 
-\section{Discussion}
+%% =========================================================================
+\section{Threats to Validity}\label{sec:threats}
+%% =========================================================================
 
-But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+We follow the categories of Runeson and H\"ost \cite{runeson2009}.
 
-\section{Conclusion}
+\medskip\noindent\textbf{Construct validity.} MI, cyclomatic complexity and
+efferent coupling are structural proxies, not measurements of the maintainability
+that developers experience. The critiques are well established: cyclomatic
+complexity is substantially a proxy for size \cite{shepperd1988}, and MI is a
+composite calibrated on a corpus unlike ours that incorporates both
+\cite{coleman1994,ardito2020}. We mitigate this by reporting the indicators
+separately as well as together, by reporting medians alongside means, and by
+never treating a movement in one of them as a statement about maintainability.
+For the same reason we use the term \emph{internal software quality indicators}
+throughout. \emph{Engine dependency} is defined operationally as a count of types
+referencing \texttt{UnityEngine} as determined by the instrument; its percentage
+uses classes as denominator and is therefore sensitive to population change, which
+is why we report the set identity rather than the percentage as the result.
 
-Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
- 
-Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this. \cite{abt2004}
+\medskip\noindent\textbf{Internal validity.} The eight stages were applied
+sequentially and may interact. The D0 checkpoint isolates dead-code removal from
+the architectural intervention, but it does not isolate stages B through H from
+one another. Two concrete interactions were in fact observed and are reported in
+Table~\ref{tab:rq1}: in both, Stage A removed the justification for a change
+that later stages had been expected to make. We did not measure after every
+stage, so finer attribution within B--H is not available.
+
+\medskip\noindent\textbf{External validity.} This is a single case: one
+Unity serious game of 77 files in its final state, developed by a small academic
+team, with three sequentially loaded scenes. The conclusions about cross-scene
+lifetime depend on that scene topology. The conclusions about engine dependency
+should generalize to engine-based systems with a comparable composition model,
+but that is an expectation, not a demonstration. Nothing here supports
+generalization to large systems, to other engines, or to teams with different
+practices.
+
+\medskip\noindent\textbf{Reliability.} The instrument is versioned and frozen at
+a single commit; each state is pinned by commit, tag and branch and recovered in
+an isolated worktree; determinism was confirmed by a byte-identical re-run of the
+whole pipeline including the analyzer output. An instrument defect found during
+the study was corrected, after which state C was re-measured and produced
+byte-identical results, establishing that all three states were measured by the
+same version. The measured system, the instrument, the raw per-type and
+per-member records and the analysis scripts are in the public repository.
+
+\medskip\noindent\textbf{Researcher bias.} The authors performed both the
+intervention and its analysis, which is the standard threat in improving case
+studies. Partial mitigations: the classification criteria for RQ3 were fixed
+before measurement; the RQ3 assignment is derived mechanically from the commit
+history rather than from judgement after seeing the numbers; each stage passed a
+human approval gate before the next began; and a list of prohibited claims ---
+including several that the data superficially appeared to support --- was fixed
+before the manuscript was written. We did not seek to demonstrate that D is
+better than D0, and we report the results that contradicted our initial framing.
+
+\medskip\noindent\textbf{Functional equivalence.} The parity evidence is strong
+but it is evidence, not proof. The 118 characterization and invariant tests, the
+clean engine import, the manual full-flow walkthrough and the post-stage smoke
+verification cover the behaviour they cover. We claim behavioural preservation
+for that scope and no more; we do not claim formal functional equivalence.
+Structural differences on paths that no verification reaches were recorded rather
+than hidden.
+
+\medskip\noindent\textbf{LLM-assisted implementation.} The implementation was
+carried out with the assistance of an LLM coding agent, under a protocol with
+per-stage human approval and explicit prohibitions. This may have influenced the
+shape of the code and the set of options considered at each stage. The study
+neither measures nor claims anything about AI-assisted productivity or quality;
+no aspect of the design would support such a claim.
+
+
+%% =========================================================================
+\section{Conclusion}\label{sec:conclusion}
+%% =========================================================================
+
+This paper reported a comparative case study of responsibility-driven
+architectural simplification in Molz, a Unity-based serious game, measured across
+three pinned states of the same system with a single frozen instrument: the
+baseline C, a dead-code-removal control D0, and the simplified state D.
+
+Answering RQ1, the reassessment of thirteen architectural concerns produced five
+removals or merges, three strengthenings and five documented retentions, two of
+which overturned an a-priori hypothesis. The resulting system has fewer classes
+(65 to 60) but more interfaces (12 to 14) and more members (451 to 457):
+simplification here meant removing abstractions that carried no responsibility
+while introducing two that expressed one.
+
+Answering RQ2, the aggregate indicators moved very little between D0 and D --- MI
+71.7 to 71.8, CC 2.39 to 2.38, mean efferent coupling 12.8 to 13.4 --- and a
+matched-population analysis over the 442 members present in both states inverted
+the sign of the first two, showing the aggregate movements to be composition
+effects rather than changes in surviving code. The set of engine-coupled types
+was identical in both states; only its percentage moved, through denominator
+change.
+
+Answering RQ3, the measured changes were contained within the directly and
+indirectly affected groups, while the 64 preserved types remained
+metric-identical. The dead code removed in the control had a substantially better
+metric profile than the system average (MI 80.3 against 72.5; coupling 4.50
+against 11.4), so its removal moved every normalized mean unfavourably --- an
+effect that, without the control state, would have been credited to the
+architectural intervention.
+
+The study's central methodological claim is that interventions which change the
+population of components cannot be evaluated by aggregate means alone. Its
+central empirical observation is that in an engine-based system, the set of
+components depending on the engine is fixed by the engine's composition model
+and is not a variable that layer reorganization can move.
+
+Several directions remain open. Measuring after each stage rather than only at
+the endpoints would permit attribution within the intervention. Repeating the
+design on systems built with other engines, and on systems large enough for the
+population effects to be studied statistically, would test how far the
+observations extend. A companion study of the analyzer findings collected here,
+which this paper deliberately leaves uninterpreted, is a separate line of work.
+Finally, the responsibility-driven decision rule was applied by the authors; how
+consistently different engineers would apply it to the same system is an
+empirical question we did not address.
 
 \begin{acknowledgements}
-This is a multiline text of acknowledgments. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live.
+%% NEEDS SOURCE: funding programme identifiers and the definitive list of
+%% acknowledged contributors are to be confirmed before submission.
+This work was carried out within the PIBIC 2025--2026 undergraduate research
+programme at the Universidade Federal do Agreste de Pernambuco. The authors
+thank the members of the Molz project team for their contributions to the
+system studied here.
 \end{acknowledgements}
 
-
-
 \bibliographystyle{apalike}
-\bibliography{1r_lamboo_notes}
+\bibliography{paper1-references}
 
 \end{document}
