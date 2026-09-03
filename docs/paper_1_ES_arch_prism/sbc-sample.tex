@@ -1,0 +1,308 @@
+\documentclass{sbc2019}%
+
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+%\usepackage[brazil]{babel}
+\usepackage[misc,geometry]{ifsym} 
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{academicons}
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage{aas_macros}
+\usepackage[bottom]{footmisc}
+
+\definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
+\definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
+\definecolor{maillogo}{rgb}{0.58, 0.16, 0.26}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.0}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+%\hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue}
+
+%%%%%%% IMPORTANT: We disable hyperlinks by default with this line, to avoid the error "\pdfendlink ended up in different nesting level" while writing.
+%\hypersetup{draft}
+
+\jid{JSERD}
+\jtitle{Journal of Software Engineering Research and Development, 2019, 6:1, }
+\doi{10.5753/jserd.2019.xxx}
+\copyrightstatement{This work is licensed under a Creative Commons Attribution 4.0 International License.}
+\jyear{2019}
+
+
+
+\title[Presenting the new SBC journal template]{Presenting the new SBC journal template}
+
+
+%% Please note that the command \and is not supported in \author.
+\author[Viterbo et al. 2019]{
+\affil{\textbf{José Viterbo}~\href{https://orcid.org/0000-0002-0339-6624}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Federal Fluminense~}|\href{mailto:viterbo@ic.uff.br}{~\textbf{\textit{viterbo@ic.uff.br}}} ]}
+
+%\affil{\href{https://orcid.org/0000-0002-0339-6624}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{José Viterbo}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Federal Fluminense~~}\href{mailto:viterbo@ic.uff.br}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{viterbo@ic.uff.br}}}
+
+\affil{\textbf{Clodis Boscarioli}~\href{https://orcid.org/0000-0002-7110-2026}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Estadual do Oeste do Paraná~}|\href{mailto:clodis.boscarioli@unioeste}{~\textbf{\textit{clodis.boscarioli@unioeste.br}}} ]}
+
+%\affil{\href{https://orcid.org/0000-0002-7110-2026}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{Clodis Boscarioli}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Estadual do Oeste do Paraná~~}\href{mailto:clodis.boscarioli@unioeste}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{clodis.boscarioli@unioeste.br}}}
+
+\affil{\textbf{Roberto Pereira}~\href{https://orcid.org/0000-0003-3052-3016}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Federal do Paraná~}|\href{mailto:robertop.ihc@gmail.com}{~\textbf{\textit{robertop.ihc@gmail.com}}} ]}
+
+%\affil{\href{https://orcid.org/0000-0003-3052-3016}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{Roberto Pereira}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Federal do Paraná~~}\href{mailto:robertop.ihc@gmail.com}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{robertop.ihc@gmail.com}}}
+
+\affil{\textbf{Cristiano Maciel}~\href{https://orcid.org/0000-0002-2431-8457}{\textcolor{orcidlogo}{\aiOrcid}}~~[~\textbf{Universidade Federal de Mato Grosso~}|\href{mailto:cmaciel@ufmt.br}{~\textbf{\textit{cmaciel@ufmt.br}}} ]}
+
+%\affil{\href{https://orcid.org/0000-0002-2431-8457}{\textcolor{orcidlogo}{\aiOrcid}}~\textbf{Cristiano Maciel}~~\textcolor{unilogo}{\faUniversity}~\textbf{Universidade Federal de Mato Grosso~~}\href{mailto:cmaciel@ufmt.br}{\textcolor{maillogo}{\faEnvelope}}~\textbf{\textit{cmaciel@ufmt.br}}}
+}
+
+%%%%%%% You may comment or delete the line above to make hyperlinks in your paper active. If you then encounter a strange "\pdfendlink ended up in different nesting level than \pdfstartlink", don't worry! Uncomment the line again, and see https://www.overleaf.com/help/246 for further information.
+
+\begin{document}
+
+\begin{frontmatter}
+\maketitle
+
+\begin{abstract}
+\textbf{Abstract}
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+\end{abstract}
+
+\begin{keywords}
+Proceedings, Template, BCS, Content Repository, Indexing
+\end{keywords}
+
+%\begin{license}
+%Published under the Creative Commons Attribution 4.0 International Public License (CC BY 4.0)
+%\end{license}
+
+
+
+\end{frontmatter}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on \cite{abt1961}. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government \cite{abt1961} of the people, by the people, for the people, shall not perish from the earth.
+
+
+Now we are engaged in a great civil war, testing whether that nation, \cite{abt1967} or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this (see \textbf{ Table~\ref{tab1}}).
+
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, \citet{lwt}, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+
+Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal Sargent, Boksenberg, \& Steidel \citet{sbs}.
+
+\begin{table}[!ht]
+\caption{This is an example of table caption.}
+\centering
+\begin{tabular}{@{}cc@{}}
+\hline\hline
+Dimension & Classification accuracy \\
+\hline%
+ 1  & 0.6232 \\
+ 2  & 0.9635 \\ 
+ 3  & 0.9724 \\ 
+ 4  & 0.9690 \\ 
+ 5  & 0.9840 \\ 
+ 6  & 0.9842 \\ 
+ 7  & 0.9873 \\ 
+ 8  & 0.9884 \\
+ 9  & 0.9873 \\ 
+ 10 & 0.9898 \\ 
+ 11 & 0.9914 \\
+\hline\hline
+\end{tabular}
+\label{tab1}
+\end{table}
+
+ 
+\section{Example of Head Level 1}
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, \cite{abt1979} by the people, for the people, shall not perish from the earth.
+
+\subsection{This is an example of head level 2}
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+\begin{quotation}
+This is a longer quotation. It consists of two paragraphs of text, neither of which are particularly interesting.
+
+This is the second paragraph of the quotation. It is just as dull as the first paragraph.
+\end{quotation} 
+
+\subsubsection{This is an example of head level 3}
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+
+\paragraph{This is an example of head level 4.}
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+Let
+\[
+x=(x_1,\dots,x_n)\in R^n
+\]be an \(n\)-dimensional vector. The sparse PCA problem can be written as
+\begin{equation}\label{eq1}
+\max\limits_{x}\{x^TAx-\rho\|x\|_0:x^Tx=1\},
+\end{equation}
+It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion\break equation (\ref{eq1}). 
+\[\max\limits_{x}\{x^TAx :x^Tx=1\}.\]
+If $A$ The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here.
+
+
+Equation (\ref{eq1}) is a special case of the following sparse generalized eigenvector problem (GEV):
+\begin{equation}\label{GEV}
+\max\limits_{x}\{x^TAx-\rho \|x\|_0: x^TBx\leq 1\},
+\end{equation}
+
+Now we are $A\in S^n $ engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. $\|x\|_\epsilon= \sum\limits_{i=1}^n\frac{\log(1+\frac{|x_i|}{\epsilon})}{\log(1+\frac{1}{\epsilon})}.$ We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. $\|x\|_0$ by $\|x\|_1$ It is altogether fitting and proper that we should do this in (\ref{GEV}).
+
+Let $\rho_\epsilon= {\rho}/{\log(1+\frac{1}{\epsilon})}$. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far:
+\begin{align}
+\min\limits_{x,y}  \{\tau\|x\|_2^2-[ &x^T(A+\tau I_n)x-\rho_\epsilon\sum\limits_{i=1}^n\log(y_i+\epsilon)]: \\
+  & x^TBx\leq 1, -y\leq x\leq y\}
+\end{align}
+by choosing an appropriate $\tau\in R$ such that $A+\tau I_n\in S_+^n$ (the set of positive semidefinite matrices of size $n\times n$ defined over $R$). Suppose
+\begin{align*}
+g((x,y),(z,w)):&=\tau\|x\|_2^2-z^T(A+\tau I_n)z\\
+               &+\rho_\epsilon\sum\limits_{i=1}^n\log(\epsilon+w_i)-2(x-z)^T\\
+               &+\rho_\epsilon\sum\limits_{i=1}^n\frac{y_i-w_i}{w_i+\epsilon},
+\end{align*}
+which is the majorization function of
+\begin{equation}\label{mm}
+f(x,y)=\tau\|x\|_2^2+\rho_\epsilon\sum\limits_{i=1}^n\log(\epsilon+y_i)-x^T(A+\tau I_n)x.
+\end{equation}
+
+We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+\begin{verse}
+ There is an environment 
+ for verse \\ 
+ Whose features some poets % within a stanza.
+ will curse. 
+
+ For instead of making\\
+ Them do \emph{all} line breaking, \\
+ It allows them to put too many words on a line when they'd rather be 
+ forced to be terse.
+\end{verse} 
+If $A$ The brave men, living and dead, who struggled, here, have consecrated\footnote{This is an example of text footnote.} it far above our poor power to add or detract. The world will little note, nor long remember, what we say here \textbf{Table~\ref{tab2}}.
+
+\section{THIS IS AN EXAMPLE OF HEAD LEVEL 1}
+
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+
+
+\begin{table*}
+\caption{It is rather for us to be here dedicated to the great $\alpha^{(1)}$ and $\alpha^{(2)}$ task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last.} 
+\centering
+\begin{tabular*}{\textwidth}{@{}c\x c\x c\x c\x c\x c\x c\x c\x c\x c\x c\x c@{}}
+\hline \hline
+ Layer   & $V_{\rm P0}$   & $V_{\rm S0}$     &  $\epsilon^{(1)}$  &  $\epsilon^{(2)}$ 
+         & $\delta^{(1)}$ & $\delta^{(2)}$  &  $\delta^{(3)}$    & $\gamma^{(1)}$ 
+         & $\gamma^{(2)}$ & $\alpha^{(1)}$  & $\alpha^{(2)}$ \\
+ number  & (km/s)        & (km/s)          & ~                  & ~ 
+         & ~             & ~               & ~                  & ~ 
+         & ~             & $(^\circ)$       & $(^\circ)$ \\
+%
+\hline
+ 1 & 3.5 & 2.0 & 0.20 & -0.05 & 0.00 & -0.20 & -0.05 & 0.20 & ~0.05 & 20 & 10 \\ 
+ 2 & 2.5 & 1.5 & 0.10 & -0.15 & 0.05 & -0.15 & ~0.00 & 0.10 & -0.05 & 20 & 40 \\ 
+ 3 & 3.0 & 1.8 & 0.20 & -0.05 & 0.25 & ~0.05 & ~0.20 & 0.15 & ~0.00 & 20 & 70$^a$ \\
+\hline \hline
+\end{tabular*}\label{tab2}
+
+\medskip
+\tabnote{$^a$This is an example of table footnote}
+\tabnote{This is an example of table footnote}
+\tabnote{This is an example of table footnote}
+\end{table*}
+
+
+\begin{itemize}
+\item This is a longer itemize list. It consists of two paragraphs of text, neither of which are particularly interesting {\sc ii}.
+\item This is a longer itemize list. It consists of two paragraphs of text, neither of which are particularly interesting.
+\item This is a longer itemize list. It consists of two paragraphs of text, neither of which are particularly interesting.
+\end{itemize}
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+\begin{enumerate}%
+\item This is a longer numbered list. It consists of two paragraphs of text, neither of which are particularly interesting.
+\item This is a short numbered list. It consists of two paragraphs of text.
+\end{enumerate}
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on.
+
+It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom
+
+\begin{unnumlist}
+  \item First unnumbered item which has no label. This is an example
+  of sample text for unnumbered list. This is an example
+  of sample text for unnumbered list. This is an example
+  of sample text for unnumbered list.
+  \item Second unnumbered item.
+  \item Third unnumbered item.
+\end{unnumlist}
+
+
+\subsection{Feature extraction using DCPCA}
+
+Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+
+ 
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this\break \textbf{Figure \ref{Fig1}}.
+
+ 
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried  and that this government of the people, by the people, for the people, shall not perish from the earth \textbf{Figure \ref{Fig2}}.
+
+
+\begin{figure}
+\begin{center}
+%\includegraphics[width=\columnwidth]{fig1.eps}
+\includegraphics{fpo.eps}
+\caption{This is an example of figure caption.}\label{Fig1}
+\end{center}
+\end{figure}
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=30pc, height=12pc]{fpo.eps}
+\caption{It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which $x^{(0)}=x_1$ and $x^{(0)}=x_2$, where $x_1=(\frac{1}{\sqrt{3,522}},\dots,\frac{1}{\sqrt{3,522}})^T$ and $x_2=(\frac{1}{\sqrt{1,000}}, \dots, \frac{1}{\sqrt{1,000}},0,\dots,0)^T $. they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth $(x^{(0)})^Tx^{(0)}=1$.}
+ \label{Fig2}
+\end{center}
+\end{figure*}
+
+It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the\break people, by the people, for the people, shall not perish from the earth Figure \textbf{\ref{Fig2}}.
+
+
+\paragraph{This is an example of head level 4.}
+
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+
+
+\section{Discussion}
+
+But in a larger sense we can not dedicate -- we can not consecrate -- we can not hallow this ground. The brave men, living and dead, who struggled, here, have consecrated it far above our poor power to add or detract. The world will little note, nor long remember, what we say here, but can never forget what they did here. It is for us, the living, rather to be dedicated here to the unfinished work which they have, thus far, so nobly carried on. It is rather for us to be here dedicated to the great task remaining before us  that from these honoured dead we take increased devotion to that cause for which they here gave the last full measure of devotion  that we here highly resolve that these dead shall not have died in vain; that this nation shall have a new birth of freedom; and that this government of the people, by the people, for the people, shall not perish from the earth.
+
+\section{Conclusion}
+
+Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+ 
+Now we are engaged in a great civil war, testing whether that nation, or any nation, so conceived, and so dedicated, can long endure. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this. \cite{abt2004}
+
+\begin{acknowledgements}
+This is a multiline text of acknowledgments. We are met here on a great battlefield of that war. We have come to dedicate a portion of it as a final resting place for those who here gave their lives that that nation might live.
+\end{acknowledgements}
+
+
+
+\bibliographystyle{apalike}
+\bibliography{1r_lamboo_notes}
+
+\end{document}

@@ -1,0 +1,492 @@
+% Copyright 2015-2018 Diogo A. B. Fernandes
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass{ltxdoc}
+
+\usepackage[numbered]{hypdoc}
+\usepackage{hologo}
+\usepackage{hyperref,xcolor}
+\usepackage{longtable,booktabs}
+%\usepackage{\jobname}
+\usepackage{academicons}
+
+\definecolor{blue}{rgb}{0.19,0.31,0.54}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, hyperindex}
+
+\usepackage{totcount}
+\newtotcounter{IconsCounter}
+\setcounter{IconsCounter}{0}
+
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+
+\changes{v1.8.6-2}{2018/06/27}{Fixed bugs in a few icon commands.}
+\changes{v1.8.6-1}{2018/06/25}{Removed \texttt{fontspec} dependency.}
+\changes{v1.8.6}{2018/04/03}{Release of v1.8.6.}
+\changes{v1.8.3}{2018/04/03}{Release of v1.8.3.}
+\changes{v1.8.0-1}{2018/03/27}{Enhancement release: adjusted \texttt{\textbackslash{}newfontfamily} to account for the font installed via \texttt{tlmgr}.}
+\changes{v1.8.0}{2017/05/15}{Major release of v1.8.0.}
+\changes{v1.7.2}{2016/06/12}{Fix release: corrected a bug in the style file.}
+\changes{v1.7.1}{2016/06/12}{Fix release: corrected a bug in the style file.}
+\changes{v1.7.0}{2016/05/16}{Major release of v1.7.0.}
+\changes{v1.6.0-1}{2016/03/02}{Better documentation.}
+\changes{v1.6.0}{2016/01/30}{Major release of v1.6.0.}
+\changes{v1.4.0-1}{2015/05/30}{Fix release: corrected a few typos and errors in the manual.}
+\changes{v1.4.0}{2015/05/28}{First public release (version number set to match the included \texttt{academicons.ttf} font version).}
+
+\begin{document}
+\title{Architectural Refactoring and Internal Software Quality in a Unity-Based Serious Game: A Case Study}
+
+%\noauthor{}
+%\author{%
+%  Diogo A. B. Fernandes\thanks{Email: \href{mailto:diogoabfernandes@gmail.com}{\tt diogoabfernandes@gmail.com}}~~(\hologo{LaTeX} code)\\%
+%  James Walsh (font and icons design)}
+%\date{v1.8.6-2, released on 27 June 2018}
+\maketitle
+
+\begin{abstract}
+Game software engineering has received comparatively little empirical attention, even
+though the tight coupling that commonly forms between game logic and the underlying
+engine constitutes a recurring and largely undocumented form of architectural technical
+debt. This paper reports a case study on the architectural restructuring of Molz, a
+Unity-based serious game for organic chemistry education, comparing two states of the
+same codebase before and after the introduction of an explicit layered organization
+separating domain, data, and presentation concerns, an adapted Model-View-Presenter
+arrangement suited to the engine's component lifecycle, and a set of dependency-inversion-
+oriented design patterns. Both states were analyzed using a combination of general-purpose
+and platform-specific static analyzers, together with a custom measurement routine covering
+maintainability, cyclomatic complexity, structural coupling, and engine dependency. Between
+the compared versions, the proportion of classes coupled to the engine decreased from 42.3\%
+to 30.4\%, the number of declared interfaces increased from nine to sixteen, and both the
+average and median Maintainability Index improved, even as the codebase grew by 12.6\% in
+effective lines of code. The components that were the explicit target of the restructuring
+showed reductions in size and complexity considerably larger than the system-level average,
+suggesting that the observed improvements were more concentrated in the parts of the system
+directly addressed by the restructuring effort. These findings offer empirical evidence,
+from a single but real and evolving case, on the relationship between engine decoupling and
+internal software quality in game software, along with a discussion of the corresponding
+threats to validity.
+\end{abstract}
+
+\textbf{Keywords: software architecture; architectural technical debt; refactoring;
+game engine coupling; internal software quality; case study; Unity.}
+
+
+
+\bigskip
+
+
+\section{Introduction}\label{sec1}
+
+Digital games are increasingly recognized not merely as entertainment products but as software systems whose engineering quality directly affects their evolvability, reliability, and long-term maintenance cost. This is particularly evident in serious games — applications designed for purposes beyond entertainment, such as education or training (Zyda, 2005) — where content, mechanics, and educational objectives are frequently revised after initial release, placing sustained pressure on the underlying software structure. As such systems grow and incorporate new features, decisions made early in development regarding architecture, modularity, and separation of concerns become increasingly consequential for the team's ability to maintain and extend the software (Bass, Clements, and Kazman, 2021).
+
+A recurring characteristic of games built on commercial engines, however, is a strong structural dependency between game logic and the engine's runtime components. Frameworks such as Unity organize application behavior around engine-managed component types (e.g., MonoBehaviour), whose lifecycle is controlled by the engine rather than by the application itself. While this model simplifies initial development, it also encourages a pattern in which domain logic, data handling, and presentation concerns become entangled with engine-specific constructs — a form of architectural technical debt (Brown et al., 2010; MacCormack and Sturtevant, 2016) that is rarely made explicit or measured in practice. Prior work has shown that tightly coupled core components are systematically more expensive to maintain than loosely coupled ones (MacCormack and Sturtevant, 2016), and that architectural technical debt, once accumulated, is difficult to detect and costly to resolve (Verdecchia et al., 2020). Yet this line of empirical research has developed largely around enterprise and general-purpose software systems; its application to game software — and to game-engine coupling specifically — remains comparatively underexplored, despite practitioner-oriented literature acknowledging the problem in the context of concrete design patterns for games (Nystrom, 2014).
+
+At the same time, an established body of software engineering knowledge offers concrete guidance for addressing this kind of structural entanglement: refactoring techniques for improving internal code organization without altering observable behavior (Fowler, 2018), principles of cohesion, coupling, and dependency inversion for producing maintainable designs (Martin, 2008, 2017), and reusable design patterns for structuring collaboration between components (Gamma et al., 1994). What is less understood empirically is the extent to which applying these general-purpose principles to a real, engine-coupled game codebase produces measurable improvements in internal quality — and whether such improvements, if present, are concentrated in the specific parts of the system that were the target of restructuring or distributed more broadly across it.
+
+This paper addresses this gap through a case study conducted on Molz, a Unity-based serious game for organic chemistry education, whose codebase underwent a deliberate architectural restructuring over the course of its development. The restructuring introduced an explicit separation between domain, data, and presentation layers, an adaptation of the Model-View-Presenter pattern suited to the engine's component lifecycle, and the application of dependency-inversion-oriented design patterns, including Repository, Strategy, Adapter, and Facade. We compare two structural states of the same repository — one preceding this restructuring and one following it — using a combination of general-purpose and platform-specific static analyzers together with a set of internal quality metrics, including the Maintainability Index (Oman and Hagemeister, 1992), cyclomatic complexity (McCabe, 1976), and structural and engine-specific coupling measures.
+
+The contributions of this paper are threefold: (i) an empirical case study documenting the architectural evolution of a real, evolving game system from an engine-coupled, low-separation state toward a layered architecture; (ii) quantitative evidence relating this architectural transition to internal quality indicators, examined both at the system level and, where applicable, at the level of individual components; and (iii) a discussion of the extent to which the observed changes can be attributed to the restructuring itself, as opposed to concurrent system growth, along with the corresponding threats to validity.
+
+The remainder of this paper is organized as follows. Section 2 reviews related work on software architecture, refactoring, and architectural technical debt, situating this study within the specific context of game engine coupling. Section 3 describes the case and the design of the study, including the systems compared and the metrics employed. Section 4 presents the results organized by research question. Section 5 discusses the findings in light of the related literature. Section 6 examines threats to validity, and Section 7 concludes the paper.
+
+\section{Related Work}\label{sec2}
+
+\section{Case Study Design}\label{sec3}
+
+This section describes the case examined in this study and the design adopted to compare
+its architectural states. Section~3.1 restates the research questions addressed by this
+part of the study. Section~3.2 introduces Molz and the development context in which the
+restructuring took place. Section~3.3 presents the versions of the codebase considered in
+the study and the rationale for treating the comparison between two of them as the primary
+source of evidence. Section~3.4 describes the static analysis tools and the measurement
+routine used to compute the internal quality indicators reported in Section~4.
+
+\subsection{Research Questions}\label{sec3.1}
+
+This study is guided by the following research questions:
+
+\begin{itemize}
+    \item \textbf{RQ1}: How did the system's architectural organization evolve, from a
+    state with limited separation of concerns and pervasive engine coupling to a layered
+    structure with explicit domain, data, and presentation boundaries?
+    \item \textbf{RQ2}: How did internal software quality indicators, namely maintainability
+    index, cyclomatic complexity, structural coupling, and engine dependency, change between
+    the two structural states of the system?
+    \item \textbf{RQ3}: How did the magnitude of change in internal quality indicators for
+    the components directly subject to the restructuring compare to the system-level change
+    reported for RQ2?
+\end{itemize}
+
+RQ1 is addressed descriptively, through the qualitative characterization of the
+architectural transition presented in Section~4.1. RQ2 is addressed by the system-level
+indicators presented in Section~4.2, computed over the full codebase for versions B and C.
+RQ3 is addressed in Section~4.3 by contrasting the size and complexity change observed in
+the specific components targeted by the restructuring against the system-level change
+already reported for RQ2, indicating whether the effect was concentrated in those
+components or reflected the system-wide trend.
+
+\subsection{Case and Context}\label{sec3.2}
+
+This study is conducted on Molz, a serious game for organic chemistry education developed
+by the BCC Coworking group at the Universidade Federal do Agreste de Pernambuco (UFAPE).
+The project is implemented in Unity with C\# and has been under continuous development
+since 2025, following an agile process inspired by Scrum, with weekly sprints, alignment
+meetings, and task tracking through GitHub Projects. This organizational context provided
+the conditions under which the architectural restructuring examined in this study took
+place: incremental delivery, systematic task registration, and a board-based workflow
+(backlog, in progress, in review, done) that allowed development activity to be observed
+and reconstructed over time.
+
+The system evolved through two largely independent product phases. The first phase
+produced a three-dimensional prototype; development on this version was discontinued, and
+a new, distinct two-dimensional product was subsequently built as the game's current form.
+Because these two phases differ in dimensionality, rendering pipeline, and scope of visual
+resources, they cannot be treated as directly comparable states of the same design problem;
+the three-dimensional version is used in this study only as historical context, illustrating
+the system's starting point rather than serving as a baseline for causal comparison. The
+architectural restructuring that is the object of this study took place entirely within the
+two-dimensional codebase, over the course of its own development.
+
+\subsection{Study Design}\label{sec3.3}
+
+To isolate the effect of the architectural restructuring from unrelated product differences,
+this study adopts a within-repository, two-state comparison design. Three snapshots of the
+codebase are considered: version A, a discontinued three-dimensional prototype used only as
+historical context (repository \texttt{game-quimica}, last modified August 29, 2025); version
+B, the two-dimensional codebase prior to the restructuring (repository \texttt{game-quimica-2D},
+May 5, 2026); and version C, the current state of the same codebase (August 9, 2026).
+
+Version A is included only descriptively, to characterize the system's starting point; it
+is not used to support causal claims about the effect of restructuring, since it differs
+from B and C in product scope and rendering dimensionality. Versions B and C, by contrast,
+correspond to the same product at two points in its evolution, separated by the deliberate
+architectural restructuring conducted between May and June 2026. At version B, data-access
+patterns such as Repository, Data Transfer Object, and Data Mapper were already in place,
+but the presentation-layer interfaces and the domain services extracted later had not yet
+been introduced. Version B is therefore characterized as the state \emph{prior to the
+restructuring of the presentation layer}, rather than as an early or incomplete version of
+the product. The comparison between B and C constitutes a within-subject, before-and-after
+study of the same system and is treated in this paper as the primary evidence for RQ2 and
+RQ3; version A is used only to contextualize RQ1.
+
+For RQ3, the study focuses on the components that were the explicit target of the
+restructuring effort: the general game-coordination component, responsible for screen
+routing and match progress tracking, and the two largest presentation-layer screens, the
+laboratory screen and the menu screen. These three components were selected because they
+concentrated the largest share of responsibilities prior to the restructuring and were the
+direct object of the extraction and separation work carried out between versions B and C.
+Their size and complexity before and after the transition are reported in Section~4 against
+the system-level indicators used to answer RQ2.
+
+\subsection{Instruments and Metrics}\label{sec3.4}
+
+Static analysis was applied to all three versions using two complementary tools operating
+during the project's own build process, rather than through a hosted SonarQube server. This
+choice avoids additional infrastructure and, more importantly, allows historical repository
+states to be analyzed directly, which a server-based deployment would not support. The first
+tool, \texttt{SonarAnalyzer.CSharp} (version 10.31), implements the same rule set used by the
+SonarQube platform for C\#, distributed as a NuGet package; the second, \texttt{Microsoft.
+Unity.Analyzers}, adds rules specific to Unity-based projects. Rule identifiers follow the
+originating platform's convention (\texttt{S\#\#\#\#} for SonarSource rules, \texttt{UNT\#\#\#\#}
+for Unity-specific rules).
+
+Static rule violations alone do not yield metrics that are comparable across versions of the
+same system. A second, complementary measurement routine, developed for this study and
+versioned in the project repository, was therefore used to compute size, complexity, and
+coupling indicators. All three versions were processed with the same rule configuration,
+with third-party libraries excluded so that reported values refer exclusively to code
+authored by the project team. The following metrics were collected for every member (defined
+as a method, constructor, or implemented property) in each version:
+
+\begin{itemize}
+    \item \textbf{Lines of code and comment density}, counting effective and comment lines separately.
+    \item \textbf{Cyclomatic complexity} (McCabe, 1976), computed from the number of decision points per member.
+    \item \textbf{Halstead volume} (Halstead, 1977), derived from operator and operand counts.
+    \item \textbf{Maintainability Index}, in its 0--100 normalized variant (Oman and Hagemeister, 1992), with values at or above 65 conventionally taken to indicate acceptable maintainability.
+    \item \textbf{Maximum nesting depth} of control structures per member.
+    \item \textbf{Efferent coupling}, approximated by the number of distinct types referenced by each class.
+    \item \textbf{Engine coupling}, measured as the proportion of classes that inherit from \texttt{MonoBehaviour} or \texttt{ScriptableObject} and therefore depend on the Unity runtime for instantiation.
+\end{itemize}
+
+\section{Results}\label{sec4}
+
+This section presents the results of the study organized by research question. Section~4.1
+addresses RQ1 through a qualitative characterization of the architectural transition observed
+between the compared versions. Section~4.2 addresses RQ2 through the system-level quality
+indicators computed for versions B and C. Section~4.3 addresses RQ3 by contrasting the
+magnitude of change observed in the components directly targeted by the restructuring against
+the system-level change reported in Section~4.2.
+
+\subsection{RQ1: Architectural Evolution}\label{sec4.1}
+
+Between version A and version C, the system moved from a single, largely undifferentiated
+structure toward an explicit layered organization separating data, domain, presentation, and
+a set of core services. This transition is most directly evidenced by the growth in declared
+interfaces, from a single interface in version A to nine in version B and sixteen in version
+C, indicating a shift from components that referenced one another directly toward components
+that depend on explicitly declared contracts.
+
+The restructuring conducted between versions B and C concentrated on the presentation layer
+and on the extraction of domain services that had previously been embedded in general-purpose
+components. Table~\ref{tab:practices} summarizes the main practices applied during this
+transition and their intended contribution to internal quality.
+
+\begin{table}[h]
+\centering
+\caption{Refactoring and organizational practices applied between versions B and C.}
+\label{tab:practices}
+\begin{tabular}{p{3.3cm}p{4.7cm}p{4.5cm}}
+\hline
+\textbf{Practice} & \textbf{How it was applied} & \textbf{Contribution to quality} \\
+\hline
+Layered separation & Organization of the system into data, domain, presentation, and core layers & Clearer distribution of responsibilities \\
+Use of interfaces & Explicit contracts defined for services and repositories & Reduced coupling, easier substitution \\
+Domain service extraction & Concentration of rules for solubility classification, history, scoring, and questions into dedicated services & Isolation of core game logic \\
+DTO, mapper, and repository organization & Separation between raw JSON data and domain objects & Controlled data loading and transformation \\
+Separation of logic and interface & Responsibilities distributed across Managers, Presenters, Controllers, and Views & Reduced dependency between mechanics and visuals \\
+Core component standardization & Organization of elements such as \texttt{GameManager}, \texttt{Bootstrapper}, and a service locator & Greater control over overall game flow \\
+\hline
+\end{tabular}
+\end{table}
+
+The presentation layer was structured following an adaptation of Model-View-Presenter suited
+to Unity's component lifecycle. In the canonical formulation of the pattern, the Presenter
+acts as the application's entry point and is responsible for creating the View; in Unity,
+visual components are instantiated and managed by the engine itself, which inverts this
+relationship: the visual component creates and disposes of its own Presenter as it enters and
+leaves a scene. The direction of the dependency, however, was preserved, since the Presenter
+accesses the View only through an interface, and the manipulation of visual elements is
+delegated to plain-object sub-views without inheriting from engine-managed component types.
+This independence remains partial, as Presenters still obtain match state through a global,
+engine-managed component, which keeps them bound to the Unity runtime at that specific point.
+
+Dependency-inversion-oriented design patterns were applied alongside this reorganization.
+Repository, Data Transfer Object, and Data Mapper structured data access; Strategy and Factory
+Method supported the selection of rules for each game mode; Observer organized communication
+between match state and the interface; and Adapter and Facade reduced direct dependencies on
+Unity-specific services and resources. A State-based implementation for match progression was
+also introduced but is not yet exercised by the current gameplay flow.
+
+\subsection{RQ2: System-Level Quality Indicators}\label{sec4.2}
+
+Table~\ref{tab:metrics} reports the system-level indicators computed for versions B and C,
+covering size, complexity, maintainability, and engine coupling.
+
+\begin{table}[h]
+\centering
+\caption{System-level quality indicators, version B versus version C.}
+\label{tab:metrics}
+\begin{tabular}{lccc}
+\hline
+\textbf{Indicator} & \textbf{B} & \textbf{C} & \textbf{Change} \\
+\hline
+Effective lines of code & 4{,}522 & 5{,}093 & $+$12.6\% \\
+Classes & 52 & 79 & -- \\
+Interfaces & 9 & 16 & -- \\
+Classes coupled to the engine & 22 (42.3\%) & 24 (30.4\%) & $-$11.9\,pp \\
+Average efferent coupling & 13.1 & 11.4 & $-$13.0\% \\
+Average cyclomatic complexity & 2.44 & 2.33 & $-$4.5\% \\
+Maximum cyclomatic complexity & 17 & 17 & 0 \\
+Members with CC $>$ 10 & 5 (1.3\%) & 6 (1.2\%) & -- \\
+Average Maintainability Index & 69.9 & 72.5 & $+$2.6 \\
+Median Maintainability Index & 67.5 & 71.2 & $+$3.7 \\
+Members with MI $\geq$ 65 & 227 (57.0\%) & 323 (65.1\%) & $+$8.1\,pp \\
+Members with nesting $\geq$ 4 & 15 & 14 & -- \\
+\hline
+\end{tabular}
+\end{table}
+
+Between versions B and C, the codebase grew by 12.6\% in effective lines of code while the
+proportion of classes coupled to the Unity engine fell from 42.3\% to 30.4\%, and the number
+of declared interfaces increased from nine to sixteen. Average efferent coupling decreased
+from 13.1 to 11.4 references per class over the same period. Maintainability improved on both
+the mean and the median, and the proportion of members reaching a Maintainability Index of 65
+or above rose from 57.0\% to 65.1\%. Average cyclomatic complexity decreased modestly, from
+2.44 to 2.33, while the maximum observed complexity remained unchanged at 17, and the
+proportion of members exceeding a complexity of 10 remained under 1.5\% in both versions.
+These results indicate that the improvements in coupling and maintainability were not
+accompanied by a reduction in the system's overall size or by the elimination of its most
+complex members, but rather occurred alongside continued growth of the codebase.
+
+\subsection{RQ3: Distribution of the Effect}\label{sec4.3}
+
+Table~\ref{tab:components} reports the change in size and complexity for the three components
+that were the explicit target of the restructuring, alongside the system-level change already
+reported in Section~4.2 for reference.
+
+\begin{table}[h]
+\centering
+\caption{Size and complexity change in directly targeted components, compared to the system-level change (B $\rightarrow$ C).}
+\label{tab:components}
+\begin{tabular}{lcc}
+\hline
+\textbf{Component / scope} & \textbf{$\Delta$ Lines of code} & \textbf{$\Delta$ Cyclomatic complexity} \\
+\hline
+General game coordination & $-$33.2\% & $-$15.3\% \\
+Laboratory screen & $-$16.0\% & $-$21.2\% \\
+Menu screen & $-$8.2\% & $-$7.4\% \\
+\hline
+System level (for reference) & $+$12.6\% & $-$4.5\% \\
+\hline
+\end{tabular}
+\end{table}
+
+While the codebase as a whole grew by 12.6\% between versions B and C, the three components
+directly targeted by the restructuring decreased in size by 8.2\% to 33.2\%. Their complexity
+also decreased more steeply than the system-level average: the general coordination component
+and the laboratory screen show complexity reductions of 15.3\% and 21.2\%, respectively, and
+the menu screen shows a reduction of 7.4\%, compared to a system-level decrease of 4.5\%. This
+pattern indicates that the improvements observed in Section~4.2 were not uniformly distributed
+across the codebase but were substantially more pronounced in the components that concentrated
+responsibilities prior to the restructuring and were the direct object of extraction and
+separation work, even as the system continued to grow in overall size.
+
+\section{Discussion}\label{sec5}
+
+The results reported in Section~4 indicate that the architectural restructuring conducted
+between versions B and C was accompanied by improvements in internal quality indicators, and
+that these improvements appear to be unevenly distributed across the codebase. This section
+interprets these findings in light of the literature on software architecture, refactoring,
+and architectural technical debt, and considers, with appropriate caution, the extent to
+which the observed changes may be related to the restructuring itself rather than to
+concurrent system growth.
+
+The reduction in engine coupling, from 42.3\% to 30.4\% of classes depending on Unity's
+runtime for instantiation, together with the growth in declared interfaces from nine to
+sixteen, is broadly consistent with the view that coupling to a specific framework or engine
+can constitute a form of architectural technical debt that accumulates gradually and is not
+always made explicit in practice. The dependency-inversion-oriented patterns applied during
+the restructuring, particularly the adapted Model-View-Presenter arrangement and the use of
+Adapter and Facade to isolate Unity-specific services, were directed at this kind of coupling.
+It is worth noting that this decoupling remains partial: Presenters still obtain match state
+through a global, engine-managed component, which suggests that the restructuring addressed
+some of the more tractable instances of engine coupling first, rather than removing it
+uniformly across the system.
+
+One aspect that seems relevant to note is that the improvements in maintainability and
+coupling occurred while the codebase itself grew by 12.6\% in effective lines of code.
+Systems that grow without any accompanying structural intervention might be expected to
+accumulate additional coupling and complexity as a byproduct of that growth; here, coupling
+decreased and maintainability improved despite continued growth, which may suggest that the
+restructuring played some active role rather than simply coinciding with an otherwise stable
+period of development. This observation relates, tentatively, to the attribution question
+raised in RQ3: the components that were the explicit object of extraction and separation work
+showed reductions in size and complexity that were larger than the system-level average,
+while the system as a whole continued to expand. This pattern, in which the effect appears
+more concentrated in the targeted components than diffused across the entire codebase, offers
+some indication, though not conclusive evidence, that the observed improvements are related
+to the restructuring rather than to concurrent growth alone.
+
+At the same time, the unchanged maximum cyclomatic complexity and the stable proportion of
+members exceeding a complexity of 10 suggest that the restructuring may have improved the
+distribution of responsibilities and reduced coupling more than it reduced the complexity of
+the system's most demanding individual members. A possible interpretation is that a
+refactoring strategy concentrated on a smaller number of components that had accumulated the
+largest share of responsibilities can be helpful for structural organization and coupling,
+without necessarily guaranteeing a reduction in worst-case local complexity, which might call
+for more targeted attention on its own.
+
+Taken together, these findings offer a modest contribution to the empirical literature on the
+relationship between refactoring and internal software quality, a literature developed
+largely around enterprise and general-purpose systems, by considering this relationship in
+the more specific context of engine-coupled game software, a context that remains
+comparatively underexplored despite some practitioner-oriented acknowledgment of the problem.
+
+\section{Threats to Validity}\label{sec6}
+
+This study is subject to a number of limitations that should be considered when interpreting
+its results. Regarding construct validity, the metrics adopted here, including the
+Maintainability Index, cyclomatic complexity, and efferent coupling, are established in the
+software engineering literature but remain imperfect proxies for maintainability and design
+quality, and a composite index such as the Maintainability Index can mask variation in its
+constituent measures. Engine coupling was operationalized as the proportion of classes
+inheriting from \texttt{MonoBehaviour} or \texttt{ScriptableObject}, which captures structural
+dependency on the engine's instantiation mechanism but does not capture more indirect forms
+of coupling, such as components that access engine-managed state through other means; the
+residual dependency of Presenters on a global, engine-managed component for match state,
+discussed in Section~5, is one example of a coupling that this particular metric does not
+register.
+
+With respect to internal validity, the restructuring examined in this study occurred
+concurrently with continued growth of the codebase, which introduces a potential confound
+between the effect of the restructuring itself and the effect of general system evolution.
+Section~5 suggests that the concentration of quality improvements in the components directly
+targeted by the restructuring, rather than their uniform distribution across the growing
+codebase, is more consistent with an effect related to the restructuring than to growth
+alone; this interpretation, however, is based on observational evidence within a single case
+and should not be taken as a substitute for a controlled comparison. All measurements were
+also conducted by the same team responsible for the restructuring, and no independent
+verification of the reported metrics was performed. The absence of an automated test suite
+during the period covered by this study means that the preservation of external behavior
+across versions B and C could not be independently corroborated; the separation between the
+domain and data layers and the Unity runtime currently relies on development discipline
+rather than on a mechanism enforced by the compiler or by an automated test suite.
+
+As for external validity, this study examines a single system developed by a single team
+using a single game engine, and the extent to which the observed relationship between engine
+decoupling and internal quality generalizes to other Unity-based projects, to projects built
+on different engines, or to teams with different practices and levels of experience cannot be
+established from a single case. The case may nonetheless be illustrative of a pattern that is
+plausible in other small-team, engine-coupled projects, and the reported effect sizes and
+metric definitions are offered to support comparison with future replications rather than to
+establish a generalizable quantitative relationship on their own.
+
+Finally, regarding reliability, the static analysis tooling and the measurement routine used
+in this study are versioned in the project repository and can be re-executed against the
+analyzed versions, which supports the auditability of the reported results. No second,
+independent execution of the analysis by a different team was performed, and the
+classification of components as directly targeted by the restructuring, used to address RQ3,
+was made by the same team that conducted the restructuring, which may introduce some bias in
+the selection of which components are reported as having been directly affected.
+
+\section{Conclusion}\label{sec7}
+
+This paper reported a case study on the architectural restructuring of Molz, a Unity-based
+serious game, comparing two states of the same codebase before and after the introduction of
+an explicit layered organization, an adapted Model-View-Presenter arrangement, and a set of
+dependency-inversion-oriented design patterns. Between the compared versions, the proportion
+of classes coupled to the Unity engine decreased from 42.3\% to 30.4\%, the number of declared
+interfaces increased from nine to sixteen, and both the average and median Maintainability
+Index improved, while the codebase itself grew by 12.6\% in effective lines of code. The
+components that were the explicit target of the restructuring showed reductions in size and
+complexity considerably larger than the system-level average, suggesting that the observed
+improvements, while modest at the system level, were more concentrated in the parts of the
+system that the restructuring effort directly addressed.
+
+Taken together, these findings offer some empirical indication that applying general-purpose
+architectural principles, such as separation of concerns and dependency inversion, to an
+engine-coupled game codebase can be associated with measurable gains in internal quality,
+even as the system continues to evolve and grow. This relationship has been comparatively
+underexplored in the context of game software, and this study offers a modest, single-case
+contribution toward addressing that gap, rather than a generalizable claim about the
+relationship between engine decoupling and software quality across game projects more
+broadly.
+
+This study has several limitations, discussed in more detail in Section~6, that should be
+kept in mind when interpreting its contribution. The evidence presented here comes from a
+single system, developed by a single team, and measured by the same people who conducted the
+restructuring; the residual coupling between Presenters and engine-managed match state also
+indicates that the decoupling achieved so far remains partial rather than complete.
+
+Future work may extend this study in several directions. A more granular analysis based on
+version control history could help disentangle the effect of the restructuring from that of
+concurrent system growth with greater precision than the component-level comparison presented
+here. The introduction of an automated test suite, not yet part of the system examined in this
+study, would also allow the preservation of external behavior across versions to be verified
+independently rather than relied upon as a matter of development discipline. Finally,
+replicating this comparison on other Unity-based projects, or on projects built on different
+engines, would help clarify the extent to which the patterns observed here reflect a broader
+relationship between engine coupling and internal software quality, rather than
+characteristics specific to this particular case.
+
+
+
+
+% \PrintIndex
+\end{document}
+
