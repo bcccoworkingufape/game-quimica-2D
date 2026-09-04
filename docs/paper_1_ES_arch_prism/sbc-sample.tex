@@ -51,7 +51,7 @@
 \textbf{Abstract}
 
 %% ABSTRACT -- written last, see Section ordering in the writing protocol.
-Refactoring is most often studied as an activity that adds structure to a system. Less empirical evidence exists for the opposite direction: what happens to internal software quality indicators when abstractions that carry no concrete responsibility are removed from a working system, and how such movements should be read when the intervention itself changes the population of components being measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game for organic chemistry. Three pinned states of the same system were measured with a single frozen instrument: the pre-intervention baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D. The control was necessary: the removed subset had a higher mean maintainability index (80.3 against 72.5) and lower mean efferent coupling (4.50 against 11.4) than the system, so deleting it changed the composition of the measured population and moved every aggregate mean in the less favourable direction while structural size fell. Between D0 and D the system lost five classes and gained two interfaces and six members --- simplification here meant changing which abstractions exist, not minimising how many --- while the aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, mean efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two (maintainability $-0.06$, complexity $+0.01$), showing the aggregate movements to be composition effects rather than changes in surviving code, though all magnitudes are small. Coupling rose among the 19 surviving directly refactored types (26.84 to 28.37), concentrating dependencies in components that absorbed responsibilities previously held by separate mapper types. The set of types holding an explicit engine reference was identical in both states (23 types); its percentage rose from 35.4\% to 38.3\% through denominator change alone. Behaviour covered by the validation protocol was preserved under 118 characterization and architecture-invariant tests, a clean engine import and manual full-flow verification. Two a-priori simplification hypotheses were rejected by implementation evidence rather than confirmed. The study contributes a simplification protocol in which retention decisions are recorded as outcomes, a control design separating dead-code removal from architectural change, and evidence that aggregate internal quality indicators are sensitive to population composition in ways that can invert their apparent direction.
+Refactoring is commonly framed as an activity that adds structure to a system. In the literature surveyed for this study, empirical evidence was more readily found for refactoring that introduces or redistributes structure than for interventions centred on removing or consolidating architectural abstractions. Less is therefore established about the opposite direction: what happens to internal software quality indicators when abstractions that carry no concrete responsibility are removed from a working system, and how such movements should be read when the intervention itself changes the population of components being measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game for organic chemistry. Three pinned states of the same system were measured with a single frozen instrument: the pre-intervention baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D. The control was necessary: the removed subset had a higher mean maintainability index (80.3 against 72.5) and lower mean efferent coupling (4.50 against 11.4) than the system, so deleting it changed the composition of the measured population and moved every aggregate mean in the less favourable direction while structural size fell. Between D0 and D the system lost five classes and gained two interfaces and six members --- simplification here meant changing which abstractions exist, not minimising how many --- while the aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, mean efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two: population composition accounted for the direction of the aggregate signal, while the surviving members themselves moved slightly the other way (maintainability $-0.06$, complexity $+0.01$). All magnitudes are small in absolute terms. Coupling rose among the 19 surviving directly refactored types (26.84 to 28.37), concentrating dependencies in components that absorbed responsibilities previously held by separate mapper types. The set of types holding an explicit engine reference was identical in both states (23 types); its percentage rose from 35.4\% to 38.3\% through denominator change alone. Behaviour covered by the validation protocol was preserved: a 68-test baseline characterization suite written against C, grown during the intervention to 118 tests in state D (103 behavioural, 15 architecture invariants), together with a clean engine import and manual full-flow verification. Two a-priori simplification hypotheses were rejected by implementation evidence rather than confirmed. The study contributes a simplification protocol in which retention decisions are recorded as outcomes, a control design separating dead-code removal from architectural change, and evidence that aggregate internal quality indicators are sensitive to population composition in ways that can invert their apparent direction.
 \end{abstract}
 
 \begin{keywords}
@@ -67,14 +67,16 @@ Software architecture, Architectural refactoring, Internal software quality, Mai
 
 Refactoring is defined as a change to the internal structure of software that
 makes it easier to understand and cheaper to modify without altering its
-observable behaviour \cite{fowler2018,mens2004}. In empirical studies the
-activity is most often observed in one direction: structure is added. Classes
-are extracted, interfaces are introduced, responsibilities are distributed
-across new components. The catalogues of code smells contain the opposite case
-as well --- Speculative Generality, Lazy Class, Middle Man, Dead Code
-\cite{fowler2018} --- but the evidence base for removing structure is thinner
-than the evidence base for adding it, and thinner still at the level of
-architecture rather than of individual classes.
+observable behaviour \cite{fowler2018,mens2004}. In the empirical literature we
+surveyed, the activity was most readily found in one direction: structure is
+added. Classes are extracted, interfaces are introduced, responsibilities are
+distributed across new components. The catalogues of code smells contain the
+opposite case as well --- Speculative Generality, Lazy Class, Middle Man, Dead
+Code \cite{fowler2018} --- but among the studies we located, evidence for
+removing structure was less abundant than evidence for adding it, and scarcer
+still at the level of architecture rather than of individual classes. Our search
+was targeted rather than systematic (Section~\ref{sec:gap}), so we report this as
+the shape of the evidence we found and not as a characterization of the field.
 
 This matters because the two directions do not behave symmetrically under
 measurement. Aggregate indicators such as the maintainability index
@@ -224,8 +226,7 @@ consequence of poor metric profiles or of the presence of smells. Palomba et
 al.\ \cite{palomba2018} found that the impact of smells on maintainability
 varies substantially by smell type and by system.
 
-Removal of structure has been studied most systematically in the specific case
-of dead code. Romano et al.\ \cite{romano2020} report a multi-study
+One well-studied form of structural removal is dead and unused code. Romano et al.\ \cite{romano2020} report a multi-study
 investigation showing that dead code is widespread and that developers perceive
 it as harmful to comprehensibility, and Eder et al.\ \cite{eder2012} measured
 unused code in an industrial system and its relation to maintenance effort.
@@ -546,24 +547,80 @@ singleton for another was not counted as simplification.
 
 \subsection{Functional-Parity Protocol}
 
-The criterion for the experiment is $\mathrm{Behaviour}(\text{C}) =
-\mathrm{Behaviour}(\text{D})$. Because the object is an engine-based game whose
+The experimental target was behavioural preservation between C and D for the
+behaviour covered by the validation protocol. We do not claim, and did not
+attempt to establish, formal functional equivalence between the two states;
+what follows describes operationally what was verified and therefore the scope
+of the preservation claim. Because the object is an engine-based game whose
 wiring lives partly in serialized scene data, no single verification technique
-is sufficient. Five were combined.
+is sufficient, so five were combined.
 
-\emph{Characterization and invariant tests.} A suite of 118 tests was written
-against state C before any modification and kept unchanged thereafter. It
-covers data loading and deserialization, solubility rules, gameplay rules,
-session state, entity invariants, repository materialization, scoring, indicator
-semantics, and two architecture-boundary invariants enforced by source scanning.
-The suite compiles the engine-free production files outside Unity; it is not
-part of the population measured by the instrument.
+\emph{Behavioural characterization tests.} A baseline characterization suite of
+\textbf{68 tests} was written against state C \emph{before} any modification, and
+covered data loading and deserialization, solubility rules, gameplay rules,
+session state, and the mapping behaviour of the data layer. That baseline was the
+reference for the dead-code control: state D0 passed the same 68 tests, unchanged.
 
-The suite deliberately preserves several behaviours that would ordinarily be
-treated as defects, including a difficulty asset with a zero score multiplier,
-a divergence in the default difficulty, an inert branch in a UI controller, and
-the specific parsing policy applied to malformed dataset entries. Correcting any
-of them would have changed behaviour and broken the parity criterion.
+The suite then grew \emph{during} the intervention. Before or alongside each
+stage that touched a behaviour not yet pinned down, tests were added to
+characterize that behaviour first, so that the stage could be evaluated against
+it: a nine-case deserialization spike and two further data-loading cases before
+the DTO removal, repository materialization and entity invariant tests around the
+mapper consolidation, score multiplier tests before the scoring change, and
+indicator semantics tests before ownership of the reagent rule moved into the
+domain. Thirteen mapping tests were retired together with the mapper types whose
+behaviour they characterized, their coverage being taken over by the repository
+materialization and entity invariant tests written for the new arrangement. Once
+added, every test remained in force for all subsequent stages.
+
+State D therefore ends with \textbf{118 tests passing}, of which \textbf{103 are
+behavioural characterization tests} and \textbf{15 are architecture invariant
+tests} (Table~\ref{tab:suite}). The 118/118 figure is evidence about the final
+suite; it is not a claim that all 118 tests existed before the first change to C.
+
+\emph{Architecture invariant tests.} Fifteen of the final tests do not exercise
+behaviour at all. They scan the source of the measured tree and assert structural
+properties --- that no call site outside the audio adapter reaches the engine
+audio singletons directly, and that the view contracts carry no engine types.
+These were introduced by the stages that established the properties they guard,
+and they are reported separately because they are evidence of \emph{structural}
+conformance and contribute nothing to the argument for behavioural preservation.
+
+The behavioural suite compiles the engine-free production files outside Unity; it
+is not part of the population measured by the instrument. It deliberately
+preserves several behaviours that would ordinarily be treated as defects,
+including a difficulty asset with a zero score multiplier, a divergence in the
+default difficulty, an inert branch in a UI controller, and the specific parsing
+policy applied to malformed dataset entries. Correcting any of them would have
+changed behaviour and broken the preservation target.
+
+\begin{table}[htb]
+\centering
+\caption{Growth of the validation suite. The baseline was written against C
+before any modification; later tests were added by the stages that touched the
+behaviour or property they characterize.}
+\label{tab:suite}
+\small
+\begin{tabular}{lrl}
+\toprule
+\textbf{Added} & \textbf{Tests} & \textbf{Kind} \\
+\midrule
+Baseline, against C            & 68  & behavioural \\
+\quad \emph{unchanged through Stage A (D0)} & \emph{68} & \emph{behavioural} \\
+\addlinespace
+Deserialization spike, Stage B & 11  & behavioural \\
+Repository materialization, Stage B & 14 & behavioural \\
+Entity invariants, Stage B     & 5   & behavioural \\
+\quad \emph{mapping tests retired with the mapper types} & \emph{$-13$} & \emph{behavioural} \\
+Audio boundary, Stage C        & 9   & architecture invariant \\
+Score multiplier, Stage E      & 8   & behavioural \\
+Indicator semantics, Stage F   & 10  & behavioural \\
+View boundary, Stage G         & 6   & architecture invariant \\
+\midrule
+\textbf{State D, final}        & \textbf{118} & \textbf{103 + 15} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \emph{Compilation.} Both through an isolated project definition and through the
 engine's own assembly, in each state.
@@ -636,7 +693,8 @@ Three analyses were performed on the frozen measurements.
 
 \emph{Aggregate comparison.} All summary values were recomputed from the raw
 per-type and per-member records in each state and cross-checked against the
-instrument's own summary; all 42 values matched.
+instrument's own summary. All 48 values --- 16 indicators across three states ---
+matched.
 
 \emph{Matched-population analysis.} Aggregate means confound two phenomena:
 change inside surviving components, and change in the population being averaged.
@@ -652,9 +710,10 @@ per-type quantities; cyclomatic complexity and maintainability index are
 per-member quantities, and group-level values for them are means over the
 members belonging to the group, never aggregated per type.
 
-No statistical significance testing was performed. The study measures one
-system at three points in time; there is no sample over which a test would be
-defined, and no test is reported.
+Inferential significance testing was not used, because the study observes the
+complete measured component population of a single system at fixed states and
+does not posit a sampling model that would justify such inference. All reported
+quantities are descriptive, and no test is reported.
 
 \medskip\noindent\textbf{Chain of evidence.} Every quantitative statement in
 Section~\ref{sec:results} can be traced backwards through a fixed path: from the
@@ -664,8 +723,12 @@ computed from. Every architectural statement traces from the claim, to the row o
 Table~\ref{tab:rq1}, to the audit record holding that concern's evidence and
 decision, to the stage commit that implemented it --- or, for a retention, to the
 recorded rationale for not changing anything. The RQ3 category of a file is
-determined by which stage commits touched it, so classification and measurement
-come from independent artefacts.
+determined by which stage commits touched it, whereas its metrics are computed
+from the measured source states, so the two are read from \emph{distinct}
+artefacts. They are not independent in a statistical or causal sense: both
+ultimately derive from the same source changes, which is why
+Section~\ref{sec:rq3} states the circularity in the containment result rather
+than treating the classification as externally validated.
 
 \medskip\noindent\textbf{Use of AI assistance.} The code changes constituting
 the intervention were implemented with the assistance of an LLM-based coding
@@ -849,8 +912,9 @@ Table~\ref{tab:matched} separates them.
 
 \begin{table}[htb]
 \centering
-\caption{Matched-population analysis, D0 $\rightarrow$ D. The sign of the
-system-wide MI and CC movement inverts once the population is held fixed.}
+\caption{Matched-population analysis, D0 $\rightarrow$ D. Holding the population
+fixed reverses the direction of the system-wide MI and CC movement; the matched
+members themselves also change, by small amounts.}
 \label{tab:matched}
 \small
 \begin{tabular}{lrrr}
@@ -873,18 +937,25 @@ Coupling of removed types  & 5.00  & ---   & --- \\
 
 Three observations follow.
 
-\emph{First, the signs invert.} The aggregate MI mean rises while matched-member
-MI falls; the aggregate CC mean falls while matched-member CC rises. Both
-aggregate movements are composition effects, driven by the eleven new members ---
-largely simple properties with high MI --- and the five removed ones. Reporting
-the aggregate delta alone would have supported the statement that maintainability
-improved slightly; the matched analysis shows that within surviving code it did
-not.
+\emph{First, the direction reverses.} The aggregate MI mean rises while
+matched-member MI falls; the aggregate CC mean falls while matched-member CC
+rises. Two phenomena are present at once, and neither is absent. Population
+composition --- the eleven new members, largely simple properties scoring high on
+MI, and the five removed ones --- reversed the direction of the aggregate signal.
+At the same time the surviving members did change, by $-0.06$ on MI and $+0.01$ on
+CC. The correct statement is therefore that composition reversed the direction of
+the aggregate movement, while the change among surviving members was small and
+opposite in direction to it --- not that the surviving code was unchanged.
+Reporting the aggregate delta alone would have supported the statement that
+maintainability improved slightly; the matched analysis does not support that
+reading.
 
-\emph{Second, the magnitudes are negligible either way.} Only 65 of 442 matched
-members (14.7\%) changed MI at all, and only 12 (2.7\%) changed CC. On scales of
-0--100 and roughly 2.4, movements of 0.06 and 0.01 carry no practical weight in
-either direction.
+\emph{Second, the magnitudes are small in absolute terms.} Only 65 of 442 matched
+members (14.7\%) changed MI at all, and only 12 (2.7\%) changed CC. The movements
+are 0.06 on a 0--100 scale and 0.01 on a scale whose observed mean is about 2.4.
+We do not infer practical significance from changes of this magnitude, in either
+direction, and we did not adopt a threshold that would license such an
+inference.
 
 \emph{Third, the coupling increase is real and partly genuine.} Of the $+6.08$
 raw increase in the directly refactored group, $+1.53$ is within-type change
@@ -913,8 +984,9 @@ Present only in D          & --- (empty) \\
 
 The set is identical. The percentage rose from 35.4\% to 38.3\% because the
 class population fell from 65 to 60 while the absolute count stayed constant.
-The movement of that percentage is therefore a denominator effect and carries no
-information about engine dependency.
+The percentage remains an accurate description of each state's composition; what
+it does not indicate is that any type entered the engine-coupled set, since that
+set was the same in D0 and D.
 
 This is the clearest single result of the study, and it contradicted an
 expectation that had been central to the earlier framing of the work.
@@ -1044,14 +1116,16 @@ The clearest methodological lesson of this study is that an aggregate mean over
 a population that is itself being modified is a poor instrument for evaluating
 an intervention that modifies the population.
 
-Two of our three principal indicators change sign between the aggregate and the
-matched view (Table~\ref{tab:matched}). Had we reported only the aggregate, the
-natural narrative would have been that simplification produced a small
+Two of our three principal indicators change direction between the aggregate and
+the matched view (Table~\ref{tab:matched}). Had we reported only the aggregate,
+the natural narrative would have been that simplification produced a small
 improvement in maintainability and a small reduction in complexity. The matched
-analysis shows that within the 442 members present in both states, maintainability
-moved down by 0.06 and complexity up by 0.01 --- and that the aggregate movement
-came from eleven newly introduced members, mostly simple properties that score
-well on MI.
+analysis shows something different on two counts at once: within the 442 members
+present in both states, maintainability moved down by 0.06 and complexity up by
+0.01, and the aggregate signal was pulled the other way by eleven newly
+introduced members, mostly simple properties that score well on MI. The
+surviving code did change; what the composition of the population did was
+reverse the direction the aggregate reported.
 
 Both readings are arithmetically correct. They answer different questions. The
 aggregate answers ``what is the profile of the system that now exists''; the
@@ -1059,10 +1133,12 @@ matched analysis answers ``what happened to the code that survived''. For
 evaluating an intervention, the second is the relevant one, and it is the one
 the literature reports less often.
 
-The same point applies with more force to the control transition. Removing
-unreachable code is uncontroversially good practice \cite{romano2020,eder2012},
-and it made every normalized indicator in this system worse. Nothing about the
-surviving code changed; the composition of the population did. A study that
+The same point applies with more force to the control transition, and there it
+applies cleanly. Removing unreachable code is uncontroversially good practice
+\cite{romano2020,eder2012}, and it moved every normalized indicator in this
+system in the less favourable direction. In that transition no surviving code was
+edited at all, so the entire movement is attributable to the change in the
+population being averaged. A study that
 combined dead-code removal with an architectural intervention and reported the
 aggregate delta would have attributed this movement to the architecture.
 
@@ -1110,10 +1186,11 @@ movement as reduced dependence would be equally unfounded. Where the population
 changes, the set and its differences carry the information; the percentage does
 not.
 
-The practical implication for engine-based systems is that engine dependency
-should be reported as a set, and its change as a set difference. A percentage
-whose denominator is the class population will move whenever the population
-moves, for reasons that have nothing to do with the engine.
+The reporting practice this suggests is correspondingly modest. For
+interventions that change the class population, reporting the engine-coupled set
+and its set difference alongside the percentage avoids denominator ambiguity: the
+percentage still describes each state, but only the set difference answers
+whether any component entered or left engine dependence.
 
 \subsection{Responsibility as a Decision Rule}
 
@@ -1195,8 +1272,10 @@ report matched-population results alongside aggregate ones, and should separate
 deletion effects from restructuring effects. In this study the deletion effect
 was larger than the restructuring effect on every aggregate indicator.
 
-For \emph{practitioners} working on engine-based systems: engine dependency is
-best tracked as a set of types rather than as a percentage, and abstractions
+For \emph{practitioners} working on engine-based systems: where an intervention
+changes the class population, tracking the engine-coupled set alongside the
+percentage removes an ambiguity the percentage alone cannot resolve; and
+abstractions
 should be assessed against the responsibility they discharge in the composed,
 running system --- not against the catalogued pattern they resemble in source
 \cite{gamma1995}.
@@ -1251,7 +1330,8 @@ whole pipeline including the analyzer output. An instrument defect found during
 the study was corrected, after which state C was re-measured and produced
 byte-identical results, establishing that all three states were measured by the
 same version. The measured system, the instrument, the raw per-type and
-per-member records and the analysis scripts are in the public repository.
+per-member records and the analysis scripts are versioned in the study
+repository and will be published as described under Data availability.
 
 \medskip\noindent\textbf{Researcher bias.} The authors performed both the
 intervention and its analysis, which is the standard threat in improving case
@@ -1264,9 +1344,13 @@ before the manuscript was written. We did not seek to demonstrate that D is
 better than D0, and we report the results that contradicted our initial framing.
 
 \medskip\noindent\textbf{Functional equivalence.} The parity evidence is strong
-but it is evidence, not proof. The 118 characterization and invariant tests, the
+but it is evidence, not proof. The 103 behavioural characterization tests, the
 clean engine import, the manual full-flow walkthrough and the post-stage smoke
-verification cover the behaviour they cover. We claim behavioural preservation
+verification cover the behaviour they cover; the 15 architecture invariant tests
+attest structural properties and contribute nothing to the behavioural argument.
+A further limitation follows from the suite's incremental history
+(Table~ef{tab:suite}): only the 68 baseline tests constrained every stage,
+while later tests constrained only the stages that followed them. We claim behavioural preservation
 for that scope and no more; we do not claim formal functional equivalence.
 Structural differences on paths that no verification reaches were recorded rather
 than hidden.
@@ -1299,11 +1383,12 @@ while introducing two that expressed one.
 Answering RQ2, the aggregate indicators moved very little between D0 and D --- MI
 71.7 to 71.8, CC 2.39 to 2.38, mean efferent coupling 12.8 to 13.4 --- and a
 matched-population analysis over the 442 members present in both states reversed
-the direction of the first two, showing the aggregate movements to be composition
-effects rather than changes in surviving code. All four magnitudes are small, and
-we draw no conclusion about maintainability or complexity from their size; the
-result of interest is the sensitivity of the aggregate to population composition,
-not the direction of a hundredth of a point. The set of engine-coupled types
+the direction of the first two: population composition determined the direction
+the aggregate reported, while the surviving members moved slightly the other way.
+All four magnitudes are small in absolute terms, and we infer no practical
+significance from them; the result of interest is the sensitivity of the
+aggregate to population composition, not the direction of a hundredth of a
+point. The set of engine-coupled types
 was identical in both states; only its percentage moved, through denominator
 change.
 
@@ -1320,9 +1405,11 @@ architectural intervention.
 
 The study's central methodological claim is that interventions which change the
 population of components cannot be evaluated by aggregate means alone. Its
-central empirical observation is that in an engine-based system, the set of
-components depending on the engine is fixed by the engine's composition model
-and is not a variable that layer reorganization can move.
+central empirical observation is narrower and strictly local to this case: in
+this intervention, the set of types explicitly referencing Unity remained
+unchanged despite the layer-level reorganization. We do not generalize that to
+engine-based systems at large, and Section~\ref{sec:discussion} notes that a
+differently targeted intervention might well have moved the set.
 
 Several directions remain open. Measuring after each stage rather than only at
 the endpoints would permit attribution within the intervention. Repeating the
@@ -1345,18 +1432,22 @@ system studied here.
 
 \section*{Data availability}
 
-The system under study, the three pinned states, the measurement instrument and
-the complete raw measurement output are publicly
-available.\footnote{\url{https://github.com/bcccoworkingufape/game-quimica-2D}}
-The replication package comprises: the commit identifiers, annotated tags and
-frozen branches for states C, D0 and D; the measurement instrument at its frozen
-commit, together with the analyzer versions and the environment manifest; the
-per-type and per-member records and the analyzer output for each state; the
-aggregation and matched-population analysis scripts; the characterization and
-architecture-invariant test suite; and the state-freeze and results-analysis
-records that document the intervention chain and the component classification.
-Re-running the instrument at the pinned commits reproduces the reported records;
-determinism was confirmed by a byte-identical re-execution.
+The system under study is an open research artefact and its pre-intervention
+state C is public in the project
+repository.\footnote{\url{https://github.com/bcccoworkingufape/game-quimica-2D}}
+The remaining replication artefacts are versioned in the study repository but
+are not yet published; they will be archived in a public, DOI-minted snapshot
+for submission.
+
+That snapshot comprises: the commit identifiers, annotated tags and frozen
+branches for states C, D0 and D; the measurement instrument at its frozen commit,
+together with the analyzer versions and the environment manifest; the per-type
+and per-member records and the analyzer output for each state; the aggregation
+and matched-population analysis scripts; the validation suite in its final form;
+and the state-freeze and results-analysis records documenting the intervention
+chain and the component classification. Re-running the instrument at the pinned
+commits reproduces the reported records; determinism was confirmed by a
+byte-identical re-execution.
 
 \section*{Declarations}
 
