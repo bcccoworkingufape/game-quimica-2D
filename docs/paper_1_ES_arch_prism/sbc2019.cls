@@ -19,14 +19,14 @@
 \RequirePackage[book]{FiraSans}
 \RequirePackage{caption}
 \RequirePackage{fancyhdr}
+\RequirePackage{array}
 
 \RequirePackage{fontspec}
 
 
-\RequirePackage[A4,top=.4in,includehead,headsep=20pt,headheight=28pt,left=.70in,textwidth=41.5pc,textheight=60pc,columnsep=18pt,footskip=18pt]{geometry}
+\RequirePackage[a4paper,top=.4in,includehead,headsep=20pt,headheight=37pt,left=.70in,textwidth=41.5pc,textheight=60pc,columnsep=18pt,footskip=18pt]{geometry}
 
 %\renewcommand*\ttdefault{cmvtt}
-\usepackage{fontspec}
 \setmainfont{Times New Roman}
 
 \renewcommand{\title}[2][]{%
@@ -65,7 +65,7 @@
 \def\engtitlefont{\fontsize{12}{14}\bfseries\selectfont\raggedright\mathversion{normal}}
 \def\authorfont{\normalsize\rightskip5.5pc\vskip1.0pt \mathversion{normal}}
 
-%\def\affilfont{\footnotesize\vskip1.5pt \raggedright\mathversion{normal}}
+\def\affilfont{\footnotesize\vskip1.5pt \raggedright\mathversion{normal}}
 
 %\usepackage{scrextend}
 %\deffootnote{0em}{1.6em}{\thefootnotemark.\enskip
@@ -73,14 +73,11 @@
 %\deffootnotemark{\textsuperscript{(\thefootnotemark)}}
 
 
-\def\abstractfont{\small\rightskip5.5pc}
+\def\abstractfont{\small\raggedright\rightskip5.5pc}
 \def\keywordfont{\small\rightskip5.5pc\itshape}
 \def\licensefont{\footnotesize}
 
 %% Section
-
-\usepackage{sectsty}
-
 
 \def\sectionfont{\fontsize{11}{11}\bfseries\rightskip1pc plus1fill\mathversion{bold}}
 \def\subsectionfont{\normalsize\bfseries\rightskip1pc plus1fill\mathversion{bold}}
@@ -116,7 +113,7 @@
   \lhead[L]{\footnotesize%
     \emph{\vskip6pt \@jtitle}\ifdefempty{\@jid}{}%
     \ifdefempty{\@doi}{}{doi:\space\@doi}\\%
-    \scriptsize \ifdefempty{\@copyrightstatement}{}{\vskip3pt \faCreativeCommons~~\@copyrightstatement.\\}%
+    \scriptsize \ifdefempty{\@copyrightstatement}{}{\vskip3pt \ccby~~\@copyrightstatement.\\}%
   }
 % \cfoot{\thepage}
   \cfoot{}
@@ -132,7 +129,7 @@
 
 \newenvironment{keywords}{%
   \noindent\keywordfont\textit{\textbf{Keywords: }}%
-}{\vskip6pt \rule{\linewidth}{.27pt}\vskip12pt}
+}{\vskip6pt \rule{\dimexpr\linewidth-5.5pc\relax}{.27pt}\vskip12pt}
 \newenvironment{license}{%
   \noindent\licensefont{\faCreativeCommons}%
 }{\vskip6pt \rule{\linewidth}{.27pt}\vskip12pt }
@@ -179,6 +176,7 @@
 \setlist[unnumlist]{label={},leftmargin=2em,itemindent=-1em}
 
 \def\x{@{\extracolsep{\fill}}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \newcommand{\tabnote}[1]{\par\vskip1pt{\raggedright\tabnotefont #1\par}}
 
@@ -186,6 +184,9 @@
 \setlength{\bibsep}{0.3mm}
 
 \frenchspacing
+\raggedbottom
+\setlength{\emergencystretch}{1em}
+\hbadness=10000
 
 \addtolength{\textfloatsep}{-0.0cm}
 \setlength\textfloatsep{0.2cm}

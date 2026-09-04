@@ -1,11 +1,12 @@
+% !TeX program = xelatex
 \documentclass{sbc2019}%
 
 \usepackage{graphicx}
-\usepackage[utf8]{inputenc}
 %\usepackage[brazil]{babel}
 \usepackage[misc,geometry]{ifsym}
 \usepackage{fontspec}
 \usepackage{fontawesome}
+\usepackage{ccicons}
 \usepackage{academicons}
 \usepackage{color}
 \usepackage{hyperref}
@@ -36,10 +37,9 @@
 %% NEEDS SOURCE: the definitive author list and the ORCID identifiers for this
 %% paper have not been fixed yet. The two authors below are the ones documented
 %% in the PIBIC 2025--2026 research plan and final report.
-\author[Rezende and Rocha 2026]{
-\affil{\textbf{Jo\~ao Guilherme Benjamin Alves de Rezende}~~[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:benj7100@gmail.com}{~\textbf{\textit{benj7100@gmail.com}}} ]}
+\author[Rezende and Rocha 2026]{\affil{\textbf{Jo\~ao Guilherme Benjamin Alves de Rezende}\quad[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:benj7100@gmail.com}{~\textbf{\textit{benj7100@gmail.com}}} ]}
 
-\affil{\textbf{Rodrigo Gusm\~ao de Carvalho Rocha}~~[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:rodrigo.rocha@ufape.edu.br}{~\textbf{\textit{rodrigo.rocha@ufape.edu.br}}} ]}
+\affil{\textbf{Rodrigo Gusm\~ao de Carvalho Rocha}\quad[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:rodrigo.rocha@ufape.edu.br}{~\textbf{\textit{rodrigo.rocha@ufape.edu.br}}} ]}
 }
 
 \begin{document}
@@ -67,33 +67,29 @@ Software architecture, Architectural refactoring, Internal software quality, Mai
 
 Refactoring is defined as a change to the internal structure of software that
 makes it easier to understand and cheaper to modify without altering its
-observable behaviour \cite{fowler2018,mens2004}. In the empirical literature we
+observable behaviour~\cite{fowler2018,mens2004}. In the empirical literature we
 surveyed, the activity was most readily found in one direction: structure is
 added. Classes are extracted, interfaces are introduced, responsibilities are
 distributed across new components. The catalogues of code smells contain the
 opposite case as well --- Speculative Generality, Lazy Class, Middle Man, Dead
-Code \cite{fowler2018} --- but among the studies we located, evidence for
+Code~\cite{fowler2018} --- but among the studies we located, evidence for
 removing structure was less abundant than evidence for adding it, and scarcer
 still at the level of architecture rather than of individual classes. Our search
 was targeted rather than systematic (Section~\ref{sec:gap}), so we report this as
 the shape of the evidence we found and not as a characterization of the field.
 
 This matters because the two directions do not behave symmetrically under
-measurement. Aggregate indicators such as the maintainability index
-\cite{coleman1994}, cyclomatic complexity \cite{mccabe1976} and efferent
-coupling \cite{martin2003} are means over a population of members or types.
+measurement. Aggregate indicators such as the maintainability index~\cite{coleman1994}, cyclomatic complexity~\cite{mccabe1976} and efferent
+coupling~\cite{martin2003} are means over a population of members or types.
 When structure is added, the population grows; when structure is removed, the
 population shrinks. A mean can therefore move without any surviving component
 having changed at all. Studies that report only aggregate deltas cannot
 distinguish the two, and the literature already reports that refactoring
-produces mixed rather than uniform metric outcomes
-\cite{szoke2017,bavota2015,palomba2018}.
+produces mixed rather than uniform metric outcomes~\cite{szoke2017,bavota2015,palomba2018}.
 
 Game software adds a further dimension. Games are built on engines that impose
-their own composition model, lifecycle and serialization mechanics
-\cite{aleem2016,politowski2025}, and engine-specific structures are a
-recognized source of maintainability problems
-\cite{nardone2023,borrelli2020}. In an engine-based system, a component's
+their own composition model, lifecycle and serialization mechanics~\cite{aleem2016,politowski2025}, and engine-specific structures are a
+recognized source of maintainability problems~\cite{nardone2023,borrelli2020}. In an engine-based system, a component's
 dependency on the engine is not a free design variable: it is partly fixed by
 the way the engine instantiates and wires objects. Whether architectural
 simplification can reduce that dependency, and what happens to internal quality
@@ -168,38 +164,34 @@ Section~\ref{sec:conclusion} concludes.
 
 \subsection{Internal Software Quality and Architecture}
 
-Maintainability is one of the product-quality characteristics of ISO/IEC 25010
-\cite{iso25010}, but the standard does not prescribe how to estimate it from
+Maintainability is one of the product-quality characteristics of ISO/IEC 25010~\cite{iso25010}, but the standard does not prescribe how to estimate it from
 source code. Practice has settled on a small set of structural proxies.
 
 The \emph{maintainability index} (MI) combines Halstead volume, cyclomatic
-complexity and lines of code into a single composite score
-\cite{coleman1994}. Its convenience is also its principal weakness: the
+complexity and lines of code into a single composite score~\cite{coleman1994}. Its convenience is also its principal weakness: the
 composite was calibrated on a specific corpus, and the relationship between the
 score and the maintenance effort actually experienced by developers is
 indirect. Systematic reviews of maintainability prediction report wide
-variation in which metrics are used and how they are validated
-\cite{riaz2009,ardito2020}. An influential alternative line of work argues that
+variation in which metrics are used and how they are validated~\cite{riaz2009,ardito2020}. An influential alternative line of work argues that
 maintainability is better assessed by mapping ISO characteristics onto several
 separately reported source-code properties --- volume, unit size, unit
 complexity, duplication, unit testing --- rather than collapsing them into one
-number \cite{heitlager2007}, and by benchmarking those properties against a
-population of comparable systems \cite{baggen2012}. Static analysers are the
+number~\cite{heitlager2007}, and by benchmarking those properties against a
+population of comparable systems~\cite{baggen2012}. Static analysers are the
 usual vehicle for collecting such properties at scale, and recent longitudinal
 work confirms both their practicality and the care their output demands: Berciu
 et al.\ \cite{berciu2026} analysed 3\,656 releases of 57 projects and report
 quality-issue distributions that shift with language and with release history
 rather than holding as absolutes.
 
-Cyclomatic complexity \cite{mccabe1976} has attracted a parallel critique.
-Shepperd \cite{shepperd1988} argued that the measure rests on weak theoretical
+Cyclomatic complexity~\cite{mccabe1976} has attracted a parallel critique.
+Shepperd~\cite{shepperd1988} argued that the measure rests on weak theoretical
 foundations and that, for a large class of software, it is largely a proxy for
 size. Since MI incorporates both cyclomatic complexity and lines of code, the
 two critiques compound.
 
-Coupling has a firmer conceptual basis. Chidamber and Kemerer
-\cite{chidamber1994} defined coupling between objects as the number of other
-classes a class depends upon, and Martin \cite{martin2003} defined efferent
+Coupling has a firmer conceptual basis. Chidamber and Kemerer~\cite{chidamber1994} defined coupling between objects as the number of other
+classes a class depends upon, and Martin~\cite{martin2003} defined efferent
 coupling at package level together with the dependency inversion principle,
 under which modules should depend on abstractions rather than on concrete
 implementations. Efferent coupling counts outgoing dependencies; it says how
@@ -214,8 +206,8 @@ in aggregate and in the opposite direction once the population is held fixed.
 
 \subsection{Architectural Refactoring and Simplification}
 
-Surveys of refactoring \cite{mens2004} and the catalogue of smells and
-corresponding transformations \cite{fowler2018} cover both the addition and the
+Surveys of refactoring~\cite{mens2004} and the catalogue of smells and
+corresponding transformations~\cite{fowler2018} cover both the addition and the
 removal of structure. Empirically, however, the reported outcomes of refactoring
 on internal quality attributes are mixed rather than uniformly positive.
 Sz\H{o}ke et al.\ \cite{szoke2017}, studying large-scale industrial systems,
@@ -250,8 +242,7 @@ deletions, are considerably rarer.
 \subsection{Game Software Architecture and Engine Dependency}
 
 Game development has been characterized as a distinct software engineering
-context, with its own process life cycle and its own recurring difficulties
-\cite{aleem2016}. Academic game software carries an additional one: Cerioli et
+context, with its own process life cycle and its own recurring difficulties~\cite{aleem2016}. Academic game software carries an additional one: Cerioli et
 al.\ \cite{cerioli2026} argue that student-built serious games are routinely
 treated as throwaway artefacts and consequently decay into abandonware, and
 propose treating them instead as legacy software with a maintenance life cycle.
@@ -282,11 +273,9 @@ remains insufficiently addressed for the question of this paper.
 
 The gap we claim is deliberately narrow. It is \emph{not} that architectural
 simplification is unstudied: architectural technical debt research studies the
-conditions under which structure becomes a liability
-\cite{verdecchia2020,verdecchia2021,li2022}, and refactoring research studies
-the removal of dispensable elements \cite{fowler2018,romano2020}. It is also
-not that mixed metric outcomes are unknown: they are reported repeatedly
-\cite{szoke2017,bavota2015,palomba2018}.
+conditions under which structure becomes a liability~\cite{verdecchia2020,verdecchia2021,li2022}, and refactoring research studies
+the removal of dispensable elements~\cite{fowler2018,romano2020}. It is also
+not that mixed metric outcomes are unknown: they are reported repeatedly~\cite{szoke2017,bavota2015,palomba2018}.
 
 What our search did not find is the \emph{combination} of three properties in a
 single study: (i) an intervention whose decision rule is the concrete
@@ -310,8 +299,7 @@ decisions intact.
 \begin{table*}[t]
 \centering
 \caption{What the surveyed literature covers, and what remains insufficiently
-addressed for the question studied here.}
-\label{tab:gap}
+addressed for the question studied here.}\label{tab:gap}
 \small
 \begin{tabular}{p{0.20\textwidth}p{0.38\textwidth}p{0.34\textwidth}}
 \toprule
@@ -319,31 +307,30 @@ addressed for the question studied here.}
 \midrule
 Refactoring and metrics &
 Catalogues of transformations and smells; large-scale evidence that effects on
-internal quality are mixed and often small \cite{fowler2018,mens2004,szoke2017,bavota2015,palomba2018} &
+internal quality are mixed and often small~\cite{fowler2018,mens2004,szoke2017,bavota2015,palomba2018} &
 Whether an observed aggregate movement reflects change in surviving components
 or a change in the population being averaged \\
 \addlinespace
 Architecture and maintainability &
 Composite and multi-property maintainability models, their calibration and
-their limits \cite{coleman1994,heitlager2007,baggen2012,riaz2009,ardito2020} &
+their limits~\cite{coleman1994,heitlager2007,baggen2012,riaz2009,ardito2020} &
 Behaviour of these indicators under an intervention that reduces the number of
 components rather than increasing it \\
 \addlinespace
 Technical debt &
 Grounded theory of architectural technical debt; erosion symptoms and their
-detection \cite{verdecchia2020,verdecchia2021,kruchten2012,li2022} &
+detection~\cite{verdecchia2020,verdecchia2021,kruchten2012,li2022} &
 Applied interventions with before/after measurement and a control for
 confounding deletions \\
 \addlinespace
 Game architecture and engine coupling &
 Engine architecture recovery and comparison; subsystem coupling patterns;
-Unity-specific smell catalogues and detectors \cite{politowski2025,ullmann2023,nardone2023,borrelli2020} &
+Unity-specific smell catalogues and detectors~\cite{politowski2025,ullmann2023,nardone2023,borrelli2020} &
 Whether restructuring a game changes the set of components that depend on the
 engine, as opposed to the proportion \\
 \addlinespace
 Simplification and removal of abstractions &
-Dispensable smells; empirical study of dead code and unused code
-\cite{fowler2018,romano2020,eder2012} &
+Dispensable smells; empirical study of dead code and unused code~\cite{fowler2018,romano2020,eder2012} &
 Removal decided per abstraction by its concrete responsibility, with retention
 and rejected hypotheses reported as results \\
 \bottomrule
@@ -355,7 +342,7 @@ and rejected hypotheses reported as results \\
 \section{Case Study Design}\label{sec:design}
 %% =========================================================================
 
-The study follows the guidelines of Runeson and H\"ost \cite{runeson2009} for
+The study follows the guidelines of Runeson and H\"ost~\cite{runeson2009} for
 case study research in software engineering. In their classification it is an
 \emph{improving} case study with an embedded design: the researchers intervened
 in the object and measured the outcome, and the analysis descends from the system
@@ -428,10 +415,9 @@ size and engine reference are type-level ones.
 
 \begin{table}[htb]
 \centering
-\caption{Units of analysis and data sources per research question.}
-\label{tab:units}
+\caption{Units of analysis and data sources per research question.}\label{tab:units}
 \small
-\begin{tabular}{p{0.06\columnwidth}p{0.40\columnwidth}p{0.36\columnwidth}}
+\begin{tabular}{p{0.07\columnwidth}p{0.39\columnwidth}p{0.36\columnwidth}}
 \toprule
 \textbf{RQ} & \textbf{Unit of analysis} & \textbf{Data source} \\
 \midrule
@@ -463,8 +449,7 @@ immutable commit and recovered for measurement in an isolated worktree
 \begin{table}[htb]
 \centering
 \caption{Experimental states. Each is pinned to a commit and a branch; C and D
-also carry annotated tags.}
-\label{tab:states}
+also carry annotated tags.}\label{tab:states}
 \small
 \begin{tabular}{llp{0.36\columnwidth}}
 \toprule
@@ -507,7 +492,7 @@ concrete and is not already discharged elsewhere.}
 \end{quote}
 
 Four outcomes were possible for each abstraction: REMOVE, MERGE, STRENGTHEN
-(the abstraction is justified but bypassed in practice) and KEEP. KEEP decisions
+(the abstraction is justified but bypassed in practice) and KEEP\@. KEEP decisions
 were recorded with their evidence, on the same footing as changes, so that a
 retention is reportable as a result rather than as the absence of one.
 
@@ -518,9 +503,8 @@ produced D0; stages B through H produced D.
 
 \begin{table}[htb]
 \centering
-\caption{Intervention stages. Stage A produced the control state D0; stages B--H
-produced the simplified state D.}
-\label{tab:stages}
+\caption{Intervention stages. Stage A produced the control state D0; stages B\textendash{} H
+produced the simplified state D.}\label{tab:stages}
 \small
 \begin{tabular}{cp{0.68\columnwidth}}
 \toprule
@@ -568,10 +552,12 @@ it: a nine-case deserialization spike and two further data-loading cases before
 the DTO removal, repository materialization and entity invariant tests around the
 mapper consolidation, score multiplier tests before the scoring change, and
 indicator semantics tests before ownership of the reagent rule moved into the
-domain. Thirteen mapping tests were retired together with the mapper types whose
-behaviour they characterized, their coverage being taken over by the repository
-materialization and entity invariant tests written for the new arrangement. Once
-added, every test remained in force for all subsequent stages.
+domain. Tests introduced at a gate were retained in force for every subsequent
+stage, unless the production abstraction they characterized had itself been
+removed. Exactly one such retirement occurred: the thirteen mapping tests went
+when the mapper types went, and their coverage was taken over by the repository
+materialization and entity invariant tests written for the arrangement that
+replaced them.
 
 State D therefore ends with \textbf{118 tests passing}, of which \textbf{103 are
 behavioural characterization tests} and \textbf{15 are architecture invariant
@@ -598,10 +584,9 @@ changed behaviour and broken the preservation target.
 \centering
 \caption{Growth of the validation suite. The baseline was written against C
 before any modification; later tests were added by the stages that touched the
-behaviour or property they characterize.}
-\label{tab:suite}
+behaviour or property they characterize.}\label{tab:suite}
 \small
-\begin{tabular}{lrl}
+\begin{tabular}{@{}p{0.58\columnwidth}r p{0.24\columnwidth}@{}}
 \toprule
 \textbf{Added} & \textbf{Tests} & \textbf{Kind} \\
 \midrule
@@ -640,8 +625,8 @@ reset and return to menu.
 All three states were measured with a single instrument, frozen at one commit
 and never read from inside the measured worktrees. It consists of a Roslyn-based
 metrics extractor built on \texttt{Microsoft.CodeAnalysis.CSharp} 4.11.0, plus
-SonarAnalyzer.CSharp 10.31.0.145097 and the engine's own analyzers, executed on
-.NET SDK 9.0.306 under Unity 6000.4.1f1. Each state is recovered with a detached
+SonarAnalyzer.CSharp 10.31.0.145097 and the engine's own analyzers, executed with
+the \texttt{dotnet} SDK 9.0.306 under Unity 6000.4.1f1. Each state is recovered with a detached
 worktree at its pinned commit, so production content and measurement tooling
 remain separate; no snapshot is modified to accommodate the instrument.
 
@@ -650,9 +635,9 @@ the type references \texttt{UnityEngine}; and, per member, cyclomatic complexity
 and maintainability index. Aggregations are computed from the raw per-type and
 per-member records rather than from summary output.
 
-Two properties of the instrument were verified explicitly. \emph{Determinism}:
+Two properties of the instrument were verified explicitly.\ \emph{Determinism}:
 re-executing the pipeline on state D produced byte-identical artefacts,
-including the analyzer SARIF. \emph{Version equivalence}: an error in the
+including the analyzer SARIF\@. \emph{Version equivalence}: an error in the
 project-generation step was found and corrected during the study; after the
 correction, state C was re-measured through the real entry point and the
 resulting files were byte-identical to those produced before, so all three
@@ -671,9 +656,9 @@ stage touched --- rather than from post-hoc judgement.
 \begin{description}\itemsep2pt
 \item[DEAD CODE REMOVED] Present in C, removed exclusively in $\text{C}\rightarrow\text{D0}$,
 after triple evidence of unreachability: no C\# references, no GUID references in
-scenes, prefabs or assets, and no occurrence of the type name in serialized YAML.
+scenes, prefabs or assets, and no occurrence of the type name in serialized YAML\@.
 \item[DIRECTLY REFACTORED] Component whose code or responsibility was a deliberate
-target of stages B--H.
+target of stages B\textendash{} H.
 \item[INDIRECTLY AFFECTED] Component changed only to accommodate a change whose
 primary target was another component.
 \item[PRESERVED] Existing component deliberately left unmodified by the relevant
@@ -757,10 +742,9 @@ of ownership, and five to a documented retention.
 \begin{table*}[t]
 \centering
 \caption{RQ1 --- responsibility assessment of each abstraction. Retention
-decisions are reported with the same status as changes.}
-\label{tab:rq1}
+decisions are reported with the same status as changes.}\label{tab:rq1}
 \small
-\begin{tabular}{p{0.16\textwidth}p{0.13\textwidth}p{0.32\textwidth}p{0.13\textwidth}p{0.16\textwidth}}
+\begin{tabular}{p{0.15\textwidth}p{0.13\textwidth}p{0.31\textwidth}p{0.14\textwidth}p{0.15\textwidth}}
 \toprule
 \textbf{Concern} & \textbf{Initial hypothesis} & \textbf{Evidence found} & \textbf{Decision} & \textbf{Consequence} \\
 \midrule
@@ -780,9 +764,9 @@ Remaining three DTOs & Useful & Case conversion, string-to-enum, one rename & KE
 \addlinespace
 \texttt{GameManager} responsibilities & Broad decomposition & Only scoring was split across layers & Selective SIMPLIFY & One move, seven documented retentions \\
 \addlinespace
-Litmus indicator semantics & Duplicated in Presentation & Confirmed at two sites & MOVE & Ownership moved to \texttt{Solvent.IsIndicator} \\
+Litmus indicator semantics & Duplicated in Presentation & Confirmed at two sites & MOVE & Ownership moved to \texttt{Solvent.\allowbreak{}IsIndicator} \\
 \addlinespace
-\texttt{TreeSolventGroupButtons} & Duplicated & The consumer sustaining the duplication was removed \emph{in Stage A} & \textbf{HYPOTHESIS REJECTED} $\rightarrow$ KEEP & Content is editorial and carries markup \\
+\texttt{TreeSolvent\allowbreak{}GroupButtons} & Duplicated & The consumer sustaining the duplication was removed \emph{in Stage A} & \textbf{HYPOTHESIS REJECTED} $\rightarrow$ KEEP & Content is editorial and carries markup \\
 \addlinespace
 View\,$\leftrightarrow$\,orchestrator cycles & Breakable & Two concrete reverse dependencies, two engine-type leaks & STRENGTHEN & \texttt{IMixingView} and \texttt{IQuestionView} introduced; \texttt{ILabView} untouched \\
 \addlinespace
@@ -861,8 +845,7 @@ states.
 \begin{table}[htb]
 \centering
 \caption{Aggregate measurements across the three states. CC and MI are
-per-member quantities; LOC, coupling and type counts are per-type.}
-\label{tab:aggregate}
+per-member quantities; LOC, coupling and type counts are per-type.}\label{tab:aggregate}
 \small
 \begin{tabular}{lrrr}
 \toprule
@@ -914,8 +897,7 @@ Table~\ref{tab:matched} separates them.
 \centering
 \caption{Matched-population analysis, D0 $\rightarrow$ D. Holding the population
 fixed reverses the direction of the system-wide MI and CC movement; the matched
-members themselves also change, by small amounts.}
-\label{tab:matched}
+members themselves also change, by small amounts.}\label{tab:matched}
 \small
 \begin{tabular}{lrrr}
 \toprule
@@ -943,7 +925,7 @@ rises. Two phenomena are present at once, and neither is absent. Population
 composition --- the eleven new members, largely simple properties scoring high on
 MI, and the five removed ones --- reversed the direction of the aggregate signal.
 At the same time the surviving members did change, by $-0.06$ on MI and $+0.01$ on
-CC. The correct statement is therefore that composition reversed the direction of
+CC\@. The correct statement is therefore that composition reversed the direction of
 the aggregate movement, while the change among surviving members was small and
 opposite in direction to it --- not that the surviving code was unchanged.
 Reporting the aggregate delta alone would have supported the statement that
@@ -951,7 +933,7 @@ maintainability improved slightly; the matched analysis does not support that
 reading.
 
 \emph{Second, the magnitudes are small in absolute terms.} Only 65 of 442 matched
-members (14.7\%) changed MI at all, and only 12 (2.7\%) changed CC. The movements
+members (14.7\%) changed MI at all, and only 12 (2.7\%) changed CC\@. The movements
 are 0.06 on a 0--100 scale and 0.01 on a scale whose observed mean is about 2.4.
 We do not infer practical significance from changes of this magnitude, in either
 direction, and we did not adopt a threshold that would license such an
@@ -1003,8 +985,7 @@ categories in each state, and Table~\ref{tab:rq3metrics} the group metrics.
 \begin{table}[htb]
 \centering
 \caption{RQ3 --- distribution of source files by category. A dash denotes
-absence, not zero.}
-\label{tab:rq3dist}
+absence, not zero.}\label{tab:rq3dist}
 \small
 \begin{tabular}{lrrr}
 \toprule
@@ -1024,8 +1005,7 @@ New intervention artifact  & ---& ---& 2 \\
 \begin{table*}[t]
 \centering
 \caption{RQ3 --- group metrics. The upper block is the intervention
-(D0 $\rightarrow$ D); the lower block is the control (C $\rightarrow$ D0).}
-\label{tab:rq3metrics}
+(D0 $\rightarrow$ D); the lower block is the control (C $\rightarrow$ D0).}\label{tab:rq3metrics}
 \small
 \begin{tabular}{lrrrrrrr}
 \toprule
@@ -1123,7 +1103,7 @@ improvement in maintainability and a small reduction in complexity. The matched
 analysis shows something different on two counts at once: within the 442 members
 present in both states, maintainability moved down by 0.06 and complexity up by
 0.01, and the aggregate signal was pulled the other way by eleven newly
-introduced members, mostly simple properties that score well on MI. The
+introduced members, mostly simple properties that score well on MI\@. The
 surviving code did change; what the composition of the population did was
 reverse the direction the aggregate reported.
 
@@ -1134,8 +1114,7 @@ evaluating an intervention, the second is the relevant one, and it is the one
 the literature reports less often.
 
 The same point applies with more force to the control transition, and there it
-applies cleanly. Removing unreachable code is uncontroversially good practice
-\cite{romano2020,eder2012}, and it moved every normalized indicator in this
+applies cleanly. Removing unreachable code is uncontroversially good practice~\cite{romano2020,eder2012}, and it moved every normalized indicator in this
 system in the less favourable direction. In that transition no surviving code was
 edited at all, so the entire movement is attributable to the change in the
 population being averaged. A study that
@@ -1144,26 +1123,25 @@ aggregate delta would have attributed this movement to the architecture.
 
 This is consistent with, and gives a concrete mechanism for, the repeatedly
 reported finding that refactoring produces mixed rather than uniform metric
-outcomes \cite{szoke2017,bavota2015,palomba2018}. Part of the mixture may be
+outcomes~\cite{szoke2017,bavota2015,palomba2018}. Part of the mixture may be
 population effects rather than disagreement about the value of the
 transformations.
 
 \subsection{What the Engine-Dependency Indicator Captures}
 
-The engine-coupled set was identical in D0 and D: the same 23 types, with empty
+The engine-coupled set was identical in the D0 and D states: the same 23 types, with empty
 differences in both directions. This is the result that most directly
 contradicted the study's initial framing.
 
 Interpreting this result requires being precise about what the indicator
 measures. Our engine-dependency indicator counts types holding an explicit
-structural reference to a \texttt{UnityEngine} API. That is one operational
+structural reference to a \texttt{UnityEngine} API\@. That is one operational
 manifestation of engine dependence, not a complete characterization of it: a
 system can depend on an engine through its lifecycle assumptions, its
 serialization model, its scene composition or its threading model without any of
 those appearing as an additional type-level reference. Engine dependence is
 architecturally consequential --- the engine architecture literature treats
-coupling to the engine core as a first-order concern
-\cite{politowski2025,ullmann2023} --- and the point here is not that it carries
+coupling to the engine core as a first-order concern~\cite{politowski2025,ullmann2023} --- and the point here is not that it carries
 no architectural meaning, but that our indicator captures only its explicit
 structural facet and should not be read as a measure of architectural decoupling.
 
@@ -1171,7 +1149,7 @@ Within that facet, the reason the set did not move follows from how the engine
 composes an application. A component a scene instantiates must be a
 \texttt{MonoBehaviour}; a field the editor serializes must be visible to the
 engine's serializer; a lifetime spanning scene loads must be managed by an engine
-mechanism \cite{unitydocs}. Our interventions redistributed responsibilities
+mechanism~\cite{unitydocs}. Our interventions redistributed responsibilities
 among the layers above these obligations, and none of them changed which
 components the engine must itself instantiate and wire. A different intervention
 --- extracting engine-facing logic into engine-free collaborators, or changing the
@@ -1219,8 +1197,7 @@ already removed) means that a correct analysis can become obsolete during a
 staged intervention, which is an argument for re-deriving candidates after each
 stage rather than fixing the plan at the outset.
 
-This connects to the architectural technical debt literature
-\cite{verdecchia2020,verdecchia2021}, which characterizes such debt as decisions
+This connects to the architectural technical debt literature~\cite{verdecchia2020,verdecchia2021}, which characterizes such debt as decisions
 that were appropriate when taken and later became obstacles. Mechanism 4 is the
 inverse-and-benign case: an item of apparent debt whose justification
 disappeared, making the item harmless rather than harmful, and detectable only
@@ -1240,10 +1217,10 @@ improvement is a design judgement, not a metric one: the system has fewer
 indirection layers and fewer components to keep consistent, at the cost of
 repositories that know more. The metric records the cost and is silent about the
 benefit --- which is precisely the limitation that the multi-property
-maintainability models were designed to address \cite{heitlager2007,baggen2012},
+maintainability models were designed to address~\cite{heitlager2007,baggen2012},
 and a reason not to treat a coupling mean as a verdict.
 
-Sas and Avgeriou \cite{sas2020} found that practitioners in the embedded systems
+Sas and Avgeriou~\cite{sas2020} found that practitioners in the embedded systems
 industry rarely monitor design-time qualities at all, and that trade-offs
 involving them therefore remain implicit. Our case is the complementary
 situation: the design-time indicators were monitored, closely and with a frozen
@@ -1277,8 +1254,7 @@ changes the class population, tracking the engine-coupled set alongside the
 percentage removes an ambiguity the percentage alone cannot resolve; and
 abstractions
 should be assessed against the responsibility they discharge in the composed,
-running system --- not against the catalogued pattern they resemble in source
-\cite{gamma1995}.
+running system --- not against the catalogued pattern they resemble in source~\cite{gamma1995}.
 
 For both: a retention decision, recorded with its evidence, is a result. Five of the thirteen audited
 concerns in this study ended in a retention decision, and two of those
@@ -1290,18 +1266,17 @@ none of it.
 \section{Threats to Validity}\label{sec:threats}
 %% =========================================================================
 
-We follow the categories of Runeson and H\"ost \cite{runeson2009}.
+We follow the categories of Runeson and H\"ost~\cite{runeson2009}.
 
 \medskip\noindent\textbf{Construct validity.} MI, cyclomatic complexity and
 efferent coupling are structural proxies, not measurements of the maintainability
 that developers experience. The critiques are well established: cyclomatic
-complexity is substantially a proxy for size \cite{shepperd1988}, and MI is a
-composite calibrated on a corpus unlike ours that incorporates both
-\cite{coleman1994,ardito2020}. We mitigate this by reporting the indicators
+complexity is substantially a proxy for size~\cite{shepperd1988}, and MI is a
+composite calibrated on a corpus unlike ours that incorporates both~\cite{coleman1994,ardito2020}. We mitigate this by reporting the indicators
 separately as well as together, by reporting medians alongside means, and by
 never treating a movement in one of them as a statement about maintainability.
 For the same reason we use the term \emph{internal software quality indicators}
-throughout. \emph{Engine dependency} is defined operationally as a count of types
+throughout.\ \emph{Engine dependency} is defined operationally as a count of types
 referencing \texttt{UnityEngine} as determined by the instrument; its percentage
 uses classes as denominator and is therefore sensitive to population change, which
 is why we report the set identity rather than the percentage as the result.
@@ -1312,7 +1287,7 @@ the architectural intervention, but it does not isolate stages B through H from
 one another. Two concrete interactions were in fact observed and are reported in
 Table~\ref{tab:rq1}: in both, Stage A removed the justification for a change
 that later stages had been expected to make. We did not measure after every
-stage, so finer attribution within B--H is not available.
+stage, so finer attribution within B\textendash{} H is not available.
 
 \medskip\noindent\textbf{External validity.} This is a single case: one
 Unity serious game of 77 files in its final state, developed by a small academic
@@ -1349,7 +1324,7 @@ clean engine import, the manual full-flow walkthrough and the post-stage smoke
 verification cover the behaviour they cover; the 15 architecture invariant tests
 attest structural properties and contribute nothing to the behavioural argument.
 A further limitation follows from the suite's incremental history
-(Table~ef{tab:suite}): only the 68 baseline tests constrained every stage,
+(Table~\ref{tab:suite}): only the 68 baseline tests constrained every stage,
 while later tests constrained only the stages that followed them. We claim behavioural preservation
 for that scope and no more; we do not claim formal functional equivalence.
 Structural differences on paths that no verification reaches were recorded rather
@@ -1396,9 +1371,11 @@ Answering RQ3, the measured changes were contained outside the source-preserved
 group, whose 64 types remained metric-identical across the intervention, and fell
 within the directly and indirectly affected groups. Because the preserved group is
 defined by the absence of relevant source changes, this containment is consistent
-with the classification rather than an independent confirmation of it. The dead code removed in the control had a substantially better
-metric profile than the system average (MI 80.3 against 72.5; coupling 4.50
-against 11.4), so removing it shifted the composition of the measured population
+with the classification rather than an independent confirmation of it. The dead
+code removed in the control had higher MI and lower cyclomatic complexity and
+efferent coupling than the system average (MI 80.3 against 72.5; CC 1.78 against
+2.33; coupling 4.50 against 11.4), so removing it shifted the composition of the
+measured population
 and moved every normalized aggregate mean in the less favourable direction --- an
 effect that, without the control state, would have been credited to the
 architectural intervention.
@@ -1440,7 +1417,7 @@ are not yet published; they will be archived in a public, DOI-minted snapshot
 for submission.
 
 That snapshot comprises: the commit identifiers, annotated tags and frozen
-branches for states C, D0 and D; the measurement instrument at its frozen commit,
+branches for the three experimental states; the measurement instrument at its frozen commit,
 together with the analyzer versions and the environment manifest; the per-type
 and per-member records and the analyzer output for each state; the aggregation
 and matched-population analysis scripts; the validation suite in its final form;
