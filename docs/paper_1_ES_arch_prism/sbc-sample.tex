@@ -12,6 +12,32 @@
 \usepackage[bottom]{footmisc}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,backgrounds,calc,decorations.pathreplacing}
+
+%% ---- float policy -------------------------------------------------------
+%% sbc2019.cls sets \raggedbottom and a tight \textfloatsep but leaves the
+%% restrictive LaTeX defaults (totalnumber=3, topfraction=.7, textfraction=.2).
+%% With ten floats in a thirteen-page two-column body the queue overflows and
+%% floats spill past the bibliography. Relaxing the parameters is the low-risk
+%% half of the fix; \FloatBarrier (placeins) is the deterministic half.
+\usepackage{float}
+\usepackage{placeins}
+%% dblfloatfix repairs the LaTeX2e behaviour that defers double-column floats
+%% (table*) to the very end of the document. REVERT THIS LINE FIRST if the
+%% build breaks: it is the only package here with known class interactions.
+\usepackage{dblfloatfix}
+
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.7}
 
 \definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
 \definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
@@ -295,7 +321,7 @@ properties has precedent individually; what this study offers is their
 combination, applied to an engine-based system and reported with the retention
 decisions intact.
 
-\begin{table*}[t]
+\begin{table*}[!tp]
 \centering
 \caption{What the surveyed literature covers, and what remains insufficiently
 addressed for the question studied here.}\label{tab:gap}
@@ -336,6 +362,8 @@ and rejected hypotheses reported as results \\
 \end{tabular}
 \end{table*}
 
+
+\FloatBarrier
 
 %% =========================================================================
 \section{Case Study Design}\label{sec:design}
@@ -412,7 +440,7 @@ Conflating them would be a measurement error, because complexity and
 maintainability are member-level quantities in this instrument while coupling,
 size and engine reference are type-level ones.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
 \centering
 \caption{Units of analysis and data sources per research question.}\label{tab:units}
 \small
@@ -441,25 +469,52 @@ the verification artefacts of the parity protocol. Only the first is quantitativ
 
 \subsection{Experimental States C, D0 and D}
 
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  state/.style={draw,rounded corners=2pt,align=center,inner sep=4pt,
+                minimum width=3.4cm,line width=0.6pt},
+  step/.style={-{Latex[length=2.4mm]},line width=0.7pt},
+  lab/.style={align=left,font=\footnotesize,inner sep=2pt},
+  role/.style={align=center,font=\scriptsize\itshape,inner sep=1pt}
+]
+
+\node[state] (C)  at (0,0)      {\textbf{C} --- baseline\\[1pt]\texttt{9b9816d}};
+\node[state] (D0) at (0,-2.5)   {\textbf{D0} --- control checkpoint\\[1pt]\texttt{a788ea8}};
+\node[state] (D)  at (0,-5.0)   {\textbf{D} --- simplified state\\[1pt]\texttt{934eea6}};
+
+\draw[step] (C)  -- node[lab,right=3pt] {Stage A\\dead-code removal} (D0);
+\draw[step] (D0) -- node[lab,right=3pt] {Stages B--H\\architectural\\simplification} (D);
+
+%% comparison brackets on the left
+\draw[decorate,decoration={brace,amplitude=4pt},line width=0.5pt]
+  ($(C.west)+(-0.15,0)$) -- ($(D0.west)+(-0.15,0)$)
+  node[role,midway,left=6pt,rotate=90,anchor=south] {control};
+\draw[decorate,decoration={brace,amplitude=4pt},line width=0.5pt]
+  ($(D0.west)+(-0.15,0)$) -- ($(D.west)+(-0.15,0)$)
+  node[role,midway,left=6pt,rotate=90,anchor=south] {principal\\comparison};
+\draw[decorate,decoration={brace,amplitude=6pt,mirror},line width=0.5pt]
+  ($(C.west)+(-1.35,0)$) -- ($(D.west)+(-1.35,0)$)
+  node[role,midway,left=8pt,rotate=90,anchor=south] {total observed\\transformation};
+
+\end{tikzpicture}
+\caption{Experimental design. The same system is observed at three states
+pinned to immutable commits. \textbf{D0 is a control checkpoint, not a third
+competing architecture}: it isolates the effect of deleting unreachable code
+from the effect of the architectural intervention, so that the principal
+comparison D0~$\rightarrow$~D is not confounded by it. States C and D also
+carry annotated tags, and each state has a frozen branch. The figure is
+methodological: no quality indicator appears in it.}
+\label{fig:design}
+\end{figure}
+
+
 Three snapshots of \texttt{Assets/Scripts} were defined, each pinned to an
 immutable commit and recovered for measurement in an isolated worktree
-(Table~\ref{tab:states}).
-
-\begin{table}[htb]
-\centering
-\caption{Experimental states. Each is pinned to a commit and a branch; C and D
-also carry annotated tags.}\label{tab:states}
-\small
-\begin{tabular}{llp{0.36\columnwidth}}
-\toprule
-\textbf{State} & \textbf{Commit} & \textbf{Role} \\
-\midrule
-C  & \texttt{9b9816d} & Pre-intervention baseline \\
-D0 & \texttt{a788ea8} & Dead-code removal control \\
-D  & \texttt{934eea6} & Simplified state \\
-\bottomrule
-\end{tabular}
-\end{table}
+(Figure~\ref{fig:design}). Each state additionally carries a frozen branch, and
+C and D carry annotated tags, so that a state can be recovered by commit, by tag
+or by branch and the three routes agree.
 
 The three states support three comparisons:
 
@@ -500,7 +555,7 @@ was implemented in isolation, compiled, verified against the test suite, and
 approved by a human reviewer before the next stage began. Stage A alone
 produced D0; stages B through H produced D.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
 \centering
 \caption{Intervention stages. Stage A produced the control state D0; stages B\textendash{} H
 produced the simplified state D.}\label{tab:stages}
@@ -579,7 +634,7 @@ default difficulty, an inert branch in a UI controller, and the specific parsing
 policy applied to malformed dataset entries. Correcting any of them would have
 changed behaviour and broken the preservation target.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
 \centering
 \caption{Growth of the validation suite. The baseline was written against C
 before any modification; later tests were added by the stages that touched the
@@ -733,12 +788,133 @@ threat.
 
 \subsection{RQ1 --- Architectural Reorganization}\label{sec:rq1}
 
+\begin{figure*}[!tp]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize,
+  band/.style={draw,dashed,rounded corners=3pt,inner sep=5pt,line width=0.4pt,
+               draw=black!45},
+  bandlab/.style={font=\scriptsize\bfseries,anchor=west,inner sep=1pt},
+  comp/.style={draw,rounded corners=1.5pt,align=center,inner sep=2.5pt,
+               minimum height=6mm,minimum width=1.95cm,line width=0.5pt},
+  gone/.style={comp,dashed,draw=black!55,text=black!55,line width=0.5pt},
+  newc/.style={comp,line width=1.3pt},
+  strong/.style={comp,line width=1.3pt},
+  dep/.style={-{Latex[length=1.6mm]},line width=0.45pt},
+  bypass/.style={-{Latex[length=1.6mm]},line width=1.1pt,densely dashed},
+  fixed/.style={-{Latex[length=1.6mm]},line width=1.1pt},
+  note/.style={font=\scriptsize\itshape,inner sep=1pt}
+]
+
+%% ============================ PANEL (a) STATE C =========================
+\begin{scope}[shift={(0,0)}]
+  \node[comp] (aLab)  at (0.00,0)     {LabUIController};
+  \node[comp] (aMix)  at (2.15,0)     {MixingRound\\Controller};
+  \node[comp] (aQfp)  at (4.30,0)     {QuestionFlow\\Presenter};
+  \node[comp] (aMenu) at (6.45,0)     {MenuUIController};
+
+  \node[comp] (aSL)   at (0.00,-1.55) {ServiceLocator\\\scriptsize 8 registrations};
+  \node[comp] (aGM)   at (2.15,-1.55) {GameManager\\\scriptsize owns multiplier};
+  \node[comp] (aIA)   at (4.30,-1.55) {IAudioService\\\scriptsize 17 members};
+  \node[comp] (aSfx)  at (6.45,-1.55) {SfxManager\\MusicManager};
+
+  \node[comp] (aScr)  at (0.00,-3.05) {ScoringService};
+  \node[comp] (aSol)  at (2.15,-3.05) {Solvent};
+  \node[comp] (aTmh)  at (4.30,-3.05) {TestMessage\\Handler};
+
+  \node[comp] (aRep)  at (0.00,-4.55) {Repositories\\\scriptsize 4 concrete};
+  \node[comp] (aMap)  at (2.15,-4.55) {Mappers\\\scriptsize 4 classes};
+  \node[comp] (aDto)  at (4.30,-4.55) {DTOs\\\scriptsize 4};
+
+  \draw[fixed]  (aMix) -- node[note,above,pos=0.5] {concrete} (aLab);
+  \draw[fixed]  (aQfp.south) to[out=200,in=340] (aLab.south east);
+  \draw[bypass] (aLab.east)  to[out=25,in=155] node[note,above] {56 direct} (aSfx.north west);
+  \draw[bypass] (aMenu) -- (aSfx);
+  \draw[dep]    (aIA) -- (aSfx);
+  \draw[dep]    (aRep) -- (aMap);
+  \draw[dep]    (aMap) -- (aDto);
+  \draw[dep]    (aGM) -- (aScr);
+  \draw[dep]    (aTmh.north) to[out=100,in=260] node[note,right,pos=0.45] {litmus id} (aIA.south);
+
+  \node[note,anchor=north] at (3.2,-5.35) {(a) State C --- baseline};
+\end{scope}
+
+%% ============================ PANEL (b) STATE D =========================
+\begin{scope}[shift={(9.0,0)}]
+  \node[comp] (bLab)  at (0.00,0)     {LabUIController};
+  \node[comp] (bMix)  at (2.15,0)     {MixingRound\\Controller};
+  \node[comp] (bQfp)  at (4.30,0)     {QuestionFlow\\Presenter};
+  \node[comp] (bMenu) at (6.45,0)     {MenuUIController};
+
+  \node[newc] (bIMV)  at (2.15,-0.90) {$+$\,IMixingView};
+  \node[newc] (bIQV)  at (4.30,-0.90) {$+$\,IQuestionView};
+
+  \node[comp]   (bSL)  at (0.00,-1.95) {ServiceLocator\\\scriptsize 5 registrations};
+  \node[comp]   (bGM)  at (2.15,-1.95) {GameManager};
+  \node[strong] (bIA)  at (4.30,-1.95) {IAudioService\\\scriptsize 19 members};
+  \node[comp]   (bSfx) at (6.45,-1.95) {SfxManager\\MusicManager};
+
+  \node[strong] (bScr) at (0.00,-3.30) {ScoringService\\\scriptsize owns multiplier};
+  \node[strong] (bSol) at (2.15,-3.30) {Solvent\\\scriptsize \texttt{IsIndicator}};
+  \node[comp]   (bTmh) at (4.30,-3.30) {TestMessage\\Handler};
+
+  \node[strong] (bRep) at (0.00,-4.70) {Repositories\\\scriptsize 4, transform inline};
+  \node[gone]   (bMap) at (2.15,-4.70) {Mappers};
+  \node[comp]   (bDto) at (4.30,-4.70) {DTOs\\\scriptsize 3};
+
+  \draw[dashed,draw=black!55] (bMap.north west) -- (bMap.south east);
+  \draw[dashed,draw=black!55] (bMap.south west) -- (bMap.north east);
+
+  \draw[fixed] (bMix) -- (bIMV);
+  \draw[fixed] (bQfp) -- (bIQV);
+  \draw[dep]   (bLab.south east) to[out=330,in=180] (bIMV.west);
+  \draw[dep]   (bIQV.north east) to[out=40,in=250] (bMenu.south west);
+  \draw[fixed] (bLab.east) to[out=25,in=155] node[note,above] {0 direct} (bIA.north west);
+  \draw[dep]   (bIA) -- (bSfx);
+  \draw[dep]   (bRep) -- (bDto);
+  \draw[dep]   (bTmh) -- (bSol);
+
+  \node[note,anchor=north] at (3.2,-5.50) {(b) State D --- simplified derivative};
+\end{scope}
+
+%% ================================ LEGEND ================================
+\begin{scope}[shift={(0,-6.55)}]
+  \node[comp,minimum width=1.5cm] (lp) at (0.6,0) {preserved};
+  \node[gone,minimum width=1.5cm] (lr) at (2.9,0) {removed};
+  \node[newc,minimum width=1.5cm] (ln) at (5.2,0) {$+$ introduced};
+  \node[strong,minimum width=1.9cm] (ls) at (7.7,0) {strengthened};
+  \draw[dashed,draw=black!55] (lr.north west) -- (lr.south east);
+  \draw[dashed,draw=black!55] (lr.south west) -- (lr.north east);
+  \draw[bypass] (9.6,0.15) -- (10.7,0.15); \node[note,anchor=west] at (10.8,0.15) {bypassed boundary};
+  \draw[fixed]  (9.6,-0.2) -- (10.7,-0.2); \node[note,anchor=west] at (10.8,-0.2) {contract-mediated};
+  \draw[dep]    (13.6,0.15) -- (14.7,0.15); \node[note,anchor=west] at (14.8,0.15) {dependency};
+\end{scope}
+
+\end{tikzpicture}
+\caption{Architectural component and dependency view of the two states, drawn
+at the same level of abstraction and with preserved components in the same
+positions so that the panels can be read against each other. State D is a
+simplified derivative of the baseline, not a different architectural family:
+most components are preserved, four mapper classes and one DTO are removed,
+two role contracts are introduced, and three boundaries are strengthened.
+Encoding does not rely on colour: preserved components have a plain border,
+removed ones a dashed border with a cross, introduced ones a heavy border with
+a $+$, and strengthened ones a heavy border. Every element and edge shown was
+verified against the pinned snapshots.}
+\label{fig:arch}
+\end{figure*}
+
+
+Figure~\ref{fig:arch} shows what changed structurally between the two states,
+and Table~\ref{tab:rq1} records the reasoning behind each change and each
+retention. The figure answers \emph{what} moved; the table answers \emph{why}.
+
 Table~\ref{tab:rq1} records the outcome of the responsibility assessment for
 each abstraction examined. Thirteen concerns were audited: three led to removal or
 merging, two to strengthening, three to a local simplification or a change
 of ownership, and five to a documented retention.
 
-\begin{table*}[t]
+\begin{table*}[!tp]
 \centering
 \caption{RQ1 --- responsibility assessment of each abstraction. Retention
 decisions are reported with the same status as changes.}\label{tab:rq1}
@@ -807,32 +983,32 @@ We therefore do not report abstraction count as a measure of simplification, and
 a reader should not infer from the interface count that the system became more
 elaborate. What changed is which abstractions exist, not how many.
 
-\medskip\noindent\textbf{Four mechanisms of abstraction utility.} The
-usefulness of an abstraction turned out to be context-dependent rather than
-determined by the pattern it resembled. Four distinct mechanisms appeared in the
-audit, and they are epistemologically different:
+\medskip\noindent\textbf{Four mechanisms of abstraction utility.} Looked at
+again, those four decisions are not four instances of one rule. They are four
+different reasons an abstraction can or cannot be justified, and the difference
+matters for how a candidate should be assessed:
 
 \begin{enumerate}\itemsep2pt
-\item \emph{Abstraction without a current responsibility} --- removed. The question
-mapper performed a positional copy that the entity constructor already performed.
-\item \emph{Abstraction with a concrete responsibility but bypassed in practice} ---
-strengthened. The audio port was well-formed, but 56 call sites reached the engine
-singletons directly instead of going through it.
-\item \emph{Abstraction whose responsibility only the removal attempt revealed} ---
-retained. The service locator appeared redundant under static inspection; the
-attempt to remove it showed that it carried a cross-scene lifetime responsibility
-that no other mechanism in the system discharged. Here static inspection was
-\emph{incomplete}.
-\item \emph{Abstraction whose justification an earlier transformation had already
-removed} --- retained. The duplication in the solvent group buttons had a consumer
-when it was first identified, and that consumer was deleted in Stage A. Here
-static inspection was \emph{correct at the time} and became obsolete.
+\item \emph{No current responsibility} (\texttt{QuestionMapper}) --- removed.
+Decidable by reading the source.
+\item \emph{A concrete responsibility, bypassed in practice}
+(\texttt{IAudioService}) --- strengthened. Also decidable by reading the source,
+provided one counts call sites rather than inspecting the abstraction alone.
+\item \emph{A responsibility only the removal attempt revealed}
+(\texttt{ServiceLocator}) --- retained. \emph{Not} decidable by reading the
+source: the responsibility lived in the runtime composition model, which for an
+engine-based system is partly held in serialized scene data.
+\item \emph{A justification an earlier stage had already removed}
+(\texttt{TreeSolventGroupButtons}) --- retained. Decidable when first assessed,
+and wrong by the time it was acted on.
 \end{enumerate}
 
-Cases 3 and 4 both produce a retained abstraction, but for opposite reasons: in
-one the analysis was wrong, in the other the system moved underneath a correct
-analysis. Reporting them as a single category of ``false positives'' would lose
-the distinction.
+Cases 3 and 4 both end in a retained abstraction, and it would be convenient to
+file both as false positives of the audit. That would lose the distinction that
+matters: in case 3 the analysis was incomplete, whereas in case 4 the analysis
+was correct and the system moved underneath it. The first argues for attempting
+a removal before trusting a static verdict; the second argues for re-deriving
+the candidate list after each stage rather than fixing it at the outset.
 
 \subsection{RQ2 --- Internal Quality Indicators}\label{sec:rq2}
 
@@ -841,7 +1017,7 @@ the distinction.
 Table~\ref{tab:aggregate} reports the full aggregate profile of the three
 states.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
 \centering
 \caption{Aggregate measurements across the three states. CC and MI are
 per-member quantities; LOC, coupling and type counts are per-type.}\label{tab:aggregate}
@@ -892,7 +1068,7 @@ The aggregate figures above mix two phenomena: change inside components that
 exist in both states, and change in the population over which the mean is taken.
 Table~\ref{tab:matched} separates them.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
 \centering
 \caption{Matched-population analysis, D0 $\rightarrow$ D. Holding the population
 fixed reverses the direction of the system-wide MI and CC movement; the matched
@@ -981,7 +1157,7 @@ of the percentage is accounted for by the change in the class population.
 Table~\ref{tab:rq3dist} gives the distribution of files across the five
 categories in each state, and Table~\ref{tab:rq3metrics} the group metrics.
 
-\begin{table}[htb]
+\begin{table}[!htbp]
 \centering
 \caption{RQ3 --- distribution of source files by category. A dash denotes
 absence, not zero.}\label{tab:rq3dist}
@@ -1001,7 +1177,7 @@ New intervention artifact  & ---& ---& 2 \\
 \end{tabular}
 \end{table}
 
-\begin{table*}[t]
+\begin{table*}[!tp]
 \centering
 \caption{RQ3 --- group metrics. The upper block is the intervention
 (D0 $\rightarrow$ D); the lower block is the control (C $\rightarrow$ D0).}\label{tab:rq3metrics}
@@ -1084,6 +1260,9 @@ analysis, although all magnitudes are small.
 redistribution and as a genuine within-type increase.
 \end{enumerate}
 
+
+%% Every Results float must be printed before the interpretation starts.
+\FloatBarrier
 
 %% =========================================================================
 \section{Discussion}\label{sec:discussion}
@@ -1261,6 +1440,8 @@ overturned an a-priori hypothesis. A protocol that only records changes would ha
 none of it.
 
 
+\FloatBarrier
+
 %% =========================================================================
 \section{Threats to Validity}\label{sec:threats}
 %% =========================================================================
@@ -1337,6 +1518,8 @@ neither measures nor claims anything about AI-assisted productivity or quality;
 no aspect of the design would support such a claim.
 
 
+\FloatBarrier
+
 %% =========================================================================
 \section{Conclusion}\label{sec:conclusion}
 %% =========================================================================
@@ -1396,6 +1579,9 @@ which this paper deliberately leaves uninterpreted, is a separate line of work.
 Finally, the responsibility-driven decision rule was applied by the authors; how
 consistently different engineers would apply it to the same system is an
 empirical question we did not address.
+
+%% Nothing may float past this point into the back matter.
+\FloatBarrier
 
 \begin{acknowledgements}
 %% NEEDS SOURCE: the definitive list of acknowledged contributors is to be
