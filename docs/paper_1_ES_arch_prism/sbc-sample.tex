@@ -39,6 +39,20 @@
 \renewcommand{\dbltopfraction}{0.9}
 \renewcommand{\dblfloatpagefraction}{0.7}
 
+%% Top-align float pages. LaTeX defaults \@fptop and \@fpbot to "0pt plus 1fil"
+%% each, so a page made only of floats centres them vertically -- which left a
+%% wide band between the running head and Table 5 on its double-column float
+%% page. Making the top glue rigid lets the bottom fil absorb the slack, so the
+%% float starts at the top of the text block. \@dblfptop is the one that acts
+%% on table*/figure* pages; \@fptop covers single-column float pages.
+%% \@fpsep/\@dblfpsep are deliberately left at their defaults: no float page
+%% here holds more than one float, so their 2fil separation never comes into
+%% play. If a multi-float page appears later, set them to 8pt to pack together.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@dblfptop}{0pt}
+\makeatother
+
 \definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
 \definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
 \definecolor{maillogo}{rgb}{0.58, 0.16, 0.26}
