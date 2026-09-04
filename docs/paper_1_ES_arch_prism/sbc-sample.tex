@@ -783,18 +783,6 @@ ultimately derive from the same source changes, which is why
 Section~\ref{sec:rq3} states the circularity in the containment result rather
 than treating the classification as externally validated.
 
-\medskip\noindent\textbf{Use of AI assistance.} The code changes constituting
-the intervention were implemented with the assistance of an LLM-based coding
-agent (Claude Code) operating under the staged protocol described in
-Section~\ref{sec:design}: the agent proposed and applied changes within one stage
-at a time, and every stage required explicit human approval, passed the parity
-protocol, and was subject to the recorded prohibitions before the next stage
-began. The measurement instrument, the analysis scripts and the reported values
-were produced by the same process and independently re-derived from the raw
-records. The study makes no claim about the effect of this assistance on
-productivity or on code quality; Section~\ref{sec:threats} discusses it as a
-threat.
-
 
 %% =========================================================================
 \section{Results}\label{sec:results}
@@ -1524,13 +1512,6 @@ for that scope and no more; we do not claim formal functional equivalence.
 Structural differences on paths that no verification reaches were recorded rather
 than hidden.
 
-\medskip\noindent\textbf{LLM-assisted implementation.} The implementation was
-carried out with the assistance of an LLM coding agent, under a protocol with
-per-stage human approval and explicit prohibitions. This may have influenced the
-shape of the code and the set of options considered at each stage. The study
-neither measures nor claims anything about AI-assisted productivity or quality;
-no aspect of the design would support such a claim.
-
 
 \FloatBarrier
 
@@ -1637,11 +1618,6 @@ interests.
 
 \noindent\textbf{Ethics approval.} Not applicable. This study analyses source
 code artefacts and involves no human participants.
-
-\noindent\textbf{Use of AI tools.} The implementation of the architectural
-intervention was assisted by an LLM-based coding agent under the staged human
-approval protocol described in Section~\ref{sec:design}. This is disclosed in the
-Method and discussed as a threat in Section~\ref{sec:threats}.
 
 \bibliographystyle{apalike}
 \bibliography{paper1-references}
