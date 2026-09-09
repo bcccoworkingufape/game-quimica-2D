@@ -26,7 +26,6 @@ namespace LabScripts
 
         [Header("Painéis principais")]
         public GameObject solutionAnimationPanel;
-        public GameObject confirmationPanel;
         public GameObject questionPanel;
         public GameObject historyPanel;
         public GameObject treePanel;
@@ -40,7 +39,6 @@ namespace LabScripts
         [SerializeField] private SolutionPanelAnimator solutionPanelAnimator;
 
         [Header("Textos de UI")]
-        public TextMeshProUGUI confirmationPanelText;
         public TextMeshProUGUI solutionAnimationText;
         public TextMeshProUGUI[] questionAlternativeTexts;
         public TextMeshProUGUI victoryCompoundText;
@@ -113,7 +111,7 @@ namespace LabScripts
 
             _panels = new LabPanelsView(
                 solutionAnimationPanel,
-                confirmationPanel, questionPanel, historyPanel, treePanel,
+                 questionPanel, historyPanel, treePanel,
                 pauseMenuPanel, questionErrorPanel, questionVictoryPanel, defeatPanel, infoPanel);
 
             _presenter = new LabPresenter(this);
@@ -200,59 +198,6 @@ namespace LabScripts
         public void HideAllPanels()
         {
             _panels?.HideAll();
-        }
-
-        // ─────────────────────────────────────────────
-        // Confirmation Panel
-        // ─────────────────────────────────────────────
-
-        public void ShowConfirmationPanel(string itemName)
-        {
-            currentItemName = itemName;
-            string defaultText = "Deseja realizar o teste de solubilidade da substância desconhecida em <b>" + itemName + "</b>?";
-            string litmusText = "Deseja adicionar <b>tornassol</b> à substância desconhecida?";
-
-            if (confirmationPanelText != null)
-                confirmationPanelText.text = currentItemName == "Tornassol" ? litmusText : defaultText;
-
-            OverlayAnimator.Show(confirmationPanel);
-        }
-
-        public void HideConfirmationPanel()
-        {
-            OverlayAnimator.Hide(confirmationPanel);
-        }
-
-        /// <summary>
-        /// Botão "Sim" do popup.
-        /// </summary>
-        public void OnConfirmAction()
-        {
-            SfxManager.Instance?.PlayButtonClick();
-
-            Debug.Log("Ação Confirmada para o item: " + currentItemName);
-            HideConfirmationPanel();
-
-            if (mixingRoundController != null)
-            {
-                mixingRoundController.OnConfirmMix();
-            }
-            else
-            {
-                Debug.LogWarning("MixingRoundController não atribuído no LabUIController. Exibindo animação mesmo assim.");
-                ShowSolutionAnimationPanel();
-            }
-        }
-
-        /// <summary>
-        /// Botão "Não" do popup.
-        /// </summary>
-        public void OnCancelAction()
-        {
-            SfxManager.Instance?.PlayButtonClick();
-
-            Debug.Log("Ação Cancelada para o item: " + currentItemName);
-            HideConfirmationPanel();
         }
 
         public void OnRepeatMixButton()
@@ -614,7 +559,6 @@ namespace LabScripts
             if (solutionAnimationPanel) solutionAnimationPanel.SetActive(true);
 
             // Todos os outros overlays fecham imediatamente (reset de estado, sem animação).
-            OverlayAnimator.HideImmediate(confirmationPanel);
             OverlayAnimator.HideImmediate(questionPanel);
             OverlayAnimator.HideImmediate(pauseMenuPanel);
             OverlayAnimator.HideImmediate(questionErrorPanel);
