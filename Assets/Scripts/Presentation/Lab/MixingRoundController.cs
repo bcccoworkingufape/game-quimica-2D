@@ -73,10 +73,9 @@ namespace Presentation.Lab
             _selectedSolventId = solventId;
             _selectedSolventName = solventName;
 
-            if (uiController != null)
-            {
-                uiController.ShowConfirmationPanel(solventName);
-            }
+            Debug.Log("Ação Confirmada para o item: " + solventName);
+
+            OnConfirmMix();
         }
 
         /// <summary>
