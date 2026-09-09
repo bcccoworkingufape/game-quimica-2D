@@ -4091,7 +4091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.88235295}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12108,12 +12108,12 @@ RectTransform:
   - {fileID: 127780422}
   - {fileID: 796266881}
   - {fileID: 96893534}
+  - {fileID: 510068727}
   - {fileID: 8436061497681097339}
   - {fileID: 1712172199}
   - {fileID: 4160010739852325067}
   - {fileID: 689744074}
   - {fileID: 1882458270}
-  - {fileID: 510068727}
   - {fileID: 941486583}
   - {fileID: 1623836868}
   - {fileID: 220030139}
@@ -14647,6 +14647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af3d941f62e5784090e0ec596644ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  darkBackground: {fileID: 510068726}
   solutionAnimationPanel: {fileID: 4160010739852325066}
   questionPanel: {fileID: 689744073}
   historyPanel: {fileID: 1882458269}

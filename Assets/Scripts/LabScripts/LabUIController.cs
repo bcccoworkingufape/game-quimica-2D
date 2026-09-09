@@ -24,6 +24,8 @@ namespace LabScripts
         private LabAudioToggleView _audioToggle;
         private LabPanelsView _panels;
 
+        [Header("Background Escuro (Raycasts Blocker)")]
+        public GameObject darkBackground;
         [Header("Painéis principais")]
         public GameObject solutionAnimationPanel;
         public GameObject questionPanel;
@@ -222,6 +224,7 @@ namespace LabScripts
             {
                 solutionPanelAnimator.Open();
                 animator.enabled = true;
+                darkBackground?.SetActive(true);
             }
             else
             {
@@ -236,6 +239,7 @@ namespace LabScripts
                 var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
                 animator.Play(stateInfo.fullPathHash, -1, 0f);
                 animator.enabled = false;
+                darkBackground?.SetActive(false);
 
                 solutionPanelAnimator.Close();
             }
