@@ -279,11 +279,13 @@ namespace LabScripts
         public void ShowQuestionPanel()
         {
             OverlayAnimator.Show(questionPanel);
+            darkBackground?.SetActive(true);
         }
 
         public void HideQuestionPanel()
         {
             OverlayAnimator.Hide(questionPanel);
+            darkBackground?.SetActive(false);
         }
 
         /// <summary>
@@ -332,6 +334,7 @@ namespace LabScripts
             SfxManager.Instance?.PlayHistoryClick();
 
             OverlayAnimator.Show(historyPanel);
+            darkBackground?.SetActive(true);
 
             if (historyPanelController != null)
                 historyPanelController.RefreshHistory();
@@ -341,6 +344,7 @@ namespace LabScripts
         {
             SfxManager.Instance?.PlayButtonClick();
             OverlayAnimator.Hide(historyPanel);
+            darkBackground?.SetActive(false);
         }
 
         // ─────────────────────────────────────────────
@@ -506,6 +510,7 @@ namespace LabScripts
             // ainda consiga processar o primeiro frame. ignoreTimeScale:true garante
             // que a animação rode mesmo com timeScale == 0.
             OverlayAnimator.Show(pauseMenuPanel, ignoreTimeScale: true);
+            darkBackground?.SetActive(true);
             Time.timeScale = 0f;
         }
 
@@ -520,6 +525,7 @@ namespace LabScripts
             // imediatamente; ignoreTimeScale:true mantém a animação de saída fluida.
             Time.timeScale = 1f;
             OverlayAnimator.Hide(pauseMenuPanel, ignoreTimeScale: true);
+            darkBackground?.SetActive(false);
         }
 
         /// <summary>
