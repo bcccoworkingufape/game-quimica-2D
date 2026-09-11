@@ -5150,6 +5150,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5914012596782039143, guid: 14a822e46ee9db346bd0cf9ba70169d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914012596782039143, guid: 14a822e46ee9db346bd0cf9ba70169d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094343733}
+    - target: {fileID: 5914012596782039143, guid: 14a822e46ee9db346bd0cf9ba70169d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideQuestionPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914012596782039143, guid: 14a822e46ee9db346bd0cf9ba70169d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LabScripts.LabUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6402972077135924696, guid: 14a822e46ee9db346bd0cf9ba70169d4, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -13243,6 +13259,22 @@ PrefabInstance:
     - target: {fileID: 6994223473618161105, guid: e630f1a4d0ed5694388f76d85dd8fe6f, type: 3}
       propertyPath: m_fontStyle
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576637133369955584, guid: e630f1a4d0ed5694388f76d85dd8fe6f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576637133369955584, guid: e630f1a4d0ed5694388f76d85dd8fe6f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2094343733}
+    - target: {fileID: 8576637133369955584, guid: e630f1a4d0ed5694388f76d85dd8fe6f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideQuestionErrorPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576637133369955584, guid: e630f1a4d0ed5694388f76d85dd8fe6f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LabScripts.LabUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
