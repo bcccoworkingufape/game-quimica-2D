@@ -378,6 +378,7 @@ namespace LabScripts
         public void ShowQuestionErrorPanel()
         {
             OverlayAnimator.Show(questionErrorPanel);
+            darkBackground?.SetActive(true);
         }
 
         /// <summary>
@@ -387,13 +388,8 @@ namespace LabScripts
         public void HideQuestionErrorPanel()
         {
             SfxManager.Instance?.PlayButtonClick();
-
-            // Aguarda a animação de saída do errorPanel terminar antes de abrir
-            // o questionPanel, mantendo a transição visualmente limpa.
-            OverlayAnimator.Hide(questionErrorPanel, onComplete: () =>
-            {
-                OverlayAnimator.Show(questionPanel);
-            });
+            OverlayAnimator.Hide(questionErrorPanel);
+            darkBackground?.SetActive(false);
         }
 
         // ─────────────────────────────────────────────
@@ -412,6 +408,7 @@ namespace LabScripts
 
             RefreshStars();
             OverlayAnimator.Show(questionVictoryPanel);
+            darkBackground?.SetActive(true);
         }
 
         // Fallback caso alguém chame sem nome.
@@ -426,6 +423,7 @@ namespace LabScripts
             {
                 _hud?.ClearStars();
             });
+            darkBackground?.SetActive(false);
         }
 
         /// <summary>
@@ -434,7 +432,13 @@ namespace LabScripts
         public void OnVictoryNextPhase()
         {
             SfxManager.Instance?.PlayButtonClick();
-            _presenter?.OnNextPhaseRequested();
+            
+            darkBackground?.SetActive(false);
+            OverlayAnimator.Hide(questionVictoryPanel, onComplete: () =>
+            {
+                _hud?.ClearStars();
+                _presenter?.OnNextPhaseRequested();
+            });
         }
 
         /// <summary>
@@ -464,6 +468,7 @@ namespace LabScripts
             SfxManager.Instance?.PlayLose();
 
             OverlayAnimator.Show(defeatPanel, ignoreTimeScale: true);
+            darkBackground?.SetActive(true);
             Time.timeScale = 0f;
         }
 
@@ -475,6 +480,7 @@ namespace LabScripts
             {
                 Time.timeScale = 1f;
             }, ignoreTimeScale: true);
+            darkBackground?.SetActive(false);
         }
 
         /// <summary>
@@ -577,6 +583,8 @@ namespace LabScripts
             OverlayAnimator.HideImmediate(historyPanel);
             OverlayAnimator.HideImmediate(treePanel);
             OverlayAnimator.HideImmediate(infoPanel);
+
+            darkBackground?.SetActive(false);
 
             if (victoryCompoundText) victoryCompoundText.text = "Composto X:";
 
