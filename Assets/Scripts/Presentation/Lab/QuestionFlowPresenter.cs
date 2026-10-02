@@ -15,13 +15,12 @@ namespace Presentation.Lab
         [SerializeField] private LabUIController uiController;
         [SerializeField] private MixingRoundController mixingRoundController;
 
-        private SubmitAnswerUseCase _submitAnswerUseCase;
         private GameManager _gm;
         private IHistoryService _historyService;
+        private IScoringService _scoringService;
 
         private readonly List<Question> _allQuestions = new List<Question>();
         private Question _currentQuestion;
-        private int _currentStreak;
 
         private void Awake()
         {
@@ -31,8 +30,8 @@ namespace Presentation.Lab
 
         private void Start()
         {
-            var scoringService = ServiceLocator.Resolve<IScoringService>();
-            if (scoringService == null)
+            _scoringService = ServiceLocator.Resolve<IScoringService>();
+            if (_scoringService == null)
             {
                 Debug.LogError("[QuestionFlowPresenter] IScoringService não resolvido. Verifique o Bootstrapper.");
                 return;
@@ -42,10 +41,11 @@ namespace Presentation.Lab
             if (_historyService == null)
                 Debug.LogWarning("[QuestionFlowPresenter] IHistoryService não resolvido (histórico não será limpo).");
 
-            _submitAnswerUseCase = new SubmitAnswerUseCase(scoringService);
             _gm = GameManager.Instance;
 
             LoadQuestions();
+
+            _gm?.ConfigureScoring(_allQuestions.ConvertAll(q => q.Id));
 
             // informa pro GameManager o total de questões do run
             _gm?.SetTotalQuestions(_allQuestions.Count);
@@ -133,27 +133,19 @@ namespace Presentation.Lab
 
             string selectedAnswer = _currentQuestion.Alternatives[optionIndex];
 
-            var request = new SubmitAnswerRequest(_currentQuestion, selectedAnswer, _currentStreak);
-            var result = _submitAnswerUseCase.Execute(request);
-
-            _currentStreak = result.NewStreak;
-
-            if (_gm != null)
-            {
-                if (result.IsCorrect) _gm.AddScore(result.EarnedPoints);
-                else _gm.LoseLife();
-            }
+            if (_gm == null) return;
+            var result = _gm.SubmitAnswer(_currentQuestion, selectedAnswer);
+            if (!result.Accepted) return;
 
             if (result.IsCorrect)
             {
                 SfxManager.Instance?.PlayCorrect();
-                _gm?.MarkActiveQuestionCorrect();
                 uiController?.ShowQuestionVictoryPanel(_currentQuestion.CorrectAnswer);
             }
             else
             {
                 SfxManager.Instance?.PlayWrong();
-                uiController?.ShowQuestionErrorPanel();
+                if (_gm.PlayerLives > 0) uiController?.ShowQuestionErrorPanel();
             }
         }
 
@@ -162,8 +154,9 @@ namespace Presentation.Lab
         /// </summary>
         public void PrepareNextCompound(bool forceNew = true)
         {
-            if (_gm != null && _gm.ActiveQuestionAnsweredCorrect)
-                _gm.CommitActiveQuestionAsCompleted();
+            if (_gm == null || !_gm.ActiveQuestionAnsweredCorrect) return;
+            _gm.CommitActiveQuestionAsCompleted();
+            if (_gm.RunScore != null && _gm.RunScore.Completed) return;
 
             // se zerou o game, o GameManager já troca de cena
             _historyService?.Clear();

@@ -14,8 +14,6 @@ namespace Data
         [Tooltip("Dicas disponíveis no início do nível")]
         public int availableHints = 1;
 
-        [Tooltip("Multiplicador de pontos para esta dificuldade")]
-        public float scoreMultiplier = 1.0f;
 
         [Header("Modo")]
         [Tooltip("Modo de jogo associado a esta dificuldade")]

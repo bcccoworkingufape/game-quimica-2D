@@ -27,7 +27,30 @@ namespace Core
 
         public DifficultyLevelData CurrentDifficulty { get; private set; }
         public int PlayerLives { get; private set; }
-        public int PlayerScore { get; private set; }
+        public int PlayerScore => RunScore?.Score ?? 0;
+        public ScoringRun RunScore { get; private set; }
+        public float PlayerStars => RunScore?.Stars ?? 0;
+        private readonly IScoringService _scoring = new ScoringService();
+
+        public void ConfigureScoring(System.Collections.Generic.IEnumerable<int> questionIds)
+        {
+            if (RunScore == null)
+                RunScore = new ScoringRun(CurrentDifficulty != null ? CurrentDifficulty.mode : GameMode.Estudo_Livre);
+            RunScore.SetQuestions(questionIds, _scoring);
+        }
+
+        public SubmitAnswerResponse SubmitAnswer(Question question, string answer)
+        {
+            if (RunScore == null || question == null || question.Id != ActiveQuestionId ||
+                ActiveQuestionAnsweredCorrect || (CurrentRules != null && CurrentRules.AppliesLifePenalty && PlayerLives <= 0))
+                return default;
+            var result = new SubmitAnswerUseCase(_scoring).Execute(question, answer, RunScore);
+            if (!result.Accepted) return result;
+            if (result.IsCorrect) MarkActiveQuestionCorrect();
+            else LoseLife();
+            OnScoreChanged?.Invoke(PlayerScore);
+            return result;
+        }
 
         private SceneFader _sceneFader;
         private SceneRouter _router;
@@ -156,6 +179,9 @@ namespace Core
 
         public void HandleGameCleared()
         {
+            if (RunScore == null || !RunScore.Complete(_scoring)) return;
+            StarRecords.SaveBest(RunScore);
+            OnScoreChanged?.Invoke(PlayerScore);
             Debug.Log("[GameManager] Zerou o game!");
             Time.timeScale = 1f;
 
@@ -189,7 +215,7 @@ namespace Core
             }
 
             PlayerLives = CurrentDifficulty.startingLives;
-            PlayerScore = 0;
+            RunScore = new ScoringRun(CurrentDifficulty.mode);
 
             OnLivesChanged?.Invoke(PlayerLives);
             OnScoreChanged?.Invoke(PlayerScore);
@@ -208,7 +234,10 @@ namespace Core
             }
 
             if (PlayerLives > 0)
+            {
                 PlayerLives--;
+                RunScore?.RecordLifeLost(PlayerLives);
+            }
 
             OnLivesChanged?.Invoke(PlayerLives);
 
@@ -217,13 +246,6 @@ namespace Core
                 Debug.Log("Game Over!");
                 OnGameOver?.Invoke();
             }
-        }
-
-        public void AddScore(int points)
-        {
-            float multiplier = CurrentDifficulty != null ? CurrentDifficulty.scoreMultiplier : 1f;
-            PlayerScore += (int)(points * multiplier);
-            OnScoreChanged?.Invoke(PlayerScore);
         }
 
         private void EnsureDefaultDifficulty()
@@ -248,8 +270,6 @@ namespace Core
             if (PlayerLives <= 0)
                 PlayerLives = Mathf.Max(1, CurrentDifficulty.startingLives);
 
-            if (PlayerScore < 0)
-                PlayerScore = 0;
         }
 
         public void ResetRunState(bool resetScore, bool resetLives)
@@ -260,7 +280,10 @@ namespace Core
                 PlayerLives = Mathf.Max(1, CurrentDifficulty.startingLives);
 
             if (resetScore)
-                PlayerScore = 0;
+            {
+                _runTracker.Reset();
+                RunScore = new ScoringRun(CurrentDifficulty != null ? CurrentDifficulty.mode : GameMode.Estudo_Livre);
+            }
 
             OnLivesChanged?.Invoke(PlayerLives);
             if (resetScore)
@@ -275,3 +298,4 @@ namespace Core
         public void GoBack() => _router?.GoBack();
     }
 }
+

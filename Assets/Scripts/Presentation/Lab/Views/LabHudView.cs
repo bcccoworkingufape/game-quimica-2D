@@ -71,7 +71,25 @@ namespace Presentation.Lab
             if (_livesText != null)
                 _livesText.text = rules.LivesOverrideText ?? $"Vidas: {lives}";
 
-            int visible = rules.VisibleLifeIcons(lives, _heartIcons != null ? _heartIcons.Length : 0);
+            const int slots = 3;
+            if (_heartIcons != null && _heartIcons.Length > 0 && _heartIcons[0] != null)
+            {
+                var parent = _heartIcons[0].transform.parent as RectTransform;
+                float width = parent != null ? parent.rect.width : 310f;
+                if (width <= 0) width = 310f;
+                for (int i = 0; i < _heartIcons.Length; i++)
+                {
+                    if (_heartIcons[i] == null) continue;
+                    var rect = _heartIcons[i].transform as RectTransform;
+                    if (rect == null) continue;
+                    rect.anchoredPosition = new Vector2((i + .5f) * width / slots, -50);
+                    float iconWidth = Mathf.Min(99, width / slots - 6);
+                    rect.sizeDelta = new Vector2(iconWidth, iconWidth * 91f / 99f);
+                }
+            }
+            // No modo de estudo, os corações continuam visíveis como parte da HUD,
+            // mas não representam tentativas: o texto deixa claro que são ilimitadas.
+            int visible = mode == GameMode.Estudo_Livre ? slots : Mathf.Min(lives, slots);
             SetIconsActive(_heartIcons, visible);
         }
 
@@ -102,14 +120,13 @@ namespace Presentation.Lab
             }
         }
 
-        public void RefreshStars(int lives, GameMode mode)
-        {
-            int max = _starIcons != null ? _starIcons.Length : 0;
-            int visible = GameModeRulesFactory.For(mode).VisibleLifeIcons(lives, max);
-            SetIconsActive(_starIcons, visible);
-        }
-
         public void ClearStars() => SetIconsActive(_starIcons, 0);
+
+        /// <summary>
+        /// Exibe uma única estrela como confirmação visual de uma resposta certa.
+        /// Não representa nem altera a classificação final da fase.
+        /// </summary>
+        public void ShowAnswerSuccessStar() => SetIconsActive(_starIcons, 1);
 
         public static void SetIconsActive(GameObject[] icons, int count)
         {
@@ -120,3 +137,4 @@ namespace Presentation.Lab
         }
     }
 }
+

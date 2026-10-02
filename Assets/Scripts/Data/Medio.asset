@@ -15,5 +15,5 @@ MonoBehaviour:
   difficultyName: Médio
   startingLives: 3
   availableHints: 1
-  scoreMultiplier: 1
   mode: 1
+

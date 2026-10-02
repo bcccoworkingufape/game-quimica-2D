@@ -15,5 +15,4 @@ MonoBehaviour:
   difficultyName: Fácil
   startingLives: 99
   availableHints: 1
-  scoreMultiplier: 0
   mode: 0

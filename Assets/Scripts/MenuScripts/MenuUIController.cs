@@ -58,6 +58,8 @@ namespace MenuScripts
             // ═══════════════════════════════════════════
             // DICAS DE GAMEPLAY
             // ═══════════════════════════════════════════
+            "Resolva as questões e evite erros. Experimente antes de responder!",
+            "Conclua todas as questões para receber de 1 a 3 estrelas.",
             "Se flutua, é menos denso. Se afunda, é mais denso. Molz sempre observando!",
             "O tornassol fica vermelho em ácidos e azul em bases. Anota aí!!",
             "A árvore de decisão é sua melhor amiga... exceto no modo Desafio..",
@@ -147,11 +149,11 @@ namespace MenuScripts
 
             string livesLabel =
                 data.mode == GameMode.Estudo_Livre
-                    ? "sem penalidade"
+                    ? "vidas ilimitadas"
                     : $"{data.startingLives} vidas";
 
             difficultyText.text =
-                $"{data.difficultyName} * {livesLabel} * x{data.scoreMultiplier:0.#} pontos";
+                $"{data.difficultyName} • {livesLabel}\n1 a 5 estrelas, incluindo meias estrelas • Recorde local: {StarRecords.Total(data.mode)}\nResolva as questões e evite erros.";
 
             if (modeText != null)
                 modeText.text = data.ModeLabel;
@@ -395,3 +397,4 @@ namespace MenuScripts
 
     }
 }
+

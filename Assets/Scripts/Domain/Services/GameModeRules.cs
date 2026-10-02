@@ -25,7 +25,7 @@ namespace Domain
         public string Label => "Estudo Livre";
         public bool AllowsDecisionTree => true;
         public bool AppliesLifePenalty => false;
-        public string LivesOverrideText => "Sem penalidade";
+        public string LivesOverrideText => "Vidas ilimitadas";
 
         public int VisibleLifeIcons(int lives, int maxIcons) => maxIcons;
     }
@@ -52,3 +52,4 @@ namespace Domain
         public int VisibleLifeIcons(int lives, int maxIcons) => lives;
     }
 }
+

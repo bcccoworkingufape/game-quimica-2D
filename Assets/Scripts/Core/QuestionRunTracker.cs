@@ -35,7 +35,11 @@ namespace Core
 
         public bool IsCompleted(int questionId) => _completedQuestionIds.Contains(questionId);
 
-        public void SetActive(int questionId) => ActiveQuestionId = questionId;
+        public void SetActive(int questionId)
+        {
+            ActiveQuestionId = questionId;
+            ActiveQuestionAnsweredCorrect = false;
+        }
 
         public void MarkActiveCorrect() => ActiveQuestionAnsweredCorrect = true;
 
@@ -45,6 +49,7 @@ namespace Core
         /// </summary>
         public bool Commit()
         {
+            if (!ActiveQuestionAnsweredCorrect || ActiveQuestionId <= 0) return false;
             if (ActiveQuestionId > 0)
                 _completedQuestionIds.Add(ActiveQuestionId);
 

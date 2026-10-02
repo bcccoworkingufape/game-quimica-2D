@@ -404,9 +404,11 @@ namespace LabScripts
             if (victoryCompoundText != null)
                 victoryCompoundText.text = string.IsNullOrEmpty(compoundName)
                     ? "Composto X:"
-                    : $"Composto X:\n {compoundName}";
+                    : $"Composto X:\n{compoundName}";
 
-            RefreshStars();
+            // Feedback visual da resposta correta. Esta estrela não participa
+            // do cálculo nem da classificação final da fase.
+            _hud?.ShowAnswerSuccessStar();
             OverlayAnimator.Show(questionVictoryPanel);
             darkBackground?.SetActive(true);
         }
@@ -607,13 +609,6 @@ namespace LabScripts
                 : GameMode.Estudo_Livre;
         }
 
-        private void RefreshStars()
-        {
-            var gm = GameManager.Instance;
-            int lives = gm != null ? gm.PlayerLives : 0;
-            _hud?.RefreshStars(lives, GetCurrentMode());
-        }
-
         /// <summary>
         /// Ativa os primeiros 'count' ícones do array e desativa o restante.
         /// </summary>
@@ -672,3 +667,4 @@ namespace LabScripts
         }
     }
 }
+

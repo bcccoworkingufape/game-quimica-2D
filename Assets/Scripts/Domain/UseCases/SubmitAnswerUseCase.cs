@@ -1,68 +1,26 @@
 using System;
-
 namespace Domain
 {
-    public readonly struct SubmitAnswerRequest
-    {
-        public Question Question { get; }
-        public string SelectedAnswer { get; }
-        public int CurrentStreak { get; }
-
-        public SubmitAnswerRequest(Question question, string selectedAnswer, int currentStreak)
-        {
-            Question = question;
-            SelectedAnswer = selectedAnswer;
-            CurrentStreak = currentStreak;
-        }
-    }
-
     public readonly struct SubmitAnswerResponse
     {
+        public bool Accepted { get; }
         public bool IsCorrect { get; }
         public int EarnedPoints { get; }
-        public int NewStreak { get; }
-        public string Feedback { get; }
-
-        public SubmitAnswerResponse(bool isCorrect, int earnedPoints, int newStreak, string feedback)
-        {
-            IsCorrect = isCorrect;
-            EarnedPoints = earnedPoints;
-            NewStreak = newStreak;
-            Feedback = feedback;
-        }
+        public SubmitAnswerResponse(bool accepted, bool correct, int points)
+        { Accepted = accepted; IsCorrect = correct; EarnedPoints = points; }
     }
-
-    /// <summary>
-    /// Valida a resposta, calcula pontuação e devolve feedback.
-    /// </summary>
     public class SubmitAnswerUseCase
     {
-        private readonly IScoringService _scoringService;
-
-        public SubmitAnswerUseCase(IScoringService scoringService)
+        private readonly IScoringService _scoring;
+        public SubmitAnswerUseCase(IScoringService scoring) => _scoring = scoring ?? throw new ArgumentNullException(nameof(scoring));
+        public SubmitAnswerResponse Execute(Question question, string answer, ScoringRun run)
         {
-            _scoringService = scoringService
-                ?? throw new ArgumentNullException(nameof(scoringService));
-        }
-
-        public SubmitAnswerResponse Execute(SubmitAnswerRequest request)
-        {
-            if (request.Question == null)
-                throw new ArgumentNullException(nameof(request.Question));
-
-            bool isCorrect = string.Equals(
-                request.SelectedAnswer,
-                request.Question.CorrectAnswer,
-                StringComparison.OrdinalIgnoreCase);
-
-            int points = _scoringService.ComputePoints(isCorrect, request.CurrentStreak);
-            int newStreak = isCorrect ? request.CurrentStreak + 1 : 0;
-
-            string feedback = isCorrect
-                ? request.Question.Feedback
-                : $"Resposta incorreta. {request.Question.Hint}";
-
-            return new SubmitAnswerResponse(isCorrect, points, newStreak, feedback);
+            if (question == null) throw new ArgumentNullException(nameof(question));
+            if (run == null) throw new ArgumentNullException(nameof(run));
+            bool correct = string.Equals(answer, question.CorrectAnswer, StringComparison.OrdinalIgnoreCase);
+            int previous = run.Score;
+            bool accepted = run.RecordAnswer(question.Id, correct, _scoring);
+            return new SubmitAnswerResponse(accepted, correct, run.Score - previous);
         }
     }
 }
