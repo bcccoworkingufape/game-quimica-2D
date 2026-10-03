@@ -8,7 +8,3 @@
 *.out
 *.synctex.gz
 build.txt
-
-# Upstream Springer package: kept locally for reference, redistributed by Springer
-template_spring/
-template_spring.zip
