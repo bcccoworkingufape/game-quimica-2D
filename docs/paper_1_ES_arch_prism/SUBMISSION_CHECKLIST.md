@@ -11,7 +11,7 @@
 | Item | Status | Detail |
 |---|---|---|
 | Class | **READY** | `\documentclass[pdflatex,sn-basic]{sn-jnl}` |
-| Reference style | **READY** | `sn-basic.bst` — Basic Springer Nature style, **Namedate** (author-year) mode, which is the form SQJ articles use. Add `Numbered` to the class options if the journal asks for numbered. |
+| Reference style | **READY** | `sn-basic.bst`, **Namedate** (author-year). Confirmed against the journal: Software Quality Journal requires author-year citations with an alphabetically ordered reference list. Settled; do not change. |
 | Bibliography source | **READY** | `paper1-references.bib`, 32 entries, unchanged by the migration |
 | Previous template removed | **READY** | zero occurrences of `sbc2019`, `JSERD`, `10.5753`, `fontawesome`, `ccicons`, `fontspec`, `ifsym`, `frontmatter` |
 | Compilation | **READY** | `latexmk -pdf main.tex` in `paper_sqj/` → exit 0, **0 errors** → exit 0, **0 errors**, 0 undefined citations, 0 undefined references |
@@ -86,7 +86,6 @@ not be read from this environment. Before submitting, confirm from an
 authenticated session:
 
 - accepted article types and any length limit;
-- whether SQJ wants `sn-basic` in Namedate or Numbered mode;
 - figure and table technical requirements;
 - the current declarations block required at submission.
 
@@ -107,6 +106,6 @@ Results                    READY
 Discussion                 READY
 Threats                    READY
 Journal formatting         READY
-Reproducibility            BLOCKER   (see REPLICATION_CHECKLIST.md)
+Reproducibility            BLOCKER   (DOI and LICENSE confirmation only)
 Administrative metadata    BLOCKER   (10 NEEDS SOURCE markers)
 ```

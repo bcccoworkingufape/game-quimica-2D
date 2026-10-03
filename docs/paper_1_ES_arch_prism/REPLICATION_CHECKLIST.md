@@ -1,6 +1,6 @@
 # Paper 1 — Replication Package Checklist
 
-**Status:** NOT PUBLISHED · **Last verified:** 2026-10-03
+**Status:** ASSEMBLED, NOT PUBLISHED · **Last verified:** 2026-10-03
 Source of truth for every definition: [`PROVENANCE.md`](PROVENANCE.md).
 
 Nothing here has been uploaded anywhere. This is the list of what the deposit
@@ -35,7 +35,7 @@ Today only C is reachable by anyone else.
 | Filtered analyzer output | `.../sonar-resumo.txt`, `.../sonar-regras.csv` | ship as is |
 | Raw SARIF | `.../sonar.sarif` (~764 KB each) | **SANITISE FIRST** |
 
-### SARIF sanitisation — required
+### SARIF sanitisation — DONE
 
 Two problems, both verified:
 
@@ -121,7 +121,7 @@ supplementary material but must not be merged into the manuscript.
 
 ---
 
-## 7. Licensing — **BLOCKER**
+## 7. Licensing — DONE, pending author confirmation
 
 **There is no `LICENSE` file in the repository.** A public GitHub repository
 without a licence is "all rights reserved" by default, which blocks a Zenodo
@@ -160,12 +160,12 @@ third-party material.
 
 | Step | Status |
 |---|---|
-| Sanitise SARIF | **TODO** |
-| Add LICENSE | **TODO** |
-| Recover and version analysis scripts | **TODO** |
-| Generate and version `.trx` | **TODO** |
-| Push branches and tags, or bundle trees | **TODO** |
-| Assemble deposit | **TODO** |
+| Sanitise SARIF | **DONE** |
+| Add LICENSE | **DONE** -- pending author confirmation |
+| Version analysis scripts | **DONE** |
+| Generate and version `.trx` | **DONE** |
+| State archives for C/D0/D | **DONE** -- 352 KB, zips of Assets/Scripts + Resources/Data |
+| Package README | **DONE** |
 | Mint DOI | **TODO** |
 | Insert DOI into the manuscript's Data availability statement | **TODO** |
 
@@ -175,11 +175,28 @@ until submission; it must become a real DOI before the paper goes out.
 
 ---
 
+---
+
+## Evidence as of 2026-10-03
+
+| Item | Result |
+|---|---|
+| `python Tools/static-analysis/analise/verify_paper.py` | **ALL MATCH** — 142 published values re-derived from the raw records |
+| SARIF sanitisation | C 197 / D0 191 / D 143 results kept, 286 third-party dropped per state, **0 residual absolute paths** |
+| `.trx` evidence | C 68/68 · D0 68/68 · D 118/118, all 0 failed |
+| State archives | `state-{C,D0,D}-<commit>.zip`, 352 KB total |
+| LICENSE | MIT for code, CC BY 4.0 for data and records, third-party excluded by path |
+
+The sanitised SARIF counts match the manuscript, which cross-checks that the
+sanitising filter reproduces the pipeline's own filtering.
+
+
 ## Status
 
 ```
-Reproducibility   BLOCKER
+Reproducibility   BLOCKER -- two items left, both outside the repository:
+                            a persistent DOI, and author confirmation on LICENSE
 ```
 
-Blocking items: LICENSE absent · SARIF unsanitised · analysis scripts not
-versioned · `.trx` not generated · D0 and D not reachable publicly · no DOI.
+Everything resolvable inside the repository is resolved. Package README:
+`Tools/static-analysis/replication/README.md`.
