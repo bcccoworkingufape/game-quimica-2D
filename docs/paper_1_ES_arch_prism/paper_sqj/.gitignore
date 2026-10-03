@@ -1,0 +1,13 @@
+# Build artefacts
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+build.txt
+
+# main.bbl IS versioned here: Springer Editorial Manager does not always run
+# BibTeX, and without it the 32 citations would render as [?].
+!main.bbl
