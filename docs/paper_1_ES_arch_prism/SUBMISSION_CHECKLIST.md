@@ -14,7 +14,7 @@
 | Reference style | **READY** | `sn-basic.bst` — Basic Springer Nature style, **Namedate** (author-year) mode, which is the form SQJ articles use. Add `Numbered` to the class options if the journal asks for numbered. |
 | Bibliography source | **READY** | `paper1-references.bib`, 32 entries, unchanged by the migration |
 | Previous template removed | **READY** | zero occurrences of `sbc2019`, `JSERD`, `10.5753`, `fontawesome`, `ccicons`, `fontspec`, `ifsym`, `frontmatter` |
-| Compilation | **READY** | `cd paper_sqj && latexmk -pdf main.tex` → exit 0, **0 errors**, 0 undefined citations, 0 undefined references |
+| Compilation | **READY** | compiled externally; last verified → exit 0, **0 errors**, 0 undefined citations, 0 undefined references |
 | Output | **READY** | `main.pdf`, 32 pages |
 | Remaining overfull boxes | **READY** | 8, largest 14.3 pt — cosmetic; Springer re-typesets |
 | Single `.tex` file | **READY** | no `\input`; figures are inline TikZ, so no external artwork to attach |
@@ -35,8 +35,7 @@ paper_sqj/sn-basic.bst             style (idem)
 `main.bbl` is included deliberately: Springer does not always run BibTeX, and
 without it the 32 citations render as `[?]`.
 
-`springer-template/` holds the upstream reference material and `v1-sbc-template/`
-the pre-migration archive; neither is submitted. `PROVENANCE.md`,
+`v1-sbc-template/` holds the pre-migration archive and is not submitted. `PROVENANCE.md`,
 `TRACEABILITY.md` and the two checklists are internal artefacts and are **not**
 submitted.
 

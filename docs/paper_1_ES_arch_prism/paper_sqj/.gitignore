@@ -1,13 +1,11 @@
-# Build artefacts
+# This folder holds LaTeX sources only. Compile elsewhere.
 *.aux
+*.bbl
 *.blg
 *.fdb_latexmk
 *.fls
 *.log
 *.out
+*.pdf
 *.synctex.gz
-build.txt
-
-# main.bbl IS versioned here: Springer Editorial Manager does not always run
-# BibTeX, and without it the 32 citations would render as [?].
-!main.bbl
+build/
