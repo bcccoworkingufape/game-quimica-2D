@@ -89,12 +89,11 @@
 \begin{abstract}
 \textbf{Abstract}
 
-%% ABSTRACT -- written last, see Section ordering in the writing protocol.
-Refactoring is commonly framed as an activity that adds structure to a system. In the literature surveyed for this study, empirical evidence was more readily found for refactoring that introduces or redistributes structure than for interventions centred on removing or consolidating architectural abstractions. Less is therefore established about the opposite direction: what happens to internal software quality indicators when abstractions that carry no concrete responsibility are removed from a working system, and how such movements should be read when the intervention itself changes the population of components being measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game for organic chemistry. Three pinned states of the same system were measured with a single frozen instrument: the pre-intervention baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D. The control was necessary: the removed subset had a higher mean maintainability index (80.3 against 72.5) and lower mean approximate efferent coupling (4.50 against 11.4) than the system, so deleting it changed the composition of the measured population and moved every aggregate mean in the less favourable direction while structural size fell. Between D0 and D the system lost five classes and gained two interfaces and six members --- simplification here meant changing which abstractions exist, not minimising how many --- while the aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, mean efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two: population composition accounted for the direction of the aggregate signal, while the surviving members themselves moved slightly the other way (maintainability $-0.06$, complexity $+0.01$). All magnitudes are small in absolute terms. Coupling rose among the 19 surviving directly refactored types (26.84 to 28.37), concentrating dependencies in components that absorbed responsibilities previously held by separate mapper types. The set of types holding an explicit engine reference was identical in both states (23 types); its percentage rose from 35.4\% to 38.3\% through denominator change alone. Behaviour covered by the validation protocol was preserved: a 68-test baseline characterization suite written against C, grown during the intervention to 118 tests in state D (103 behavioural, 15 architecture invariants), together with a clean engine import and manual full-flow verification. Two a-priori simplification hypotheses were rejected by implementation evidence rather than confirmed. The study contributes a simplification protocol in which retention decisions are recorded as outcomes, a control design separating dead-code removal from architectural change, and evidence that aggregate internal quality indicators are sensitive to population composition in ways that can invert their apparent direction.
+Architectural refactoring is most often studied as the addition of structure. Removing abstractions that no longer carry a responsibility has received limited empirical attention, as has the reading of before-and-after metrics when the intervention itself changes the set of components measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game. Three pinned states were measured with one frozen instrument: baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D, from eight staged interventions that retained an abstraction only where it carried a concrete, non-duplicated responsibility. The control mattered: the removed subset was unrepresentative, so deleting it alone moved every aggregate mean. Between D0 and D the system lost five classes and gained two interfaces and six members, while aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, approximate efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two, showing that composition, not the surviving code, set that direction. The set of engine-instantiated types was identical in both states. Behaviour covered by the validation protocol was preserved. We contribute evidence on which abstractions were removed and which retained, a dead-code checkpoint separating cleanup from design, and a population-aware reading of aggregate quality indicators.
 \end{abstract}
 
 \begin{keywords}
-Software architecture, Architectural refactoring, Internal software quality, Maintainability, Coupling, Game software engineering, Unity, Case study
+Software architecture, Architectural refactoring, Software quality, Software metrics, Game software engineering, Unity
 \end{keywords}
 
 \end{frontmatter}
@@ -172,21 +171,29 @@ architectural intervention?
 
 \medskip
 
-The contributions of the paper are four. First, a protocol for
-responsibility-driven architectural simplification in which retention decisions
-are recorded with the same weight as removal decisions, and in which an a-priori
-hypothesis can be rejected by implementation evidence. Second, a C/D0/D
-comparative design that quantitatively separates dead-code removal from
-architectural intervention, under behavioural preservation verified by the
-protocol of Section~\ref{sec:design} and a frozen measurement instrument. Third,
-evidence that structural simplification did not produce uniform movement of
-aggregate indicators, together with an explicit decomposition of within-component
-change against composition effect --- including two indicators whose direction of
-movement reverses once the population is held fixed, although the magnitudes are
-small in both readings. Fourth, a component-level analysis showing that the
-measured structural changes were contained outside the source-preserved group,
-which remained metric-identical --- a containment result whose relationship to the
-group's definition we state explicitly rather than read as causal attribution.
+The contributions of the paper are four.
+
+First, empirical evidence from a responsibility-driven architectural
+simplification carried out on a real Unity-based system under verified
+behavioural preservation, reported together with the decision rule, the staged
+protocol and the per-stage gates that produced it.
+
+Second, evidence about \emph{which} responsibilities and abstractions were removed
+or consolidated and which were retained, with the implementation evidence
+recorded for each --- including two cases in which an a-priori simplification
+hypothesis was rejected by what the removal attempt revealed. Retentions are
+reported as outcomes, not as work left undone.
+
+Third, a dead-code checkpoint separating population cleanup from the subsequent
+architectural intervention. In this case the separation mattered quantitatively:
+the removed subset was not representative of the system, so deleting it moved
+every aggregate mean on its own.
+
+Fourth, a population-aware analysis showing how aggregate internal quality
+indicators can be affected by changes in the measured software population. For
+two indicators the direction of the aggregate movement was set by composition
+rather than by the code that persisted, although all magnitudes involved are
+small.
 
 The remainder of the paper is organized as follows. Section~\ref{sec:related}
 positions the study against work on internal quality measurement, architectural
@@ -306,6 +313,33 @@ smells covering performance, maintainability and incorrect behaviour. Both
 establish that engine-specific structures are a legitimate object of internal
 quality analysis. Neither measures what happens to engine dependency when a
 game is deliberately restructured.
+
+\subsection{Measuring Architectural Change}
+
+The three strands above concern what to change and why. A fourth concerns how
+change is observed, and it is the one this study leans on most heavily.
+
+Before-and-after measurement of a refactoring is the standard design, and the
+metrics used are typically those discussed above: size, complexity, coupling and
+a composite such as MI\@. What varies between studies is the unit over which
+those metrics are aggregated. Sz\H{o}ke et al.~\cite{szoke2017} report
+per-refactoring and per-process effects separately, which already acknowledges
+that the two answer different questions. Bavota et al.~\cite{bavota2015} relate
+metric profiles to the refactorings developers actually perform, rather than
+treating a metric movement as the effect of a known transformation. Longitudinal
+work such as Berciu et al.~\cite{berciu2026} tracks quality issues across
+releases, where the set of measured artefacts changes from release to release by
+construction.
+
+What we did not find discussed explicitly is the consequence for interpretation
+when the intervention itself adds and removes the units being averaged. An
+architectural change that deletes components, merges them or introduces new ones
+alters the population over which every mean is computed, so a before-and-after
+difference in that mean confounds two things: change inside the components that
+persist, and change in which components are counted. A study reporting only the
+aggregate cannot separate them, and nothing in the metric definitions signals
+that a separation is needed. The matched-population analysis in
+Section~\ref{sec:rq2} exists to make that separation in this case.
 
 \subsection{Research Gap}\label{sec:gap}
 
@@ -777,6 +811,16 @@ never as zero. A NEW INTERVENTION ARTIFACT therefore has no row for C or D0, and
 DEAD CODE REMOVED has no row for D0 or D. Substituting zero would inject
 artificial values into every mean.
 
+These five labels map onto the four population roles that matter for the
+analysis in Section~\ref{sec:rq2}: components \emph{removed} from the measured
+population (DEAD CODE REMOVED), components \emph{added} to it (NEW INTERVENTION
+ARTIFACT), components \emph{modified} while remaining in it (DIRECTLY REFACTORED
+and INDIRECTLY AFFECTED, kept apart because the first were deliberate targets and
+the second were not), and components \emph{preserved} unchanged (PRESERVED). We
+use the five-label form throughout, because it is the form recorded in the
+analysis scripts and in the replication package; renaming it in the manuscript
+alone would break that correspondence.
+
 \subsection{Analysis Procedure}
 
 Three analyses were performed on the frozen measurements.
@@ -992,9 +1036,9 @@ Pre-existing dead members & Dead & Already dead in C & PRESERVE FOR PARITY & Ret
 \end{table*}
 
 \medskip\noindent\textbf{Simplification did not mean minimising abstractions.}
-Structurally, the intervention produced a system with \emph{fewer classes and
-more interfaces}: from D0 to D the class count fell from 65 to 60, the interface
-count rose from 12 to 14, and the member count rose from 451 to 457. Five files
+Structurally, the system that followed the intervention had \emph{fewer classes
+and more interfaces}: from D0 to D the class count fell from 65 to 60, the
+interface count rose from 12 to 14, and the member count rose from 451 to 457. Five files
 were removed and two were added.
 
 This is the opposite of the shape usually associated with simplification, and it
@@ -1291,8 +1335,8 @@ moved every normalized aggregate mean in the less favourable direction, because
 the removed subset scored above the system average on every indicator.
 \item Engine dependency did not fall: the same 23 types in D0 and D, with the
 percentage rising through denominator change alone.
-\item Simplification produced fewer classes but \emph{more} interfaces and more
-members.
+\item Simplification was accompanied by fewer classes but \emph{more} interfaces
+and more members.
 \item Two a-priori simplification hypotheses were rejected by implementation
 evidence, for two different reasons.
 \item The MI and CC movements reverse direction under matched-population
@@ -1535,6 +1579,39 @@ one another. Two concrete interactions were in fact observed and are reported in
 Table~\ref{tab:rq1}: in both, Stage A removed the justification for a change
 that later stages had been expected to make. We did not measure after every
 stage, so finer attribution within B\textendash{} H is not available.
+
+\medskip\noindent\textbf{Absence of randomisation and of a control system.}
+This is a single-case before-and-after design. Nothing was randomised, there is
+no untreated comparison system evolving in parallel, and the states are
+successive versions of one artefact rather than independent samples. We
+therefore cannot exclude that some of the observed differences would have
+appeared under any change of comparable size, and we make no causal claim of the
+form that the intervention produced a given metric movement. The D0 checkpoint
+controls for one specific alternative explanation --- dead-code removal --- and for
+that one only. Our mitigation is to report differences as observations tied to
+identified source changes, and to report the mechanism for each rather than
+inferring it from the metric.
+
+\medskip\noindent\textbf{Concurrent structural changes.} The eight stages
+were applied in sequence to the same tree, so the D0~$\rightarrow$~D difference
+aggregates all of them. A metric movement cannot be attributed to any single
+stage, and stages may interact --- two interactions were in fact observed and are
+reported in Table~\ref{tab:rq1}. We mitigated this partially by keeping every
+stage in its own commit with its own gate, which supports attribution at the
+level of source change even where the metric cannot be decomposed; a design that
+measured after every stage would be stronger, and we did not do that.
+
+\medskip\noindent\textbf{Matching limitations.} The matched-population
+analysis depends on an identity key, \texttt{file|type|member}, that does not
+include a parameter signature. Two overload pairs therefore collapse onto one
+key in each state and were excluded from matching rather than resolved by
+assumption. A member that was renamed or moved between files is seen as one
+removal plus one addition rather than as a modification, which pushes genuine
+within-component change into the composition term and makes our composition
+effect, if anything, an over-estimate. No renames or moves of measured members
+occurred in this intervention, and the excluded overloads are byte-identical
+between D0 and D, so neither limitation affects the reported figures here; both
+would matter in a study with more mobile components.
 
 \medskip\noindent\textbf{External validity.} This is a single case: one
 Unity serious game of 77 files in its final state, developed by a small academic
