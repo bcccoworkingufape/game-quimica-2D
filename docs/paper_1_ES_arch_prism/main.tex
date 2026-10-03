@@ -1,32 +1,24 @@
-% !TeX program = xelatex
-\documentclass{sbc2019}%
+%% Software Quality Journal (Springer Nature) submission.
+%% Class: sn-jnl v3.1 (December 2024).
+%% Reference style: sn-basic, Namedate mode -- the Basic Springer Nature style
+%% in author-year form, which is the form Software Quality Journal articles use.
+%% Switch to numbered by adding "Numbered" to the class options.
+\documentclass[pdflatex,sn-basic]{sn-jnl}
 
-\usepackage{graphicx}
-%\usepackage[brazil]{babel}
-\usepackage[misc,geometry]{ifsym}
-\usepackage{fontspec}
-\usepackage{fontawesome}
-\usepackage{ccicons}
-\usepackage{color}
-\usepackage{hyperref}
-\usepackage[bottom]{footmisc}
-\usepackage{booktabs}
+%% sn-jnl already provides graphicx, amsmath/amssymb, xcolor, hyperref and
+%% booktabs-compatible table support. Only what the manuscript adds is loaded.
+\usepackage{amsmath,amssymb}
+\usepackage{longtable}
 \usepackage{multirow}
+\usepackage{booktabs}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,fit,backgrounds,calc,decorations.pathreplacing}
 
-%% ---- float policy -------------------------------------------------------
-%% sbc2019.cls sets \raggedbottom and a tight \textfloatsep but leaves the
-%% restrictive LaTeX defaults (totalnumber=3, topfraction=.7, textfraction=.2).
-%% With ten floats in a thirteen-page two-column body the queue overflows and
-%% floats spill past the bibliography. Relaxing the parameters is the low-risk
-%% half of the fix; \FloatBarrier (placeins) is the deterministic half.
-\usepackage{float}
+%% ---- float policy ------------------------------------------------------
+%% Ten floats in a two-column body overflow LaTeX's default float queue and
+%% spill past the bibliography. placeins supplies the deterministic barrier;
+%% the relaxed parameters reduce how often one is needed.
 \usepackage{placeins}
-%% dblfloatfix repairs the LaTeX2e behaviour that defers double-column floats
-%% (table*) to the very end of the document. REVERT THIS LINE FIRST if the
-%% build breaks: it is the only package here with known class interactions.
-\usepackage{dblfloatfix}
 
 \setcounter{topnumber}{3}
 \setcounter{bottomnumber}{2}
@@ -39,67 +31,48 @@
 \renewcommand{\dbltopfraction}{0.9}
 \renewcommand{\dblfloatpagefraction}{0.7}
 
-%% Top-align float pages. LaTeX defaults \@fptop and \@fpbot to "0pt plus 1fil"
-%% each, so a page made only of floats centres them vertically -- which left a
-%% wide band between the running head and Table 5 on its double-column float
-%% page. Making the top glue rigid lets the bottom fil absorb the slack, so the
-%% float starts at the top of the text block. \@dblfptop is the one that acts
-%% on table*/figure* pages; \@fptop covers single-column float pages.
-%% \@fpsep/\@dblfpsep are deliberately left at their defaults: no float page
-%% here holds more than one float, so their 2fil separation never comes into
-%% play. If a multi-float page appears later, set them to 8pt to pack together.
+%% Top-align float pages instead of centring the float vertically.
 \makeatletter
 \setlength{\@fptop}{0pt}
 \setlength{\@dblfptop}{0pt}
 \makeatother
 
-\definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
-\definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
-\definecolor{maillogo}{rgb}{0.58, 0.16, 0.26}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.0}
-\hypersetup{colorlinks,breaklinks,
-            linkcolor=darkblue,urlcolor=darkblue,
-            anchorcolor=darkblue,citecolor=darkblue}
+%% =======================================================================
+%% NEEDS SOURCE -- ADMINISTRATIVE METADATA NOT YET SUPPLIED
+%% The author list, author order, corresponding author, e-mail addresses,
+%% ORCID identifiers, affiliation details, funding identifiers, CRediT
+%% contribution statements and the list of acknowledged contributors have
+%% not been confirmed. Every field below marked NEEDS SOURCE is a
+%% placeholder and must be completed before submission.
+%% =======================================================================
 
-%%%%%%% IMPORTANT: We disable hyperlinks by default with this line, to avoid the error "\pdfendlink ended up in different nesting level" while writing.
-%\hypersetup{draft}
-
-\jid{JSERD}
-\jtitle{Journal of Software Engineering Research and Development, 2026, }
-\doi{10.5753/jserd.2026.xxx}
-\copyrightstatement{This work is licensed under a Creative Commons Attribution 4.0 International License.}
-\jyear{2026}
-
-
-\title[Architectural Simplification and Internal Software Quality]{Architectural Simplification and Internal Software Quality in a Unity-Based Serious Game: A Comparative Case Study}
-
-%% NEEDS SOURCE: the definitive author list and the ORCID identifiers for this
-%% paper have not been fixed yet. The two authors below are the ones documented
-%% in the PIBIC 2025--2026 research plan and final report.
-\author[Rezende and Rocha 2026]{\affil{\textbf{Jo\~ao Guilherme Benjamin Alves de Rezende}\quad[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:benj7100@gmail.com}{~\textbf{\textit{benj7100@gmail.com}}} ]}
-
-\affil{\textbf{Rodrigo Gusm\~ao de Carvalho Rocha}\quad[~\textbf{Universidade Federal do Agreste de Pernambuco~}|\href{mailto:rodrigo.rocha@ufape.edu.br}{~\textbf{\textit{rodrigo.rocha@ufape.edu.br}}} ]}
-}
+\raggedbottom
 
 \begin{document}
 
-\begin{frontmatter}
+\title[Architectural Simplification and Internal Software Quality]{Architectural
+Simplification and Internal Software Quality in a Unity-Based Serious Game:
+A Comparative Case Study}
+
+%% NEEDS SOURCE: author list, order and corresponding author are provisional.
+\author*[1]{\fnm{Jo\~ao Guilherme Benjamin}\sur{Alves de Rezende}
+  \email{NEEDS-SOURCE@ufape.edu.br}}
+
+\author[1]{\fnm{Rodrigo Gusm\~ao}\sur{de Carvalho Rocha}
+  \email{rodrigo.rocha@ufape.edu.br}}
+
+%% NEEDS SOURCE: ORCID identifiers for both authors.
+%% NEEDS SOURCE: full organisational division, street, postcode and state.
+\affil[1]{\orgdiv{NEEDS SOURCE --- academic unit},
+  \orgname{Universidade Federal do Agreste de Pernambuco},
+  \orgaddress{\city{Garanhuns}, \state{Pernambuco}, \country{Brazil}}}
+
+\abstract{Architectural refactoring is most often studied as the addition of structure. Removing abstractions that no longer carry a responsibility has received limited empirical attention, as has the reading of before-and-after metrics when the intervention itself changes the set of components measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game. Three pinned states were measured with one frozen instrument: baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D, from eight staged interventions that retained an abstraction only where it carried a concrete, non-duplicated responsibility. The control mattered: the removed subset was unrepresentative, so deleting it alone moved every aggregate mean. Between D0 and D the system lost five classes and gained two interfaces and six members, while aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, approximate efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two, showing that composition, not the surviving code, set that direction. The set of engine-instantiated types was identical in both states. Behaviour covered by the validation protocol was preserved. We contribute evidence on which abstractions were removed and which retained, a dead-code checkpoint separating cleanup from design, and a population-aware reading of aggregate quality indicators.}
+
+\keywords{Software architecture, Architectural refactoring, Software quality, Software metrics, Game software engineering, Unity}
+
 \maketitle
 
-\begin{abstract}
-\textbf{Abstract}
-
-Architectural refactoring is most often studied as the addition of structure. Removing abstractions that no longer carry a responsibility has received limited empirical attention, as has the reading of before-and-after metrics when the intervention itself changes the set of components measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game. Three pinned states were measured with one frozen instrument: baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D, from eight staged interventions that retained an abstraction only where it carried a concrete, non-duplicated responsibility. The control mattered: the removed subset was unrepresentative, so deleting it alone moved every aggregate mean. Between D0 and D the system lost five classes and gained two interfaces and six members, while aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, approximate efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two, showing that composition, not the surviving code, set that direction. The set of engine-instantiated types was identical in both states. Behaviour covered by the validation protocol was preserved. We contribute evidence on which abstractions were removed and which retained, a dead-code checkpoint separating cleanup from design, and a population-aware reading of aggregate quality indicators.
-\end{abstract}
-
-\begin{keywords}
-Software architecture, Architectural refactoring, Software quality, Software metrics, Game software engineering, Unity
-\end{keywords}
-
-\end{frontmatter}
-
-
-%% =========================================================================
 \section{Introduction}
 %% =========================================================================
 
@@ -371,7 +344,7 @@ properties has precedent individually; what this study offers is their
 combination, applied to an engine-based system and reported with the retention
 decisions intact.
 
-\begin{table*}[!tp]
+\begin{table}[!htbp]
 \centering
 \caption{What the surveyed literature covers, and what remains insufficiently
 addressed for the question studied here.}\label{tab:gap}
@@ -410,7 +383,7 @@ Removal decided per abstraction by its concrete responsibility, with retention
 and rejected hypotheses reported as results \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 
 \FloatBarrier
@@ -539,30 +512,30 @@ the verification artefacts of the parity protocol. Only the first is quantitativ
 \centering
 \begin{tikzpicture}[
   font=\small,
-  state/.style={draw,rounded corners=2pt,align=center,inner sep=4pt,
+  mzstate/.style={draw,rounded corners=2pt,align=center,inner sep=4pt,
                 minimum width=3.4cm,line width=0.6pt},
-  step/.style={-{Latex[length=2.4mm]},line width=0.7pt},
-  lab/.style={align=left,font=\footnotesize,inner sep=2pt},
-  role/.style={align=center,font=\scriptsize\itshape,inner sep=1pt}
+  mzflow/.style={-{Latex[length=2.4mm]},line width=0.7pt},
+  mzlab/.style={align=left,font=\footnotesize,inner sep=2pt},
+  mzrole/.style={align=center,font=\scriptsize\itshape,inner sep=1pt}
 ]
 
-\node[state] (C)  at (0,0)      {\textbf{C} --- baseline\\[1pt]\texttt{9b9816d}};
-\node[state] (D0) at (0,-2.5)   {\textbf{D0} --- control checkpoint\\[1pt]\texttt{a788ea8}};
-\node[state] (D)  at (0,-5.0)   {\textbf{D} --- simplified state\\[1pt]\texttt{934eea6}};
+\node[mzstate] (C)  at (0,0)      {\textbf{C} --- baseline\\[1pt]\texttt{9b9816d}};
+\node[mzstate] (D0) at (0,-2.5)   {\textbf{D0} --- control checkpoint\\[1pt]\texttt{a788ea8}};
+\node[mzstate] (D)  at (0,-5.0)   {\textbf{D} --- simplified state\\[1pt]\texttt{934eea6}};
 
-\draw[step] (C)  -- node[lab,right=3pt] {Stage A\\dead-code removal} (D0);
-\draw[step] (D0) -- node[lab,right=3pt] {Stages B--H\\architectural\\simplification} (D);
+\draw[mzflow] (C)  -- node[mzlab,right=3pt] {Stage A\\dead-code removal} (D0);
+\draw[mzflow] (D0) -- node[mzlab,right=3pt] {Stages B--H\\architectural\\simplification} (D);
 
 %% comparison brackets on the left
 \draw[decorate,decoration={brace,amplitude=4pt},line width=0.5pt]
   ($(C.west)+(-0.15,0)$) -- ($(D0.west)+(-0.15,0)$)
-  node[role,midway,left=6pt,rotate=90,anchor=south] {control};
+  node[mzrole,midway,left=6pt,rotate=90,anchor=south] {control};
 \draw[decorate,decoration={brace,amplitude=4pt},line width=0.5pt]
   ($(D0.west)+(-0.15,0)$) -- ($(D.west)+(-0.15,0)$)
-  node[role,midway,left=6pt,rotate=90,anchor=south] {principal\\comparison};
+  node[mzrole,midway,left=6pt,rotate=90,anchor=south] {principal\\comparison};
 \draw[decorate,decoration={brace,amplitude=6pt,mirror},line width=0.5pt]
   ($(C.west)+(-1.35,0)$) -- ($(D.west)+(-1.35,0)$)
-  node[role,midway,left=8pt,rotate=90,anchor=south] {total observed\\transformation};
+  node[mzrole,midway,left=8pt,rotate=90,anchor=south] {total observed\\transformation};
 
 \end{tikzpicture}
 \caption{Experimental design. The same system is observed at three states
@@ -871,109 +844,111 @@ than treating the classification as externally validated.
 
 \subsection{RQ1 --- Architectural Reorganization}\label{sec:rq1}
 
-\begin{figure*}[!tp]
+\begin{figure}[!htbp]
 \centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   font=\scriptsize,
-  band/.style={draw,dashed,rounded corners=3pt,inner sep=5pt,line width=0.4pt,
+  mzband/.style={draw,dashed,rounded corners=3pt,inner sep=5pt,line width=0.4pt,
                draw=black!45},
-  bandlab/.style={font=\scriptsize\bfseries,anchor=west,inner sep=1pt},
-  comp/.style={draw,rounded corners=1.5pt,align=center,inner sep=2.5pt,
+  bandmzlab/.style={font=\scriptsize\bfseries,anchor=west,inner sep=1pt},
+  mzcomp/.style={draw,rounded corners=1.5pt,align=center,inner sep=2.5pt,
                minimum height=6mm,minimum width=1.95cm,line width=0.5pt},
-  gone/.style={comp,dashed,draw=black!55,text=black!55,line width=0.5pt},
-  newc/.style={comp,line width=1.3pt},
-  strong/.style={comp,line width=1.3pt},
-  dep/.style={-{Latex[length=1.6mm]},line width=0.45pt},
-  bypass/.style={-{Latex[length=1.6mm]},line width=1.1pt,densely dashed},
-  fixed/.style={-{Latex[length=1.6mm]},line width=1.1pt},
-  note/.style={font=\scriptsize\itshape,inner sep=1pt}
+  mzgone/.style={mzcomp,dashed,draw=black!55,text=black!55,line width=0.5pt},
+  mznew/.style={mzcomp,line width=1.3pt},
+  mzstrong/.style={mzcomp,line width=1.3pt},
+  mzdep/.style={-{Latex[length=1.6mm]},line width=0.45pt},
+  mzbypass/.style={-{Latex[length=1.6mm]},line width=1.1pt,densely dashed},
+  mzfixed/.style={-{Latex[length=1.6mm]},line width=1.1pt},
+  mznote/.style={font=\scriptsize\itshape,inner sep=1pt}
 ]
 
 %% ============================ PANEL (a) STATE C =========================
 \begin{scope}[shift={(0,0)}]
-  \node[comp] (aLab)  at (0.00,0)     {LabUIController};
-  \node[comp] (aMix)  at (2.15,0)     {MixingRound\\Controller};
-  \node[comp] (aQfp)  at (4.30,0)     {QuestionFlow\\Presenter};
-  \node[comp] (aMenu) at (6.45,0)     {MenuUIController};
+  \node[mzcomp] (aLab)  at (0.00,0)     {LabUIController};
+  \node[mzcomp] (aMix)  at (2.15,0)     {MixingRound\\Controller};
+  \node[mzcomp] (aQfp)  at (4.30,0)     {QuestionFlow\\Presenter};
+  \node[mzcomp] (aMenu) at (6.45,0)     {MenuUIController};
 
-  \node[comp] (aSL)   at (0.00,-1.55) {ServiceLocator\\\scriptsize 8 registrations};
-  \node[comp] (aGM)   at (2.15,-1.55) {GameManager\\\scriptsize owns multiplier};
-  \node[comp] (aIA)   at (4.30,-1.55) {IAudioService\\\scriptsize 17 members};
-  \node[comp] (aSfx)  at (6.45,-1.55) {SfxManager\\MusicManager};
+  \node[mzcomp] (aSL)   at (0.00,-1.55) {ServiceLocator\\\scriptsize 8 registrations};
+  \node[mzcomp] (aGM)   at (2.15,-1.55) {GameManager\\\scriptsize owns multiplier};
+  \node[mzcomp] (aIA)   at (4.30,-1.55) {IAudioService\\\scriptsize 17 members};
+  \node[mzcomp] (aSfx)  at (6.45,-1.55) {SfxManager\\MusicManager};
 
-  \node[comp] (aScr)  at (0.00,-3.05) {ScoringService};
-  \node[comp] (aSol)  at (2.15,-3.05) {Solvent};
-  \node[comp] (aTmh)  at (4.30,-3.05) {TestMessage\\Handler};
+  \node[mzcomp] (aScr)  at (0.00,-3.05) {ScoringService};
+  \node[mzcomp] (aSol)  at (2.15,-3.05) {Solvent};
+  \node[mzcomp] (aTmh)  at (4.30,-3.05) {TestMessage\\Handler};
 
-  \node[comp] (aRep)  at (0.00,-4.55) {Repositories\\\scriptsize 4 concrete};
-  \node[comp] (aMap)  at (2.15,-4.55) {Mappers\\\scriptsize 4 classes};
-  \node[comp] (aDto)  at (4.30,-4.55) {DTOs\\\scriptsize 4};
+  \node[mzcomp] (aRep)  at (0.00,-4.55) {Repositories\\\scriptsize 4 concrete};
+  \node[mzcomp] (aMap)  at (2.15,-4.55) {Mappers\\\scriptsize 4 classes};
+  \node[mzcomp] (aDto)  at (4.30,-4.55) {DTOs\\\scriptsize 4};
 
-  \draw[fixed]  (aMix) -- node[note,above,pos=0.5] {concrete} (aLab);
-  \draw[fixed]  (aQfp.south) to[out=200,in=340] (aLab.south east);
-  \draw[bypass] (aLab.east)  to[out=25,in=155] node[note,above] {56 direct} (aSfx.north west);
-  \draw[bypass] (aMenu) -- (aSfx);
-  \draw[dep]    (aIA) -- (aSfx);
-  \draw[dep]    (aRep) -- (aMap);
-  \draw[dep]    (aMap) -- (aDto);
-  \draw[dep]    (aGM) -- (aScr);
-  \draw[dep]    (aTmh.north) to[out=100,in=260] node[note,right,pos=0.45] {litmus id} (aIA.south);
+  \draw[mzfixed]  (aMix) -- node[mznote,above,pos=0.5] {concrete} (aLab);
+  \draw[mzfixed]  (aQfp.south) to[out=200,in=340] (aLab.south east);
+  \draw[mzbypass] (aLab.east)  to[out=25,in=155] node[mznote,above] {56 direct} (aSfx.north west);
+  \draw[mzbypass] (aMenu) -- (aSfx);
+  \draw[mzdep]    (aIA) -- (aSfx);
+  \draw[mzdep]    (aRep) -- (aMap);
+  \draw[mzdep]    (aMap) -- (aDto);
+  \draw[mzdep]    (aGM) -- (aScr);
+  \draw[mzdep]    (aTmh.north) to[out=100,in=260] node[mznote,right,pos=0.45] {litmus id} (aIA.south);
 
-  \node[note,anchor=north] at (3.2,-5.35) {(a) State C --- baseline};
+  \node[mznote,anchor=north] at (3.2,-5.35) {(a) State C --- baseline};
 \end{scope}
 
 %% ============================ PANEL (b) STATE D =========================
 \begin{scope}[shift={(9.0,0)}]
-  \node[comp] (bLab)  at (0.00,0)     {LabUIController};
-  \node[comp] (bMix)  at (2.15,0)     {MixingRound\\Controller};
-  \node[comp] (bQfp)  at (4.30,0)     {QuestionFlow\\Presenter};
-  \node[comp] (bMenu) at (6.45,0)     {MenuUIController};
+  \node[mzcomp] (bLab)  at (0.00,0)     {LabUIController};
+  \node[mzcomp] (bMix)  at (2.15,0)     {MixingRound\\Controller};
+  \node[mzcomp] (bQfp)  at (4.30,0)     {QuestionFlow\\Presenter};
+  \node[mzcomp] (bMenu) at (6.45,0)     {MenuUIController};
 
-  \node[newc] (bIMV)  at (2.15,-0.90) {$+$\,IMixingView};
-  \node[newc] (bIQV)  at (4.30,-0.90) {$+$\,IQuestionView};
+  \node[mznew] (bIMV)  at (2.15,-0.90) {$+$\,IMixingView};
+  \node[mznew] (bIQV)  at (4.30,-0.90) {$+$\,IQuestionView};
 
-  \node[comp]   (bSL)  at (0.00,-1.95) {ServiceLocator\\\scriptsize 5 registrations};
-  \node[comp]   (bGM)  at (2.15,-1.95) {GameManager};
-  \node[strong] (bIA)  at (4.30,-1.95) {IAudioService\\\scriptsize 19 members};
-  \node[comp]   (bSfx) at (6.45,-1.95) {SfxManager\\MusicManager};
+  \node[mzcomp]   (bSL)  at (0.00,-1.95) {ServiceLocator\\\scriptsize 5 registrations};
+  \node[mzcomp]   (bGM)  at (2.15,-1.95) {GameManager};
+  \node[mzstrong] (bIA)  at (4.30,-1.95) {IAudioService\\\scriptsize 19 members};
+  \node[mzcomp]   (bSfx) at (6.45,-1.95) {SfxManager\\MusicManager};
 
-  \node[strong] (bScr) at (0.00,-3.30) {ScoringService\\\scriptsize owns multiplier};
-  \node[strong] (bSol) at (2.15,-3.30) {Solvent\\\scriptsize \texttt{IsIndicator}};
-  \node[comp]   (bTmh) at (4.30,-3.30) {TestMessage\\Handler};
+  \node[mzstrong] (bScr) at (0.00,-3.30) {ScoringService\\\scriptsize owns multiplier};
+  \node[mzstrong] (bSol) at (2.15,-3.30) {Solvent\\\scriptsize \texttt{IsIndicator}};
+  \node[mzcomp]   (bTmh) at (4.30,-3.30) {TestMessage\\Handler};
 
-  \node[strong] (bRep) at (0.00,-4.70) {Repositories\\\scriptsize 4, transform inline};
-  \node[gone]   (bMap) at (2.15,-4.70) {Mappers};
-  \node[comp]   (bDto) at (4.30,-4.70) {DTOs\\\scriptsize 3};
+  \node[mzstrong] (bRep) at (0.00,-4.70) {Repositories\\\scriptsize 4, transform inline};
+  \node[mzgone]   (bMap) at (2.15,-4.70) {Mappers};
+  \node[mzcomp]   (bDto) at (4.30,-4.70) {DTOs\\\scriptsize 3};
 
   \draw[dashed,draw=black!55] (bMap.north west) -- (bMap.south east);
   \draw[dashed,draw=black!55] (bMap.south west) -- (bMap.north east);
 
-  \draw[fixed] (bMix) -- (bIMV);
-  \draw[fixed] (bQfp) -- (bIQV);
-  \draw[dep]   (bLab.south east) to[out=330,in=180] (bIMV.west);
-  \draw[dep]   (bIQV.north east) to[out=40,in=250] (bMenu.south west);
-  \draw[fixed] (bLab.east) to[out=25,in=155] node[note,above] {0 direct} (bIA.north west);
-  \draw[dep]   (bIA) -- (bSfx);
-  \draw[dep]   (bRep) -- (bDto);
-  \draw[dep]   (bTmh) -- (bSol);
+  \draw[mzfixed] (bMix) -- (bIMV);
+  \draw[mzfixed] (bQfp) -- (bIQV);
+  \draw[mzdep]   (bLab.south east) to[out=330,in=180] (bIMV.west);
+  \draw[mzdep]   (bIQV.north east) to[out=40,in=250] (bMenu.south west);
+  \draw[mzfixed] (bLab.east) to[out=25,in=155] node[mznote,above] {0 direct} (bIA.north west);
+  \draw[mzdep]   (bIA) -- (bSfx);
+  \draw[mzdep]   (bRep) -- (bDto);
+  \draw[mzdep]   (bTmh) -- (bSol);
 
-  \node[note,anchor=north] at (3.2,-5.50) {(b) State D --- simplified derivative};
+  \node[mznote,anchor=north] at (3.2,-5.50) {(b) State D --- simplified derivative};
 \end{scope}
 
 %% ================================ LEGEND ================================
 \begin{scope}[shift={(0,-6.55)}]
-  \node[comp,minimum width=1.5cm] (lp) at (0.6,0) {preserved};
-  \node[gone,minimum width=1.5cm] (lr) at (2.9,0) {removed};
-  \node[newc,minimum width=1.5cm] (ln) at (5.2,0) {$+$ introduced};
-  \node[strong,minimum width=1.9cm] (ls) at (7.7,0) {strengthened};
+  \node[mzcomp,minimum width=1.5cm] (lp) at (0.6,0) {preserved};
+  \node[mzgone,minimum width=1.5cm] (lr) at (2.9,0) {removed};
+  \node[mznew,minimum width=1.5cm] (ln) at (5.2,0) {$+$ introduced};
+  \node[mzstrong,minimum width=1.9cm] (ls) at (7.7,0) {strengthened};
   \draw[dashed,draw=black!55] (lr.north west) -- (lr.south east);
   \draw[dashed,draw=black!55] (lr.south west) -- (lr.north east);
-  \draw[bypass] (9.6,0.15) -- (10.7,0.15); \node[note,anchor=west] at (10.8,0.15) {bypassed boundary};
-  \draw[fixed]  (9.6,-0.2) -- (10.7,-0.2); \node[note,anchor=west] at (10.8,-0.2) {contract-mediated};
-  \draw[dep]    (13.6,0.15) -- (14.7,0.15); \node[note,anchor=west] at (14.8,0.15) {dependency};
+  \draw[mzbypass] (9.6,0.15) -- (10.7,0.15); \node[mznote,anchor=west] at (10.8,0.15) {bypassed boundary};
+  \draw[mzfixed]  (9.6,-0.2) -- (10.7,-0.2); \node[mznote,anchor=west] at (10.8,-0.2) {contract-mediated};
+  \draw[mzdep]    (13.6,0.15) -- (14.7,0.15); \node[mznote,anchor=west] at (14.8,0.15) {dependency};
 \end{scope}
 
-\end{tikzpicture}
+\end{tikzpicture}}
+
 \caption{Architectural component and dependency view of the two states, drawn
 at the same level of abstraction and with preserved components in the same
 positions so that the panels can be read against each other. State D is a
@@ -985,7 +960,7 @@ removed ones a dashed border with a cross, introduced ones a heavy border with
 a $+$, and strengthened ones a heavy border. Every element and edge shown was
 verified against the pinned snapshots.}
 \label{fig:arch}
-\end{figure*}
+\end{figure}
 
 
 Figure~\ref{fig:arch} shows what changed structurally between the two states,
@@ -997,15 +972,22 @@ each abstraction examined. Thirteen concerns were audited: three led to removal 
 merging, two to strengthening, three to a local simplification or a change
 of ownership, and five to a documented retention.
 
-\begin{table*}[!tp]
-\centering
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{p{0.15\textwidth}p{0.13\textwidth}p{0.31\textwidth}p{0.14\textwidth}p{0.15\textwidth}}
 \caption{RQ1 --- responsibility assessment of each abstraction. Retention
-decisions are reported with the same status as changes.}\label{tab:rq1}
-\small
-\begin{tabular}{p{0.15\textwidth}p{0.13\textwidth}p{0.31\textwidth}p{0.14\textwidth}p{0.15\textwidth}}
+decisions are reported with the same status as changes.}\label{tab:rq1}\\
 \toprule
 \textbf{Concern} & \textbf{Initial hypothesis} & \textbf{Evidence found} & \textbf{Decision} & \textbf{Consequence} \\
 \midrule
+\endfirsthead
+\toprule
+\textbf{Concern} & \textbf{Initial hypothesis} & \textbf{Evidence found} & \textbf{Decision} & \textbf{Consequence} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
 \texttt{QuestionMapper} & Redundant & Purely positional pass-through; invariants live in the entity & REMOVE & Binding now rests on constructor parameter names \\
 \addlinespace
 \texttt{QuestionDto} & Redundant & 1:1 copy, no type conversion & REMOVE & Verified by a nine-criterion spike before removal \\
@@ -1031,9 +1013,9 @@ View\,$\leftrightarrow$\,orchestrator cycles & Breakable & Two concrete reverse 
 God-object candidates & Decomposition & Only one duplication had a better existing owner & Local SIMPLIFY & One consolidation, nine retentions \\
 \addlinespace
 Pre-existing dead members & Dead & Already dead in C & PRESERVE FOR PARITY & Retained so control and intervention stay separable \\
-\bottomrule
-\end{tabular}
-\end{table*}
+\end{longtable}
+\endgroup
+
 
 \medskip\noindent\textbf{Simplification did not mean minimising abstractions.}
 Structurally, the system that followed the intervention had \emph{fewer classes
@@ -1262,11 +1244,12 @@ New intervention artifact  & ---& ---& 2 \\
 \end{tabular}
 \end{table}
 
-\begin{table*}[!tp]
+\begin{table}[!htbp]
 \centering
 \caption{RQ3 --- group metrics. The upper block is the intervention
 (D0 $\rightarrow$ D); the lower block is the control (C $\rightarrow$ D0).}\label{tab:rq3metrics}
-\small
+\footnotesize
+\setlength{\tabcolsep}{2pt}
 \begin{tabular}{lrrrrrrr}
 \toprule
 \textbf{Group} & \textbf{Types} & \textbf{Members} & \textbf{LOC} & \textbf{CC mean} & \textbf{MI mean} & \textbf{Coupling mean} & \textbf{Engine} \\
@@ -1284,10 +1267,10 @@ New intervention artifact, D & 2 & 0 & 30 & n/a & n/a & 0.50 & 0 \\
 \midrule
 \multicolumn{8}{l}{\emph{Control, C $\rightarrow$ D0}} \\
 Dead code removed (C only) & 20 & 45  & 356 & \textbf{1.78} & \textbf{80.3} & \textbf{4.50} & --- \\
-Whole project in C, for contrast & 111 & 496 & --- & 2.33 & 72.5 & 11.4 & --- \\
+Whole project in C & 111 & 496 & --- & 2.33 & 72.5 & 11.4 & --- \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 The new intervention artifacts have zero members because both are pure
 interfaces; the instrument assigns no cyclomatic complexity or maintainability
@@ -1720,27 +1703,36 @@ empirical question we did not address.
 %% Nothing may float past this point into the back matter.
 \FloatBarrier
 
-\begin{acknowledgements}
-%% NEEDS SOURCE: the definitive list of acknowledged contributors is to be
-%% confirmed before submission.
-This work was carried out within the PIBIC 2025--2026 undergraduate research
-programme at the Universidade Federal do Agreste de Pernambuco. The authors
-thank the members of the Molz project team for their contributions to the
-system studied here.
-\end{acknowledgements}
+\backmatter
 
-\section*{Data availability}
+\bmhead{Acknowledgements}
 
+%% NEEDS SOURCE: the definitive list of acknowledged contributors.
+This work was carried out within an undergraduate research programme at the
+Universidade Federal do Agreste de Pernambuco. The authors thank the members of
+the Molz project team for their contributions to the system studied here.
+
+\section*{Declarations}
+
+\bmhead{Funding}
+NEEDS SOURCE --- funding programme and grant identifiers to be supplied.
+
+\bmhead{Competing interests}
+The authors declare no competing interests.
+
+\bmhead{Ethics approval and consent to participate}
+Not applicable. This study analyses source code artefacts and involves no
+human participants.
+
+\bmhead{Data availability}
 The system under study is an open research artefact and its pre-intervention
 state C is public in the project
 repository.\footnote{\url{https://github.com/bcccoworkingufape/game-quimica-2D}}
 The remaining replication artefacts are versioned in the study repository but
 are not yet published; they will be archived in a public, DOI-minted snapshot
-for submission.
-
-That snapshot comprises: the commit identifiers, annotated tags and frozen
-branches for the three experimental states; the measurement instrument at its frozen commit,
-together with the analyzer versions and the environment manifest; the per-type
+for submission. That snapshot comprises: the commit identifiers, annotated tags
+and frozen branches for states C, D0 and D; the measurement instrument at its
+frozen commit, with analyzer versions and the environment manifest; the per-type
 and per-member records and the analyzer output for each state; the aggregation
 and matched-population analysis scripts; the validation suite in its final form;
 and the state-freeze and results-analysis records documenting the intervention
@@ -1748,20 +1740,9 @@ chain and the component classification. Re-running the instrument at the pinned
 commits reproduces the reported records; determinism was confirmed by a
 byte-identical re-execution.
 
-\section*{Declarations}
+\bmhead{Author contributions}
+NEEDS SOURCE --- CRediT contribution statements to be supplied.
 
-%% NEEDS SOURCE: funding programme identifiers and author contribution
-%% statements are to be confirmed before submission.
-\noindent\textbf{Funding.} NEEDS SOURCE --- to be completed with the PIBIC
-programme identifiers before submission.
-
-\noindent\textbf{Competing interests.} The authors declare no competing
-interests.
-
-\noindent\textbf{Ethics approval.} Not applicable. This study analyses source
-code artefacts and involves no human participants.
-
-\bibliographystyle{apalike}
 \bibliography{paper1-references}
 
 \end{document}
