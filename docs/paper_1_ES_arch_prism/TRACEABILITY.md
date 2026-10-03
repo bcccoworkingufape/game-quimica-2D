@@ -1,7 +1,7 @@
 # Paper 1 — Claim Traceability Matrix
 
 **Internal audit artefact.** Not part of the manuscript. Every important claim
-in `main.tex` is listed with the evidence that supports it and the analysis that
+in `paper_sqj/main.tex` is listed with the evidence that supports it and the analysis that
 connects the two. A claim with no evidence row must not be in the paper.
 
 Verified against the working tree on 2026-10-03. Numeric sources are
@@ -85,7 +85,7 @@ Verified against the working tree on 2026-10-03. Numeric sources are
 
 ## Unsupported-claim scan
 
-Run over `main.tex` on 2026-10-03: zero occurrences of *improved software quality*,
+Run over `paper_sqj/main.tex` on 2026-10-03: zero occurrences of *improved software quality*,
 *no previous study*, *proves*, *optimal*, *best architecture*, *statistically
 significant*, *p-value*, *State E*, *LLM / Claude / AI-assisted*, and zero
 occurrences of the superseded engine-dependency wording (*references

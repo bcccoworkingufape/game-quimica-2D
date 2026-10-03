@@ -4,7 +4,7 @@ Frozen record of the manuscript as it stood **before** the migration to the
 Springer Nature template. Nothing here is submitted anywhere, and nothing here
 is on the build path of the current paper.
 
-The live manuscript is `../main.tex`, built with `sn-jnl.cls`.
+The live manuscript is `../paper_sqj/main.tex`, built with `sn-jnl.cls`.
 
 ---
 
@@ -27,7 +27,6 @@ abstract and the six keywords.
 | File | Size | Role in v1 |
 |---|---:|---|
 | `main-v1.tex` | 100 KB | the manuscript at `9f104d3` |
-| `paper1-references.bib` | 13 KB | bibliography, 32 entries — identical to the current one |
 | `sbc2019.cls` | 5.4 KB | the journal class |
 | `academicons.sty` | 11 KB | ORCID icon package |
 | `academicons.tex` | 78 KB | icon definitions |
@@ -57,8 +56,12 @@ git show b414108^:docs/paper_1_ES_arch_prism/1r_lamboo_notes.bib \
 
 ```bash
 cd v1-sbc-template
+cp ../paper_sqj/paper1-references.bib .
 latexmk -xelatex main-v1.tex
 ```
+
+The bibliography is not duplicated here: v1 and the current version cite the
+same 32 references, so the archive borrows the file from `paper_sqj/`.
 
 **XeLaTeX is required** — the preamble loads `fontspec`. `pdflatex` will fail.
 

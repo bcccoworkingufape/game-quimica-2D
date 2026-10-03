@@ -152,7 +152,8 @@ third-party material.
 |---|---|
 | 103-participant evaluation spreadsheet | Human-subject data belonging to the separate user study; needs its own consent and anonymisation basis |
 | PIBIC report `.docx`, research project `.pdf` | Institutional documents, not research artefacts of this paper |
-| `template_spring/` | Upstream Springer package, redistributed by Springer |
+| `springer-template/` | Upstream Springer reference material |
+| `v1-sbc-template/` | Pre-migration archive, superseded |
 
 ---
 
