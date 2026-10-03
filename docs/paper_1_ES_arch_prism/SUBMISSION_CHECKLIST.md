@@ -14,7 +14,7 @@
 | Reference style | **READY** | `sn-basic.bst` — Basic Springer Nature style, **Namedate** (author-year) mode, which is the form SQJ articles use. Add `Numbered` to the class options if the journal asks for numbered. |
 | Bibliography source | **READY** | `paper1-references.bib`, 32 entries, unchanged by the migration |
 | Previous template removed | **READY** | zero occurrences of `sbc2019`, `JSERD`, `10.5753`, `fontawesome`, `ccicons`, `fontspec`, `ifsym`, `frontmatter` |
-| Compilation | **READY** | compiled externally; last verified → exit 0, **0 errors**, 0 undefined citations, 0 undefined references |
+| Compilation | **READY** | `latexmk -pdf main.tex` in `paper_sqj/` → exit 0, **0 errors** → exit 0, **0 errors**, 0 undefined citations, 0 undefined references |
 | Output | **READY** | `main.pdf`, 32 pages |
 | Remaining overfull boxes | **READY** | 8, largest 14.3 pt — cosmetic; Springer re-typesets |
 | Single `.tex` file | **READY** | no `\input`; figures are inline TikZ, so no external artwork to attach |

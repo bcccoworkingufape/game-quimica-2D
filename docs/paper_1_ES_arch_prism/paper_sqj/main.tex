@@ -477,7 +477,7 @@ by a small interdisciplinary team, with the system already released and in use.
 are answered at different units, and Table~\ref{tab:units} records which.
 Conflating them would be a measurement error, because complexity and
 maintainability are member-level quantities in this instrument while coupling,
-size and engine reference are type-level ones.
+size and engine dependency are type-level ones.
 
 \begin{table}[!htbp]
 \centering
@@ -1121,7 +1121,7 @@ Engine-coupled classes  & 24    & 23    & 23 \\
 Between D0 and D the system lost 3 files, 9 lines of code and 5 classes, and
 gained 2 interfaces and 6 members. The three principal indicators moved very
 little: MI mean rose by 0.1 on a 0--100 scale, CC mean fell by 0.01 on a scale
-whose observed mean is about 2.4, and mean efferent coupling rose by 0.6.
+whose observed mean is about 2.4, and the mean coupling proxy rose by 0.6.
 
 Between C and D0 --- the control --- MI mean fell by 0.8 and mean efferent
 coupling rose by 1.4, even though the only action taken was the deletion of
@@ -1288,8 +1288,8 @@ group.
 
 \medskip\noindent\textbf{The removed dead code was not representative.} The 20
 types deleted in the control had mean MI 80.3 against 72.5 for the project, mean
-cyclomatic complexity 1.78 against 2.33, and mean efferent coupling 4.50 against
-11.4. They were smaller, less complex and less coupled than the system
+cyclomatic complexity 1.78 against 2.33, and a mean coupling proxy of 4.50
+against 11.4. They were smaller, less complex and less coupled than the system
 average --- which is unsurprising, since code that nothing calls tends to be
 small and to depend on little. Removing them therefore changed the composition of
 the population over which every mean is taken, and each aggregate mean moved in
@@ -1457,7 +1457,7 @@ by re-examination.
 \subsection{What Simplification Cost and What It Bought}
 
 The intervention did not buy a better metric profile. Within surviving code the
-indicators were flat to marginally worse, and mean efferent coupling rose both
+indicators were flat to marginally worse, and the mean coupling proxy rose both
 in aggregate ($+0.6$) and among matched surviving types in the directly
 refactored group ($+1.53$).
 
@@ -1658,7 +1658,7 @@ simplification here meant removing abstractions that carried no responsibility
 while introducing two that expressed one.
 
 Answering RQ2, the aggregate indicators moved very little between D0 and D --- MI
-71.7 to 71.8, CC 2.39 to 2.38, mean efferent coupling 12.8 to 13.4 --- and a
+71.7 to 71.8, CC 2.39 to 2.38, coupling proxy 12.8 to 13.4 --- and a
 matched-population analysis over the 442 members present in both states reversed
 the direction of the first two: population composition determined the direction
 the aggregate reported, while the surviving members moved slightly the other way.
@@ -1675,7 +1675,7 @@ within the directly and indirectly affected groups. Because the preserved group 
 defined by the absence of relevant source changes, this containment is consistent
 with the classification rather than an independent confirmation of it. The dead
 code removed in the control had higher MI and lower cyclomatic complexity and
-efferent coupling than the system average (MI 80.3 against 72.5; CC 1.78 against
+a lower coupling proxy than the system average (MI 80.3 against 72.5; CC 1.78 against
 2.33; coupling 4.50 against 11.4), so removing it shifted the composition of the
 measured population
 and moved every normalized aggregate mean in the less favourable direction --- an
@@ -1685,8 +1685,8 @@ architectural intervention.
 The study's central methodological claim is that interventions which change the
 population of components cannot be evaluated by aggregate means alone. Its
 central empirical observation is narrower and strictly local to this case: in
-this intervention, the set of types explicitly referencing Unity remained
-unchanged despite the layer-level reorganization. We do not generalize that to
+this intervention, the set of engine-dependent types remained unchanged
+despite the layer-level reorganization. We do not generalize that to
 engine-based systems at large, and Section~\ref{sec:discussion} notes that a
 differently targeted intervention might well have moved the set.
 

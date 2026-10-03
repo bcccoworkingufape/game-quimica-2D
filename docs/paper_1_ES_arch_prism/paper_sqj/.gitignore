@@ -6,6 +6,10 @@
 *.fls
 *.log
 *.out
-*.pdf
 *.synctex.gz
 build/
+
+# main.pdf and main.bbl are versioned: the compiled manuscript and the
+# resolved bibliography are submission deliverables.
+!main.pdf
+!main.bbl
