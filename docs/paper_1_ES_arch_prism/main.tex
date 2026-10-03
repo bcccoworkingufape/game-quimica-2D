@@ -90,7 +90,7 @@
 \textbf{Abstract}
 
 %% ABSTRACT -- written last, see Section ordering in the writing protocol.
-Refactoring is commonly framed as an activity that adds structure to a system. In the literature surveyed for this study, empirical evidence was more readily found for refactoring that introduces or redistributes structure than for interventions centred on removing or consolidating architectural abstractions. Less is therefore established about the opposite direction: what happens to internal software quality indicators when abstractions that carry no concrete responsibility are removed from a working system, and how such movements should be read when the intervention itself changes the population of components being measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game for organic chemistry. Three pinned states of the same system were measured with a single frozen instrument: the pre-intervention baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D. The control was necessary: the removed subset had a higher mean maintainability index (80.3 against 72.5) and lower mean efferent coupling (4.50 against 11.4) than the system, so deleting it changed the composition of the measured population and moved every aggregate mean in the less favourable direction while structural size fell. Between D0 and D the system lost five classes and gained two interfaces and six members --- simplification here meant changing which abstractions exist, not minimising how many --- while the aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, mean efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two: population composition accounted for the direction of the aggregate signal, while the surviving members themselves moved slightly the other way (maintainability $-0.06$, complexity $+0.01$). All magnitudes are small in absolute terms. Coupling rose among the 19 surviving directly refactored types (26.84 to 28.37), concentrating dependencies in components that absorbed responsibilities previously held by separate mapper types. The set of types holding an explicit engine reference was identical in both states (23 types); its percentage rose from 35.4\% to 38.3\% through denominator change alone. Behaviour covered by the validation protocol was preserved: a 68-test baseline characterization suite written against C, grown during the intervention to 118 tests in state D (103 behavioural, 15 architecture invariants), together with a clean engine import and manual full-flow verification. Two a-priori simplification hypotheses were rejected by implementation evidence rather than confirmed. The study contributes a simplification protocol in which retention decisions are recorded as outcomes, a control design separating dead-code removal from architectural change, and evidence that aggregate internal quality indicators are sensitive to population composition in ways that can invert their apparent direction.
+Refactoring is commonly framed as an activity that adds structure to a system. In the literature surveyed for this study, empirical evidence was more readily found for refactoring that introduces or redistributes structure than for interventions centred on removing or consolidating architectural abstractions. Less is therefore established about the opposite direction: what happens to internal software quality indicators when abstractions that carry no concrete responsibility are removed from a working system, and how such movements should be read when the intervention itself changes the population of components being measured. This paper reports a comparative case study of responsibility-driven architectural simplification in Molz, a Unity-based serious game for organic chemistry. Three pinned states of the same system were measured with a single frozen instrument: the pre-intervention baseline C, a control state D0 obtained by removing dead code and nothing else, and the simplified state D. The control was necessary: the removed subset had a higher mean maintainability index (80.3 against 72.5) and lower mean approximate efferent coupling (4.50 against 11.4) than the system, so deleting it changed the composition of the measured population and moved every aggregate mean in the less favourable direction while structural size fell. Between D0 and D the system lost five classes and gained two interfaces and six members --- simplification here meant changing which abstractions exist, not minimising how many --- while the aggregate indicators moved little: maintainability index 71.7 to 71.8, cyclomatic complexity 2.39 to 2.38, mean efferent coupling 12.8 to 13.4. A matched-population analysis over the 442 members present in both states reversed the direction of the first two: population composition accounted for the direction of the aggregate signal, while the surviving members themselves moved slightly the other way (maintainability $-0.06$, complexity $+0.01$). All magnitudes are small in absolute terms. Coupling rose among the 19 surviving directly refactored types (26.84 to 28.37), concentrating dependencies in components that absorbed responsibilities previously held by separate mapper types. The set of types holding an explicit engine reference was identical in both states (23 types); its percentage rose from 35.4\% to 38.3\% through denominator change alone. Behaviour covered by the validation protocol was preserved: a 68-test baseline characterization suite written against C, grown during the intervention to 118 tests in state D (103 behavioural, 15 architecture invariants), together with a clean engine import and manual full-flow verification. Two a-priori simplification hypotheses were rejected by implementation evidence rather than confirmed. The study contributes a simplification protocol in which retention decisions are recorded as outcomes, a control design separating dead-code removal from architectural change, and evidence that aggregate internal quality indicators are sensitive to population composition in ways that can invert their apparent direction.
 \end{abstract}
 
 \begin{keywords}
@@ -118,7 +118,7 @@ was targeted rather than systematic (Section~\ref{sec:gap}), so we report this a
 the shape of the evidence we found and not as a characterization of the field.
 
 This matters because the two directions do not behave symmetrically under
-measurement. Aggregate indicators such as the maintainability index~\cite{coleman1994}, cyclomatic complexity~\cite{mccabe1976} and efferent
+measurement. Aggregate indicators such as the maintainability index~\cite{coleman1994}, cyclomatic complexity~\cite{mccabe1976} and approximate efferent
 coupling~\cite{martin2003} are means over a population of members or types.
 When structure is added, the population grows; when structure is removed, the
 population shrinks. A mean can therefore move without any surviving component
@@ -235,9 +235,11 @@ coupling at package level together with the dependency inversion principle,
 under which modules should depend on abstractions rather than on concrete
 implementations. Efferent coupling counts outgoing dependencies; it says how
 many other types a type must know about, not whether knowing about them is
-justified.
+justified. That is the concept; what our instrument computes is an
+approximation of it, obtained without symbol resolution, and we are explicit
+about the difference in Section~\ref{sec:design}.
 
-We therefore treat MI, cyclomatic complexity and efferent coupling as
+We therefore treat MI, cyclomatic complexity and our coupling proxy as
 \emph{internal software quality indicators} and not as measurements of
 maintainability itself. This distinction is not rhetorical: as
 Section~\ref{sec:results} shows, two of these indicators move in one direction
@@ -411,6 +413,22 @@ architecture was documented as a layered Model-View-Presenter organization with
 Data, Domain, Core and Presentation layers. A user evaluation with 103
 participants was conducted and reported separately; it is context for this
 study, not evidence within it.
+
+This work sits inside a larger research programme. The umbrella project,
+\emph{Software Process Improvement: Consolidating Evidence and Agile
+Practices}, investigates how software engineering methods and practices can be
+adapted and evaluated in real development settings; within it, the research
+plan \emph{Investigation and Configuration of Methods and Processes for Quality
+Improvement in Digital Game Development} narrows that question to game
+software, and uses Molz as its empirical artefact. Under that plan the system
+had already been through a cycle of requirements work, agile process
+instrumentation, layered architectural restructuring, design-pattern adoption,
+functional verification and a first static-analysis campaign. \textbf{State C is
+the endpoint of that cycle}: it is not an untouched legacy baseline but a system
+that had already received deliberate engineering attention, which is why the
+audit reported in Section~\ref{sec:rq1} found so many abstractions already
+carrying legitimate responsibilities, and why the intervention studied here
+became a reassessment rather than a migration.
 
 An earlier 3D version of the game exists in the project's history. It is
 \emph{not} a state of this experiment and is not used as a baseline or as a
@@ -698,10 +716,29 @@ the \texttt{dotnet} SDK 9.0.306 under Unity 6000.4.1f1. Each state is recovered 
 worktree at its pinned commit, so production content and measurement tooling
 remain separate; no snapshot is modified to accommodate the instrument.
 
-The instrument reports, per type, lines of code, efferent coupling, and whether
-the type references \texttt{UnityEngine}; and, per member, cyclomatic complexity
-and maintainability index. Aggregations are computed from the raw per-type and
-per-member records rather than from summary output.
+The instrument reports, per type, lines of code, an approximate efferent
+coupling count defined below, and whether the type is engine-instantiated; and,
+per member, cyclomatic complexity and maintainability index. Aggregations are
+computed from the raw per-type and per-member records rather than from summary
+output.
+
+\medskip\noindent\textbf{Engine dependency.} A type is counted as
+engine-dependent when its declared base list contains \texttt{MonoBehaviour} or
+\texttt{ScriptableObject} --- that is, when the type is one the engine itself
+instantiates, serializes and drives through its lifecycle. The check is
+syntactic and considers only the \emph{directly} declared base types.
+
+\medskip\noindent\textbf{Approximate efferent coupling.} For each type the
+instrument counts the distinct capitalised identifiers appearing anywhere inside
+the type declaration. This approximates Martin's efferent coupling
+\cite{martin2003} without resolving symbols, and we therefore report it as a
+\emph{structural coupling proxy} rather than as $C_e$ itself. It over-counts,
+because a capitalised identifier also matches an invoked method name, a
+property, an enum member or a constant; and it under-counts dependencies
+expressed without a capitalised identifier. Section~\ref{sec:threats} states the
+consequences. We use it because it is stable across the three states and
+computed identically for all of them, so differences remain comparable even
+though the absolute level is not a count of depended-upon types.
 
 Two properties of the instrument were verified explicitly.\ \emph{Determinism}:
 re-executing the pipeline on state D produced byte-identical artefacts,
@@ -758,7 +795,7 @@ within a state, which occurred for two method overloads in each state, were
 \emph{excluded} from matching rather than resolved by assumption.
 
 \emph{Category analysis.} Metrics were aggregated within each RQ3 category, with
-units kept explicit: lines of code, efferent coupling and type counts are
+units kept explicit: lines of code, approximate efferent coupling and type counts are
 per-type quantities; cyclomatic complexity and maintainability index are
 per-member quantities, and group-level values for them are means over the
 members belonging to the group, never aggregated per type.
@@ -1048,7 +1085,7 @@ Members with MI $\geq$ 65 & 323 & 287   & 293 \\
 \quad as \% of members   & 65.1  & 63.6  & 64.1 \\
 Members with CC $>$ 10   & 6     & 6     & 5 \\
 \addlinespace
-Efferent coupling mean  & 11.4  & 12.8  & 13.4 \\
+Approx. efferent coupling & 11.4 & 12.8  & 13.4 \\
 Engine-coupled classes  & 24    & 23    & 23 \\
 \quad as \% of classes  & 30.4  & 35.4  & 38.3 \\
 \bottomrule
@@ -1128,8 +1165,9 @@ the same phenomenon, and the increase is not merely a redistribution artefact.
 
 \subsubsection{Engine dependency}
 
-The set of types referencing \texttt{UnityEngine} was compared by identity, not
-by count:
+The set of engine-instantiated types --- those directly declaring
+\texttt{MonoBehaviour} or \texttt{ScriptableObject} as a base type --- was
+compared by identity, not by count:
 
 \begin{center}\small
 \begin{tabular}{lr}
@@ -1150,9 +1188,10 @@ set was the same in D0 and D.
 This is the clearest single result of the study, and it contradicted an
 expectation that had been central to the earlier framing of the work.
 Section~\ref{sec:discussion} examines what this indicator does and does not
-capture. Here we report only that the set of types holding an explicit
-\texttt{UnityEngine} reference was the same in both states, and that the movement
-of the percentage is accounted for by the change in the class population.
+capture. Here we report only that the set of types directly extending
+\texttt{MonoBehaviour} or \texttt{ScriptableObject} was the same in both states,
+and that the movement of the percentage is accounted for by the change in the
+class population.
 
 \subsection{RQ3 --- Distribution Across Component Categories}\label{sec:rq3}
 
@@ -1314,12 +1353,17 @@ differences in both directions. This is the result that most directly
 contradicted the study's initial framing.
 
 Interpreting this result requires being precise about what the indicator
-measures. Our engine-dependency indicator counts types holding an explicit
-structural reference to a \texttt{UnityEngine} API\@. That is one operational
-manifestation of engine dependence, not a complete characterization of it: a
-system can depend on an engine through its lifecycle assumptions, its
-serialization model, its scene composition or its threading model without any of
-those appearing as an additional type-level reference. Engine dependence is
+measures. Our engine-dependency indicator counts types that directly declare
+\texttt{MonoBehaviour} or \texttt{ScriptableObject} as a base type: the types
+the engine itself instantiates and drives. That is one operational manifestation
+of engine dependence, not a complete characterization of it. A type can use
+\texttt{UnityEngine} APIs extensively --- for vectors, coroutines, resource
+loading or scene management --- without extending either base class, and such a
+type is not counted here. In state C, thirteen types reference
+\texttt{UnityEngine} without being engine-instantiated; in state D, twelve. A
+system can likewise depend on an engine through its lifecycle assumptions, its
+serialization model or its scene composition without that dependence appearing
+in this count at all. Engine dependence is
 architecturally consequential --- the engine architecture literature treats
 coupling to the engine core as a first-order concern~\cite{politowski2025,ullmann2023} --- and the point here is not that it carries
 no architectural meaning, but that our indicator captures only its explicit
@@ -1450,18 +1494,39 @@ none of it.
 
 We follow the categories of Runeson and H\"ost~\cite{runeson2009}.
 
-\medskip\noindent\textbf{Construct validity.} MI, cyclomatic complexity and
-efferent coupling are structural proxies, not measurements of the maintainability
-that developers experience. The critiques are well established: cyclomatic
+\medskip\noindent\textbf{Construct validity.} MI, cyclomatic complexity and our
+approximate efferent coupling are structural proxies, not measurements of the
+maintainability that developers experience. The critiques are well established: cyclomatic
 complexity is substantially a proxy for size~\cite{shepperd1988}, and MI is a
 composite calibrated on a corpus unlike ours that incorporates both~\cite{coleman1994,ardito2020}. We mitigate this by reporting the indicators
 separately as well as together, by reporting medians alongside means, and by
 never treating a movement in one of them as a statement about maintainability.
 For the same reason we use the term \emph{internal software quality indicators}
-throughout.\ \emph{Engine dependency} is defined operationally as a count of types
-referencing \texttt{UnityEngine} as determined by the instrument; its percentage
-uses classes as denominator and is therefore sensitive to population change, which
-is why we report the set identity rather than the percentage as the result.
+throughout.
+
+\emph{Approximate efferent coupling} is the weakest construct of the three. As
+defined in Section~\ref{sec:design}, it counts distinct capitalised identifiers
+within a type rather than resolved external types, so its absolute level is not
+a count of dependencies and should not be read as one. It both over-counts
+(invoked method names, properties, enum members and constants are matched) and
+under-counts (dependencies expressed without a capitalised identifier are
+missed). We use it comparatively only: the same rule is applied to all three
+states, so a difference between states reflects a change in the measured text
+even though the level does not translate into a dependency count. Any reading of
+our coupling figures as $C_e$ values would be unwarranted.
+
+\emph{Engine dependency} is defined operationally as the number of types whose
+declared base list contains \texttt{MonoBehaviour} or \texttt{ScriptableObject}.
+Two limitations follow. First, the check is \emph{syntactic}: base types are
+matched as text, without resolving the inheritance graph. Second, it considers
+only \emph{directly} declared base types, so a class extending an intermediate
+class that itself extends \texttt{MonoBehaviour} would not be counted; no such
+case was audited in this system, and we did not verify their absence
+exhaustively. The indicator therefore measures engine instantiation
+specifically, not engine API usage in general, and a system could reduce its
+use of engine APIs considerably without moving this count. Its percentage form
+uses classes as denominator and is sensitive to population change, which is why
+we report the set identity rather than the percentage as the result.
 
 \medskip\noindent\textbf{Internal validity.} The eight stages were applied
 sequentially and may interact. The D0 checkpoint isolates dead-code removal from
