@@ -10,6 +10,8 @@ try {
         'Assets/Scripts/Domain/Enums/GameMode.cs',
         'Assets/Scripts/Domain/Entities/Question.cs',
         'Assets/Scripts/Domain/Services/IScoringService.cs',
+        'Assets/Scripts/Domain/Services/IGameModeRules.cs',
+        'Assets/Scripts/Domain/Services/GameModeRules.cs',
         'Assets/Scripts/Domain/Services/ScoringService.cs',
         'Assets/Scripts/Domain/Services/ScoringRun.cs',
         'Assets/Scripts/Domain/Services/StarRecordBook.cs',

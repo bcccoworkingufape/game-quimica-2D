@@ -17,7 +17,7 @@ namespace Domain
         public List<Entry> entries = new List<Entry>();
         public bool Update(ScoringRun run)
         {
-            if (run == null || !run.Completed) return false;
+            if (run == null || !run.Completed || !run.UsesScoring) return false;
             if (entries == null) entries = new List<Entry>();
             var entry = entries.Find(e => e.phase == run.PhaseId && e.mode == (int)run.Mode);
             if (entry == null)

@@ -5,26 +5,24 @@ namespace Domain
     public class ScoringService : IScoringService
     {
         public const int MaximumScore = 100;
-        public const int PointsLostPerError = 15;
-        public const int PointsPerStreakBlock = 5;
+        public const int BasePointsPerCorrectAnswer = 10;
+        public const int PointsLostPerError = 5;
+        public const int PointsPerStreakBlock = 0;
         public const int AnswersPerStreakBlock = 3;
 
-        // Valores sorteados uma vez e mantidos fixos. A ordem das perguntas pode
-        // mudar sem alterar a importância de uma questão entre duas partidas.
+        // Todas as questões têm a mesma recompensa base. A ordem das perguntas
+        // pode mudar sem alterar a pontuação possível da fase.
         private static readonly IReadOnlyDictionary<int, int> QuestionValues =
             new Dictionary<int, int>
             {
-                { 1, 8 }, { 2, 10 }, { 3, 8 }, { 4, 9 }, { 5, 12 },
-                { 6, 10 }, { 7, 9 }, { 8, 10 }, { 9, 14 }, { 10, 10 }
+                { 1, 10 }, { 2, 10 }, { 3, 10 }, { 4, 10 }, { 5, 10 },
+                { 6, 10 }, { 7, 10 }, { 8, 10 }, { 9, 10 }, { 10, 10 }
             };
 
         public int QuestionValue(int questionId) =>
             QuestionValues.TryGetValue(questionId, out int value) ? value : 0;
 
-        public int CorrectStreakBonus(int consecutiveCorrectAnswers) =>
-            consecutiveCorrectAnswers > 0 && consecutiveCorrectAnswers % AnswersPerStreakBlock == 0
-                ? PointsPerStreakBlock
-                : 0;
+        public int CorrectStreakBonus(int consecutiveCorrectAnswers) => 0;
 
         public int ErrorPenalty() => PointsLostPerError;
 

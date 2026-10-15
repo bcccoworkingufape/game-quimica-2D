@@ -7,7 +7,7 @@ namespace Core
     /// <summary>Personal records on this device, separated by phase and difficulty.</summary>
     public static class StarRecords
     {
-        private const string Key = "molz.starRecords.v3";
+        private const string Key = "molz.starRecords.v4";
         private static StarRecordBook Read()
         {
             try { return JsonUtility.FromJson<StarRecordBook>(PlayerPrefs.GetString(Key, "{}")) ?? new StarRecordBook(); }

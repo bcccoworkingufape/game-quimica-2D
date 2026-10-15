@@ -25,6 +25,7 @@ namespace Domain
         public string Label => "Estudo Livre";
         public bool AllowsDecisionTree => true;
         public bool AppliesLifePenalty => false;
+        public bool UsesScoring => false;
         public string LivesOverrideText => "Vidas ilimitadas";
 
         public int VisibleLifeIcons(int lives, int maxIcons) => maxIcons;
@@ -36,6 +37,7 @@ namespace Domain
         public string Label => "Experimentos";
         public bool AllowsDecisionTree => true;
         public bool AppliesLifePenalty => true;
+        public bool UsesScoring => true;
         public string LivesOverrideText => null;
 
         public int VisibleLifeIcons(int lives, int maxIcons) => lives;
@@ -47,6 +49,7 @@ namespace Domain
         public string Label => "Desafio";
         public bool AllowsDecisionTree => false;
         public bool AppliesLifePenalty => true;
+        public bool UsesScoring => true;
         public string LivesOverrideText => null;
 
         public int VisibleLifeIcons(int lives, int maxIcons) => lives;

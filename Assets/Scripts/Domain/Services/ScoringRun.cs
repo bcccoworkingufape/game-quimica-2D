@@ -9,6 +9,7 @@ namespace Domain
         private readonly HashSet<int> _attempted = new HashSet<int>();
         private readonly HashSet<int> _solved = new HashSet<int>();
         public GameMode Mode { get; }
+        public bool UsesScoring => GameModeRulesFactory.For(Mode).UsesScoring;
         private int _balance;
         public int Score => System.Math.Max(0, System.Math.Min(ScoringService.MaximumScore, _balance));
         public int CorrectAnswers => _solved.Count;
@@ -47,8 +48,11 @@ namespace Domain
                 {
                     FirstAttemptCorrect++;
                     ConsecutiveCorrectAnswers++;
-                    QuestionPointsEarned += scoring.QuestionValue(questionId);
-                    StreakBonus += scoring.CorrectStreakBonus(ConsecutiveCorrectAnswers);
+                    if (UsesScoring)
+                    {
+                        QuestionPointsEarned += scoring.QuestionValue(questionId);
+                        StreakBonus += scoring.CorrectStreakBonus(ConsecutiveCorrectAnswers);
+                    }
                 }
                 else
                 {
@@ -62,13 +66,13 @@ namespace Domain
                 Errors++;
                 ConsecutiveErrors++;
                 ConsecutiveCorrectAnswers = 0;
-                ErrorPenaltyTotal += scoring.ErrorPenalty();
+                if (UsesScoring)
+                    ErrorPenaltyTotal += scoring.ErrorPenalty() * ConsecutiveErrors;
             }
-            _balance += scoring.ComputePoints(
-                questionId,
-                correct,
-                first,
-                first ? ConsecutiveCorrectAnswers : 0);
+            if (UsesScoring)
+                _balance += correct
+                    ? scoring.ComputePoints(questionId, true, first, first ? ConsecutiveCorrectAnswers : 0)
+                    : -scoring.ErrorPenalty() * ConsecutiveErrors;
             return true;
         }
         public void RecordLifeLost(int remainingLives)
@@ -82,7 +86,7 @@ namespace Domain
             if (Completed || Failed || _questions.Count == 0 || _solved.Count != _questions.Count) return false;
             Bonus = 0;
             Completed = true;
-            Stars = scoring.CalculateStars(Score, true);
+            Stars = UsesScoring ? scoring.CalculateStars(Score, true) : 0;
             return true;
         }
     }

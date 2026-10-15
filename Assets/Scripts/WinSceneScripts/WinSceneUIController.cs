@@ -19,13 +19,14 @@ public class WinSceneUI_Controller : MonoBehaviour
         var gm = GameManager.Instance;
         var run = gm != null ? gm.RunScore : null;
         bool completed = run != null && run.Completed;
+        bool ranked = completed && run.UsesScoring;
         float count = completed ? run.Stars : 0;
         for (int i = 0; stars != null && i < stars.Length; i++)
         {
             if (stars[i] == null) continue;
 
-            stars[i].gameObject.SetActive(i < 5);
-            if (i >= 5) continue;
+            stars[i].gameObject.SetActive(ranked && i < 5);
+            if (!ranked || i >= 5) continue;
 
             float fill = Mathf.Clamp01(count - i);
             if (fill < 1f)
@@ -59,8 +60,10 @@ public class WinSceneUI_Controller : MonoBehaviour
             summaryText.enableAutoSizing = true;
             summaryText.fontSizeMax = 44;
             summaryText.text = completed
-                ? $"{count} de 5 estrelas\nPrimeira tentativa: {run.FirstAttemptCorrect}/{gm.TotalQuestionsInRun} • Erros: {run.Errors}\nPontos: {run.Score}/100"
-                : "Conclua todas as questões para receber estrelas.";
+                ? ranked
+                    ? $"{count} de 5 estrelas\nPrimeira tentativa: {run.FirstAttemptCorrect}/{gm.TotalQuestionsInRun} • Erros: {run.Errors}\nPontos: {run.Score}/100"
+                    : "Você concluiu todas as questões!\nModo de estudo sem pontuação ou classificação."
+                : "Conclua todas as questões para finalizar a fase.";
         }
         if (gm != null && gm.CurrentDifficulty != null)
         {
@@ -68,7 +71,7 @@ public class WinSceneUI_Controller : MonoBehaviour
             if (modeText != null) modeText.text = gm.CurrentDifficulty.ModeLabel;
         }
         if (progressText != null) progressText.text = completed ? "100%" : "—";
-        if (recordText != null) recordText.text = completed ? $"Total: {StarRecords.Total(run.Mode)} estrelas" : "";
+        if (recordText != null) recordText.text = ranked ? $"Total: {StarRecords.Total(run.Mode)} estrelas" : "";
     }
 
     public void LoadScene(string nomeDaCena)

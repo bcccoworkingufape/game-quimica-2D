@@ -17,6 +17,9 @@ namespace Domain
         /// <summary>Se errar uma questão consome vida.</summary>
         bool AppliesLifePenalty { get; }
 
+        /// <summary>Se as respostas deste modo alteram a pontuação.</summary>
+        bool UsesScoring { get; }
+
         /// <summary>Texto a exibir em vez de "Vidas: N" (null para usar o padrão).</summary>
         string LivesOverrideText { get; }
 

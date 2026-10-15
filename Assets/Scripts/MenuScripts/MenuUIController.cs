@@ -152,8 +152,9 @@ namespace MenuScripts
                     ? "vidas ilimitadas"
                     : $"{data.startingLives} vidas";
 
-            difficultyText.text =
-                $"{data.difficultyName} • {livesLabel}\n1 a 5 estrelas, incluindo meias estrelas • Recorde local: {StarRecords.Total(data.mode)}\nResolva as questões e evite erros.";
+            difficultyText.text = data.mode == GameMode.Estudo_Livre
+                ? $"{data.difficultyName} • {livesLabel}\nSem pontuação ou classificação.\nPratique e aprenda no seu ritmo."
+                : $"{data.difficultyName} • {livesLabel}\n1 a 5 estrelas, incluindo meias estrelas • Recorde local: {StarRecords.Total(data.mode)}\nAcerto de primeira: +10. Erros seguidos: −5, −10, −15…";
 
             if (modeText != null)
                 modeText.text = data.ModeLabel;

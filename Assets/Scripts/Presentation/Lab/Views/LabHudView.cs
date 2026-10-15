@@ -71,20 +71,27 @@ namespace Presentation.Lab
             if (_livesText != null)
                 _livesText.text = rules.LivesOverrideText ?? $"Vidas: {lives}";
 
-            const int slots = 3;
+            int slots = mode == GameMode.Experimentos ? 4 : 3;
             if (_heartIcons != null && _heartIcons.Length > 0 && _heartIcons[0] != null)
             {
                 var parent = _heartIcons[0].transform.parent as RectTransform;
-                float width = parent != null ? parent.rect.width : 310f;
-                if (width <= 0) width = 310f;
+                const float iconWidth = 99f;
+                const float iconHeight = 91f;
+                const float spacing = 6f;
+                // Amplia a fileira no modo médio sem encolher os corações.
+                float width = slots * iconWidth + (slots - 1) * spacing;
+                if (parent != null)
+                {
+                    parent.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
+                    parent.anchoredPosition = new Vector2(width * .5f, parent.anchoredPosition.y);
+                }
                 for (int i = 0; i < _heartIcons.Length; i++)
                 {
                     if (_heartIcons[i] == null) continue;
                     var rect = _heartIcons[i].transform as RectTransform;
                     if (rect == null) continue;
-                    rect.anchoredPosition = new Vector2((i + .5f) * width / slots, -50);
-                    float iconWidth = Mathf.Min(99, width / slots - 6);
-                    rect.sizeDelta = new Vector2(iconWidth, iconWidth * 91f / 99f);
+                    rect.anchoredPosition = new Vector2(iconWidth * .5f + i * (iconWidth + spacing), -50);
+                    rect.sizeDelta = new Vector2(iconWidth, iconHeight);
                 }
             }
             // No modo de estudo, os corações continuam visíveis como parte da HUD,

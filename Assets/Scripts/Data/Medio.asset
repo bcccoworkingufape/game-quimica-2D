@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Medio
   m_EditorClassIdentifier: 
   difficultyName: Médio
-  startingLives: 3
+  startingLives: 4
   availableHints: 1
   mode: 1
 
