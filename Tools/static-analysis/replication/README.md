@@ -7,6 +7,11 @@ Everything needed to re-derive every number reported in the manuscript.
 Operational definitions are in `docs/paper_1_ES_arch_prism/PROVENANCE.md`;
 claim-to-evidence mapping is in `TRACEABILITY.md` beside it.
 
+The intervention code was implemented with an LLM-based coding assistant under
+per-stage human review and approval; the manuscript discloses this in its
+Methods (subsection *Use of an LLM-Based Coding Assistant*), Threats to
+Validity, and Declarations, consistent with the records in `docs/paper/`.
+
 ---
 
 ## Quick check

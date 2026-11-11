@@ -33,7 +33,7 @@ Today only C is reachable by anyone else.
 | Per-type metrics | `.../metricas-tipos.csv` | ship as is |
 | Summaries | `.../metricas-resumo.txt` | ship as is |
 | Filtered analyzer output | `.../sonar-resumo.txt`, `.../sonar-regras.csv` | ship as is |
-| Raw SARIF | `.../sonar.sarif` (~764 KB each) | **SANITISE FIRST** |
+| Raw SARIF | `.../sonar.sarif` (~764 KB each) | sanitised → ship `sonar-sanitised.sarif` |
 
 ### SARIF sanitisation — DONE
 
@@ -72,13 +72,12 @@ OS                     Windows 11 Home 10.0.26200
 
 ---
 
-## 4. Analysis scripts
+## 4. Analysis scripts — DONE
 
-Aggregation, matched-population and category analysis. **Action: recover and
-version them.** They were written in a session scratchpad and are not currently
-in the repository; the results they produced are, but the scripts are not. This
-is the weakest link in the package — the numbers are reproducible from the CSVs,
-but not yet by running a committed script.
+Aggregation, matched-population and category analysis are versioned in
+`Tools/static-analysis/analise/` (`common.py`, `aggregate.py`, `matched.py`,
+`rq3.py`, `verify_paper.py`, `sanitize_sarif.py`). `verify_paper.py` re-derives
+the 142 published values from the raw records (see §10 Evidence).
 
 ---
 
@@ -89,7 +88,7 @@ but not yet by running a committed script.
 | Tests | `Tools/characterization/Tests/*.cs` (12 files) | versioned |
 | Runner | `Tools/characterization/testar.ps1` | versioned |
 | Project | `Tools/characterization/Molz.Characterization.csproj` | versioned |
-| **`.trx` for C / D0 / D** | — | **MISSING** |
+| **`.trx` for C / D0 / D** | `Tools/characterization/evidence/*.trx` | versioned |
 
 Executed 2026-10-03 on .NET SDK 9.0.306, each state in a detached worktree:
 
@@ -99,9 +98,8 @@ D0  (a788ea8)    Passed: 68   Failed: 0
 D   (934eea6)    Passed: 118  Failed: 0
 ```
 
-**Action:** re-run with `--logger "trx;LogFileName=<state>.trx"` and version the
-three files under `Tools/characterization/evidence/`. `TestResults/` is
-currently in `.gitignore`, so add an exception for that folder.
+The three `.trx` files are versioned under `Tools/characterization/evidence/`
+(see §10 Evidence).
 
 ---
 
@@ -123,13 +121,10 @@ supplementary material but must not be merged into the manuscript.
 
 ## 7. Licensing — DONE, pending author confirmation
 
-**There is no `LICENSE` file in the repository.** A public GitHub repository
-without a licence is "all rights reserved" by default, which blocks a Zenodo
-deposit that invites reuse.
-
-**Action:** choose and add a licence before archiving. The code and the research
-artefacts may warrant different ones (for example a permissive code licence plus
-CC BY for the data and records).
+A `LICENSE` file exists at the repository root: MIT for the code, with
+third-party folders excluded by path; CC BY 4.0 is intended for the data and
+records in the deposit (see §10 Evidence). Remaining action: author
+confirmation of this split before archiving.
 
 ---
 

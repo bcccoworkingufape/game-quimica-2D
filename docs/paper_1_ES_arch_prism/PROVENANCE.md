@@ -35,8 +35,11 @@ evidence, not a pinned guarantee — but it is strong, because any difference in
 
 ## 2. Engine coupling: the implemented definition
 
-> **The manuscript currently misstates this. The number is right; the
-> definition printed next to it is not.**
+> **Resolved.** The manuscript misstated this definition when this section was
+> written; the three sentences were since corrected to the direct-inheritance
+> definition (Measurement Instrument, Discussion §5.2, Threats), and the
+> direct-only limitation was added to Threats. The analysis below is kept as
+> the record of the verification.
 
 ### What the instrument actually computes
 
@@ -410,12 +413,11 @@ material while remaining sufficient to re-run every reported number.
 
 ---
 
-## Open items
+## Open items — all closed
 
-1. **Correct the three engine-coupling sentences in the manuscript** (§2 above).
-   Highest priority: it is the only factual misstatement found.
-2. **State the efferent-coupling proxy explicitly** in Construct validity.
-3. **Add the direct-inheritance-only limitation** for engine coupling.
-4. Archive the test logs.
-5. Add a `LICENSE`.
-6. Sanitise the SARIF URIs.
+1. ~~Correct the three engine-coupling sentences in the manuscript~~ — done (§2 above).
+2. ~~State the efferent-coupling proxy explicitly~~ — done (Construct validity).
+3. ~~Add the direct-inheritance-only limitation~~ — done (Threats).
+4. ~~Archive the test logs~~ — done (`Tools/characterization/evidence/*.trx`).
+5. ~~Add a `LICENSE`~~ — done (MIT at the repository root, third-party excluded).
+6. ~~Sanitise the SARIF URIs~~ — done (`sonar-sanitised.sarif` per state).

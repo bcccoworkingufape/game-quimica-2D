@@ -191,7 +191,9 @@ complexity and lines of code into a single composite score~\cite{coleman1994}. I
 composite was calibrated on a specific corpus, and the relationship between the
 score and the maintenance effort actually experienced by developers is
 indirect. Systematic reviews of maintainability prediction report wide
-variation in which metrics are used and how they are validated~\cite{riaz2009,ardito2020}. An influential alternative line of work argues that
+variation in which metrics are used and how they are validated~\cite{riaz2009,ardito2020}, and the prediction line remains active, with recent work
+estimating maintainability risk from static code metrics with machine
+learning~\cite{sengul2026}. An influential alternative line of work argues that
 maintainability is better assessed by mapping ISO characteristics onto several
 separately reported source-code properties --- volume, unit size, unit
 complexity, duplication, unit testing --- rather than collapsing them into one
@@ -201,7 +203,12 @@ usual vehicle for collecting such properties at scale, and recent longitudinal
 work confirms both their practicality and the care their output demands: Berciu
 et al.\ \cite{berciu2026} analysed 3\,656 releases of 57 projects and report
 quality-issue distributions that shift with language and with release history
-rather than holding as absolutes.
+rather than holding as absolutes. In the same vein, Rantala et
+al.\ \cite{rantala2024} found that keyword-labelled self-admitted technical debt
+and static-analysis findings --- two common proxies for the same underlying
+quality problems --- are related but overlap only to a limited extent, a
+reminder that what such instruments report depends on how the construct is
+operationalized.
 
 Cyclomatic complexity~\cite{mccabe1976} has attracted a parallel critique.
 Shepperd~\cite{shepperd1988} argued that the measure rests on weak theoretical
@@ -215,7 +222,11 @@ coupling at package level together with the dependency inversion principle,
 under which modules should depend on abstractions rather than on concrete
 implementations. Efferent coupling counts outgoing dependencies; it says how
 many other types a type must know about, not whether knowing about them is
-justified. That is the concept; what our instrument computes is an
+justified. Practitioners appear to reason the same way: in a questionnaire
+survey on recognising object-oriented design quality, Stevenson and
+Wood~\cite{stevenson2018} found respondents placing fundamental principles such
+as low coupling above specific pattern vocabulary when judging a
+design. That is the concept; what our instrument computes is an
 approximation of it, obtained without symbol resolution, and we are explicit
 about the difference in Section~\ref{sec:design}.
 
@@ -227,7 +238,8 @@ in aggregate and in the opposite direction once the population is held fixed.
 
 \subsection{Architectural Refactoring and Simplification}
 
-Surveys of refactoring~\cite{mens2004} and the catalogue of smells and
+Surveys of refactoring~\cite{mens2004}, including its automated
+forms~\cite{baqais2020}, and the catalogue of smells and
 corresponding transformations~\cite{fowler2018} cover both the addition and the
 removal of structure. Empirically, however, the reported outcomes of refactoring
 on internal quality attributes are mixed rather than uniformly positive.
@@ -259,6 +271,18 @@ and its symptoms. This work is largely diagnostic: it characterizes and detects
 degradation. Studies that apply a simplification intervention to a working
 system and then measure what happened, with a control for confounding
 deletions, are considerably rarer.
+
+The transformation side of this literature is, meanwhile, increasingly
+LLM-assisted. Yang et al.\ \cite{yang2026} automate best-practice refactoring
+in Java through multi-agent planning with explicit verification, observing that
+language models applied directly to refactoring tasks produce unsafe or
+incomplete edits unless they are placed under such control, and Gheventer et
+al.\ \cite{gheventer2026} assess how ready generative-AI solutions for software
+quality actually are for industrial adoption. As interventions become cheaper
+to produce, the question of how their effects are measured --- including the
+population confound examined here --- becomes more pressing, not less; the
+intervention studied in this paper was itself implemented with LLM assistance
+under per-stage human approval (Section~\ref{sec:llmuse}).
 
 \subsection{Game Software Architecture and Engine Dependency}
 
@@ -303,6 +327,14 @@ treating a metric movement as the effect of a known transformation. Longitudinal
 work such as Berciu et al.~\cite{berciu2026} tracks quality issues across
 releases, where the set of measured artefacts changes from release to release by
 construction.
+
+A related concern is how per-component values are aggregated at all.
+Vasilescu et al.~\cite{vasilescu2011} show that the choice of aggregation
+technique over skewed software-metric distributions materially changes the
+conclusions drawn, and Mordal et al.~\cite{mordal2013} reach a similar verdict
+in industrial practice, designing dedicated aggregation schemes precisely
+because plain means over such distributions mislead. That literature varies the
+aggregation operator while the population of measured units stays fixed.
 
 What we did not find discussed explicitly is the consequence for interpretation
 when the intervention itself adds and removes the units being averaged. An
@@ -413,8 +445,8 @@ with decreasing levels of support.
 
 The system was developed in an interdisciplinary academic context at the
 Universidade Federal do Agreste de Pernambuco, with contributions from
-computing, chemistry, education and design, and is publicly available as an
-publicly accessible research artefact.\footnote{\url{https://github.com/bcccoworkingufape/game-quimica-2D}}
+computing, chemistry, education and design, and is publicly available as a
+research artefact.\footnote{\url{https://github.com/bcccoworkingufape/game-quimica-2D}}
 Development followed Scrum with sprints tracked on GitHub Projects, and the
 architecture was documented as a layered Model-View-Presenter organization with
 Data, Domain, Core and Presentation layers. A user evaluation with 103
@@ -451,8 +483,8 @@ rather than a stylistic preference.
 
 \subsection{Objective, Units of Analysis and Data Sources}
 
-Following the Goal-Question-Metric formulation used to make case study objectives
-explicit, the objective of this study is:
+Following the Goal-Question-Metric formulation~\cite{basili1994} used to make
+case study objectives explicit, the objective of this study is:
 
 \begin{quote}
 \emph{Analyse} a functionally preserved Unity-based serious game \emph{for the
@@ -622,6 +654,25 @@ scene serialization. And no global access mechanism was to be replaced by
 another global access mechanism: a change that substitutes one ambient
 singleton for another was not counted as simplification.
 
+\subsection{Use of an LLM-Based Coding Assistant}\label{sec:llmuse}
+
+The code changes constituting the intervention were implemented with the
+assistance of an LLM-based coding agent (Claude Code, Anthropic), operating
+inside the staged protocol described above: the agent proposed and applied
+changes within one stage at a time, and every stage was reviewed and explicitly
+approved by a human author, passed the functional-parity protocol described in
+the next subsection, and was subject to the recorded prohibitions before the
+next stage began. The responsibility assessments and retention decisions
+reported in Section~\ref{sec:rq1} were made and recorded under the same human
+gates. The measurement instrument and the analysis scripts were produced by the
+same process; every reported value is re-derived mechanically from the frozen
+per-type and per-member records by a versioned verification script, so no
+reported number rests on unreviewed assistant output. LLM-assisted refactoring
+is itself an emerging research subject~\cite{yang2026}; here the assistant is
+part of the intervention procedure, not an object of study, and the study makes
+no claim about the effect of this assistance on productivity or on code
+quality. Section~\ref{sec:threats} discusses it as a threat.
+
 \subsection{Functional-Parity Protocol}
 
 The experimental target was behavioural preservation between C and D for the
@@ -728,6 +779,13 @@ coupling count defined below, and whether the type is engine-instantiated; and,
 per member, cyclomatic complexity and maintainability index. Aggregations are
 computed from the raw per-type and per-member records rather than from summary
 output.
+
+\medskip\noindent\textbf{Maintainability index.} The instrument computes the
+Microsoft variant of the maintainability index~\cite{coleman1994}:
+$\mathrm{MI} = \max\bigl(0,\ \tfrac{100}{171}(171 - 5.2\ln V - 0.23\,\mathrm{CC}
+- 16.2\ln \mathrm{LOC})\bigr)$, where $V$ is Halstead volume --- clamped at zero,
+rescaled to a 0--100 range, and without the comment-percentage term of the
+original formulation. It is computed per member and aggregated as a mean.
 
 \medskip\noindent\textbf{Engine dependency.} A type is counted as
 engine-dependent when its declared base list contains \texttt{MonoBehaviour} or
@@ -1357,7 +1415,11 @@ Both readings are arithmetically correct. They answer different questions. The
 aggregate answers ``what is the profile of the system that now exists''; the
 matched analysis answers ``what happened to the code that survived''. For
 evaluating an intervention, the second is the relevant one, and it is the one
-the literature reports less often.
+the literature reports less often. The aggregation literature has long warned
+that the operator chosen over skewed metric distributions can change the
+conclusion~\cite{vasilescu2011,mordal2013}; the population effect observed here
+is the complementary hazard, produced not by the operator but by the
+intervention silently redefining the set being operated on.
 
 The same point applies with more force to the control transition, and there it
 applies cleanly. Removing unreachable code is uncontroversially good practice~\cite{romano2020,eder2012}, and it moved every normalized indicator in this
@@ -1625,6 +1687,16 @@ including several that the data superficially appeared to support --- was fixed
 before the manuscript was written. We did not seek to demonstrate that D is
 better than D0, and we report the results that contradicted our initial framing.
 
+\medskip\noindent\textbf{LLM-assisted implementation.} The implementation was
+carried out with the assistance of an LLM coding agent under per-stage human
+review and approval and the recorded prohibitions
+(Section~\ref{sec:llmuse}). The assistance may have influenced the shape of the
+code and the set of options considered at each stage, including surface
+properties such as commenting density, which is one plausible contributor to the
+rise in comment lines between D0 and D\@. The study neither measures nor claims
+anything about AI-assisted productivity or quality; no aspect of the design
+would support such a claim.
+
 \medskip\noindent\textbf{Functional equivalence.} The parity evidence is strong
 but it is evidence, not proof. The 103 behavioural characterization tests, the
 clean engine import, the manual full-flow walkthrough and the post-stage smoke
@@ -1724,6 +1796,13 @@ The authors declare no competing interests.
 Not applicable. This study analyses source code artefacts and involves no
 human participants.
 
+\bmhead{Use of generative AI}
+An LLM-based coding agent (Claude Code, Anthropic) assisted the implementation
+of the architectural intervention, under the staged human-approval protocol
+documented in Section~\ref{sec:llmuse} and discussed as a threat in
+Section~\ref{sec:threats}. Generative AI was not used to create or alter the
+measurement records.
+
 \bmhead{Data availability}
 The research data supporting this study comprise the frozen per-type and
 per-member measurements for states C, D0 and D; the sanitized static-analysis
@@ -1732,7 +1811,8 @@ state-freeze and results-analysis records used to derive the reported
 comparisons. These materials have been assembled in the study replication
 package and will be deposited in Zenodo before submission. Persistent
 identifier: \textbf{[ZENODO DOI PENDING]}. The source repository for the system
-under study is publicly accessible, and state C is available there.\footnote{\url{https://github.com/bcccoworkingufape/game-quimica-2D}}
+under study is publicly accessible, and state C is available there
+(\url{https://github.com/bcccoworkingufape/game-quimica-2D}).
 
 \bmhead{Code availability}
 The code required to reproduce the reported analyses comprises the frozen

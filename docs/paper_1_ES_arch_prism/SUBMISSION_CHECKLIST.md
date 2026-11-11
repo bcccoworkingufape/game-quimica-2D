@@ -12,7 +12,7 @@
 |---|---|---|
 | Class | **READY** | `\documentclass[pdflatex,sn-basic]{sn-jnl}` |
 | Reference style | **READY** | `sn-basic.bst`, **Namedate** (author-year). Confirmed against the journal: Software Quality Journal requires author-year citations with an alphabetically ordered reference list. Settled; do not change. |
-| Bibliography source | **READY** | `paper1-references.bib`, 32 entries, unchanged by the migration |
+| Bibliography source | **READY** | `paper1-references.bib`, 41 entries (32 from the migration + 9 added 2026-11-11, all verified against Crossref) |
 | Previous template removed | **READY** | zero occurrences of `sbc2019`, `JSERD`, `10.5753`, `fontawesome`, `ccicons`, `fontspec`, `ifsym`, `frontmatter` |
 | Compilation | **READY** | `latexmk -pdf main.tex` in `paper_sqj/` → exit 0, **0 errors** → exit 0, **0 errors**, 0 undefined citations, 0 undefined references |
 | Output | **READY** | `main.pdf`, 32 pages |
@@ -56,7 +56,8 @@ submitted.
 | Engine-dependency definition | **READY** | direct inheritance from `MonoBehaviour`/`ScriptableObject`; zero occurrences of the superseded wording |
 | Coupling terminology | **READY** | "approximate efferent coupling" / "structural coupling proxy"; both `$C_e$` mentions are disclaimers |
 | Threats to validity | **READY** | 9 items, each with mitigation and residual risk |
-| Prohibited claims | **READY** | zero occurrences of *improved software quality*, *no previous study*, *State E*, *p-value*, *statistically significant*, LLM/AI mentions |
+| Prohibited claims | **READY** | zero occurrences of *improved software quality*, *no previous study*, *State E*, *p-value*, *statistically significant* |
+| LLM-use disclosure | **READY** | reinstated 2026-11-11 per Springer Nature policy: Methods subsection `sec:llmuse`, Threats item *LLM-assisted implementation*, Declarations `Use of generative AI`. Consistent with the deposited records (`RESULTS-ANALYSIS-FINAL.md`, ADR). |
 
 ---
 
@@ -90,9 +91,11 @@ authenticated session:
 - the current declarations block required at submission.
 
 Springer Nature's general policy requiring that use of an LLM be documented in
-the Methods section was verified and is recorded in `PAPER1-PAPER2-SCOPE.md`;
-the disclosure was removed from the manuscript at the author's instruction and
-is the author's call to reinstate.
+the Methods section was verified. The disclosure, removed in `2606cdc`, was
+**reinstated on 2026-11-11** (author's decision): Methods subsection
+`sec:llmuse`, a Threats item, and a `Use of generative AI` declaration. The
+manuscript now agrees with the replication-package records that document the
+assistance.
 
 ---
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{{#1}}
 \providecommand{\urlprefix}{URL }
@@ -20,6 +20,15 @@ Ardito L, Coppola R, Barbato L, et~al (2020) A tool-based perspective on
 Baggen R, Correia JP, Schill K, et~al (2012) Standardized code quality
   benchmarking for improving software maintainability. Software Quality Journal
   20(2):287--307. \doi{10.1007/s11219-011-9144-9}
+
+\bibitem[{Baqais and Alshayeb(2020)}]{baqais2020}
+Baqais AAB, Alshayeb M (2020) Automatic software refactoring: a systematic
+  literature review. Software Quality Journal 28(2):459--502.
+  \doi{10.1007/s11219-019-09477-y}
+
+\bibitem[{Basili et~al.(1994)Basili, Caldiera, and Rombach}]{basili1994}
+Basili VR, Caldiera G, Rombach HD (1994) The goal question metric approach. In:
+  Encyclopedia of Software Engineering, vol~1. John Wiley \& Sons, p 528--532
 
 \bibitem[{Bavota et~al.(2015)Bavota, De~Lucia, Di~Penta, Oliveto, and
   Palomba}]{bavota2015}
@@ -66,6 +75,12 @@ Fowler M (2018) Refactoring: Improving the Design of Existing Code, 2nd edn.
 Gamma E, Helm R, Johnson R, et~al (1995) Design Patterns: Elements of Reusable
   Object-Oriented Software. Addison-Wesley
 
+\bibitem[{Gheventer et~al.(2026)Gheventer, do~Amaral~Gurgel, Brito, de~Mello,
+  Rocha, Feitosa, and Travassos}]{gheventer2026}
+Gheventer A, do~Amaral~Gurgel P, Brito CH, et~al (2026) Generative {AI}
+  solutions for software quality: Assessing industrial readiness. Software
+  Quality Journal 34(2):24. \doi{10.1007/s11219-026-09754-7}
+
 \bibitem[{Heitlager et~al.(2007)Heitlager, Kuipers, and Visser}]{heitlager2007}
 Heitlager I, Kuipers T, Visser J (2007) A practical model for measuring
   maintainability. In: 6th International Conference on the Quality of
@@ -99,6 +114,12 @@ McCabe TJ (1976) A complexity measure. IEEE Transactions on Software
 Mens T, Tourw{\'e} T (2004) A survey of software refactoring. IEEE Transactions
   on Software Engineering 30(2):126--139. \doi{10.1109/TSE.2004.1265817}
 
+\bibitem[{Mordal et~al.(2013)Mordal, Anquetil, Laval, Serebrenik, Vasilescu,
+  and Ducasse}]{mordal2013}
+Mordal K, Anquetil N, Laval J, et~al (2013) Software quality metrics
+  aggregation in industry. Journal of Software: Evolution and Process
+  25(10):1117--1135. \doi{10.1002/smr.1558}
+
 \bibitem[{Nardone et~al.(2023)Nardone, Muse, Abidi, Khomh, and
   Di~Penta}]{nardone2023}
 Nardone V, Muse BA, Abidi M, et~al (2023) Video game bad smells: What they are
@@ -117,6 +138,13 @@ Palomba F, Bavota G, Di~Penta M, et~al (2018) On the diffuseness and the impact
 Politowski C, Petrillo F, Gu{\'e}h{\'e}neuc YG (2025) {SyDRA}: An approach to
   understand game engine architecture. Entertainment Computing 52:100832.
   \doi{10.1016/j.entcom.2024.100832}
+
+\bibitem[{Rantala et~al.(2024)Rantala, M{\"a}ntyl{\"a}, and
+  Lenarduzzi}]{rantala2024}
+Rantala L, M{\"a}ntyl{\"a} M, Lenarduzzi V (2024) Keyword-labeled self-admitted
+  technical debt and static code analysis have significant relationship but
+  limited overlap. Software Quality Journal 32(2):391--429.
+  \doi{10.1007/s11219-023-09655-z}
 
 \bibitem[{Riaz et~al.(2009)Riaz, Mendes, and Tempero}]{riaz2009}
 Riaz M, Mendes E, Tempero E (2009) A systematic review of software
@@ -140,9 +168,19 @@ Sas D, Avgeriou P (2020) Quality attribute trade-offs in the embedded systems
   industry: an exploratory case study. Software Quality Journal 28(2):505--534.
   \doi{10.1007/s11219-019-09478-x}
 
+\bibitem[{{\c{S}}eng{\"u}l and Y{\"u}r{\"u}m(2026)}]{sengul2026}
+{\c{S}}eng{\"u}l F, Y{\"u}r{\"u}m OR (2026) Software maintainability prediction
+  using static code metrics and machine learning. Software Quality Journal
+  34(4):54. \doi{10.1007/s11219-026-09789-w}
+
 \bibitem[{Shepperd(1988)}]{shepperd1988}
 Shepperd M (1988) A critique of cyclomatic complexity as a software metric.
   Software Engineering Journal 3(2):30--36. \doi{10.1049/sej.1988.0003}
+
+\bibitem[{Stevenson and Wood(2018)}]{stevenson2018}
+Stevenson J, Wood M (2018) Recognising object-oriented software design quality:
+  a practitioner-based questionnaire survey. Software Quality Journal
+  26(2):321--365. \doi{10.1007/s11219-017-9364-8}
 
 \bibitem[{Sz{\H o}ke et~al.(2017)Sz{\H o}ke, Antal, Nagy, Ferenc, and
   Gyim{\'o}thy}]{szoke2017}
@@ -161,6 +199,13 @@ Ullmann G, Politowski C, Gu{\'e}h{\'e}neuc YG, et~al (2023) Visualising game
 {Unity Technologies} (2025) Unity user manual 6000.4 --- order of execution for
   event functions. Official documentation, consulted 2026
 
+\bibitem[{Vasilescu et~al.(2011)Vasilescu, Serebrenik, and van~den
+  Brand}]{vasilescu2011}
+Vasilescu B, Serebrenik A, van~den Brand M (2011) By no means: a study on
+  aggregating software metrics. In: Proceedings of the 2nd International
+  Workshop on Emerging Trends in Software Metrics (WETSoM), pp 23--26,
+  \doi{10.1145/1985374.1985381}
+
 \bibitem[{Verdecchia et~al.(2020)Verdecchia, Kruchten, and
   Lago}]{verdecchia2020}
 Verdecchia R, Kruchten P, Lago P (2020) Architectural technical debt: A
@@ -173,5 +218,10 @@ Verdecchia R, Kruchten P, Lago P (2020) Architectural technical debt: A
 Verdecchia R, Kruchten P, Lago P, et~al (2021) Building and evaluating a theory
   of architectural technical debt in software-intensive systems. Journal of
   Systems and Software 176:110925. \doi{10.1016/j.jss.2021.110925}
+
+\bibitem[{Yang et~al.(2026)Yang, Li, Gao, and Jiao}]{yang2026}
+Yang J, Li J, Gao Y, et~al (2026) Automating best-practice refactoring in
+  {Java} via multi-agent planning and verification. Software Quality Journal
+  34(3):44. \doi{10.1007/s11219-026-09782-3}
 
 \end{thebibliography}
