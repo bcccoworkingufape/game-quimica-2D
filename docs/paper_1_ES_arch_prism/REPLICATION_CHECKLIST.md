@@ -13,15 +13,14 @@ must contain and what must be done to each item first.
 | Item | Value | Public? |
 |---|---|---|
 | State C | `9b9816d319f5e60935edcb92dccb1e10e7506c37` | **yes** — it is `origin/main` |
-| State D0 | `a788ea8927d4c20afeba7d3b2e3e536d362025d2` | no — local only |
-| State D | `934eea6aa8e732db57f4575379ba1acd1dd6b58f` | no — local only |
-| Tag `analise-estatica/versao-C` | → `9b9816d` | no |
-| Tag `analise-estatica/versao-D0` | → `a788ea8` | no |
-| Tag `analise-estatica/versao-D` | → `934eea6` | no |
-| Branches `experiment/state-{C,D0,D}` | pinned | no |
+| State D0 | `a788ea8927d4c20afeba7d3b2e3e536d362025d2` | **yes** — pushed 2026-11-11 |
+| State D | `934eea6aa8e732db57f4575379ba1acd1dd6b58f` | **yes** — pushed 2026-11-11 |
+| Tags `analise-estatica/versao-{B,C,D0,D}` | pinned | **yes** — pushed 2026-11-11 |
+| Branches `experiment/state-{C,D0,D}`, `experiment/architecture-simplification` | pinned | **yes** — pushed 2026-11-11 |
 
-**Action:** push the branches and tags, or carry the three trees in the deposit.
-Today only C is reachable by anyone else.
+All three states are now recoverable by commit, by tag or by branch from the
+public repository, as the manuscript states. The deposit still carries the
+three source zips so it stands alone without GitHub.
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Target:** Software Quality Journal (Springer Nature)
 **Manuscript:** `paper_sqj/main.tex` · **Class:** `sn-jnl.cls` v3.1 (December 2024)
-**Last verified:** 2026-10-03
+**Last verified:** 2026-11-11
 
 ---
 
@@ -106,10 +106,13 @@ assistance.
 Scientific scope           READY
 Novelty positioning        READY
 Study design               READY
-Results                    READY
+Results                    READY     (3 result figures added 2026-11-11)
 Discussion                 READY
-Threats                    READY
-Journal formatting         READY
-Reproducibility            BLOCKER   (DOI and LICENSE confirmation only)
-Administrative metadata    BLOCKER   (10 NEEDS SOURCE markers)
+Threats                    READY     (LLM-assistance item reinstated)
+Journal formatting         READY     (36 pages, 41 references, builds clean)
+LLM-use disclosure         READY     (Methods + Threats + Declarations)
+States published           READY     (branches/tags pushed 2026-11-11)
+Cover letter               DRAFT     (paper_sqj/cover_letter.md, [AUTHOR:] markers)
+Reproducibility            BLOCKER   (Zenodo DOI + LICENSE confirmation only)
+Administrative metadata    BLOCKER   (9 NEEDS SOURCE markers + 2 DOI placeholders)
 ```
