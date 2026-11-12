@@ -13,3 +13,5 @@ build/
 # resolved bibliography are submission deliverables.
 !main.pdf
 !main.bbl
+
+docs/
