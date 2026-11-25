@@ -66,16 +66,6 @@ namespace Presentation.Lab
             if (overlay != null) OverlayAnimator.HideImmediate(overlay);
         }
 
-        private void Update()
-        {
-            // Botão "voltar" do Android / Esc fecham o glossário.
-            if (!IsOpen) return;
-
-            var keyboard = UnityEngine.InputSystem.Keyboard.current;
-            if (keyboard != null && keyboard.escapeKey.wasPressedThisFrame)
-                Close();
-        }
-
         public void Open()
         {
             if (overlay == null || IsOpen) return;
